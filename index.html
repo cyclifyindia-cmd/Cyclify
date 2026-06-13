@@ -1,12 +1,142 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cyclify</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyclify</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0a0a0a;
+color:white;
+}
+
+.header{
+background:#111;
+padding:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo{
+height:60px;
+}
+
+.search{
+padding:15px;
+}
+
+.search input{
+width:100%;
+padding:14px;
+border-radius:12px;
+border:none;
+font-size:16px;
+}
+
+.banner{
+margin:15px;
+background:#c1121f;
+border-radius:15px;
+padding:25px;
+text-align:center;
+}
+
+.banner h2{
+margin:0;
+font-size:28px;
+}
+
+.banner p{
+margin-top:10px;
+}
+
+.categories{
+padding:15px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.category{
+background:#1a1a1a;
+border-radius:12px;
+padding:25px 10px;
+text-align:center;
+font-weight:bold;
+}
+
+.category a{
+text-decoration:none;
+color:white;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+</style>
 </head>
+
 <body>
-    <h1>Welcome to Cyclify</h1>
-    <p>Premium Cycling Products</p>
-    <p>Helmets | Lights | Accessories</p>
-    <p>WhatsApp: Your Number Here</p>
+
+<div class="header">
+<img src="assets/logo.png" class="logo">
+</div>
+
+<div class="search">
+<input type="text" placeholder="Search Cycling Products">
+</div>
+
+<div class="banner">
+<h2>CYCLIFY</h2>
+<p>India's Cycling Marketplace</p>
+</div>
+
+<div class="categories">
+
+<div class="category">
+<a href="bikes-frames.html">Bikes & Frames</a>
+</div>
+
+<div class="category">
+<a href="wearables.html">Wearables</a>
+</div>
+
+<div class="category">
+<a href="accessories.html">Accessories</a>
+</div>
+
+<div class="category">
+<a href="components.html">Components</a>
+</div>
+
+<div class="category">
+<a href="wheels-tyres.html">Wheels & Tyres</a>
+</div>
+
+<div class="category">
+<a href="electronics.html">Electronics</a>
+</div>
+
+</div>
+
+<a class="whatsapp"
+href="https://wa.me/message/MLT2FFSAEYGIP1">
+WhatsApp
+</a>
+
 </body>
 </html>
