@@ -51,6 +51,39 @@ background:white;
 position:relative;
 }
 
+.search-box input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#f2f2f2;
+font-size:16px;
+outline:none;
+}
+
+.search-placeholder{
+position:absolute;
+left:15px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+align-items:center;
+gap:8px;
+pointer-events:none;
+color:#777;
+font-size:16px;
+white-space:nowrap;
+}
+
+.search-box input:focus{
+background:#ffffff;
+box-shadow:0 0 0 2px #0039a6;
+}
+
+.search-box{
+position:relative;
+}
+
 .search-icon{
 position:absolute;
 left:15px;
@@ -457,7 +490,19 @@ box-shadow:0 4px 15px rgba(0,0,0,0.3);
 </div>
 
 <div class="search">
-<input type="text" placeholder="Search Bikes, Helmets, Accessories">
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+autocomplete="off">
+
+<div class="search-placeholder" id="animatedPlaceholder">
+<span id="movingLens">🔍</span>
+<span id="typingText"></span>
+</div>
+
+</div>
 </div>
 
 <div class="location">
@@ -538,7 +583,98 @@ Shop Now
 href="https://wa.me/message/MLT2FFSAEYGIP1">
 💬
 </a>
+<script>
 
+const words = [
+"ELVES Road Bikes",
+"Smart Trainers",
+"Carbon Wheels"
+];
+
+const textElement =
+document.getElementById("typingText");
+
+const placeholder =
+document.getElementById("animatedPlaceholder");
+
+const input =
+document.getElementById("searchInput");
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function animateText(){
+
+const currentWord =
+words[wordIndex];
+
+if(!deleting){
+
+textElement.textContent =
+currentWord.substring(0,charIndex+1);
+
+charIndex++;
+
+if(charIndex === currentWord.length){
+
+deleting = true;
+
+setTimeout(
+animateText,
+1500
+);
+
+return;
+}
+
+}else{
+
+textElement.textContent =
+currentWord.substring(0,charIndex-1);
+
+charIndex--;
+
+if(charIndex === 0){
+
+deleting = false;
+
+wordIndex =
+(wordIndex + 1)
+% words.length;
+
+}
+
+}
+
+setTimeout(
+animateText,
+deleting ? 60 : 120
+);
+
+}
+
+animateText();
+
+input.addEventListener("focus",()=>{
+
+placeholder.style.display =
+"none";
+
+});
+
+input.addEventListener("blur",()=>{
+
+if(input.value === ""){
+
+placeholder.style.display =
+"flex";
+
+}
+
+});
+
+</script>
 </body>
 </html>
 
