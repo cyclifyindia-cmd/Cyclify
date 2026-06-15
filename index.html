@@ -98,28 +98,65 @@ color:white;
 text-decoration:none;
 }
 
+.category{
+height:180px;
+border-radius:12px;
+display:flex;
+align-items:flex-end;
+justify-content:flex-start;
+padding:15px;
+font-weight:bold;
+font-size:22px;
+color:white;
+text-decoration:none;
+background-size:cover;
+background-position:center;
+position:relative;
+overflow:hidden;
+}
+
+.category::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+}
+
+.category{
+position:relative;
+z-index:1;
+}
+
+.category span{
+position:relative;
+z-index:2;
+}
+
 .bikes{
-background:#2563eb;
+background-image:url('assets/Category/CAT_Bikee.jpg');
 }
 
 .wearables{
-background:#7c3aed;
+background-image:url('assets/wearables.jpg');
 }
 
 .accessories{
-background:#ea580c;
+background-image:url('assets/accessories.jpg');
 }
 
 .components{
-background:#dc2626;
+background-image:url('assets/components.jpg');
 }
 
 .wheels{
-background:#059669;
+background-image:url('assets/wheels.jpg');
 }
 
 .electronics{
-background:#0891b2;
+background-image:url('assets/electronics.jpg');
 }
 
 .hero{
