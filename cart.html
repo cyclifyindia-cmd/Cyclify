@@ -1,42 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport"
-content="width=device-width, initial-scale=1">
+content="width=device-width,initial-scale=1">
 
-<title>Cart</title>
+<title>Cart - Cyclify</title>
 
 <style>
 
-body{
-font-family:Arial,sans-serif;
-background:#f5f5f5;
+*{
 margin:0;
-padding:15px;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
 }
 
 .header{
 background:black;
+padding:10px 15px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.back{
 color:white;
+font-size:28px;
+text-decoration:none;
+}
+
+.logo{
+height:45px;
+}
+
+.cart-container{
 padding:15px;
-font-size:22px;
-font-weight:bold;
-margin:-15px -15px 20px;
 }
 
 .item{
+
 background:white;
 padding:15px;
 border-radius:12px;
-margin-bottom:10px;
+margin-bottom:12px;
+display:flex;
+gap:15px;
+align-items:center;
+
+}
+
+.item img{
+
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:10px;
+
+}
+
+.info{
+flex:1;
 }
 
 .price{
-font-weight:bold;
 color:#0039a6;
+font-weight:bold;
 margin-top:5px;
+}
+
+.quantity{
+
+display:flex;
+align-items:center;
+gap:12px;
+margin-top:10px;
+
+}
+
+.quantity button{
+
+width:30px;
+height:30px;
+border:none;
+border-radius:50%;
+background:black;
+color:white;
+font-size:18px;
+
 }
 
 .checkout{
@@ -53,6 +108,14 @@ margin-top:20px;
 
 }
 
+.total{
+
+font-size:22px;
+font-weight:bold;
+margin:20px 0;
+
+}
+
 </style>
 
 </head>
@@ -61,11 +124,35 @@ margin-top:20px;
 
 <div class="header">
 
-🛒 Cart
+<a
+href="javascript:history.back()"
+class="back">
+
+←
+
+</a>
+
+<a href="index.html">
+
+<img
+src="assets/Logo.png"
+class="logo">
+
+</a>
 
 </div>
 
-<div id="cartItems">
+<div
+class="cart-container">
+
+<div
+id="cartItems">
+
+</div>
+
+<div
+class="total"
+id="totalPrice">
 
 </div>
 
@@ -73,53 +160,198 @@ margin-top:20px;
 class="checkout"
 onclick="checkout()">
 
-Checkout on WhatsApp
+Checkout via WhatsApp
 
 </button>
+
+</div>
 
 <script>
 
 let cart=
+
 JSON.parse(
-localStorage.getItem("cart")
+
+localStorage.getItem(
+"cart"
+)
+
 )||[];
 
-const cartContainer=
+renderCart();
+
+function renderCart(){
+
+const container=
 document.getElementById(
 "cartItems"
 );
 
-let message=
-"Hi Cyclify,%0A%0AI want:%0A";
+container.innerHTML="";
 
-cart.forEach(item=>{
+let total=0;
 
-cartContainer.innerHTML += `
+cart.forEach(
+
+(item,index)=>{
+
+if(!item.quantity){
+
+item.quantity=1;
+
+}
+
+let price=
+
+parseInt(
+
+item.price
+.replace(/[₹,]/g,'')
+
+);
+
+total +=
+price*
+item.quantity;
+
+container.innerHTML +=`
 
 <div class="item">
 
-<h3>${item.name}</h3>
+<img src=
+"${item.image}">
+
+<div class="info">
+
+<h3>
+
+${item.name}
+
+</h3>
 
 <div class="price">
+
 ${item.price}
+
+</div>
+
+<div
+class="quantity">
+
+<button
+onclick=
+"decrease(${index})">
+
+−
+
+</button>
+
+<span>
+
+${item.quantity}
+
+</span>
+
+<button
+onclick=
+"increase(${index})">
+
++
+
+</button>
+
+</div>
+
 </div>
 
 </div>
 
 `;
 
-message +=
-item.name+" - "
-+item.price+"%0A";
+}
 
-});
+);
+
+document.getElementById(
+"totalPrice"
+).innerText=
+
+"Total: ₹"+
+total.toLocaleString();
+
+localStorage.setItem(
+"cart",
+JSON.stringify(
+cart
+)
+);
+
+}
+
+
+function increase(index){
+
+cart[index]
+.quantity++;
+
+renderCart();
+
+}
+
+
+function decrease(index){
+
+if(
+
+cart[index]
+.quantity>1
+
+){
+
+cart[index]
+.quantity--;
+
+}else{
+
+cart.splice(
+index,
+1
+);
+
+}
+
+renderCart();
+
+}
+
 
 function checkout(){
 
+let message=
+
+"Hi Cyclify,%0A%0AI want:%0A";
+
+cart.forEach(
+
+item=>{
+
+message +=
+
+item.name+
+
+" x"+
+
+item.quantity+
+
+"%0A";
+
+}
+
+);
+
 window.open(
 
-"https://wa.me/message/MLT2FFSAEYGIP1?text="
-+message
+"https://wa.me/message/MLT2FFSAEYGIP1?text="+message
 
 );
 
