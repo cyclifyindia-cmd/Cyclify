@@ -2,7 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
 <title>Product - Cyclify</title>
 
 <style>
@@ -20,10 +22,37 @@ background:#f5f5f5;
 
 .header{
 background:black;
-padding:10px 15px;
+padding:12px 15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 color:white;
 font-size:22px;
 font-weight:bold;
+}
+
+.cart-box{
+position:relative;
+text-decoration:none;
+color:white;
+font-size:24px;
+}
+
+.cart-count{
+
+position:absolute;
+top:-8px;
+right:-10px;
+background:red;
+color:white;
+font-size:12px;
+width:18px;
+height:18px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+
 }
 
 .product-container{
@@ -32,9 +61,8 @@ padding:15px;
 
 .product-card{
 background:white;
-border-radius:15px;
-overflow:hidden;
 padding:15px;
+border-radius:15px;
 }
 
 .product-image{
@@ -58,7 +86,7 @@ margin-top:10px;
 }
 
 .description{
-margin-top:15px;
+margin-top:20px;
 line-height:1.6;
 color:#555;
 }
@@ -69,28 +97,51 @@ gap:10px;
 margin-top:25px;
 }
 
-.cart-btn{
-
-flex:1;
-padding:15px;
-border:none;
-border-radius:12px;
-background:black;
-color:white;
-font-size:16px;
-font-weight:bold;
-}
-
+.cart-btn,
 .buy-btn{
 
 flex:1;
 padding:15px;
 border:none;
 border-radius:12px;
-background:#25D366;
-color:white;
 font-size:16px;
 font-weight:bold;
+}
+
+.cart-btn{
+background:black;
+color:white;
+}
+
+.buy-btn{
+background:#25D366;
+color:white;
+}
+
+.products{
+display:flex;
+overflow-x:auto;
+gap:10px;
+margin-top:15px;
+}
+
+.related-card{
+
+background:#f2f2f2;
+padding:10px;
+border-radius:10px;
+min-width:130px;
+text-align:center;
+
+}
+
+.related-card img{
+
+width:100%;
+height:90px;
+object-fit:cover;
+border-radius:8px;
+
 }
 
 </style>
@@ -103,14 +154,17 @@ font-weight:bold;
 <span>Cyclify</span>
 
 <a href="cart.html"
-style="
-color:white;
-text-decoration:none;
-font-size:24px;
-float:right;
-">
+class="cart-box">
 
 🛒
+
+<div
+class="cart-count"
+id="cartCount">
+
+0
+
+</div>
 
 </a>
 
@@ -121,29 +175,14 @@ float:right;
 <div class="product-card">
 
 <img
-src="assets/products/elvesbike.jpg"
 class="product-image">
 
-<div class="product-name">
-ELVES Road Bike
+<div
+class="product-name">
 </div>
 
-<div class="price">
-₹59,999
-</div>
-
-<div class="description">
-
-Ultra lightweight carbon frame road bike.
-
-• Carbon Frame
-
-• Shimano Groupset
-
-• Race Geometry
-
-• Premium Build
-
+<div
+class="price">
 </div>
 
 <div class="buttons">
@@ -166,6 +205,50 @@ Buy Now
 
 </div>
 
+<div class="description">
+
+<h3>Description</h3>
+
+<p id="productDescription">
+
+</p>
+
+</div>
+
+<div style="margin-top:30px;">
+
+<h3>
+Related Products
+</h3>
+
+<div class="products">
+
+<div class="related-card">
+
+<img src=
+"assets/products/sava-hawkeye.jpg">
+
+<p>
+Carbon Wheels
+</p>
+
+</div>
+
+<div class="related-card">
+
+<img src=
+"assets/products/sava-hawkeye.jpg">
+
+<p>
+Smart Trainer
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -175,17 +258,27 @@ Buy Now
 const products={
 
 1:{
-name:"SAVA Hawkeye 7.2",
-price:"₹1,89,900",
-image:"assets/products/sava-hawkeye.jpg",
-description:`
-Full Carbon Road Bike
+
+name:
+"SAVA Hawkeye 7.2",
+
+price:
+"₹1,89,900",
+
+image:
+"assets/products/sava-hawkeye.jpg",
+
+description:
+`Full Carbon Road Bike
 
 • Shimano 105 24-Speed
+
 • Hydraulic Disc Brakes
+
 • Carbon Frame
-• Lightweight Race Geometry
-`
+
+• Lightweight Race Geometry`
+
 }
 
 };
@@ -195,39 +288,90 @@ new URLSearchParams(
 window.location.search
 );
 
-const id=params.get("id");
+const id=
+params.get("id");
 
-const product=products[id];
+const product=
+products[id];
 
-document.querySelector(".product-image")
-.src=product.image;
+document.querySelector(
+".product-image"
+).src=
+product.image;
 
-document.querySelector(".product-name")
-.innerText=product.name;
+document.querySelector(
+".product-name"
+).innerText=
+product.name;
 
-document.querySelector(".price")
-.innerText=product.price;
+document.querySelector(
+".price"
+).innerText=
+product.price;
 
-document.querySelector(".description")
-.innerText=
+document.getElementById(
+"productDescription"
+).innerText=
 product.description;
+
+
+updateCartCount();
 
 
 function addToCart(){
 
 let cart=
+
 JSON.parse(
-localStorage.getItem("cart")
+
+localStorage.getItem(
+"cart"
+
+)
+
 )||[];
 
 cart.push(product);
 
 localStorage.setItem(
+
 "cart",
-JSON.stringify(cart)
+
+JSON.stringify(
+cart
+)
+
 );
 
-alert("Added To Cart");
+updateCartCount();
+
+alert(
+"Added To Cart"
+);
+
+}
+
+
+function updateCartCount(){
+
+let cart=
+
+JSON.parse(
+
+localStorage.getItem(
+"cart"
+
+)
+
+)||[];
+
+document.getElementById(
+
+"cartCount"
+
+).innerText=
+
+cart.length;
 
 }
 
@@ -235,52 +379,24 @@ alert("Added To Cart");
 function buyNow(){
 
 let message=
+
 encodeURIComponent(
 
 "Hi Cyclify,\n\nI want:\n"
+
 +product.name+
-"\n"+product.price
 
-);
+"\n"
 
-window.open(
-"https://wa.me/message/MLT2FFSAEYGIP1?text="+message
-);
-
-}
-
-</script>
-
-cart.push({
-
-name:"ELVES Road Bike",
-price:"₹59,999"
-
-});
-
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
-
-alert(
-"Added to Cart"
-);
-
-}
-
-function buyNow(){
-
-let message=
-encodeURIComponent(
-
-"Hi Cyclify,%0A%0AI want to buy:%0AELVES Road Bike%0APrice: ₹59,999"
++product.price
 
 );
 
 window.open(
 
-"https://wa.me/message/MLT2FFSAEYGIP1?text="+message
+"https://wa.me/message/MLT2FFSAEYGIP1?text="
+
++message
 
 );
 
