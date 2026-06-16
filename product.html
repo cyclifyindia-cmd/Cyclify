@@ -7,52 +7,90 @@
 
 <style>
 
-body{
-font-family:Arial,sans-serif;
-background:#f5f5f5;
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+.header{
+background:black;
+padding:10px 15px;
+color:white;
+font-size:22px;
+font-weight:bold;
+}
+
+.product-container{
 padding:15px;
 }
 
-.product{
+.product-card{
 background:white;
-padding:15px;
 border-radius:15px;
+overflow:hidden;
+padding:15px;
 }
 
-.product img{
+.product-image{
 width:100%;
-border-radius:10px;
+height:300px;
+object-fit:cover;
+border-radius:12px;
 }
 
-h2{
+.product-name{
+font-size:28px;
+font-weight:bold;
 margin-top:15px;
 }
 
 .price{
-font-size:22px;
+font-size:24px;
 font-weight:bold;
-margin:15px 0;
-}
-
-button{
-width:100%;
-padding:15px;
-border:none;
-border-radius:10px;
-font-size:16px;
-font-weight:bold;
+color:#0039a6;
 margin-top:10px;
 }
 
+.description{
+margin-top:15px;
+line-height:1.6;
+color:#555;
+}
+
+.buttons{
+display:flex;
+gap:10px;
+margin-top:25px;
+}
+
 .cart-btn{
+
+flex:1;
+padding:15px;
+border:none;
+border-radius:12px;
 background:black;
 color:white;
+font-size:16px;
+font-weight:bold;
 }
 
 .buy-btn{
+
+flex:1;
+padding:15px;
+border:none;
+border-radius:12px;
 background:#25D366;
 color:white;
+font-size:16px;
+font-weight:bold;
 }
 
 </style>
@@ -60,25 +98,61 @@ color:white;
 
 <body>
 
-<div class="product">
+<div class="header">
+Cyclify
+</div>
 
-<img src="assets/sample-bike.jpg">
+<div class="product-container">
 
-<h2>ELVES Road Bike</h2>
+<div class="product-card">
+
+<img
+src="assets/products/elvesbike.jpg"
+class="product-image">
+
+<div class="product-name">
+ELVES Road Bike
+</div>
 
 <div class="price">
 ₹59,999
 </div>
 
-<button class="cart-btn"
+<div class="description">
+
+Ultra lightweight carbon frame road bike.
+
+• Carbon Frame
+
+• Shimano Groupset
+
+• Race Geometry
+
+• Premium Build
+
+</div>
+
+<div class="buttons">
+
+<button
+class="cart-btn"
 onclick="addToCart()">
+
 Add To Cart
+
 </button>
 
-<button class="buy-btn"
+<button
+class="buy-btn"
 onclick="buyNow()">
+
 Buy Now
+
 </button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -86,15 +160,15 @@ Buy Now
 
 function addToCart(){
 
-let cart =
+let cart=
 JSON.parse(
 localStorage.getItem("cart")
-) || [];
+)||[];
 
 cart.push({
 
 name:"ELVES Road Bike",
-price:59999
+price:"₹59,999"
 
 });
 
@@ -103,20 +177,25 @@ localStorage.setItem(
 JSON.stringify(cart)
 );
 
-alert("Added to cart");
+alert(
+"Added to Cart"
+);
 
 }
 
 function buyNow(){
 
-let message =
+let message=
 encodeURIComponent(
-"Hi Cyclify,\n\nI want to buy:\nELVES Road Bike\nPrice: ₹59,999"
+
+"Hi Cyclify,%0A%0AI want to buy:%0AELVES Road Bike%0APrice: ₹59,999"
+
 );
 
 window.open(
-"https://wa.me/message/MLT2FFSAEYGIP1?text="+message,
-"_blank"
+
+"https://wa.me/message/MLT2FFSAEYGIP1?text="+message
+
 );
 
 }
