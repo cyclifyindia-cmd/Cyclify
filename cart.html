@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>Cart</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+margin:0;
+padding:15px;
+}
+
+.header{
+background:black;
+color:white;
+padding:15px;
+font-size:22px;
+font-weight:bold;
+margin:-15px -15px 20px;
+}
+
+.item{
+background:white;
+padding:15px;
+border-radius:12px;
+margin-bottom:10px;
+}
+
+.price{
+font-weight:bold;
+color:#0039a6;
+margin-top:5px;
+}
+
+.checkout{
+
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#25D366;
+color:white;
+font-size:18px;
+font-weight:bold;
+margin-top:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+🛒 Cart
+
+</div>
+
+<div id="cartItems">
+
+</div>
+
+<button
+class="checkout"
+onclick="checkout()">
+
+Checkout on WhatsApp
+
+</button>
+
+<script>
+
+let cart=
+JSON.parse(
+localStorage.getItem("cart")
+)||[];
+
+const cartContainer=
+document.getElementById(
+"cartItems"
+);
+
+let message=
+"Hi Cyclify,%0A%0AI want:%0A";
+
+cart.forEach(item=>{
+
+cartContainer.innerHTML += `
+
+<div class="item">
+
+<h3>${item.name}</h3>
+
+<div class="price">
+${item.price}
+</div>
+
+</div>
+
+`;
+
+message +=
+item.name+" - "
++item.price+"%0A";
+
+});
+
+function checkout(){
+
+window.open(
+
+"https://wa.me/message/MLT2FFSAEYGIP1?text="
++message
+
+);
+
+}
+
+</script>
+
+</body>
+</html>
