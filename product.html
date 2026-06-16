@@ -158,12 +158,84 @@ Buy Now
 
 <script>
 
+const products={
+
+1:{
+name:"SAVA Hawkeye 7.2",
+price:"₹1,89,900",
+image:"assets/products/sava-hawkeye.jpg",
+description:`
+Full Carbon Road Bike
+
+• Shimano 105 24-Speed
+• Hydraulic Disc Brakes
+• Carbon Frame
+• Lightweight Race Geometry
+`
+}
+
+};
+
+const params=
+new URLSearchParams(
+window.location.search
+);
+
+const id=params.get("id");
+
+const product=products[id];
+
+document.querySelector(".product-image")
+.src=product.image;
+
+document.querySelector(".product-name")
+.innerText=product.name;
+
+document.querySelector(".price")
+.innerText=product.price;
+
+document.querySelector(".description")
+.innerText=
+product.description;
+
+
 function addToCart(){
 
 let cart=
 JSON.parse(
 localStorage.getItem("cart")
 )||[];
+
+cart.push(product);
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+alert("Added To Cart");
+
+}
+
+
+function buyNow(){
+
+let message=
+encodeURIComponent(
+
+"Hi Cyclify,\n\nI want:\n"
++product.name+
+"\n"+product.price
+
+);
+
+window.open(
+"https://wa.me/message/MLT2FFSAEYGIP1?text="+message
+);
+
+}
+
+</script>
 
 cart.push({
 
