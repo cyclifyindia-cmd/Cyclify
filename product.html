@@ -193,11 +193,56 @@ onclick="addToCart()">
 
 Add To Cart
 
-</button>
+function addToCart(){
 
-<button
-class="buy-btn"
-onclick="buyNow()">
+let cart=
+
+JSON.parse(
+localStorage.getItem(
+"cart"
+)
+
+)||[];
+
+let exists=
+
+cart.find(
+item=>
+item.name===
+product.name
+);
+
+if(exists){
+
+exists.quantity++;
+
+}else{
+
+product.quantity=1;
+
+cart.push(
+product
+);
+
+}
+
+localStorage.setItem(
+
+"cart",
+
+JSON.stringify(
+cart
+)
+
+);
+
+updateCartCount();
+
+alert(
+"Added To Cart"
+);
+
+}
 
 Buy Now
 
