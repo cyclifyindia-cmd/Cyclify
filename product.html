@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"
-content="width=device-width, initial-scale=1">
+content="width=device-width,initial-scale=1">
 
-<title>Product - Cyclify</title>
+<title>Cyclify Product</title>
 
 <style>
 
@@ -18,160 +18,210 @@ font-family:Arial,sans-serif;
 
 body{
 background:#f5f5f5;
+padding-bottom:90px;
 }
 
-..header{
+/* HEADER */
+
+.header{
+
 background:black;
-padding:8px 12px;
+padding:12px 15px;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-bottom:1px solid #e5e5e5;
+
+position:sticky;
+top:0;
+z-index:1000;
+
 }
 
-.left-header{
+.left{
+
 display:flex;
 align-items:center;
-gap:12px;
+gap:15px;
+
 }
 
 .back{
+
 color:white;
-font-size:28px;
 text-decoration:none;
+font-size:24px;
+
 }
 
 .logo{
-height:38px;
+
+color:#ff2a2a;
+font-size:22px;
+font-weight:bold;
+
 }
 
-.cart-box{
+.cart{
+
 position:relative;
-color:white;
 font-size:24px;
 text-decoration:none;
-}
-
-.cart-count{
-position:absolute;
-top:-8px;
-right:-10px;
-background:red;
 color:white;
-width:18px;
-height:18px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:12px;
+
 }
 
-.product-container{
-padding:15px;
-}
+/* PRODUCT */
 
-.breadcrumb{
-margin-bottom:12px;
-font-size:14px;
-color:#666;
-}
+.product{
 
-.product-card{
 background:white;
-padding:15px;
-border-radius:15px;
+padding:20px;
+
 }
 
-.product-image{
+.product img{
+
 width:100%;
 height:300px;
 object-fit:contain;
-border-radius:12px;
-background:#f8f8f8;
+
 }
 
-.product-name{
+.name{
+
 font-size:28px;
 font-weight:bold;
 margin-top:15px;
+
 }
 
 .price{
-font-size:24px;
+
+font-size:32px;
 font-weight:bold;
-color:#0039a6;
-margin-top:10px;
+margin:10px 0;
+
 }
 
-.description{
-margin-top:25px;
-line-height:1.8;
-color:#555;
+.mrp{
+
+color:gray;
+margin-bottom:20px;
+
 }
+
+/* BUTTONS */
 
 .buttons{
+
 display:flex;
 gap:10px;
-margin-top:25px;
+
+margin-bottom:20px;
+
 }
 
-.cart-btn,
-.buy-btn{
+.btn{
 
 flex:1;
 padding:15px;
+
 border:none;
+
 border-radius:12px;
+
 font-size:16px;
 font-weight:bold;
 
 }
 
-.cart-btn{
+.cartbtn{
+
 background:black;
 color:white;
+
 }
 
-.buy-btn{
+.buybtn{
+
 background:#25D366;
 color:white;
+
 }
 
-.related-title{
-margin-top:35px;
-margin-bottom:15px;
+/* SECTION */
+
+.section{
+
+background:white;
+margin-top:10px;
+padding:20px;
+
 }
 
-.products{
+.spec{
+
+padding:15px;
+background:#fafafa;
+border-radius:12px;
+margin-top:10px;
+
+}
+
+/* RELATED */
+
+.related{
+
 display:flex;
-gap:10px;
 overflow-x:auto;
+gap:12px;
+margin-top:15px;
+
 }
 
 .related-card{
 
-background:#f2f2f2;
-padding:10px;
-border-radius:12px;
 min-width:140px;
-text-align:center;
+
+background:#fafafa;
+
+padding:10px;
+
+border-radius:12px;
 
 }
 
 .related-card img{
 
 width:100%;
-height:90px;
-object-fit:cover;
-border-radius:10px;
+height:100px;
+object-fit:contain;
 
 }
 
-.related-card p{
-margin-top:8px;
+/* FOOTER FEATURES */
+
+.features{
+
+background:white;
+
+margin-top:15px;
+padding:20px;
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+
+}
+
+.feature{
+
+text-align:center;
+
 font-size:14px;
 font-weight:bold;
+
 }
 
 </style>
@@ -181,128 +231,106 @@ font-weight:bold;
 
 <div class="header">
 
-<div class="left-header">
+<div class="left">
 
-<a
-href="javascript:history.back()"
+<a href="bikes-frames.html"
 class="back">
 
 ←
 
 </a>
 
-<a href="index.html">
+<div class="logo">
 
-<img
-src="assets/Logo.png"
-class="logo">
-
-</a>
+Cyclify
 
 </div>
 
-<a
-href="cart.html"
-class="cart-box">
+</div>
+
+<a href="cart.html"
+class="cart">
 
 🛒
 
-<div
-class="cart-count"
-id="cartCount">
-
-0
-
-</div>
-
 </a>
 
 </div>
 
-<div class="product-container">
+<div class="product">
 
-<div class="breadcrumb">
+<img id="productImage">
 
-Home > Bikes & Frames
-
-</div>
-
-<div class="product-card">
-
-<img
-class="product-image">
-
-<div
-class="product-name">
+<div class="name"
+id="productName">
 
 </div>
 
-<div
-class="price">
+<div class="price"
+id="productPrice">
+
+</div>
+
+<div class="mrp">
+
+MRP ₹2,10,000
 
 </div>
 
 <div class="buttons">
 
 <button
-class="cart-btn"
-onclick="addToCart()">
+class="btn cartbtn">
 
-Add To Cart
+Add to Cart
 
 </button>
 
 <button
-class="buy-btn"
-onclick="buyNow()">
+class="btn buybtn">
 
-Buy Now
+WhatsApp Buy
 
 </button>
 
 </div>
 
-<div class="description">
-
-<h3>Description</h3>
-
-<p id="productDescription">
-
-</p>
-
 </div>
 
-<h3 class="related-title">
+<div class="section">
 
-Related Products
-
+<h3>
+Specifications
 </h3>
 
-<div class="products">
+<div class="spec">
+Frame : Carbon Fiber
+</div>
+
+<div class="spec">
+Brakes : Hydraulic Disc
+</div>
+
+<div class="spec">
+Wheel : 29"
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h3>
+Related Products
+</h3>
+
+<div class="related">
 
 <div class="related-card">
 
-<img
-src="assets/products/carbon-wheel.jpg">
+<img src="assets/products/trek.jpg">
 
-<p>
-
-Carbon Wheels
-
-</p>
-
-</div>
-
-<div class="related-card">
-
-<img
-src="assets/products/trainer.jpg">
-
-<p>
-
-Smart Trainer
-
-</p>
+<p>Trek Marlin</p>
 
 </div>
 
@@ -310,158 +338,26 @@ Smart Trainer
 
 </div>
 
+
+<div class="features">
+
+<div class="feature">
+✅ Authentic Products
 </div>
 
-<script>
+<div class="feature">
+🚚 Fast Delivery
+</div>
 
-const products={
+<div class="feature">
+📱 WhatsApp Support
+</div>
 
-1:{
+<div class="feature">
+🔒 Secure Shopping
+</div>
 
-name:
-"SAVA Hawkeye 7.2",
-
-price:
-"₹1,89,900",
-
-image:
-"assets/products/sava-hawkeye.jpg",
-
-description:
-`Full Carbon Road Bike
-
-• Shimano 105 24-Speed
-
-• Hydraulic Disc Brakes
-
-• Carbon Frame
-
-• Lightweight Race Geometry`
-
-}
-
-};
-
-const params=
-new URLSearchParams(
-window.location.search
-);
-
-const id=
-params.get("id");
-
-const product=
-products[id];
-
-document.querySelector(
-".product-image"
-).src=
-product.image;
-
-document.querySelector(
-".product-name"
-).innerText=
-product.name;
-
-document.querySelector(
-".price"
-).innerText=
-product.price;
-
-document.getElementById(
-"productDescription"
-).innerText=
-product.description;
-
-updateCartCount();
-
-function addToCart(){
-
-let cart=
-JSON.parse(
-localStorage.getItem(
-"cart"
-)
-)||[];
-
-let exists=
-cart.find(
-item=>
-item.name===
-product.name
-);
-
-if(exists){
-
-exists.quantity++;
-
-}else{
-
-product.quantity=1;
-
-cart.push(product);
-
-}
-
-localStorage.setItem(
-
-"cart",
-JSON.stringify(cart)
-
-);
-
-updateCartCount();
-
-alert(
-"Added To Cart"
-);
-
-}
-
-function updateCartCount(){
-
-let cart=
-JSON.parse(
-localStorage.getItem(
-"cart"
-)
-)||[];
-
-let total=0;
-
-cart.forEach(item=>{
-
-total +=
-item.quantity || 1;
-
-});
-
-document.getElementById(
-"cartCount"
-).innerText=
-total;
-
-}
-
-function buyNow(){
-
-let message=
-encodeURIComponent(
-
-"Hi Cyclify,\n\nI want:\n"+
-product.name+
-"\n"+
-product.price
-
-);
-
-window.open(
-"https://wa.me/message/MLT2FFSAEYGIP1?text="+message
-);
-
-}
-
-</script>
+</div>
 
 </body>
 </html>
