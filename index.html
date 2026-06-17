@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
 <title>Cyclify</title>
 
 <style>
@@ -14,212 +18,361 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
-body{
+html,body{
+overflow-x:hidden;
+width:100%;
 background:#f5f5f5;
 }
 
+/* HEADER */
+
 .header{
+
 background:black;
-padding:6px 12px;
+padding:10px 15px;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
+
+position:sticky;
+top:0;
+z-index:1000;
+
 }
 
 .logo{
-height:50px;
+
+height:45px;
+
 }
 
 .icons{
+
 display:flex;
-gap:15px;
-font-size:24px;
+gap:20px;
+font-size:25px;
+
 }
 
 .icons a{
-color:white;
+
 text-decoration:none;
+color:white;
+
 }
 
+/* SEARCH */
+
 .search{
-padding:12px;
+
+padding:15px;
 background:white;
+
 }
 
 .search-box{
+
 position:relative;
+
 }
 
 .search-box input{
+
 width:100%;
 padding:15px;
 border:none;
-border-radius:12px;
+border-radius:15px;
 background:#f2f2f2;
 font-size:16px;
 outline:none;
-}
 
-.search-placeholder{
-position:absolute;
-left:15px;
-top:50%;
-transform:translateY(-50%);
-display:flex;
-align-items:center;
-gap:8px;
-pointer-events:none;
-color:#777;
-font-size:16px;
-white-space:nowrap;
 }
 
 .search-box input:focus{
+
 background:white;
 box-shadow:0 0 0 2px #0039a6;
+
 }
 
-.location{
-background:white;
-padding:0 15px 15px;
-font-size:15px;
-font-weight:bold;
+.search-placeholder{
+
+position:absolute;
+
+left:15px;
+top:50%;
+
+transform:translateY(-50%);
+
+display:flex;
+align-items:center;
+gap:8px;
+
+pointer-events:none;
+
+color:gray;
+
 }
+
+/* OFFERS */
 
 .offer{
+
 background:#0039a6;
-color:white;
+
 padding:15px;
+
 display:flex;
 overflow-x:auto;
 gap:10px;
+
+}
+
+.offer::-webkit-scrollbar{
+
+display:none;
+
 }
 
 .offer-box{
-min-width:160px;
+
+min-width:150px;
+
 background:white;
-color:black;
-padding:10px;
-border-radius:8px;
+
+padding:15px;
+
+border-radius:12px;
+
 text-align:center;
-font-size:14px;
+
 }
 
+.offer-box h3{
+
+margin-bottom:5px;
+
+}
+
+/* CATEGORIES */
+
 .categories{
+
 padding:15px;
+
 display:grid;
+
 grid-template-columns:repeat(2,1fr);
+
 gap:12px;
+
 }
 
 .category{
+
 height:180px;
-border-radius:12px;
+
+border-radius:16px;
+
 background-size:cover;
 background-position:center;
+
 text-decoration:none;
-overflow:hidden;
+
+transition:.3s;
+
+}
+
+.category:hover{
+
+transform:scale(.97);
+
 }
 
 .bikes{
-background-image:url('assets/categories/CAT_BIKEE.png');
+
+background-image:url("assets/categories/CAT_BIKEE.png");
+
 }
 
 .wearables{
-background-image:url('assets/categories/CAT_Wearables.png');
+
+background-image:url("assets/categories/CAT_Wearables.png");
+
 }
 
 .accessories{
-background-image:url('assets/categories/CAT_ACC.png');
+
+background-image:url("assets/categories/CAT_ACC.png");
+
 }
 
 .components{
-background-image:url('assets/categories/CAT_Components.png');
+
+background-image:url("assets/categories/CAT_Components.png");
+
 }
 
 .wheels{
-background-image:url('assets/categories/CAT_Wheels.png');
+
+background-image:url("assets/categories/CAT_Wheels.png");
+
 }
 
 .electronics{
-background-image:url('assets/categories/CAT_Electronics.png');
+
+background-image:url("assets/categories/CAT_Electronics.png");
+
 }
 
+/* HERO */
+
 .hero{
+
 margin:15px;
-background:#111827;
-color:white;
-border-radius:20px;
+
 padding:30px 20px;
+
+border-radius:20px;
+
+background:linear-gradient(
+135deg,
+#111827,
+#000000
+);
+
+color:white;
+
 }
 
 .hero h2{
-font-size:34px;
+
+font-size:35px;
+
 margin-bottom:10px;
+
 }
 
 .hero p{
-font-size:16px;
+
 margin-bottom:20px;
+line-height:1.5;
+
 }
 
 .btn{
-background:white;
-color:black;
-padding:12px 24px;
-border-radius:30px;
+
 display:inline-block;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+background:white;
+
+color:black;
+
 font-weight:bold;
+
 text-decoration:none;
+
 }
 
+/* FEATURES */
+
 .features{
-background:white;
+
 margin-top:15px;
+
+background:white;
+
 padding:20px;
+
 display:grid;
+
 grid-template-columns:repeat(2,1fr);
+
 gap:15px;
+
 text-align:center;
+
 }
 
 .feature{
+
 font-size:14px;
 font-weight:bold;
+
+padding:15px;
+
+background:#fafafa;
+
+border-radius:12px;
+
 }
 
+/* WHATSAPP */
+
 .whatsapp{
+
 position:fixed;
+
 bottom:20px;
 right:20px;
-background:#25D366;
-color:white;
+
 width:60px;
 height:60px;
+
 border-radius:50%;
+
+background:#25D366;
+
 display:flex;
-align-items:center;
+
 justify-content:center;
-font-size:28px;
+align-items:center;
+
+font-size:30px;
+
 text-decoration:none;
-box-shadow:0 4px 15px rgba(0,0,0,0.3);
+
+color:white;
+
+box-shadow:0 4px 15px rgba(0,0,0,.3);
+
 }
 
 </style>
+
 </head>
 
 <body>
 
+
+<!-- HEADER -->
+
 <div class="header">
 
-<img src="assets/Logo.png" class="logo">
+<img src="assets/Logo.png"
+class="logo">
 
 <div class="icons">
-<a href="account.html">👤</a>
-<a href="cart.html">🛒</a>
+
+<a href="account.html">
+👤
+</a>
+
+<a href="cart.html">
+🛒
+</a>
+
 </div>
 
 </div>
+
+
+<!-- SEARCH -->
 
 <div class="search">
 
@@ -230,130 +383,244 @@ type="text"
 id="searchInput"
 autocomplete="off">
 
-<div class="search-placeholder" id="animatedPlaceholder">
+<div
+class="search-placeholder"
+id="animatedPlaceholder">
+
 <span>🔍</span>
-<span id="typingText"></span>
-</div>
+
+<span id="typingText">
+
+</span>
 
 </div>
 
 </div>
 
+</div>
 
+
+<!-- OFFERS -->
 
 <div class="offer">
 
 <div class="offer-box">
+
 <h3>₹100 OFF</h3>
-<p>Code: CY100</p>
+
+<p>Code : CY100</p>
+
 </div>
 
+
 <div class="offer-box">
+
 <h3>₹200 OFF</h3>
-<p>Code: CY200</p>
+
+<p>Code : CY200</p>
+
 </div>
+
 
 <div class="offer-box">
+
 <h3>₹300 OFF</h3>
-<p>Code: CY300</p>
+
+<p>Code : CY300</p>
+
 </div>
 
 </div>
+
+
+<!-- CATEGORIES -->
 
 <div class="categories">
 
-<a href="bikes-frames.html" class="category bikes"></a>
+<a
+href="bikes-frames/index.html"
+class="category bikes">
+</a>
 
-<a href="wearables.html" class="category wearables"></a>
+<a
+href="wearables/index.html"
+class="category wearables">
+</a>
 
-<a href="accessories.html" class="category accessories"></a>
+<a
+href="accessories/index.html"
+class="category accessories">
+</a>
 
-<a href="components.html" class="category components"></a>
+<a
+href="components/index.html"
+class="category components">
+</a>
 
-<a href="wheels-tyres.html" class="category wheels"></a>
+<a
+href="wheels-tyres/index.html"
+class="category wheels">
+</a>
 
-<a href="electronics.html" class="category electronics"></a>
+<a
+href="electronics/index.html"
+class="category electronics">
+</a>
 
 </div>
+
+
+<!-- HERO -->
 
 <div class="hero">
 
-<h2>Ride Further.</h2>
+<h2>
+Ride Further.
+</h2>
 
 <p>
-Premium Cycling Products for Every Rider.
+
+Premium Cycling Products
+for every rider.
+
 </p>
 
-<a href="bikes-frames.html" class="btn">
+<a
+href="bikes-frames/index.html"
+class="btn">
+
 Shop Now
+
 </a>
 
 </div>
+
+
+<!-- FEATURES -->
 
 <div class="features">
 
-<div class="feature">✅ Authentic Products</div>
+<div class="feature">
 
-<div class="feature">🚚 Fast Delivery</div>
-
-<div class="feature">📱 WhatsApp Support</div>
-
-<div class="feature">🔒 Secure Shopping</div>
+✅ Authentic Products
 
 </div>
 
-<a class="whatsapp"
+<div class="feature">
+
+🚚 Fast Delivery
+
+</div>
+
+<div class="feature">
+
+📱 WhatsApp Support
+
+</div>
+
+<div class="feature">
+
+🔒 Secure Shopping
+
+</div>
+
+</div>
+
+
+<!-- WHATSAPP -->
+
+<a
+class="whatsapp"
 href="https://wa.me/message/MLT2FFSAEYGIP1">
+
 💬
+
 </a>
+
+
 
 <script>
 
-const words = [
+const words=[
+
 "ELVES Road Bikes",
 "Smart Trainers",
-"Carbon Wheels"
+"Carbon Wheels",
+"Cycling Accessories"
+
 ];
 
-const textElement = document.getElementById("typingText");
-const placeholder = document.getElementById("animatedPlaceholder");
-const input = document.getElementById("searchInput");
+const textElement=
+document.getElementById(
+"typingText"
+);
 
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+const placeholder=
+document.getElementById(
+"animatedPlaceholder"
+);
+
+const input=
+document.getElementById(
+"searchInput"
+);
+
+let wordIndex=0;
+let charIndex=0;
+let deleting=false;
+
 
 function animateText(){
 
-const currentWord = words[wordIndex];
+const currentWord=
+words[wordIndex];
 
 if(!deleting){
 
-textElement.textContent =
-currentWord.substring(0,charIndex+1);
+textElement.textContent=
+currentWord.substring(
+0,
+charIndex+1
+);
 
 charIndex++;
 
-if(charIndex === currentWord.length){
+if(
+charIndex===
+currentWord.length
+){
 
-deleting = true;
+deleting=true;
 
-setTimeout(animateText,1500);
+setTimeout(
+animateText,
+1500
+);
+
 return;
 
 }
 
-}else{
+}
 
-textElement.textContent =
-currentWord.substring(0,charIndex-1);
+else{
+
+textElement.textContent=
+currentWord.substring(
+0,
+charIndex-1
+);
 
 charIndex--;
 
-if(charIndex === 0){
+if(charIndex===0){
 
-deleting = false;
-wordIndex = (wordIndex + 1) % words.length;
+deleting=false;
+
+wordIndex=
+(wordIndex+1)
+%
+words.length;
 
 }
 
@@ -368,21 +635,31 @@ deleting ? 60 : 120
 
 animateText();
 
-input.addEventListener("focus",()=>{
 
-placeholder.style.display="none";
+input.addEventListener(
+"focus",
+()=>{
 
-});
+placeholder.style.display=
+"none";
 
-input.addEventListener("blur",()=>{
+}
+);
+
+
+input.addEventListener(
+"blur",
+()=>{
 
 if(input.value===""){
 
-placeholder.style.display="flex";
+placeholder.style.display=
+"flex";
 
 }
 
-});
+}
+);
 
 </script>
 
