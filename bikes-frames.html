@@ -1,342 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width,initial-scale=1">
-
-<title>Cyclify | Bikes & Frames</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bikes & Frames - Cyclify</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
+font-family:Arial,sans-serif;
 background:#f5f5f5;
+margin:0;
+padding:15px;
 }
 
-/* HEADER */
-
-.header{
-
-background:black;
-padding:12px 15px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-position:sticky;
-top:0;
-z-index:100;
-
+h2{
+margin-bottom:15px;
 }
-
-.left{
-
-display:flex;
-align-items:center;
-gap:15px;
-
-}
-
-.back{
-
-font-size:25px;
-color:white;
-text-decoration:none;
-
-}
-
-.title{
-
-color:white;
-font-size:20px;
-font-weight:bold;
-
-}
-
-.cart{
-
-font-size:24px;
-color:white;
-text-decoration:none;
-
-}
-
-/* PAGE TITLE */
-
-.page-title{
-
-padding:20px;
-font-size:30px;
-font-weight:bold;
-
-}
-
-/* PRODUCTS */
 
 .products{
-
 display:grid;
 grid-template-columns:repeat(2,1fr);
-
-gap:0;
-
-padding-bottom:100px;
-
+gap:12px;
 }
 
 .card{
-
 background:white;
-border-bottom:1px solid #eee;
-border-right:1px solid #eee;
-
+padding:10px;
+border-radius:12px;
+text-decoration:none;
+color:black;
 }
 
 .card img{
-
 width:100%;
-height:190px;
-object-fit:contain;
-
-background:#fafafa;
-
-}
-
-.details{
-
-padding:10px;
-
-}
-
-.details h3{
-
-font-size:16px;
-line-height:1.4;
-margin-bottom:15px;
-height:45px;
-
+height:150px;
+object-fit:cover;
+border-radius:10px;
 }
 
 .price{
-
-font-size:22px;
 font-weight:bold;
-margin-bottom:5px;
-
-}
-
-.mrp{
-
-color:gray;
-font-size:14px;
-margin-bottom:25px;
-
-}
-
-.bottom{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-}
-
-.heart{
-
-width:45px;
-height:45px;
-
-border:2px solid #ddd;
-border-radius:12px;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:22px;
-
-}
-
-.add{
-
-padding:12px 20px;
-
-background:white;
-
-border:2px solid #ddd;
-
-border-radius:12px;
-
-font-weight:bold;
-
+margin-top:5px;
+color:#0039a6;
 }
 
 </style>
-
 </head>
 
 <body>
 
+<h2>🚴 Bikes & Frames</h2>
 
-<div class="header">
+<div class="products">
 
-<div class="left">
+<a href="product.html?id=1" class="card">
 
-<a
-href="../index.html"
-class="back">
+<img src="assets/products/sava-hawkeye.jpg">
 
-←
-
-</a>
-
-<div class="title">
-
-Cyclify
-
-</div>
-
-</div>
-
-<a
-href="../cart.html"
-class="cart">
-
-🛒
-
-</a>
-
-</div>
-
-
-<div class="page-title">
-
-🚴 Bikes & Frames
-
-</div>
-
-
-<div class="products"
-id="products">
-
-</div>
-
-
-<script>
-
-const products=[
-
-{
-
-id:1,
-name:"SAVA Hawkeye 7.2",
-price:"₹1,89,900",
-mrp:"₹2,10,000",
-image:"../assets/bikes/sava.png"
-
-},
-
-{
-
-id:2,
-name:"Trek Marlin 7",
-price:"₹78,999",
-mrp:"₹89,999",
-image:"../assets/bikes/trek.png"
-
-},
-
-{
-
-id:3,
-name:"Polygon Premier",
-price:"₹92,999",
-mrp:"₹1,10,000",
-image:"../assets/bikes/polygon.png"
-
-},
-
-{
-
-id:4,
-name:"Carbon Racing Frame",
-price:"₹45,999",
-mrp:"₹53,000",
-image:"../assets/bikes/frame.png"
-
-}
-
-];
-
-const container=
-document.getElementById(
-"products"
-);
-
-products.forEach(product=>{
-
-container.innerHTML+=`
-
-<div class="card">
-
-<img src="${product.image}">
-
-<div class="details">
-
-<h3>
-
-${product.name}
-
-</h3>
+<h3>SAVA Hawkeye 7.2</h3>
 
 <div class="price">
-
-${product.price}
-
+₹1,89,900
 </div>
 
-<div class="mrp">
-
-MRP ${product.mrp}
+</a>
 
 </div>
-
-<div class="bottom">
-
-<div class="heart">
-
-♡
-
-</div>
-
-<button
-class="add">
-
-Add to cart
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-</script>
 
 </body>
 </html>
