@@ -1172,7 +1172,30 @@ specs:[
 const params=new URLSearchParams(window.location.search);
 const productId=Number(params.get("id"))||1;
 const product=products.find(item=>item.id===productId)||products[0];
-const productImages=product.images||[product.image];
+let productImages=product.images||[product.image];
+
+const cyclamiGallery=[
+"assets/products/cyclami-electric-air-pump-1.webp",
+"assets/products/cyclami-electric-air-pump-2.webp",
+"assets/products/cyclami-web-pump-a2-2.webp",
+"assets/products/cyclami-web-pump-a2-4.webp",
+"assets/products/cyclami-web-pump-a2-6.webp",
+"assets/products/cyclami-web-pump-a3-1.webp",
+"assets/products/cyclami-1200-high-brightness-light.webp",
+"assets/products/cyclami-carbon-computer-holder.webp",
+"assets/products/cyclami-s2-computer-mount.webp"
+];
+
+if(product.name.toLowerCase().includes("cyclami")){
+
+productImages=[
+...new Set([
+...productImages,
+...cyclamiGallery
+])
+];
+
+}
 let currentImageIndex=0;
 let selectedSize=product.sizes&&product.sizes.length?product.sizes[0]:"";
 
