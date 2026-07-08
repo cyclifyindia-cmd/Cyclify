@@ -86,7 +86,25 @@ font-size:24px;
 
 text-decoration:none;
 color:black;
+position:relative;
 
+}
+
+.cart-count{
+position:absolute;
+top:-8px;
+right:-10px;
+min-width:18px;
+height:18px;
+padding:0 5px;
+border-radius:9px;
+background:#ff2a2a;
+color:white;
+font-size:11px;
+font-weight:bold;
+display:none;
+align-items:center;
+justify-content:center;
 }
 
 
@@ -282,6 +300,9 @@ placeholder="Search Bikes">
 
 <a href="cart.html">
 🛒
+<span class="cart-count"
+id="cartCount">
+</span>
 </a>
 
 </div>
@@ -337,7 +358,8 @@ id:1,
 name:"SAVA Hawkeye",
 price:189900,
 mrp:"₹2,10,000",
-image:"assets/products/sava-hawkeye.jpg"
+image:"assets/products/sava-hawkeye.jpg",
+sizes:[]
 },
 
 {
@@ -345,7 +367,8 @@ id:2,
 name:"ELVES Falath EVO+",
 price:250000,
 mrp:"₹2,50,000",
-image:"assets/products/elves-falath-evo-plus.jpg"
+image:"assets/products/elves-falath-evo-plus.jpg",
+sizes:["45","49","52","54","56"]
 },
 
 {
@@ -353,7 +376,8 @@ id:3,
 name:"ELVES Falath EXP",
 price:250000,
 mrp:"₹2,50,000",
-image:"assets/products/elves-falath-exp-11.png"
+image:"assets/products/elves-falath-exp-11.png",
+sizes:["45","49","52","54","56"]
 }
 
 ];
@@ -363,6 +387,24 @@ const container=
 document.getElementById(
 "products"
 );
+
+function updateCartCount(){
+
+const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+const count=cartItems.reduce((total,item)=>total+(item.quantity||1),0);
+const cartCount=document.getElementById("cartCount");
+
+if(count>0){
+cartCount.textContent=count;
+cartCount.style.display="flex";
+}
+else{
+cartCount.style.display="none";
+}
+
+}
+
+updateCartCount();
 
 
 products.forEach(product=>{
@@ -441,6 +483,15 @@ products.find(
 p=>p.id===id
 );
 
+if(product.sizes&&product.sizes.length){
+
+window.location=
+`product.html?id=${id}`;
+
+return;
+
+}
+
 
 let existing=
 cart.find(
@@ -477,6 +528,7 @@ JSON.stringify(cart)
 
 );
 
+updateCartCount();
 window.location.href="cart.html";
 
 }

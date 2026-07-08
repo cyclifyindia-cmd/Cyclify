@@ -71,6 +71,23 @@ color:white;
 
 }
 
+.cart-count{
+position:absolute;
+top:-8px;
+right:-10px;
+min-width:18px;
+height:18px;
+padding:0 5px;
+border-radius:9px;
+background:#ff2a2a;
+color:white;
+font-size:11px;
+font-weight:bold;
+display:none;
+align-items:center;
+justify-content:center;
+}
+
 /* PRODUCT */
 
 .product{
@@ -372,6 +389,10 @@ class="cart">
 
 🛒
 
+<span class="cart-count"
+id="cartCount">
+</span>
+
 </a>
 
 </div>
@@ -586,6 +607,24 @@ const productImages=product.images||[product.image];
 let currentImageIndex=0;
 let selectedSize=product.sizes&&product.sizes.length?product.sizes[0]:"";
 
+function updateCartCount(){
+
+const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+const count=cartItems.reduce((total,item)=>total+(item.quantity||1),0);
+const cartCount=document.getElementById("cartCount");
+
+if(count>0){
+cartCount.textContent=count;
+cartCount.style.display="flex";
+}
+else{
+cartCount.style.display="none";
+}
+
+}
+
+updateCartCount();
+
 document.getElementById("productName").textContent=product.name;
 document.getElementById("productPrice").textContent=`₹${product.price.toLocaleString()}`;
 document.getElementById("productMrp").textContent=`MRP ${product.mrp}`;
@@ -732,6 +771,7 @@ quantity:1
 }
 
 localStorage.setItem("cart",JSON.stringify(cart));
+updateCartCount();
 window.location.href="cart.html";
 
 }

@@ -122,6 +122,48 @@ margin:20px 0;
 
 }
 
+.empty-cart{
+background:white;
+padding:30px 20px;
+border-radius:12px;
+text-align:center;
+}
+
+.empty-cart h2{
+font-size:22px;
+margin-bottom:8px;
+}
+
+.empty-cart p{
+color:#666;
+margin-bottom:18px;
+}
+
+.shop-link{
+display:inline-block;
+background:black;
+color:white;
+text-decoration:none;
+padding:12px 18px;
+border-radius:10px;
+font-weight:bold;
+}
+
+.remove{
+border:none;
+background:#f2f2f2;
+color:#333;
+padding:8px 12px;
+border-radius:8px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.checkout:disabled{
+background:#bdbdbd;
+cursor:not-allowed;
+}
+
 </style>
 
 </head>
@@ -195,6 +237,35 @@ document.getElementById(
 
 container.innerHTML="";
 
+const checkoutButton=document.querySelector(".checkout");
+
+if(cart.length===0){
+
+container.innerHTML=`
+<div class="empty-cart">
+<h2>Your cart is empty</h2>
+<p>Add a bike or frame to continue.</p>
+<a class="shop-link" href="bikes-frames.html">Shop Bikes</a>
+</div>
+`;
+
+document.getElementById(
+"totalPrice"
+).innerText="";
+
+checkoutButton.disabled=true;
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+return;
+
+}
+
+checkoutButton.disabled=false;
+
 let total=0;
 
 cart.forEach(
@@ -243,6 +314,12 @@ ${item.size?`
 Size: ${item.size}
 </div>
 `:""}
+
+<button
+class="remove"
+onclick="removeItem(${index})">
+Remove
+</button>
 
 <div
 class="quantity">
@@ -334,34 +411,80 @@ renderCart();
 }
 
 
+function removeItem(index){
+
+cart.splice(
+index,
+1
+);
+
+renderCart();
+
+}
+
+
 function checkout(){
 
-let message=
+if(cart.length===0){
+return;
+}
 
-"Hi Cyclify,%0A%0AI want:%0A";
+let total=0;
+
+let lines=[
+"Hi Cyclify,",
+"",
+"I want to order:"
+];
 
 cart.forEach(
 
 item=>{
 
-message +=
+let price=
+typeof item.price==="number"?
+item.price:
+Number(String(item.price).replace(/[₹,]/g,""));
+
+let lineTotal=
+price*
+item.quantity;
+
+total +=
+lineTotal;
+
+lines.push(
 
 item.name+
 
 (
 item.size?
-" Size "+item.size:
+" | Size: "+item.size:
 ""
 )+
 
-" x"+
+" | Qty: "+
 
 item.quantity+
 
-"%0A";
+" | ₹"+
+
+lineTotal.toLocaleString()
+
+);
 
 }
 
+);
+
+lines.push(
+"",
+"Total: ₹"+total.toLocaleString()
+);
+
+let message=
+encodeURIComponent(
+lines.join("\n")
 );
 
 window.open(
