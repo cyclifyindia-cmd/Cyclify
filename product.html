@@ -189,6 +189,8 @@ background:#fafafa;
 padding:10px;
 
 border-radius:12px;
+text-decoration:none;
+color:black;
 
 }
 
@@ -271,7 +273,8 @@ id="productPrice">
 
 </div>
 
-<div class="mrp">
+<div class="mrp"
+id="productMrp">
 
 MRP ₹2,10,000
 
@@ -280,14 +283,16 @@ MRP ₹2,10,000
 <div class="buttons">
 
 <button
-class="btn cartbtn">
+class="btn cartbtn"
+onclick="addToCart()">
 
 Add to Cart
 
 </button>
 
 <button
-class="btn buybtn">
+class="btn buybtn"
+onclick="buyOnWhatsApp()">
 
 WhatsApp Buy
 
@@ -303,16 +308,7 @@ WhatsApp Buy
 Specifications
 </h3>
 
-<div class="spec">
-Frame : Carbon Fiber
-</div>
-
-<div class="spec">
-Brakes : Hydraulic Disc
-</div>
-
-<div class="spec">
-Wheel : 29"
+<div id="specList">
 </div>
 
 </div>
@@ -324,15 +320,8 @@ Wheel : 29"
 Related Products
 </h3>
 
-<div class="related">
-
-<div class="related-card">
-
-<img src="assets/products/trek.jpg">
-
-<p>Trek Marlin</p>
-
-</div>
+<div class="related"
+id="relatedProducts">
 
 </div>
 
@@ -358,6 +347,105 @@ Related Products
 </div>
 
 </div>
+
+<script>
+
+const products=[
+
+{
+id:1,
+name:"SAVA Hawkeye",
+price:189900,
+mrp:"₹2,10,000",
+image:"assets/products/sava-hawkeye.jpg",
+specs:[
+"Frame : Carbon Fiber",
+"Brakes : Hydraulic Disc",
+"Wheel : 29 inch"
+]
+},
+
+{
+id:2,
+name:"ELVES Falath EVO+",
+price:250000,
+mrp:"₹2,50,000",
+image:"assets/products/elves-falath-evo-plus.jpg",
+specs:[
+"Frame : Toray T800 & T1000 Carbon Monocoque",
+"Groupset : Shimano Di2 2x12 Speed options",
+"Wheelset : Carbon wheelset options",
+"Cockpit : Orome AeroEvo integrated carbon cockpit",
+"Paint : Custom paint options available",
+"Type : Aero carbon road bike"
+]
+}
+
+];
+
+const params=new URLSearchParams(window.location.search);
+const productId=Number(params.get("id"))||1;
+const product=products.find(item=>item.id===productId)||products[0];
+
+document.getElementById("productImage").src=product.image;
+document.getElementById("productImage").alt=product.name;
+document.getElementById("productName").textContent=product.name;
+document.getElementById("productPrice").textContent=`₹${product.price.toLocaleString()}`;
+document.getElementById("productMrp").textContent=`MRP ${product.mrp}`;
+
+const specList=document.getElementById("specList");
+
+product.specs.forEach(spec=>{
+specList.innerHTML+=`
+<div class="spec">
+${spec}
+</div>
+`;
+});
+
+const relatedProducts=document.getElementById("relatedProducts");
+
+products
+.filter(item=>item.id!==product.id)
+.forEach(item=>{
+relatedProducts.innerHTML+=`
+<a class="related-card" href="product.html?id=${item.id}">
+<img src="${item.image}" alt="${item.name}">
+<p>${item.name}</p>
+</a>
+`;
+});
+
+function addToCart(){
+
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+let existing=cart.find(item=>item.id===product.id);
+
+if(existing){
+existing.quantity++;
+}
+else{
+cart.push({
+id:product.id,
+name:product.name,
+price:product.price,
+image:product.image,
+quantity:1
+});
+}
+
+localStorage.setItem("cart",JSON.stringify(cart));
+alert("Added to cart");
+
+}
+
+function buyOnWhatsApp(){
+
+window.location.href="https://wa.me/message/MLT2FFSAEYGIP1";
+
+}
+
+</script>
 
 </body>
 </html>
