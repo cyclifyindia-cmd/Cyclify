@@ -155,6 +155,12 @@ left:8px;
 right:8px;
 }
 
+.gallery.single-image .gallery-btn,
+.gallery.single-image .image-count,
+.gallery.single-image + .thumbs{
+display:none;
+}
+
 .image-count{
 position:absolute;
 right:10px;
@@ -1245,6 +1251,12 @@ const product=products.find(item=>item.id===productId)||products[0];
 let productImages=product.images||[product.image];
 let currentImageIndex=0;
 let selectedSize=product.sizes&&product.sizes.length?product.sizes[0]:"";
+const backLink=document.querySelector(".back");
+const productGallery=document.getElementById("productGallery");
+const hasMultipleImages=productImages.length>1;
+
+backLink.href=product.id>=5?"electronics.html":"bikes-frames.html";
+productGallery.classList.toggle("single-image",!hasMultipleImages);
 
 function updateCartCount(){
 
@@ -1308,6 +1320,10 @@ selectSize(selectedSize);
 
 function showImage(index){
 
+if(!productImages.length){
+return;
+}
+
 currentImageIndex=(index+productImages.length)%productImages.length;
 
 const image=document.getElementById("productImage");
@@ -1326,6 +1342,9 @@ document.getElementById("productGallery").classList.remove("zoomed");
 }
 
 function changeImage(step){
+if(!hasMultipleImages){
+return;
+}
 showImage(currentImageIndex+step);
 }
 
@@ -1350,6 +1369,10 @@ touchStartX=event.changedTouches[0].screenX;
 });
 
 document.getElementById("productGallery").addEventListener("touchend",event=>{
+
+if(!hasMultipleImages){
+return;
+}
 
 const touchEndX=event.changedTouches[0].screenX;
 const swipeDistance=touchEndX-touchStartX;
