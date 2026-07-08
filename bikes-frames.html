@@ -45,9 +45,18 @@ z-index:1000;
 
 }
 
-.menu{
+.home-logo{
 
-font-size:28px;
+display:flex;
+align-items:center;
+text-decoration:none;
+
+}
+
+.home-logo img{
+
+height:42px;
+display:block;
 
 }
 
@@ -139,6 +148,15 @@ background:white;
 
 border-right:1px solid #eee;
 border-bottom:1px solid #eee;
+cursor:pointer;
+transition:transform .18s ease, box-shadow .18s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(0,0,0,.08);
 
 }
 
@@ -149,7 +167,8 @@ height:180px;
 
 object-fit:contain;
 
-background:#fafafa;
+background:white;
+padding:10px;
 
 cursor:pointer;
 
@@ -280,9 +299,11 @@ cursor:pointer;
 
 <div class="topbar">
 
-<div class="menu">
-☰
-</div>
+<a href="index.html"
+class="home-logo">
+<img src="assets/Logo.png"
+alt="Cyclify">
+</a>
 
 
 <div class="search-box">
@@ -411,11 +432,14 @@ products.forEach(product=>{
 
 container.innerHTML+=`
 
-<div class="card">
+<div class="card"
+onclick="openProduct(${product.id})"
+tabindex="0"
+role="link"
+onkeydown="handleCardKey(event,${product.id})">
 
 <img
-src="${product.image}"
-onclick="openProduct(${product.id})">
+src="${product.image}">
 
 <div class="details">
 
@@ -445,7 +469,7 @@ MRP ${product.mrp}
 
 <button
 class="add"
-onclick="addToCart(${product.id})">
+onclick="addToCart(event,${product.id})">
 
 Add to cart
 
@@ -470,7 +494,21 @@ window.location=
 }
 
 
-function addToCart(id){
+function handleCardKey(event,id){
+
+if(event.key==="Enter"||event.key===" "){
+
+event.preventDefault();
+openProduct(id);
+
+}
+
+}
+
+
+function addToCart(event,id){
+
+event.stopPropagation();
 
 let cart=
 JSON.parse(
