@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electronics | Cyclify</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+padding-bottom:80px;
+}
+
+.topbar{
+position:sticky;
+top:0;
+background:white;
+display:flex;
+align-items:center;
+gap:10px;
+padding:8px 12px;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+z-index:1000;
+}
+
+.home-logo{
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+width:68px;
+height:44px;
+overflow:hidden;
+border-radius:8px;
+background:black;
+flex-shrink:0;
+}
+
+.home-logo img{
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+}
+
+.search-box{
+flex:1;
+}
+
+.search-box input{
+width:100%;
+padding:13px;
+border:none;
+outline:none;
+border-radius:30px;
+background:#f2f2f2;
+font-size:15px;
+}
+
+.top-icons{
+display:flex;
+gap:15px;
+font-size:24px;
+}
+
+.top-icons a{
+text-decoration:none;
+color:black;
+position:relative;
+}
+
+.cart-count{
+position:absolute;
+top:-8px;
+right:-10px;
+min-width:18px;
+height:18px;
+padding:0 5px;
+border-radius:9px;
+background:#ff2a2a;
+color:white;
+font-size:11px;
+font-weight:bold;
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.page-title{
+padding:20px;
+font-size:30px;
+font-weight:bold;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:0;
+}
+
+.card{
+background:white;
+border-right:1px solid #eee;
+border-bottom:1px solid #eee;
+cursor:pointer;
+transition:transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.card img{
+width:100%;
+height:155px;
+object-fit:contain;
+background:white;
+padding:8px 8px 2px;
+cursor:pointer;
+}
+
+.details{
+padding:6px 10px 10px;
+}
+
+.details h3{
+font-size:15px;
+line-height:1.25;
+min-height:38px;
+margin-bottom:6px;
+}
+
+.price{
+font-size:20px;
+font-weight:bold;
+margin-bottom:2px;
+}
+
+.mrp{
+font-size:14px;
+color:gray;
+margin-bottom:12px;
+}
+
+.bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.heart{
+width:40px;
+height:40px;
+border:2px solid #ddd;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+}
+
+.add{
+padding:10px 12px;
+border-radius:12px;
+border:2px solid #ddd;
+background:white;
+font-weight:bold;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+<a href="index.html" class="home-logo">
+<img src="assets/Logo.png" alt="Cyclify">
+</a>
+
+<div class="search-box">
+<input type="text" placeholder="Search Electronics">
+</div>
+
+<div class="top-icons">
+<span>♡</span>
+<a href="cart.html">🛒<span class="cart-count" id="cartCount"></span></a>
+</div>
+</div>
+
+<div class="page-title">
+⚡ Electronics
+</div>
+
+<div class="products" id="products">
+</div>
+
+<script>
+const products=[
+{
+id:5,
+name:"Cyclami Electric Air Pump",
+price:5250,
+mrp:"₹5,500",
+image:"assets/products/cyclami-electric-air-pump-1.webp",
+sizes:[]
+},
+{
+id:6,
+name:"Cyclami C1 Cadence Speed Dual Sensor",
+price:2100,
+mrp:"₹2,800",
+image:"assets/products/cyclami-s2-computer-mount.webp",
+sizes:[]
+},
+{
+id:7,
+name:"Cyclami Tubeless Bicycle Presta Valves",
+price:999,
+mrp:"₹1,999",
+image:"assets/products/cyclami-electric-air-pump-1.webp",
+sizes:["Option 1","Option 2","Option 3"]
+},
+{
+id:8,
+name:"Cyclami 500 Lumen Front Light",
+price:1900,
+mrp:"₹2,000",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:[]
+},
+{
+id:9,
+name:"Cyclami BR-1200 Bicycle Front Light",
+price:2850,
+mrp:"₹3,000",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:["Option 1"]
+},
+{
+id:10,
+name:"Cyclami CYC1700 Waterproof Bicycle Light",
+price:6300,
+mrp:"₹7,000",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:["Option 1"]
+},
+{
+id:11,
+name:"Cyclami 1200 Lumen Bicycle Front Light",
+price:2499,
+mrp:"₹3,500",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:[]
+},
+{
+id:12,
+name:"Cyclami Carbon Fiber Bicycle Computer Holder",
+price:1500,
+mrp:"₹2,500",
+image:"assets/products/cyclami-carbon-computer-holder.webp",
+sizes:[]
+},
+{
+id:13,
+name:"Cyclami 2000LM BR2000 Rainproof Bicycle Light",
+price:4300,
+mrp:"₹4,500",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:["Option 1"]
+},
+{
+id:14,
+name:"Cyclami S2 Bicycle Computer Mount Holder",
+price:949,
+mrp:"₹1,500",
+image:"assets/products/cyclami-s2-computer-mount.webp",
+sizes:[]
+},
+{
+id:15,
+name:"Cyclami Bottle Cage Anti Theft GPS Tracker Holder",
+price:1999,
+mrp:"₹3,000",
+image:"assets/products/cyclami-carbon-computer-holder.webp",
+sizes:[]
+},
+{
+id:16,
+name:"S16 Out Front Mount for Bicycle Computer",
+price:2500,
+mrp:"₹3,000",
+image:"assets/products/cyclami-s2-computer-mount.webp",
+sizes:["Option 1"]
+},
+{
+id:17,
+name:"Cyclami M6W 3 in 1 Bicycle Mount",
+price:1400,
+mrp:"₹1,500",
+image:"assets/products/cyclami-carbon-computer-holder.webp",
+sizes:["Option 1"]
+},
+{
+id:18,
+name:"Cyclami A3 Max Mini Electric Bike Pump",
+price:8500,
+mrp:"₹9,000",
+image:"assets/products/cyclami-electric-air-pump-1.webp",
+sizes:["Option 1"]
+},
+{
+id:19,
+name:"Cyclami All in One Bicycle Computer Holder Mount",
+price:1800,
+mrp:"₹1,999",
+image:"assets/products/cyclami-carbon-computer-holder.webp",
+sizes:["Option 1"]
+},
+{
+id:20,
+name:"Cyclami CY200 Smart Brake Sensor Tail Light",
+price:1900,
+mrp:"₹2,000",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:["Option 1"]
+},
+{
+id:21,
+name:"Cyclami Q2 SUP Electric Pump",
+price:9500,
+mrp:"₹10,000",
+image:"assets/products/cyclami-electric-air-pump-1.webp",
+sizes:["Option 1"]
+},
+{
+id:22,
+name:"Cyclami BR1000 Super Bright LED Headlight",
+price:2600,
+mrp:"₹2,800",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:["Option 1"]
+},
+{
+id:23,
+name:"Cyclami 1200 Lumen High Brightness Light",
+price:4200,
+mrp:"₹4,500",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:[]
+},
+{
+id:24,
+name:"Cyclami Ceramic Bearing Jockey Wheel Pulley",
+price:2000,
+mrp:"₹3,500",
+image:"assets/products/cyclami-carbon-computer-holder.webp",
+sizes:["13T","17T","Option 3","Option 4"]
+},
+{
+id:25,
+name:"Cyclami Portable Bicycle Tyre Opener Tool",
+price:299,
+mrp:"₹499",
+image:"assets/products/cyclami-carbon-computer-holder.webp",
+sizes:["Option 1","Option 2","Option 3","Option 4","Option 5","Option 6"]
+},
+{
+id:26,
+name:"Cyclami Headlight LED Head Flashlight",
+price:1499,
+mrp:"₹2,999",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:[]
+},
+{
+id:27,
+name:"Cyclami CY180 Smart Bicycle Taillight",
+price:2999,
+mrp:"₹5,999",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:[]
+},
+{
+id:28,
+name:"Cyclami 1800 Lumen USB Rechargeable Front Light",
+price:3000,
+mrp:"₹3,200",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:["Option 1"]
+},
+{
+id:29,
+name:"Cyclami Carbon Fiber Derailleur Pulley Set",
+price:3300,
+mrp:"₹3,500",
+image:"assets/products/cyclami-carbon-computer-holder.webp",
+sizes:["Option 1","Option 2","Option 3","Option 4"]
+},
+{
+id:30,
+name:"Cyclami Ultra-Light 30g TPU Bicycle Tube",
+price:999,
+mrp:"₹1,500",
+image:"assets/products/cyclami-electric-air-pump-1.webp",
+sizes:["700x18-32C","Option 2","Option 3"]
+},
+{
+id:31,
+name:"Cyclami Ultralight Bicycle Tyre Lever",
+price:299,
+mrp:"₹999",
+image:"assets/products/cyclami-carbon-computer-holder.webp",
+sizes:[]
+},
+{
+id:32,
+name:"Cyclami 300 Lumen Rechargeable Front Light",
+price:2200,
+mrp:"₹3,500",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:[]
+},
+{
+id:33,
+name:"Cyclami 2200 Lumen LED Bicycle Light",
+price:4750,
+mrp:"₹5,000",
+image:"assets/products/cyclami-1200-high-brightness-light.webp",
+sizes:[]
+},
+{
+id:34,
+name:"Cyclami MTB TPU Inner Tube 65g",
+price:1100,
+mrp:"₹1,200",
+image:"assets/products/cyclami-electric-air-pump-1.webp",
+sizes:["29 inch","Option 2"]
+},
+{
+id:35,
+name:"Cyclami A2 Max 150PSI Mini Electric Bike Tire Pump",
+price:8500,
+mrp:"₹9,000",
+image:"assets/products/cyclami-electric-air-pump-1.webp",
+sizes:["Black"]
+}
+];
+
+const container=document.getElementById("products");
+
+function updateCartCount(){
+const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+const count=cartItems.reduce((total,item)=>total+(item.quantity||1),0);
+const cartCount=document.getElementById("cartCount");
+
+if(count>0){
+cartCount.textContent=count;
+cartCount.style.display="flex";
+}
+else{
+cartCount.style.display="none";
+}
+}
+
+updateCartCount();
+
+products.forEach(product=>{
+container.innerHTML+=`
+<div class="card"
+onclick="openProduct(${product.id})"
+tabindex="0"
+role="link"
+onkeydown="handleCardKey(event,${product.id})">
+<img src="${product.image}">
+<div class="details">
+<h3>${product.name}</h3>
+<div class="price">₹${product.price.toLocaleString()}</div>
+<div class="mrp">MRP ${product.mrp}</div>
+<div class="bottom">
+<div class="heart">♡</div>
+<button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
+</div>
+</div>
+</div>
+`;
+});
+
+function openProduct(id){
+window.location=`product.html?id=${id}`;
+}
+
+function handleCardKey(event,id){
+if(event.key==="Enter"||event.key===" "){
+event.preventDefault();
+openProduct(id);
+}
+}
+
+function addToCart(event,id){
+event.stopPropagation();
+
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+let product=products.find(p=>p.id===id);
+
+if(product.sizes&&product.sizes.length){
+window.location=`product.html?id=${id}`;
+return;
+}
+
+let existing=cart.find(item=>item.id===id);
+
+if(existing){
+existing.quantity++;
+}
+else{
+cart.push({
+id:product.id,
+name:product.name,
+price:product.price,
+image:product.image,
+quantity:1
+});
+}
+
+localStorage.setItem("cart",JSON.stringify(cart));
+updateCartCount();
+window.location.href="cart.html";
+}
+</script>
+
+</body>
+</html>
