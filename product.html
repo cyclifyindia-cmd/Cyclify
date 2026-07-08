@@ -75,16 +75,101 @@ color:white;
 
 .product{
 
-background:white;
+background:#fff;
 padding:20px;
 
 }
 
-.product img{
+.gallery{
+position:relative;
+background:#fff;
+overflow:hidden;
+touch-action:pan-y;
+}
+
+.gallery-main{
+width:100%;
+height:330px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+cursor:zoom-in;
+}
+
+.gallery-main img{
 
 width:100%;
-height:300px;
+height:100%;
 object-fit:contain;
+transition:transform .35s ease;
+
+}
+
+.gallery.zoomed .gallery-main img{
+transform:scale(1.45);
+cursor:zoom-out;
+
+}
+
+.gallery-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:38px;
+height:38px;
+border:none;
+border-radius:50%;
+background:rgba(0,0,0,.65);
+color:white;
+font-size:22px;
+font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:5;
+}
+
+.gallery-btn.prev{
+left:8px;
+}
+
+.gallery-btn.next{
+right:8px;
+}
+
+.image-count{
+position:absolute;
+right:10px;
+bottom:10px;
+background:rgba(0,0,0,.68);
+color:white;
+font-size:12px;
+font-weight:bold;
+padding:6px 10px;
+border-radius:20px;
+}
+
+.thumbs{
+display:flex;
+gap:8px;
+padding:12px 0 4px;
+overflow-x:auto;
+}
+
+.thumb{
+width:62px;
+height:52px;
+border:2px solid transparent;
+border-radius:10px;
+background:#fff;
+object-fit:cover;
+padding:2px;
+cursor:pointer;
+}
+
+.thumb.active{
+border-color:#0039a6;
 
 }
 
@@ -261,7 +346,34 @@ class="cart">
 
 <div class="product">
 
+<div class="gallery"
+id="productGallery">
+
+<button class="gallery-btn prev"
+onclick="changeImage(-1)">
+‹
+</button>
+
+<div class="gallery-main"
+id="galleryMain">
 <img id="productImage">
+</div>
+
+<button class="gallery-btn next"
+onclick="changeImage(1)">
+›
+</button>
+
+<div class="image-count"
+id="imageCount">
+1/1
+</div>
+
+</div>
+
+<div class="thumbs"
+id="productThumbs">
+</div>
 
 <div class="name"
 id="productName">
@@ -358,6 +470,9 @@ name:"SAVA Hawkeye",
 price:189900,
 mrp:"₹2,10,000",
 image:"assets/products/sava-hawkeye.jpg",
+images:[
+"assets/products/sava-hawkeye.jpg"
+],
 specs:[
 "Frame : Carbon Fiber",
 "Brakes : Hydraulic Disc",
@@ -371,6 +486,13 @@ name:"ELVES Falath EVO+",
 price:250000,
 mrp:"₹2,50,000",
 image:"assets/products/elves-falath-evo-plus.jpg",
+images:[
+"assets/products/elves-falath-evo-plus-1.jpg",
+"assets/products/elves-falath-evo-plus-2.png",
+"assets/products/elves-falath-evo-plus-3.png",
+"assets/products/elves-falath-evo-plus-4.png",
+"assets/products/elves-falath-evo-plus-5.png"
+],
 specs:[
 "Frame : Toray T800 & T1000 Carbon Monocoque",
 "Groupset : Shimano Di2 2x12 Speed options",
@@ -386,12 +508,70 @@ specs:[
 const params=new URLSearchParams(window.location.search);
 const productId=Number(params.get("id"))||1;
 const product=products.find(item=>item.id===productId)||products[0];
+const productImages=product.images||[product.image];
+let currentImageIndex=0;
 
-document.getElementById("productImage").src=product.image;
-document.getElementById("productImage").alt=product.name;
 document.getElementById("productName").textContent=product.name;
 document.getElementById("productPrice").textContent=`₹${product.price.toLocaleString()}`;
 document.getElementById("productMrp").textContent=`MRP ${product.mrp}`;
+
+function showImage(index){
+
+currentImageIndex=(index+productImages.length)%productImages.length;
+
+const image=document.getElementById("productImage");
+image.src=productImages[currentImageIndex];
+image.alt=product.name;
+
+document.getElementById("imageCount").textContent=
+`${currentImageIndex+1}/${productImages.length}`;
+
+document.querySelectorAll(".thumb").forEach((thumb,thumbIndex)=>{
+thumb.classList.toggle("active",thumbIndex===currentImageIndex);
+});
+
+document.getElementById("productGallery").classList.remove("zoomed");
+
+}
+
+function changeImage(step){
+showImage(currentImageIndex+step);
+}
+
+const productThumbs=document.getElementById("productThumbs");
+
+productImages.forEach((image,index)=>{
+productThumbs.innerHTML+=`
+<img
+class="thumb"
+src="${image}"
+alt="${product.name} image ${index+1}"
+onclick="showImage(${index})">
+`;
+});
+
+showImage(0);
+
+let touchStartX=0;
+
+document.getElementById("productGallery").addEventListener("touchstart",event=>{
+touchStartX=event.changedTouches[0].screenX;
+});
+
+document.getElementById("productGallery").addEventListener("touchend",event=>{
+
+const touchEndX=event.changedTouches[0].screenX;
+const swipeDistance=touchEndX-touchStartX;
+
+if(Math.abs(swipeDistance)>45){
+changeImage(swipeDistance<0?1:-1);
+}
+
+});
+
+document.getElementById("galleryMain").addEventListener("click",()=>{
+document.getElementById("productGallery").classList.toggle("zoomed");
+});
 
 const specList=document.getElementById("specList");
 
