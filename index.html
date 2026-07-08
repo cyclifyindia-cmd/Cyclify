@@ -89,20 +89,71 @@ font-weight:bold;
 .offer{
 background:#0039a6;
 color:white;
-padding:15px;
-display:flex;
-overflow-x:auto;
-gap:10px;
+padding:14px;
+overflow:hidden;
 }
 
-.offer-box{
-min-width:160px;
+.vertical-banner{
+height:96px;
+overflow:hidden;
+border-radius:12px;
+background:#061b45;
+}
+
+.banner-track{
+display:flex;
+flex-direction:column;
+animation:verticalSlide 12s infinite;
+}
+
+.vertical-banner:hover .banner-track{
+animation-play-state:paused;
+}
+
+.banner-slide{
+height:96px;
+padding:14px 16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:14px;
+color:white;
+text-decoration:none;
+}
+
+.banner-slide h3{
+font-size:18px;
+margin-bottom:4px;
+}
+
+.banner-slide p{
+font-size:13px;
+color:#dbeafe;
+}
+
+.banner-action{
 background:white;
-color:black;
-padding:10px;
-border-radius:8px;
-text-align:center;
-font-size:14px;
+color:#0039a6;
+padding:10px 14px;
+border-radius:22px;
+font-size:13px;
+font-weight:bold;
+white-space:nowrap;
+}
+
+@keyframes verticalSlide{
+0%,25%{
+transform:translateY(0);
+}
+33%,58%{
+transform:translateY(-96px);
+}
+66%,91%{
+transform:translateY(-192px);
+}
+100%{
+transform:translateY(0);
+}
 }
 
 .categories{
@@ -243,19 +294,36 @@ autocomplete="off">
 
 <div class="offer">
 
-<div class="offer-box">
-<h3>₹100 OFF</h3>
-<p>Code: CY100</p>
+<div class="vertical-banner">
+
+<div class="banner-track">
+
+<a href="bikes-frames.html" class="banner-slide">
+<div>
+<h3>Shop Bikes & Frames</h3>
+<p>Explore performance cycles and carbon frames.</p>
+</div>
+<span class="banner-action">Shop Now</span>
+</a>
+
+<a href="product.html?id=1" class="banner-slide">
+<div>
+<h3>Featured: SAVA Hawkeye</h3>
+<p>Open the product page in one tap.</p>
+</div>
+<span class="banner-action">View Product</span>
+</a>
+
+<a href="https://wa.me/message/MLT2FFSAEYGIP1" class="banner-slide">
+<div>
+<h3>Need Help Choosing?</h3>
+<p>Message Cyclify on WhatsApp for quick guidance.</p>
+</div>
+<span class="banner-action">Chat Now</span>
+</a>
+
 </div>
 
-<div class="offer-box">
-<h3>₹200 OFF</h3>
-<p>Code: CY200</p>
-</div>
-
-<div class="offer-box">
-<h3>₹300 OFF</h3>
-<p>Code: CY300</p>
 </div>
 
 </div>
