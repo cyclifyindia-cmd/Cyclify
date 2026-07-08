@@ -146,7 +146,14 @@ margin-bottom:2px;
 .mrp{
 font-size:14px;
 color:gray;
-margin-bottom:12px;
+margin-bottom:6px;
+}
+
+.ship{
+font-size:12px;
+font-weight:bold;
+color:#087a3d;
+margin-bottom:10px;
 }
 
 .bottom{
@@ -449,6 +456,14 @@ price:8500,
 mrp:"₹9,000",
 image:"assets/products/cyclami-electric-air-pump-1.webp",
 sizes:["Black"]
+},
+{
+id:36,
+name:"ThinkRider X2 Max Smart Trainer",
+price:40000,
+mrp:"₹40,000",
+image:"assets/products/thinkrider-x2-max-1.jpg",
+sizes:["Black","White"]
 }
 ];
 
@@ -482,6 +497,7 @@ onkeydown="handleCardKey(event,${product.id})">
 <h3>${product.name}</h3>
 <div class="price">₹${product.price.toLocaleString()}</div>
 <div class="mrp">MRP ${product.mrp}</div>
+<div class="ship">Free Shipping</div>
 <div class="bottom">
 <div class="heart">♡</div>
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
