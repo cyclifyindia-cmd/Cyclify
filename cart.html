@@ -73,6 +73,12 @@ font-weight:bold;
 margin-top:5px;
 }
 
+.size{
+font-size:13px;
+color:#555;
+margin-top:5px;
+}
+
 .quantity{
 
 display:flex;
@@ -203,12 +209,7 @@ item.quantity=1;
 
 let price=
 
-parseInt(
-
-item.price
-.replace(/[₹,]/g,'')
-
-);
+Number(item.price);
 
 total +=
 price*
@@ -231,9 +232,15 @@ ${item.name}
 
 <div class="price">
 
-${item.price}
+₹${price.toLocaleString()}
 
 </div>
+
+${item.size?`
+<div class="size">
+Size: ${item.size}
+</div>
+`:""}
 
 <div
 class="quantity">
@@ -338,6 +345,12 @@ item=>{
 message +=
 
 item.name+
+
+(
+item.size?
+" Size "+item.size:
+""
+)+
 
 " x"+
 
