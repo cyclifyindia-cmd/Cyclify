@@ -661,6 +661,77 @@ searchResults.innerHTML=matches.map(product=>`
 `).join("");
 }
 
+function getImageSearchMatches(fileName){
+const name=fileName.toLowerCase();
+let terms=[];
+
+if(name.includes("bike")||name.includes("cycle")||name.includes("frame")||name.includes("road")){
+terms=["bike","frame","road","carbon"];
+}
+else if(name.includes("pump")||name.includes("inflator")||name.includes("air")){
+terms=["pump","inflator","psi"];
+}
+else if(name.includes("light")||name.includes("lamp")||name.includes("headlight")){
+terms=["light","lumen","headlight"];
+}
+else if(name.includes("sensor")||name.includes("cadence")||name.includes("speed")){
+terms=["sensor","cadence","speed"];
+}
+else if(name.includes("mount")||name.includes("holder")){
+terms=["mount","holder","computer"];
+}
+else if(name.includes("tube")||name.includes("tyre")||name.includes("tire")||name.includes("valve")){
+terms=["tube","tyre","valve"];
+}
+
+if(!terms.length){
+return searchProducts.slice(0,8);
+}
+
+return searchProducts
+.filter(product=>{
+const searchable=[
+product.name,
+product.category,
+product.keywords
+].join(" ").toLowerCase();
+
+return terms.some(term=>searchable.includes(term));
+})
+.slice(0,8);
+}
+
+function renderImageSearchResults(file){
+if(imagePreviewUrl){
+URL.revokeObjectURL(imagePreviewUrl);
+}
+
+imagePreviewUrl=URL.createObjectURL(file);
+const matches=getImageSearchMatches(file.name);
+searchResults.classList.add("active");
+placeholder.style.display="none";
+input.value="";
+
+searchResults.innerHTML=`
+<div class="image-search-preview">
+<img src="${imagePreviewUrl}" alt="Selected image">
+<div>
+<strong>Image selected</strong>
+<span>Showing closest product matches</span>
+</div>
+</div>
+${matches.map(product=>`
+<a class="search-result" href="product.html?id=${product.id}">
+<img src="${product.image}" alt="${product.name}">
+<div>
+<strong>${product.name}</strong>
+<span>${product.category} • ${formatPrice(product.price)}</span>
+</div>
+</a>
+`).join("")}
+`;
+}
+
 input.addEventListener("input",()=>{
 placeholder.style.display=input.value.trim()?"none":"flex";
 renderSearchResults();
@@ -684,6 +755,20 @@ return;
 }
 
 searchResults.classList.remove("active");
+});
+
+imageSearchButton.addEventListener("click",()=>{
+imageSearchInput.click();
+});
+
+imageSearchInput.addEventListener("change",()=>{
+const file=imageSearchInput.files[0];
+
+if(!file){
+return;
+}
+
+renderImageSearchResults(file);
 });
 
 </script>
