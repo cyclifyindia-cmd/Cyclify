@@ -20,7 +20,7 @@ background:#f5f5f5;
 
 .header{
 background:black;
-padding:8px 10px;
+padding:10px 12px;
 display:flex;
 align-items:center;
 gap:10px;
@@ -29,7 +29,7 @@ z-index:20;
 }
 
 .logo{
-height:44px;
+height:48px;
 width:auto;
 flex:0 0 auto;
 }
@@ -62,30 +62,30 @@ display:flex;
 align-items:center;
 background:#f2f2f2;
 border-radius:999px;
-height:42px;
+height:46px;
 overflow:hidden;
 }
 
 .search-box input{
 width:100%;
 min-width:0;
-height:42px;
-padding:0 8px 0 14px;
+height:46px;
+padding:0 10px 0 16px;
 border:none;
 border-radius:999px 0 0 999px;
 background:transparent;
-font-size:14px;
+font-size:15px;
 outline:none;
 }
 
 .image-search-btn{
-width:36px;
-height:36px;
+width:40px;
+height:40px;
 margin-right:4px;
 border:none;
 border-radius:50%;
 background:white;
-font-size:18px;
+font-size:19px;
 cursor:pointer;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
 flex:0 0 auto;
@@ -123,7 +123,7 @@ box-shadow:0 0 0 2px #0039a6;
 .search-results{
 display:none;
 position:absolute;
-top:50px;
+top:54px;
 left:0;
 right:0;
 background:white;
@@ -216,7 +216,7 @@ padding:7px 8px;
 }
 
 .logo{
-height:38px;
+height:40px;
 }
 
 .icons{
@@ -225,18 +225,18 @@ font-size:20px;
 }
 
 .search-box{
-height:38px;
+height:42px;
 }
 
 .search-box input{
-height:38px;
+height:42px;
 padding-left:12px;
 font-size:13px;
 }
 
 .image-search-btn{
-width:32px;
-height:32px;
+width:36px;
+height:36px;
 font-size:16px;
 }
 
@@ -247,7 +247,7 @@ max-width:calc(100% - 48px);
 }
 
 .search-results{
-top:46px;
+top:50px;
 }
 }
 
@@ -822,7 +822,7 @@ image.src=src;
 
 function getImageSignature(image){
 const canvas=document.createElement("canvas");
-const size=12;
+const size=24;
 canvas.width=size;
 canvas.height=size;
 
@@ -833,9 +833,11 @@ context.drawImage(image,0,0,size,size);
 
 const pixels=context.getImageData(0,0,size,size).data;
 const grays=[];
+const colorGrid=[];
 let red=0;
 let green=0;
 let blue=0;
+let edgeTotal=0;
 
 for(let index=0;index<pixels.length;index+=4){
 const alpha=pixels[index+3]/255;
@@ -850,20 +852,70 @@ blue+=b;
 grays.push(gray);
 }
 
+for(let y=1;y<size-1;y++){
+for(let x=1;x<size-1;x++){
+const position=y*size+x;
+const horizontal=Math.abs(grays[position-1]-grays[position+1]);
+const vertical=Math.abs(grays[position-size]-grays[position+size]);
+edgeTotal+=horizontal+vertical;
+}
+}
+
+for(let gridY=0;gridY<4;gridY++){
+for(let gridX=0;gridX<4;gridX++){
+let gridRed=0;
+let gridGreen=0;
+let gridBlue=0;
+let count=0;
+
+for(let y=gridY*6;y<(gridY+1)*6;y++){
+for(let x=gridX*6;x<(gridX+1)*6;x++){
+const index=(y*size+x)*4;
+const alpha=pixels[index+3]/255;
+gridRed+=255+(pixels[index]-255)*alpha;
+gridGreen+=255+(pixels[index+1]-255)*alpha;
+gridBlue+=255+(pixels[index+2]-255)*alpha;
+count++;
+}
+}
+
+colorGrid.push([
+gridRed/count,
+gridGreen/count,
+gridBlue/count
+]);
+}
+}
+
 const averageGray=grays.reduce((total,value)=>total+value,0)/grays.length;
 const hash=grays.map(value=>value>averageGray?1:0);
+const centerPixels=[];
+
+for(let y=6;y<18;y++){
+for(let x=6;x<18;x++){
+centerPixels.push(grays[y*size+x]);
+}
+}
+
+const centerAverage=centerPixels.reduce((total,value)=>total+value,0)/centerPixels.length;
+const centerHash=centerPixels.map(value=>value>centerAverage?1:0);
 const pixelCount=grays.length;
 
 return {
 hash,
+centerHash,
+colorGrid,
 red:red/pixelCount,
 green:green/pixelCount,
-blue:blue/pixelCount
+blue:blue/pixelCount,
+brightness:averageGray,
+edge:edgeTotal/pixelCount
 };
 }
 
 function compareSignatures(first,second){
 let hashDistance=0;
+let centerDistance=0;
 
 first.hash.forEach((value,index)=>{
 if(value!==second.hash[index]){
@@ -871,13 +923,40 @@ hashDistance++;
 }
 });
 
+first.centerHash.forEach((value,index)=>{
+if(value!==second.centerHash[index]){
+centerDistance++;
+}
+});
+
+let gridDistance=0;
+
+first.colorGrid.forEach((color,index)=>{
+const other=second.colorGrid[index];
+gridDistance+=Math.sqrt(
+Math.pow(color[0]-other[0],2)+
+Math.pow(color[1]-other[1],2)+
+Math.pow(color[2]-other[2],2)
+);
+});
+
 const colorDistance=Math.sqrt(
 Math.pow(first.red-second.red,2)+
 Math.pow(first.green-second.green,2)+
 Math.pow(first.blue-second.blue,2)
-)/4.42;
+)/4;
 
-return hashDistance+colorDistance;
+const brightnessDistance=Math.abs(first.brightness-second.brightness)/2.5;
+const edgeDistance=Math.abs(first.edge-second.edge)/3;
+
+return (
+hashDistance*.55+
+centerDistance*.8+
+gridDistance*.04+
+colorDistance*.35+
+brightnessDistance*.25+
+edgeDistance*.45
+);
 }
 
 async function getProductSignature(product){
@@ -934,7 +1013,7 @@ searchResults.innerHTML=`
 <img src="${imagePreviewUrl}" alt="Selected image">
 <div>
 <strong>Scanning image</strong>
-<span>Comparing with Cyclify products...</span>
+<span>Comparing only with Cyclify product photos...</span>
 </div>
 </div>
 `;
@@ -946,7 +1025,7 @@ searchResults.innerHTML=`
 <img src="${imagePreviewUrl}" alt="Selected image">
 <div>
 <strong>Closest visual matches</strong>
-<span>Tap the product that looks right</span>
+<span>Matched against Cyclify product images only</span>
 </div>
 </div>
 ${matches.map(product=>`
