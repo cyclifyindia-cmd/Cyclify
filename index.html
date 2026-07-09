@@ -20,20 +20,26 @@ background:#f5f5f5;
 
 .header{
 background:black;
-padding:6px 12px;
+padding:8px 10px;
 display:flex;
-justify-content:space-between;
 align-items:center;
+gap:10px;
+position:relative;
+z-index:20;
 }
 
 .logo{
-height:50px;
+height:44px;
+width:auto;
+flex:0 0 auto;
 }
 
 .icons{
 display:flex;
-gap:15px;
-font-size:24px;
+align-items:center;
+gap:10px;
+font-size:22px;
+flex:0 0 auto;
 }
 
 .icons a{
@@ -42,39 +48,47 @@ text-decoration:none;
 }
 
 .search{
-padding:12px;
-background:white;
+flex:1 1 auto;
+min-width:0;
+max-width:680px;
+padding:0;
+background:transparent;
+position:relative;
 }
 
 .search-box{
 position:relative;
 display:flex;
 align-items:center;
-gap:8px;
 background:#f2f2f2;
-border-radius:12px;
+border-radius:999px;
+height:42px;
+overflow:hidden;
 }
 
 .search-box input{
 width:100%;
-padding:15px;
+min-width:0;
+height:42px;
+padding:0 8px 0 14px;
 border:none;
-border-radius:12px 0 0 12px;
+border-radius:999px 0 0 999px;
 background:transparent;
-font-size:16px;
+font-size:14px;
 outline:none;
 }
 
 .image-search-btn{
-width:44px;
-height:44px;
-margin-right:5px;
+width:36px;
+height:36px;
+margin-right:4px;
 border:none;
-border-radius:10px;
+border-radius:50%;
 background:white;
-font-size:20px;
+font-size:18px;
 cursor:pointer;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
+flex:0 0 auto;
 }
 
 .image-search-btn:active{
@@ -88,11 +102,13 @@ top:50%;
 transform:translateY(-50%);
 display:flex;
 align-items:center;
-gap:8px;
+gap:6px;
 pointer-events:none;
 color:#777;
-font-size:16px;
+font-size:14px;
 white-space:nowrap;
+max-width:calc(100% - 56px);
+overflow:hidden;
 }
 
 .search-box input:focus{
@@ -106,11 +122,17 @@ box-shadow:0 0 0 2px #0039a6;
 
 .search-results{
 display:none;
-margin-top:10px;
+position:absolute;
+top:50px;
+left:0;
+right:0;
 background:white;
 border-radius:12px;
 box-shadow:0 10px 28px rgba(0,0,0,.14);
 overflow:hidden;
+z-index:60;
+max-height:70vh;
+overflow-y:auto;
 }
 
 .search-results.active{
@@ -185,6 +207,48 @@ display:block;
 margin-top:4px;
 font-size:12px;
 color:#666;
+}
+
+@media(max-width:480px){
+.header{
+gap:7px;
+padding:7px 8px;
+}
+
+.logo{
+height:38px;
+}
+
+.icons{
+gap:8px;
+font-size:20px;
+}
+
+.search-box{
+height:38px;
+}
+
+.search-box input{
+height:38px;
+padding-left:12px;
+font-size:13px;
+}
+
+.image-search-btn{
+width:32px;
+height:32px;
+font-size:16px;
+}
+
+.search-placeholder{
+left:12px;
+font-size:13px;
+max-width:calc(100% - 48px);
+}
+
+.search-results{
+top:46px;
+}
 }
 
 .location{
@@ -373,13 +437,6 @@ box-shadow:0 4px 15px rgba(0,0,0,0.3);
 
 <img src="assets/Logo.png" class="logo">
 
-<div class="icons">
-<a href="account.html">👤</a>
-<a href="cart.html">🛒</a>
-</div>
-
-</div>
-
 <div class="search">
 
 <div class="search-box">
@@ -400,6 +457,13 @@ autocomplete="off">
 </div>
 
 <div class="search-results" id="searchResults"></div>
+
+</div>
+
+<div class="icons">
+<a href="account.html">👤</a>
+<a href="cart.html">🛒</a>
+</div>
 
 </div>
 
