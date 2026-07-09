@@ -1241,6 +1241,32 @@ specs:[
 "Compatibility : Smart trainer apps and indoor ride setups",
 "Shipping : Free shipping"
 ]
+},
+
+{
+id:37,
+name:"Orome Valar TH50D Carbon Road Disc Brake Wheelset",
+price:85000,
+mrp:"₹85,000",
+image:"assets/products/orome-valar-th50d-2.png",
+images:[
+"assets/products/orome-valar-th50d-2.png",
+"assets/products/orome-valar-th50d-3.png",
+"assets/products/orome-valar-th50d-6.png"
+],
+sizes:["Carbon"],
+specs:[
+"Brand : Orome",
+"Model : Valar TH50D",
+"Type : Carbon road disc brake wheelset",
+"Material : Carbon fiber rim",
+"Rim Depth : 50mm",
+"Internal Width : 22mm",
+"External Width : 29mm",
+"Tyre Support : Tubeless compatible, 23-45mm tyres",
+"Brake Type : Disc brake",
+"Use : Road cycling and performance riding"
+]
 }
 
 ];
@@ -1255,7 +1281,7 @@ const backLink=document.querySelector(".back");
 const productGallery=document.getElementById("productGallery");
 const hasMultipleImages=productImages.length>1;
 
-backLink.href=product.id>=5?"electronics.html":"bikes-frames.html";
+backLink.href=product.id===37?"wheels-tyres.html":product.id>=5?"electronics.html":"bikes-frames.html";
 productGallery.classList.toggle("single-image",!hasMultipleImages);
 
 function updateCartCount(){

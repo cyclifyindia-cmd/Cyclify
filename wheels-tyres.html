@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wheels & Tyres | Cyclify</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f5f5;padding-bottom:80px}
+.topbar{position:sticky;top:0;background:white;display:flex;align-items:center;gap:10px;padding:8px 12px;box-shadow:0 2px 8px rgba(0,0,0,.1);z-index:1000}
+.home-logo{display:flex;align-items:center;justify-content:center;text-decoration:none;width:68px;height:44px;overflow:hidden;border-radius:8px;background:black;flex-shrink:0}
+.home-logo img{width:100%;height:100%;display:block;object-fit:cover}
+.search-box{flex:1}
+.search-box input{width:100%;padding:13px;border:none;outline:none;border-radius:30px;background:#f2f2f2;font-size:15px}
+.top-icons{display:flex;gap:15px;font-size:24px}
+.top-icons a{text-decoration:none;color:black;position:relative}
+.cart-count{position:absolute;top:-8px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ff2a2a;color:white;font-size:11px;font-weight:bold;display:none;align-items:center;justify-content:center}
+.page-title{padding:20px;font-size:30px;font-weight:bold}
+.category-strip,.sub-category-strip{background:white;border-bottom:1px solid #e8e8e8;padding:10px 12px 14px;overflow-x:auto;display:flex;gap:14px;scroll-snap-type:x mandatory}
+.sub-category-strip{display:none;padding-top:8px}
+.sub-category-strip.active{display:flex}
+.category-pill{min-width:96px;border:none;background:white;padding:0;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:bold;color:#222;cursor:pointer;scroll-snap-align:start;position:relative}
+.category-icon{width:70px;height:58px;border-radius:14px;background:#eef5ff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
+.category-icon img{width:100%;height:100%;object-fit:contain;padding:6px}
+.category-pill.active{color:#0039a6}
+.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:#0039a6}
+.category-summary{padding:12px 15px;background:#f5f5f5;font-size:14px;font-weight:bold;color:#333}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.card{background:white;border-right:1px solid #eee;border-bottom:1px solid #eee;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.08)}
+.card img{width:100%;height:155px;object-fit:contain;background:white;padding:8px 8px 2px}
+.details{padding:6px 10px 10px}
+.details h3{font-size:15px;line-height:1.25;min-height:38px;margin-bottom:6px}
+.price{font-size:20px;font-weight:bold;margin-bottom:2px}
+.mrp{font-size:14px;color:gray;margin-bottom:6px}
+.ship{font-size:12px;font-weight:bold;color:#087a3d;margin-bottom:10px}
+.bottom{display:flex;justify-content:space-between;align-items:center}
+.heart{width:40px;height:40px;border:2px solid #ddd;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px}
+.add{padding:10px 12px;border-radius:12px;border:2px solid #ddd;background:white;font-weight:bold;cursor:pointer}
+.empty-state{grid-column:1/-1;padding:35px 20px;text-align:center;background:white;font-weight:bold;color:#555}
+.bottom-nav{position:fixed;bottom:0;left:0;width:100%;height:58px;background:white;border-top:1px solid #ddd;display:flex;z-index:999}
+.nav-item{flex:1;text-align:center;padding-top:8px;font-size:14px;font-weight:bold;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="topbar">
+<a href="index.html" class="home-logo"><img src="assets/Logo.png" alt="Cyclify"></a>
+<div class="search-box"><input type="text" id="searchInput" placeholder="Search Wheels & Tyres"></div>
+<div class="top-icons">
+<span>♡</span>
+<a href="cart.html">🛒<span class="cart-count" id="cartCount"></span></a>
+</div>
+</div>
+
+<div class="page-title">🚴 Wheels & Tyres</div>
+<div class="category-strip" id="categoryStrip"></div>
+<div class="sub-category-strip" id="subCategoryStrip"></div>
+<div class="category-summary" id="categorySummary"></div>
+<div class="products" id="products"></div>
+
+<div class="bottom-nav">
+<div class="nav-item">↕<br>Sort</div>
+<div class="nav-item">⚙️<br>Filters</div>
+</div>
+
+<script>
+const products=[
+{
+id:37,
+name:"Orome Valar TH50D Carbon Road Disc Brake Wheelset",
+price:85000,
+mrp:"₹85,000",
+image:"assets/products/orome-valar-th50d-2.png",
+sizes:["Carbon"],
+mainCategory:"wheels",
+subCategory:"carbon"
+}
+];
+
+const categories=[
+{key:"wheels",label:"Wheels",image:"assets/products/orome-valar-th50d-2.png"},
+{key:"tyres",label:"Tyres",image:"assets/categories/CAT_Wheels.png"},
+{key:"tubes",label:"Tubes",image:"assets/products/cyclami-electric-air-pump-1.webp"},
+{key:"valve",label:"Valve",image:"assets/products/cyclami-presta-valves-1.webp"},
+{key:"freehub-body",label:"Freehub Body",image:"assets/categories/CAT_Wheels.png"},
+{key:"tools",label:"Tools",image:"assets/products/cyclami-carbon-computer-holder.webp"},
+{key:"hubs",label:"Hubs",image:"assets/categories/CAT_Wheels.png"}
+];
+
+const wheelSubCategories=[
+{key:"alloy",label:"Alloy",image:"assets/categories/CAT_Wheels.png"},
+{key:"carbon",label:"Carbon",image:"assets/products/orome-valar-th50d-2.png"}
+];
+
+const container=document.getElementById("products");
+const categoryStrip=document.getElementById("categoryStrip");
+const subCategoryStrip=document.getElementById("subCategoryStrip");
+const categorySummary=document.getElementById("categorySummary");
+const searchInput=document.getElementById("searchInput");
+let activeCategory="";
+let activeSubCategory="";
+
+function updateCartCount(){
+const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+const count=cartItems.reduce((total,item)=>total+(item.quantity||1),0);
+const cartCount=document.getElementById("cartCount");
+if(count>0){
+cartCount.textContent=count;
+cartCount.style.display="flex";
+}
+else{
+cartCount.style.display="none";
+}
+}
+
+function renderCategories(){
+categoryStrip.innerHTML=categories.map(category=>`
+<button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
+<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span>${category.label}</span>
+</button>
+`).join("");
+
+subCategoryStrip.classList.toggle("active",activeCategory==="wheels");
+subCategoryStrip.innerHTML=wheelSubCategories.map(category=>`
+<button class="category-pill ${category.key===activeSubCategory?"active":""}" onclick="selectSubCategory('${category.key}')">
+<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span>${category.label}</span>
+</button>
+`).join("");
+}
+
+function getFilteredProducts(){
+const query=(searchInput.value||"").trim().toLowerCase();
+return products.filter(product=>{
+const categoryMatch=!activeCategory||product.mainCategory===activeCategory;
+const subCategoryMatch=activeCategory!=="wheels"||!activeSubCategory||product.subCategory===activeSubCategory;
+const searchMatch=!query||product.name.toLowerCase().includes(query);
+return categoryMatch&&subCategoryMatch&&searchMatch;
+});
+}
+
+function renderProducts(){
+const filteredProducts=getFilteredProducts();
+const selectedCategory=categories.find(category=>category.key===activeCategory);
+const selectedSubCategory=wheelSubCategories.find(category=>category.key===activeSubCategory);
+const label=selectedSubCategory?`${selectedCategory.label} / ${selectedSubCategory.label}`:(selectedCategory?selectedCategory.label:"All Products");
+categorySummary.textContent=`${label} • ${filteredProducts.length} products`;
+container.innerHTML="";
+
+if(!filteredProducts.length){
+container.innerHTML=`<div class="empty-state">No products found in this category yet</div>`;
+return;
+}
+
+filteredProducts.forEach(product=>{
+container.innerHTML+=`
+<div class="card" onclick="openProduct(${product.id})" tabindex="0" role="link" onkeydown="handleCardKey(event,${product.id})">
+<img src="${product.image}" alt="${product.name}">
+<div class="details">
+<h3>${product.name}</h3>
+<div class="price">₹${product.price.toLocaleString()}</div>
+<div class="mrp">MRP ${product.mrp}</div>
+<div class="ship">Free Shipping</div>
+<div class="bottom">
+<div class="heart">♡</div>
+<button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
+</div>
+</div>
+</div>
+`;
+});
+}
+
+function selectCategory(category){
+activeCategory=category;
+activeSubCategory="";
+renderCategories();
+renderProducts();
+}
+
+function selectSubCategory(category){
+activeSubCategory=category;
+renderCategories();
+renderProducts();
+}
+
+function openProduct(id){
+window.location=`product.html?id=${id}`;
+}
+
+function handleCardKey(event,id){
+if(event.key==="Enter"||event.key===" "){
+event.preventDefault();
+openProduct(id);
+}
+}
+
+function addToCart(event,id){
+event.stopPropagation();
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+let product=products.find(p=>p.id===id);
+
+if(product.sizes&&product.sizes.length){
+window.location=`product.html?id=${id}`;
+return;
+}
+
+cart.push({
+id:product.id,
+name:product.name,
+price:product.price,
+image:product.image,
+quantity:1
+});
+
+localStorage.setItem("cart",JSON.stringify(cart));
+updateCartCount();
+window.location.href="cart.html";
+}
+
+searchInput.addEventListener("input",renderProducts);
+updateCartCount();
+renderCategories();
+renderProducts();
+</script>
+</body>
+</html>
