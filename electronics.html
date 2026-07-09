@@ -98,6 +98,83 @@ font-size:30px;
 font-weight:bold;
 }
 
+.category-strip{
+background:white;
+border-bottom:1px solid #e8e8e8;
+padding:10px 12px 14px;
+overflow-x:auto;
+display:flex;
+gap:14px;
+scroll-snap-type:x mandatory;
+}
+
+.category-pill{
+min-width:96px;
+border:none;
+background:white;
+padding:0;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:7px;
+font-size:12px;
+font-weight:bold;
+color:#222;
+cursor:pointer;
+scroll-snap-align:start;
+position:relative;
+}
+
+.category-icon{
+width:70px;
+height:58px;
+border-radius:14px;
+background:#eef5ff;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+box-shadow:inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+.category-icon img{
+width:100%;
+height:100%;
+object-fit:contain;
+padding:6px;
+}
+
+.category-pill.active{
+color:#0039a6;
+}
+
+.category-pill.active::after{
+content:"";
+position:absolute;
+bottom:-10px;
+width:44px;
+height:4px;
+border-radius:8px;
+background:#0039a6;
+}
+
+.category-summary{
+padding:12px 15px;
+background:#f5f5f5;
+font-size:14px;
+font-weight:bold;
+color:#333;
+}
+
+.empty-state{
+grid-column:1/-1;
+padding:35px 20px;
+text-align:center;
+background:white;
+font-weight:bold;
+color:#555;
+}
+
 .products{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -191,7 +268,7 @@ cursor:pointer;
 </a>
 
 <div class="search-box">
-<input type="text" placeholder="Search Electronics">
+<input type="text" id="searchInput" placeholder="Search Electronics">
 </div>
 
 <div class="top-icons">
@@ -203,6 +280,10 @@ cursor:pointer;
 <div class="page-title">
 ⚡ Electronics
 </div>
+
+<div class="category-strip" id="categoryStrip"></div>
+
+<div class="category-summary" id="categorySummary"></div>
 
 <div class="products" id="products">
 </div>
@@ -468,6 +549,55 @@ sizes:["Black","White"]
 ];
 
 const container=document.getElementById("products");
+const categoryStrip=document.getElementById("categoryStrip");
+const categorySummary=document.getElementById("categorySummary");
+const searchInput=document.getElementById("searchInput");
+let activeCategory="all";
+
+const categories=[
+{key:"all",label:"All",image:"assets/Logo.png"},
+{key:"smart-trainer",label:"Smart Trainer",image:"assets/products/thinkrider-x2-max-1.jpg"},
+{key:"bike-computer",label:"Bike Computer",image:"assets/products/cyclami-c1-sensor-1.webp"},
+{key:"lights",label:"Lights",image:"assets/products/cyclami-500-lumen-light-1.webp"},
+{key:"electric-pump",label:"Electric Pump",image:"assets/products/cyclami-electric-air-pump-exact-1.webp"},
+{key:"power-meter",label:"Power Meter",image:"assets/Logo.png"},
+{key:"sensors",label:"Sensors",image:"assets/products/cyclami-c1-sensor-1.webp"},
+{key:"wireless-groupset",label:"Wireless Groupset",image:"assets/Logo.png"}
+];
+
+function getProductCategory(product){
+const name=product.name.toLowerCase();
+
+if(name.includes("trainer")){
+return "smart-trainer";
+}
+
+if(name.includes("pump")){
+return "electric-pump";
+}
+
+if(name.includes("light")||name.includes("headlight")||name.includes("taillight")){
+return "lights";
+}
+
+if(name.includes("sensor")||name.includes("cadence")||name.includes("speed")){
+return "sensors";
+}
+
+if(name.includes("computer")||name.includes("mount")||name.includes("holder")){
+return "bike-computer";
+}
+
+if(name.includes("power meter")){
+return "power-meter";
+}
+
+if(name.includes("wireless groupset")){
+return "wireless-groupset";
+}
+
+return "bike-computer";
+}
 
 function updateCartCount(){
 const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
@@ -506,6 +636,70 @@ onkeydown="handleCardKey(event,${product.id})">
 </div>
 `;
 });
+
+function renderCategories(){
+categoryStrip.innerHTML=categories.map(category=>`
+<button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
+<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span>${category.label}</span>
+</button>
+`).join("");
+}
+
+function getFilteredProducts(){
+const query=(searchInput.value||"").trim().toLowerCase();
+
+return products.filter(product=>{
+const categoryMatch=activeCategory==="all"||getProductCategory(product)===activeCategory;
+const searchMatch=!query||product.name.toLowerCase().includes(query);
+return categoryMatch&&searchMatch;
+});
+}
+
+function renderProducts(){
+const filteredProducts=getFilteredProducts();
+const categoryLabel=categories.find(category=>category.key===activeCategory).label;
+categorySummary.textContent=`${categoryLabel} • ${filteredProducts.length} products`;
+container.innerHTML="";
+
+if(!filteredProducts.length){
+container.innerHTML=`<div class="empty-state">No products found in this category yet</div>`;
+return;
+}
+
+filteredProducts.forEach(product=>{
+container.innerHTML+=`
+<div class="card"
+onclick="openProduct(${product.id})"
+tabindex="0"
+role="link"
+onkeydown="handleCardKey(event,${product.id})">
+<img src="${product.image}">
+<div class="details">
+<h3>${product.name}</h3>
+<div class="price">₹${product.price.toLocaleString()}</div>
+<div class="mrp">MRP ${product.mrp}</div>
+<div class="ship">Free Shipping</div>
+<div class="bottom">
+<div class="heart">♡</div>
+<button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
+</div>
+</div>
+</div>
+`;
+});
+}
+
+function selectCategory(category){
+activeCategory=category;
+renderCategories();
+renderProducts();
+}
+
+searchInput.addEventListener("input",renderProducts);
+
+renderCategories();
+renderProducts();
 
 function openProduct(id){
 window.location=`product.html?id=${id}`;
