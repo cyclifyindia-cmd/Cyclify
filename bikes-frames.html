@@ -520,7 +520,7 @@ document.getElementById(
 const categoryStrip=document.getElementById("categoryStrip");
 const categorySummary=document.getElementById("categorySummary");
 const searchInput=document.getElementById("searchInput");
-let activeCategory="sava";
+let activeCategory="";
 
 const categories=[
 {key:"sava",label:"SAVA",image:"assets/products/sava-hawkeye.jpg"},
@@ -634,7 +634,7 @@ function getFilteredProducts(){
 const query=(searchInput.value||"").trim().toLowerCase();
 
 return products.filter(product=>{
-const categoryMatch=getProductCategory(product)===activeCategory;
+const categoryMatch=!activeCategory||getProductCategory(product)===activeCategory;
 const searchMatch=!query||product.name.toLowerCase().includes(query);
 return categoryMatch&&searchMatch;
 });
@@ -642,7 +642,8 @@ return categoryMatch&&searchMatch;
 
 function renderProducts(){
 const filteredProducts=getFilteredProducts();
-const categoryLabel=categories.find(category=>category.key===activeCategory).label;
+const selectedCategory=categories.find(category=>category.key===activeCategory);
+const categoryLabel=selectedCategory?selectedCategory.label:"All Products";
 categorySummary.textContent=`${categoryLabel} • ${filteredProducts.length} products`;
 container.innerHTML="";
 
