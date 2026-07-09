@@ -520,10 +520,9 @@ document.getElementById(
 const categoryStrip=document.getElementById("categoryStrip");
 const categorySummary=document.getElementById("categorySummary");
 const searchInput=document.getElementById("searchInput");
-let activeCategory="all";
+let activeCategory="sava";
 
 const categories=[
-{key:"all",label:"All",image:"assets/Logo.png"},
 {key:"sava",label:"SAVA",image:"assets/products/sava-hawkeye.jpg"},
 {key:"elves",label:"ELVES",image:"assets/products/elves-falath-evo-plus.jpg"}
 ];
@@ -635,7 +634,7 @@ function getFilteredProducts(){
 const query=(searchInput.value||"").trim().toLowerCase();
 
 return products.filter(product=>{
-const categoryMatch=activeCategory==="all"||getProductCategory(product)===activeCategory;
+const categoryMatch=getProductCategory(product)===activeCategory;
 const searchMatch=!query||product.name.toLowerCase().includes(query);
 return categoryMatch&&searchMatch;
 });
