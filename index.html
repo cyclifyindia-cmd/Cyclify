@@ -48,16 +48,37 @@ background:white;
 
 .search-box{
 position:relative;
+display:flex;
+align-items:center;
+gap:8px;
+background:#f2f2f2;
+border-radius:12px;
 }
 
 .search-box input{
 width:100%;
 padding:15px;
 border:none;
-border-radius:12px;
-background:#f2f2f2;
+border-radius:12px 0 0 12px;
+background:transparent;
 font-size:16px;
 outline:none;
+}
+
+.image-search-btn{
+width:44px;
+height:44px;
+margin-right:5px;
+border:none;
+border-radius:10px;
+background:white;
+font-size:20px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.image-search-btn:active{
+transform:scale(.96);
 }
 
 .search-placeholder{
@@ -75,8 +96,95 @@ white-space:nowrap;
 }
 
 .search-box input:focus{
+background:transparent;
+}
+
+.search-box:focus-within{
 background:white;
 box-shadow:0 0 0 2px #0039a6;
+}
+
+.search-results{
+display:none;
+margin-top:10px;
+background:white;
+border-radius:12px;
+box-shadow:0 10px 28px rgba(0,0,0,.14);
+overflow:hidden;
+}
+
+.search-results.active{
+display:block;
+}
+
+.search-result{
+display:flex;
+align-items:center;
+gap:12px;
+padding:11px 12px;
+text-decoration:none;
+color:#111;
+border-bottom:1px solid #eee;
+}
+
+.search-result:last-child{
+border-bottom:none;
+}
+
+.search-result img{
+width:52px;
+height:44px;
+object-fit:contain;
+background:#f7f7f7;
+border-radius:8px;
+flex:0 0 auto;
+}
+
+.search-result strong{
+display:block;
+font-size:14px;
+line-height:1.25;
+}
+
+.search-result span{
+display:block;
+margin-top:3px;
+font-size:12px;
+color:#666;
+}
+
+.search-empty{
+padding:14px;
+font-size:14px;
+color:#666;
+}
+
+.image-search-preview{
+display:flex;
+align-items:center;
+gap:12px;
+padding:12px;
+border-bottom:1px solid #eee;
+}
+
+.image-search-preview img{
+width:58px;
+height:58px;
+object-fit:cover;
+border-radius:10px;
+background:#f2f2f2;
+}
+
+.image-search-preview strong{
+display:block;
+font-size:14px;
+}
+
+.image-search-preview span{
+display:block;
+margin-top:4px;
+font-size:12px;
+color:#666;
 }
 
 .location{
@@ -281,12 +389,17 @@ type="text"
 id="searchInput"
 autocomplete="off">
 
+<button class="image-search-btn" id="imageSearchButton" type="button" aria-label="Search by image">📷</button>
+<input type="file" id="imageSearchInput" accept="image/*" hidden>
+
 <div class="search-placeholder" id="animatedPlaceholder">
 <span>🔍</span>
 <span id="typingText"></span>
 </div>
 
 </div>
+
+<div class="search-results" id="searchResults"></div>
 
 </div>
 
@@ -386,6 +499,49 @@ const words = [
 const textElement = document.getElementById("typingText");
 const placeholder = document.getElementById("animatedPlaceholder");
 const input = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+const imageSearchButton = document.getElementById("imageSearchButton");
+const imageSearchInput = document.getElementById("imageSearchInput");
+let imagePreviewUrl = "";
+
+const searchProducts = [
+{id:1,name:"SAVA Hawkeye",price:189900,image:"assets/products/sava-hawkeye.jpg",category:"Bikes & Frames",keywords:"carbon bike road bicycle frame"},
+{id:2,name:"ELVES Falath EVO+",price:250000,image:"assets/products/elves-falath-evo-plus.jpg",category:"Bikes & Frames",keywords:"elves evo falath road bike carbon"},
+{id:3,name:"ELVES Falath EXP",price:250000,image:"assets/products/elves-falath-exp-11.png",category:"Bikes & Frames",keywords:"elves exp falath road bike carbon shimano"},
+{id:4,name:"ELVES Amanyar",price:400000,image:"assets/products/elves-amanyar-1.png",category:"Bikes & Frames",keywords:"elves amanyar road bike carbon"},
+{id:5,name:"Cyclami Electric Air Pump",price:5250,image:"assets/products/cyclami-electric-air-pump-exact-1.webp",category:"Electronics",keywords:"pump inflator tyre 150 psi"},
+{id:6,name:"Cyclami C1 Cadence Speed Dual Sensor",price:2100,image:"assets/products/cyclami-c1-sensor-1.webp",category:"Electronics",keywords:"cadence speed sensor ant ble computer"},
+{id:7,name:"Cyclami Tubeless Bicycle Presta Valves",price:999,image:"assets/products/cyclami-presta-valves-1.webp",category:"Electronics",keywords:"presta valves tubeless valve"},
+{id:8,name:"Cyclami 500 Lumen Front Light",price:1900,image:"assets/products/cyclami-500-lumen-light-1.webp",category:"Electronics",keywords:"front light headlight 500 lumen"},
+{id:9,name:"Cyclami BR-1200 Bicycle Front Light",price:2850,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"br1200 1200 lumen front light"},
+{id:10,name:"Cyclami CYC1700 Waterproof Bicycle Light",price:6300,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"1700 lumen waterproof front light"},
+{id:11,name:"Cyclami 1200 Lumen Bicycle Front Light",price:2499,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"1200 lumen bicycle front light"},
+{id:12,name:"Cyclami Carbon Fiber Bicycle Computer Holder",price:1500,image:"assets/products/cyclami-carbon-computer-holder.webp",category:"Electronics",keywords:"computer holder carbon mount"},
+{id:13,name:"Cyclami 2000LM BR2000 Rainproof Bicycle Light",price:4300,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"2000 lumen br2000 rainproof light"},
+{id:14,name:"Cyclami S2 Bicycle Computer Mount Holder",price:949,image:"assets/products/cyclami-s2-computer-mount.webp",category:"Electronics",keywords:"s2 computer mount holder"},
+{id:15,name:"Cyclami Bottle Cage Anti Theft GPS Tracker Holder",price:1999,image:"assets/products/cyclami-carbon-computer-holder.webp",category:"Electronics",keywords:"bottle cage gps tracker holder"},
+{id:16,name:"S16 Out Front Mount for Bicycle Computer",price:2500,image:"assets/products/cyclami-s2-computer-mount.webp",category:"Electronics",keywords:"s16 out front mount computer"},
+{id:17,name:"Cyclami M6W 3 in 1 Bicycle Mount",price:1400,image:"assets/products/cyclami-carbon-computer-holder.webp",category:"Electronics",keywords:"m6w mount gps light camera"},
+{id:18,name:"Cyclami A3 Max Mini Electric Bike Pump",price:8500,image:"assets/products/cyclami-electric-air-pump-1.webp",category:"Electronics",keywords:"a3 max pump inflator 150 psi"},
+{id:19,name:"Cyclami All in One Bicycle Computer Holder Mount",price:1800,image:"assets/products/cyclami-carbon-computer-holder.webp",category:"Electronics",keywords:"m7 all in one handlebar mount"},
+{id:20,name:"Cyclami CY200 Smart Brake Sensor Tail Light",price:1900,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"cy200 smart brake sensor tail light"},
+{id:21,name:"Cyclami Q2 SUP Electric Pump",price:9500,image:"assets/products/cyclami-electric-air-pump-1.webp",category:"Electronics",keywords:"q2 sup electric pump battery"},
+{id:22,name:"Cyclami BR1000 Super Bright LED Headlight",price:2600,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"br1000 led headlight front"},
+{id:23,name:"Cyclami 1200 Lumen High Brightness Light",price:4200,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"1200 lumen high brightness light"},
+{id:24,name:"Cyclami Ceramic Bearing Jockey Wheel Pulley",price:2000,image:"assets/products/cyclami-carbon-computer-holder.webp",category:"Electronics",keywords:"jockey wheel pulley ceramic bearing derailleur"},
+{id:25,name:"Cyclami Portable Bicycle Tyre Opener Tool",price:299,image:"assets/products/cyclami-carbon-computer-holder.webp",category:"Electronics",keywords:"tyre opener breaker lever repair tool"},
+{id:26,name:"Cyclami Headlight LED Head Flashlight",price:1499,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"headlight flashlight led 11 modes"},
+{id:27,name:"Cyclami CY180 Smart Bicycle Taillight",price:2999,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"cy180 smart taillight wireless remote"},
+{id:28,name:"Cyclami 1800 Lumen USB Rechargeable Front Light",price:3000,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"1800 lumen usb rechargeable front light"},
+{id:29,name:"Cyclami Carbon Fiber Derailleur Pulley Set",price:3300,image:"assets/products/cyclami-carbon-computer-holder.webp",category:"Electronics",keywords:"carbon derailleur pulley set"},
+{id:30,name:"Cyclami Ultra-Light 30g TPU Bicycle Tube",price:999,image:"assets/products/cyclami-electric-air-pump-1.webp",category:"Electronics",keywords:"tpu tube 30g inner tube"},
+{id:31,name:"Cyclami Ultralight Bicycle Tyre Lever",price:299,image:"assets/products/cyclami-carbon-computer-holder.webp",category:"Electronics",keywords:"tyre lever repair tool"},
+{id:32,name:"Cyclami 300 Lumen Rechargeable Front Light",price:2200,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"300 lumen rechargeable front light cl320"},
+{id:33,name:"Cyclami 2200 Lumen LED Bicycle Light",price:4750,image:"assets/products/cyclami-1200-high-brightness-light.webp",category:"Electronics",keywords:"2200 lumen led bicycle light"},
+{id:34,name:"Cyclami MTB TPU Inner Tube 65g",price:1100,image:"assets/products/cyclami-electric-air-pump-1.webp",category:"Electronics",keywords:"mtb tpu inner tube 65g"},
+{id:35,name:"Cyclami A2 Max 150PSI Mini Electric Bike Tire Pump",price:8500,image:"assets/products/cyclami-electric-air-pump-1.webp",category:"Electronics",keywords:"a2 max mini pump 150 psi"},
+{id:36,name:"ThinkRider X2 Max Smart Trainer",price:40000,image:"assets/products/thinkrider-x2-max-1.jpg",category:"Electronics",keywords:"smart trainer indoor cycling thinkrider"}
+];
 
 let wordIndex = 0;
 let charIndex = 0;
@@ -439,6 +595,7 @@ animateText();
 input.addEventListener("focus",()=>{
 
 placeholder.style.display="none";
+renderSearchResults();
 
 });
 
@@ -450,6 +607,83 @@ placeholder.style.display="flex";
 
 }
 
+});
+
+function formatPrice(price){
+return "Rs. "+price.toLocaleString("en-IN");
+}
+
+function getSearchMatches(){
+const query=input.value.trim().toLowerCase();
+
+if(!query){
+return [];
+}
+
+return searchProducts
+.filter(product=>{
+const searchable=[
+product.name,
+product.category,
+product.keywords
+].join(" ").toLowerCase();
+
+return searchable.includes(query);
+})
+.slice(0,8);
+}
+
+function renderSearchResults(){
+const query=input.value.trim();
+const matches=getSearchMatches();
+
+if(!query){
+searchResults.classList.remove("active");
+searchResults.innerHTML="";
+return;
+}
+
+searchResults.classList.add("active");
+
+if(!matches.length){
+searchResults.innerHTML=`<div class="search-empty">No products found</div>`;
+return;
+}
+
+searchResults.innerHTML=matches.map(product=>`
+<a class="search-result" href="product.html?id=${product.id}">
+<img src="${product.image}" alt="${product.name}">
+<div>
+<strong>${product.name}</strong>
+<span>${product.category} • ${formatPrice(product.price)}</span>
+</div>
+</a>
+`).join("");
+}
+
+input.addEventListener("input",()=>{
+placeholder.style.display=input.value.trim()?"none":"flex";
+renderSearchResults();
+});
+
+input.addEventListener("keydown",event=>{
+if(event.key!=="Enter"){
+return;
+}
+
+const firstMatch=getSearchMatches()[0];
+
+if(firstMatch){
+window.location.href=`product.html?id=${firstMatch.id}`;
+}
+});
+
+document.addEventListener("click",event=>{
+if(event.target.closest(".search")){
+return;
+}
+
+searchResults.classList.remove("active");
 });
 
 </script>
