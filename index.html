@@ -259,23 +259,55 @@ font-weight:bold;
 }
 
 .offer{
-background:#0039a6;
+background:#f5f5f5;
 color:white;
-padding:14px;
+padding:10px 12px 12px;
 overflow:hidden;
 }
 
 .vertical-banner{
 height:96px;
 overflow:hidden;
-border-radius:12px;
-background:#061b45;
+border-radius:0;
+background:
+linear-gradient(90deg,rgba(255,255,255,.08) 0 12%,transparent 12% 24%),
+linear-gradient(135deg,#0f172a 0%,#111827 48%,#0b1220 100%);
+background-size:90px 100%,100% 100%;
+position:relative;
+box-shadow:0 8px 20px rgba(15,23,42,.18);
+}
+
+.vertical-banner::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:16px;
+height:2px;
+background:repeating-linear-gradient(90deg,rgba(255,255,255,.72) 0 28px,transparent 28px 52px);
+opacity:.62;
+animation:roadLines .9s linear infinite;
+z-index:1;
+}
+
+.vertical-banner::after{
+content:"🚴";
+position:absolute;
+right:-52px;
+bottom:24px;
+font-size:28px;
+filter:drop-shadow(-12px 0 8px rgba(255,255,255,.34));
+animation:cyclistPass 4.8s ease-in-out infinite;
+z-index:3;
+pointer-events:none;
 }
 
 .banner-track{
 display:flex;
 flex-direction:column;
-animation:verticalSlide 12s infinite;
+animation:verticalSlide 7.2s cubic-bezier(.7,0,.2,1) infinite;
+position:relative;
+z-index:2;
 }
 
 .vertical-banner:hover .banner-track{
@@ -291,6 +323,17 @@ align-items:center;
 gap:14px;
 color:white;
 text-decoration:none;
+opacity:0;
+animation:slideFade 7.2s infinite;
+text-shadow:0 1px 8px rgba(0,0,0,.28);
+}
+
+.banner-slide:nth-child(2){
+animation-delay:2.4s;
+}
+
+.banner-slide:nth-child(3){
+animation-delay:4.8s;
 }
 
 .banner-slide h3{
@@ -300,12 +343,12 @@ margin-bottom:4px;
 
 .banner-slide p{
 font-size:13px;
-color:#dbeafe;
+color:#e5edf8;
 }
 
 .banner-action{
-background:white;
-color:#0039a6;
+background:rgba(255,255,255,.94);
+color:#111827;
 padding:10px 14px;
 border-radius:22px;
 font-size:13px;
@@ -314,17 +357,58 @@ white-space:nowrap;
 }
 
 @keyframes verticalSlide{
-0%,25%{
+0%,22%{
 transform:translateY(0);
 }
-33%,58%{
+31%,55%{
 transform:translateY(-96px);
 }
-66%,91%{
+64%,88%{
 transform:translateY(-192px);
 }
 100%{
 transform:translateY(0);
+}
+}
+
+@keyframes slideFade{
+0%,8%{
+opacity:0;
+}
+14%,27%{
+opacity:1;
+}
+35%,100%{
+opacity:0;
+}
+}
+
+@keyframes roadLines{
+from{
+background-position:0 0;
+}
+to{
+background-position:-52px 0;
+}
+}
+
+@keyframes cyclistPass{
+0%,18%{
+right:-52px;
+opacity:0;
+transform:translateY(0) scale(.92);
+}
+34%,48%{
+opacity:1;
+}
+70%{
+right:calc(100% + 34px);
+opacity:0;
+transform:translateY(-2px) scale(1);
+}
+100%{
+right:calc(100% + 34px);
+opacity:0;
 }
 }
 
