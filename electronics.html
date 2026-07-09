@@ -545,6 +545,30 @@ price:40000,
 mrp:"₹40,000",
 image:"assets/products/thinkrider-x2-max-1.jpg",
 sizes:["Black","White"]
+},
+{
+id:38,
+name:"ThinkRider XX PRO Foldable Smart Trainer",
+price:51999,
+mrp:"₹51,999",
+image:"assets/products/thinkrider-xx-pro-1.png",
+sizes:["White","Black"]
+},
+{
+id:39,
+name:"ThinkRider VS 200 Virtual Shifting Controller",
+price:5999,
+mrp:"₹5,999",
+image:"https://thinkrider.com/cdn/shop/files/VS200-12_960x.jpg?v=1768188298",
+sizes:[]
+},
+{
+id:40,
+name:"ThinkRider Speed Cadence Sensor",
+price:2200,
+mrp:"₹2,200",
+image:"https://thinkrider.com/cdn/shop/files/SpeedCadenceSensor1_1200x.jpg?v=1767941722",
+sizes:[]
 }
 ];
 
@@ -568,6 +592,10 @@ function getProductCategory(product){
 const name=product.name.toLowerCase();
 
 if(name.includes("trainer")){
+return "smart-trainer";
+}
+
+if(name.includes("virtual shifting")){
 return "smart-trainer";
 }
 
