@@ -551,6 +551,19 @@ id="sizeOptions">
 
 </div>
 
+<div class="size-section"
+id="valveSection">
+
+<div class="size-label">
+Select Valve Length
+</div>
+
+<div class="size-options"
+id="valveOptions">
+</div>
+
+</div>
+
 <div class="buttons">
 
 <button
@@ -1248,34 +1261,54 @@ specs:[
 
 {
 id:30,
-name:"Cyclami Ultra-Light 30g TPU Bicycle Tube",
+name:"Cyclami Ultra-Light TPU Bicycle Tube",
 price:999,
 mrp:"₹1,500",
-image:"assets/products/cyclami-electric-air-pump-1.webp",
-images:["assets/products/cyclami-electric-air-pump-1.webp"],
-sizes:["700x18-32C","Option 2","Option 3"],
+image:"assets/products/cyclami-tpu-tube-1.webp",
+images:[
+"assets/products/cyclami-tpu-tube-1.webp",
+"assets/products/cyclami-tpu-tube-2.webp",
+"assets/products/cyclami-tpu-tube-3.webp",
+"assets/products/cyclami-tpu-tube-4.webp",
+"assets/products/cyclami-tpu-tube-5.webp",
+"assets/products/cyclami-tpu-tube-6.webp",
+"assets/products/cyclami-tpu-tube-7.webp",
+"assets/products/cyclami-tpu-tube-8.webp"
+],
+sizes:["700c 23-25","700c 28-32"],
+valveLengths:["45mm","65mm","85mm"],
 specs:[
 "Brand : CYCLAMI",
-"Type : TPU inner tube",
-"Weight : 30g",
-"Size : 700 x 18-32C",
-"Feature : Ultra-light and durable"
+"Type : TPU bicycle inner tube",
+"Wheel size : 700c",
+"Tyre size options : 23-25C and 28-32C",
+"Valve length options : 45mm, 65mm, 85mm",
+"Material : Lightweight TPU",
+"Feature : Compact, light, and easy to carry"
 ]
 },
 
 {
 id:31,
-name:"Cyclami Ultralight Bicycle Tyre Lever",
+name:"Cyclami Multi-Functional Bicycle Tyre Lever",
 price:299,
 mrp:"₹999",
-image:"assets/products/cyclami-carbon-computer-holder.webp",
-images:["assets/products/cyclami-carbon-computer-holder.webp"],
+image:"assets/products/cyclami-tyre-lever-3.webp",
+images:[
+"assets/products/cyclami-tyre-lever-3.webp",
+"assets/products/cyclami-tyre-lever-4.webp",
+"assets/products/cyclami-tyre-lever-5.webp",
+"assets/products/cyclami-tyre-lever-6.webp",
+"assets/products/cyclami-tyre-lever-7.webp",
+"assets/products/cyclami-tyre-lever-8.webp"
+],
 sizes:[],
 specs:[
 "Brand : CYCLAMI",
-"Type : Bicycle tyre lever",
-"Use : Inner tube repair and tyre removal",
-"Feature : Ultralight cycling accessory"
+"Type : Multi-functional bicycle tyre pry bar",
+"Use : Tyre removal and emergency repair",
+"Design : Easy to operate and carry",
+"Feature : Suitable for cycling tool kits"
 ]
 },
 
@@ -1464,11 +1497,14 @@ const product=products.find(item=>item.id===productId)||products[0];
 let productImages=product.images||[product.image];
 let currentImageIndex=0;
 let selectedSize=product.sizes&&product.sizes.length?product.sizes[0]:"";
+let selectedValveLength=product.valveLengths&&product.valveLengths.length?product.valveLengths[0]:"";
 const backLink=document.querySelector(".back");
 const productGallery=document.getElementById("productGallery");
 const hasMultipleImages=productImages.length>1;
 
+if(backLink){
 backLink.href=product.id===37?"wheels-tyres.html":product.id>=5?"electronics.html":"bikes-frames.html";
+}
 productGallery.classList.toggle("single-image",!hasMultipleImages);
 
 function updateCartCount(){
@@ -1495,6 +1531,8 @@ document.getElementById("productMrp").textContent=`MRP ${product.mrp}`;
 
 const sizeSection=document.getElementById("sizeSection");
 const sizeOptions=document.getElementById("sizeOptions");
+const valveSection=document.getElementById("valveSection");
+const valveOptions=document.getElementById("valveOptions");
 
 if(product.sizes&&product.sizes.length){
 
@@ -1517,6 +1555,27 @@ sizeSection.style.display="none";
 
 }
 
+if(product.valveLengths&&product.valveLengths.length){
+
+valveSection.style.display="block";
+
+product.valveLengths.forEach(length=>{
+valveOptions.innerHTML+=`
+<button
+class="size-btn valve-btn"
+onclick="selectValveLength('${length}')">
+${length}
+</button>
+`;
+});
+
+}
+else{
+
+valveSection.style.display="none";
+
+}
+
 function selectSize(size){
 
 selectedSize=size;
@@ -1529,6 +1588,20 @@ button.classList.toggle("active",button.textContent.trim()===size);
 
 if(selectedSize){
 selectSize(selectedSize);
+}
+
+function selectValveLength(length){
+
+selectedValveLength=length;
+
+document.querySelectorAll(".valve-btn").forEach(button=>{
+button.classList.toggle("active",button.textContent.trim()===length);
+});
+
+}
+
+if(selectedValveLength){
+selectValveLength(selectedValveLength);
 }
 
 function showImage(index){
@@ -1628,7 +1701,8 @@ function addToCart(){
 let cart=JSON.parse(localStorage.getItem("cart"))||[];
 let existing=cart.find(item=>
 item.id===product.id&&
-(item.size||"")===(selectedSize||"")
+(item.size||"")===(selectedSize||"")&&
+(item.valveLength||"")===(selectedValveLength||"")
 );
 
 if(existing){
@@ -1641,6 +1715,7 @@ name:product.name,
 price:product.price,
 image:product.image,
 size:selectedSize,
+valveLength:selectedValveLength,
 quantity:1
 });
 }

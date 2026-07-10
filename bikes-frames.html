@@ -611,7 +611,7 @@ Add to cart
 
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
-<button class="category-pill ${category.key===activeCategory&#128100;"active":""}" onclick="selectCategory('${category.key}')">
+<button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
 <span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
@@ -631,7 +631,7 @@ return categoryMatch&&searchMatch;
 function renderProducts(){
 const filteredProducts=getFilteredProducts();
 const selectedCategory=categories.find(category=>category.key===activeCategory);
-const categoryLabel=selectedCategory&#128100;selectedCategory.label:"All Products";
+const categoryLabel=selectedCategory?selectedCategory.label:"All Products";
 categorySummary.textContent=`${categoryLabel} • ${filteredProducts.length} products`;
 container.innerHTML="";
 
@@ -678,7 +678,7 @@ renderProducts();
 function openProduct(id){
 
 window.location=
-`product.html&#128100;id=${id}`;
+`product.html?id=${id}`;
 
 }
 
@@ -713,7 +713,7 @@ p=>p.id===id
 if(product.sizes&&product.sizes.length){
 
 window.location=
-`product.html&#128100;id=${id}`;
+`product.html?id=${id}`;
 
 return;
 

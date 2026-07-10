@@ -116,7 +116,7 @@ cartCount.style.display="none";
 
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
-<button class="category-pill ${category.key===activeCategory&#128100;"active":""}" onclick="selectCategory('${category.key}')">
+<button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
 <span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
@@ -124,7 +124,7 @@ categoryStrip.innerHTML=categories.map(category=>`
 
 subCategoryStrip.classList.toggle("active",activeCategory==="wheels");
 subCategoryStrip.innerHTML=wheelSubCategories.map(category=>`
-<button class="category-pill ${category.key===activeSubCategory&#128100;"active":""}" onclick="selectSubCategory('${category.key}')">
+<button class="category-pill ${category.key===activeSubCategory?"active":""}" onclick="selectSubCategory('${category.key}')">
 <span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
@@ -145,7 +145,7 @@ function renderProducts(){
 const filteredProducts=getFilteredProducts();
 const selectedCategory=categories.find(category=>category.key===activeCategory);
 const selectedSubCategory=wheelSubCategories.find(category=>category.key===activeSubCategory);
-const label=selectedSubCategory&#128100;`${selectedCategory.label} / ${selectedSubCategory.label}`:(selectedCategory&#128100;selectedCategory.label:"All Products");
+const label=selectedSubCategory?`${selectedCategory.label} / ${selectedSubCategory.label}`:(selectedCategory?selectedCategory.label:"All Products");
 categorySummary.textContent=`${label} • ${filteredProducts.length} products`;
 container.innerHTML="";
 
@@ -187,7 +187,7 @@ renderProducts();
 }
 
 function openProduct(id){
-window.location=`product.html&#128100;id=${id}`;
+window.location=`product.html?id=${id}`;
 }
 
 function handleCardKey(event,id){
@@ -203,7 +203,7 @@ let cart=JSON.parse(localStorage.getItem("cart"))||[];
 let product=products.find(p=>p.id===id);
 
 if(product.sizes&&product.sizes.length){
-window.location=`product.html&#128100;id=${id}`;
+window.location=`product.html?id=${id}`;
 return;
 }
 

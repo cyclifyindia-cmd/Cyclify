@@ -399,6 +399,12 @@ Size: ${item.size}
 </div>
 `:""}
 
+${item.valveLength?`
+<div class="size">
+Valve: ${item.valveLength}
+</div>
+`:""}
+
 <button
 class="remove"
 onclick="removeItem(${index})">
@@ -544,6 +550,12 @@ item.name+
 (
 item.size?
 " | Size: "+item.size:
+""
+)+
+
+(
+item.valveLength?
+" | Valve: "+item.valveLength:
 ""
 )+
 
