@@ -10,8 +10,8 @@ body{background:#f5f5f5;padding-bottom:80px}
 .topbar{position:sticky;top:0;background:white;display:flex;align-items:center;gap:10px;padding:8px 12px;box-shadow:0 2px 8px rgba(0,0,0,.1);z-index:1000}
 .home-logo{display:flex;align-items:center;justify-content:center;text-decoration:none;width:92px;height:38px;overflow:hidden;border-radius:0;background:transparent;flex-shrink:0}
 .home-logo img{width:100%;height:100%;display:block;object-fit:contain}
-.search-box{flex:1}
-.search-box input{width:100%;padding:13px;border:none;outline:none;border-radius:30px;background:#f2f2f2;font-size:15px}
+.search-box{flex:1;position:relative;display:flex;align-items:center;background:#f2f2f2;border-radius:30px;overflow:hidden}
+.search-box input{width:100%;padding:13px;border:none;outline:none;border-radius:30px;background:transparent;font-size:15px}.image-search-btn{width:38px;height:38px;margin-right:4px;border:none;border-radius:50%;background:white;font-size:17px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08);flex:0 0 auto}
 .top-icons{display:flex;gap:15px;font-size:24px}
 .top-icons a{text-decoration:none;color:black;position:relative}
 .cart-count{position:absolute;top:-8px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ff2a2a;color:white;font-size:11px;font-weight:bold;display:none;align-items:center;justify-content:center}
@@ -46,10 +46,10 @@ body{background:#f5f5f5;padding-bottom:80px}
 <body>
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
-<div class="search-box"><input type="text" id="searchInput" placeholder="Search Wheels & Tyres"></div>
+<div class="search-box"><input type="text" id="searchInput" placeholder="Search Wheels & Tyres"><button class="image-search-btn" id="headerImageSearchButton" type="button" aria-label="Search by image">&#128247;</button><input type="file" id="headerImageSearchInput" accept="image/*" hidden></div>
 <div class="top-icons">
-<span>♡</span>
-<a href="cart.html">🛒<span class="cart-count" id="cartCount"></span></a>
+<a href="account.html" aria-label="Account">&#128100;</a>
+<a href="cart.html">&#128722;<span class="cart-count" id="cartCount"></span></a>
 </div>
 </div>
 
@@ -116,7 +116,7 @@ cartCount.style.display="none";
 
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
-<button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
+<button class="category-pill ${category.key===activeCategory&#128100;"active":""}" onclick="selectCategory('${category.key}')">
 <span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
@@ -124,7 +124,7 @@ categoryStrip.innerHTML=categories.map(category=>`
 
 subCategoryStrip.classList.toggle("active",activeCategory==="wheels");
 subCategoryStrip.innerHTML=wheelSubCategories.map(category=>`
-<button class="category-pill ${category.key===activeSubCategory?"active":""}" onclick="selectSubCategory('${category.key}')">
+<button class="category-pill ${category.key===activeSubCategory&#128100;"active":""}" onclick="selectSubCategory('${category.key}')">
 <span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
@@ -145,7 +145,7 @@ function renderProducts(){
 const filteredProducts=getFilteredProducts();
 const selectedCategory=categories.find(category=>category.key===activeCategory);
 const selectedSubCategory=wheelSubCategories.find(category=>category.key===activeSubCategory);
-const label=selectedSubCategory?`${selectedCategory.label} / ${selectedSubCategory.label}`:(selectedCategory?selectedCategory.label:"All Products");
+const label=selectedSubCategory&#128100;`${selectedCategory.label} / ${selectedSubCategory.label}`:(selectedCategory&#128100;selectedCategory.label:"All Products");
 categorySummary.textContent=`${label} • ${filteredProducts.length} products`;
 container.innerHTML="";
 
@@ -164,7 +164,7 @@ container.innerHTML+=`
 <div class="mrp">MRP ${product.mrp}</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom">
-<div class="heart">♡</div>
+<div class="heart" onclick="event.stopPropagation();window.location.href='account.html'">&#128100;</div>
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
 </div>
 </div>
@@ -187,7 +187,7 @@ renderProducts();
 }
 
 function openProduct(id){
-window.location=`product.html?id=${id}`;
+window.location=`product.html&#128100;id=${id}`;
 }
 
 function handleCardKey(event,id){
@@ -203,7 +203,7 @@ let cart=JSON.parse(localStorage.getItem("cart"))||[];
 let product=products.find(p=>p.id===id);
 
 if(product.sizes&&product.sizes.length){
-window.location=`product.html?id=${id}`;
+window.location=`product.html&#128100;id=${id}`;
 return;
 }
 
@@ -225,5 +225,43 @@ updateCartCount();
 renderCategories();
 renderProducts();
 </script>
+
+<script>
+(function(){
+const imageButton=document.getElementById("headerImageSearchButton");
+const imageInput=document.getElementById("headerImageSearchInput");
+if(imageButton&&imageInput){
+imageButton.addEventListener("click",()=>imageInput.click());
+imageInput.addEventListener("change",()=>{
+const file=imageInput.files&&imageInput.files[0];
+if(!file){return;}
+const reader=new FileReader();
+reader.onload=()=>{
+sessionStorage.setItem("pendingImageSearchData",reader.result);
+window.location.href="index.html#image-search";
+};
+reader.readAsDataURL(file);
+});
+}
+const globalSearch=document.querySelector("[data-global-search]");
+if(globalSearch){
+globalSearch.addEventListener("keydown",event=>{
+if(event.key!=="Enter"){return;}
+const query=globalSearch.value.trim();
+if(!query){return;}
+sessionStorage.setItem("pendingSearchQuery",query);
+window.location.href="index.html";
+});
+}
+const cartCount=document.getElementById("cartCount");
+if(cartCount){
+const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+const count=cartItems.reduce((total,item)=>total+(item.quantity||1),0);
+if(count>0){cartCount.textContent=count;cartCount.style.display="flex";}
+else{cartCount.style.display="none";}
+}
+})();
+</script>
+
 </body>
 </html>

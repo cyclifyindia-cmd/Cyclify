@@ -19,18 +19,21 @@ background:#f5f5f5;
 }
 
 .header{
-background:black;
-padding:10px 12px;
+background:white;
+padding:8px 12px;
 display:flex;
 align-items:center;
 gap:10px;
-position:relative;
-z-index:20;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
 
 .logo{
-height:48px;
-width:auto;
+height:38px;
+width:92px;
+object-fit:contain;
 flex:0 0 auto;
 }
 
@@ -43,8 +46,26 @@ flex:0 0 auto;
 }
 
 .icons a{
-color:white;
+color:black;
 text-decoration:none;
+position:relative;
+}
+
+.cart-count{
+position:absolute;
+top:-8px;
+right:-10px;
+min-width:18px;
+height:18px;
+padding:0 5px;
+border-radius:9px;
+background:#ff2a2a;
+color:white;
+font-size:11px;
+font-weight:bold;
+display:none;
+align-items:center;
+justify-content:center;
 }
 
 .search{
@@ -519,7 +540,7 @@ box-shadow:0 4px 15px rgba(0,0,0,0.3);
 
 <div class="header">
 
-<img src="assets/Logo.png" class="logo">
+<img src="assets/Logo-dark.png" class="logo" alt="Cyclify">
 
 <div class="search">
 
@@ -530,7 +551,7 @@ type="text"
 id="searchInput"
 autocomplete="off">
 
-<button class="image-search-btn" id="imageSearchButton" type="button" aria-label="Search by image">📷</button>
+<button class="image-search-btn" id="imageSearchButton" type="button" aria-label="Search by image">&#128247;</button>
 <input type="file" id="imageSearchInput" accept="image/*" hidden>
 
 <div class="search-placeholder" id="animatedPlaceholder">
@@ -545,8 +566,8 @@ autocomplete="off">
 </div>
 
 <div class="icons">
-<a href="account.html">👤</a>
-<a href="cart.html">🛒</a>
+<a href="account.html" aria-label="Account">&#128100;</a>
+<a href="cart.html" aria-label="Cart">&#128722;<span class="cart-count" id="cartCount"></span></a>
 </div>
 
 </div>
@@ -974,6 +995,39 @@ return signature;
 
 async function getImageSearchMatches(file){
 const uploadedUrl=URL.createObjectURL(file);
+const matches=await getImageSearchMatchesFromSource(uploadedUrl);
+URL.revokeObjectURL(uploadedUrl);
+return matches;
+}
+
+async function getImageSearchMatchesFromSource(source){
+const uploadedImage=await loadImage(source);
+const uploadedSignature=getImageSignature(uploadedImage);
+const scoredProducts=[];
+
+for(const product of searchProducts){
+try{
+const signature=await getProductSignature(product);
+scoredProducts.push({
+...product,
+score:compareSignatures(uploadedSignature,signature)
+});
+}
+catch(error){
+scoredProducts.push({
+...product,
+score:Number.MAX_SAFE_INTEGER
+});
+}
+}
+
+return scoredProducts
+.sort((first,second)=>first.score-second.score)
+.slice(0,8);
+}
+
+async function getImageSearchMatchesOld(file){
+const uploadedUrl=URL.createObjectURL(file);
 const uploadedImage=await loadImage(uploadedUrl);
 URL.revokeObjectURL(uploadedUrl);
 const uploadedSignature=getImageSignature(uploadedImage);
@@ -1021,10 +1075,33 @@ searchResults.innerHTML=`
 `;
 
 const matches=await getImageSearchMatches(file);
+renderImageMatches(matches,imagePreviewUrl);
+}
+
+async function renderImageSearchResultsFromSource(source){
+searchResults.classList.add("active");
+placeholder.style.display="none";
+input.value="";
 
 searchResults.innerHTML=`
 <div class="image-search-preview">
-<img src="${imagePreviewUrl}" alt="Selected image">
+<img src="${source}" alt="Selected image">
+<div>
+<strong>Scanning image</strong>
+<span>Comparing only with Cyclify product photos...</span>
+</div>
+</div>
+`;
+
+const matches=await getImageSearchMatchesFromSource(source);
+renderImageMatches(matches,source);
+}
+
+function renderImageMatches(matches,previewSource){
+
+searchResults.innerHTML=`
+<div class="image-search-preview">
+<img src="${previewSource}" alt="Selected image">
 <div>
 <strong>Closest visual matches</strong>
 <span>Matched against Cyclify product images only</span>
@@ -1080,6 +1157,33 @@ return;
 
 renderImageSearchResults(file);
 });
+
+const pendingSearchQuery=sessionStorage.getItem("pendingSearchQuery");
+if(pendingSearchQuery){
+sessionStorage.removeItem("pendingSearchQuery");
+input.value=pendingSearchQuery;
+placeholder.style.display="none";
+renderSearchResults();
+}
+
+const pendingImageSearchData=sessionStorage.getItem("pendingImageSearchData");
+if(pendingImageSearchData){
+sessionStorage.removeItem("pendingImageSearchData");
+renderImageSearchResultsFromSource(pendingImageSearchData);
+}
+
+const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+const cartTotal=cartItems.reduce((total,item)=>total+(item.quantity||1),0);
+const cartCount=document.getElementById("cartCount");
+if(cartCount){
+if(cartTotal>0){
+cartCount.textContent=cartTotal;
+cartCount.style.display="flex";
+}
+else{
+cartCount.style.display="none";
+}
+}
 
 </script>
 

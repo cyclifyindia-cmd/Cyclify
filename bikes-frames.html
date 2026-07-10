@@ -404,40 +404,17 @@ cursor:pointer;
 <!-- TOP BAR -->
 
 <div class="topbar">
-
-<a href="index.html"
-class="home-logo">
-<img src="assets/Logo-dark.png"
-alt="Cyclify">
-</a>
-
-
+<a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
 <div class="search-box">
-
-<input
-type="text"
-id="searchInput"
-placeholder="Search Bikes">
-
+<input type="text" id="searchInput" placeholder="Search Bikes & Frames">
+<button class="image-search-btn" id="headerImageSearchButton" type="button" aria-label="Search by image">&#128247;</button>
+<input type="file" id="headerImageSearchInput" accept="image/*" hidden>
 </div>
-
-
 <div class="top-icons">
-
-<span>♡</span>
-
-<a href="cart.html">
-🛒
-<span class="cart-count"
-id="cartCount">
-</span>
-</a>
-
+<a href="account.html" aria-label="Account">&#128100;</a>
+<a href="cart.html" aria-label="Cart">&#128722;<span class="cart-count" id="cartCount"></span></a>
 </div>
-
 </div>
-
-
 
 <div class="page-title">
 
@@ -608,9 +585,9 @@ Free Shipping
 
 <div class="bottom">
 
-<div class="heart">
+<div class="heart" onclick="event.stopPropagation();window.location.href='account.html'">
 
-♡
+&#128100;
 
 </div>
 
@@ -634,7 +611,7 @@ Add to cart
 
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
-<button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
+<button class="category-pill ${category.key===activeCategory&#128100;"active":""}" onclick="selectCategory('${category.key}')">
 <span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
@@ -654,7 +631,7 @@ return categoryMatch&&searchMatch;
 function renderProducts(){
 const filteredProducts=getFilteredProducts();
 const selectedCategory=categories.find(category=>category.key===activeCategory);
-const categoryLabel=selectedCategory?selectedCategory.label:"All Products";
+const categoryLabel=selectedCategory&#128100;selectedCategory.label:"All Products";
 categorySummary.textContent=`${categoryLabel} • ${filteredProducts.length} products`;
 container.innerHTML="";
 
@@ -677,7 +654,7 @@ onkeydown="handleCardKey(event,${product.id})">
 <div class="mrp">MRP ${product.mrp}</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom">
-<div class="heart">♡</div>
+<div class="heart" onclick="event.stopPropagation();window.location.href='account.html'">&#128100;</div>
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
 </div>
 </div>
@@ -701,7 +678,7 @@ renderProducts();
 function openProduct(id){
 
 window.location=
-`product.html?id=${id}`;
+`product.html&#128100;id=${id}`;
 
 }
 
@@ -736,7 +713,7 @@ p=>p.id===id
 if(product.sizes&&product.sizes.length){
 
 window.location=
-`product.html?id=${id}`;
+`product.html&#128100;id=${id}`;
 
 return;
 
@@ -783,6 +760,27 @@ window.location.href="cart.html";
 
 }
 
+</script>
+
+
+<script>
+(function(){
+const imageButton=document.getElementById("headerImageSearchButton");
+const imageInput=document.getElementById("headerImageSearchInput");
+if(imageButton&&imageInput){
+imageButton.addEventListener("click",()=>imageInput.click());
+imageInput.addEventListener("change",()=>{
+const file=imageInput.files&&imageInput.files[0];
+if(!file){return;}
+const reader=new FileReader();
+reader.onload=()=>{
+sessionStorage.setItem("pendingImageSearchData",reader.result);
+window.location.href="index.html#image-search";
+};
+reader.readAsDataURL(file);
+});
+}
+})();
 </script>
 
 </body>

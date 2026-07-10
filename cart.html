@@ -164,31 +164,115 @@ background:#bdbdbd;
 cursor:not-allowed;
 }
 
+
+.topbar{
+position:sticky;
+top:0;
+background:white;
+display:flex;
+align-items:center;
+gap:10px;
+padding:8px 12px;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+z-index:1000;
+}
+.home-logo{
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+width:92px;
+height:38px;
+overflow:hidden;
+flex-shrink:0;
+}
+.home-logo img{width:100%;height:100%;display:block;object-fit:contain;}
+.site-search{
+flex:1;
+position:relative;
+display:flex;
+align-items:center;
+background:#f2f2f2;
+border-radius:30px;
+overflow:hidden;
+}
+.site-search input{
+width:100%;
+padding:13px;
+border:none;
+outline:none;
+background:transparent;
+font-size:15px;
+}
+.image-search-btn{
+width:38px;
+height:38px;
+margin-right:4px;
+border:none;
+border-radius:50%;
+background:white;
+font-size:17px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+flex:0 0 auto;
+}
+.top-icons{display:flex;gap:15px;font-size:24px;align-items:center;}
+.top-icons a{text-decoration:none;color:black;position:relative;}
+.cart-count{position:absolute;top:-8px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ff2a2a;color:white;font-size:11px;font-weight:bold;display:none;align-items:center;justify-content:center;}
+@media(max-width:480px){.topbar{gap:7px;padding:7px 8px}.home-logo{width:82px;height:34px}.site-search input{padding:11px;font-size:13px}.image-search-btn{width:34px;height:34px;font-size:15px}.top-icons{gap:10px;font-size:21px}}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="header">
-
-<a
-href="javascript:history.back()"
-class="back">
-
-←
-
-</a>
-
-<a href="index.html">
-
-<img
-src="assets/Logo.png"
-class="logo">
-
-</a>
-
+<div class="topbar">
+<a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
+<div class="site-search"><input type="text" placeholder="Search Cyclify" data-global-search><button class="image-search-btn" id="headerImageSearchButton" type="button" aria-label="Search by image">&#128247;</button><input type="file" id="headerImageSearchInput" accept="image/*" hidden></div>
+<div class="top-icons">
+<a href="account.html" aria-label="Account">&#128100;</a>
+<a href="cart.html" aria-label="Cart">&#128722;<span class="cart-count" id="cartCount"></span></a>
 </div>
+</div>
+
+
+<script>
+(function(){
+const imageButton=document.getElementById("headerImageSearchButton");
+const imageInput=document.getElementById("headerImageSearchInput");
+if(imageButton&&imageInput){
+imageButton.addEventListener("click",()=>imageInput.click());
+imageInput.addEventListener("change",()=>{
+const file=imageInput.files&&imageInput.files[0];
+if(!file){return;}
+const reader=new FileReader();
+reader.onload=()=>{
+sessionStorage.setItem("pendingImageSearchData",reader.result);
+window.location.href="index.html#image-search";
+};
+reader.readAsDataURL(file);
+});
+}
+const globalSearch=document.querySelector("[data-global-search]");
+if(globalSearch){
+globalSearch.addEventListener("keydown",event=>{
+if(event.key!=="Enter"){return;}
+const query=globalSearch.value.trim();
+if(!query){return;}
+sessionStorage.setItem("pendingSearchQuery",query);
+window.location.href="index.html";
+});
+}
+const cartCount=document.getElementById("cartCount");
+if(cartCount){
+const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+const count=cartItems.reduce((total,item)=>total+(item.quantity||1),0);
+if(count>0){cartCount.textContent=count;cartCount.style.display="flex";}
+else{cartCount.style.display="none";}
+}
+})();
+</script>
 
 <div
 class="cart-container">
