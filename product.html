@@ -1503,7 +1503,8 @@ const productGallery=document.getElementById("productGallery");
 const hasMultipleImages=productImages.length>1;
 
 if(backLink){
-backLink.href=product.id===37?"wheels-tyres.html":product.id>=5?"electronics.html":"bikes-frames.html";
+const wheelProductIds=[7,30,31,37];
+backLink.href=wheelProductIds.includes(product.id)?"wheels-tyres.html":product.id>=5?"electronics.html":"bikes-frames.html";
 }
 productGallery.classList.toggle("single-image",!hasMultipleImages);
 

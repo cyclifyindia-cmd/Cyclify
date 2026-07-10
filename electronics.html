@@ -338,14 +338,7 @@ mrp:"₹2,800",
 image:"assets/products/cyclami-c1-sensor-1.webp",
 sizes:[]
 },
-{
-id:7,
-name:"Cyclami Tubeless Bicycle Presta Valves",
-price:999,
-mrp:"₹1,999",
-image:"assets/products/cyclami-presta-valves-1.webp",
-sizes:["45mm","65mm","85mm"]
-},
+
 {
 id:8,
 name:"Cyclami 500 Lumen Front Light",
@@ -514,22 +507,8 @@ mrp:"₹3,500",
 image:"assets/products/cyclami-carbon-computer-holder.webp",
 sizes:["Option 1","Option 2","Option 3","Option 4"]
 },
-{
-id:30,
-name:"Cyclami Ultra-Light TPU Bicycle Tube",
-price:999,
-mrp:"₹1,500",
-image:"assets/products/cyclami-tpu-tube-1.webp",
-sizes:["700c 23-25","700c 28-32"]
-},
-{
-id:31,
-name:"Cyclami Multi-Functional Bicycle Tyre Lever",
-price:299,
-mrp:"₹999",
-image:"assets/products/cyclami-tyre-lever-3.webp",
-sizes:[]
-},
+
+
 {
 id:33,
 name:"Cyclami 2200 Lumen LED Bicycle Light",
@@ -685,7 +664,15 @@ onkeydown="handleCardKey(event,${product.id})">
 });
 
 function renderCategories(){
-categoryStrip.innerHTML=categories.map(category=>`
+const visibleCategories=categories.filter(category=>
+products.some(product=>getProductCategory(product)===category.key)
+);
+
+if(activeCategory&&!visibleCategories.some(category=>category.key===activeCategory)){
+activeCategory="";
+}
+
+categoryStrip.innerHTML=visibleCategories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
 <span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>

@@ -76,15 +76,44 @@ sizes:["Carbon"],
 mainCategory:"wheels",
 subCategory:"carbon"
 }
+,
+{
+id:7,
+name:"Cyclami Tubeless Bicycle Presta Valves",
+price:999,
+mrp:"?1,999",
+image:"assets/products/cyclami-presta-valves-1.webp",
+sizes:["45mm","65mm","85mm"],
+mainCategory:"valve"
+},
+{
+id:30,
+name:"Cyclami Ultra-Light TPU Bicycle Tube",
+price:999,
+mrp:"?1,500",
+image:"assets/products/cyclami-tpu-tube-1.webp",
+sizes:["700c 23-25","700c 28-32"],
+mainCategory:"tubes"
+},
+{
+id:31,
+name:"Cyclami Multi-Functional Bicycle Tyre Lever",
+price:299,
+mrp:"?999",
+image:"assets/products/cyclami-tyre-lever-3.webp",
+sizes:[],
+mainCategory:"tools"
+}
+
 ];
 
 const categories=[
 {key:"wheels",label:"Wheels",image:"assets/products/orome-valar-th50d-2.png"},
 {key:"tyres",label:"Tyres",image:"assets/categories/CAT_Wheels.png"},
-{key:"tubes",label:"Tubes",image:"assets/products/cyclami-electric-air-pump-1.webp"},
+{key:"tubes",label:"Tubes",image:"assets/products/cyclami-tpu-tube-1.webp"},
 {key:"valve",label:"Valve",image:"assets/products/cyclami-presta-valves-1.webp"},
 {key:"freehub-body",label:"Freehub Body",image:"assets/categories/CAT_Wheels.png"},
-{key:"tools",label:"Tools",image:"assets/products/cyclami-carbon-computer-holder.webp"},
+{key:"tools",label:"Tools",image:"assets/products/cyclami-tyre-lever-3.webp"},
 {key:"hubs",label:"Hubs",image:"assets/categories/CAT_Wheels.png"}
 ];
 
@@ -115,7 +144,16 @@ cartCount.style.display="none";
 }
 
 function renderCategories(){
-categoryStrip.innerHTML=categories.map(category=>`
+const visibleCategories=categories.filter(category=>
+products.some(product=>product.mainCategory===category.key)
+);
+
+if(activeCategory&&!visibleCategories.some(category=>category.key===activeCategory)){
+activeCategory="";
+activeSubCategory="";
+}
+
+categoryStrip.innerHTML=visibleCategories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
 <span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
@@ -123,7 +161,15 @@ categoryStrip.innerHTML=categories.map(category=>`
 `).join("");
 
 subCategoryStrip.classList.toggle("active",activeCategory==="wheels");
-subCategoryStrip.innerHTML=wheelSubCategories.map(category=>`
+const visibleSubCategories=wheelSubCategories.filter(category=>
+products.some(product=>product.mainCategory==="wheels"&&product.subCategory===category.key)
+);
+
+if(activeSubCategory&&!visibleSubCategories.some(category=>category.key===activeSubCategory)){
+activeSubCategory="";
+}
+
+subCategoryStrip.innerHTML=visibleSubCategories.map(category=>`
 <button class="category-pill ${category.key===activeSubCategory?"active":""}" onclick="selectSubCategory('${category.key}')">
 <span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
