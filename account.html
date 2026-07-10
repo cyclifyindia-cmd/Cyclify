@@ -6,36 +6,17 @@
 <title>My Account - Cyclify</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
 body{
-font-family:Arial,sans-serif;
 background:#f5f5f5;
-margin:0;
+color:#111;
 }
-
-.header{
-background:black;
-color:white;
-padding:15px;
-font-size:22px;
-font-weight:bold;
-}
-
-.account{
-padding:15px;
-}
-
-.card{
-background:white;
-padding:18px;
-margin-bottom:12px;
-border-radius:12px;
-text-decoration:none;
-color:black;
-display:block;
-font-weight:bold;
-}
-
 
 .topbar{
 position:sticky;
@@ -48,6 +29,7 @@ padding:8px 12px;
 box-shadow:0 2px 8px rgba(0,0,0,.1);
 z-index:1000;
 }
+
 .home-logo{
 display:flex;
 align-items:center;
@@ -58,7 +40,14 @@ height:38px;
 overflow:hidden;
 flex-shrink:0;
 }
-.home-logo img{width:100%;height:100%;display:block;object-fit:contain;}
+
+.home-logo img{
+width:100%;
+height:100%;
+display:block;
+object-fit:contain;
+}
+
 .site-search{
 flex:1;
 position:relative;
@@ -68,6 +57,7 @@ background:#f2f2f2;
 border-radius:30px;
 overflow:hidden;
 }
+
 .site-search input{
 width:100%;
 padding:13px;
@@ -76,6 +66,7 @@ outline:none;
 background:transparent;
 font-size:15px;
 }
+
 .image-search-btn{
 width:38px;
 height:38px;
@@ -88,11 +79,238 @@ cursor:pointer;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
 flex:0 0 auto;
 }
-.top-icons{display:flex;gap:15px;font-size:24px;align-items:center;}
-.top-icons a{text-decoration:none;color:black;position:relative;}
-.cart-count{position:absolute;top:-8px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ff2a2a;color:white;font-size:11px;font-weight:bold;display:none;align-items:center;justify-content:center;}
-@media(max-width:480px){.topbar{gap:7px;padding:7px 8px}.home-logo{width:82px;height:34px}.site-search input{padding:11px;font-size:13px}.image-search-btn{width:34px;height:34px;font-size:15px}.top-icons{gap:10px;font-size:21px}}
 
+.top-icons{
+display:flex;
+gap:15px;
+font-size:24px;
+align-items:center;
+}
+
+.top-icons a{
+text-decoration:none;
+color:black;
+position:relative;
+}
+
+.cart-count{
+position:absolute;
+top:-8px;
+right:-10px;
+min-width:18px;
+height:18px;
+padding:0 5px;
+border-radius:9px;
+background:#ff2a2a;
+color:white;
+font-size:11px;
+font-weight:bold;
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.account-shell{
+padding:14px;
+max-width:620px;
+margin:0 auto;
+}
+
+.account-title{
+padding:10px 2px 14px;
+}
+
+.account-title h1{
+font-size:24px;
+line-height:1.15;
+}
+
+.account-title p{
+margin-top:5px;
+font-size:13px;
+color:#666;
+}
+
+.tabs{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+margin-bottom:12px;
+}
+
+.tab{
+border:none;
+border-radius:12px;
+padding:12px 8px;
+background:white;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 1px 5px rgba(0,0,0,.06);
+}
+
+.tab.active{
+background:#0039a6;
+color:white;
+}
+
+.panel,.dashboard{
+background:white;
+border-radius:14px;
+padding:16px;
+box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+
+.panel{
+display:none;
+}
+
+.panel.active{
+display:block;
+}
+
+.field{
+margin-bottom:12px;
+}
+
+.field label{
+display:block;
+font-size:13px;
+font-weight:bold;
+margin-bottom:6px;
+}
+
+.field input{
+width:100%;
+border:1px solid #ddd;
+border-radius:12px;
+padding:13px;
+font-size:15px;
+outline:none;
+}
+
+.field input:focus{
+border-color:#0039a6;
+box-shadow:0 0 0 2px rgba(0,57,166,.1);
+}
+
+.hint{
+font-size:12px;
+color:#666;
+line-height:1.45;
+margin:-4px 0 12px;
+}
+
+.message{
+display:none;
+border-radius:12px;
+padding:11px;
+font-size:13px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.message.show{
+display:block;
+}
+
+.message.error{
+background:#fff1f1;
+color:#b00020;
+}
+
+.message.success{
+background:#edf9f1;
+color:#087a3d;
+}
+
+.primary-btn,.secondary-btn,.logout-btn{
+width:100%;
+border:none;
+border-radius:12px;
+padding:13px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.primary-btn{
+background:#0039a6;
+color:white;
+}
+
+.secondary-btn{
+background:#f0f4ff;
+color:#0039a6;
+margin-top:8px;
+}
+
+.logout-btn{
+background:#111;
+color:white;
+margin-top:12px;
+}
+
+.dashboard{
+display:none;
+}
+
+.dashboard.active{
+display:block;
+}
+
+.profile-card{
+background:#f5f7fb;
+border-radius:14px;
+padding:14px;
+margin-bottom:12px;
+}
+
+.profile-card strong{
+display:block;
+font-size:18px;
+margin-bottom:4px;
+}
+
+.profile-card span{
+font-size:13px;
+color:#555;
+}
+
+.quick-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.card{
+background:white;
+padding:16px;
+border:1px solid #eee;
+border-radius:12px;
+text-decoration:none;
+color:black;
+display:block;
+font-weight:bold;
+box-shadow:0 1px 5px rgba(0,0,0,.04);
+}
+
+.card span{
+display:block;
+font-size:22px;
+margin-bottom:6px;
+}
+
+@media(max-width:480px){
+.topbar{gap:7px;padding:7px 8px}
+.home-logo{width:82px;height:34px}
+.site-search input{padding:11px;font-size:13px}
+.image-search-btn{width:34px;height:34px;font-size:15px}
+.top-icons{gap:10px;font-size:21px}
+.account-shell{padding:12px}
+.tabs{gap:6px}
+.tab{font-size:12px;padding:11px 5px}
+.quick-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 
@@ -100,13 +318,93 @@ flex:0 0 auto;
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
-<div class="site-search"><input type="text" placeholder="Search Cyclify" data-global-search><button class="image-search-btn" id="headerImageSearchButton" type="button" aria-label="Search by image">&#128247;</button><input type="file" id="headerImageSearchInput" accept="image/*" hidden></div>
+<div class="site-search">
+<input type="text" placeholder="Search Cyclify" data-global-search>
+<button class="image-search-btn" id="headerImageSearchButton" type="button" aria-label="Search by image">&#128247;</button>
+<input type="file" id="headerImageSearchInput" accept="image/*" hidden>
+</div>
 <div class="top-icons">
 <a href="account.html" aria-label="Account">&#128100;</a>
 <a href="cart.html" aria-label="Cart">&#128722;<span class="cart-count" id="cartCount"></span></a>
 </div>
 </div>
 
+<main class="account-shell">
+<div class="account-title">
+<h1>My Account</h1>
+<p>Login with mobile number or email to manage your Cyclify orders.</p>
+</div>
+
+<section class="dashboard" id="dashboard">
+<div class="profile-card">
+<strong id="profileName">Cyclify Customer</strong>
+<span id="profileUser"></span>
+</div>
+
+<div class="quick-grid">
+<a href="cart.html" class="card"><span>&#128722;</span>View Cart</a>
+<a href="https://wa.me/message/MLT2FFSAEYGIP1" class="card"><span>&#128172;</span>Contact Cyclify</a>
+<a href="https://wa.me/message/MLT2FFSAEYGIP1?text=Hi%20Cyclify,%20I%20need%20help" class="card"><span>&#128736;</span>Support</a>
+<a href="https://wa.me/message/MLT2FFSAEYGIP1?text=Hi%20Cyclify,%20I%20want%20to%20track%20my%20order" class="card"><span>&#128230;</span>Track Order</a>
+</div>
+
+<button class="logout-btn" id="logoutBtn" type="button">Logout</button>
+</section>
+
+<section id="authArea">
+<div class="tabs">
+<button class="tab active" data-tab="login">Login</button>
+<button class="tab" data-tab="signup">Create</button>
+<button class="tab" data-tab="otp">OTP</button>
+</div>
+
+<form class="panel active" id="loginPanel">
+<div class="message" id="loginMessage"></div>
+<div class="field">
+<label for="loginUser">Mobile number or email</label>
+<input id="loginUser" autocomplete="username" placeholder="9876543210 or name@email.com">
+</div>
+<div class="field">
+<label for="loginPassword">Password</label>
+<input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter password">
+</div>
+<button class="primary-btn" type="submit">Login</button>
+</form>
+
+<form class="panel" id="signupPanel">
+<div class="message" id="signupMessage"></div>
+<div class="field">
+<label for="signupName">Name</label>
+<input id="signupName" autocomplete="name" placeholder="Your name">
+</div>
+<div class="field">
+<label for="signupUser">Mobile number or email</label>
+<input id="signupUser" autocomplete="username" placeholder="9876543210 or name@email.com">
+</div>
+<div class="field">
+<label for="signupPassword">Password</label>
+<input id="signupPassword" type="password" autocomplete="new-password" placeholder="5 to 9 characters">
+</div>
+<p class="hint">Password must be 5 to 9 characters. Letters-only is allowed. You can also use capital letters, numbers, and symbols.</p>
+<button class="primary-btn" type="submit">Create Account</button>
+</form>
+
+<form class="panel" id="otpPanel">
+<div class="message" id="otpMessage"></div>
+<div class="field">
+<label for="otpUser">Mobile number or email</label>
+<input id="otpUser" autocomplete="username" placeholder="9876543210 or name@email.com">
+</div>
+<button class="secondary-btn" id="sendOtpBtn" type="button">Send Demo OTP</button>
+<div class="field" style="margin-top:12px">
+<label for="otpCode">OTP</label>
+<input id="otpCode" inputmode="numeric" placeholder="Enter OTP">
+</div>
+<p class="hint">OTP provider connection will be added later. For now this uses a temporary demo OTP on this device.</p>
+<button class="primary-btn" type="submit">Login with OTP</button>
+</form>
+</section>
+</main>
 
 <script>
 (function(){
@@ -125,6 +423,7 @@ window.location.href="index.html#image-search";
 reader.readAsDataURL(file);
 });
 }
+
 const globalSearch=document.querySelector("[data-global-search]");
 if(globalSearch){
 globalSearch.addEventListener("keydown",event=>{
@@ -135,6 +434,7 @@ sessionStorage.setItem("pendingSearchQuery",query);
 window.location.href="index.html";
 });
 }
+
 const cartCount=document.getElementById("cartCount");
 if(cartCount){
 const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
@@ -145,25 +445,216 @@ else{cartCount.style.display="none";}
 })();
 </script>
 
-<div class="account">
+<script>
+const usersKey="cyclifyUsers";
+const sessionKey="cyclifyLoggedInUser";
+let demoOtp="";
+let demoOtpUser="";
 
-<a href="https://wa.me/message/MLT2FFSAEYGIP1" class="card">
-💬 Contact Cyclify
-</a>
+const authArea=document.getElementById("authArea");
+const dashboard=document.getElementById("dashboard");
+const profileName=document.getElementById("profileName");
+const profileUser=document.getElementById("profileUser");
 
-<a href="cart.html" class="card">
-🛒 View Cart
-</a>
+function normalizeUser(value){
+return value.trim().toLowerCase();
+}
 
-<a href="https://wa.me/message/MLT2FFSAEYGIP1?text=Hi%20Cyclify,%20I%20need%20help" class="card">
-🛠 Support
-</a>
+function isEmail(value){
+return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
 
-<a href="https://wa.me/message/MLT2FFSAEYGIP1?text=Hi%20Cyclify,%20I%20want%20to%20track%20my%20order" class="card">
-📦 Track Order
-</a>
+function isMobile(value){
+return /^[6-9]\d{9}$/.test(value);
+}
 
-</div>
+function isValidUser(value){
+return isEmail(value)||isMobile(value);
+}
+
+function isValidPassword(value){
+return /^[A-Za-z0-9!@#$%^&*()_\-+=.?]{5,9}$/.test(value);
+}
+
+function getUsers(){
+return JSON.parse(localStorage.getItem(usersKey))||[];
+}
+
+function saveUsers(users){
+localStorage.setItem(usersKey,JSON.stringify(users));
+}
+
+function encodePassword(password){
+return btoa(unescape(encodeURIComponent(password)));
+}
+
+function setMessage(id,type,text){
+const box=document.getElementById(id);
+box.className=`message show ${type}`;
+box.textContent=text;
+}
+
+function clearMessage(id){
+const box=document.getElementById(id);
+box.className="message";
+box.textContent="";
+}
+
+function loginUser(user){
+localStorage.setItem(sessionKey,JSON.stringify(user));
+renderState();
+}
+
+function getCurrentUser(){
+const raw=localStorage.getItem(sessionKey);
+if(!raw){return null;}
+try{return JSON.parse(raw);}
+catch(error){return null;}
+}
+
+function renderState(){
+const user=getCurrentUser();
+if(user){
+authArea.style.display="none";
+dashboard.classList.add("active");
+profileName.textContent=user.name||"Cyclify Customer";
+profileUser.textContent=user.username;
+}
+else{
+authArea.style.display="block";
+dashboard.classList.remove("active");
+}
+}
+
+document.querySelectorAll(".tab").forEach(tab=>{
+tab.addEventListener("click",()=>{
+document.querySelectorAll(".tab").forEach(item=>item.classList.remove("active"));
+document.querySelectorAll(".panel").forEach(panel=>panel.classList.remove("active"));
+tab.classList.add("active");
+document.getElementById(`${tab.dataset.tab}Panel`).classList.add("active");
+});
+});
+
+document.getElementById("signupPanel").addEventListener("submit",event=>{
+event.preventDefault();
+clearMessage("signupMessage");
+
+const name=document.getElementById("signupName").value.trim();
+const username=normalizeUser(document.getElementById("signupUser").value);
+const password=document.getElementById("signupPassword").value;
+
+if(!name){
+setMessage("signupMessage","error","Please enter your name.");
+return;
+}
+
+if(!isValidUser(username)){
+setMessage("signupMessage","error","Use a valid Indian mobile number or email id.");
+return;
+}
+
+if(!isValidPassword(password)){
+setMessage("signupMessage","error","Password must be 5 to 9 characters and can use letters, numbers, or symbols.");
+return;
+}
+
+const users=getUsers();
+if(users.some(user=>user.username===username)){
+setMessage("signupMessage","error","Account already exists. Please login.");
+return;
+}
+
+const newUser={
+name,
+username,
+password:encodePassword(password),
+createdAt:new Date().toISOString()
+};
+
+users.push(newUser);
+saveUsers(users);
+loginUser({name:newUser.name,username:newUser.username});
+});
+
+document.getElementById("loginPanel").addEventListener("submit",event=>{
+event.preventDefault();
+clearMessage("loginMessage");
+
+const username=normalizeUser(document.getElementById("loginUser").value);
+const password=document.getElementById("loginPassword").value;
+
+if(!isValidUser(username)){
+setMessage("loginMessage","error","Enter your registered mobile number or email id.");
+return;
+}
+
+const user=getUsers().find(item=>item.username===username);
+if(!user||user.password!==encodePassword(password)){
+setMessage("loginMessage","error","Wrong username or password.");
+return;
+}
+
+loginUser({name:user.name,username:user.username});
+});
+
+document.getElementById("sendOtpBtn").addEventListener("click",()=>{
+clearMessage("otpMessage");
+const username=normalizeUser(document.getElementById("otpUser").value);
+
+if(!isValidUser(username)){
+setMessage("otpMessage","error","Enter a valid mobile number or email id first.");
+return;
+}
+
+demoOtp=String(Math.floor(100000+Math.random()*900000));
+demoOtpUser=username;
+setMessage("otpMessage","success",`Demo OTP: ${demoOtp}`);
+});
+
+document.getElementById("otpPanel").addEventListener("submit",event=>{
+event.preventDefault();
+clearMessage("otpMessage");
+
+const username=normalizeUser(document.getElementById("otpUser").value);
+const code=document.getElementById("otpCode").value.trim();
+
+if(!demoOtp||username!==demoOtpUser){
+setMessage("otpMessage","error","Please send OTP first.");
+return;
+}
+
+if(code!==demoOtp){
+setMessage("otpMessage","error","Incorrect OTP.");
+return;
+}
+
+const user=getUsers().find(item=>item.username===username);
+if(user){
+loginUser({name:user.name,username:user.username});
+return;
+}
+
+const autoUser={
+name:"Cyclify Customer",
+username,
+password:"",
+createdAt:new Date().toISOString(),
+otpCreated:true
+};
+
+const users=getUsers();
+users.push(autoUser);
+saveUsers(users);
+loginUser({name:autoUser.name,username:autoUser.username});
+});
+
+document.getElementById("logoutBtn").addEventListener("click",()=>{
+localStorage.removeItem(sessionKey);
+renderState();
+});
+
+renderState();
+</script>
 
 </body>
 </html>
