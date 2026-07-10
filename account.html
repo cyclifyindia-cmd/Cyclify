@@ -393,15 +393,15 @@ margin-bottom:6px;
 <div class="message" id="otpMessage"></div>
 <div class="field">
 <label for="otpUser">Mobile number or email</label>
-<input id="otpUser" autocomplete="username" placeholder="9876543210 or name@email.com">
+<input id="otpUser" autocomplete="username" placeholder="9876543210 or name@email.com" disabled>
 </div>
-<button class="secondary-btn" id="sendOtpBtn" type="button">Send Demo OTP</button>
+<button class="secondary-btn" id="sendOtpBtn" type="button">OTP Coming Soon</button>
 <div class="field" style="margin-top:12px">
 <label for="otpCode">OTP</label>
-<input id="otpCode" inputmode="numeric" placeholder="Enter OTP">
+<input id="otpCode" inputmode="numeric" placeholder="OTP login will be connected later" disabled>
 </div>
-<p class="hint">OTP provider connection will be added later. For now this uses a temporary demo OTP on this device.</p>
-<button class="primary-btn" type="submit">Login with OTP</button>
+<p class="hint">Mobile OTP will be connected after choosing an OTP provider. This option is visible now but not active.</p>
+<button class="primary-btn" type="submit">Notify Me Later</button>
 </form>
 </section>
 </main>
@@ -448,8 +448,6 @@ else{cartCount.style.display="none";}
 <script>
 const usersKey="cyclifyUsers";
 const sessionKey="cyclifyLoggedInUser";
-let demoOtp="";
-let demoOtpUser="";
 
 const authArea=document.getElementById("authArea");
 const dashboard=document.getElementById("dashboard");
@@ -598,54 +596,12 @@ loginUser({name:user.name,username:user.username});
 });
 
 document.getElementById("sendOtpBtn").addEventListener("click",()=>{
-clearMessage("otpMessage");
-const username=normalizeUser(document.getElementById("otpUser").value);
-
-if(!isValidUser(username)){
-setMessage("otpMessage","error","Enter a valid mobile number or email id first.");
-return;
-}
-
-demoOtp=String(Math.floor(100000+Math.random()*900000));
-demoOtpUser=username;
-setMessage("otpMessage","success",`Demo OTP: ${demoOtp}`);
+setMessage("otpMessage","success","OTP login will be added after provider setup.");
 });
 
 document.getElementById("otpPanel").addEventListener("submit",event=>{
 event.preventDefault();
-clearMessage("otpMessage");
-
-const username=normalizeUser(document.getElementById("otpUser").value);
-const code=document.getElementById("otpCode").value.trim();
-
-if(!demoOtp||username!==demoOtpUser){
-setMessage("otpMessage","error","Please send OTP first.");
-return;
-}
-
-if(code!==demoOtp){
-setMessage("otpMessage","error","Incorrect OTP.");
-return;
-}
-
-const user=getUsers().find(item=>item.username===username);
-if(user){
-loginUser({name:user.name,username:user.username});
-return;
-}
-
-const autoUser={
-name:"Cyclify Customer",
-username,
-password:"",
-createdAt:new Date().toISOString(),
-otpCreated:true
-};
-
-const users=getUsers();
-users.push(autoUser);
-saveUsers(users);
-loginUser({name:autoUser.name,username:autoUser.username});
+setMessage("otpMessage","success","OTP login is not active yet. Please use Login or Create Account.");
 });
 
 document.getElementById("logoutBtn").addEventListener("click",()=>{
