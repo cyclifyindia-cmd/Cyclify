@@ -397,42 +397,55 @@ text-decoration:none;
 width:92px;
 height:38px;
 overflow:hidden;
-flex-shrink:0;
+flex:0 0 auto;
 }
 .home-logo img{width:100%;height:100%;display:block;object-fit:contain;}
 .site-search{
-flex:1;
+flex:1 1 auto;
+min-width:0;
 position:relative;
 display:flex;
 align-items:center;
 background:#f2f2f2;
-border-radius:30px;
+border-radius:999px;
+height:46px;
 overflow:hidden;
 }
 .site-search input{
 width:100%;
-padding:13px;
+min-width:0;
+height:46px;
+padding:0 10px 0 16px;
 border:none;
 outline:none;
+border-radius:999px 0 0 999px;
 background:transparent;
 font-size:15px;
 }
 .image-search-btn{
-width:38px;
-height:38px;
+width:40px;
+height:40px;
 margin-right:4px;
 border:none;
 border-radius:50%;
 background:white;
-font-size:17px;
+font-size:19px;
 cursor:pointer;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
 flex:0 0 auto;
 }
-.top-icons{display:flex;gap:15px;font-size:24px;align-items:center;}
+.top-icons{display:flex;gap:15px;font-size:24px;align-items:center;flex:0 0 auto;}
 .top-icons a{text-decoration:none;color:black;position:relative;}
 .cart-count{position:absolute;top:-8px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ff2a2a;color:white;font-size:11px;font-weight:bold;display:none;align-items:center;justify-content:center;}
 @media(max-width:480px){.topbar{gap:7px;padding:7px 8px}.home-logo{width:82px;height:34px}.site-search input{padding:11px;font-size:13px}.image-search-btn{width:34px;height:34px;font-size:15px}.top-icons{gap:10px;font-size:21px}}
+html{scroll-behavior:smooth}
+body{animation:pageFade .45s ease both}
+.site-search,.image-search-btn,.btn,.related-card{transition:box-shadow .28s ease,transform .28s ease,background .28s ease,border-color .28s ease}
+.image-search-btn{width:74px!important;height:38px!important;display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid rgba(0,57,166,.14)!important;background:linear-gradient(135deg,#ffffff 0%,#eaf2ff 55%,#d9e9ff 100%)!important;color:#0039a6;font-size:17px!important;font-weight:800;letter-spacing:0;box-shadow:0 6px 16px rgba(0,57,166,.14),inset 0 1px 0 rgba(255,255,255,.8)!important}
+.image-search-btn::after{content:"Lens";font-size:12px;line-height:1}
+.image-search-btn:hover,.btn:hover,.related-card:hover{transform:translateY(-1px)}
+@keyframes pageFade{from{opacity:.92}to{opacity:1}}
+@media(max-width:480px){.image-search-btn{width:46px!important;height:36px!important;font-size:16px!important}.image-search-btn::after{display:none}}
 
 </style>
 </head>
@@ -1487,6 +1500,85 @@ specs:[
 "Category : Sensor",
 "Connectivity : Cycling computer and training app support"
 ]
+}
+
+,
+
+{
+id:41,
+name:"iGPSPORT BSC200S Cyclocomputer",
+price:7900,
+mrp:"\u20b99,480",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image.jpg?v=1754022773",
+images:["https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image.jpg?v=1754022773","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5.jpg?v=1754022774","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4.jpg?v=1754022774","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3.jpg?v=1754022774","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2.jpg?v=1754022773","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1.jpg?v=1754022773"],
+sizes:[],
+specs:["Brand : iGPSPORT","Model : BSC200S","Type : GPS bike computer","Navigation : Colorful route navigation with turn directions","Ride Recording : Continue last ride feature","Connectivity : Syncs through iGPSPORT app to Strava and TrainingPeaks","Warranty : 2 years on iGPSPORT computers"]
+},
+
+{
+id:42,
+name:"iGPSPORT BSC100Max Cyclocomputer",
+price:4499,
+mrp:"\u20b95,900",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max.webp?v=1772281342",
+images:["https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max.webp?v=1772281342","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_12_2860fa7e-c486-496d-9fb5-3a162b2ffeea.jpg?v=1772281342","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max_pic.webp?v=1772281342","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC-100Max-Detail-EN_03.webp?v=1772281342","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_19_7dbdae53-2151-4f0d-b3a3-d171ee27b510.jpg?v=1772281342","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_18_33d283f4-9c0c-4382-ad21-b04a4899822b.jpg?v=1772281342","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_15_06a57248-9194-4087-9d1f-29077d0de317.jpg?v=1772281342","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_13_cb3a519d-e897-45be-882f-b470e19391dc.jpg?v=1772281342"],
+sizes:[],
+specs:["Brand : iGPSPORT","Model : BSC100Max","Display : 3.0 inch sunlight-readable screen","Connectivity : Supports speed, cadence, heart rate, power meter and smart lights","Positioning : GPS, BEIDOU, GLONASS, GALILEO and QZSS","Sharing : Sync activity files to Strava","Warranty : 2 years on iGPSPORT computers"]
+},
+
+{
+id:43,
+name:"iGPSPORT BSC100S Cyclocomputer",
+price:4299,
+mrp:"\u20b95,500",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100s.webp?v=1768469924",
+images:["https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100s.webp?v=1768469924","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/bd39c8edadb011e5ff4c6279ce0dafcd_1.jpg?v=1768469924","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/4bb6c5f69cb08cfdb5496bf9b78ed5d6.jpg?v=1768469924","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_14.jpg?v=1768469924"],
+sizes:[],
+specs:["Brand : iGPSPORT","Model : BSC100S","Display : 2.6 inch screen with auto backlight","Data : 40+ riding data fields","Connectivity : ANT+ sensor support","Positioning : GPS, BEIDOU, GLONASS, GALILEO and QZSS","Warranty : 2 years on iGPSPORT computers"]
+},
+
+{
+id:44,
+name:"iGPSPORT BSC300T Cyclocomputer",
+price:14300,
+mrp:"\u20b917,973",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",
+images:["https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_396d7198-b55d-453e-afd0-df109e6ae7de.jpg?v=1768473806","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC300T_M80.webp?v=1768473806","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_14_e4c8b60f-d0e3-4768-a42c-4a8f922300ff.jpg?v=1768473806","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_13.jpg?v=1768473806","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_12.jpg?v=1768473806","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_11.jpg?v=1768473806","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_10.jpg?v=1768473806"],
+sizes:[],
+specs:["Brand : iGPSPORT","Model : BSC300T","Display : 2.4 inch color touchscreen","Navigation : GPS navigation with five satellite systems","Screen : Transflective anti-glare display","Use : Training, navigation and ride data tracking","Warranty : 2 years on iGPSPORT computers"]
+},
+
+{
+id:45,
+name:"iGPSPORT BiNavi Air Cyclocomputer",
+price:20400,
+mrp:"\u20b924,489",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/binavi_air_8d3b02ae-41a3-4561-a048-95c428e24dfa.jpg?v=1772449036",
+images:["https://cdn.shopify.com/s/files/1/0834/9630/4833/files/binavi_air_8d3b02ae-41a3-4561-a048-95c428e24dfa.jpg?v=1772449036","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7_d3e86baf-31fc-4227-b4fe-3c5e9f2ba56e.jpg?v=1772449036","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_ef2e9cb2-cad7-41dd-9a34-82345219d691.jpg?v=1772449036","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_16_010428c1-99f2-4172-af5a-c75883e79c04.jpg?v=1772449036","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_22_221ca059-3765-4cda-b45c-d1506a83e9be.jpg?v=1772449036","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_13_c416a5f9-0aa6-4340-a037-93583be51a42.jpg?v=1772449036","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_19_e7d39d9c-e212-4163-8a2f-56888c9c0a7e.jpg?v=1772449036","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_23_ac393e05-071a-42f8-82a9-d1085f313846.jpg?v=1772449036"],
+sizes:[],
+specs:["Brand : iGPSPORT","Model : BiNavi Air","Type : Lightweight flagship bike navigator","Weight : 77g","Display : 3.0 inch professional outdoor color display","Profile : Ultra-slim 13.8mm body","Use : Racing, training, climbing and recreational riding"]
+},
+
+{
+id:46,
+name:"iGPSPORT iGS800 Cyclocomputer",
+price:29900,
+mrp:"\u20b935,880",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bda0947d-eb60-46ca-adb4-cebd79aee406.jpg?v=1754027644",
+images:["https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bda0947d-eb60-46ca-adb4-cebd79aee406.jpg?v=1754027644","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/1.webp?v=1768564356","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_2577d5ed-29f4-42fa-a768-56e6cf8e2f08.jpg?v=1768564356","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_1886ec89-afe3-4714-ad10-cd42487e7114.jpg?v=1768564356","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_a83399c7-745f-4f95-a768-042047a15fff.jpg?v=1768564356","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/3_499d1db0-3ad2-41c9-bc12-47d038ee5ea3.webp?v=1768564195"],
+sizes:[],
+specs:["Brand : iGPSPORT","Model : iGS800","Type : Premium GPS bike computer","Display : Large full-color touchscreen","Use : Advanced navigation and performance training","Battery : Long battery life design","Feature : Advanced training tools and ride data tracking"]
+},
+
+{
+id:47,
+name:"iGPSPORT BiNavi Cyclocomputer",
+price:24900,
+mrp:"\u20b931,080",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189",
+images:["https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_a194f6d6-bc9a-42a5-b87c-a714668e1745.jpg?v=1772279862","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BG02_-_-17.webp?v=1772279862","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3b99bfd1-85e5-48e7-8d03-5f438e4d8395.jpg?v=1768563958","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_23.jpg?v=1768563958","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_22.jpg?v=1768563958","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_21.jpg?v=1768563958","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_20.jpg?v=1768563958"],
+sizes:[],
+specs:["Brand : iGPSPORT","Model : BiNavi","Type : GPS bike computer and navigator","Navigation : Advanced route analysis and turn prompts","Safety : Curve and all-terrain sensing alerts","Display : Map zoom and pop-up turn warnings","Use : Long rides, training and route navigation"]
 }
 
 ];

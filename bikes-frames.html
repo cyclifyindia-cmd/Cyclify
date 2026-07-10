@@ -56,7 +56,7 @@ height:38px;
 overflow:hidden;
 border-radius:0;
 background:transparent;
-flex-shrink:0;
+flex:0 0 auto;
 
 }
 
@@ -71,32 +71,59 @@ object-fit:contain;
 
 .search-box{
 
-flex:1;
+flex:1 1 auto;
+min-width:0;
+position:relative;
+display:flex;
+align-items:center;
+background:#f2f2f2;
+border-radius:999px;
+height:46px;
+overflow:hidden;
 
 }
 
 .search-box input{
 
 width:100%;
-padding:13px;
+min-width:0;
+height:46px;
+padding:0 10px 0 16px;
 
 border:none;
 outline:none;
 
-border-radius:30px;
+border-radius:999px 0 0 999px;
 
-background:#f2f2f2;
+background:transparent;
 
 font-size:15px;
+
+}
+
+.image-search-btn{
+
+width:40px;
+height:40px;
+margin-right:4px;
+border:none;
+border-radius:50%;
+background:white;
+font-size:19px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+flex:0 0 auto;
 
 }
 
 .top-icons{
 
 display:flex;
+align-items:center;
 gap:15px;
 
 font-size:24px;
+flex:0 0 auto;
 
 }
 
@@ -319,7 +346,7 @@ margin-bottom:10px;
 .bottom{
 
 display:flex;
-justify-content:space-between;
+justify-content:flex-end;
 align-items:center;
 
 }
@@ -355,6 +382,83 @@ font-weight:bold;
 
 cursor:pointer;
 
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+animation:pageFade .45s ease both;
+}
+
+.search-box,
+.site-search,
+.category-pill,
+.add{
+transition:box-shadow .28s ease, transform .28s ease, background .28s ease, border-color .28s ease;
+}
+
+.image-search-btn{
+width:74px!important;
+height:38px!important;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:5px;
+border:1px solid rgba(0,57,166,.14)!important;
+background:linear-gradient(135deg,#ffffff 0%,#eaf2ff 55%,#d9e9ff 100%)!important;
+color:#0039a6;
+font-size:17px!important;
+font-weight:800;
+letter-spacing:0;
+box-shadow:0 6px 16px rgba(0,57,166,.14), inset 0 1px 0 rgba(255,255,255,.8)!important;
+}
+
+.image-search-btn::after{
+content:"Lens";
+font-size:12px;
+line-height:1;
+}
+
+.image-search-btn:hover,
+.add:hover,
+.category-pill:hover{
+transform:translateY(-1px);
+}
+
+.products{
+animation:catalogFade .38s ease both;
+}
+
+.card{
+animation:cardSettle .42s ease both;
+}
+
+@keyframes pageFade{
+from{opacity:.92}
+to{opacity:1}
+}
+
+@keyframes catalogFade{
+from{opacity:.55;transform:translateY(8px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes cardSettle{
+from{opacity:.75;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:480px){
+.image-search-btn{
+width:46px!important;
+height:36px!important;
+font-size:16px!important;
+}
+.image-search-btn::after{
+display:none;
+}
 }
 
 
@@ -508,7 +612,7 @@ document.getElementById(
 const categoryStrip=document.getElementById("categoryStrip");
 const categorySummary=document.getElementById("categorySummary");
 const searchInput=document.getElementById("searchInput");
-let activeCategory="";
+let activeCategory=new URLSearchParams(window.location.search).get("category")||"";
 
 const categories=[
 {key:"sava",label:"SAVA",image:"assets/products/sava-hawkeye.jpg"},
@@ -585,12 +689,6 @@ Free Shipping
 
 <div class="bottom">
 
-<div class="heart" onclick="event.stopPropagation();window.location.href='account.html'">
-
-&#128100;
-
-</div>
-
 <button
 class="add"
 onclick="addToCart(event,${product.id})">
@@ -654,7 +752,6 @@ onkeydown="handleCardKey(event,${product.id})">
 <div class="mrp">MRP ${product.mrp}</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom">
-<div class="heart" onclick="event.stopPropagation();window.location.href='account.html'">&#128100;</div>
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
 </div>
 </div>
@@ -665,9 +762,17 @@ onkeydown="handleCardKey(event,${product.id})">
 
 function selectCategory(category){
 activeCategory=category;
+const nextUrl=category?`${window.location.pathname}?category=${encodeURIComponent(category)}`:window.location.pathname;
+history.pushState({category},"",nextUrl);
 renderCategories();
 renderProducts();
 }
+
+window.addEventListener("popstate",()=>{
+activeCategory=new URLSearchParams(window.location.search).get("category")||"";
+renderCategories();
+renderProducts();
+});
 
 searchInput.addEventListener("input",renderProducts);
 

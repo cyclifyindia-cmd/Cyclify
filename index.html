@@ -272,6 +272,63 @@ top:50px;
 }
 }
 
+html{
+scroll-behavior:smooth;
+}
+
+body{
+animation:pageFade .45s ease both;
+}
+
+.search-box,
+.category,
+.image-search-btn{
+transition:box-shadow .28s ease, transform .28s ease, background .28s ease, border-color .28s ease;
+}
+
+.image-search-btn{
+width:74px!important;
+height:38px!important;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:5px;
+border:1px solid rgba(0,57,166,.14)!important;
+background:linear-gradient(135deg,#ffffff 0%,#eaf2ff 55%,#d9e9ff 100%)!important;
+color:#0039a6;
+font-size:17px!important;
+font-weight:800;
+letter-spacing:0;
+box-shadow:0 6px 16px rgba(0,57,166,.14), inset 0 1px 0 rgba(255,255,255,.8)!important;
+}
+
+.image-search-btn::after{
+content:"Lens";
+font-size:12px;
+line-height:1;
+}
+
+.image-search-btn:hover,
+.category:hover{
+transform:translateY(-1px);
+}
+
+@keyframes pageFade{
+from{opacity:.92}
+to{opacity:1}
+}
+
+@media(max-width:480px){
+.image-search-btn{
+width:46px!important;
+height:36px!important;
+font-size:16px!important;
+}
+.image-search-btn::after{
+display:none;
+}
+}
+
 .location{
 background:white;
 padding:0 15px 15px;
@@ -711,7 +768,14 @@ const searchProducts = [
 {id:37,name:"Orome Valar TH50D Carbon Road Disc Brake Wheelset",price:85000,image:"assets/products/orome-valar-th50d-2.png",category:"Wheels & Tyres",keywords:"orome valar th50d carbon road disc brake wheelset wheels carbon"},
 {id:38,name:"ThinkRider XX PRO Foldable Smart Trainer",price:51999,image:"assets/products/thinkrider-xx-pro-1.png",category:"Electronics",keywords:"thinkrider xx pro foldable smart trainer indoor cycling"},
 {id:39,name:"ThinkRider VS 200 Virtual Shifting Controller",price:5999,image:"https://thinkrider.com/cdn/shop/files/VS200-12_960x.jpg?v=1768188298",category:"Electronics",keywords:"thinkrider vs200 virtual shifting controller smart trainer accessory"},
-{id:40,name:"ThinkRider Speed Cadence Sensor",price:2200,image:"https://thinkrider.com/cdn/shop/files/SpeedCadenceSensor1_1200x.jpg?v=1767941722",category:"Electronics",keywords:"thinkrider speed cadence sensor cycling sensor"}
+{id:40,name:"ThinkRider Speed Cadence Sensor",price:2200,image:"https://thinkrider.com/cdn/shop/files/SpeedCadenceSensor1_1200x.jpg?v=1767941722",category:"Electronics",keywords:"thinkrider speed cadence sensor cycling sensor"},
+{id:41,name:"iGPSPORT BSC200S Cyclocomputer",price:7900,image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image.jpg?v=1754022773",category:"Electronics",keywords:"igpsport gps bike computer cyclocomputer navigation cycling data"},
+{id:42,name:"iGPSPORT BSC100Max Cyclocomputer",price:4499,image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max.webp?v=1772281342",category:"Electronics",keywords:"igpsport gps bike computer cyclocomputer navigation cycling data"},
+{id:43,name:"iGPSPORT BSC100S Cyclocomputer",price:4299,image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100s.webp?v=1768469924",category:"Electronics",keywords:"igpsport gps bike computer cyclocomputer navigation cycling data"},
+{id:44,name:"iGPSPORT BSC300T Cyclocomputer",price:14300,image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",category:"Electronics",keywords:"igpsport gps bike computer cyclocomputer navigation cycling data"},
+{id:45,name:"iGPSPORT BiNavi Air Cyclocomputer",price:20400,image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/binavi_air_8d3b02ae-41a3-4561-a048-95c428e24dfa.jpg?v=1772449036",category:"Electronics",keywords:"igpsport gps bike computer cyclocomputer navigation cycling data"},
+{id:46,name:"iGPSPORT iGS800 Cyclocomputer",price:29900,image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bda0947d-eb60-46ca-adb4-cebd79aee406.jpg?v=1754027644",category:"Electronics",keywords:"igpsport gps bike computer cyclocomputer navigation cycling data"},
+{id:47,name:"iGPSPORT BiNavi Cyclocomputer",price:24900,image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189",category:"Electronics",keywords:"igpsport gps bike computer cyclocomputer navigation cycling data"}
 ];
 
 let wordIndex = 0;

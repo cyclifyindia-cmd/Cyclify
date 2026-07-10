@@ -8,11 +8,11 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#f5f5f5;padding-bottom:80px}
 .topbar{position:sticky;top:0;background:white;display:flex;align-items:center;gap:10px;padding:8px 12px;box-shadow:0 2px 8px rgba(0,0,0,.1);z-index:1000}
-.home-logo{display:flex;align-items:center;justify-content:center;text-decoration:none;width:92px;height:38px;overflow:hidden;border-radius:0;background:transparent;flex-shrink:0}
+.home-logo{display:flex;align-items:center;justify-content:center;text-decoration:none;width:92px;height:38px;overflow:hidden;border-radius:0;background:transparent;flex:0 0 auto}
 .home-logo img{width:100%;height:100%;display:block;object-fit:contain}
-.search-box{flex:1;position:relative;display:flex;align-items:center;background:#f2f2f2;border-radius:30px;overflow:hidden}
-.search-box input{width:100%;padding:13px;border:none;outline:none;border-radius:30px;background:transparent;font-size:15px}.image-search-btn{width:38px;height:38px;margin-right:4px;border:none;border-radius:50%;background:white;font-size:17px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08);flex:0 0 auto}
-.top-icons{display:flex;gap:15px;font-size:24px}
+.search-box{flex:1 1 auto;min-width:0;position:relative;display:flex;align-items:center;background:#f2f2f2;border-radius:999px;height:46px;overflow:hidden}
+.search-box input{width:100%;min-width:0;height:46px;padding:0 10px 0 16px;border:none;outline:none;border-radius:999px 0 0 999px;background:transparent;font-size:15px}.image-search-btn{width:40px;height:40px;margin-right:4px;border:none;border-radius:50%;background:white;font-size:19px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08);flex:0 0 auto}
+.top-icons{display:flex;align-items:center;gap:15px;font-size:24px;flex:0 0 auto}
 .top-icons a{text-decoration:none;color:black;position:relative}
 .cart-count{position:absolute;top:-8px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ff2a2a;color:white;font-size:11px;font-weight:bold;display:none;align-items:center;justify-content:center}
 .page-title{padding:10px 15px 8px;font-size:20px;font-weight:bold;background:#f5f5f5;display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -35,12 +35,24 @@ body{background:#f5f5f5;padding-bottom:80px}
 .price{font-size:20px;font-weight:bold;margin-bottom:2px}
 .mrp{font-size:14px;color:gray;margin-bottom:6px}
 .ship{font-size:12px;font-weight:bold;color:#087a3d;margin-bottom:10px}
-.bottom{display:flex;justify-content:space-between;align-items:center}
+.bottom{display:flex;justify-content:flex-end;align-items:center}
 .heart{width:40px;height:40px;border:2px solid #ddd;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px}
 .add{padding:10px 12px;border-radius:12px;border:2px solid #ddd;background:white;font-weight:bold;cursor:pointer}
 .empty-state{grid-column:1/-1;padding:35px 20px;text-align:center;background:white;font-weight:bold;color:#555}
 .bottom-nav{position:fixed;bottom:0;left:0;width:100%;height:58px;background:white;border-top:1px solid #ddd;display:flex;z-index:999}
 .nav-item{flex:1;text-align:center;padding-top:8px;font-size:14px;font-weight:bold;cursor:pointer}
+html{scroll-behavior:smooth}
+body{animation:pageFade .45s ease both}
+.search-box,.site-search,.category-pill,.add{transition:box-shadow .28s ease,transform .28s ease,background .28s ease,border-color .28s ease}
+.image-search-btn{width:74px!important;height:38px!important;display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid rgba(0,57,166,.14)!important;background:linear-gradient(135deg,#ffffff 0%,#eaf2ff 55%,#d9e9ff 100%)!important;color:#0039a6;font-size:17px!important;font-weight:800;letter-spacing:0;box-shadow:0 6px 16px rgba(0,57,166,.14),inset 0 1px 0 rgba(255,255,255,.8)!important}
+.image-search-btn::after{content:"Lens";font-size:12px;line-height:1}
+.image-search-btn:hover,.add:hover,.category-pill:hover{transform:translateY(-1px)}
+.products{animation:catalogFade .38s ease both}
+.card{animation:cardSettle .42s ease both}
+@keyframes pageFade{from{opacity:.92}to{opacity:1}}
+@keyframes catalogFade{from{opacity:.55;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cardSettle{from{opacity:.75;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:480px){.image-search-btn{width:46px!important;height:36px!important;font-size:16px!important}.image-search-btn::after{display:none}}
 </style>
 </head>
 <body>
@@ -127,8 +139,8 @@ const categoryStrip=document.getElementById("categoryStrip");
 const subCategoryStrip=document.getElementById("subCategoryStrip");
 const categorySummary=document.getElementById("categorySummary");
 const searchInput=document.getElementById("searchInput");
-let activeCategory="";
-let activeSubCategory="";
+let activeCategory=new URLSearchParams(window.location.search).get("category")||"";
+let activeSubCategory=new URLSearchParams(window.location.search).get("sub")||"";
 
 function updateCartCount(){
 const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
@@ -210,7 +222,6 @@ container.innerHTML+=`
 <div class="mrp">MRP ${product.mrp}</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom">
-<div class="heart" onclick="event.stopPropagation();window.location.href='account.html'">&#128100;</div>
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
 </div>
 </div>
@@ -222,15 +233,29 @@ container.innerHTML+=`
 function selectCategory(category){
 activeCategory=category;
 activeSubCategory="";
+const nextUrl=category?`${window.location.pathname}?category=${encodeURIComponent(category)}`:window.location.pathname;
+history.pushState({category},"",nextUrl);
 renderCategories();
 renderProducts();
 }
 
 function selectSubCategory(category){
 activeSubCategory=category;
+const params=new URLSearchParams();
+if(activeCategory){params.set("category",activeCategory);}
+if(category){params.set("sub",category);}
+history.pushState({category:activeCategory,sub:category},"",`${window.location.pathname}?${params.toString()}`);
 renderCategories();
 renderProducts();
 }
+
+window.addEventListener("popstate",()=>{
+const params=new URLSearchParams(window.location.search);
+activeCategory=params.get("category")||"";
+activeSubCategory=params.get("sub")||"";
+renderCategories();
+renderProducts();
+});
 
 function openProduct(id){
 window.location=`product.html?id=${id}`;

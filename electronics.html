@@ -39,7 +39,7 @@ height:38px;
 overflow:hidden;
 border-radius:0;
 background:transparent;
-flex-shrink:0;
+flex:0 0 auto;
 }
 
 .home-logo img{
@@ -50,33 +50,37 @@ object-fit:contain;
 }
 
 .search-box{
-flex:1;
+flex:1 1 auto;
+min-width:0;
 position:relative;
 display:flex;
 align-items:center;
 background:#f2f2f2;
-border-radius:30px;
+border-radius:999px;
+height:46px;
 overflow:hidden;
 }
 
 .search-box input{
 width:100%;
-padding:13px;
+min-width:0;
+height:46px;
+padding:0 10px 0 16px;
 border:none;
 outline:none;
-border-radius:30px;
+border-radius:999px 0 0 999px;
 background:transparent;
 font-size:15px;
 }
 
 .image-search-btn{
-width:38px;
-height:38px;
+width:40px;
+height:40px;
 margin-right:4px;
 border:none;
 border-radius:50%;
 background:white;
-font-size:17px;
+font-size:19px;
 cursor:pointer;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
 flex:0 0 auto;
@@ -84,8 +88,10 @@ flex:0 0 auto;
 
 .top-icons{
 display:flex;
+align-items:center;
 gap:15px;
 font-size:24px;
+flex:0 0 auto;
 }
 
 .top-icons a{
@@ -265,7 +271,7 @@ margin-bottom:10px;
 
 .bottom{
 display:flex;
-justify-content:space-between;
+justify-content:flex-end;
 align-items:center;
 }
 
@@ -287,6 +293,83 @@ border:2px solid #ddd;
 background:white;
 font-weight:bold;
 cursor:pointer;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+animation:pageFade .45s ease both;
+}
+
+.search-box,
+.site-search,
+.category-pill,
+.add{
+transition:box-shadow .28s ease, transform .28s ease, background .28s ease, border-color .28s ease;
+}
+
+.image-search-btn{
+width:74px!important;
+height:38px!important;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:5px;
+border:1px solid rgba(0,57,166,.14)!important;
+background:linear-gradient(135deg,#ffffff 0%,#eaf2ff 55%,#d9e9ff 100%)!important;
+color:#0039a6;
+font-size:17px!important;
+font-weight:800;
+letter-spacing:0;
+box-shadow:0 6px 16px rgba(0,57,166,.14), inset 0 1px 0 rgba(255,255,255,.8)!important;
+}
+
+.image-search-btn::after{
+content:"Lens";
+font-size:12px;
+line-height:1;
+}
+
+.image-search-btn:hover,
+.add:hover,
+.category-pill:hover{
+transform:translateY(-1px);
+}
+
+.products{
+animation:catalogFade .38s ease both;
+}
+
+.card{
+animation:cardSettle .42s ease both;
+}
+
+@keyframes pageFade{
+from{opacity:.92}
+to{opacity:1}
+}
+
+@keyframes catalogFade{
+from{opacity:.55;transform:translateY(8px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes cardSettle{
+from{opacity:.75;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:480px){
+.image-search-btn{
+width:46px!important;
+height:36px!important;
+font-size:16px!important;
+}
+.image-search-btn::after{
+display:none;
+}
 }
 </style>
 </head>
@@ -565,13 +648,70 @@ mrp:"₹2,200",
 image:"https://thinkrider.com/cdn/shop/files/SpeedCadenceSensor1_1200x.jpg?v=1767941722",
 sizes:[]
 }
+,
+{
+id:41,
+name:"iGPSPORT BSC200S Cyclocomputer",
+price:7900,
+mrp:"\u20b99,480",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image.jpg?v=1754022773",
+sizes:[]
+},
+{
+id:42,
+name:"iGPSPORT BSC100Max Cyclocomputer",
+price:4499,
+mrp:"\u20b95,900",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max.webp?v=1772281342",
+sizes:[]
+},
+{
+id:43,
+name:"iGPSPORT BSC100S Cyclocomputer",
+price:4299,
+mrp:"\u20b95,500",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100s.webp?v=1768469924",
+sizes:[]
+},
+{
+id:44,
+name:"iGPSPORT BSC300T Cyclocomputer",
+price:14300,
+mrp:"\u20b917,973",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",
+sizes:[]
+},
+{
+id:45,
+name:"iGPSPORT BiNavi Air Cyclocomputer",
+price:20400,
+mrp:"\u20b924,489",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/binavi_air_8d3b02ae-41a3-4561-a048-95c428e24dfa.jpg?v=1772449036",
+sizes:[]
+},
+{
+id:46,
+name:"iGPSPORT iGS800 Cyclocomputer",
+price:29900,
+mrp:"\u20b935,880",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bda0947d-eb60-46ca-adb4-cebd79aee406.jpg?v=1754027644",
+sizes:[]
+},
+{
+id:47,
+name:"iGPSPORT BiNavi Cyclocomputer",
+price:24900,
+mrp:"\u20b931,080",
+image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189",
+sizes:[]
+}
 ];
 
 const container=document.getElementById("products");
 const categoryStrip=document.getElementById("categoryStrip");
 const categorySummary=document.getElementById("categorySummary");
 const searchInput=document.getElementById("searchInput");
-let activeCategory="";
+let activeCategory=new URLSearchParams(window.location.search).get("category")||"";
 
 const categories=[
 {key:"smart-trainer",label:"Smart Trainer",image:"assets/products/thinkrider-x2-max-1.jpg"},
@@ -655,7 +795,6 @@ onkeydown="handleCardKey(event,${product.id})">
 <div class="mrp">MRP ${product.mrp}</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom">
-<div class="heart" onclick="event.stopPropagation();window.location.href='account.html'">&#128100;</div>
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
 </div>
 </div>
@@ -716,7 +855,6 @@ onkeydown="handleCardKey(event,${product.id})">
 <div class="mrp">MRP ${product.mrp}</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom">
-<div class="heart" onclick="event.stopPropagation();window.location.href='account.html'">&#128100;</div>
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
 </div>
 </div>
@@ -727,9 +865,17 @@ onkeydown="handleCardKey(event,${product.id})">
 
 function selectCategory(category){
 activeCategory=category;
+const nextUrl=category?`${window.location.pathname}?category=${encodeURIComponent(category)}`:window.location.pathname;
+history.pushState({category},"",nextUrl);
 renderCategories();
 renderProducts();
 }
+
+window.addEventListener("popstate",()=>{
+activeCategory=new URLSearchParams(window.location.search).get("category")||"";
+renderCategories();
+renderProducts();
+});
 
 searchInput.addEventListener("input",renderProducts);
 
