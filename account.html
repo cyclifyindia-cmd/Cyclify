@@ -369,6 +369,7 @@ margin-bottom:6px;
 <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter password">
 </div>
 <button class="primary-btn" type="submit">Login</button>
+<button class="secondary-btn" id="googleLoginBtn" type="button">Continue with Google</button>
 </form>
 
 <form class="panel" id="signupPanel">
@@ -387,6 +388,7 @@ margin-bottom:6px;
 </div>
 <p class="hint">Password must be 5 to 9 characters. Letters-only is allowed. You can also use capital letters, numbers, and symbols.</p>
 <button class="primary-btn" type="submit">Create Account</button>
+<button class="secondary-btn" id="googleSignupBtn" type="button">Continue with Google</button>
 </form>
 
 <form class="panel" id="otpPanel">
@@ -445,9 +447,32 @@ else{cartCount.style.display="none";}
 })();
 </script>
 
-<script>
-const usersKey="cyclifyUsers";
-const sessionKey="cyclifyLoggedInUser";
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import {
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+signInWithPopup,
+GoogleAuthProvider,
+updateProfile,
+onAuthStateChanged,
+signOut
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",
+authDomain: "cyclify-b809a.firebaseapp.com",
+projectId: "cyclify-b809a",
+storageBucket: "cyclify-b809a.firebasestorage.app",
+messagingSenderId: "748931097863",
+appId: "1:748931097863:web:0954f07a8245703f2751a2",
+measurementId: "G-ZDE8EQN0XV"
+};
+
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const googleProvider=new GoogleAuthProvider();
 
 const authArea=document.getElementById("authArea");
 const dashboard=document.getElementById("dashboard");
@@ -474,16 +499,11 @@ function isValidPassword(value){
 return /^[A-Za-z0-9!@#$%^&*()_\-+=.?]{5,9}$/.test(value);
 }
 
-function getUsers(){
-return JSON.parse(localStorage.getItem(usersKey))||[];
+function getAuthEmail(username){
+if(isEmail(username)){
+return username;
 }
-
-function saveUsers(users){
-localStorage.setItem(usersKey,JSON.stringify(users));
-}
-
-function encodePassword(password){
-return btoa(unescape(encodeURIComponent(password)));
+return `${username}@mobile.cyclify.in`;
 }
 
 function setMessage(id,type,text){
@@ -498,30 +518,41 @@ box.className="message";
 box.textContent="";
 }
 
-function loginUser(user){
-localStorage.setItem(sessionKey,JSON.stringify(user));
-renderState();
+function cleanMobileEmail(email){
+return email&&email.endsWith("@mobile.cyclify.in")?email.replace("@mobile.cyclify.in",""):email;
 }
 
-function getCurrentUser(){
-const raw=localStorage.getItem(sessionKey);
-if(!raw){return null;}
-try{return JSON.parse(raw);}
-catch(error){return null;}
-}
-
-function renderState(){
-const user=getCurrentUser();
+function renderState(user){
 if(user){
 authArea.style.display="none";
 dashboard.classList.add("active");
-profileName.textContent=user.name||"Cyclify Customer";
-profileUser.textContent=user.username;
+profileName.textContent=user.displayName||"Cyclify Customer";
+profileUser.textContent=cleanMobileEmail(user.email)||user.phoneNumber||"Signed in";
 }
 else{
 authArea.style.display="block";
 dashboard.classList.remove("active");
 }
+}
+
+function getAuthError(error){
+const code=error&&error.code?error.code:"";
+if(code.includes("auth/email-already-in-use")){
+return "Account already exists. Please login.";
+}
+if(code.includes("auth/invalid-credential")||code.includes("auth/wrong-password")||code.includes("auth/user-not-found")){
+return "Wrong username or password.";
+}
+if(code.includes("auth/popup-closed-by-user")){
+return "Google login was closed before completion.";
+}
+if(code.includes("auth/unauthorized-domain")){
+return "This domain is not authorized in Firebase. Add cyclify.in in Firebase Authentication settings.";
+}
+if(code.includes("auth/operation-not-allowed")){
+return "Please enable this sign-in method in Firebase Authentication.";
+}
+return "Login failed. Please try again.";
 }
 
 document.querySelectorAll(".tab").forEach(tab=>{
@@ -533,7 +564,7 @@ document.getElementById(`${tab.dataset.tab}Panel`).classList.add("active");
 });
 });
 
-document.getElementById("signupPanel").addEventListener("submit",event=>{
+document.getElementById("signupPanel").addEventListener("submit",async event=>{
 event.preventDefault();
 clearMessage("signupMessage");
 
@@ -556,25 +587,17 @@ setMessage("signupMessage","error","Password must be 5 to 9 characters and can u
 return;
 }
 
-const users=getUsers();
-if(users.some(user=>user.username===username)){
-setMessage("signupMessage","error","Account already exists. Please login.");
-return;
+try{
+const credential=await createUserWithEmailAndPassword(auth,getAuthEmail(username),password);
+await updateProfile(credential.user,{displayName:name});
+setMessage("signupMessage","success","Account created successfully.");
 }
-
-const newUser={
-name,
-username,
-password:encodePassword(password),
-createdAt:new Date().toISOString()
-};
-
-users.push(newUser);
-saveUsers(users);
-loginUser({name:newUser.name,username:newUser.username});
+catch(error){
+setMessage("signupMessage","error",getAuthError(error));
+}
 });
 
-document.getElementById("loginPanel").addEventListener("submit",event=>{
+document.getElementById("loginPanel").addEventListener("submit",async event=>{
 event.preventDefault();
 clearMessage("loginMessage");
 
@@ -586,13 +609,30 @@ setMessage("loginMessage","error","Enter your registered mobile number or email 
 return;
 }
 
-const user=getUsers().find(item=>item.username===username);
-if(!user||user.password!==encodePassword(password)){
-setMessage("loginMessage","error","Wrong username or password.");
-return;
+try{
+await signInWithEmailAndPassword(auth,getAuthEmail(username),password);
+}
+catch(error){
+setMessage("loginMessage","error",getAuthError(error));
+}
+});
+
+async function loginWithGoogle(messageId){
+clearMessage(messageId);
+try{
+await signInWithPopup(auth,googleProvider);
+}
+catch(error){
+setMessage(messageId,"error",getAuthError(error));
+}
 }
 
-loginUser({name:user.name,username:user.username});
+document.getElementById("googleLoginBtn").addEventListener("click",()=>{
+loginWithGoogle("loginMessage");
+});
+
+document.getElementById("googleSignupBtn").addEventListener("click",()=>{
+loginWithGoogle("signupMessage");
 });
 
 document.getElementById("sendOtpBtn").addEventListener("click",()=>{
@@ -604,12 +644,13 @@ event.preventDefault();
 setMessage("otpMessage","success","OTP login is not active yet. Please use Login or Create Account.");
 });
 
-document.getElementById("logoutBtn").addEventListener("click",()=>{
-localStorage.removeItem(sessionKey);
-renderState();
+document.getElementById("logoutBtn").addEventListener("click",async ()=>{
+await signOut(auth);
 });
 
-renderState();
+onAuthStateChanged(auth,user=>{
+renderState(user);
+});
 </script>
 
 </body>
