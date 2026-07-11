@@ -2027,8 +2027,16 @@ document.getElementById("productName").textContent=product.name;
 document.getElementById("productPrice").textContent=`₹${product.price.toLocaleString()}`;
 document.getElementById("productMrp").textContent=`MRP ${product.mrp}`;
 
-function getVariantSize(title){
-return String(title||"").split("/").map(part=>part.trim()).find(part=>product.sizes&&product.sizes.includes(part))||String(title||"").trim();
+function normalizeSizeValue(value){
+return String(value||"").replace(/\s+/g," ").trim();
+}
+
+function getVariantSize(variant){
+const values=[variant.option1,variant.option2,variant.option3,variant.public_title,variant.title]
+.flatMap(value=>String(value||"").split("/"))
+.map(normalizeSizeValue)
+.filter(Boolean);
+return values.find(value=>product.sizes&&product.sizes.includes(value))||"";
 }
 
 function isSizeUnavailable(size){
@@ -2057,15 +2065,30 @@ if(selectedSize){selectSize(selectedSize);}
 updateCartButtonForSize();
 }
 
+function normalizeSourceMoney(value){
+const number=Number(value||0);
+if(!Number.isFinite(number)||number<=0){return 0;}
+return number>100000?Math.round(number/100):Math.round(number);
+}
+
+async function fetchSourceProduct(){
+const jsUrl=`https://www.cycletimeindia.com/products/${product.sourceHandle}.js`;
+const jsonUrl=`https://www.cycletimeindia.com/products/${product.sourceHandle}.json`;
+let response=await fetch(jsUrl,{cache:"no-store",mode:"cors"});
+if(response.ok){return response.json();}
+response=await fetch(jsonUrl,{cache:"no-store",mode:"cors"});
+if(!response.ok){throw new Error("source unavailable");}
+const data=await response.json();
+return data.product||data;
+}
+
 async function syncProductStock(){
 if(product.stockSource!=="cycletime"||!product.sourceHandle){return;}
 try{
-const response=await fetch(`https://www.cycletimeindia.com/products/${product.sourceHandle}.json`,{cache:"no-store"});
-if(!response.ok){throw new Error("Stock check failed");}
-const data=await response.json();
-const variants=(data.product&&data.product.variants)||[];
-const prices=variants.map(variant=>Number(variant.price||0)).filter(Boolean);
-const compares=variants.map(variant=>Number(variant.compare_at_price||0)).filter(Boolean);
+const data=await fetchSourceProduct();
+const variants=data.variants||[];
+const prices=variants.map(variant=>normalizeSourceMoney(variant.price)).filter(Boolean);
+const compares=variants.map(variant=>normalizeSourceMoney(variant.compare_at_price)).filter(Boolean);
 if(prices.length){
 product.price=Math.min(...prices);
 document.getElementById("productPrice").textContent=`₹${product.price.toLocaleString()}`;
@@ -2078,9 +2101,9 @@ const variantAvailability={};
 let hasAvailabilityData=false;
 variants.forEach(variant=>{
 if(typeof variant.available!=="boolean"){return;}
-hasAvailabilityData=true;
-const size=getVariantSize(variant.title);
+const size=getVariantSize(variant);
 if(!size){return;}
+hasAvailabilityData=true;
 variantAvailability[size]=(variantAvailability[size]||false)||variant.available;
 });
 if(hasAvailabilityData){
@@ -2141,11 +2164,13 @@ valveSection.style.display="none";
 
 function selectSize(size){
 
+if(isSizeUnavailable(size)){return;}
 selectedSize=size;
 
-document.querySelectorAll(".size-btn").forEach(button=>{
-button.classList.toggle("active",button.textContent.trim()===size);
+document.querySelectorAll("#sizeOptions .size-btn").forEach(button=>{
+button.classList.toggle("active",button.dataset.size===size);
 });
+updateCartButtonForSize();
 
 }
 
@@ -2166,6 +2191,9 @@ button.classList.toggle("active",button.textContent.trim()===length);
 if(selectedValveLength){
 selectValveLength(selectedValveLength);
 }
+
+applySizeAvailability();
+syncProductStock();
 
 function showImage(index){
 

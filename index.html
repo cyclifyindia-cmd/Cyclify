@@ -338,49 +338,43 @@ font-weight:bold;
 
 .offer{
 background:#f5f5f5;
-color:white;
 padding:10px 12px 12px;
 overflow:hidden;
 }
 
 .vertical-banner{
-height:96px;
+height:168px;
 overflow:hidden;
-border-radius:0;
-background:
-linear-gradient(90deg,rgba(255,255,255,.08) 0 12%,transparent 12% 24%),
-linear-gradient(135deg,#0f172a 0%,#111827 48%,#0b1220 100%);
-background-size:90px 100%,100% 100%;
+border-radius:18px;
 position:relative;
-box-shadow:0 8px 20px rgba(15,23,42,.18);
+background:#111827 url('assets/banners/used-market-sale-banner.png') center right/cover no-repeat;
+box-shadow:0 18px 42px rgba(15,23,42,.18);
+isolation:isolate;
 }
 
 .vertical-banner::before{
 content:"";
 position:absolute;
-left:0;
-right:0;
-bottom:16px;
-height:2px;
-background:repeating-linear-gradient(90deg,rgba(255,255,255,.72) 0 28px,transparent 28px 52px);
-opacity:.62;
-animation:roadLines .9s linear infinite;
-z-index:1;
+inset:0;
+background:linear-gradient(90deg,rgba(6,10,18,.92) 0%,rgba(6,10,18,.76) 34%,rgba(6,10,18,.2) 64%,rgba(6,10,18,0) 100%);
+z-index:0;
 }
 
 .vertical-banner::after{
-content:"🚴";
+content:"";
 position:absolute;
-right:-52px;
-bottom:24px;
-font-size:28px;
-filter:drop-shadow(-12px 0 8px rgba(255,255,255,.34));
-animation:cyclistPass 12s ease-in-out infinite;
-z-index:3;
-pointer-events:none;
+left:18px;
+bottom:14px;
+width:72px;
+height:3px;
+border-radius:999px;
+background:#00d084;
+box-shadow:0 0 22px rgba(0,208,132,.45);
+z-index:1;
 }
 
 .banner-track{
+height:100%;
 display:flex;
 flex-direction:column;
 animation:verticalSlide 12s cubic-bezier(.7,0,.2,1) infinite;
@@ -393,45 +387,65 @@ animation-play-state:paused;
 }
 
 .banner-slide{
-height:96px;
-padding:14px 16px;
+height:168px;
+padding:22px 18px;
 display:flex;
-justify-content:space-between;
-align-items:center;
-gap:14px;
-color:white;
+align-items:flex-start;
+justify-content:center;
+flex-direction:column;
+gap:12px;
 text-decoration:none;
-opacity:0;
-animation:slideFade 12s infinite;
-text-shadow:0 1px 8px rgba(0,0,0,.28);
+color:white;
+max-width:56%;
+text-shadow:0 1px 10px rgba(0,0,0,.32);
 }
 
-.banner-slide:nth-child(2){
-animation-delay:4s;
-}
-
-.banner-slide:nth-child(3){
-animation-delay:8s;
+.banner-kicker{
+display:inline-flex;
+width:max-content;
+border:1px solid rgba(255,255,255,.24);
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+border-radius:999px;
+padding:5px 9px;
+font-size:11px;
+font-weight:800;
+letter-spacing:.2px;
+color:#dfffee;
 }
 
 .banner-slide h3{
-font-size:18px;
-margin-bottom:4px;
+font-size:22px;
+line-height:1.05;
+max-width:380px;
 }
 
 .banner-slide p{
 font-size:13px;
-color:#e5edf8;
+line-height:1.35;
+color:#e8edf5;
+max-width:360px;
 }
 
 .banner-action{
-background:rgba(255,255,255,.94);
-color:#111827;
-padding:10px 14px;
-border-radius:22px;
-font-size:13px;
-font-weight:bold;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:max-content;
+background:white;
+color:#0f172a;
+padding:9px 13px;
+border-radius:999px;
+font-size:12px;
+font-weight:900;
 white-space:nowrap;
+box-shadow:0 10px 22px rgba(0,0,0,.18);
+transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.banner-action:hover{
+transform:translateY(-1px);
+box-shadow:0 14px 26px rgba(0,0,0,.22);
 }
 
 @keyframes verticalSlide{
@@ -439,10 +453,10 @@ white-space:nowrap;
 transform:translateY(0);
 }
 31%,55%{
-transform:translateY(-96px);
+transform:translateY(-168px);
 }
 64%,88%{
-transform:translateY(-192px);
+transform:translateY(-336px);
 }
 100%{
 transform:translateY(0);
@@ -792,6 +806,14 @@ gap:5px!important;
 
 
 
+@media(max-width:560px){
+.vertical-banner{height:156px;border-radius:16px;background-position:62% center}
+.vertical-banner::before{background:linear-gradient(90deg,rgba(6,10,18,.94) 0%,rgba(6,10,18,.8) 48%,rgba(6,10,18,.2) 100%)}
+.banner-slide{height:156px;max-width:72%;padding:18px 15px}
+.banner-slide h3{font-size:19px}
+.banner-slide p{font-size:12px}
+@keyframes verticalSlide{0%,22%{transform:translateY(0)}31%,55%{transform:translateY(-156px)}64%,88%{transform:translateY(-312px)}100%{transform:translateY(0)}}
+}
 </style>
 </head>
 
@@ -842,25 +864,28 @@ autocomplete="off">
 <div class="banner-track">
 
 <a href="used-market.html" class="banner-slide">
+<span class="banner-kicker">Cyclify Used Market</span>
 <div>
-<h3>Sell Your Used Cycling Gear</h3>
-<p>Logged-in riders can post used bikes, wheels and components for Cyclify approval.</p>
+<h3>Sell Used Cycles & Components</h3>
+<p>Post your pre-owned bike, wheels, helmet or parts for Cyclify approval.</p>
 </div>
 <span class="banner-action">Post Ad</span>
 </a>
 
 <a href="used-market.html#approved-listings" class="banner-slide">
+<span class="banner-kicker">Verified Before Live</span>
 <div>
-<h3>Approved Listings Go Live Next Day</h3>
-<p>Fresh approved ads get a Today Posted tag, while old posts stay searchable.</p>
+<h3>Approved Ads, Cleaner Deals</h3>
+<p>Fresh listings get highlighted while older posts stay easy to discover.</p>
 </div>
 <span class="banner-action">Browse Used</span>
 </a>
 
 <a href="used-market.html#filters" class="banner-slide">
+<span class="banner-kicker">Bike Buyer Friendly</span>
 <div>
-<h3>Find Used Bikes Faster</h3>
-<p>Search and filter only inside the used marketplace page.</p>
+<h3>Search Used Gear Faster</h3>
+<p>Filter by category, price and location inside the used marketplace.</p>
 </div>
 <span class="banner-action">Use Filters</span>
 </a>
