@@ -18,13 +18,23 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .header-icon{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f6f7f9;border:1px solid #e6e8ed;color:#111827;text-decoration:none;position:relative}
 .cart-count{position:absolute;top:-5px;right:-4px;min-width:17px;height:17px;padding:0 5px;border-radius:9px;background:#111827;color:white;border:2px solid white;font-size:10px;font-weight:bold;display:none;align-items:center;justify-content:center}
 .shell{max-width:1120px;margin:0 auto;padding:14px;display:grid;gap:14px}
-.hero{background:linear-gradient(135deg,#111827,#0f766e);color:white;border-radius:18px;padding:24px;display:grid;grid-template-columns:1.4fr .8fr;gap:18px;align-items:center;box-shadow:0 12px 28px rgba(15,23,42,.16)}
-.hero h1{font-size:30px;line-height:1.08;margin-bottom:10px;letter-spacing:0}
-.hero p{color:#e7f6ef;line-height:1.45;font-size:15px}
-.hero-panel{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:16px;display:grid;gap:10px}
-.hero-panel strong{font-size:14px}
-.hero-panel span{font-size:12px;color:#d8f3e7}
-.notice{background:white;border-radius:14px;padding:13px 14px;border:1px solid #e8edf3;color:#374151;font-size:14px;line-height:1.45}
+.hero{min-height:270px;color:white;border-radius:22px;padding:24px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:#111827 url('assets/banners/used-market-sale-banner.png') center right/cover no-repeat;box-shadow:0 18px 44px rgba(15,23,42,.18)}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,9,18,.94) 0%,rgba(5,9,18,.76) 39%,rgba(5,9,18,.2) 72%,rgba(5,9,18,0) 100%)}
+.hero-copy{position:relative;z-index:1;max-width:520px;display:grid;gap:10px}
+.hero-kicker{width:max-content;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900;color:#dfffee;letter-spacing:.25px}
+.hero h1{font-size:34px;line-height:1.02;letter-spacing:0}
+.hero p{color:#eef6f3;line-height:1.42;font-size:15px;max-width:470px}
+.market-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:white;border:1px solid #e8edf3;border-radius:18px;padding:12px;box-shadow:0 8px 20px rgba(15,23,42,.05)}
+.market-actions{display:flex;gap:9px;align-items:center}
+.market-tab{border:1px solid #e2e7ef;border-radius:999px;background:white;color:#111827;padding:11px 16px;font-weight:900;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.market-tab:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(15,23,42,.08)}
+.sell-tab{border:0;color:white;background:linear-gradient(90deg,#ff9933 0%,#ffffff 50%,#138808 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06),0 8px 18px rgba(19,136,8,.14);text-shadow:0 1px 4px rgba(0,0,0,.35)}
+.sell-tab span{display:inline-flex;background:rgba(17,24,39,.34);border-radius:999px;padding:2px 7px}
+.my-ads-tab.active{background:#111827;color:white;border-color:#111827}
+.toolbar-filter{display:flex;align-items:center;gap:8px;min-width:230px}
+.toolbar-filter label{font-size:12px;font-weight:900;color:#667085;white-space:nowrap}
+.toolbar-filter select{width:100%;border:1px solid #dfe4ec;border-radius:999px;padding:11px 13px;font-size:14px;background:#fbfcfe;outline:none;font-weight:bold}
+.notice{display:none}
 .market-grid{display:grid;grid-template-columns:360px 1fr;gap:14px;align-items:start}
 .panel{background:white;border-radius:14px;padding:14px;border:1px solid #e8edf3;box-shadow:0 4px 14px rgba(0,0,0,.04)}
 .panel h2{font-size:18px;margin-bottom:10px}
@@ -36,7 +46,7 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .secondary-btn{border:1px solid #dfe4ec;border-radius:999px;background:white;color:#111827;padding:10px 13px;font-weight:bold;cursor:pointer}
 .auth-note,.form-message{font-size:13px;line-height:1.45;color:#4b5563}
 .form-message.success{color:#087a3d}.form-message.error{color:#b42318}
-.filters{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:8px;margin-bottom:12px}
+.filters{display:grid;grid-template-columns:1.4fr repeat(2,1fr);gap:8px;margin-bottom:12px}
 .filters input,.filters select{border:1px solid #dfe4ec;border-radius:999px;padding:11px 13px;font-size:14px;background:#fbfcfe;outline:none}
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
 .section-head h2{font-size:18px}
@@ -56,8 +66,8 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .pending-list{display:grid;gap:9px}
 .pending-row{border:1px solid #e7eaf0;border-radius:12px;padding:10px;display:grid;gap:7px}
 .pending-actions{display:flex;gap:8px;flex-wrap:wrap}
-@media(max-width:860px){.hero{grid-template-columns:1fr}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:1fr}}
-@media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{padding:18px}.hero h1{font-size:24px}.filters{grid-template-columns:1fr}.listing-card{grid-template-rows:150px auto}.listing-card img{height:150px}}
+@media(max-width:860px){.hero{min-height:240px;background-position:58% center}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:1fr}.market-toolbar{align-items:stretch;flex-direction:column}.toolbar-filter{width:100%;min-width:0}}
+@media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{min-height:230px;padding:18px;background-position:62% center}.hero::before{background:linear-gradient(90deg,rgba(5,9,18,.95) 0%,rgba(5,9,18,.78) 55%,rgba(5,9,18,.2) 100%)}.hero h1{font-size:26px}.hero p{font-size:13px;max-width:310px}.market-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.market-tab{padding:11px 12px}.filters{grid-template-columns:1fr}.listing-card{grid-template-rows:150px auto}.listing-card img{height:150px}}
 </style>
 </head>
 <body>
@@ -72,18 +82,22 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 
 <main class="shell">
 <section class="hero">
-<div>
-<h1>Buy and sell used cycling products with Cyclify approval.</h1>
-<p>Logged-in riders can submit used bikes, frames, wheels and components. Cyclify reviews pending ads daily, then approved posts go live for buyers to search and filter.</p>
-</div>
-<div class="hero-panel">
-<strong>How it works</strong>
-<span>1. Login and post an ad</span>
-<span>2. Cyclify approves after daily review</span>
-<span>3. Next day approved posts show with Today Posted tag</span>
-<span>4. Old approved ads stay below and searchable</span>
+<div class="hero-copy">
+<span class="hero-kicker">Cyclify Used Market</span>
+<h1>Buy and sell used cycles, parts and riding gear.</h1>
+<p>Post used bikes, wheels, helmets, shoes and components for Cyclify approval. Fresh approved ads appear first for buyers.</p>
 </div>
 </section>
+
+<div class="market-toolbar">
+<div class="market-actions">
+<button class="market-tab sell-tab" id="sellButton" type="button"><span>Sell</span></button>
+<button class="market-tab my-ads-tab" id="myAdsButton" type="button">My Ads</button>
+</div>
+<div class="toolbar-filter">
+<label for="categoryFilter">Filter by category</label>
+</div>
+</div>
 
 <div class="notice">This first version stores ads in this browser while we shape the marketplace. Next step can connect submissions to Firebase so you can approve them from an admin view.</div>
 
@@ -116,7 +130,6 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 </div>
 <div class="filters" id="filters">
 <input id="usedSearch" placeholder="Search used products">
-<select id="categoryFilter"><option value="">All Categories</option><option>Bike</option><option>Frame</option><option>Wheel</option><option>Component</option><option>Electronics</option><option>Other</option></select>
 <select id="conditionFilter"><option value="">Any Condition</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Needs Service</option></select>
 <select id="sortFilter"><option value="new">Newest</option><option value="low">Price Low</option><option value="high">Price High</option></select>
 </div>
@@ -140,7 +153,14 @@ const pendingList=document.getElementById("pendingList");
 const adminTools=document.getElementById("adminTools");
 const listingGrid=document.getElementById("listingGrid");
 const usedSearch=document.getElementById("usedSearch");
-const categoryFilter=document.getElementById("categoryFilter");
+const toolbarFilter=document.querySelector(".toolbar-filter");
+const categoryFilter=document.createElement("select");
+categoryFilter.id="categoryFilter";
+categoryFilter.innerHTML='<option value="">All Categories</option><option>Bike</option><option>Frame</option><option>Wheel</option><option>Component</option><option>Electronics</option><option>Other</option>';
+toolbarFilter.appendChild(categoryFilter);
+const sellButton=document.getElementById("sellButton");
+const myAdsButton=document.getElementById("myAdsButton");
+let showMyAdsOnly=false;
 const conditionFilter=document.getElementById("conditionFilter");
 const sortFilter=document.getElementById("sortFilter");
 
@@ -157,7 +177,8 @@ image:document.getElementById("postImage").value.trim()||"assets/categories/CAT_
 description:document.getElementById("postDescription").value.trim(),
 status,
 postedDate:todayKey(),
-approvedDate:""
+approvedDate:"",
+localOwner:"me"
 };
 }
 
@@ -178,7 +199,7 @@ const item=pending.find(listing=>listing.id===id);
 if(!item){return;}
 write(PENDING_KEY,pending.filter(listing=>listing.id!==id));
 const approved=read(STORAGE_KEY);
-approved.unshift({...item,status:"approved",approvedDate:todayKey()});
+approved.unshift({...item,status:"approved",approvedDate:todayKey(),localOwner:item.localOwner||"me"});
 write(STORAGE_KEY,approved);
 renderPending();
 renderListings();
@@ -209,6 +230,10 @@ let listings=read(STORAGE_KEY);
 const query=usedSearch.value.trim().toLowerCase();
 const category=categoryFilter.value;
 const condition=conditionFilter.value;
+if(showMyAdsOnly){
+const pending=read(PENDING_KEY).map(item=>({...item,status:"pending"}));
+listings=[...pending,...listings].filter(item=>item.localOwner==="me"||item.status==="pending");
+}
 listings=listings.filter(item=>{
 const text=[item.title,item.brand,item.city,item.description,item.category].join(" ").toLowerCase();
 return (!query||text.includes(query))&&(!category||item.category===category)&&(!condition||item.condition===condition);
@@ -222,7 +247,7 @@ return `
 <article class="listing-card">
 <img src="${item.image}" alt="${item.title}">
 <div class="listing-info">
-<div class="listing-title"><strong>${item.title}</strong>${isToday?'<span class="tag">Today Posted</span>':''}</div>
+<div class="listing-title"><strong>${item.title}</strong>${item.status==="pending"?'<span class="tag pending-tag">Pending</span>':(isToday?'<span class="tag">Today Posted</span>':'')}</div>
 <div class="listing-price">${formatPrice(item.price)}</div>
 <div class="listing-meta">${item.category} • ${item.condition} • ${item.city}</div>
 <div class="listing-meta">${item.brand||"Cycling product"} • ${item.description}</div>
@@ -243,6 +268,17 @@ renderListings();
 }
 
 document.getElementById("demoSeedButton").addEventListener("click",seedDemoListings);
+sellButton.addEventListener("click",()=>{
+showMyAdsOnly=false;
+myAdsButton.classList.remove("active");
+document.getElementById("postTitle").focus();
+document.getElementById("postForm").scrollIntoView({behavior:"smooth",block:"start"});
+});
+myAdsButton.addEventListener("click",()=>{
+showMyAdsOnly=!showMyAdsOnly;
+myAdsButton.classList.toggle("active",showMyAdsOnly);
+renderListings();
+});
 [usedSearch,categoryFilter,conditionFilter,sortFilter].forEach(control=>control.addEventListener("input",renderListings));
 [usedSearch,categoryFilter,conditionFilter,sortFilter].forEach(control=>control.addEventListener("change",renderListings));
 
