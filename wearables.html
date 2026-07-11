@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wearables | Cyclify</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f5f5;padding-bottom:80px;color:#111827;animation:pageFade .45s ease both}
+html{scroll-behavior:smooth}
+.topbar{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);display:flex;align-items:center;gap:12px;padding:9px 14px;border-bottom:1px solid rgba(17,24,39,.08);box-shadow:0 8px 24px rgba(15,23,42,.06);z-index:1000;min-height:64px}
+.home-logo{display:flex;align-items:center;justify-content:center;width:96px;height:42px;text-decoration:none;flex:0 0 auto}
+.home-logo img{width:100%;height:100%;object-fit:contain}
+.search-box{height:46px;border-radius:999px;background:#f6f7f9;border:1px solid #e6e8ed;box-shadow:inset 0 1px 0 rgba(255,255,255,.78);display:flex;align-items:center;flex:1 1 auto;min-width:0;overflow:hidden}
+.search-box:focus-within{background:white;border-color:#0f172a;box-shadow:0 0 0 3px rgba(15,23,42,.08)}
+.search-box input{width:100%;height:44px;padding:0 12px 0 17px;border:none;outline:none;background:transparent;font-size:14px;color:#111827}
+.image-search-btn{width:42px;height:42px;margin-right:2px;border:0;border-left:1px solid #e7eaf0;border-radius:0 999px 999px 0;background:transparent;color:#111827;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .22s ease}
+.image-search-btn:hover{background:#eceff4}
+.image-search-btn svg,.header-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;display:block}
+.top-icons{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.header-icon{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f6f7f9;border:1px solid #e6e8ed;color:#111827;text-decoration:none;position:relative;box-shadow:0 1px 0 rgba(255,255,255,.9);transition:background .22s ease,border-color .22s ease,transform .22s ease,box-shadow .22s ease}
+.header-icon:hover{background:white;border-color:#d6dbe5;transform:translateY(-1px);box-shadow:0 8px 18px rgba(15,23,42,.08)}
+.cart-count{position:absolute;top:-5px;right:-4px;min-width:17px;height:17px;padding:0 5px;border-radius:9px;background:#111827;color:white;border:2px solid white;font-size:10px;font-weight:bold;display:none;align-items:center;justify-content:center}
+.page-title{padding:12px 15px 8px;font-size:20px;font-weight:bold;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.page-title span{font-size:12px;color:#667085;font-weight:bold;white-space:nowrap}
+.category-strip{background:white;border-bottom:1px solid #e8e8e8;padding:10px 12px 12px;overflow-x:auto;display:flex;gap:14px;scroll-snap-type:x mandatory}
+.category-pill{min-width:102px;border:none;background:white;padding:0;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:bold;color:#222;cursor:pointer;scroll-snap-align:start;position:relative;transition:transform .28s ease,color .28s ease}
+.category-pill:hover{transform:translateY(-1px)}
+.category-icon{width:72px;height:60px;border-radius:14px;background:#eef5ff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
+.category-icon img{width:100%;height:100%;object-fit:contain;padding:7px}
+.category-pill.active{color:#0039a6}
+.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:#0039a6}
+.category-summary{padding:12px 15px;background:#f5f5f5;font-size:14px;font-weight:bold;color:#333}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:0;animation:catalogFade .38s ease both}
+.card{background:white;border-right:1px solid #eee;border-bottom:1px solid #eee;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;animation:cardSettle .42s ease both}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.08)}
+.card img{width:100%;height:155px;object-fit:contain;background:white;padding:8px 8px 2px}
+.details{padding:6px 10px 10px}
+.details h3{font-size:15px;line-height:1.25;min-height:38px;margin-bottom:6px}
+.price{font-size:20px;font-weight:bold;margin-bottom:2px}
+.mrp{font-size:14px;color:gray;margin-bottom:6px}
+.ship{font-size:12px;font-weight:bold;color:#087a3d;margin-bottom:10px}
+.bottom{display:flex;justify-content:flex-end;align-items:center}
+.add{padding:10px 12px;border-radius:12px;border:2px solid #ddd;background:white;font-weight:bold;cursor:pointer;transition:transform .22s ease,background .22s ease}
+.add:hover{transform:translateY(-1px);background:#f8fafc}
+.empty-state{grid-column:1/-1;padding:38px 20px;text-align:center;background:white;color:#555}
+.empty-state strong{display:block;font-size:18px;margin-bottom:8px;color:#222}
+.empty-state span{font-size:14px;line-height:1.45}
+@keyframes pageFade{from{opacity:.92}to{opacity:1}}
+@keyframes catalogFade{from{opacity:.55;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cardSettle{from{opacity:.75;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:560px){.topbar{min-height:58px;padding:8px 9px;gap:7px}.home-logo{width:78px;height:36px}.search-box{height:40px}.search-box input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.image-search-btn svg,.header-icon svg{width:19px;height:19px}.top-icons{gap:5px}.category-pill{min-width:92px}.category-icon{width:64px;height:54px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+<a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
+<div class="search-box"><input type="text" id="searchInput" placeholder="Search Wearables"><button class="image-search-btn" id="headerImageSearchButton" type="button" aria-label="Search by image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 7.2h2.1l1.4-2h4.6l1.4 2h2.1c1.4 0 2.4 1 2.4 2.4v7.2c0 1.4-1 2.4-2.4 2.4H6.2c-1.4 0-2.4-1-2.4-2.4V9.6c0-1.4 1-2.4 2.4-2.4Z"/><path d="M12 16.2a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8Z"/><path d="M17.3 10h.1"/></svg></button><input type="file" id="headerImageSearchInput" accept="image/*" hidden></div>
+<div class="top-icons">
+<a href="account.html" aria-label="Account" class="header-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20.2c0-3.1-3.6-5.2-8-5.2s-8 2.1-8 5.2"/><path d="M12 12a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z"/></svg></a>
+<a href="cart.html" aria-label="Cart" class="header-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2.2l1.6 9.4c.2 1 1 1.6 2 1.6h6.9c.9 0 1.7-.6 2-1.5L20 8H7.1"/><path d="M10 20h.1"/><path d="M17 20h.1"/></svg><span class="cart-count" id="cartCount"></span></a>
+</div>
+</div>
+
+<div class="page-title">Wearables <span id="pageSubtitle">Cycling apparel and rider gear</span></div>
+<div class="category-strip" id="categoryStrip"></div>
+<div class="category-summary" id="categorySummary"></div>
+<div class="products" id="products"></div>
+
+<script>
+const products=[];
+const categories=[
+{key:"helmets",label:"Helmets",image:"assets/categories/CAT_Wearables.png"},
+{key:"jersey-shorts",label:"Jersey & Shorts",image:"assets/categories/CAT_Wearables.png"},
+{key:"shoes",label:"Shoes",image:"assets/categories/CAT_Wearables.png"},
+{key:"smart-watches",label:"Smart Watches",image:"assets/categories/CAT_Wearables.png"},
+{key:"eyewear",label:"Eyewear",image:"assets/categories/CAT_Wearables.png"},
+{key:"gloves",label:"Gloves",image:"assets/categories/CAT_Wearables.png"}
+];
+
+const container=document.getElementById("products");
+const categoryStrip=document.getElementById("categoryStrip");
+const categorySummary=document.getElementById("categorySummary");
+const searchInput=document.getElementById("searchInput");
+let activeCategory=new URLSearchParams(window.location.search).get("category")||"";
+
+function updateCartCount(){
+const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+const count=cartItems.reduce((total,item)=>total+(item.quantity||1),0);
+const cartCount=document.getElementById("cartCount");
+if(count>0){cartCount.textContent=count;cartCount.style.display="flex";}
+else{cartCount.style.display="none";}
+}
+
+function getProductCategory(product){
+return product.category||"";
+}
+
+function renderCategories(){
+categoryStrip.innerHTML=categories.map(category=>`
+<button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
+<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span>${category.label}</span>
+</button>
+`).join("");
+}
+
+function getFilteredProducts(){
+const query=(searchInput.value||"").trim().toLowerCase();
+return products.filter(product=>{
+const categoryMatch=!activeCategory||getProductCategory(product)===activeCategory;
+const searchMatch=!query||product.name.toLowerCase().includes(query);
+return categoryMatch&&searchMatch;
+});
+}
+
+function renderProducts(){
+const filteredProducts=getFilteredProducts();
+const selectedCategory=categories.find(category=>category.key===activeCategory);
+const categoryLabel=selectedCategory?selectedCategory.label:"All Wearables";
+categorySummary.textContent=`${categoryLabel} • ${filteredProducts.length} products`;
+container.innerHTML="";
+if(!filteredProducts.length){
+const message=activeCategory?"Products for this wearable category will appear here":"Choose a wearable category above. Products will appear here when added.";
+container.innerHTML=`<div class="empty-state"><strong>No products added yet</strong><span>${message}</span></div>`;
+return;
+}
+filteredProducts.forEach(product=>{
+container.innerHTML+=`
+<div class="card" onclick="openProduct(${product.id})" tabindex="0" role="link" onkeydown="handleCardKey(event,${product.id})">
+<img src="${product.image}" alt="${product.name}">
+<div class="details">
+<h3>${product.name}</h3>
+<div class="price">₹${product.price.toLocaleString()}</div>
+<div class="mrp">MRP ${product.mrp}</div>
+<div class="ship">Free Shipping</div>
+<div class="bottom"><button class="add" onclick="addToCart(event,${product.id})">Add to cart</button></div>
+</div>
+</div>`;
+});
+}
+
+function selectCategory(category){
+activeCategory=category;
+const nextUrl=category?`${window.location.pathname}?category=${encodeURIComponent(category)}`:window.location.pathname;
+history.pushState({category},"",nextUrl);
+renderCategories();
+renderProducts();
+}
+
+window.addEventListener("popstate",()=>{
+activeCategory=new URLSearchParams(window.location.search).get("category")||"";
+renderCategories();
+renderProducts();
+});
+
+function openProduct(id){
+window.location=`product.html?id=${id}`;
+}
+
+function handleCardKey(event,id){
+if(event.key==="Enter"||event.key===" "){event.preventDefault();openProduct(id);}
+}
+
+function addToCart(event,id){
+event.stopPropagation();
+const product=products.find(item=>item.id===id);
+if(!product){return;}
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+let existing=cart.find(item=>item.id===id);
+if(existing){existing.quantity++;}
+else{cart.push({id:product.id,name:product.name,price:product.price,image:product.image,quantity:1});}
+localStorage.setItem("cart",JSON.stringify(cart));
+updateCartCount();
+window.location.href="cart.html";
+}
+
+searchInput.addEventListener("input",renderProducts);
+updateCartCount();
+renderCategories();
+renderProducts();
+
+(function(){
+const imageButton=document.getElementById("headerImageSearchButton");
+const imageInput=document.getElementById("headerImageSearchInput");
+if(imageButton&&imageInput){
+imageButton.addEventListener("click",()=>imageInput.click());
+imageInput.addEventListener("change",()=>{
+const file=imageInput.files&&imageInput.files[0];
+if(!file){return;}
+const reader=new FileReader();
+reader.onload=()=>{sessionStorage.setItem("pendingImageSearchData",reader.result);window.location.href="index.html#image-search";};
+reader.readAsDataURL(file);
+});
+}
+})();
+</script>
+</body>
+</html>
