@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Used Cycling Marketplace | Cyclify</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f6f8;color:#111827;padding-bottom:40px}
+.topbar{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);display:flex;align-items:center;gap:12px;padding:9px 14px;border-bottom:1px solid rgba(17,24,39,.08);box-shadow:0 8px 24px rgba(15,23,42,.06);z-index:1000;min-height:64px}
+.home-logo{display:flex;align-items:center;justify-content:center;width:96px;height:42px;text-decoration:none;flex:0 0 auto}
+.home-logo img{width:100%;height:100%;object-fit:contain}
+.site-search{height:46px;border-radius:999px;background:#f6f7f9;border:1px solid #e6e8ed;display:flex;align-items:center;flex:1 1 auto;min-width:0;overflow:hidden}
+.site-search input{width:100%;height:44px;padding:0 17px;border:none;outline:none;background:transparent;font-size:14px}
+.image-search-btn{width:42px;height:42px;margin-right:2px;border:0;border-left:1px solid #e7eaf0;border-radius:0 999px 999px 0;background:transparent;color:#111827;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.image-search-btn svg,.header-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;display:block}
+.top-icons{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.header-icon{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f6f7f9;border:1px solid #e6e8ed;color:#111827;text-decoration:none;position:relative}
+.cart-count{position:absolute;top:-5px;right:-4px;min-width:17px;height:17px;padding:0 5px;border-radius:9px;background:#111827;color:white;border:2px solid white;font-size:10px;font-weight:bold;display:none;align-items:center;justify-content:center}
+.shell{max-width:1120px;margin:0 auto;padding:14px;display:grid;gap:14px}
+.hero{background:linear-gradient(135deg,#111827,#0f766e);color:white;border-radius:18px;padding:24px;display:grid;grid-template-columns:1.4fr .8fr;gap:18px;align-items:center;box-shadow:0 12px 28px rgba(15,23,42,.16)}
+.hero h1{font-size:30px;line-height:1.08;margin-bottom:10px;letter-spacing:0}
+.hero p{color:#e7f6ef;line-height:1.45;font-size:15px}
+.hero-panel{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:16px;display:grid;gap:10px}
+.hero-panel strong{font-size:14px}
+.hero-panel span{font-size:12px;color:#d8f3e7}
+.notice{background:white;border-radius:14px;padding:13px 14px;border:1px solid #e8edf3;color:#374151;font-size:14px;line-height:1.45}
+.market-grid{display:grid;grid-template-columns:360px 1fr;gap:14px;align-items:start}
+.panel{background:white;border-radius:14px;padding:14px;border:1px solid #e8edf3;box-shadow:0 4px 14px rgba(0,0,0,.04)}
+.panel h2{font-size:18px;margin-bottom:10px}
+.form-grid{display:grid;gap:10px}
+.form-grid label{display:grid;gap:5px;font-size:12px;font-weight:bold;color:#374151}
+.form-grid input,.form-grid select,.form-grid textarea{width:100%;border:1px solid #dfe4ec;border-radius:10px;padding:11px;font-size:14px;outline:none;background:#fbfcfe}
+.form-grid textarea{min-height:82px;resize:vertical}
+.primary-btn{border:none;border-radius:999px;background:#111827;color:white;padding:12px 16px;font-weight:bold;cursor:pointer}
+.secondary-btn{border:1px solid #dfe4ec;border-radius:999px;background:white;color:#111827;padding:10px 13px;font-weight:bold;cursor:pointer}
+.auth-note,.form-message{font-size:13px;line-height:1.45;color:#4b5563}
+.form-message.success{color:#087a3d}.form-message.error{color:#b42318}
+.filters{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:8px;margin-bottom:12px}
+.filters input,.filters select{border:1px solid #dfe4ec;border-radius:999px;padding:11px 13px;font-size:14px;background:#fbfcfe;outline:none}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.section-head h2{font-size:18px}
+.listing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.listing-card{border:1px solid #e7eaf0;border-radius:14px;overflow:hidden;background:#fff;display:grid;grid-template-rows:170px auto}
+.listing-card img{width:100%;height:170px;object-fit:cover;background:#f3f5f8}
+.listing-info{padding:12px;display:grid;gap:7px}
+.listing-title{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.listing-title strong{font-size:15px;line-height:1.25}
+.tag{background:#e8f7ef;color:#087a3d;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:bold;white-space:nowrap}
+.pending-tag{background:#fff7e6;color:#946200}
+.listing-meta{font-size:12px;color:#6b7280;line-height:1.35}
+.listing-price{font-size:17px;font-weight:bold;color:#0039a6}
+.empty-state{padding:24px;text-align:center;color:#6b7280;font-weight:bold}
+.admin-tools{display:none;margin-top:14px}
+.admin-tools.active{display:block}
+.pending-list{display:grid;gap:9px}
+.pending-row{border:1px solid #e7eaf0;border-radius:12px;padding:10px;display:grid;gap:7px}
+.pending-actions{display:flex;gap:8px;flex-wrap:wrap}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{padding:18px}.hero h1{font-size:24px}.filters{grid-template-columns:1fr}.listing-card{grid-template-rows:150px auto}.listing-card img{height:150px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+<a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
+<div class="site-search"><input type="text" placeholder="Search Cyclify" data-global-search><button class="image-search-btn" id="headerImageSearchButton" type="button" aria-label="Search by image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 7.2h2.1l1.4-2h4.6l1.4 2h2.1c1.4 0 2.4 1 2.4 2.4v7.2c0 1.4-1 2.4-2.4 2.4H6.2c-1.4 0-2.4-1-2.4-2.4V9.6c0-1.4 1-2.4 2.4-2.4Z"/><path d="M12 16.2a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8Z"/><path d="M17.3 10h.1"/></svg></button><input type="file" id="headerImageSearchInput" accept="image/*" hidden></div>
+<div class="top-icons">
+<a href="account.html" aria-label="Account" class="header-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20.2c0-3.1-3.6-5.2-8-5.2s-8 2.1-8 5.2"/><path d="M12 12a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z"/></svg></a>
+<a href="cart.html" aria-label="Cart" class="header-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2.2l1.6 9.4c.2 1 1 1.6 2 1.6h6.9c.9 0 1.7-.6 2-1.5L20 8H7.1"/><path d="M10 20h.1"/><path d="M17 20h.1"/></svg><span class="cart-count" id="cartCount"></span></a>
+</div>
+</div>
+
+<main class="shell">
+<section class="hero">
+<div>
+<h1>Buy and sell used cycling products with Cyclify approval.</h1>
+<p>Logged-in riders can submit used bikes, frames, wheels and components. Cyclify reviews pending ads daily, then approved posts go live for buyers to search and filter.</p>
+</div>
+<div class="hero-panel">
+<strong>How it works</strong>
+<span>1. Login and post an ad</span>
+<span>2. Cyclify approves after daily review</span>
+<span>3. Next day approved posts show with Today Posted tag</span>
+<span>4. Old approved ads stay below and searchable</span>
+</div>
+</section>
+
+<div class="notice">This first version stores ads in this browser while we shape the marketplace. Next step can connect submissions to Firebase so you can approve them from an admin view.</div>
+
+<section class="market-grid">
+<aside class="panel">
+<h2>Post Used Product</h2>
+<p class="auth-note" id="authNote">Login from Account page before posting. For now, this draft works locally and is Firebase-ready.</p>
+<form class="form-grid" id="postForm">
+<label>Product Title<input id="postTitle" required placeholder="Example: Used ELVES road frame"></label>
+<label>Category<select id="postCategory" required><option value="Bike">Bike</option><option value="Frame">Frame</option><option value="Wheel">Wheel</option><option value="Component">Component</option><option value="Electronics">Electronics</option><option value="Other">Other</option></select></label>
+<label>Brand<input id="postBrand" placeholder="SAVA, ELVES, Shimano"></label>
+<label>Condition<select id="postCondition"><option>Excellent</option><option>Good</option><option>Fair</option><option>Needs Service</option></select></label>
+<label>Price<input id="postPrice" type="number" min="1" required placeholder="Price in ₹"></label>
+<label>City<input id="postCity" required placeholder="City"></label>
+<label>Photo URL<input id="postImage" placeholder="Paste image link for now"></label>
+<label>Description<textarea id="postDescription" required placeholder="Size, year, usage, upgrades, reason for selling"></textarea></label>
+<button class="primary-btn" type="submit">Submit for Approval</button>
+<div class="form-message" id="formMessage"></div>
+</form>
+<div class="admin-tools" id="adminTools">
+<h2>Pending Approval</h2>
+<div class="pending-list" id="pendingList"></div>
+</div>
+</aside>
+
+<section class="panel" id="approved-listings">
+<div class="section-head">
+<h2>Approved Used Listings</h2>
+<button class="secondary-btn" id="demoSeedButton" type="button">Add Demo Listings</button>
+</div>
+<div class="filters" id="filters">
+<input id="usedSearch" placeholder="Search used products">
+<select id="categoryFilter"><option value="">All Categories</option><option>Bike</option><option>Frame</option><option>Wheel</option><option>Component</option><option>Electronics</option><option>Other</option></select>
+<select id="conditionFilter"><option value="">Any Condition</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Needs Service</option></select>
+<select id="sortFilter"><option value="new">Newest</option><option value="low">Price Low</option><option value="high">Price High</option></select>
+</div>
+<div class="listing-grid" id="listingGrid"></div>
+</section>
+</section>
+</main>
+
+<script>
+const STORAGE_KEY="cyclifyUsedListings";
+const PENDING_KEY="cyclifyPendingUsedListings";
+const ADMIN_KEY="cyclifyUsedAdmin";
+const todayKey=()=>new Date().toISOString().slice(0,10);
+const read=(key)=>JSON.parse(localStorage.getItem(key)||"[]");
+const write=(key,value)=>localStorage.setItem(key,JSON.stringify(value));
+const formatPrice=(price)=>"₹"+Number(price||0).toLocaleString("en-IN");
+
+const postForm=document.getElementById("postForm");
+const formMessage=document.getElementById("formMessage");
+const pendingList=document.getElementById("pendingList");
+const adminTools=document.getElementById("adminTools");
+const listingGrid=document.getElementById("listingGrid");
+const usedSearch=document.getElementById("usedSearch");
+const categoryFilter=document.getElementById("categoryFilter");
+const conditionFilter=document.getElementById("conditionFilter");
+const sortFilter=document.getElementById("sortFilter");
+
+function makeListing(status){
+return {
+id:Date.now(),
+title:document.getElementById("postTitle").value.trim(),
+category:document.getElementById("postCategory").value,
+brand:document.getElementById("postBrand").value.trim(),
+condition:document.getElementById("postCondition").value,
+price:Number(document.getElementById("postPrice").value),
+city:document.getElementById("postCity").value.trim(),
+image:document.getElementById("postImage").value.trim()||"assets/categories/CAT_BIKEE.png",
+description:document.getElementById("postDescription").value.trim(),
+status,
+postedDate:todayKey(),
+approvedDate:""
+};
+}
+
+postForm.addEventListener("submit",event=>{
+event.preventDefault();
+const pending=read(PENDING_KEY);
+pending.unshift(makeListing("pending"));
+write(PENDING_KEY,pending);
+postForm.reset();
+formMessage.className="form-message success";
+formMessage.textContent="Ad submitted. Cyclify will review it before it goes live.";
+renderPending();
+});
+
+function approveListing(id){
+const pending=read(PENDING_KEY);
+const item=pending.find(listing=>listing.id===id);
+if(!item){return;}
+write(PENDING_KEY,pending.filter(listing=>listing.id!==id));
+const approved=read(STORAGE_KEY);
+approved.unshift({...item,status:"approved",approvedDate:todayKey()});
+write(STORAGE_KEY,approved);
+renderPending();
+renderListings();
+}
+
+function rejectListing(id){
+write(PENDING_KEY,read(PENDING_KEY).filter(listing=>listing.id!==id));
+renderPending();
+}
+
+function renderPending(){
+const pending=read(PENDING_KEY);
+adminTools.classList.toggle("active",localStorage.getItem(ADMIN_KEY)==="yes");
+if(localStorage.getItem(ADMIN_KEY)!=="yes"){return;}
+pendingList.innerHTML=pending.length?pending.map(item=>`
+<div class="pending-row">
+<strong>${item.title}</strong>
+<span>${item.category} • ${formatPrice(item.price)} • ${item.city}</span>
+<div class="pending-actions">
+<button class="secondary-btn" onclick="approveListing(${item.id})">Approve</button>
+<button class="secondary-btn" onclick="rejectListing(${item.id})">Reject</button>
+</div>
+</div>`).join(""):`<div class="empty-state">No pending ads today</div>`;
+}
+
+function renderListings(){
+let listings=read(STORAGE_KEY);
+const query=usedSearch.value.trim().toLowerCase();
+const category=categoryFilter.value;
+const condition=conditionFilter.value;
+listings=listings.filter(item=>{
+const text=[item.title,item.brand,item.city,item.description,item.category].join(" ").toLowerCase();
+return (!query||text.includes(query))&&(!category||item.category===category)&&(!condition||item.condition===condition);
+});
+if(sortFilter.value==="low"){listings.sort((a,b)=>a.price-b.price);}
+if(sortFilter.value==="high"){listings.sort((a,b)=>b.price-a.price);}
+if(sortFilter.value==="new"){listings.sort((a,b)=>String(b.approvedDate||b.postedDate).localeCompare(String(a.approvedDate||a.postedDate)));}
+listingGrid.innerHTML=listings.length?listings.map(item=>{
+const isToday=(item.approvedDate||item.postedDate)===todayKey();
+return `
+<article class="listing-card">
+<img src="${item.image}" alt="${item.title}">
+<div class="listing-info">
+<div class="listing-title"><strong>${item.title}</strong>${isToday?'<span class="tag">Today Posted</span>':''}</div>
+<div class="listing-price">${formatPrice(item.price)}</div>
+<div class="listing-meta">${item.category} • ${item.condition} • ${item.city}</div>
+<div class="listing-meta">${item.brand||"Cycling product"} • ${item.description}</div>
+</div>
+</article>`;
+}).join(""):`<div class="empty-state">No approved used listings found</div>`;
+}
+
+function seedDemoListings(){
+const existing=read(STORAGE_KEY);
+const demo=[
+{id:101,title:"Used Carbon Road Bike",category:"Bike",brand:"SAVA",condition:"Good",price:85000,city:"Bangalore",image:"assets/products/sava-hawkeye.jpg",description:"Well maintained road bike, recently serviced.",status:"approved",postedDate:todayKey(),approvedDate:todayKey()},
+{id:102,title:"ELVES Carbon Frame",category:"Frame",brand:"ELVES",condition:"Excellent",price:65000,city:"Chennai",image:"assets/products/elves-falath-exp-11.png",description:"Clean frame with minor signs of use.",status:"approved",postedDate:"2026-07-10",approvedDate:"2026-07-10"},
+{id:103,title:"Carbon Disc Wheelset",category:"Wheel",brand:"Orome",condition:"Good",price:42000,city:"Mumbai",image:"assets/products/orome-valar-th50d-2.png",description:"Disc brake wheelset for road cycling.",status:"approved",postedDate:"2026-07-09",approvedDate:"2026-07-09"}
+];
+write(STORAGE_KEY,[...demo,...existing.filter(item=>!demo.some(sample=>sample.id===item.id))]);
+renderListings();
+}
+
+document.getElementById("demoSeedButton").addEventListener("click",seedDemoListings);
+[usedSearch,categoryFilter,conditionFilter,sortFilter].forEach(control=>control.addEventListener("input",renderListings));
+[usedSearch,categoryFilter,conditionFilter,sortFilter].forEach(control=>control.addEventListener("change",renderListings));
+
+if(location.hash==="#admin"){localStorage.setItem(ADMIN_KEY,"yes");}
+renderPending();
+renderListings();
+
+(function(){
+const imageButton=document.getElementById("headerImageSearchButton");
+const imageInput=document.getElementById("headerImageSearchInput");
+if(imageButton&&imageInput){
+imageButton.addEventListener("click",()=>imageInput.click());
+imageInput.addEventListener("change",()=>{
+const file=imageInput.files&&imageInput.files[0];
+if(!file){return;}
+const reader=new FileReader();
+reader.onload=()=>{sessionStorage.setItem("pendingImageSearchData",reader.result);window.location.href="index.html#image-search";};
+reader.readAsDataURL(file);
+});
+}
+const globalSearch=document.querySelector("[data-global-search]");
+if(globalSearch){
+globalSearch.addEventListener("keydown",event=>{
+if(event.key!=="Enter"){return;}
+const query=globalSearch.value.trim();
+if(!query){return;}
+sessionStorage.setItem("pendingSearchQuery",query);
+window.location.href="index.html";
+});
+}
+const cartCount=document.getElementById("cartCount");
+if(cartCount){
+const cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+const count=cartItems.reduce((total,item)=>total+(item.quantity||1),0);
+if(count>0){cartCount.textContent=count;cartCount.style.display="flex";}
+else{cartCount.style.display="none";}
+}
+})();
+</script>
+</body>
+</html>

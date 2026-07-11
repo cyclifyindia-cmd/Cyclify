@@ -375,7 +375,7 @@ right:-52px;
 bottom:24px;
 font-size:28px;
 filter:drop-shadow(-12px 0 8px rgba(255,255,255,.34));
-animation:cyclistPass 4.8s ease-in-out infinite;
+animation:cyclistPass 12s ease-in-out infinite;
 z-index:3;
 pointer-events:none;
 }
@@ -383,7 +383,7 @@ pointer-events:none;
 .banner-track{
 display:flex;
 flex-direction:column;
-animation:verticalSlide 7.2s cubic-bezier(.7,0,.2,1) infinite;
+animation:verticalSlide 12s cubic-bezier(.7,0,.2,1) infinite;
 position:relative;
 z-index:2;
 }
@@ -402,16 +402,16 @@ gap:14px;
 color:white;
 text-decoration:none;
 opacity:0;
-animation:slideFade 7.2s infinite;
+animation:slideFade 12s infinite;
 text-shadow:0 1px 8px rgba(0,0,0,.28);
 }
 
 .banner-slide:nth-child(2){
-animation-delay:2.4s;
+animation-delay:4s;
 }
 
 .banner-slide:nth-child(3){
-animation-delay:4.8s;
+animation-delay:8s;
 }
 
 .banner-slide h3{
@@ -1153,6 +1153,103 @@ gap:5px!important;
 }
 }
 
+
+
+.used-market-slider{
+height:112px;
+border-radius:16px;
+overflow:hidden;
+background:linear-gradient(135deg,#111827,#0f766e);
+position:relative;
+box-shadow:0 10px 24px rgba(15,23,42,.14);
+}
+
+.used-market-slider::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+height:4px;
+background:linear-gradient(90deg,#09a66d,#f4c430,#0039a6);
+}
+
+.used-market-track{
+display:flex;
+flex-direction:column;
+height:336px;
+animation:usedMarketSlide 12s cubic-bezier(.7,0,.2,1) infinite;
+}
+
+.used-market-slider:hover .used-market-track{
+animation-play-state:paused;
+}
+
+.used-market-slide{
+height:112px;
+padding:18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:14px;
+color:white;
+text-decoration:none;
+}
+
+.used-market-slide h2{
+font-size:20px;
+line-height:1.15;
+margin-bottom:5px;
+letter-spacing:0;
+}
+
+.used-market-slide p{
+font-size:13px;
+line-height:1.35;
+color:#e7f6ef;
+}
+
+.used-market-cta{
+background:white;
+color:#111827;
+border-radius:999px;
+padding:10px 14px;
+font-size:13px;
+font-weight:bold;
+white-space:nowrap;
+}
+
+@keyframes usedMarketSlide{
+0%,28%{transform:translateY(0)}
+36%,64%{transform:translateY(-112px)}
+72%,94%{transform:translateY(-224px)}
+100%{transform:translateY(0)}
+}
+
+@media(max-width:620px){
+.used-market-slider{
+height:128px;
+}
+.used-market-track{
+height:384px;
+}
+.used-market-slide{
+height:128px;
+align-items:flex-start;
+flex-direction:column;
+padding:16px;
+}
+.used-market-slide h2{
+font-size:18px;
+}
+@keyframes usedMarketSlide{
+0%,28%{transform:translateY(0)}
+36%,64%{transform:translateY(-128px)}
+72%,94%{transform:translateY(-256px)}
+100%{transform:translateY(0)}
+}
+}
+
 </style>
 </head>
 
@@ -1212,6 +1309,32 @@ autocomplete="off">
 </div>
 </section>
 
+<section class="used-market-slider" aria-label="Used cycling marketplace">
+<div class="used-market-track">
+<a href="used-market.html" class="used-market-slide">
+<div>
+<h2>Sell your used bike or components</h2>
+<p>Logged-in riders can post used cycling products for Cyclify approval.</p>
+</div>
+<span class="used-market-cta">Post Ad</span>
+</a>
+<a href="used-market.html#approved-listings" class="used-market-slide">
+<div>
+<h2>Approved ads go live next day</h2>
+<p>Fresh approved listings show with Today Posted, while old posts stay searchable.</p>
+</div>
+<span class="used-market-cta">Browse Used</span>
+</a>
+<a href="used-market.html#filters" class="used-market-slide">
+<div>
+<h2>Search used products separately</h2>
+<p>Filters and search on the used page are dedicated only to used listings.</p>
+</div>
+<span class="used-market-cta">Use Filters</span>
+</a>
+</div>
+</section>
+
 <nav class="quick-categories" aria-label="Cyclify categories">
 <a href="bikes-frames.html" class="quick-category"><img src="assets/categories/CAT_BIKEE.png" alt="">Bikes & Frames</a>
 <a href="electronics.html?category=smart-trainer" class="quick-category"><img src="assets/products/thinkrider-x2-max-1.jpg" alt="">Smart Trainer</a>
@@ -1219,6 +1342,7 @@ autocomplete="off">
 <a href="electronics.html?category=lights" class="quick-category"><img src="assets/products/cat-lights.png" alt="">Lights</a>
 <a href="wheels-tyres.html?category=wheels" class="quick-category"><img src="assets/categories/CAT_Wheels.png" alt="">Wheels</a>
 <a href="wheels-tyres.html?category=tubes" class="quick-category"><img src="assets/products/cyclami-tpu-tube-1.webp" alt="">Tubes & Valves</a>
+<a href="used-market.html" class="quick-category"><img src="assets/categories/CAT_ACC.png" alt="">Used Market</a>
 </nav>
 
 <section class="home-section">
