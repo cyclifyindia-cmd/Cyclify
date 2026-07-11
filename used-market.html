@@ -31,9 +31,29 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .sell-tab{border:0;color:white;background:linear-gradient(90deg,#ff9933 0%,#ffffff 50%,#138808 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06),0 8px 18px rgba(19,136,8,.14);text-shadow:0 1px 4px rgba(0,0,0,.35)}
 .sell-tab span{display:inline-flex;background:rgba(17,24,39,.34);border-radius:999px;padding:2px 7px}
 .my-ads-tab.active{background:#111827;color:white;border-color:#111827}
-.toolbar-filter{display:flex;align-items:center;gap:8px;min-width:230px}
-.toolbar-filter label{font-size:12px;font-weight:900;color:#667085;white-space:nowrap}
-.toolbar-filter select{width:100%;border:1px solid #dfe4ec;border-radius:999px;padding:11px 13px;font-size:14px;background:#fbfcfe;outline:none;font-weight:bold}
+.toolbar-filter{display:flex;align-items:center;gap:8px;min-width:230px;justify-content:flex-end}
+.category-open-btn{width:100%;border:1px solid #dfe4ec;border-radius:999px;background:#fbfcfe;color:#111827;padding:11px 15px;font-size:14px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.category-open-btn span{color:#667085;font-size:12px;font-weight:900}
+.category-browser{display:none;background:white;border:1px solid #e8edf3;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(15,23,42,.08)}
+.category-browser.active{display:grid;grid-template-columns:168px 1fr;min-height:430px}
+.category-rail{background:#eaf6ff;border-right:1px solid #d8e8f4;display:grid;align-content:start}
+.category-rail button{border:0;background:transparent;padding:14px 10px;display:grid;gap:7px;justify-items:center;text-align:center;font-size:12px;font-weight:900;color:#172033;cursor:pointer;border-left:4px solid transparent;border-bottom:1px solid rgba(15,23,42,.08)}
+.category-rail button.active{background:white;border-left-color:#0077ff}
+.category-rail img{width:42px;height:38px;object-fit:contain}
+.category-detail{padding:18px 22px 22px;display:grid;gap:22px;align-content:start}
+.category-detail-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.category-detail-head h2{font-size:24px;font-weight:800}
+.category-close{border:0;background:#f3f5f8;border-radius:999px;width:36px;height:36px;font-size:20px;cursor:pointer}
+.category-section{display:grid;gap:12px}
+.category-section-title{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800}
+.category-section-title::after{content:"";height:1px;background:#e4e8ef;flex:1}
+.category-chip-grid{display:grid;grid-template-columns:repeat(4,minmax(92px,1fr));gap:14px}
+.category-chip{border:0;background:transparent;display:grid;gap:8px;justify-items:center;text-align:center;cursor:pointer;color:#111827;font-size:13px;font-weight:800}
+.category-chip .bubble{width:86px;height:86px;border-radius:50%;background:#f5f6f8;display:flex;align-items:center;justify-content:center;color:#14315f;font-size:22px;font-weight:900;box-shadow:inset 0 0 0 1px rgba(15,23,42,.03)}
+.category-chip.active .bubble{background:#111827;color:white}
+.category-chip small{font-size:11px;color:#667085;font-weight:700;line-height:1.2}
+.active-category-note{display:none;background:#eef8f0;color:#087a3d;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;width:max-content}
+.active-category-note.active{display:inline-flex}
 .notice{display:none}
 .market-grid{display:grid;grid-template-columns:360px 1fr;gap:14px;align-items:start}
 .panel{background:white;border-radius:14px;padding:14px;border:1px solid #e8edf3;box-shadow:0 4px 14px rgba(0,0,0,.04)}
@@ -66,8 +86,8 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .pending-list{display:grid;gap:9px}
 .pending-row{border:1px solid #e7eaf0;border-radius:12px;padding:10px;display:grid;gap:7px}
 .pending-actions{display:flex;gap:8px;flex-wrap:wrap}
-@media(max-width:860px){.hero{min-height:240px;background-position:58% center}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:1fr}.market-toolbar{align-items:stretch;flex-direction:column}.toolbar-filter{width:100%;min-width:0}}
-@media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{min-height:230px;padding:18px;background-position:62% center}.hero::before{background:linear-gradient(90deg,rgba(5,9,18,.95) 0%,rgba(5,9,18,.78) 55%,rgba(5,9,18,.2) 100%)}.hero h1{font-size:26px}.hero p{font-size:13px;max-width:310px}.market-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.market-tab{padding:11px 12px}.filters{grid-template-columns:1fr}.listing-card{grid-template-rows:150px auto}.listing-card img{height:150px}}
+@media(max-width:860px){.hero{min-height:240px;background-position:58% center}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:1fr}.market-toolbar{align-items:stretch;flex-direction:column}.toolbar-filter{width:100%;min-width:0}.category-browser.active{grid-template-columns:128px 1fr}.category-chip-grid{grid-template-columns:repeat(3,minmax(84px,1fr))}.category-chip .bubble{width:76px;height:76px}}
+@media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{min-height:230px;padding:18px;background-position:62% center}.hero::before{background:linear-gradient(90deg,rgba(5,9,18,.95) 0%,rgba(5,9,18,.78) 55%,rgba(5,9,18,.2) 100%)}.hero h1{font-size:26px}.hero p{font-size:13px;max-width:310px}.market-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.market-tab{padding:11px 12px}.category-browser.active{grid-template-columns:104px 1fr;min-height:420px}.category-rail button{font-size:11px;padding:12px 6px}.category-rail img{width:34px;height:32px}.category-detail{padding:14px 12px}.category-detail-head h2{font-size:21px}.category-chip-grid{grid-template-columns:repeat(2,minmax(82px,1fr));gap:12px}.category-chip .bubble{width:72px;height:72px}.filters{grid-template-columns:1fr}.listing-card{grid-template-rows:150px auto}.listing-card img{height:150px}}
 </style>
 </head>
 <body>
@@ -95,9 +115,21 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 <button class="market-tab my-ads-tab" id="myAdsButton" type="button">My Ads</button>
 </div>
 <div class="toolbar-filter">
-<label for="categoryFilter">Filter by category</label>
+<button class="category-open-btn" id="categoryOpenButton" type="button"><span>Filter by</span> Categories</button>
 </div>
 </div>
+
+<section class="category-browser" id="categoryBrowser" aria-label="Used market categories">
+<div class="category-rail" id="categoryRail"></div>
+<div class="category-detail">
+<div class="category-detail-head">
+<h2 id="categoryTitle">Categories</h2>
+<button class="category-close" id="categoryCloseButton" type="button" aria-label="Close categories">×</button>
+</div>
+<div class="active-category-note" id="activeCategoryNote"></div>
+<div id="categoryDetail"></div>
+</div>
+</section>
 
 <div class="notice">This first version stores ads in this browser while we shape the marketplace. Next step can connect submissions to Firebase so you can approve them from an admin view.</div>
 
@@ -153,14 +185,79 @@ const pendingList=document.getElementById("pendingList");
 const adminTools=document.getElementById("adminTools");
 const listingGrid=document.getElementById("listingGrid");
 const usedSearch=document.getElementById("usedSearch");
-const toolbarFilter=document.querySelector(".toolbar-filter");
-const categoryFilter=document.createElement("select");
-categoryFilter.id="categoryFilter";
-categoryFilter.innerHTML='<option value="">All Categories</option><option>Bike</option><option>Frame</option><option>Wheel</option><option>Component</option><option>Electronics</option><option>Other</option>';
-toolbarFilter.appendChild(categoryFilter);
+const categoryBrowser=document.getElementById("categoryBrowser");
+const categoryRail=document.getElementById("categoryRail");
+const categoryDetail=document.getElementById("categoryDetail");
+const categoryTitle=document.getElementById("categoryTitle");
+const categoryOpenButton=document.getElementById("categoryOpenButton");
+const categoryCloseButton=document.getElementById("categoryCloseButton");
+const activeCategoryNote=document.getElementById("activeCategoryNote");
 const sellButton=document.getElementById("sellButton");
 const myAdsButton=document.getElementById("myAdsButton");
 let showMyAdsOnly=false;
+let activeMainCategory="bikes-frames";
+let selectedUsedCategory={label:"All Categories",listingCategory:"",brand:"",keyword:""};
+const usedCategoryData=[
+{key:"bikes-frames",label:"Bikes & Frames",image:"assets/categories/CAT_BIKEE.png",sections:[
+{title:"Bikes & Frames",items:[
+{label:"Road Bikes",short:"Road",listingCategory:"Bike",keyword:"road bike"},
+{label:"MTB",short:"MTB",listingCategory:"Bike",keyword:"mtb mountain"},
+{label:"Gravel Bikes",short:"Gravel",listingCategory:"Bike",keyword:"gravel"},
+{label:"Frames",short:"Frame",listingCategory:"Frame",keyword:"frame"},
+{label:"View All",short:">",listingCategory:"",keyword:""}
+]},
+{title:"Popular Brands",items:[
+{label:"Trek",short:"TRK",listingCategory:"",brand:"Trek"},
+{label:"Merida",short:"MER",listingCategory:"",brand:"Merida"},
+{label:"Giant",short:"GNT",listingCategory:"",brand:"Giant"},
+{label:"S-Works",short:"SW",listingCategory:"",brand:"S-Works"},
+{label:"Other Brands",short:">",listingCategory:"",brand:"Other Brands"}
+]}]},
+{key:"electronics",label:"Electronics",image:"assets/categories/CAT_Electronics.png",sections:[{title:"Electronics",items:[
+{label:"Smart Trainer",short:"TR",listingCategory:"Electronics",keyword:"trainer"},
+{label:"Bike Computer",short:"GPS",listingCategory:"Electronics",keyword:"computer gps"},
+{label:"Lights",short:"LUX",listingCategory:"Electronics",keyword:"light"},
+{label:"Electric Pump",short:"PSI",listingCategory:"Electronics",keyword:"pump"},
+{label:"Power Meter",short:"W",listingCategory:"Electronics",keyword:"power meter"},
+{label:"Sensors",short:"ANT",listingCategory:"Electronics",keyword:"sensor"},
+{label:"Wireless Groupset",short:"Di2",listingCategory:"Electronics",keyword:"wireless groupset"},
+{label:"View All",short:">",listingCategory:"Electronics",keyword:""}
+]}]},
+{key:"wheels-tyres",label:"Wheels & Tyres",image:"assets/categories/CAT_Wheels.png",sections:[{title:"Wheels & Tyres",items:[
+{label:"Wheels",short:"WH",listingCategory:"Wheel",keyword:"wheel"},
+{label:"Tyres",short:"TY",listingCategory:"Component",keyword:"tyre tire"},
+{label:"Tubes",short:"TU",listingCategory:"Component",keyword:"tube"},
+{label:"Valves",short:"VL",listingCategory:"Component",keyword:"valve"},
+{label:"Freehub Body",short:"FH",listingCategory:"Component",keyword:"freehub"},
+{label:"Tools",short:"TL",listingCategory:"Component",keyword:"tool"},
+{label:"Hubs",short:"HB",listingCategory:"Component",keyword:"hub"},
+{label:"Carbon Wheels",short:"C",listingCategory:"Wheel",keyword:"carbon"}
+]}]},
+{key:"wearables",label:"Wearables",image:"assets/categories/CAT_Wearables.png",sections:[{title:"Wearables",items:[
+{label:"Helmets",short:"HL",listingCategory:"Other",keyword:"helmet"},
+{label:"Jersey & Shorts",short:"JS",listingCategory:"Other",keyword:"jersey shorts"},
+{label:"Shoes",short:"SH",listingCategory:"Other",keyword:"shoes"},
+{label:"Smart Watches",short:"SW",listingCategory:"Electronics",keyword:"watch"},
+{label:"Eyewear",short:"EW",listingCategory:"Other",keyword:"eyewear sunglass"},
+{label:"Gloves",short:"GL",listingCategory:"Other",keyword:"glove"}
+]}]},
+{key:"components",label:"Components",image:"assets/categories/CAT_Components.png",sections:[{title:"Components",items:[
+{label:"Groupset",short:"GS",listingCategory:"Component",keyword:"groupset"},
+{label:"Crankset",short:"CR",listingCategory:"Component",keyword:"crank"},
+{label:"Cassette",short:"CS",listingCategory:"Component",keyword:"cassette"},
+{label:"Chain",short:"CH",listingCategory:"Component",keyword:"chain"},
+{label:"Handlebar",short:"HB",listingCategory:"Component",keyword:"handlebar"},
+{label:"Saddle",short:"SD",listingCategory:"Component",keyword:"saddle"}
+]}]},
+{key:"accessories",label:"Accessories",image:"assets/categories/CAT_ACC.png",sections:[{title:"Accessories",items:[
+{label:"Bottle Cage",short:"BC",listingCategory:"Other",keyword:"bottle cage"},
+{label:"Mounts",short:"MT",listingCategory:"Other",keyword:"mount"},
+{label:"Bags",short:"BG",listingCategory:"Other",keyword:"bag"},
+{label:"Tools",short:"TL",listingCategory:"Other",keyword:"tool"},
+{label:"Pedals",short:"PD",listingCategory:"Component",keyword:"pedal"}
+]}]}
+];
+
 const conditionFilter=document.getElementById("conditionFilter");
 const sortFilter=document.getElementById("sortFilter");
 
@@ -201,6 +298,7 @@ write(PENDING_KEY,pending.filter(listing=>listing.id!==id));
 const approved=read(STORAGE_KEY);
 approved.unshift({...item,status:"approved",approvedDate:todayKey(),localOwner:item.localOwner||"me"});
 write(STORAGE_KEY,approved);
+renderCategoryBrowser();
 renderPending();
 renderListings();
 }
@@ -228,7 +326,9 @@ pendingList.innerHTML=pending.length?pending.map(item=>`
 function renderListings(){
 let listings=read(STORAGE_KEY);
 const query=usedSearch.value.trim().toLowerCase();
-const category=categoryFilter.value;
+const category=selectedUsedCategory.listingCategory||"";
+const brand=selectedUsedCategory.brand||"";
+const keyword=(selectedUsedCategory.keyword||"").toLowerCase();
 const condition=conditionFilter.value;
 if(showMyAdsOnly){
 const pending=read(PENDING_KEY).map(item=>({...item,status:"pending"}));
@@ -236,7 +336,10 @@ listings=[...pending,...listings].filter(item=>item.localOwner==="me"||item.stat
 }
 listings=listings.filter(item=>{
 const text=[item.title,item.brand,item.city,item.description,item.category].join(" ").toLowerCase();
-return (!query||text.includes(query))&&(!category||item.category===category)&&(!condition||item.condition===condition);
+const brandText=String(item.brand||"").toLowerCase();
+const brandMatch=!brand||(brand==="Other Brands"?brandText&&!["trek","merida","giant","s-works"].includes(brandText):brandText.includes(brand.toLowerCase()));
+const keywordMatch=!keyword||text.includes(keyword)||keyword.split(" ").some(word=>word&&text.includes(word));
+return (!query||text.includes(query))&&(!category||item.category===category)&&brandMatch&&keywordMatch&&(!condition||item.condition===condition);
 });
 if(sortFilter.value==="low"){listings.sort((a,b)=>a.price-b.price);}
 if(sortFilter.value==="high"){listings.sort((a,b)=>b.price-a.price);}
@@ -267,6 +370,61 @@ write(STORAGE_KEY,[...demo,...existing.filter(item=>!demo.some(sample=>sample.id
 renderListings();
 }
 
+function renderCategoryBrowser(){
+categoryRail.innerHTML=usedCategoryData.map(category=>`
+<button type="button" class="${category.key===activeMainCategory?"active":""}" onclick="selectMainUsedCategory('${category.key}')">
+<img src="${category.image}" alt="">
+<span>${category.label}</span>
+</button>`).join("");
+const active=usedCategoryData.find(category=>category.key===activeMainCategory)||usedCategoryData[0];
+categoryTitle.textContent=active.label;
+categoryDetail.innerHTML=active.sections.map(section=>`
+<div class="category-section">
+<div class="category-section-title">${section.title}</div>
+<div class="category-chip-grid">
+${section.items.map(item=>`
+<button type="button" class="category-chip ${selectedUsedCategory.label===item.label?"active":""}" onclick="applyUsedCategory('${active.key}', '${encodeURIComponent(item.label)}')">
+<span class="bubble">${item.short}</span>
+<span>${item.label}</span>
+${item.brand?'<small>Brand</small>':''}
+</button>`).join("")}
+</div>
+</div>`).join("");
+activeCategoryNote.classList.toggle("active",selectedUsedCategory.label!=="All Categories");
+activeCategoryNote.textContent=selectedUsedCategory.label==="All Categories"?"":"Showing: "+selectedUsedCategory.label;
+}
+
+function selectMainUsedCategory(key){
+activeMainCategory=key;
+renderCategoryBrowser();
+}
+
+function applyUsedCategory(mainKey,encodedLabel){
+activeMainCategory=mainKey;
+const label=decodeURIComponent(encodedLabel);
+const active=usedCategoryData.find(category=>category.key===mainKey);
+const item=active.sections.flatMap(section=>section.items).find(entry=>entry.label===label);
+if(!item){return;}
+selectedUsedCategory={label:item.label,listingCategory:item.listingCategory||"",brand:item.brand||"",keyword:item.keyword||""};
+categoryOpenButton.innerHTML=`<span>Category</span> ${item.label}`;
+categoryBrowser.classList.remove("active");
+renderCategoryBrowser();
+renderListings();
+}
+
+function clearUsedCategory(){
+selectedUsedCategory={label:"All Categories",listingCategory:"",brand:"",keyword:""};
+categoryOpenButton.innerHTML='<span>Filter by</span> Categories';
+renderCategoryBrowser();
+renderListings();
+}
+
+categoryOpenButton.addEventListener("click",()=>{
+categoryBrowser.classList.toggle("active");
+renderCategoryBrowser();
+});
+categoryCloseButton.addEventListener("click",()=>categoryBrowser.classList.remove("active"));
+
 document.getElementById("demoSeedButton").addEventListener("click",seedDemoListings);
 sellButton.addEventListener("click",()=>{
 showMyAdsOnly=false;
@@ -279,8 +437,8 @@ showMyAdsOnly=!showMyAdsOnly;
 myAdsButton.classList.toggle("active",showMyAdsOnly);
 renderListings();
 });
-[usedSearch,categoryFilter,conditionFilter,sortFilter].forEach(control=>control.addEventListener("input",renderListings));
-[usedSearch,categoryFilter,conditionFilter,sortFilter].forEach(control=>control.addEventListener("change",renderListings));
+[usedSearch,conditionFilter,sortFilter].forEach(control=>control.addEventListener("input",renderListings));
+[usedSearch,conditionFilter,sortFilter].forEach(control=>control.addEventListener("change",renderListings));
 
 if(location.hash==="#admin"){localStorage.setItem(ADMIN_KEY,"yes");}
 renderPending();
