@@ -97,7 +97,7 @@ border-radius:999px 0 0 999px;
 
 background:transparent;
 
-font-size:15px;
+font-size:13px;
 
 }
 
@@ -174,6 +174,7 @@ color:#666;
 font-weight:bold;
 white-space:nowrap;
 }
+.page-heading{font-size:20px;color:#111827;font-weight:bold;white-space:nowrap}.catalog-tools{display:flex;align-items:center;gap:8px;margin-left:auto}.catalog-tools select{height:34px;border:1px solid #e1e5eb;border-radius:999px;background:white;color:#111827;font-size:12px;font-weight:bold;padding:0 28px 0 12px;box-shadow:0 2px 8px rgba(15,23,42,.05);outline:none;cursor:pointer}.catalog-tools select:focus{border-color:#111827;box-shadow:0 0 0 3px rgba(15,23,42,.08)}
 
 .category-strip{
 background:white;
@@ -287,12 +288,12 @@ box-shadow:0 8px 18px rgba(0,0,0,.08);
 .card img{
 
 width:100%;
-height:155px;
+height:124px;
 
 object-fit:contain;
 
 background:white;
-padding:8px 8px 2px;
+padding:6px 7px 1px;
 
 cursor:pointer;
 
@@ -300,17 +301,17 @@ cursor:pointer;
 
 .details{
 
-padding:6px 10px 10px;
+padding:5px 8px 8px;
 
 }
 
 .details h3{
 
-font-size:15px;
+font-size:13px;
 
 line-height:1.25;
 
-min-height:38px;
+min-height:31px;
 
 margin-bottom:6px;
 
@@ -318,7 +319,7 @@ margin-bottom:6px;
 
 .price{
 
-font-size:20px;
+font-size:16px;
 font-weight:bold;
 
 margin-bottom:2px;
@@ -370,7 +371,7 @@ font-size:22px;
 
 .add{
 
-padding:10px 12px;
+padding:8px 10px;
 
 border-radius:12px;
 
@@ -697,6 +698,7 @@ gap:5px!important;
 }
 }
 
+@media(max-width:520px){.page-title{align-items:flex-start;flex-direction:column}.catalog-tools{width:100%;margin-left:0}.catalog-tools select{flex:1;min-width:0}}
 </style>
 
 </head>
@@ -720,11 +722,20 @@ gap:5px!important;
 </div>
 </div>
 
-<div class="page-title">
-
-🚴 Bikes & Frames
-
-</div>
+<div class="page-title"><span class="page-heading">🚴 Bikes & Frames</span><div class="catalog-tools">
+<select id="sortSelect" aria-label="Sort products">
+<option value="featured">Sort</option>
+<option value="price-low">Price: Low to High</option>
+<option value="price-high">Price: High to Low</option>
+<option value="name">Name: A to Z</option>
+</select>
+<select id="filterSelect" aria-label="Filter products">
+<option value="all">Filter</option>
+<option value="under-5000">Under ₹5,000</option>
+<option value="5000-20000">₹5,000 - ₹20,000</option>
+<option value="above-20000">Above ₹20,000</option>
+</select>
+</div></div>
 
 
 
@@ -812,6 +823,8 @@ document.getElementById(
 const categoryStrip=document.getElementById("categoryStrip");
 const categorySummary=document.getElementById("categorySummary");
 const searchInput=document.getElementById("searchInput");
+const sortSelect=document.getElementById("sortSelect");
+const filterSelect=document.getElementById("filterSelect");
 let activeCategory=new URLSearchParams(window.location.search).get("category")||"";
 
 const categories=[
@@ -916,18 +929,36 @@ categoryStrip.innerHTML=categories.map(category=>`
 `).join("");
 }
 
+function productPassesFilter(product){
+const selected=filterSelect?filterSelect.value:"all";
+const price=Number(product.price)||0;
+if(selected==="under-5000"){return price<5000;}
+if(selected==="5000-20000"){return price>=5000&&price<=20000;}
+if(selected==="above-20000"){return price>20000;}
+return true;
+}
+
+function sortProducts(list){
+const selected=sortSelect?sortSelect.value:"featured";
+const sorted=[...list];
+if(selected==="price-low"){sorted.sort((a,b)=>(Number(a.price)||0)-(Number(b.price)||0));}
+else if(selected==="price-high"){sorted.sort((a,b)=>(Number(b.price)||0)-(Number(a.price)||0));}
+else if(selected==="name"){sorted.sort((a,b)=>a.name.localeCompare(b.name));}
+return sorted;
+}
+
 function getFilteredProducts(){
 const query=(searchInput.value||"").trim().toLowerCase();
 
 return products.filter(product=>{
 const categoryMatch=!activeCategory||getProductCategory(product)===activeCategory;
 const searchMatch=!query||product.name.toLowerCase().includes(query);
-return categoryMatch&&searchMatch;
+return categoryMatch&&searchMatch&&productPassesFilter(product);
 });
 }
 
 function renderProducts(){
-const filteredProducts=getFilteredProducts();
+const filteredProducts=sortProducts(getFilteredProducts());
 const selectedCategory=categories.find(category=>category.key===activeCategory);
 const categoryLabel=selectedCategory?selectedCategory.label:"All Products";
 categorySummary.textContent=`${categoryLabel} • ${filteredProducts.length} products`;
@@ -975,6 +1006,8 @@ renderProducts();
 });
 
 searchInput.addEventListener("input",renderProducts);
+if(sortSelect){sortSelect.addEventListener("change",renderProducts);}
+if(filterSelect){filterSelect.addEventListener("change",renderProducts);}
 
 renderCategories();
 renderProducts();
