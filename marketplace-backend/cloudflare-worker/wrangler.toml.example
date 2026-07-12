@@ -1,0 +1,10 @@
+name = "cyclify-used-media"
+main = "src/index.js"
+compatibility_date = "2026-07-12"
+
+[vars]
+FIREBASE_PROJECT_ID = "cyclify-b809a"
+
+[[r2_buckets]]
+binding = "CYCLIFY_MEDIA"
+bucket_name = "cyclify-used-media"
