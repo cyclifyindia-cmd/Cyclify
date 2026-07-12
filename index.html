@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cyclify</title>
+<title>Cyclify India | Premium Cycles, Cycling Parts and Accessories</title>
 
+<meta name="description" content="Shop premium cycles, bike frames, cycling electronics, wheels, tyres, wearables and used cycling products from Cyclify India.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://cyclify.in/">
+<meta property="og:site_name" content="Cyclify">
+<meta property="og:title" content="Cyclify India | Premium Cycles, Cycling Parts and Accessories">
+<meta property="og:description" content="Shop premium cycles, bike frames, cycling electronics, wheels, tyres, wearables and used cycling products from Cyclify India.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cyclify.in/">
+<meta property="og:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cyclify India | Premium Cycles, Cycling Parts and Accessories">
+<meta name="twitter:description" content="Shop premium cycles, bike frames, cycling electronics, wheels, tyres, wearables and used cycling products from Cyclify India.">
+<meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
 <style>
 
 *{
@@ -814,7 +827,34 @@ gap:5px!important;
 .banner-slide p{font-size:12px}
 @keyframes verticalSlide{0%,22%{transform:translateY(0)}31%,55%{transform:translateY(-156px)}64%,88%{transform:translateY(-312px)}100%{transform:translateY(0)}}
 }
-</style>
+</style><script type="application/ld+json" id="cyclify-site-schema">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cyclify.in/#organization",
+      "name": "Cyclify",
+      "url": "https://cyclify.in/",
+      "logo": "https://cyclify.in/assets/Logo-dark.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cyclify.in/#website",
+      "url": "https://cyclify.in/",
+      "name": "Cyclify",
+      "publisher": {
+        "@id": "https://cyclify.in/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://cyclify.in/index.html?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -836,7 +876,7 @@ autocomplete="off">
 <input type="file" id="imageSearchInput" accept="image/*" hidden>
 
 <div class="search-placeholder" id="animatedPlaceholder">
-<span>🔍</span>
+<span>ðŸ”</span>
 <span id="typingText"></span>
 </div>
 
@@ -1118,7 +1158,7 @@ searchResults.innerHTML=matches.map(product=>`
 <img src="${product.image}" alt="${product.name}">
 <div>
 <strong>${product.name}</strong>
-<span>${product.category} • ${formatPrice(product.price)}</span>
+<span>${product.category} â€¢ ${formatPrice(product.price)}</span>
 </div>
 </a>
 `).join("");
@@ -1407,7 +1447,7 @@ ${matches.map(product=>`
 <img src="${product.image}" alt="${product.name}">
 <div>
 <strong>${product.name}</strong>
-<span>${product.category} • ${formatPrice(product.price)}</span>
+<span>${product.category} â€¢ ${formatPrice(product.price)}</span>
 </div>
 </a>
 `).join("")}
@@ -1484,3 +1524,5 @@ cartCount.style.display="none";
 
 </body>
 </html>
+
+

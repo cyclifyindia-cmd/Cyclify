@@ -1,9 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wheels & Tyres | Cyclify</title>
+<title>Wheels, Tyres, Tubes and Valves | Cyclify</title>
+
+<meta name="description" content="Find cycling wheels, carbon wheelsets, tyres, tubes, valves, freehub bodies, hubs and tools for road and MTB riders.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://cyclify.in/wheels-tyres.html">
+<meta property="og:site_name" content="Cyclify">
+<meta property="og:title" content="Wheels, Tyres, Tubes and Valves | Cyclify">
+<meta property="og:description" content="Find cycling wheels, carbon wheelsets, tyres, tubes, valves, freehub bodies, hubs and tools for road and MTB riders.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cyclify.in/wheels-tyres.html">
+<meta property="og:image" content="https://cyclify.in/assets/products/orome-valar-th50d-1.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wheels, Tyres, Tubes and Valves | Cyclify">
+<meta name="twitter:description" content="Find cycling wheels, carbon wheelsets, tyres, tubes, valves, freehub bodies, hubs and tools for road and MTB riders.">
+<meta name="twitter:image" content="https://cyclify.in/assets/products/orome-valar-th50d-1.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#f5f5f5;padding-bottom:80px}
@@ -267,7 +281,7 @@ gap:5px!important;
 </div>
 </div>
 
-<div class="page-title"><span class="page-heading">🚴 Wheels & Tyres</span><div class="catalog-tools">
+<div class="page-title"><span class="page-heading">ðŸš´ Wheels & Tyres</span><div class="catalog-tools">
 <select id="sortSelect" aria-label="Sort products">
 <option value="featured">Sort</option>
 <option value="price-low">Price: Low to High</option>
@@ -276,9 +290,9 @@ gap:5px!important;
 </select>
 <select id="filterSelect" aria-label="Filter products">
 <option value="all">Filter</option>
-<option value="under-5000">Under ₹5,000</option>
-<option value="5000-20000">₹5,000 - ₹20,000</option>
-<option value="above-20000">Above ₹20,000</option>
+<option value="under-5000">Under â‚¹5,000</option>
+<option value="5000-20000">â‚¹5,000 - â‚¹20,000</option>
+<option value="above-20000">Above â‚¹20,000</option>
 </select>
 </div></div>
 <div class="category-strip" id="categoryStrip"></div>
@@ -287,8 +301,8 @@ gap:5px!important;
 <div class="products" id="products"></div>
 
 <div class="bottom-nav">
-<div class="nav-item">↕<br>Sort</div>
-<div class="nav-item">⚙️<br>Filters</div>
+<div class="nav-item">â†•<br>Sort</div>
+<div class="nav-item">âš™ï¸<br>Filters</div>
 </div>
 
 <script>
@@ -297,7 +311,7 @@ const products=[
 id:37,
 name:"Orome Valar TH50D Carbon Road Disc Brake Wheelset",
 price:85000,
-mrp:"₹85,000",
+mrp:"â‚¹85,000",
 image:"assets/products/orome-valar-th50d-2.png",
 sizes:["Carbon"],
 mainCategory:"wheels",
@@ -439,7 +453,7 @@ const filteredProducts=sortProducts(getFilteredProducts());
 const selectedCategory=categories.find(category=>category.key===activeCategory);
 const selectedSubCategory=wheelSubCategories.find(category=>category.key===activeSubCategory);
 const label=selectedSubCategory?`${selectedCategory.label} / ${selectedSubCategory.label}`:(selectedCategory?selectedCategory.label:"All Products");
-categorySummary.textContent=`${label} • ${filteredProducts.length} products`;
+categorySummary.textContent=`${label} â€¢ ${filteredProducts.length} products`;
 container.innerHTML="";
 
 if(!filteredProducts.length){
@@ -453,7 +467,7 @@ container.innerHTML+=`
 <img src="${product.image}" alt="${product.name}">
 <div class="details">
 <h3>${product.name}</h3>
-<div class="price">₹${product.price.toLocaleString()}</div>
+<div class="price">â‚¹${product.price.toLocaleString()}</div>
 <div class="mrp">MRP ${product.mrp}</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom">
@@ -573,3 +587,5 @@ else{cartCount.style.display="none";}
 
 </body>
 </html>
+
+

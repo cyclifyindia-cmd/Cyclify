@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>Cart - Cyclify</title>
+<title>Cart | Cyclify</title>
 
+<meta name="description" content="Review products added to your Cyclify cart.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://cyclify.in/cart.html">
+<meta property="og:site_name" content="Cyclify">
+<meta property="og:title" content="Cart | Cyclify">
+<meta property="og:description" content="Review products added to your Cyclify cart.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cyclify.in/cart.html">
+<meta property="og:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cart | Cyclify">
+<meta name="twitter:description" content="Review products added to your Cyclify cart.">
+<meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
 <style>
 
 *{
@@ -579,7 +592,7 @@ let price=
 
 typeof item.price==="number"?
 item.price:
-Number(String(item.price).replace(/[₹,]/g,""));
+Number(String(item.price).replace(/[â‚¹,]/g,""));
 
 total +=
 price*
@@ -602,7 +615,7 @@ ${item.name}
 
 <div class="price">
 
-₹${price.toLocaleString()}
+â‚¹${price.toLocaleString()}
 
 </div>
 
@@ -631,7 +644,7 @@ class="quantity">
 onclick=
 "decrease(${index})">
 
-−
+âˆ’
 
 </button>
 
@@ -665,7 +678,7 @@ document.getElementById(
 "totalPrice"
 ).innerText=
 
-"Total: ₹"+
+"Total: â‚¹"+
 total.toLocaleString();
 
 localStorage.setItem(
@@ -734,3 +747,5 @@ alert("Buy Now is cooking. Online orders will open soon on Cyclify.");
 
 </body>
 </html>
+
+
