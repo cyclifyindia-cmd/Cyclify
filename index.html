@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -993,7 +993,7 @@ const imageSearchInput = document.getElementById("imageSearchInput");
 let imagePreviewUrl = "";
 
 const searchProducts = [
-{id:1,name:"SAVA Hawkeye",price:189900,image:"assets/products/sava-hawkeye.jpg",category:"Bikes & Frames",keywords:"carbon bike road bicycle frame"},
+{id:1,name:"SAVA Hawkeye SLR7 105 Di2",price:189900,image:"assets/products/sava-hawkeye.jpg",category:"Bikes & Frames",keywords:"carbon bike road bicycle frame"},
 {id:2,name:"ELVES Falath EVO+",price:250000,image:"assets/products/elves-falath-evo-plus.jpg",category:"Bikes & Frames",keywords:"elves evo falath road bike carbon"},
 {id:3,name:"ELVES Falath EXP",price:250000,image:"assets/products/elves-falath-exp-11.png",category:"Bikes & Frames",keywords:"elves exp falath road bike carbon shimano"},
 {id:4,name:"ELVES Amanyar",price:400000,image:"assets/products/elves-amanyar-1.png",category:"Bikes & Frames",keywords:"elves amanyar road bike carbon"},
@@ -1158,7 +1158,7 @@ searchResults.innerHTML=matches.map(product=>`
 <img src="${product.image}" alt="${product.name}">
 <div>
 <strong>${product.name}</strong>
-<span>${product.category} â€¢ ${formatPrice(product.price)}</span>
+<span>${product.category} | ${formatPrice(product.price)}</span>
 </div>
 </a>
 `).join("");
@@ -1447,7 +1447,7 @@ ${matches.map(product=>`
 <img src="${product.image}" alt="${product.name}">
 <div>
 <strong>${product.name}</strong>
-<span>${product.category} â€¢ ${formatPrice(product.price)}</span>
+<span>${product.category} | ${formatPrice(product.price)}</span>
 </div>
 </a>
 `).join("")}

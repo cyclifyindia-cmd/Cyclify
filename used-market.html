@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -83,7 +83,7 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .form-grid{display:grid;gap:10px}
 .form-grid label{display:grid;gap:5px;font-size:12px;font-weight:bold;color:#374151}
 .form-grid input,.form-grid select,.form-grid textarea{width:100%;border:1px solid #dfe4ec;border-radius:10px;padding:11px;font-size:14px;outline:none;background:#fbfcfe}
-.form-grid textarea{min-height:82px;resize:vertical}
+.form-grid textarea{min-height:82px;resize:vertical}.upload-zone{border:1px dashed #aeb8c6;border-radius:12px;background:#f8fafc;padding:14px;cursor:pointer}.upload-zone input{border:0;padding:6px 0;background:transparent}.upload-hint{font-size:11px;color:#667085;font-weight:700}.upload-preview{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.upload-preview img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;border:1px solid #e1e6ed;background:#f3f5f8}.video-preview{display:none;width:100%;max-height:320px;border-radius:12px;background:#111}.video-preview.active{display:block}.detail-video{width:100%;max-height:360px;border-radius:12px;background:#111}
 .primary-btn{border:none;border-radius:999px;background:#111827;color:white;padding:12px 16px;font-weight:bold;cursor:pointer}
 .secondary-btn{border:1px solid #dfe4ec;border-radius:999px;background:white;color:#111827;padding:10px 13px;font-weight:bold;cursor:pointer}
 .auth-note,.form-message{font-size:13px;line-height:1.45;color:#4b5563}
@@ -93,14 +93,14 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
 .section-head h2{font-size:18px}
 .listing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.listing-card{border:1px solid #e7eaf0;border-radius:14px;overflow:hidden;background:#fff;display:grid;grid-template-rows:170px auto;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.listing-card:hover{transform:translateY(-3px);border-color:#cfd7e3;box-shadow:0 14px 30px rgba(15,23,42,.1)}
-.listing-card img{width:100%;height:170px;object-fit:cover;background:#f3f5f8}
+.listing-card{border:1px solid #e7eaf0;border-radius:14px;overflow:hidden;background:#fff;display:grid;grid-template-rows:190px auto;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.listing-card:hover{transform:translateY(-3px);border-color:#cfd7e3;box-shadow:0 14px 30px rgba(15,23,42,.1)}
+.listing-card img{width:100%;height:190px;object-fit:cover;background:#f3f5f8}
 .listing-info{padding:12px;display:grid;gap:7px}
 .listing-title{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .listing-title strong{font-size:15px;line-height:1.25}
 .tag{background:#e8f7ef;color:#087a3d;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:bold;white-space:nowrap}
 .pending-tag{background:#fff7e6;color:#946200}
-.listing-meta{font-size:12px;color:#6b7280;line-height:1.35}.listing-facts{display:flex;flex-wrap:wrap;gap:6px}.listing-fact{background:#f4f6f8;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:800;color:#374151}.listing-location{display:flex;align-items:center;gap:5px}.listing-open{margin-top:2px;font-size:12px;font-weight:900;color:#0b57d0}.detail-view{display:none;background:#fff;border:1px solid #e8edf3;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(15,23,42,.08)}.detail-view.active{display:block}.detail-back{border:0;background:#f3f5f8;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}.detail-top{padding:14px 16px;border-bottom:1px solid #edf0f4}.detail-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:0}.detail-photo{min-height:430px;background:#f5f6f8;display:flex;align-items:center;justify-content:center;padding:18px}.detail-photo img{width:100%;height:100%;max-height:460px;object-fit:contain}.detail-copy{padding:26px;display:grid;align-content:start;gap:14px}.detail-copy h1{font-size:28px;line-height:1.12}.detail-price{font-size:30px;font-weight:900;color:#0039a6}.detail-badges{display:flex;flex-wrap:wrap;gap:7px}.detail-badge{border:1px solid #dfe4ec;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}.detail-table{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #edf0f4;border-left:1px solid #edf0f4}.detail-cell{padding:12px;border-right:1px solid #edf0f4;border-bottom:1px solid #edf0f4}.detail-cell small{display:block;color:#6b7280;margin-bottom:4px}.detail-cell strong{font-size:14px}.detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.contact-btn{border:0;border-radius:999px;padding:13px;font-weight:900;cursor:pointer;background:#111827;color:#fff}.contact-btn.secondary{background:#eef2f7;color:#111827}.detail-description{color:#4b5563;line-height:1.55}.safety-strip{background:#fff8e8;color:#7a5200;border-radius:12px;padding:12px;font-size:12px;line-height:1.45}
+.listing-meta{font-size:12px;color:#6b7280;line-height:1.35}.listing-facts{display:flex;flex-wrap:wrap;gap:6px}.listing-fact{background:#f4f6f8;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:800;color:#374151}.listing-location{display:flex;align-items:center;gap:5px}.listing-open{margin-top:2px;font-size:12px;font-weight:900;color:#0b57d0}.detail-view{display:none;background:#fff;border:1px solid #e8edf3;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(15,23,42,.08)}.detail-view.active{display:block}.detail-back{border:0;background:#f3f5f8;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}.detail-top{padding:14px 16px;border-bottom:1px solid #edf0f4}.detail-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:0}.detail-media{background:#f5f6f8;padding:18px;display:grid;gap:12px;align-content:start}.detail-photo{min-height:390px;display:flex;align-items:center;justify-content:center}.detail-photo img{width:100%;height:100%;max-height:440px;object-fit:contain}.detail-thumbs{display:flex;gap:9px;overflow-x:auto;padding:2px}.detail-thumb{width:68px;height:68px;flex:0 0 68px;border:2px solid transparent;border-radius:10px;padding:2px;background:white;cursor:pointer}.detail-thumb.active{border-color:#111827}.detail-thumb img{width:100%;height:100%;object-fit:cover;border-radius:6px}.detail-copy{padding:26px;display:grid;align-content:start;gap:14px}.detail-copy h1{font-size:28px;line-height:1.12}.detail-price{font-size:30px;font-weight:900;color:#0039a6}.detail-badges{display:flex;flex-wrap:wrap;gap:7px}.detail-badge{border:1px solid #dfe4ec;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}.detail-table{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #edf0f4;border-left:1px solid #edf0f4}.detail-cell{padding:12px;border-right:1px solid #edf0f4;border-bottom:1px solid #edf0f4}.detail-cell small{display:block;color:#6b7280;margin-bottom:4px}.detail-cell strong{font-size:14px}.detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.contact-btn{border:0;border-radius:999px;padding:13px;font-weight:900;cursor:pointer;background:#111827;color:#fff}.contact-btn.secondary{background:#eef2f7;color:#111827}.detail-description{color:#4b5563;line-height:1.55}.safety-strip{background:#fff8e8;color:#7a5200;border-radius:12px;padding:12px;font-size:12px;line-height:1.45}
 .listing-price{font-size:17px;font-weight:bold;color:#0039a6}
 .empty-state{padding:24px;text-align:center;color:#6b7280;font-weight:bold}
 .admin-tools{display:none;margin-top:14px}
@@ -108,7 +108,8 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .pending-list{display:grid;gap:9px}
 .pending-row{border:1px solid #e7eaf0;border-radius:12px;padding:10px;display:grid;gap:7px}
 .pending-actions{display:flex;gap:8px;flex-wrap:wrap}
-@media(max-width:860px){.detail-layout{grid-template-columns:1fr}.detail-photo{min-height:300px}.rules-grid{grid-template-columns:1fr}.hero{min-height:240px;background-position:58% center}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.market-toolbar{align-items:stretch;flex-direction:column}.toolbar-filter{width:100%;min-width:0}.category-browser.active{grid-template-columns:128px 1fr}.category-chip-grid{grid-template-columns:repeat(3,minmax(84px,1fr))}.category-chip .bubble{width:76px;height:76px}}
+@media(max-width:860px){.detail-layout{grid-template-columns:1fr}.detail-photo{min-height:300px}.rules-grid{grid-template-columns:1fr}.hero{min-height:240px;background-position:58% center}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.market-toolbar{align-items:stretch;flex-direction:column}.toolbar-filter{width:100%;min-width:0}.category-browser.active{grid-template-columns:128px 1fr}.category-chip-grid{grid-template-columns:repeat(3,minmax(84px,1fr))}.category-chip .bubble{width:76px;height:76px}}
+@media(max-width:700px){.listing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{min-height:230px;padding:18px;background-position:62% center}.hero::before{background:linear-gradient(90deg,rgba(5,9,18,.95) 0%,rgba(5,9,18,.78) 55%,rgba(5,9,18,.2) 100%)}.hero h1{font-size:26px}.hero p{font-size:13px;max-width:310px}.market-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.market-tab{padding:11px 12px}.category-browser.active{grid-template-columns:104px 1fr;min-height:420px}.category-rail button{font-size:11px;padding:12px 6px}.category-rail img{width:34px;height:32px}.category-detail{padding:14px 12px}.category-detail-head h2{font-size:21px}.category-chip-grid{grid-template-columns:repeat(2,minmax(82px,1fr));gap:12px}.category-chip .bubble{width:72px;height:72px}.filters{grid-template-columns:1fr}.listing-grid{grid-template-columns:1fr}.listing-card{grid-template-rows:150px auto}.listing-card img{height:150px}}
 </style>
 </head>
@@ -138,7 +139,7 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 <div class="category-detail">
 <div class="category-detail-head">
 <h2 id="categoryTitle">Categories</h2>
-<button class="category-close" id="categoryCloseButton" type="button" aria-label="Close categories">Ã—</button>
+<button class="category-close" id="categoryCloseButton" type="button" aria-label="Close categories">x</button>
 </div>
 <div class="active-category-note" id="activeCategoryNote"></div>
 <div id="categoryDetail"></div>
@@ -156,9 +157,12 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 <label>Category<select id="postCategory" required><option value="Bike">Bike</option><option value="Frame">Frame</option><option value="Wheel">Wheel</option><option value="Component">Component</option><option value="Electronics">Electronics</option><option value="Other">Other</option></select></label>
 <label>Brand<input id="postBrand" placeholder="SAVA, ELVES, Shimano"></label>
 <label>Condition<select id="postCondition"><option>Excellent</option><option>Good</option><option>Fair</option><option>Needs Service</option></select></label>
-<label>Price<input id="postPrice" type="number" min="1" required placeholder="Price in â‚¹"></label>
+<label>Price<input id="postPrice" type="number" min="1" required placeholder="Price in Rs "></label>
 <label>City<input id="postCity" required placeholder="City"></label>
-<label>Photo URL<input id="postImage" placeholder="Paste image link for now"></label>
+<label class="upload-zone">Upload Photos<input id="postImageUpload" type="file" accept="image/*" multiple required><span class="upload-hint">Choose up to 5 clear photos. The first photo becomes the cover.</span></label>
+<div class="upload-preview" id="postImagePreview" aria-live="polite"></div>
+<label class="upload-zone">Upload Short Video (Optional)<input id="postVideoUpload" type="file" accept="video/*"><span class="upload-hint">Maximum 30 seconds. High-quality video will be compressed automatically.</span></label>
+<video class="video-preview" id="postVideoPreview" controls muted playsinline></video>
 <label>Description<textarea id="postDescription" required placeholder="Size, year, usage, upgrades, reason for selling"></textarea></label>
 <button class="primary-btn" type="submit">Submit for Approval</button>
 <div class="form-message" id="formMessage"></div>
@@ -202,7 +206,7 @@ const ADMIN_KEY="cyclifyUsedAdmin";
 const todayKey=()=>new Date().toISOString().slice(0,10);
 const read=(key)=>JSON.parse(localStorage.getItem(key)||"[]");
 const write=(key,value)=>localStorage.setItem(key,JSON.stringify(value));
-const formatPrice=(price)=>"â‚¹"+Number(price||0).toLocaleString("en-IN");
+const formatPrice=(price)=>"Rs "+Number(price||0).toLocaleString("en-IN");
 
 const postForm=document.getElementById("postForm");
 const formMessage=document.getElementById("formMessage");
@@ -289,6 +293,131 @@ const usedCategoryData=[
 
 const conditionFilter=document.getElementById("conditionFilter");
 const sortFilter=document.getElementById("sortFilter");
+const postImageUpload=document.getElementById("postImageUpload");
+const postImagePreview=document.getElementById("postImagePreview");
+let uploadedPostImages=[];
+const postVideoUpload=document.getElementById("postVideoUpload");
+const postVideoPreview=document.getElementById("postVideoPreview");
+let uploadedPostVideo="";
+
+function compressPostImage(file){
+return new Promise((resolve,reject)=>{
+const reader=new FileReader();
+reader.onerror=reject;
+reader.onload=()=>{
+const image=new Image();
+image.onerror=reject;
+image.onload=()=>{
+const limit=1200;
+const scale=Math.min(1,limit/Math.max(image.width,image.height));
+const canvas=document.createElement("canvas");
+canvas.width=Math.max(1,Math.round(image.width*scale));
+canvas.height=Math.max(1,Math.round(image.height*scale));
+canvas.getContext("2d").drawImage(image,0,0,canvas.width,canvas.height);
+resolve(canvas.toDataURL("image/jpeg",.78));
+};
+image.src=reader.result;
+};
+reader.readAsDataURL(file);
+});
+}
+
+function blobToDataUrl(blob){
+return new Promise((resolve,reject)=>{
+const reader=new FileReader();
+reader.onerror=reject;
+reader.onload=()=>resolve(reader.result);
+reader.readAsDataURL(blob);
+});
+}
+
+function loadVideoMetadata(url){
+return new Promise((resolve,reject)=>{
+const video=document.createElement("video");
+video.preload="metadata";
+video.muted=true;
+video.playsInline=true;
+video.onloadedmetadata=()=>resolve(video);
+video.onerror=reject;
+video.src=url;
+});
+}
+
+async function compressPostVideo(file){
+const url=URL.createObjectURL(file);
+try{
+const video=await loadVideoMetadata(url);
+if(!Number.isFinite(video.duration)||video.duration>30.05){throw new Error("Video must be 30 seconds or shorter.");}
+if(!window.MediaRecorder||!HTMLCanvasElement.prototype.captureStream){
+if(file.size>4*1024*1024){throw new Error("This browser cannot compress that video. Please choose a clip below 4 MB.");}
+return blobToDataUrl(file);
+}
+const maxWidth=854;
+const scale=Math.min(1,maxWidth/video.videoWidth);
+const canvas=document.createElement("canvas");
+canvas.width=Math.max(2,Math.round(video.videoWidth*scale/2)*2);
+canvas.height=Math.max(2,Math.round(video.videoHeight*scale/2)*2);
+const context=canvas.getContext("2d");
+const stream=canvas.captureStream(20);
+if(typeof video.captureStream==="function"){
+const sourceStream=video.captureStream();
+sourceStream.getAudioTracks().forEach(track=>stream.addTrack(track));
+}
+const recorder=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:500000});
+const chunks=[];
+recorder.ondataavailable=event=>{if(event.data.size){chunks.push(event.data);}};
+const stopped=new Promise(resolve=>recorder.onstop=resolve);
+const ended=new Promise((resolve,reject)=>{video.onended=resolve;video.onerror=reject;});
+let drawing=true;
+const draw=()=>{if(!drawing){return;}context.drawImage(video,0,0,canvas.width,canvas.height);requestAnimationFrame(draw);};
+recorder.start(500);
+draw();
+await video.play();
+await ended;
+drawing=false;
+recorder.stop();
+await stopped;
+return blobToDataUrl(new Blob(chunks,{type:mime}));
+}finally{URL.revokeObjectURL(url);}
+}
+
+postVideoUpload.addEventListener("change",async()=>{
+const file=postVideoUpload.files&&postVideoUpload.files[0];
+uploadedPostVideo="";
+postVideoPreview.classList.remove("active");
+postVideoPreview.removeAttribute("src");
+if(!file){return;}
+formMessage.className="form-message";
+formMessage.textContent="Checking and compressing video...";
+try{
+uploadedPostVideo=await compressPostVideo(file);
+postVideoPreview.src=uploadedPostVideo;
+postVideoPreview.classList.add("active");
+formMessage.textContent="Video ready to upload.";
+}catch(error){
+postVideoUpload.value="";
+formMessage.className="form-message error";
+formMessage.textContent=error.message||"Video could not be prepared.";
+}
+});
+postImageUpload.addEventListener("change",async()=>{
+const files=Array.from(postImageUpload.files||[]).slice(0,5);
+formMessage.className="form-message";
+formMessage.textContent=files.length?"Preparing photos...":"";
+try{
+uploadedPostImages=await Promise.all(files.map(compressPostImage));
+postImagePreview.innerHTML=uploadedPostImages.map((src,index)=>`<img src="${src}" alt="Product photo ${index+1}">`).join("");
+formMessage.textContent=uploadedPostImages.length+" photo"+(uploadedPostImages.length===1?"":"s")+" ready";
+}catch(error){
+uploadedPostImages=[];
+uploadedPostVideo="";
+postImagePreview.innerHTML="";
+postVideoPreview.classList.remove("active");
+postVideoPreview.removeAttribute("src");
+formMessage.className="form-message error";
+formMessage.textContent="One of the photos could not be prepared. Please choose another image.";
+}
+});
 
 function makeListing(status){
 return {
@@ -299,7 +428,9 @@ brand:document.getElementById("postBrand").value.trim(),
 condition:document.getElementById("postCondition").value,
 price:Number(document.getElementById("postPrice").value),
 city:document.getElementById("postCity").value.trim(),
-image:document.getElementById("postImage").value.trim()||"assets/categories/CAT_BIKEE.png",
+image:uploadedPostImages[0]||"assets/categories/CAT_BIKEE.png",
+images:[...uploadedPostImages],
+video:uploadedPostVideo,
 description:document.getElementById("postDescription").value.trim(),
 status,
 postedDate:todayKey(),
@@ -346,7 +477,7 @@ if(localStorage.getItem(ADMIN_KEY)!=="yes"){return;}
 pendingList.innerHTML=pending.length?pending.map(item=>`
 <div class="pending-row">
 <strong>${item.title}</strong>
-<span>${item.category} â€¢ ${formatPrice(item.price)} â€¢ ${item.city}</span>
+<span>${item.category} | ${formatPrice(item.price)} | ${item.city}</span>
 <div class="pending-actions">
 <button class="secondary-btn" onclick="approveListing(${item.id})">Approve</button>
 <button class="secondary-btn" onclick="rejectListing(${item.id})">Reject</button>
@@ -419,7 +550,7 @@ listingDetail.classList.add("active");
 listingDetail.innerHTML=`
 <div class="detail-top"><button class="detail-back" type="button" onclick="closeListing()">&larr; Back to all ads</button></div>
 <div class="detail-layout">
-<div class="detail-photo"><img src="${item.image}" alt="${item.title}" onerror="this.src='assets/categories/CAT_BIKEE.png'"></div>
+<div class="detail-media"><div class="detail-photo"><img id="detailMainImage" src="${item.image}" alt="${item.title}" onerror="this.src='assets/categories/CAT_BIKEE.png'"></div><div class="detail-thumbs">${(item.images&&item.images.length?item.images:[item.image]).map((src,index)=>`<button class="detail-thumb ${index===0?"active":""}" type="button" data-src="${src}" onclick="setDetailImage(this)"><img src="${src}" alt="View photo ${index+1}"></button>`).join("")}</div></div>
 <div class="detail-copy">
 <div class="detail-badges"><span class="tag">${item.status==="pending"?"Pending approval":"Approved listing"}</span><span class="detail-badge">${item.condition}</span></div>
 <h1>${item.title}</h1>
@@ -434,10 +565,18 @@ listingDetail.innerHTML=`
 <div class="detail-cell"><small>Seller</small><strong>${item.seller||"Cyclify member"}</strong></div>
 </div>
 <p class="detail-description">${item.description}</p>
+${item.video?`<video class="detail-video" src="${item.video}" controls playsinline preload="metadata"></video>`:""}
 <div class="detail-actions"><button class="contact-btn" type="button" onclick="alert('Seller chat and phone connection will be enabled after the marketplace backend is connected.')">Contact Seller</button><button class="contact-btn secondary" type="button" onclick="navigator.share?navigator.share({title:'${item.title}',url:location.href}):navigator.clipboard.writeText(location.href)">Share</button></div>
 <div class="safety-strip"><strong>Meet safely.</strong> Inspect the cycle, verify its serial number and ownership, and avoid advance payment before seeing the product.</div>
 </div></div>`;
 listingDetail.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function setDetailImage(button){
+const main=document.getElementById("detailMainImage");
+if(!main){return;}
+main.src=button.dataset.src;
+document.querySelectorAll(".detail-thumb").forEach(thumb=>thumb.classList.toggle("active",thumb===button));
 }
 
 function closeListing(){

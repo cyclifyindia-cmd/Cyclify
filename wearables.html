@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -88,9 +88,9 @@ html{scroll-behavior:smooth}
 </select>
 <select id="filterSelect" aria-label="Filter products">
 <option value="all">Filter</option>
-<option value="under-5000">Under â‚¹5,000</option>
-<option value="5000-20000">â‚¹5,000 - â‚¹20,000</option>
-<option value="above-20000">Above â‚¹20,000</option>
+<option value="under-5000">Under Rs 5,000</option>
+<option value="5000-20000">Rs 5,000 - Rs 20,000</option>
+<option value="above-20000">Above Rs 20,000</option>
 </select>
 </div></div>
 <div class="category-strip" id="categoryStrip"></div>
@@ -103,7 +103,7 @@ const products=[
     "id": 48,
     "name": "Elsier Road Cycling Shoes",
     "price": 5899,
-    "mrp": "â‚¹6,600",
+    "mrp": "Rs 6,600",
     "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e0a7528f-b25a-4b81-b7e7-5102541dd737.jpg?v=1754918672",
     "images": [
       "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e0a7528f-b25a-4b81-b7e7-5102541dd737.jpg?v=1754918672",
@@ -144,7 +144,7 @@ const products=[
     "id": 49,
     "name": "Cairbull Venger Cycling Helmet",
     "price": 2899,
-    "mrp": "â‚¹3,520",
+    "mrp": "Rs 3,520",
     "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_11_af72b306-f1af-4826-9760-dcd065170d6a.jpg?v=1764931758",
     "images": [
       "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_11_af72b306-f1af-4826-9760-dcd065170d6a.jpg?v=1764931758",
@@ -174,7 +174,7 @@ const products=[
     "id": 50,
     "name": "MET Trenta MIPS Road Cycling Helmet (Black Red Metallic / Matt Glossy)",
     "price": 16499,
-    "mrp": "â‚¹17,999",
+    "mrp": "Rs 17,999",
     "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/met_trenta.avif?v=1777299154",
     "images": [
       "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/met_trenta.avif?v=1777299154",
@@ -202,7 +202,7 @@ const products=[
     "id": 51,
     "name": "MET Trenta 3k Carbon MIPS Road Cycling Helmet (Gray Iridescent)",
     "price": 25999,
-    "mrp": "â‚¹26,499",
+    "mrp": "Rs 26,499",
     "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/met-trenta-3k-carbon-mips-road-cycling-helmet-GR2_1800x1800_f33a7599-020f-43b9-b279-6bef40a99f3b.jpg?v=1777200555",
     "images": [
       "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/met-trenta-3k-carbon-mips-road-cycling-helmet-GR2_1800x1800_f33a7599-020f-43b9-b279-6bef40a99f3b.jpg?v=1777200555",
@@ -230,7 +230,7 @@ const products=[
     "id": 52,
     "name": "Cairbull Terrain MTB Helmet",
     "price": 2900,
-    "mrp": "â‚¹2,900",
+    "mrp": "Rs 2,900",
     "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/HELMET.jpg?v=1775047962",
     "images": [
       "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/HELMET.jpg?v=1775047962",
@@ -259,7 +259,7 @@ const products=[
     "id": 53,
     "name": "Cairbull SLK20 Cycling Helmet",
     "price": 3200,
-    "mrp": "â‚¹3,900",
+    "mrp": "Rs 3,900",
     "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7_caaab808-1d03-4057-8e67-9da020c4b3c6.jpg?v=1767417951",
     "images": [
       "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7_caaab808-1d03-4057-8e67-9da020c4b3c6.jpg?v=1767417951",
@@ -356,7 +356,7 @@ function renderProducts(){
 const filteredProducts=sortProducts(getFilteredProducts());
 const selectedCategory=categories.find(category=>category.key===activeCategory);
 const categoryLabel=selectedCategory?selectedCategory.label:"All Wearables";
-categorySummary.textContent=`${categoryLabel} â€¢ ${filteredProducts.length} products`;
+categorySummary.textContent=`${categoryLabel} | ${filteredProducts.length} products`;
 container.innerHTML="";
 if(!filteredProducts.length){
 const message=activeCategory?"Products for this wearable category will appear here":"Choose a wearable category above. Products will appear here when added.";
@@ -369,7 +369,7 @@ container.innerHTML+=`
 <img src="${product.image}" alt="${product.name}">
 <div class="details">
 <h3>${product.name}</h3>
-<div class="price">â‚¹${product.price.toLocaleString()}</div>
+<div class="price">Rs ${product.price.toLocaleString()}</div>
 <div class="mrp">MRP ${product.mrp}</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom"><button class="add" id="add-${product.id}" onclick="addToCart(event,${product.id})">Add to cart</button></div>
@@ -462,4 +462,3 @@ reader.readAsDataURL(file);
 </script>
 </body>
 </html>
-

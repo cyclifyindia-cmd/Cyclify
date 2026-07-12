@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -592,7 +592,7 @@ let price=
 
 typeof item.price==="number"?
 item.price:
-Number(String(item.price).replace(/[â‚¹,]/g,""));
+Number(String(item.price).replace(/[^0-9.]/g,""));
 
 total +=
 price*
@@ -615,7 +615,7 @@ ${item.name}
 
 <div class="price">
 
-â‚¹${price.toLocaleString()}
+Rs ${price.toLocaleString()}
 
 </div>
 
@@ -644,7 +644,7 @@ class="quantity">
 onclick=
 "decrease(${index})">
 
-âˆ’
+-
 
 </button>
 
@@ -678,7 +678,7 @@ document.getElementById(
 "totalPrice"
 ).innerText=
 
-"Total: â‚¹"+
+"Total: Rs "+
 total.toLocaleString();
 
 localStorage.setItem(
@@ -747,5 +747,3 @@ alert("Buy Now is cooking. Online orders will open soon on Cyclify.");
 
 </body>
 </html>
-
-

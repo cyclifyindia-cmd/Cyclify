@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -744,9 +744,9 @@ gap:5px!important;
 </select>
 <select id="filterSelect" aria-label="Filter products">
 <option value="all">Filter</option>
-<option value="under-5000">Under â‚¹5,000</option>
-<option value="5000-20000">â‚¹5,000 - â‚¹20,000</option>
-<option value="above-20000">Above â‚¹20,000</option>
+<option value="under-5000">Under Rs 5,000</option>
+<option value="5000-20000">Rs 5,000 - Rs 20,000</option>
+<option value="above-20000">Above Rs 20,000</option>
 </select>
 </div></div>
 
@@ -770,14 +770,14 @@ id="products">
 
 <div class="nav-item">
 
-â†•<br>
+<br>
 Sort
 
 </div>
 
 <div class="nav-item">
 
-âš™ï¸<br>
+<br>
 Filters
 
 </div>
@@ -792,18 +792,18 @@ const products=[
 
 {
 id:1,
-name:"SAVA Hawkeye",
+name:"SAVA Hawkeye SLR7 105 Di2",
 price:189900,
-mrp:"â‚¹2,10,000",
+mrp:"Rs 2,10,000",
 image:"assets/products/sava-hawkeye.jpg",
-sizes:[]
+sizes:["49","52","54","56"]
 },
 
 {
 id:2,
 name:"ELVES Falath EVO+",
 price:250000,
-mrp:"â‚¹2,50,000",
+mrp:"Rs 2,50,000",
 image:"assets/products/elves-falath-evo-plus.jpg",
 sizes:["45","49","52","54","56"]
 },
@@ -812,7 +812,7 @@ sizes:["45","49","52","54","56"]
 id:3,
 name:"ELVES Falath EXP",
 price:250000,
-mrp:"â‚¹2,50,000",
+mrp:"Rs 2,50,000",
 image:"assets/products/elves-falath-exp-11.png",
 sizes:["45","49","52","54","56"]
 },
@@ -821,7 +821,7 @@ sizes:["45","49","52","54","56"]
 id:4,
 name:"ELVES Amanyar",
 price:400000,
-mrp:"â‚¹4,00,000",
+mrp:"Rs 4,00,000",
 image:"assets/products/elves-amanyar-1.png",
 sizes:["XS","S","M","L","XL"]
 }
@@ -899,7 +899,7 @@ ${product.name}
 
 <div class="price">
 
-â‚¹${product.price.toLocaleString()}
+Rs ${product.price.toLocaleString()}
 
 </div>
 
@@ -974,7 +974,7 @@ function renderProducts(){
 const filteredProducts=sortProducts(getFilteredProducts());
 const selectedCategory=categories.find(category=>category.key===activeCategory);
 const categoryLabel=selectedCategory?selectedCategory.label:"All Products";
-categorySummary.textContent=`${categoryLabel} â€¢ ${filteredProducts.length} products`;
+categorySummary.textContent=`${categoryLabel} | ${filteredProducts.length} products`;
 container.innerHTML="";
 
 if(!filteredProducts.length){
@@ -992,7 +992,7 @@ onkeydown="handleCardKey(event,${product.id})">
 <img src="${product.image}">
 <div class="details">
 <h3>${product.name}</h3>
-<div class="price">â‚¹${product.price.toLocaleString()}</div>
+<div class="price">Rs ${product.price.toLocaleString()}</div>
 <div class="mrp">MRP ${product.mrp}</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom">
@@ -1136,5 +1136,3 @@ reader.readAsDataURL(file);
 
 </body>
 </html>
-
-
