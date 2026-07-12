@@ -505,7 +505,7 @@ id="totalPrice">
 class="checkout"
 onclick="checkout()">
 
-Checkout via WhatsApp
+Buy Now
 
 </button>
 
@@ -727,81 +727,7 @@ renderCart();
 
 
 function checkout(){
-
-if(cart.length===0){
-return;
-}
-
-let total=0;
-
-let lines=[
-"Hi Cyclify,",
-"",
-"I want to order:"
-];
-
-cart.forEach(
-
-item=>{
-
-let price=
-typeof item.price==="number"?
-item.price:
-Number(String(item.price).replace(/[₹,]/g,""));
-
-let lineTotal=
-price*
-item.quantity;
-
-total +=
-lineTotal;
-
-lines.push(
-
-item.name+
-
-(
-item.size?
-" | Size: "+item.size:
-""
-)+
-
-(
-item.valveLength?
-" | Valve: "+item.valveLength:
-""
-)+
-
-" | Qty: "+
-
-item.quantity+
-
-" | ₹"+
-
-lineTotal.toLocaleString()
-
-);
-
-}
-
-);
-
-lines.push(
-"",
-"Total: ₹"+total.toLocaleString()
-);
-
-let message=
-encodeURIComponent(
-lines.join("\n")
-);
-
-window.open(
-
-"https://wa.me/message/MLT2FFSAEYGIP1?text="+message
-
-);
-
+alert("Buy Now is cooking. Online orders will open soon on Cyclify.");
 }
 
 </script>

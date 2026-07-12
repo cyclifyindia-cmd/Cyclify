@@ -929,20 +929,12 @@ Shop Now
 <div class="features">
 
 <div class="feature">Authentic Products</div>
-
 <div class="feature">Fast Delivery</div>
-
-<div class="feature">WhatsApp Support</div>
-
+<div class="feature">No Questions Asked Exchange</div>
 <div class="feature">Secure Shopping</div>
 
 </div>
 
-
-<a class="whatsapp"
-href="https://wa.me/message/MLT2FFSAEYGIP1">
-💬
-</a>
 
 <script>
 
@@ -1145,94 +1137,91 @@ image.src=src;
 
 function getImageSignature(image){
 const canvas=document.createElement("canvas");
-const size=24;
+const size=32;
 canvas.width=size;
 canvas.height=size;
-
 const context=canvas.getContext("2d",{willReadFrequently:true});
 context.fillStyle="#fff";
 context.fillRect(0,0,size,size);
+
+const probe=document.createElement("canvas");
+const probeSize=96;
+probe.width=probeSize;
+probe.height=probeSize;
+const probeContext=probe.getContext("2d",{willReadFrequently:true});
+probeContext.fillStyle="#fff";
+probeContext.fillRect(0,0,probeSize,probeSize);
+probeContext.drawImage(image,0,0,probeSize,probeSize);
+const probePixels=probeContext.getImageData(0,0,probeSize,probeSize).data;
+let minX=probeSize,minY=probeSize,maxX=0,maxY=0,subjectPixels=0;
+for(let y=0;y<probeSize;y++){
+for(let x=0;x<probeSize;x++){
+const index=(y*probeSize+x)*4;
+const r=probePixels[index],g=probePixels[index+1],b=probePixels[index+2],a=probePixels[index+3];
+const isBackground=a<20||(r>238&&g>238&&b>238)||(Math.abs(r-g)<5&&Math.abs(g-b)<5&&r>230);
+if(!isBackground){
+minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x);maxY=Math.max(maxY,y);subjectPixels++;
+}
+}
+}
+if(subjectPixels>probeSize*probeSize*.04){
+const pad=8;
+minX=Math.max(0,minX-pad);minY=Math.max(0,minY-pad);maxX=Math.min(probeSize,maxX+pad);maxY=Math.min(probeSize,maxY+pad);
+const cropW=Math.max(1,maxX-minX),cropH=Math.max(1,maxY-minY);
+context.drawImage(probe,minX,minY,cropW,cropH,0,0,size,size);
+}
+else{
 context.drawImage(image,0,0,size,size);
+}
 
 const pixels=context.getImageData(0,0,size,size).data;
 const grays=[];
 const colorGrid=[];
-let red=0;
-let green=0;
-let blue=0;
-let edgeTotal=0;
-
+let red=0,green=0,blue=0,edgeTotal=0,darkPixels=0,saturationTotal=0;
 for(let index=0;index<pixels.length;index+=4){
 const alpha=pixels[index+3]/255;
 const r=255+(pixels[index]-255)*alpha;
 const g=255+(pixels[index+1]-255)*alpha;
 const b=255+(pixels[index+2]-255)*alpha;
 const gray=(r*0.299)+(g*0.587)+(b*0.114);
-
-red+=r;
-green+=g;
-blue+=b;
+red+=r;green+=g;blue+=b;
+saturationTotal+=(Math.max(r,g,b)-Math.min(r,g,b));
+if(gray<210){darkPixels++;}
 grays.push(gray);
 }
-
 for(let y=1;y<size-1;y++){
 for(let x=1;x<size-1;x++){
 const position=y*size+x;
-const horizontal=Math.abs(grays[position-1]-grays[position+1]);
-const vertical=Math.abs(grays[position-size]-grays[position+size]);
-edgeTotal+=horizontal+vertical;
+edgeTotal+=Math.abs(grays[position-1]-grays[position+1])+Math.abs(grays[position-size]-grays[position+size]);
 }
 }
-
+const cell=size/4;
 for(let gridY=0;gridY<4;gridY++){
 for(let gridX=0;gridX<4;gridX++){
-let gridRed=0;
-let gridGreen=0;
-let gridBlue=0;
-let count=0;
-
-for(let y=gridY*6;y<(gridY+1)*6;y++){
-for(let x=gridX*6;x<(gridX+1)*6;x++){
+let gridRed=0,gridGreen=0,gridBlue=0,count=0;
+for(let y=Math.floor(gridY*cell);y<Math.floor((gridY+1)*cell);y++){
+for(let x=Math.floor(gridX*cell);x<Math.floor((gridX+1)*cell);x++){
 const index=(y*size+x)*4;
-const alpha=pixels[index+3]/255;
-gridRed+=255+(pixels[index]-255)*alpha;
-gridGreen+=255+(pixels[index+1]-255)*alpha;
-gridBlue+=255+(pixels[index+2]-255)*alpha;
-count++;
+gridRed+=pixels[index];gridGreen+=pixels[index+1];gridBlue+=pixels[index+2];count++;
 }
 }
-
-colorGrid.push([
-gridRed/count,
-gridGreen/count,
-gridBlue/count
-]);
+colorGrid.push([gridRed/count,gridGreen/count,gridBlue/count]);
 }
 }
-
 const averageGray=grays.reduce((total,value)=>total+value,0)/grays.length;
 const hash=grays.map(value=>value>averageGray?1:0);
 const centerPixels=[];
-
-for(let y=6;y<18;y++){
-for(let x=6;x<18;x++){
-centerPixels.push(grays[y*size+x]);
-}
-}
-
+for(let y=8;y<24;y++){for(let x=8;x<24;x++){centerPixels.push(grays[y*size+x]);}}
 const centerAverage=centerPixels.reduce((total,value)=>total+value,0)/centerPixels.length;
 const centerHash=centerPixels.map(value=>value>centerAverage?1:0);
 const pixelCount=grays.length;
-
 return {
-hash,
-centerHash,
-colorGrid,
-red:red/pixelCount,
-green:green/pixelCount,
-blue:blue/pixelCount,
-brightness:averageGray,
-edge:edgeTotal/pixelCount
+hash,centerHash,colorGrid,
+red:red/pixelCount,green:green/pixelCount,blue:blue/pixelCount,
+brightness:averageGray,edge:edgeTotal/pixelCount,
+darkRatio:darkPixels/pixelCount,
+saturation:saturationTotal/pixelCount,
+aspect:subjectPixels>0?(maxX-minX+1)/(maxY-minY+1):image.naturalWidth/image.naturalHeight
 };
 }
 
@@ -1272,13 +1261,19 @@ Math.pow(first.blue-second.blue,2)
 const brightnessDistance=Math.abs(first.brightness-second.brightness)/2.5;
 const edgeDistance=Math.abs(first.edge-second.edge)/3;
 
+const darkDistance=Math.abs(first.darkRatio-second.darkRatio)*18;
+const saturationDistance=Math.abs(first.saturation-second.saturation)/7;
+const aspectDistance=Math.abs(first.aspect-second.aspect)*3;
 return (
-hashDistance*.55+
-centerDistance*.8+
-gridDistance*.04+
-colorDistance*.35+
-brightnessDistance*.25+
-edgeDistance*.45
+hashDistance*.45+
+centerDistance*.95+
+gridDistance*.035+
+colorDistance*.28+
+brightnessDistance*.18+
+edgeDistance*.7+
+darkDistance+
+saturationDistance+
+aspectDistance
 );
 }
 
