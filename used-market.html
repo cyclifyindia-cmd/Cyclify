@@ -109,8 +109,8 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .pending-row{border:1px solid #e7eaf0;border-radius:12px;padding:10px;display:grid;gap:7px}
 .pending-actions{display:flex;gap:8px;flex-wrap:wrap}
 @media(max-width:860px){.detail-layout{grid-template-columns:1fr}.detail-photo{min-height:300px}.rules-grid{grid-template-columns:1fr}.hero{min-height:240px;background-position:58% center}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.market-toolbar{align-items:stretch;flex-direction:column}.toolbar-filter{width:100%;min-width:0}.category-browser.active{grid-template-columns:128px 1fr}.category-chip-grid{grid-template-columns:repeat(3,minmax(84px,1fr))}.category-chip .bubble{width:76px;height:76px}}
-@media(max-width:700px){.listing-grid{grid-template-columns:1fr;gap:8px}.listing-card{grid-template-columns:96px 1fr;min-height:118px}.listing-card img{min-height:118px}.listing-info{padding:8px;gap:4px}.listing-title strong{font-size:12px}.listing-price{font-size:14px}.listing-meta{font-size:10px}.listing-facts{gap:4px}.listing-fact{font-size:9px;padding:3px 6px}.tag{font-size:9px;padding:3px 6px}.listing-open{font-size:10px}}
-@media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{min-height:230px;padding:18px;background-position:62% center}.hero::before{background:linear-gradient(90deg,rgba(5,9,18,.95) 0%,rgba(5,9,18,.78) 55%,rgba(5,9,18,.2) 100%)}.hero h1{font-size:26px}.hero p{font-size:13px;max-width:310px}.market-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.market-tab{padding:11px 12px}.category-browser.active{grid-template-columns:104px 1fr;min-height:420px}.category-rail button{font-size:11px;padding:12px 6px}.category-rail img{width:34px;height:32px}.category-detail{padding:14px 12px}.category-detail-head h2{font-size:21px}.category-chip-grid{grid-template-columns:repeat(2,minmax(82px,1fr));gap:12px}.category-chip .bubble{width:72px;height:72px}.filters{grid-template-columns:1fr}.listing-grid{grid-template-columns:1fr}.listing-card{grid-template-columns:92px 1fr;min-height:112px}.listing-card img{height:100%;min-height:112px}}
+@media(max-width:700px){.listing-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.listing-card{display:flex;flex-direction:column;height:166px;min-height:0}.listing-card img{height:76px;min-height:76px;flex:0 0 76px}.listing-info{padding:6px;gap:2px;min-width:0;overflow:hidden}.listing-title{gap:3px}.listing-title strong{font-size:10px;line-height:1.2;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}.listing-title .tag{display:none}.listing-price{font-size:13px;line-height:1.1}.listing-location{font-size:9px;line-height:1.1}.listing-meta,.listing-facts,.listing-open{display:none}}
+@media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{min-height:230px;padding:18px;background-position:62% center}.hero::before{background:linear-gradient(90deg,rgba(5,9,18,.95) 0%,rgba(5,9,18,.78) 55%,rgba(5,9,18,.2) 100%)}.hero h1{font-size:26px}.hero p{font-size:13px;max-width:310px}.market-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.market-tab{padding:11px 12px}.category-browser.active{grid-template-columns:104px 1fr;min-height:420px}.category-rail button{font-size:11px;padding:12px 6px}.category-rail img{width:34px;height:32px}.category-detail{padding:14px 12px}.category-detail-head h2{font-size:21px}.category-chip-grid{grid-template-columns:repeat(2,minmax(82px,1fr));gap:12px}.category-chip .bubble{width:72px;height:72px}.filters{grid-template-columns:1fr}.listing-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.listing-card{height:158px}.listing-card img{height:72px;min-height:72px;flex-basis:72px}}
 </style>
 </head>
 <body>
@@ -206,6 +206,36 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 const STORAGE_KEY="cyclifyUsedListings";
 const PENDING_KEY="cyclifyPendingUsedListings";
 const ADMIN_KEY="cyclifyUsedAdmin";
+const MARKETPLACE_WORKER_URL="https://cyclify-used-market-media.cyclifyindia.workers.dev";
+const firebaseConfig={
+apiKey:"AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",
+authDomain:"cyclify-b809a.firebaseapp.com",
+projectId:"cyclify-b809a",
+storageBucket:"cyclify-b809a.firebasestorage.app",
+messagingSenderId:"748931097863",
+appId:"1:748931097863:web:0954f07a8245703f2751a2",
+measurementId:"G-ZDE8EQN0XV"
+};
+let firebaseApp=null;
+let firebaseAuth=null;
+let firestoreDb=null;
+let liveMode=false;
+let currentUser=null;
+let currentUserIsAdmin=false;
+let liveApprovedListings=[];
+let livePendingListings=[];
+let liveMyPendingListings=[];
+let unsubscribeApproved=null;
+let unsubscribePending=null;
+let unsubscribeMyPending=null;
+try{
+if(window.firebase){
+firebaseApp=firebase.apps.length?firebase.app():firebase.initializeApp(firebaseConfig);
+firebaseAuth=firebase.auth();
+firestoreDb=firebase.firestore();
+liveMode=true;
+}
+}catch(error){console.warn("Cyclify marketplace Firebase could not start",error);}
 const todayKey=()=>new Date().toISOString().slice(0,10);
 const read=(key)=>JSON.parse(localStorage.getItem(key)||"[]");
 const write=(key,value)=>localStorage.setItem(key,JSON.stringify(value));
@@ -448,39 +478,158 @@ year:"Not specified"
 };
 }
 
-postForm.addEventListener("submit",event=>{
+function dataUrlToFile(dataUrl,fileName){
+const parts=dataUrl.split(",");
+const mime=(parts[0].match(/:(.*?);/)||[])[1]||"application/octet-stream";
+const binary=atob(parts[1]||"");
+const bytes=new Uint8Array(binary.length);
+for(let index=0;index<binary.length;index++){bytes[index]=binary.charCodeAt(index);}
+return new File([bytes],fileName,{type:mime});
+}
+
+async function uploadMarketplaceMedia(dataUrl,kind,index){
+if(!currentUser){throw new Error("Please login from Account page before posting.");}
+const token=await currentUser.getIdToken();
+const extension=kind==="video"?(uploadedPostVideoType.includes("mp4")?"mp4":"webm"):"jpg";
+const file=dataUrlToFile(dataUrl,kind==="video"?`used-video-${Date.now()}.${extension}`:`used-photo-${Date.now()}-${index}.jpg`);
+const form=new FormData();
+form.append("kind",kind);
+form.append("file",file);
+const response=await fetch(`${MARKETPLACE_WORKER_URL}/upload`,{method:"POST",headers:{Authorization:`Bearer ${token}`},body:form});
+const result=await response.json().catch(()=>({error:"Upload failed"}));
+if(!response.ok){throw new Error(result.error||"Upload failed");}
+return result.url;
+}
+
+function normalizeListing(doc){
+const data=doc.data?doc.data():doc;
+return {
+id:doc.id||data.id,
+title:data.title||"",
+category:data.category||"Other",
+brand:data.brand||"",
+condition:data.condition||"Good",
+price:Number(data.price||0),
+city:data.city||"",
+image:data.image||(data.imageUrls&&data.imageUrls[0])||"assets/categories/CAT_BIKEE.png",
+images:data.images||data.imageUrls||[],
+video:data.video||data.videoUrl||"",
+description:data.description||"",
+status:data.status||"approved",
+postedDate:data.postedDate||todayKey(),
+approvedDate:data.approvedDate||"",
+createdAt:data.createdAt||0,
+ownerId:data.ownerId||"",
+localOwner:data.localOwner||"",
+size:data.size||"Ask seller",
+year:data.year||"Not specified",
+usage:data.usage||"Ask seller",
+seller:data.seller||"Cyclify member",
+verified:Boolean(data.verified)
+};
+}
+
+async function submitLiveListing(listing){
+if(!firestoreDb||!currentUser){throw new Error("Please login from Account page before posting.");}
+if(!uploadedPostImages.length){throw new Error("Please upload at least one photo.");}
+formMessage.textContent="Uploading photos...";
+const imageUrls=[];
+for(let index=0;index<uploadedPostImages.length;index++){
+imageUrls.push(await uploadMarketplaceMedia(uploadedPostImages[index],"image",index));
+}
+let videoUrl="";
+if(uploadedPostVideo){
+formMessage.textContent="Uploading video...";
+videoUrl=await uploadMarketplaceMedia(uploadedPostVideo,"video",0);
+}
+formMessage.textContent="Saving ad for approval...";
+await firestoreDb.collection("usedListings").add({
+title:listing.title,
+category:listing.category,
+brand:listing.brand,
+condition:listing.condition,
+price:listing.price,
+city:listing.city,
+description:listing.description,
+status:"pending",
+ownerId:currentUser.uid,
+seller:currentUser.email||"Cyclify member",
+postedDate:todayKey(),
+createdAt:Date.now(),
+approvedDate:"",
+imageUrls,
+videoUrl,
+size:listing.size,
+year:listing.year,
+usage:listing.usage||"Ask seller",
+verified:false
+});
+}
+
+postForm.addEventListener("submit",async event=>{
 event.preventDefault();
+const listing=makeListing("pending");
+formMessage.className="form-message";
+try{
+if(liveMode&&firestoreDb){
+await submitLiveListing(listing);
+}else{
 const pending=read(PENDING_KEY);
-pending.unshift(makeListing("pending"));
+pending.unshift(listing);
 write(PENDING_KEY,pending);
+renderPending();
+}
 postForm.reset();
+uploadedPostImages=[];
+uploadedPostVideo="";
+uploadedPostVideoType="video/webm";
+postImagePreview.innerHTML="";
+postVideoPreview.classList.remove("active");
+postVideoPreview.removeAttribute("src");
 formMessage.className="form-message success";
 formMessage.textContent="Ad submitted. Cyclify will review it before it goes live.";
-renderPending();
+renderListings();
+}catch(error){
+formMessage.className="form-message error";
+formMessage.textContent=error.message||"Ad could not be submitted.";
+}
 });
 
-function approveListing(id){
+async function approveListing(id){
+try{
+if(liveMode&&firestoreDb&&currentUserIsAdmin){
+await firestoreDb.collection("usedListings").doc(String(id)).update({status:"approved",approvedDate:todayKey(),approvedAt:Date.now()});
+return;
+}
 const pending=read(PENDING_KEY);
-const item=pending.find(listing=>listing.id===id);
+const item=pending.find(listing=>String(listing.id)===String(id));
 if(!item){return;}
-write(PENDING_KEY,pending.filter(listing=>listing.id!==id));
+write(PENDING_KEY,pending.filter(listing=>String(listing.id)!==String(id)));
 const approved=read(STORAGE_KEY);
 approved.unshift({...item,status:"approved",approvedDate:todayKey(),localOwner:item.localOwner||"me"});
 write(STORAGE_KEY,approved);
 renderCategoryBrowser();
 renderPending();
 renderListings();
+}catch(error){alert(error.message||"Ad could not be approved.");}
 }
 
-function rejectListing(id){
-write(PENDING_KEY,read(PENDING_KEY).filter(listing=>listing.id!==id));
+async function rejectListing(id){
+try{
+if(liveMode&&firestoreDb&&currentUserIsAdmin){
+await firestoreDb.collection("usedListings").doc(String(id)).delete();
+return;
+}
+write(PENDING_KEY,read(PENDING_KEY).filter(listing=>String(listing.id)!==String(id)));
 renderPending();
+}catch(error){alert(error.message||"Ad could not be rejected.");}
 }
 
 function renderPending(){
-const pending=read(PENDING_KEY);
-adminTools.classList.toggle("active",localStorage.getItem(ADMIN_KEY)==="yes");
-if(localStorage.getItem(ADMIN_KEY)!=="yes"){return;}
+const pending=liveMode?livePendingListings:read(PENDING_KEY);
+const adminActive=liveMode?currentUserIsAdmin:localStorage.getItem(ADMIN_KEY)==="yes";
+adminTools.classList.toggle("active",adminActive);
+if(!adminActive){return;}
 pendingList.innerHTML=pending.length?pending.map(item=>`
 <div class="pending-row">
 <strong>${item.title}</strong>
@@ -491,19 +640,23 @@ pendingList.innerHTML=pending.length?pending.map(item=>`
 </div>
 </div>`).join(""):`<div class="empty-state">No pending ads today</div>`;
 }
-
 function renderListings(){
-let listings=liveMode&&liveApprovedListings.length?liveApprovedListings:read(STORAGE_KEY);
+let listings=(liveMode&&liveApprovedListings.length)?liveApprovedListings:read(STORAGE_KEY);
 const query=usedSearch.value.trim().toLowerCase();
 const category=selectedUsedCategory.listingCategory||"";
 const brand=selectedUsedCategory.brand||"";
 const keyword=(selectedUsedCategory.keyword||"").toLowerCase();
 const condition=conditionFilter.value;
 if(showMyAdsOnly){
+if(liveMode){
+const ownerId=currentUser&&currentUser.uid;
+const approvedByUser=ownerId?liveApprovedListings.filter(item=>item.ownerId===ownerId):[];
+listings=[...liveMyPendingListings.map(item=>({...item,status:"pending"})),...approvedByUser];
+}else{
 const pending=read(PENDING_KEY).map(item=>({...item,status:"pending"}));
 listings=[...pending,...listings].filter(item=>item.localOwner==="me"||item.status==="pending");
 }
-listings=listings.filter(item=>{
+}listings=listings.filter(item=>{
 const text=[item.title,item.brand,item.city,item.description,item.category].join(" ").toLowerCase();
 const brandText=String(item.brand||"").toLowerCase();
 const brandMatch=!brand||(brand==="Other Brands"?brandText&&!["trek","merida","giant","s-works"].includes(brandText):brandText.includes(brand.toLowerCase()));
@@ -550,10 +703,11 @@ createdAt:Date.now(),approvedDate:todayKey(),size:"Portable",year:"2025",usage:"
 write(STORAGE_KEY,[...demo,...existing]);
 }
 function findListing(id,status){
-const source=status==="pending"?read(PENDING_KEY):read(STORAGE_KEY);
-return source.find(item=>Number(item.id)===Number(id));
+const approvedSource=(liveMode&&liveApprovedListings.length)?liveApprovedListings:read(STORAGE_KEY);
+const pendingSource=liveMode?[...livePendingListings,...liveMyPendingListings]:read(PENDING_KEY);
+const source=status==="pending"?pendingSource:approvedSource;
+return source.find(item=>String(item.id)===String(id));
 }
-
 function openListing(id,status="approved"){
 const item=findListing(id,status);
 if(!item){return;}
@@ -578,7 +732,7 @@ listingDetail.innerHTML=`
 <div class="detail-cell"><small>Seller</small><strong>${item.seller||"Cyclify member"}</strong></div>
 </div>
 <p class="detail-description">${item.description}</p>
-${item.video?`<video class="detail-video" src="${item.video}" controls playsinline preload="metadata"></video>`:""}
+${(item.video||item.videoUrl)?`<video class="detail-video" src="${item.video||item.videoUrl}" controls playsinline preload="metadata"></video>`:""}
 <div class="detail-actions"><button class="contact-btn" type="button" onclick="alert('Seller chat and phone connection will be enabled after the marketplace backend is connected.')">Contact Seller</button><button class="contact-btn secondary" type="button" onclick="navigator.share?navigator.share({title:'${item.title}',url:location.href}):navigator.clipboard.writeText(location.href)">Share</button></div>
 <div class="safety-strip"><strong>Meet safely.</strong> Inspect the cycle, verify its serial number and ownership, and avoid advance payment before seeing the product.</div>
 </div></div>`;
@@ -696,11 +850,68 @@ renderListings();
 [usedSearch,conditionFilter,sortFilter].forEach(control=>control.addEventListener("input",renderListings));
 [usedSearch,conditionFilter,sortFilter].forEach(control=>control.addEventListener("change",renderListings));
 
+function refreshAuthNote(){
+const authNote=document.getElementById("authNote");
+if(!authNote){return;}
+if(!liveMode){authNote.textContent="Local preview mode. Ads stay in this browser until Firebase is available.";return;}
+authNote.textContent=currentUser?"Logged in. Your ad will upload securely and wait for Cyclify approval.":"Please login from Account page before posting.";
+}
+
+function detachLiveListeners(){
+[unsubscribeApproved,unsubscribePending,unsubscribeMyPending].forEach(unsubscribe=>{
+if(typeof unsubscribe==="function"){unsubscribe();}
+});
+unsubscribeApproved=null;
+unsubscribePending=null;
+unsubscribeMyPending=null;
+}
+
+function startLiveMarketplace(){
+if(!firestoreDb){renderListings();return;}
+detachLiveListeners();
+unsubscribeApproved=firestoreDb.collection("usedListings").where("status","==","approved").onSnapshot(snapshot=>{
+liveApprovedListings=snapshot.docs.map(normalizeListing);
+renderCategoryBrowser();
+renderListings();
+},error=>{console.warn("Approved listings unavailable",error);renderListings();});
+if(currentUser){
+unsubscribeMyPending=firestoreDb.collection("usedListings").where("ownerId","==",currentUser.uid).onSnapshot(snapshot=>{
+liveMyPendingListings=snapshot.docs.map(normalizeListing).filter(item=>item.status==="pending");
+renderListings();
+},error=>console.warn("Your pending listings unavailable",error));
+}
+if(currentUserIsAdmin){
+unsubscribePending=firestoreDb.collection("usedListings").where("status","==","pending").onSnapshot(snapshot=>{
+livePendingListings=snapshot.docs.map(normalizeListing);
+renderPending();
+},error=>console.warn("Pending listings unavailable",error));
+}
+}
+
 if(location.hash==="#admin"){localStorage.setItem(ADMIN_KEY,"yes");}
 seedDemoListings();
+if(firebaseAuth&&firestoreDb){
+firebaseAuth.onAuthStateChanged(async user=>{
+currentUser=user;
+currentUserIsAdmin=false;
+livePendingListings=[];
+liveMyPendingListings=[];
+if(user){
+try{
+const adminDoc=await firestoreDb.collection("admins").doc(user.uid).get();
+currentUserIsAdmin=adminDoc.exists;
+}catch(error){console.warn("Admin check unavailable",error);}
+}
+refreshAuthNote();
+startLiveMarketplace();
 renderPending();
 renderListings();
-
+});
+}else{
+refreshAuthNote();
+renderPending();
+renderListings();
+}
 (function(){
 const imageButton=document.getElementById("headerImageSearchButton");
 const imageInput=document.getElementById("headerImageSearchInput");
@@ -735,5 +946,8 @@ else{cartCount.style.display="none";}
 </script>
 </body>
 </html>
+
+
+
 
 
