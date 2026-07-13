@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -92,25 +92,25 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 .filters input,.filters select{border:1px solid #dfe4ec;border-radius:999px;padding:11px 13px;font-size:14px;background:#fbfcfe;outline:none}
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
 .section-head h2{font-size:18px}
-.listing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.listing-card{border:1px solid #e7eaf0;border-radius:14px;overflow:hidden;background:#fff;display:grid;grid-template-rows:190px auto;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.listing-card:hover{transform:translateY(-3px);border-color:#cfd7e3;box-shadow:0 14px 30px rgba(15,23,42,.1)}
-.listing-card img{width:100%;height:190px;object-fit:cover;background:#f3f5f8}
-.listing-info{padding:12px;display:grid;gap:7px}
+.listing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.listing-card{border:1px solid #e7eaf0;border-radius:14px;overflow:hidden;background:#fff;display:grid;grid-template-columns:44% 1fr;min-height:180px;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.listing-card:hover{transform:translateY(-3px);border-color:#cfd7e3;box-shadow:0 14px 30px rgba(15,23,42,.1)}
+.listing-card img{width:100%;height:100%;min-height:180px;object-fit:cover;background:#f3f5f8}
+.listing-info{padding:11px;display:grid;gap:6px;align-content:start}
 .listing-title{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.listing-title strong{font-size:15px;line-height:1.25}
+.listing-title strong{font-size:14px;line-height:1.22}
 .tag{background:#e8f7ef;color:#087a3d;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:bold;white-space:nowrap}
 .pending-tag{background:#fff7e6;color:#946200}
 .listing-meta{font-size:12px;color:#6b7280;line-height:1.35}.listing-facts{display:flex;flex-wrap:wrap;gap:6px}.listing-fact{background:#f4f6f8;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:800;color:#374151}.listing-location{display:flex;align-items:center;gap:5px}.listing-open{margin-top:2px;font-size:12px;font-weight:900;color:#0b57d0}.detail-view{display:none;background:#fff;border:1px solid #e8edf3;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(15,23,42,.08)}.detail-view.active{display:block}.detail-back{border:0;background:#f3f5f8;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}.detail-top{padding:14px 16px;border-bottom:1px solid #edf0f4}.detail-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:0}.detail-media{background:#f5f6f8;padding:18px;display:grid;gap:12px;align-content:start}.detail-photo{min-height:390px;display:flex;align-items:center;justify-content:center}.detail-photo img{width:100%;height:100%;max-height:440px;object-fit:contain}.detail-thumbs{display:flex;gap:9px;overflow-x:auto;padding:2px}.detail-thumb{width:68px;height:68px;flex:0 0 68px;border:2px solid transparent;border-radius:10px;padding:2px;background:white;cursor:pointer}.detail-thumb.active{border-color:#111827}.detail-thumb img{width:100%;height:100%;object-fit:cover;border-radius:6px}.detail-copy{padding:26px;display:grid;align-content:start;gap:14px}.detail-copy h1{font-size:28px;line-height:1.12}.detail-price{font-size:30px;font-weight:900;color:#0039a6}.detail-badges{display:flex;flex-wrap:wrap;gap:7px}.detail-badge{border:1px solid #dfe4ec;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}.detail-table{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #edf0f4;border-left:1px solid #edf0f4}.detail-cell{padding:12px;border-right:1px solid #edf0f4;border-bottom:1px solid #edf0f4}.detail-cell small{display:block;color:#6b7280;margin-bottom:4px}.detail-cell strong{font-size:14px}.detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.contact-btn{border:0;border-radius:999px;padding:13px;font-weight:900;cursor:pointer;background:#111827;color:#fff}.contact-btn.secondary{background:#eef2f7;color:#111827}.detail-description{color:#4b5563;line-height:1.55}.safety-strip{background:#fff8e8;color:#7a5200;border-radius:12px;padding:12px;font-size:12px;line-height:1.45}
-.listing-price{font-size:17px;font-weight:bold;color:#0039a6}
+.listing-price{font-size:16px;font-weight:bold;color:#0039a6}
 .empty-state{padding:24px;text-align:center;color:#6b7280;font-weight:bold}
 .admin-tools{display:none;margin-top:14px}
 .admin-tools.active{display:block}
 .pending-list{display:grid;gap:9px}
 .pending-row{border:1px solid #e7eaf0;border-radius:12px;padding:10px;display:grid;gap:7px}
 .pending-actions{display:flex;gap:8px;flex-wrap:wrap}
-@media(max-width:860px){.detail-layout{grid-template-columns:1fr}.detail-photo{min-height:300px}.rules-grid{grid-template-columns:1fr}.hero{min-height:240px;background-position:58% center}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.market-toolbar{align-items:stretch;flex-direction:column}.toolbar-filter{width:100%;min-width:0}.category-browser.active{grid-template-columns:128px 1fr}.category-chip-grid{grid-template-columns:repeat(3,minmax(84px,1fr))}.category-chip .bubble{width:76px;height:76px}}
-@media(max-width:700px){.listing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{min-height:230px;padding:18px;background-position:62% center}.hero::before{background:linear-gradient(90deg,rgba(5,9,18,.95) 0%,rgba(5,9,18,.78) 55%,rgba(5,9,18,.2) 100%)}.hero h1{font-size:26px}.hero p{font-size:13px;max-width:310px}.market-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.market-tab{padding:11px 12px}.category-browser.active{grid-template-columns:104px 1fr;min-height:420px}.category-rail button{font-size:11px;padding:12px 6px}.category-rail img{width:34px;height:32px}.category-detail{padding:14px 12px}.category-detail-head h2{font-size:21px}.category-chip-grid{grid-template-columns:repeat(2,minmax(82px,1fr));gap:12px}.category-chip .bubble{width:72px;height:72px}.filters{grid-template-columns:1fr}.listing-grid{grid-template-columns:1fr}.listing-card{grid-template-rows:150px auto}.listing-card img{height:150px}}
+@media(max-width:860px){.detail-layout{grid-template-columns:1fr}.detail-photo{min-height:300px}.rules-grid{grid-template-columns:1fr}.hero{min-height:240px;background-position:58% center}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.listing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.market-toolbar{align-items:stretch;flex-direction:column}.toolbar-filter{width:100%;min-width:0}.category-browser.active{grid-template-columns:128px 1fr}.category-chip-grid{grid-template-columns:repeat(3,minmax(84px,1fr))}.category-chip .bubble{width:76px;height:76px}}
+@media(max-width:700px){.listing-grid{grid-template-columns:1fr;gap:8px}.listing-card{grid-template-columns:96px 1fr;min-height:118px}.listing-card img{min-height:118px}.listing-info{padding:8px;gap:4px}.listing-title strong{font-size:12px}.listing-price{font-size:14px}.listing-meta{font-size:10px}.listing-facts{gap:4px}.listing-fact{font-size:9px;padding:3px 6px}.tag{font-size:9px;padding:3px 6px}.listing-open{font-size:10px}}
+@media(max-width:520px){.topbar{gap:7px;padding:8px 9px;min-height:58px}.home-logo{width:78px;height:36px}.site-search{height:40px}.site-search input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.top-icons{gap:5px}.shell{padding:10px}.hero{min-height:230px;padding:18px;background-position:62% center}.hero::before{background:linear-gradient(90deg,rgba(5,9,18,.95) 0%,rgba(5,9,18,.78) 55%,rgba(5,9,18,.2) 100%)}.hero h1{font-size:26px}.hero p{font-size:13px;max-width:310px}.market-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.market-tab{padding:11px 12px}.category-browser.active{grid-template-columns:104px 1fr;min-height:420px}.category-rail button{font-size:11px;padding:12px 6px}.category-rail img{width:34px;height:32px}.category-detail{padding:14px 12px}.category-detail-head h2{font-size:21px}.category-chip-grid{grid-template-columns:repeat(2,minmax(82px,1fr));gap:12px}.category-chip .bubble{width:72px;height:72px}.filters{grid-template-columns:1fr}.listing-grid{grid-template-columns:1fr}.listing-card{grid-template-columns:92px 1fr;min-height:112px}.listing-card img{height:100%;min-height:112px}}
 </style>
 </head>
 <body>
@@ -146,12 +146,12 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 </div>
 </section>
 
-<div class="notice">This first version stores ads in this browser while we shape the marketplace. Next step can connect submissions to Firebase so you can approve them from an admin view.</div>
+<div class="notice">Live Firebase approval is enabled. If your connection is offline, Cyclify keeps demo ads visible for browsing.</div>
 
 <section class="market-grid" id="marketGrid">
 <aside class="panel sell-panel" id="sellPanel">
 <h2>Post Used Product</h2>
-<p class="auth-note" id="authNote">Login from Account page before posting. For now, this draft works locally and is Firebase-ready.</p>
+<p class="auth-note" id="authNote">Use your Cyclify login to post. Photos and videos upload securely, then your ad waits for approval.</p>
 <form class="form-grid" id="postForm">
 <label>Product Title<input id="postTitle" required placeholder="Example: Used ELVES road frame"></label>
 <label>Category<select id="postCategory" required><option value="Bike">Bike</option><option value="Frame">Frame</option><option value="Wheel">Wheel</option><option value="Component">Component</option><option value="Electronics">Electronics</option><option value="Other">Other</option></select></label>
@@ -159,7 +159,7 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 <label>Condition<select id="postCondition"><option>Excellent</option><option>Good</option><option>Fair</option><option>Needs Service</option></select></label>
 <label>Price<input id="postPrice" type="number" min="1" required placeholder="Price in Rs "></label>
 <label>City<input id="postCity" required placeholder="City"></label>
-<label class="upload-zone">Upload Photos<input id="postImageUpload" type="file" accept="image/*" multiple required><span class="upload-hint">Choose up to 5 clear photos. The first photo becomes the cover.</span></label>
+<label class="upload-zone">Upload Photos<input id="postImageUpload" type="file" accept="image/*" multiple required><span class="upload-hint">Choose up to 4 clear photos. The first photo becomes the cover.</span></label>
 <div class="upload-preview" id="postImagePreview" aria-live="polite"></div>
 <label class="upload-zone">Upload Short Video (Optional)<input id="postVideoUpload" type="file" accept="video/*"><span class="upload-hint">Maximum 30 seconds. High-quality video will be compressed automatically.</span></label>
 <video class="video-preview" id="postVideoPreview" controls muted playsinline></video>
@@ -199,6 +199,9 @@ body{background:#f5f6f8;color:#111827;padding-bottom:40px}
 </section>
 </main>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <script>
 const STORAGE_KEY="cyclifyUsedListings";
 const PENDING_KEY="cyclifyPendingUsedListings";
@@ -299,6 +302,7 @@ let uploadedPostImages=[];
 const postVideoUpload=document.getElementById("postVideoUpload");
 const postVideoPreview=document.getElementById("postVideoPreview");
 let uploadedPostVideo="";
+let uploadedPostVideoType="video/webm";
 
 function compressPostImage(file){
 return new Promise((resolve,reject)=>{
@@ -363,6 +367,7 @@ if(typeof video.captureStream==="function"){
 const sourceStream=video.captureStream();
 sourceStream.getAudioTracks().forEach(track=>stream.addTrack(track));
 }
+const mime=MediaRecorder.isTypeSupported("video/webm;codecs=vp8")?"video/webm;codecs=vp8":"video/webm";
 const recorder=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:500000});
 const chunks=[];
 recorder.ondataavailable=event=>{if(event.data.size){chunks.push(event.data);}};
@@ -391,6 +396,7 @@ formMessage.className="form-message";
 formMessage.textContent="Checking and compressing video...";
 try{
 uploadedPostVideo=await compressPostVideo(file);
+uploadedPostVideoType=uploadedPostVideo.startsWith("data:video/mp4")?"video/mp4":"video/webm";
 postVideoPreview.src=uploadedPostVideo;
 postVideoPreview.classList.add("active");
 formMessage.textContent="Video ready to upload.";
@@ -401,7 +407,7 @@ formMessage.textContent=error.message||"Video could not be prepared.";
 }
 });
 postImageUpload.addEventListener("change",async()=>{
-const files=Array.from(postImageUpload.files||[]).slice(0,5);
+const files=Array.from(postImageUpload.files||[]).slice(0,4);
 formMessage.className="form-message";
 formMessage.textContent=files.length?"Preparing photos...":"";
 try{
@@ -434,6 +440,7 @@ video:uploadedPostVideo,
 description:document.getElementById("postDescription").value.trim(),
 status,
 postedDate:todayKey(),
+createdAt:Date.now(),
 approvedDate:"",
 localOwner:"me",
 size:document.getElementById("postCategory").value==="Bike"?"Ask seller":"Not specified",
@@ -479,14 +486,14 @@ pendingList.innerHTML=pending.length?pending.map(item=>`
 <strong>${item.title}</strong>
 <span>${item.category} | ${formatPrice(item.price)} | ${item.city}</span>
 <div class="pending-actions">
-<button class="secondary-btn" onclick="approveListing(${item.id})">Approve</button>
-<button class="secondary-btn" onclick="rejectListing(${item.id})">Reject</button>
+<button class="secondary-btn" onclick="approveListing('${item.id}')">Approve</button>
+<button class="secondary-btn" onclick="rejectListing('${item.id}')">Reject</button>
 </div>
 </div>`).join(""):`<div class="empty-state">No pending ads today</div>`;
 }
 
 function renderListings(){
-let listings=sellMode?read(STORAGE_KEY):read(STORAGE_KEY);
+let listings=liveMode&&liveApprovedListings.length?liveApprovedListings:read(STORAGE_KEY);
 const query=usedSearch.value.trim().toLowerCase();
 const category=selectedUsedCategory.listingCategory||"";
 const brand=selectedUsedCategory.brand||"";
@@ -509,7 +516,7 @@ if(sortFilter.value==="new"){listings.sort((a,b)=>String(b.approvedDate||b.poste
 listingGrid.innerHTML=listings.length?listings.map(item=>{
 const isToday=(item.approvedDate||item.postedDate)===todayKey();
 return `
-<article class="listing-card" role="button" tabindex="0" onclick="openListing(${item.id},'${item.status||"approved"}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openListing(${item.id},'${item.status||"approved"}')}" aria-label="Open ${item.title}">
+<article class="listing-card" role="button" tabindex="0" onclick="openListing('${item.id}','${item.status||'approved'}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openListing('${item.id}','${item.status||'approved'}')}" aria-label="Open ${item.title}">
 <img src="${item.image}" alt="${item.title}" onerror="this.src='assets/categories/CAT_BIKEE.png'">
 <div class="listing-info">
 <div class="listing-title"><strong>${item.title}</strong>${item.status==="pending"?'<span class="tag pending-tag">Pending</span>':(isToday?'<span class="tag">Today Posted</span>':'')}</div>
@@ -527,12 +534,18 @@ function seedDemoListings(){
 const demoIds=[101,102,103,201,202,203,204,205,206];
 const existing=read(STORAGE_KEY).filter(item=>!demoIds.includes(Number(item.id)));
 const demo=[
-{id:201,title:"Trek Emonda SL 5 Carbon Road Bike",category:"Bike",brand:"Trek",condition:"Excellent",price:145000,city:"Bengaluru",image:"assets/products/sava-hawkeye.jpg",description:"Single-owner carbon road bike, regularly serviced and ready to ride. Shimano 105 drivetrain with hydraulic disc brakes.",status:"approved",postedDate:todayKey(),approvedDate:todayKey(),size:"54 cm",year:"2023",usage:"3,200 km",seller:"Arjun K.",verified:false},
-{id:202,title:"ELVES Falath EXP Carbon Frameset",category:"Frame",brand:"ELVES",condition:"Excellent",price:72000,city:"Chennai",image:"assets/products/elves-falath-exp-11.png",description:"Clean aero carbon frameset with fork, seatpost and headset. No crash history.",status:"approved",postedDate:todayKey(),approvedDate:todayKey(),size:"52 cm",year:"2024",usage:"8 months",seller:"Karthik R.",verified:false},
-{id:203,title:"Orome Valar TH50D Carbon Wheelset",category:"Wheel",brand:"Orome",condition:"Good",price:48000,city:"Mumbai",image:"assets/products/orome-valar-th50d-2.png",description:"50 mm carbon disc wheelset. Bearings run smoothly and rims are true.",status:"approved",postedDate:todayKey(),approvedDate:todayKey(),size:"700C",year:"2023",usage:"4,500 km",seller:"Neil P.",verified:false},
-{id:204,title:"ThinkRider XX Pro Smart Trainer",category:"Electronics",brand:"ThinkRider",condition:"Excellent",price:38500,city:"Hyderabad",image:"assets/products/thinkrider-xx-pro-1.png",description:"Foldable direct-drive smart trainer with power cable and adapters. Quiet and fully functional.",status:"approved",postedDate:todayKey(),approvedDate:todayKey(),size:"Standard",year:"2024",usage:"6 months",seller:"Rahul M.",verified:false},
-{id:205,title:"Cyclami 1800 Lumen Front Light",category:"Electronics",brand:"Cyclami",condition:"Good",price:2100,city:"Pune",image:"assets/products/cyclami-ai1800-light-1.webp",description:"Rechargeable front light with strong battery backup. Includes handlebar mount and charging cable.",status:"approved",postedDate:todayKey(),approvedDate:todayKey(),size:"Universal",year:"2024",usage:"10 months",seller:"Sameer D.",verified:false},
-{id:206,title:"Cyclami A3 Mini Electric Pump",category:"Electronics",brand:"Cyclami",condition:"Excellent",price:6200,city:"Kochi",image:"assets/products/cyclami-web-pump-a3-1.webp",description:"Compact 150 PSI electric pump with display and charging cable. Used only a few times.",status:"approved",postedDate:todayKey(),approvedDate:todayKey(),size:"Portable",year:"2025",usage:"3 months",seller:"Vishnu S.",verified:false}
+{id:201,title:"Trek Emonda SL 5 Carbon Road Bike",category:"Bike",brand:"Trek",condition:"Excellent",price:145000,city:"Bengaluru",image:"assets/products/sava-hawkeye.jpg",description:"Single-owner carbon road bike, regularly serviced and ready to ride. Shimano 105 drivetrain with hydraulic disc brakes.",status:"approved",postedDate:todayKey(),
+createdAt:Date.now(),approvedDate:todayKey(),size:"54 cm",year:"2023",usage:"3,200 km",seller:"Arjun K.",verified:false},
+{id:202,title:"ELVES Falath EXP Carbon Frameset",category:"Frame",brand:"ELVES",condition:"Excellent",price:72000,city:"Chennai",image:"assets/products/elves-falath-exp-11.png",description:"Clean aero carbon frameset with fork, seatpost and headset. No crash history.",status:"approved",postedDate:todayKey(),
+createdAt:Date.now(),approvedDate:todayKey(),size:"52 cm",year:"2024",usage:"8 months",seller:"Karthik R.",verified:false},
+{id:203,title:"Orome Valar TH50D Carbon Wheelset",category:"Wheel",brand:"Orome",condition:"Good",price:48000,city:"Mumbai",image:"assets/products/orome-valar-th50d-2.png",description:"50 mm carbon disc wheelset. Bearings run smoothly and rims are true.",status:"approved",postedDate:todayKey(),
+createdAt:Date.now(),approvedDate:todayKey(),size:"700C",year:"2023",usage:"4,500 km",seller:"Neil P.",verified:false},
+{id:204,title:"ThinkRider XX Pro Smart Trainer",category:"Electronics",brand:"ThinkRider",condition:"Excellent",price:38500,city:"Hyderabad",image:"assets/products/thinkrider-xx-pro-1.png",description:"Foldable direct-drive smart trainer with power cable and adapters. Quiet and fully functional.",status:"approved",postedDate:todayKey(),
+createdAt:Date.now(),approvedDate:todayKey(),size:"Standard",year:"2024",usage:"6 months",seller:"Rahul M.",verified:false},
+{id:205,title:"Cyclami 1800 Lumen Front Light",category:"Electronics",brand:"Cyclami",condition:"Good",price:2100,city:"Pune",image:"assets/products/cyclami-ai1800-light-1.webp",description:"Rechargeable front light with strong battery backup. Includes handlebar mount and charging cable.",status:"approved",postedDate:todayKey(),
+createdAt:Date.now(),approvedDate:todayKey(),size:"Universal",year:"2024",usage:"10 months",seller:"Sameer D.",verified:false},
+{id:206,title:"Cyclami A3 Mini Electric Pump",category:"Electronics",brand:"Cyclami",condition:"Excellent",price:6200,city:"Kochi",image:"assets/products/cyclami-web-pump-a3-1.webp",description:"Compact 150 PSI electric pump with display and charging cable. Used only a few times.",status:"approved",postedDate:todayKey(),
+createdAt:Date.now(),approvedDate:todayKey(),size:"Portable",year:"2025",usage:"3 months",seller:"Vishnu S.",verified:false}
 ];
 write(STORAGE_KEY,[...demo,...existing]);
 }
@@ -722,3 +735,5 @@ else{cartCount.style.display="none";}
 </script>
 </body>
 </html>
+
+
