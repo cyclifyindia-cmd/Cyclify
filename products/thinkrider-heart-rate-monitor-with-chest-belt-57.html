@@ -842,7 +842,7 @@ id="sizeOptions">
 <div class="size-section"
 id="valveSection">
 
-<div class="size-label">
+<div class="size-label" id="secondaryOptionLabel">
 Select Valve Length
 </div>
 
@@ -2206,7 +2206,47 @@ specs:[
 ]
 }
 
-];
+,
+{
+id:60,
+name:"RIRO ACF Carbon Crankset 399g",
+price:14299,
+mrp:"Rs 14,999",
+image:"assets/products/riro-acf-carbon-crankset-1.webp",
+images:[
+"assets/products/riro-acf-carbon-crankset-1.webp",
+"assets/products/riro-acf-carbon-crankset-2.webp",
+"assets/products/riro-acf-carbon-crankset-3.webp",
+"assets/products/riro-acf-carbon-crankset-4.webp",
+"assets/products/riro-acf-carbon-crankset-5.webp",
+"assets/products/riro-acf-carbon-crankset-6.webp"
+],
+sizes:["170mm","172.5mm"],
+secondaryLabel:"Select Configuration",
+secondaryOptions:[
+"Crank only",
+"Crank + 110BCD 4-Arm Spider",
+"Crank + 110BCD 5-Arm Spider",
+"Crank + 56T Single Chainring",
+"Crankset 54/40T RXS Chainring",
+"Crank + 58T Single Chainring"
+],
+specs:[
+"Brand : RIRO",
+"Model : ACF Carbon Crankset",
+"Crank weight : 399 g (170 mm)",
+"Crankset weight : 584 +/- 10 g (170 mm with 50/34T)",
+"Crank lengths : 170 mm and 172.5 mm",
+"Q-factor : 127.5 mm",
+"Spindle : 29 mm DUB",
+"Interface : Shimano-style spider to crank interface",
+"Material : Carbon-fibre crank arms",
+"Chainring material : 7075-T6 CNC aluminium alloy",
+"Bottom bracket compatibility : BB30, BB86, BB89, BB92, PF30, and T47",
+"Drivetrain compatibility : 1x11, 2x11, 1x12, and 2x12-speed",
+"Shipping : Free shipping included"
+]
+}];
 
 const params=new URLSearchParams(window.location.search);
 const productId=Number(window.CYCLIFY_PRODUCT_ID||params.get("id"))||1;
@@ -2214,7 +2254,8 @@ const product=products.find(item=>item.id===productId)||products[0];
 let productImages=product.images||[product.image];
 let currentImageIndex=0;
 let selectedSize=product.sizes&&product.sizes.length?product.sizes[0]:"";
-let selectedValveLength=product.valveLengths&&product.valveLengths.length?product.valveLengths[0]:"";
+const secondaryOptions=product.secondaryOptions||product.valveLengths||[];
+let selectedValveLength=secondaryOptions.length?secondaryOptions[0]:"";
 let productAvailableForCart=true;
 function absoluteSiteUrl(value){
 if(!value){return "https://cyclify.in/assets/Logo-dark-preview.png";}
@@ -2291,7 +2332,7 @@ const hasMultipleImages=productImages.length>1;
 if(backLink){
 const wheelProductIds=[7,30,31,37];
 const wearableProductIds=[48,49,50,51,52,53];
-const componentProductIds=[56,58,59];
+const componentProductIds=[56,58,59,60];
 backLink.href=wheelProductIds.includes(product.id)?"wheels-tyres.html":wearableProductIds.includes(product.id)?"wearables.html":componentProductIds.includes(product.id)?"components.html":product.id>=5?"electronics.html":"bikes-frames.html";
 }
 productGallery.classList.toggle("single-image",!hasMultipleImages);
@@ -2409,6 +2450,7 @@ const sizeSection=document.getElementById("sizeSection");
 const sizeOptions=document.getElementById("sizeOptions");
 const valveSection=document.getElementById("valveSection");
 const valveOptions=document.getElementById("valveOptions");
+const secondaryOptionLabel=document.getElementById("secondaryOptionLabel");
 
 if(product.sizes&&product.sizes.length){
 
@@ -2432,16 +2474,17 @@ sizeSection.style.display="none";
 
 }
 
-if(product.valveLengths&&product.valveLengths.length){
+if(secondaryOptions.length){
 
 valveSection.style.display="block";
+secondaryOptionLabel.textContent=product.secondaryLabel||(product.secondaryOptions?"Select Option":"Select Valve Length");
 
-product.valveLengths.forEach(length=>{
+secondaryOptions.forEach(option=>{
 valveOptions.innerHTML+=`
 <button
 class="size-btn valve-btn"
-onclick="selectValveLength('${length}')">
-${length}
+onclick="selectValveLength('${option}')">
+${option}
 </button>
 `;
 });
@@ -2598,6 +2641,7 @@ price:product.price,
 image:product.image,
 size:selectedSize,
 valveLength:selectedValveLength,
+optionLabel:product.secondaryLabel||(product.valveLengths&&product.valveLengths.length?"Valve Length":""),
 quantity:1
 });
 }
