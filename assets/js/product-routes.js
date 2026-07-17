@@ -50,7 +50,8 @@
   "50": "products/met-trenta-mips-road-cycling-helmet-black-red-metallic-matt-glossy-50.html",
   "51": "products/met-trenta-3k-carbon-mips-road-cycling-helmet-gray-iridescent-51.html",
   "52": "products/cairbull-terrain-mtb-helmet-52.html",
-  "53": "products/cairbull-slk20-cycling-helmet-53.html"
+  "53": "products/cairbull-slk20-cycling-helmet-53.html",
+  "54": "products/thinkrider-tpu-28g-ultralight-bicycle-tube-54.html"
 };
   window.CYCLIFY_PRODUCT_ROUTES=routes;
   window.cyclifyProductUrl=function(id){return routes[id]||("product.html?id="+encodeURIComponent(id));};
