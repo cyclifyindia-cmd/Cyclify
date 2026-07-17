@@ -18,6 +18,7 @@
 <meta name="twitter:title" content="Cyclify India | Premium Cycles, Cycling Parts and Accessories">
 <meta name="twitter:description" content="Shop premium cycles, bike frames, cycling electronics, wheels, tyres, wearables and used cycling products from Cyclify India.">
 <meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
+<script src="assets/js/product-routes.js"></script>
 <style>
 
 *{
@@ -1165,7 +1166,7 @@ return;
 }
 
 searchResults.innerHTML=matches.map(product=>`
-<a class="search-result" href="product.html?id=${product.id}">
+<a class="search-result" href="${cyclifyProductUrl(product.id)}">
 <img src="${product.image}" alt="${product.name}">
 <div>
 <strong>${product.name}</strong>
@@ -1454,7 +1455,7 @@ searchResults.innerHTML=`
 </div>
 </div>
 ${matches.map(product=>`
-<a class="search-result" href="product.html?id=${product.id}">
+<a class="search-result" href="${cyclifyProductUrl(product.id)}">
 <img src="${product.image}" alt="${product.name}">
 <div>
 <strong>${product.name}</strong>
@@ -1478,7 +1479,7 @@ return;
 const firstMatch=getSearchMatches()[0];
 
 if(firstMatch){
-window.location.href=`product.html?id=${firstMatch.id}`;
+window.location.href=cyclifyProductUrl(firstMatch.id);
 }
 });
 

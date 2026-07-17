@@ -18,6 +18,7 @@
 <meta name="twitter:title" content="Cycling Electronics | Smart Trainers, Lights and Bike Computers | Cyclify">
 <meta name="twitter:description" content="Shop cycling electronics including smart trainers, bike computers, lights, sensors, electric pumps and power meters.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/thinkrider-x2-max-1.jpg">
+<script src="assets/js/product-routes.js"></script>
 <style>
 *{
 margin:0;
@@ -588,6 +589,41 @@ gap:5px!important;
 
 @media(max-width:520px){.page-title{align-items:flex-start;flex-direction:column}.catalog-tools{width:100%;margin-left:0}.catalog-tools select{flex:1;min-width:0}}
 </style>
+<script type="application/ld+json" id="cyclify-page-schema">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://cyclify.in/electronics.html#collection",
+      "url": "https://cyclify.in/electronics.html",
+      "name": "Cycling Electronics",
+      "description": "Smart trainers, bike computers, cycling lights, sensors, pumps and power meters.",
+      "image": "https://cyclify.in/assets/products/thinkrider-x2-max-1.jpg",
+      "isPartOf": {
+        "@id": "https://cyclify.in/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cyclify.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cycling Electronics",
+          "item": "https://cyclify.in/electronics.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1132,7 +1168,7 @@ renderCategories();
 renderProducts();
 
 function openProduct(id){
-window.location=`product.html?id=${id}`;
+window.location=cyclifyProductUrl(id);
 }
 
 function handleCardKey(event,id){
@@ -1149,7 +1185,7 @@ let cart=JSON.parse(localStorage.getItem("cart"))||[];
 let product=products.find(p=>p.id===id);
 
 if(product.sizes&&product.sizes.length){
-window.location=`product.html?id=${id}`;
+window.location=cyclifyProductUrl(id);
 return;
 }
 

@@ -18,6 +18,7 @@
 <meta name="twitter:title" content="Cycling Wearables | Helmets, Shoes, Eyewear and Gloves | Cyclify">
 <meta name="twitter:description" content="Shop cycling helmets, shoes, jerseys, shorts, smart watches, eyewear and gloves from Cyclify.">
 <meta name="twitter:image" content="https://cyclify.in/assets/categories/CAT_Wearables.png">
+<script src="assets/js/product-routes.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#f5f5f5;padding-bottom:80px;color:#111827;animation:pageFade .45s ease both}
@@ -68,6 +69,41 @@ html{scroll-behavior:smooth}
 @media(max-width:560px){.topbar{min-height:58px;padding:8px 9px;gap:7px}.home-logo{width:78px;height:36px}.search-box{height:40px}.search-box input{height:38px;font-size:13px;padding-left:12px}.image-search-btn,.header-icon{width:38px;height:38px}.image-search-btn svg,.header-icon svg{width:19px;height:19px}.top-icons{gap:5px}.category-pill{min-width:92px}.category-icon{width:64px;height:54px}}
 @media(max-width:520px){.page-title{align-items:flex-start;flex-direction:column}.catalog-tools{width:100%;margin-left:0}.catalog-tools select{flex:1;min-width:0}}
 </style>
+<script type="application/ld+json" id="cyclify-page-schema">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://cyclify.in/wearables.html#collection",
+      "url": "https://cyclify.in/wearables.html",
+      "name": "Cycling Wearables",
+      "description": "Cycling helmets, shoes, jerseys, shorts, eyewear, smart watches and gloves.",
+      "image": "https://cyclify.in/assets/categories/CAT_Wearables.png",
+      "isPartOf": {
+        "@id": "https://cyclify.in/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cyclify.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cycling Wearables",
+          "item": "https://cyclify.in/wearables.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="topbar">
@@ -418,7 +454,7 @@ product.available=product.available!==false;
 }
 
 function openProduct(id){
-window.location=`product.html?id=${id}`;
+window.location=cyclifyProductUrl(id);
 }
 
 function handleCardKey(event,id){

@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "generate:seo": "node scripts/generate-seo-pages.js"
+  }
+}
