@@ -2080,6 +2080,131 @@ specs:["Brand : iGPSPORT","Model : BiNavi","Type : GPS bike computer and navigat
     "Ultra-Lightweight Design Made with high-density EPS foam and a durable PC shell, the Cairbull SLK20 offers excellent ...",
     "Superior Ventilation (22 Air Vents) Stay cool even during intense rides"
   ]
+},
+{
+id:55,
+name:"ThinkRider Bike Trainer Front Wheel Block",
+price:999,
+mrp:"Rs 999",
+image:"assets/products/thinkrider-front-wheel-block-1.png",
+images:[
+"assets/products/thinkrider-front-wheel-block-1.png"
+],
+sizes:[],
+specs:[
+"Brand : ThinkRider",
+"Type : Front wheel support block for indoor bike trainers",
+"Compatible wheels : 700C, 26 inch, 27.5 inch, and 29 inch",
+"Purpose : Stabilises the front wheel and levels the bicycle",
+"Colour : Black",
+"Use : Indoor cycling and smart trainer setups",
+"Shipping : Free shipping included"
+]
+},
+{
+id:56,
+name:"ThinkRider 12-Speed 11-34T Cassette",
+price:2999,
+mrp:"Rs 3,500",
+image:"assets/products/thinkrider-12-speed-11-34-cassette-1.jpg",
+images:[
+"assets/products/thinkrider-12-speed-11-34-cassette-1.jpg"
+],
+sizes:[],
+specs:[
+"Brand : ThinkRider",
+"Type : Road bicycle cassette",
+"Speeds : 12-speed",
+"Gear range : 11-34T",
+"SKU : TR-CASS-12S-11/34",
+"Category : Drivetrain / Cassette",
+"Shipping : Free shipping included"
+]
+},
+{
+id:57,
+name:"ThinkRider Heart Rate Monitor with Chest Belt",
+price:2800,
+mrp:"Rs 2,800",
+image:"assets/products/thinkrider-heart-rate-monitor-1.jpg",
+images:[
+"assets/products/thinkrider-heart-rate-monitor-1.jpg",
+"assets/products/thinkrider-heart-rate-monitor-2.jpg",
+"assets/products/thinkrider-heart-rate-monitor-3.jpg"
+],
+sizes:[],
+specs:[
+"Brand : ThinkRider",
+"Model : ASG4092 (84222)",
+"Type : Adjustable chest-belt heart rate monitor",
+"Connectivity : ANT+ and Bluetooth",
+"Compatibility : Smartphones, cycling computers, and smartwatches",
+"Apps : Compatible with Wahoo, Strava, Endomondo, and IpBike",
+"Fit : Adjustable and comfortable chest strap",
+"Use : Accurate heart-rate tracking during indoor and outdoor training",
+"EAN : 6974724850309",
+"Shipping : Free shipping included"
+]
+},
+{
+id:58,
+name:"ThinkRider NL-15 Pro Bicycle Torque Wrench Set",
+price:4200,
+mrp:"Rs 4,500",
+image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp",
+images:[
+"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp",
+"assets/products/thinkrider-nl15-pro-torque-wrench-2.webp",
+"assets/products/thinkrider-nl15-pro-torque-wrench-3.webp",
+"assets/products/thinkrider-nl15-pro-torque-wrench-4.webp"
+],
+sizes:[],
+specs:[
+"Brand : ThinkRider",
+"Model : NL-15 Pro",
+"Type : Adjustable bicycle torque wrench and socket kit",
+"Torque range : 2-20 Nm",
+"Drive head : 1/4 inch",
+"Ratchet : 72-tooth, two-way adjustable",
+"Material : Alloy steel",
+"Scale : Electroplated laser-marked scale",
+"Handle : Knurled non-slip grip",
+"Tool size : 252 x 24 mm",
+"Weight : Approximately 328 g without accessories",
+"Use : Accurate bicycle assembly, maintenance, and component replacement",
+"Shipping : Free shipping included"
+]
+},
+{
+id:59,
+name:"RIRO GOLDIX RXS 110BCD Double Chainrings",
+price:4699,
+mrp:"Rs 6,500",
+image:"assets/products/riro-rxs-double-chainrings-1.webp",
+images:[
+"assets/products/riro-rxs-double-chainrings-1.webp",
+"assets/products/riro-rxs-double-chainrings-2.webp",
+"assets/products/riro-rxs-double-chainrings-3.webp",
+"assets/products/riro-rxs-double-chainrings-4.webp",
+"assets/products/riro-rxs-double-chainrings-5.webp",
+"assets/products/riro-rxs-double-chainrings-6.webp",
+"assets/products/riro-rxs-double-chainrings-7.webp",
+"assets/products/riro-rxs-double-chainrings-8.webp",
+"assets/products/riro-rxs-double-chainrings-9.webp"
+],
+sizes:["48-34T","50-34T","52-36T","53-39T","54-40T"],
+specs:[
+"Brand : RIRO GOLDIX",
+"Model : FC-RXS",
+"Type : Semi-closed split double chainrings",
+"Material : 7075-T6 aluminium alloy",
+"Manufacturing : Full CNC machined with anodised surface",
+"BCD : 110 x 4 bolt Shimano road pattern",
+"Drivetrain : Compatible with 11-speed and 12-speed systems",
+"Compatibility : Shimano 105, Ultegra, Dura-Ace, and 110BCD road cranks",
+"Size options : 48-34T, 50-34T, 52-36T, 53-39T, and 54-40T",
+"Shipping : Free shipping included"
+]
 }
 
 ];
@@ -2167,7 +2292,8 @@ const hasMultipleImages=productImages.length>1;
 if(backLink){
 const wheelProductIds=[7,30,31,37];
 const wearableProductIds=[48,49,50,51,52,53];
-backLink.href=wheelProductIds.includes(product.id)?"wheels-tyres.html":wearableProductIds.includes(product.id)?"wearables.html":product.id>=5?"electronics.html":"bikes-frames.html";
+const componentProductIds=[56,58,59];
+backLink.href=wheelProductIds.includes(product.id)?"wheels-tyres.html":wearableProductIds.includes(product.id)?"wearables.html":componentProductIds.includes(product.id)?"components.html":product.id>=5?"electronics.html":"bikes-frames.html";
 }
 productGallery.classList.toggle("single-image",!hasMultipleImages);
 

@@ -51,7 +51,12 @@
   "51": "products/met-trenta-3k-carbon-mips-road-cycling-helmet-gray-iridescent-51.html",
   "52": "products/cairbull-terrain-mtb-helmet-52.html",
   "53": "products/cairbull-slk20-cycling-helmet-53.html",
-  "54": "products/thinkrider-tpu-28g-ultralight-bicycle-tube-54.html"
+  "54": "products/thinkrider-tpu-28g-ultralight-bicycle-tube-54.html",
+  "55": "products/thinkrider-bike-trainer-front-wheel-block-55.html",
+  "56": "products/thinkrider-12-speed-11-34t-cassette-56.html",
+  "57": "products/thinkrider-heart-rate-monitor-with-chest-belt-57.html",
+  "58": "products/thinkrider-nl-15-pro-bicycle-torque-wrench-set-58.html",
+  "59": "products/riro-goldix-rxs-110bcd-double-chainrings-59.html"
 };
   window.CYCLIFY_PRODUCT_ROUTES=routes;
   window.cyclifyProductUrl=function(id){return routes[id]||("product.html?id="+encodeURIComponent(id));};
