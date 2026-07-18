@@ -5,18 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cyclify India | Premium Cycles, Cycling Parts and Accessories</title>
 
-<meta name="description" content="Shop premium cycles, bike frames, cycling electronics, wheels, tyres, wearables and used cycling products from Cyclify India.">
+<meta name="description" content="Cyclify India is an online premium cycling store for road bikes, carbon frames, smart trainers, cycling electronics, wheels, components and riding gear, with free shipping across India.">
+<meta name="application-name" content="Cyclify India">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/">
-<meta property="og:site_name" content="Cyclify">
+<meta property="og:site_name" content="Cyclify India">
 <meta property="og:title" content="Cyclify India | Premium Cycles, Cycling Parts and Accessories">
-<meta property="og:description" content="Shop premium cycles, bike frames, cycling electronics, wheels, tyres, wearables and used cycling products from Cyclify India.">
+<meta property="og:description" content="Cyclify India is an online premium cycling store for road bikes, carbon frames, smart trainers, cycling electronics, wheels, components and riding gear.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cyclify.in/">
 <meta property="og:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cyclify India | Premium Cycles, Cycling Parts and Accessories">
-<meta name="twitter:description" content="Shop premium cycles, bike frames, cycling electronics, wheels, tyres, wearables and used cycling products from Cyclify India.">
+<meta name="twitter:description" content="Cyclify India is an online premium cycling store for road bikes, carbon frames, smart trainers, cycling electronics, wheels, components and riding gear.">
 <meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
 <script src="assets/js/product-routes.js"></script>
 <style>
@@ -30,6 +31,18 @@ font-family:Arial,sans-serif;
 
 body{
 background:#f5f5f5;
+}
+
+.sr-only{
+position:absolute;
+width:1px;
+height:1px;
+padding:0;
+margin:-1px;
+overflow:hidden;
+clip:rect(0,0,0,0);
+white-space:nowrap;
+border:0;
 }
 
 .header{
@@ -962,15 +975,30 @@ gap:5px!important;
     {
       "@type": "Organization",
       "@id": "https://cyclify.in/#organization",
-      "name": "Cyclify",
+      "name": "Cyclify India",
+      "alternateName": ["Cyclify", "Cyclify.in"],
+      "legalName": "CYCLIFY INDIA",
       "url": "https://cyclify.in/",
-      "logo": "https://cyclify.in/assets/Logo-dark.png"
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cyclify.in/assets/Logo-dark.png"
+      },
+      "description": "Online premium cycling store for road bikes, carbon frames, smart trainers, cycling electronics, wheels, components and riding gear in India.",
+      "taxID": "33JOJPD5578G1ZN",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1/193, Thenral Nagar",
+        "addressLocality": "Udankudi",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      }
     },
     {
       "@type": "WebSite",
       "@id": "https://cyclify.in/#website",
       "url": "https://cyclify.in/",
-      "name": "Cyclify",
+      "name": "Cyclify India",
+      "alternateName": "Cyclify",
       "publisher": {
         "@id": "https://cyclify.in/#organization"
       },
@@ -986,6 +1014,8 @@ gap:5px!important;
 </head>
 
 <body>
+
+<h1 class="sr-only">Cyclify India - Premium Online Cycling Store</h1>
 
 <div class="header">
 
@@ -1114,7 +1144,7 @@ let imagePreviewUrl = "";
 
 const searchProducts = [
 {id:1,name:"SAVA Hawkeye SLR7 105 Di2",price:189900,image:"assets/products/sava-hawkeye.jpg",category:"Bikes & Frames",keywords:"carbon bike road bicycle frame"},
-{id:2,name:"ELVES Falath EVO+",price:250000,image:"assets/products/elves-falath-evo-plus.jpg",category:"Bikes & Frames",keywords:"elves evo falath road bike carbon"},
+{id:2,name:"ELVES Falath EVO+",price:250000,image:"assets/products/elves-falath-evo-plus-2.png",category:"Bikes & Frames",keywords:"elves evo falath road bike carbon"},
 {id:3,name:"ELVES Falath EXP",price:250000,image:"assets/products/elves-falath-exp-11.png",category:"Bikes & Frames",keywords:"elves exp falath road bike carbon shimano"},
 {id:4,name:"ELVES Amanyar",price:400000,image:"assets/products/elves-amanyar-1.png",category:"Bikes & Frames",keywords:"elves amanyar road bike carbon"},
 {id:5,name:"Cyclami Electric Air Pump",price:5250,image:"assets/products/cyclami-electric-air-pump-exact-1.webp",category:"Electronics",keywords:"pump inflator tyre 150 psi"},
@@ -1655,6 +1685,8 @@ cartCount.style.display="none";
 <script src="assets/js/site-footer.js"></script>
 </body>
 </html>
+
+
 
 
 
