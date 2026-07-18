@@ -346,6 +346,47 @@ margin-top:10px;
 
 }
 
+.product-detail-stories{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:18px;
+margin-top:22px;
+}
+
+.detail-story{
+background:#f7f8fa;
+overflow:hidden;
+border-radius:8px;
+}
+
+.detail-story img{
+display:block;
+width:100%;
+aspect-ratio:16/10;
+object-fit:cover;
+background:#fff;
+}
+
+.detail-story-copy{
+padding:16px;
+}
+
+.detail-story h4{
+font-size:18px;
+margin:0 0 7px;
+}
+
+.detail-story p{
+font-size:14px;
+line-height:1.55;
+color:#4a4f57;
+}
+
+@media(max-width:680px){
+.product-detail-stories{grid-template-columns:1fr;gap:12px;}
+.detail-story-copy{padding:14px;}
+}
+
 /* RELATED */
 
 .related{
@@ -884,6 +925,8 @@ Specifications
 
 <div id="specList">
 </div>
+
+<div class="product-detail-stories" id="productDetailStories"></div>
 
 </div>
 
@@ -2307,7 +2350,57 @@ specs:[
 "Use : Time trial and triathlon bicycles",
 "Shipping : Free shipping included"
 ]
-}
+},
+{
+id:63,
+name:"SAVA Aurora A7L Pro Carbon Road Bike",
+price:140000,
+mrp:"Rs 1,40,000",
+image:"assets/products/sava-aurora-a7l-pro-1.jpg",
+images:[
+"assets/products/sava-aurora-a7l-pro-1.jpg",
+"assets/products/sava-aurora-a7l-pro-2.jpg",
+"assets/products/sava-aurora-a7l-pro-3.jpg",
+"assets/products/sava-aurora-a7l-pro-4.jpg",
+"assets/products/sava-aurora-a7l-pro-5.jpg",
+"assets/products/sava-aurora-a7l-pro-6.jpg",
+"assets/products/sava-aurora-a7l-pro-7.jpg",
+"assets/products/sava-aurora-a7l-pro-8.jpg"
+],
+sizes:["S","M","L"],
+secondaryLabel:"Select Colour",
+optionsBySize:{
+S:["Black","Blue"],
+M:["Blue","White"],
+L:["Red","Black"]
+},
+specs:[
+"Model : 2026 A7L PRO R08-R7120, 24-speed",
+"Frame : R08 aerodynamic T800 carbon fibre, UCI approved",
+"Fork and seatpost : T800 carbon fibre",
+"Groupset : Shimano 105 R7100 mechanical, 2 x 12-speed",
+"Shifters : Shimano 105 ST-R7120",
+"Front derailleur : Shimano 105 FD-R7100",
+"Rear derailleur : Shimano 105 RD-R7100",
+"Crankset : PROWHEEL FC-PRF-A1, 50/34T, 170 mm",
+"Cassette : 12-speed 11-34T",
+"Brakes : Shimano 105 BR-R7170 hydraulic disc",
+"Wheelset : 700C carbon, 50 mm rim depth, 24H",
+"Tyres : 700 x 25C",
+"Cockpit : Integrated carbon handlebar, 400 x 100 mm",
+"Internal routing : Fully concealed cables",
+"Approximate weight : 8.8 kg, varies by size",
+"Shipping : Free shipping included"
+],
+detailStories:[
+{title:"Shimano 105 Hydraulic Disc Brakes",text:"BR-R7170 hydraulic disc brakes deliver controlled, confident stopping power in changing road and weather conditions.",image:"assets/products/sava-aurora-a7l-pro-brake.jpg"},
+{title:"50/34T Compact Crankset",text:"The compact 50/34T crankset is paired with a wide-range 11-34T cassette for fast flats, rolling roads and sustained climbs.",image:"assets/products/sava-aurora-a7l-pro-crankset.jpg"},
+{title:"Integrated Carbon Cockpit",text:"A one-piece 400 x 100 mm carbon cockpit and fully hidden cable routing create a clean aerodynamic front end.",image:"assets/products/sava-aurora-a7l-pro-handlebar.jpg"},
+{title:"Shimano 105 12-Speed Shifting",text:"The Shimano 105 R7100 rear derailleur delivers precise mechanical 12-speed shifting with dependable race-ready performance.",image:"assets/products/sava-aurora-a7l-pro-derailleur.jpg"},
+{title:"50 mm Carbon Wheelset",text:"Deep-section 700C carbon wheels balance aerodynamic speed, stiffness and stable handling for road riding.",image:"assets/products/sava-aurora-a7l-pro-wheels.jpg"},
+{title:"Ergonomic 105 Controls",text:"Shimano 105 ST-R7120 levers combine comfortable hand support with crisp shifting and hydraulic braking control.",image:"assets/products/sava-aurora-a7l-pro-shifter.jpg"},
+{title:"UCI Approved Carbon Frame",text:"The aerodynamic R08 T800 carbon platform carries UCI approval for competition use.",image:"assets/products/sava-aurora-a7l-pro-uci.jpg"}
+]}
 ];
 
 const params=new URLSearchParams(window.location.search);
@@ -2316,7 +2409,11 @@ const product=products.find(item=>item.id===productId)||products[0];
 let productImages=product.images||[product.image];
 let currentImageIndex=0;
 let selectedSize=product.sizes&&product.sizes.length?product.sizes[0]:"";
-const secondaryOptions=product.secondaryOptions||product.valveLengths||[];
+function getSecondaryOptions(){
+if(product.optionsBySize){return product.optionsBySize[selectedSize]||[];}
+return product.secondaryOptions||product.valveLengths||[];
+}
+let secondaryOptions=getSecondaryOptions();
 let selectedValveLength=secondaryOptions.length?secondaryOptions[0]:"";
 let productAvailableForCart=true;
 function absoluteSiteUrl(value){
@@ -2447,7 +2544,7 @@ function applySizeAvailability(){
 if(!product.sizes||!product.sizes.length){return;}
 document.querySelectorAll("#sizeOptions .size-btn").forEach(button=>{
 const size=button.dataset.size;
-const unavailable=isSizeUnavailable(size);
+const unavailable=Boolean(isSizeUnavailable(size));
 button.disabled=unavailable;
 button.classList.toggle("disabled",unavailable);
 });
@@ -2536,27 +2633,31 @@ sizeSection.style.display="none";
 
 }
 
+function renderSecondaryOptions(){
+secondaryOptions=getSecondaryOptions();
+if(!secondaryOptions.includes(selectedValveLength)){
+selectedValveLength=secondaryOptions.length?secondaryOptions[0]:"";
+}
+valveOptions.innerHTML="";
 if(secondaryOptions.length){
-
 valveSection.style.display="block";
 secondaryOptionLabel.textContent=product.secondaryLabel||(product.secondaryOptions?"Select Option":"Select Valve Length");
-
 secondaryOptions.forEach(option=>{
-valveOptions.innerHTML+=`
-<button
-class="size-btn valve-btn"
-onclick="selectValveLength('${option}')">
-${option}
-</button>
-`;
+const button=document.createElement("button");
+button.type="button";
+button.className="size-btn valve-btn";
+button.textContent=option;
+button.addEventListener("click",()=>selectValveLength(option));
+valveOptions.appendChild(button);
 });
-
+if(selectedValveLength){selectValveLength(selectedValveLength);}
 }
 else{
-
 valveSection.style.display="none";
-
 }
+}
+
+renderSecondaryOptions();
 
 function selectSize(size){
 
@@ -2566,6 +2667,7 @@ selectedSize=size;
 document.querySelectorAll("#sizeOptions .size-btn").forEach(button=>{
 button.classList.toggle("active",button.dataset.size===size);
 });
+renderSecondaryOptions();
 updateCartButtonForSize();
 
 }
@@ -2670,6 +2772,25 @@ ${spec}
 `;
 });
 
+const productDetailStories=document.getElementById("productDetailStories");
+(product.detailStories||[]).forEach(detail=>{
+const article=document.createElement("article");
+article.className="detail-story";
+const image=document.createElement("img");
+image.src=detail.image;
+image.alt=`${product.name} - ${detail.title}`;
+image.loading="lazy";
+const copy=document.createElement("div");
+copy.className="detail-story-copy";
+const title=document.createElement("h4");
+title.textContent=detail.title;
+const text=document.createElement("p");
+text.textContent=detail.text;
+copy.append(title,text);
+article.append(image,copy);
+productDetailStories.appendChild(article);
+});
+
 const relatedProducts=document.getElementById("relatedProducts");
 
 products
@@ -2723,6 +2844,8 @@ alert("Buy Now is cooking. Online orders will open soon on Cyclify.");
 <script src="assets/js/site-footer.js"></script>
 </body>
 </html>
+
+
 
 
 
