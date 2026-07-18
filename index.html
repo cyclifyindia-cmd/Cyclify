@@ -629,54 +629,11 @@ border-radius:999px;
 background:rgba(255,255,255,.7);
 }
 
-.hero.used-market-promo{
-height:124px;
-margin:15px;
-padding:0;
-position:relative;
-overflow:hidden;
-border-radius:14px;
-background:#f3f4f6 url('assets/banners/used-market-sale-banner.png') center right/cover no-repeat;
-box-shadow:0 10px 26px rgba(15,23,42,.1);
-}
 
-.hero.used-market-promo::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(90deg,rgba(8,12,20,.86) 0%,rgba(8,12,20,.62) 31%,rgba(8,12,20,.04) 67%);
-}
 
-.used-market-link{
-position:relative;
-z-index:1;
-height:100%;
-display:flex;
-flex-direction:column;
-align-items:flex-start;
-justify-content:center;
-gap:7px;
-padding:16px 20px;
-color:white;
-text-decoration:none;
-}
 
-.hero.used-market-promo h2{
-font-size:23px;
-line-height:1.05;
-margin:0;
-}
 
-.hero.used-market-promo p{
-font-size:13px;
-margin:0;
-max-width:330px;
-}
 
-.used-market-link .btn{
-padding:7px 13px;
-font-size:11px;
-}
 
 @media(max-width:560px){
 .offer{padding:8px 8px 10px}
@@ -688,12 +645,6 @@ font-size:11px;
 .home-carousel-dots{bottom:5px}
 .home-carousel-dot{width:6px;height:6px}
 .home-carousel-dot.active{width:18px}
-.hero.used-market-promo{height:106px;margin:10px 8px;border-radius:10px;background-position:58% center}
-.used-market-link{padding:12px 14px;gap:5px}
-.hero.used-market-promo h2{font-size:18px}
-.hero.used-market-promo p{font-size:11px;max-width:205px}
-.used-market-link .btn{padding:6px 10px;font-size:10px}
-}
 .categories{
 padding:15px;
 display:grid;
@@ -1134,13 +1085,7 @@ startCarousel();
 
 </div>
 
-<div class="hero used-market-promo">
-<a href="used-market.html" class="used-market-link" aria-label="Open Cyclify used product marketplace">
-<h2>Used Product Marketplace</h2>
-<p>Buy and sell pre-owned cycles, wheels and components.</p>
-<span class="btn">Browse Used</span>
-</a>
-</div>
+
 <div class="features">
 
 <div class="feature">Authentic Products</div>
@@ -1710,6 +1655,7 @@ cartCount.style.display="none";
 <script src="assets/js/site-footer.js"></script>
 </body>
 </html>
+
 
 
 
