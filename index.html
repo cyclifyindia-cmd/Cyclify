@@ -648,6 +648,55 @@ background:rgba(255,255,255,.7);
 
 
 
+/* Homepage category grid */
+.categories{
+max-width:1280px;
+margin:0 auto;
+padding:18px;
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:16px;
+}
+
+.category{
+display:block;
+height:220px;
+border-radius:12px;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+text-decoration:none;
+overflow:hidden;
+box-shadow:0 8px 22px rgba(15,23,42,.08);
+}
+
+.bikes{background-image:url('assets/categories/CAT_BIKEE.png');}
+.wearables{background-image:url('assets/categories/CAT_Wearables.png');}
+.accessories{background-image:url('assets/categories/CAT_ACC.png');}
+.components{background-image:url('assets/categories/CAT_Components.png');}
+.wheels{background-image:url('assets/categories/CAT_Wheels.png');}
+.electronics{background-image:url('assets/categories/CAT_Electronics.png');}
+
+.features{
+background:white;
+margin-top:15px;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:15px;
+text-align:center;
+}
+
+.feature{
+font-size:14px;
+font-weight:bold;
+}
+
+@media(max-width:900px) and (min-width:561px){
+.categories{grid-template-columns:repeat(2,minmax(0,1fr));}
+.category{height:200px;}
+.features{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
 @media(max-width:560px){
 .offer{padding:8px 8px 10px}
 .home-carousel{height:clamp(118px,33vw,145px);border-radius:9px}
@@ -1685,6 +1734,7 @@ cartCount.style.display="none";
 <script src="assets/js/site-footer.js"></script>
 </body>
 </html>
+
 
 
 
