@@ -529,6 +529,171 @@ opacity:0;
 }
 }
 
+/* Homepage image carousel */
+.home-carousel{
+position:relative;
+height:clamp(130px,25vw,300px);
+overflow:hidden;
+border-radius:14px;
+background:#0b1019;
+box-shadow:0 14px 34px rgba(15,23,42,.16);
+}
+
+.home-carousel-track{
+display:flex;
+height:100%;
+transition:transform .7s cubic-bezier(.22,.61,.36,1);
+will-change:transform;
+}
+
+.home-carousel-slide{
+position:relative;
+flex:0 0 100%;
+height:100%;
+display:block;
+overflow:hidden;
+}
+
+.home-carousel-slide img{
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+object-position:center;
+}
+
+.home-carousel-cta{
+position:absolute;
+left:3.5%;
+bottom:8%;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:10px 18px;
+border-radius:999px;
+background:#111827;
+color:white;
+font-size:13px;
+font-weight:900;
+box-shadow:0 8px 24px rgba(0,0,0,.2);
+}
+
+.home-carousel-arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+z-index:3;
+width:38px;
+height:38px;
+border:1px solid rgba(255,255,255,.45);
+border-radius:50%;
+background:rgba(9,14,24,.58);
+color:white;
+font-size:23px;
+line-height:1;
+display:flex;
+align-items:center;
+justify-content:center;
+backdrop-filter:blur(8px);
+cursor:pointer;
+}
+
+.home-carousel-arrow.prev{left:10px}
+.home-carousel-arrow.next{right:10px}
+
+.home-carousel-dots{
+position:absolute;
+left:50%;
+bottom:8px;
+transform:translateX(-50%);
+z-index:4;
+display:flex;
+gap:7px;
+}
+
+.home-carousel-dot{
+width:7px;
+height:7px;
+padding:0;
+border:0;
+border-radius:50%;
+background:rgba(255,255,255,.55);
+box-shadow:0 1px 5px rgba(0,0,0,.22);
+cursor:pointer;
+transition:width .25s ease,background .25s ease,border-radius .25s ease;
+}
+
+.home-carousel-dot.active{
+width:22px;
+border-radius:999px;
+background:white;
+}
+
+.hero.used-market-promo{
+height:124px;
+margin:15px;
+padding:0;
+position:relative;
+overflow:hidden;
+border-radius:14px;
+background:#f3f4f6 url('assets/banners/used-market-sale-banner.png') center right/cover no-repeat;
+box-shadow:0 10px 26px rgba(15,23,42,.1);
+}
+
+.hero.used-market-promo::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,rgba(8,12,20,.86) 0%,rgba(8,12,20,.62) 31%,rgba(8,12,20,.04) 67%);
+}
+
+.used-market-link{
+position:relative;
+z-index:1;
+height:100%;
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+justify-content:center;
+gap:7px;
+padding:16px 20px;
+color:white;
+text-decoration:none;
+}
+
+.hero.used-market-promo h2{
+font-size:23px;
+line-height:1.05;
+margin:0;
+}
+
+.hero.used-market-promo p{
+font-size:13px;
+margin:0;
+max-width:330px;
+}
+
+.used-market-link .btn{
+padding:7px 13px;
+font-size:11px;
+}
+
+@media(max-width:560px){
+.offer{padding:8px 8px 10px}
+.home-carousel{height:clamp(118px,33vw,145px);border-radius:9px}
+.home-carousel-arrow{width:30px;height:30px;font-size:18px}
+.home-carousel-arrow.prev{left:5px}
+.home-carousel-arrow.next{right:5px}
+.home-carousel-cta{left:3%;bottom:9%;padding:7px 11px;font-size:10px}
+.home-carousel-dots{bottom:5px}
+.home-carousel-dot{width:6px;height:6px}
+.home-carousel-dot.active{width:18px}
+.hero.used-market-promo{height:106px;margin:10px 8px;border-radius:10px;background-position:58% center}
+.used-market-link{padding:12px 14px;gap:5px}
+.hero.used-market-promo h2{font-size:18px}
+.hero.used-market-promo p{font-size:11px;max-width:205px}
+.used-market-link .btn{padding:6px 10px;font-size:10px}
+}
 .categories{
 padding:15px;
 display:grid;
@@ -910,44 +1075,55 @@ autocomplete="off">
 
 
 <div class="offer">
-
-<div class="vertical-banner">
-
-<div class="banner-track">
-
-<a href="used-market.html" class="banner-slide">
-<span class="banner-kicker">Used Product Marketplace</span>
-<div>
-<h3>Sell Used Cycles & Components</h3>
-<p>Post your pre-owned bike, wheels, helmet or parts for Cyclify approval.</p>
-</div>
-<span class="banner-action">Post Ad</span>
+<section class="home-carousel" id="homeCarousel" aria-label="Featured offers">
+<div class="home-carousel-track" id="homeCarouselTrack">
+<a href="bikes-frames.html?category=elves" class="home-carousel-slide" aria-label="Shop ELVES EVO Plus and EXP bikes">
+<img src="assets/banners/elves-evo-exp-banner.png" alt="ELVES EVO Plus and EXP road bikes">
 </a>
-
-<a href="used-market.html#approved-listings" class="banner-slide">
-<span class="banner-kicker">Verified Before Live</span>
-<div>
-<h3>Approved Ads, Cleaner Deals</h3>
-<p>Fresh listings get highlighted while older posts stay easy to discover.</p>
-</div>
-<span class="banner-action">Enter Marketplace</span>
+<a href="bikes-frames.html" class="home-carousel-slide" aria-label="Shop bikes and frames">
+<img src="assets/banners/google-reviews-india.png" alt="Cyclify India Google customer reviews">
+<span class="home-carousel-cta">Shop Now</span>
 </a>
-
-<a href="used-market.html#filters" class="banner-slide">
-<span class="banner-kicker">Bike Buyer Friendly</span>
-<div>
-<h3>Search Used Gear Faster</h3>
-<p>Filter by category, price and location inside the used marketplace.</p>
 </div>
-<span class="banner-action">Use Filters</span>
-</a>
-
+<button class="home-carousel-arrow prev" id="homeCarouselPrev" type="button" aria-label="Previous banner">&#8249;</button>
+<button class="home-carousel-arrow next" id="homeCarouselNext" type="button" aria-label="Next banner">&#8250;</button>
+<div class="home-carousel-dots" aria-label="Choose banner">
+<button class="home-carousel-dot active" type="button" aria-label="Show ELVES banner" data-slide="0"></button>
+<button class="home-carousel-dot" type="button" aria-label="Show reviews banner" data-slide="1"></button>
+</div>
+</section>
 </div>
 
-</div>
-
-</div>
-
+<script>
+(function(){
+const carousel=document.getElementById("homeCarousel");
+const track=document.getElementById("homeCarouselTrack");
+const dots=Array.from(document.querySelectorAll(".home-carousel-dot"));
+const previous=document.getElementById("homeCarouselPrev");
+const next=document.getElementById("homeCarouselNext");
+if(!carousel||!track||dots.length<2){return;}
+let activeSlide=0;
+let timer;
+function showSlide(index){
+activeSlide=(index+dots.length)%dots.length;
+track.style.transform=`translateX(-${activeSlide*100}%)`;
+dots.forEach((dot,dotIndex)=>dot.classList.toggle("active",dotIndex===activeSlide));
+}
+function startCarousel(){
+clearInterval(timer);
+timer=setInterval(()=>showSlide(activeSlide+1),4000);
+}
+function moveCarousel(step){showSlide(activeSlide+step);startCarousel();}
+previous.addEventListener("click",()=>moveCarousel(-1));
+next.addEventListener("click",()=>moveCarousel(1));
+dots.forEach(dot=>dot.addEventListener("click",()=>{showSlide(Number(dot.dataset.slide));startCarousel();}));
+carousel.addEventListener("mouseenter",()=>clearInterval(timer));
+carousel.addEventListener("mouseleave",startCarousel);
+carousel.addEventListener("focusin",()=>clearInterval(timer));
+carousel.addEventListener("focusout",startCarousel);
+startCarousel();
+})();
+</script>
 <div class="categories">
 
 <a href="bikes-frames.html" class="category bikes"></a>
@@ -964,20 +1140,13 @@ autocomplete="off">
 
 </div>
 
-<div class="hero">
-
-<h2>Ride Further.</h2>
-
-<p>
-Premium Cycling Products for Every Rider.
-</p>
-
-<a href="bikes-frames.html" class="btn">
-Shop Now
+<div class="hero used-market-promo">
+<a href="used-market.html" class="used-market-link" aria-label="Open Cyclify used product marketplace">
+<h2>Used Product Marketplace</h2>
+<p>Buy and sell pre-owned cycles, wheels and components.</p>
+<span class="btn">Browse Used</span>
 </a>
-
 </div>
-
 <div class="features">
 
 <div class="feature">Authentic Products</div>
