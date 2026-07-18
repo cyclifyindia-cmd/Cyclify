@@ -626,7 +626,7 @@ transition:width .25s ease,background .25s ease,border-radius .25s ease;
 .home-carousel-dot.active{
 width:22px;
 border-radius:999px;
-background:white;
+background:rgba(255,255,255,.7);
 }
 
 .hero.used-market-promo{
@@ -1085,8 +1085,6 @@ autocomplete="off">
 <span class="home-carousel-cta">Shop Now</span>
 </a>
 </div>
-<button class="home-carousel-arrow prev" id="homeCarouselPrev" type="button" aria-label="Previous banner">&#8249;</button>
-<button class="home-carousel-arrow next" id="homeCarouselNext" type="button" aria-label="Next banner">&#8250;</button>
 <div class="home-carousel-dots" aria-label="Choose banner">
 <button class="home-carousel-dot active" type="button" aria-label="Show ELVES banner" data-slide="0"></button>
 <button class="home-carousel-dot" type="button" aria-label="Show reviews banner" data-slide="1"></button>
@@ -1099,8 +1097,6 @@ autocomplete="off">
 const carousel=document.getElementById("homeCarousel");
 const track=document.getElementById("homeCarouselTrack");
 const dots=Array.from(document.querySelectorAll(".home-carousel-dot"));
-const previous=document.getElementById("homeCarouselPrev");
-const next=document.getElementById("homeCarouselNext");
 if(!carousel||!track||dots.length<2){return;}
 let activeSlide=0;
 let timer;
@@ -1111,11 +1107,9 @@ dots.forEach((dot,dotIndex)=>dot.classList.toggle("active",dotIndex===activeSlid
 }
 function startCarousel(){
 clearInterval(timer);
-timer=setInterval(()=>showSlide(activeSlide+1),4000);
+timer=setInterval(()=>showSlide(activeSlide+1),5000);
 }
 function moveCarousel(step){showSlide(activeSlide+step);startCarousel();}
-previous.addEventListener("click",()=>moveCarousel(-1));
-next.addEventListener("click",()=>moveCarousel(1));
 dots.forEach(dot=>dot.addEventListener("click",()=>{showSlide(Number(dot.dataset.slide));startCarousel();}));
 carousel.addEventListener("mouseenter",()=>clearInterval(timer));
 carousel.addEventListener("mouseleave",startCarousel);
