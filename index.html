@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -694,6 +694,60 @@ font-size:14px;
 font-weight:bold;
 }
 
+
+/* Desktop storefront: keep the banner and primary categories in one viewport. */
+@media(min-width:901px){
+.header{
+padding-left:max(22px,calc((100vw - 1180px)/2))!important;
+padding-right:max(22px,calc((100vw - 1180px)/2))!important;
+}
+.desktop-home-grid{
+max-width:1180px;
+margin:0 auto;
+padding:14px 18px 10px;
+display:grid;
+grid-template-columns:minmax(0,1.68fr) minmax(410px,1fr);
+gap:14px;
+align-items:center;
+}
+.desktop-home-grid .offer{
+padding:0;
+min-width:0;
+background:transparent;
+}
+.desktop-home-grid .home-carousel{
+width:100%;
+height:auto;
+aspect-ratio:2.45/1;
+border-radius:10px;
+box-shadow:0 10px 28px rgba(15,23,42,.12);
+}
+.desktop-home-grid .categories{
+width:100%;
+max-width:none;
+margin:0;
+padding:0;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:10px;
+}
+.desktop-home-grid .category{
+border-radius:9px;
+box-shadow:0 5px 16px rgba(15,23,42,.08);
+transition:transform .22s ease,box-shadow .22s ease;
+}
+.desktop-home-grid .category:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 22px rgba(15,23,42,.13);
+}
+.features{
+max-width:1144px;
+margin:4px auto 0;
+padding:14px 18px;
+border:1px solid #edf0f3;
+border-radius:8px;
+box-shadow:none;
+}
+}
 @media(max-width:1100px) and (min-width:561px){
 .categories{grid-template-columns:repeat(3,minmax(0,1fr));}
 .category{height:auto;aspect-ratio:1;}
@@ -1109,6 +1163,7 @@ autocomplete="off">
 
 
 
+<main class="desktop-home-grid">
 <div class="offer">
 <section class="home-carousel" id="homeCarousel" aria-label="Featured offers">
 <div class="home-carousel-track" id="homeCarouselTrack">
@@ -1168,7 +1223,7 @@ startCarousel();
 <a href="electronics.html" class="category electronics"></a>
 
 </div>
-
+</main>
 
 <div class="features">
 
