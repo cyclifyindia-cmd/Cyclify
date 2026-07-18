@@ -380,14 +380,37 @@ mrp:"Rs 14,999",
 image:"assets/products/riro-acf-carbon-crankset-1.webp",
 sizes:["170mm","172.5mm"],
 mainCategory:"drivetrain"
+},
+{
+id:61,
+name:"TOSEEK TR30 Carbon Road Handlebar",
+price:5500,
+mrp:"Rs 9,000",
+image:"assets/products/toseek-tr30-handlebar-2.webp",
+sizes:["380mm","400mm","420mm"],
+mainCategory:"cockpit",
+subCategory:"handlebars"
+},
+{
+id:62,
+name:"TOSEEK TTF10 Full Carbon Relax Handlebar TT Bar",
+price:7699,
+mrp:"Rs 14,000",
+image:"assets/products/toseek-ttf10-tt-bar-2.webp",
+sizes:["340mm"],
+mainCategory:"cockpit",
+subCategory:"aerobars"
 }];
 const categories=[
 {key:"drivetrain",label:"Drivetrain",image:"assets/products/thinkrider-12-speed-11-34-cassette-1.jpg"},
-{key:"maintenance",label:"Maintenance",image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp"}
+{key:"maintenance",label:"Maintenance",image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp"},
+{key:"cockpit",label:"Cockpit",image:"assets/products/toseek-tr30-handlebar-2.webp"}
 ];
 
 const wheelSubCategories=[
-{key:"tools",parent:"maintenance",label:"Tools",image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp"}
+{key:"tools",parent:"maintenance",label:"Tools",image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp"},
+{key:"handlebars",parent:"cockpit",label:"Handlebars",image:"assets/products/toseek-tr30-handlebar-2.webp"},
+{key:"aerobars",parent:"cockpit",label:"Aerobars",image:"assets/products/toseek-ttf10-tt-bar-2.webp"}
 ];
 const container=document.getElementById("products");
 const categoryStrip=document.getElementById("categoryStrip");
@@ -614,6 +637,10 @@ else{cartCount.style.display="none";}
 <script src="assets/js/site-footer.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 

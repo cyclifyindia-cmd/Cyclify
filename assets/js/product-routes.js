@@ -57,7 +57,9 @@
   "57": "products/thinkrider-heart-rate-monitor-with-chest-belt-57.html",
   "58": "products/thinkrider-nl-15-pro-bicycle-torque-wrench-set-58.html",
   "59": "products/riro-goldix-rxs-110bcd-double-chainrings-59.html",
-  "60": "products/riro-acf-carbon-crankset-399g-60.html"
+  "60": "products/riro-acf-carbon-crankset-399g-60.html",
+  "61": "products/toseek-tr30-carbon-road-handlebar-61.html",
+  "62": "products/toseek-ttf10-full-carbon-relax-handlebar-tt-bar-62.html"
 };
   window.CYCLIFY_PRODUCT_ROUTES=routes;
   window.cyclifyProductUrl=function(id){return routes[id]||("product.html?id="+encodeURIComponent(id));};
