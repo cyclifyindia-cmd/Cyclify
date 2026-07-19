@@ -106,7 +106,27 @@ for (const product of products) {
           priceCurrency: 'INR',
           price: String(product.price),
           availability: 'https://schema.org/InStock',
-          itemCondition: 'https://schema.org/NewCondition'
+          itemCondition: 'https://schema.org/NewCondition',
+          shippingDetails: {
+            '@type': 'OfferShippingDetails',
+            shippingRate: {
+              '@type': 'MonetaryAmount',
+              value: '0',
+              currency: 'INR'
+            },
+            shippingDestination: {
+              '@type': 'DefinedRegion',
+              addressCountry: 'IN'
+            }
+          },
+          hasMerchantReturnPolicy: {
+            '@type': 'MerchantReturnPolicy',
+            applicableCountry: 'IN',
+            returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+            merchantReturnDays: 7,
+            returnMethod: 'https://schema.org/ReturnByMail',
+            merchantReturnLink: 'https://cyclify.in/exchange-policy.html'
+          }
         }
       },
       {

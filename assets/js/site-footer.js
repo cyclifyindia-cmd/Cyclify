@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   if (document.getElementById("cyclifyFooter")) return;
 
   const style = document.createElement("style");
@@ -45,6 +45,7 @@
           <a href="index.html">About Us</a>
           <a href="account.html">Contact Us</a>
           <a href="used-market.html#rules">Terms of Use</a>
+          <a href="exchange-policy.html">Exchange Policy</a>
           <a href="account.html">Privacy &amp; Account</a>
         </div>
       </nav>
