@@ -88,7 +88,8 @@ for (const product of products) {
   const title = product.name + ' Price and Specifications | Cyclify';
   const description = descriptionFor(product);
   const image = absoluteUrl(product.image || (product.images || [])[0] || 'assets/Logo-dark-preview.png');
-  const brand = (product.name.match(/^(SAVA|ELVES|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER)/i) || ['Cyclify'])[0];
+  const inferredBrand = (product.name.match(/^(SAVA|ELVES|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i) || ['Cyclify'])[0];
+  const brand = product.id === 16 ? 'Cyclami' : inferredBrand;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [

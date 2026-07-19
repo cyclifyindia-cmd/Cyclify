@@ -2474,7 +2474,8 @@ upsertMeta('meta[property="og:image"]',{tag:"meta",attrs:{property:"og:image"}},
 upsertMeta('meta[name="twitter:title"]',{tag:"meta",attrs:{name:"twitter:title"}},title);
 upsertMeta('meta[name="twitter:description"]',{tag:"meta",attrs:{name:"twitter:description"}},description);
 upsertMeta('meta[name="twitter:image"]',{tag:"meta",attrs:{name:"twitter:image"}},image);
-const brand=(product.name.match(/^(SAVA|ELVES|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER)/i)||["Cyclify"])[0];
+const inferredBrand=(product.name.match(/^(SAVA|ELVES|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i)||["Cyclify"])[0];
+const brand=product.id===16?"Cyclami":inferredBrand;
 const schema={
 "@context":"https://schema.org",
 "@type":"Product",
