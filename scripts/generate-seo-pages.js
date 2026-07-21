@@ -6,6 +6,7 @@ const templatePath = path.join(root, 'product.html');
 const outputDir = path.join(root, 'products');
 const routesPath = path.join(root, 'assets', 'js', 'product-routes.js');
 const sitemapPath = path.join(root, 'sitemap.xml');
+const supplierPath = path.join(root, 'assets', 'data', 'cycletime-products.json');
 const template = fs.readFileSync(templatePath, 'utf8');
 
 function extractProducts(source) {
@@ -65,13 +66,21 @@ function absoluteUrl(value) {
 }
 
 function descriptionFor(product) {
-  const specs = (product.specs || []).slice(0, 3).join('. ');
-  return ('Buy ' + product.name + ' online from Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + '. ' + specs)
+  const details = product.description || (product.specs || []).slice(0, 3).join('. ');
+  return ('Buy ' + product.name + ' online from Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + '. ' + details)
     .replace(/\s+/g, ' ')
     .slice(0, 300);
 }
 
 const products = extractProducts(template);
+if (fs.existsSync(supplierPath)) {
+  const supplierProducts = JSON.parse(fs.readFileSync(supplierPath, 'utf8')).products || [];
+  supplierProducts.forEach(item => {
+    const existing = products.find(product => product.id === item.id || product.sourceHandle === item.sourceHandle);
+    if (existing) Object.assign(existing, item, { id: existing.id });
+    else products.push(item);
+  });
+}
 const routes = Object.fromEntries(products.map(product => [product.id, 'products/' + slugify(product.name) + '-' + product.id + '.html']));
 
 fs.mkdirSync(outputDir, { recursive: true });
@@ -89,7 +98,7 @@ for (const product of products) {
   const description = descriptionFor(product);
   const image = absoluteUrl(product.image || (product.images || [])[0] || 'assets/Logo-dark-preview.png');
   const inferredBrand = (product.name.match(/^(SAVA|ELVES|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i) || ['Cyclify'])[0];
-  const brand = product.id === 16 ? 'Cyclami' : inferredBrand;
+  const brand = product.brand || (product.id === 16 ? 'Cyclami' : inferredBrand);
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -115,7 +124,7 @@ for (const product of products) {
           url: canonical,
           priceCurrency: 'INR',
           price: String(product.price),
-          availability: 'https://schema.org/InStock',
+          availability: product.available === false ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
           itemCondition: 'https://schema.org/NewCondition',
           shippingDetails: {
             '@type': 'OfferShippingDetails',

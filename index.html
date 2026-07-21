@@ -20,6 +20,7 @@
 <meta name="twitter:description" content="Cyclify India is an online premium cycling store for road bikes, carbon frames, smart trainers, cycling electronics, wheels, components and riding gear.">
 <meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
 <script src="assets/js/product-routes.js"></script>
+<script src="assets/js/supplier-products.js"></script>
 <style>
 
 *{
@@ -1315,6 +1316,21 @@ const searchProducts = [
 {id:62,name:"TOSEEK TTF10 Full Carbon Relax Handlebar TT Bar",price:7699,image:"assets/products/toseek-ttf10-tt-bar-2.webp",category:"Components",keywords:"toseek ttf10 carbon relax handlebar tt bar aerobar triathlon 340 cockpit"},
 {id:63,name:"SAVA Aurora A7L Pro Carbon Road Bike",price:140000,image:"assets/products/sava-aurora-a7l-pro-1.jpg",category:"Bikes & Frames",keywords:"sava aurora a7l pro carbon road bike shimano 105 r7120 24 speed black blue white red S M L"}
 ];
+(window.CYCLIFY_CYCLETIME_PRODUCTS||[]).forEach(product=>{
+const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
+const existing=searchProducts.find(item=>item.id===product.id);
+if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
+});
+(window.CYCLIFY_CYCLETIME_PRODUCTS||[]).forEach(product=>{
+const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
+const existing=searchProducts.find(item=>item.id===product.id);
+if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
+});
+(window.CYCLIFY_CYCLETIME_PRODUCTS||[]).forEach(product=>{
+const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
+const existing=searchProducts.find(item=>item.id===product.id);
+if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
+});
 
 let wordIndex = 0;
 let charIndex = 0;

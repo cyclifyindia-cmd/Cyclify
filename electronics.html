@@ -19,6 +19,7 @@
 <meta name="twitter:description" content="Shop cycling electronics including smart trainers, bike computers, lights, sensors, electric pumps and power meters.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/thinkrider-x2-max-1.jpg">
 <script src="assets/js/product-routes.js"></script>
+<script src="assets/js/supplier-products.js"></script>
 <style>
 *{
 margin:0;
@@ -985,6 +986,7 @@ image:"assets/products/thinkrider-heart-rate-monitor-1.jpg",
 sizes:[]
 }
 ];
+window.cyclifyMergeSupplierProducts(products,"electronics.html");
 
 const container=document.getElementById("products");
 const categoryStrip=document.getElementById("categoryStrip");
@@ -1074,7 +1076,7 @@ onkeydown="handleCardKey(event,${product.id})">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
 <div class="mrp">MRP ${product.mrp}</div>
-<div class="ship">Free Shipping</div>
+<div class="ship">${product.available===false?"Out of stock":"Free Shipping"}</div>
 <div class="bottom">
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
 </div>
@@ -1152,7 +1154,7 @@ onkeydown="handleCardKey(event,${product.id})">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
 <div class="mrp">MRP ${product.mrp}</div>
-<div class="ship">Free Shipping</div>
+<div class="ship">${product.available===false?"Out of stock":"Free Shipping"}</div>
 <div class="bottom">
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
 </div>

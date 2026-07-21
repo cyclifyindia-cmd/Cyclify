@@ -23,6 +23,7 @@ content="width=device-width, initial-scale=1">
 <meta name="twitter:description" content="Explore premium road bikes and carbon frames from SAVA and ELVES with verified product photos, sizes and specifications.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/elves-falath-evo-plus-2.png">
 <script src="assets/js/product-routes.js"></script>
+<script src="assets/js/supplier-products.js"></script>
 <style>
 
 *{
@@ -872,6 +873,7 @@ sizes:["S","M","L"]
 }
 
 ];
+window.cyclifyMergeSupplierProducts(products,"bikes-frames.html");
 
 
 const container=
@@ -891,6 +893,9 @@ const categories=[
 ];
 
 function getProductCategory(product){
+if(product.mainCategory){return product.mainCategory;}
+if(product.mainCategory){return product.mainCategory;}
+if(product.mainCategory){return product.mainCategory;}
 const name=product.name.toLowerCase();
 
 if(name.includes("sava")){
@@ -1039,7 +1044,7 @@ onkeydown="handleCardKey(event,${product.id})">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
 <div class="mrp">MRP ${product.mrp}</div>
-<div class="ship">Free Shipping</div>
+<div class="ship">${product.available===false?"Out of stock":"Free Shipping"}</div>
 <div class="bottom">
 <button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
 </div>

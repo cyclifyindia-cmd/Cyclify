@@ -23,6 +23,7 @@ content="width=device-width,initial-scale=1">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/elves-falath-evo-plus-2.png">
 <script>window.CYCLIFY_PRODUCT_ID=2;</script>
 <script src="assets/js/product-routes.js"></script>
+<script src="assets/js/supplier-products.js"></script>
 <style>
 
 *{
@@ -320,6 +321,12 @@ color:white;
 
 }
 
+.cartbtn:disabled,.buybtn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(1)}
+.shipping-note.stock-unavailable{color:#b42318;background:#fff1f0}
+.cartbtn:disabled,.buybtn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(1)}
+.shipping-note.stock-unavailable{color:#b42318;background:#fff1f0}
+.cartbtn:disabled,.buybtn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(1)}
+.shipping-note.stock-unavailable{color:#b42318;background:#fff1f0}
 .buybtn{
 
 background:#25D366;
@@ -2601,6 +2608,7 @@ detailStories:[
 {title:"UCI Approved Carbon Frame",text:"The aerodynamic R08 T800 carbon platform carries UCI approval for competition use.",image:"assets/products/sava-aurora-a7l-pro-uci.jpg"}
 ]}
 ];
+window.cyclifyMergeSupplierProducts(products,"");
 
 const params=new URLSearchParams(window.location.search);
 const productId=Number(window.CYCLIFY_PRODUCT_ID||params.get("id"))||1;
@@ -2654,7 +2662,7 @@ upsertMeta('meta[name="twitter:title"]',{tag:"meta",attrs:{name:"twitter:title"}
 upsertMeta('meta[name="twitter:description"]',{tag:"meta",attrs:{name:"twitter:description"}},description);
 upsertMeta('meta[name="twitter:image"]',{tag:"meta",attrs:{name:"twitter:image"}},image);
 const inferredBrand=(product.name.match(/^(SAVA|ELVES|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i)||["Cyclify"])[0];
-const brand=product.id===16?"Cyclami":inferredBrand;
+const brand=product.brand||(product.id===16?"Cyclami":inferredBrand);
 const schema={
 "@context":"https://schema.org",
 "@type":"Product",
@@ -2673,7 +2681,7 @@ offers:{
 url:canonical,
 priceCurrency:"INR",
 price:String(product.price),
-availability:"https://schema.org/InStock",
+availability:product.available===false?"https://schema.org/OutOfStock":"https://schema.org/InStock",
 itemCondition:"https://schema.org/NewCondition",
 shippingDetails:{
 "@type":"OfferShippingDetails",
@@ -2710,7 +2718,7 @@ if(backLink){
 const wheelProductIds=[7,30,31,37];
 const wearableProductIds=[48,49,50,51,52,53];
 const componentProductIds=[56,58,59,60];
-backLink.href=wheelProductIds.includes(product.id)?"wheels-tyres.html":wearableProductIds.includes(product.id)?"wearables.html":componentProductIds.includes(product.id)?"components.html":product.id>=5?"electronics.html":"bikes-frames.html";
+backLink.href=product.categoryPage||(wheelProductIds.includes(product.id)?"wheels-tyres.html":wearableProductIds.includes(product.id)?"wearables.html":componentProductIds.includes(product.id)?"components.html":product.id>=5?"electronics.html":"bikes-frames.html");
 }
 productGallery.classList.toggle("single-image",!hasMultipleImages);
 
@@ -2741,6 +2749,7 @@ return String(value||"").replace(/\s+/g," ").trim();
 }
 
 function getVariantSize(variant){
+if(product.supplierSynced&&variant.title){return normalizeSizeValue(variant.title);}
 const values=[variant.option1,variant.option2,variant.option3,variant.public_title,variant.title]
 .flatMap(value=>String(value||"").split("/"))
 .map(normalizeSizeValue)
@@ -2753,9 +2762,10 @@ return product.sizeAvailability&&Object.prototype.hasOwnProperty.call(product.si
 }
 
 function updateCartButtonForSize(){
-productAvailableForCart=!selectedSize||!isSizeUnavailable(selectedSize);
-const cartButton=document.querySelector(".cartbtn");
-if(cartButton){cartButton.disabled=!productAvailableForCart;}
+productAvailableForCart=product.available!==false&&(!selectedSize||!isSizeUnavailable(selectedSize));
+document.querySelectorAll(".cartbtn,.buybtn").forEach(button=>{button.disabled=!productAvailableForCart;});
+const shippingNote=document.querySelector(".shipping-note");
+if(shippingNote&&product.available===false){shippingNote.textContent="Currently out of stock";shippingNote.classList.add("stock-unavailable");}
 }
 
 function applySizeAvailability(){
@@ -2806,6 +2816,9 @@ if(compares.length){
 product.mrp=`Rs ${Math.max(...compares).toLocaleString()}`;
 document.getElementById("productMrp").textContent=`MRP ${product.mrp}`;
 }
+product.available=variants.some(variant=>variant.available);
+product.available=variants.some(variant=>variant.available);
+product.available=variants.some(variant=>variant.available);
 const variantAvailability={};
 let hasAvailabilityData=false;
 variants.forEach(variant=>{
@@ -2819,6 +2832,8 @@ if(hasAvailabilityData){
 product.sizeAvailability=variantAvailability;
 applySizeAvailability();
 }
+updateCartButtonForSize();
+setProductSeo();
 }
 catch(error){}
 }
