@@ -22,6 +22,7 @@
 <script src="assets/js/product-routes.js"></script>
 <script src="assets/js/supplier-products.js"></script>
 <script src="assets/js/fcc-products.js"></script>
+<script src="assets/js/cadence-products.js?v=1"></script>
 <style>
 
 *{
@@ -1323,6 +1324,11 @@ const existing=searchProducts.find(item=>item.id===product.id);
 if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
 });
 (window.CYCLIFY_FCC_PRODUCTS||[]).forEach(product=>{
+const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
+const existing=searchProducts.find(item=>item.id===product.id);
+if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
+});
+(window.CYCLIFY_CADENCE_PRODUCTS||[]).forEach(product=>{
 const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
 const existing=searchProducts.find(item=>item.id===product.id);
 if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}

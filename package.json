@@ -4,7 +4,8 @@
     "generate:seo": "node scripts/generate-seo-pages.js",
     "sync:cycletime": "node scripts/sync-cycletime.js",
     "sync:fcc": "node scripts/sync-fcc.js",
-    "sync:catalog": "npm run sync:cycletime && npm run sync:fcc && npm run generate:seo"
+    "sync:cadence": "node scripts/sync-cadence.js",
+    "sync:catalog": "npm run sync:cycletime && npm run sync:fcc && npm run sync:cadence && npm run generate:seo"
   },
   "dependencies": {
     "cheerio": "1.0.0"

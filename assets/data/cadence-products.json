@@ -1,0 +1,1145 @@
+{
+  "version": 1,
+  "source": "https://www.cadencelife.in",
+  "excludedBrands": [
+    "XOSS",
+    "Cyclami",
+    "ThinkRider"
+  ],
+  "products": [
+    {
+      "id": 832513965,
+      "supplierProductId": "69f5fd8815b9ca60423c757d",
+      "supplierSynced": true,
+      "sourceHandle": "aerosocks",
+      "sourceUrl": "https://www.cadencelife.in/products/aerosocks",
+      "stockSource": "cadencelife",
+      "name": "Aerosocks",
+      "brand": "GOB",
+      "description": "Lightweight aero cycling socks designed for speed, comfort, and grip. Made with breathable stretch fabric and anti-slip silicone to keep your feet secure and dry during rides. Perfect for cycling, running, and training.",
+      "price": 849,
+      "mrp": "Rs 849",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5fc394aa11e0189a6e7c7",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5fc394aa11e0189a6e7c7",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5fc3c15b9ca60423c7572",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5fc3e34d3b86ba03595f0",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5fc414aa11e0189a6e7c9"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": false,
+      "specs": [
+        "Brand : GOB",
+        "Anti-Slip Silicone Grip : Keeps socks firmly in place inside shoes for better control",
+        "Aero Design : Enhances performance with a sleek, pro-style look",
+        "Breathable Fabric : Keeps feet cool and sweat-free during long rides",
+        "Elastic Compression Fit : Snug fit for improved comfort and support",
+        "Lightweight & Durable : Ideal for daily training and racing use",
+        "Multi-Sport Use : Suitable for cycling, running, gym, and outdoor sports",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/aerosocks"
+      },
+      "keywords": "Aerosocks GOB",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
+      "id": 899695800,
+      "supplierProductId": "6a203c14bb486064bf6b72dd",
+      "supplierSynced": true,
+      "sourceHandle": "alloy-integrated-computer-mount",
+      "sourceUrl": "https://www.cadencelife.in/products/alloy-integrated-computer-mount",
+      "stockSource": "cadencelife",
+      "name": "Alloy Integrated Computer Mount",
+      "brand": "Cadence Life",
+      "description": "Designed for modern road and gravel bikes, the Alloy Integrated Computer Mount provides a secure, lightweight, and aerodynamic solution for mounting your cycling computer. Manufactured from high-strength CNC-machined aluminum alloy, this mount offers exceptional durability and stability while maintaining a sleek cockpit appearance. Positioned directly in front of the handlebar, it delivers optimal screen visibility for easy monitoring of speed, distance, navigation, and training data. Whether you’re racing, training, or commuting, this integrated mount keeps your device secure and accessible on every ride. Compatible with popular cycling computer brands including: * Garmin * Wahoo * XOSS * iGPSPORT * Magene * Bryton",
+      "price": 899,
+      "mrp": "Rs 899",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203b3bbb486064bf6b72c2",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203b3bbb486064bf6b72c2",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203b3fd476f19e4b6a76ac",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203b4346b03bc94ca5ab82",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203b45bb486064bf6b72c5",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203b48bb486064bf6b72c8",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203b4ad476f19e4b6a76b1"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/alloy-integrated-computer-mount"
+      },
+      "keywords": "Alloy Integrated Computer Mount Cadence Life",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "bike-computer",
+      "subCategory": ""
+    },
+    {
+      "id": 829283031,
+      "supplierProductId": "6a269d2717b17b0ce093b28c",
+      "supplierSynced": true,
+      "sourceHandle": "cadencelife-trail-hydration-vest-with-2-l-water-bladder",
+      "sourceUrl": "https://www.cadencelife.in/products/cadencelife-trail-hydration-vest-with-2-l-water-bladder",
+      "stockSource": "cadencelife",
+      "name": "CadenceLife Trail Hydration Vest with 2L Water Bladder",
+      "brand": "Cadence Life",
+      "description": "Stay hydrated and carry your essentials comfortably with the CadenceLife Trail Hydration Vest. Designed for runners, cyclists, hikers, and endurance athletes, this lightweight vest provides secure storage for hydration bottles, nutrition, phones, keys, and other essentials without restricting movement. Its ergonomic fit and adjustable straps minimize bounce, allowing you to focus on performance during long training sessions and race days. Perfect for marathons, trail running, ultra-distance events, cycling, trekking, and outdoor adventures.",
+      "price": 2499,
+      "mrp": "Rs 2,499",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269ba717b17b0ce093b282",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269ba717b17b0ce093b282",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269beb17b17b0ce093b286",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269bf1f6e2e4a1ba93165a",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269bf5f6e2e4a1ba93165c",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269bf8f6e2e4a1ba93165e",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269bfdf6e2e4a1ba931662"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/cadencelife-trail-hydration-vest-with-2-l-water-bladder"
+      },
+      "keywords": "CadenceLife Trail Hydration Vest with 2L Water Bladder Cadence Life",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "bags",
+      "subCategory": ""
+    },
+    {
+      "id": 862959156,
+      "supplierProductId": "6a203b1dd476f19e4b6a76a5",
+      "supplierSynced": true,
+      "sourceHandle": "carbon-integrated-computer-mount",
+      "sourceUrl": "https://www.cadencelife.in/products/carbon-integrated-computer-mount",
+      "stockSource": "cadencelife",
+      "name": "Carbon Integrated Computer Mount",
+      "brand": "Cadence Life",
+      "description": "Upgrade your cockpit with the Carbon Integrated Computer Mount, engineered for cyclists who demand a clean, lightweight, and aerodynamic setup. Designed specifically for integrated carbon handlebars, this mount securely positions your cycling computer directly in front of the stem for optimal visibility and easy access to ride data. Constructed from high-strength carbon fiber, the mount delivers exceptional stiffness and durability while keeping weight to a minimum. Its streamlined design enhances the overall appearance of your bike and provides a stable platform for GPS cycling computers during training, racing, and endurance rides.",
+      "price": 999,
+      "mrp": "Rs 999",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2039e746b03bc94ca5ab61",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2039e746b03bc94ca5ab61",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2039e9bb486064bf6b7296",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2039eb46b03bc94ca5ab63",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2039ed46b03bc94ca5ab65",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2039efbb486064bf6b7299",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2039f2d476f19e4b6a767b"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/carbon-integrated-computer-mount"
+      },
+      "keywords": "Carbon Integrated Computer Mount Cadence Life",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "bike-computer",
+      "subCategory": ""
+    },
+    {
+      "id": 847842239,
+      "supplierProductId": "69f5c03b15b9ca60423c729d",
+      "supplierSynced": true,
+      "sourceHandle": "cycplus-heart-rate-monitor",
+      "sourceUrl": "https://www.cadencelife.in/products/cycplus-heart-rate-monitor",
+      "stockSource": "cadencelife",
+      "name": "CYCPLUS H2 Heart Rate Monitor - Dual Mode ANT+ & Bluetooth Chest Strap",
+      "brand": "Cycplus",
+      "description": "Boost your training performance with the CYCPLUS H2 heart rate monitor, designed for accurate real-time tracking during cycling, running, and workouts. Using dual ANT+ and Bluetooth connectivity, it easily connects to bike computers, smartwatches, and fitness apps for seamless data monitoring. The lightweight chest strap ensures a secure and comfortable fit, while advanced ECG-based sensing delivers precise heart rate data to help you train in the right zone every time.",
+      "price": 3299,
+      "mrp": "Rs 3,299",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5bfff15b9ca60423c7297",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5bfff15b9ca60423c7297",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5c00015b9ca60423c7299",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5c00234d3b86ba03592db",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5c00415b9ca60423c729b",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5c0064aa11e0189a6e4f4",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5c00834d3b86ba03592dd"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": false,
+      "specs": [
+        "Brand : Cycplus",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/cycplus-heart-rate-monitor"
+      },
+      "keywords": "CYCPLUS H2 Heart Rate Monitor - Dual Mode ANT+ & Bluetooth Chest Strap Cycplus",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "bike-computer",
+      "subCategory": ""
+    },
+    {
+      "id": 802269192,
+      "supplierProductId": "6a20397546b03bc94ca5ab4c",
+      "supplierSynced": true,
+      "sourceHandle": "hr-replacement-belt",
+      "sourceUrl": "https://www.cadencelife.in/products/hr-replacement-belt",
+      "stockSource": "cadencelife",
+      "name": "HR Replacement Belt",
+      "brand": "Cadence Life",
+      "description": "",
+      "price": 749,
+      "mrp": "Rs 749",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a20394fd476f19e4b6a7648",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a20394fd476f19e4b6a7648",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a20395246b03bc94ca5ab4a"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": false,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/hr-replacement-belt"
+      },
+      "keywords": "HR Replacement Belt Cadence Life",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "other",
+      "subCategory": ""
+    },
+    {
+      "id": 815167776,
+      "supplierProductId": "6a1fe6a046b03bc94ca5a777",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-aero-socks-3",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-aero-socks-3",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Aerosocks",
+      "brand": "MCYCLE",
+      "description": "Engineered for speed, comfort, and endurance, the MCYCLE Men Crew Thin Aero Compression Cycling Socks are designed for cyclists who demand maximum performance on every ride. Featuring an aerodynamic compression upper and breathable moisture-wicking foot section, these socks help reduce drag while maintaining exceptional comfort during training, racing, and long-distance rides. The lightweight stretch construction provides a secure race-fit feel, while the compression cuff helps keep the socks firmly in place throughout intense efforts. Ideal for road cycling, time trials, triathlon, gravel riding, and indoor training sessions.",
+      "price": 1099,
+      "mrp": "Rs 1,099",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe57ebb486064bf6b6f1c",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe57ebb486064bf6b6f1c",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe57fd476f19e4b6a718b",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe581bb486064bf6b6f1e",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe58246b03bc94ca5a76f",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe58446b03bc94ca5a771",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe585d476f19e4b6a718d"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-aero-socks-3"
+      },
+      "keywords": "MCYCLE Aerosocks MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
+      "id": 831945395,
+      "supplierProductId": "6a1fe1a446b03bc94ca5a755",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-aero-socks-2",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-aero-socks-2",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Aerosocks",
+      "brand": "MCYCLE",
+      "description": "Engineered for speed, comfort, and endurance, the MCYCLE Men Crew Thin Aero Compression Cycling Socks are designed for cyclists who demand maximum performance on every ride. Featuring an aerodynamic compression upper and breathable moisture-wicking foot section, these socks help reduce drag while maintaining exceptional comfort during training, racing, and long-distance rides. The lightweight stretch construction provides a secure race-fit feel, while the compression cuff helps keep the socks firmly in place throughout intense efforts. Ideal for road cycling, time trials, triathlon, gravel riding, and indoor training sessions.",
+      "price": 1099,
+      "mrp": "Rs 1,099",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe03fd476f19e4b6a716c",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe03fd476f19e4b6a716c",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe04abb486064bf6b6ee5",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe04fbb486064bf6b6ee7",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe053d476f19e4b6a716f",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe05646b03bc94ca5a74e",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe05e46b03bc94ca5a750"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-aero-socks-2"
+      },
+      "keywords": "MCYCLE Aerosocks MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
+      "id": 848723014,
+      "supplierProductId": "6a1fe02bbb486064bf6b6ee3",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-aero-socks-1",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-aero-socks-1",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Aerosocks",
+      "brand": "MCYCLE",
+      "description": "Designed for cyclists who value speed, comfort, and performance, the MCYCLE MP055 Aero Sport Socks combine aerodynamic efficiency with breathable comfort. Featuring a lightweight compression upper and moisture-wicking foot section, these socks help reduce drag while maintaining excellent ventilation during intense training sessions and competitive races. The advanced stretch-knit construction delivers a secure fit without restricting movement, while reinforced high-wear areas improve durability for everyday riding. Whether you’re racing, training indoors, or tackling long-distance endurance rides, the MP055 Aero Sport Socks are built to perform.",
+      "price": 1099,
+      "mrp": "Rs 1,099",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdef0d476f19e4b6a7160",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdef0d476f19e4b6a7160",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdef2d476f19e4b6a7162",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdef5bb486064bf6b6edb",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdef9bb486064bf6b6edd",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdefebb486064bf6b6edf"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-aero-socks-1"
+      },
+      "keywords": "MCYCLE Aerosocks MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
+      "id": 824840300,
+      "supplierProductId": "6a1fdedd46b03bc94ca5a742",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-aero-socks",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-aero-socks",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Aerosocks",
+      "brand": "MCYCLE",
+      "description": "Engineered for speed, comfort, and endurance, the MCYCLE Men Crew Thin Aero Compression Cycling Socks are designed for cyclists who demand maximum performance on every ride. Featuring an aerodynamic compression upper and breathable moisture-wicking foot section, these socks help reduce drag while maintaining exceptional comfort during training, racing, and long-distance rides. The lightweight stretch construction provides a secure race-fit feel, while the compression cuff helps keep the socks firmly in place throughout intense efforts. Ideal for road cycling, time trials, triathlon, gravel riding, and indoor training sessions.",
+      "price": 1099,
+      "mrp": "Rs 1,099",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdd10bb486064bf6b6ed2",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdd10bb486064bf6b6ed2",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdd13bb486064bf6b6ed4",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdd17d476f19e4b6a7154",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdd1c46b03bc94ca5a734",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdd25d476f19e4b6a7157",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdd29bb486064bf6b6ed6"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-aero-socks"
+      },
+      "keywords": "MCYCLE Aerosocks MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
+      "id": 866164518,
+      "supplierProductId": "6a2b84ec6430bbfb093c553d",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-free-cutting-glove",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-free-cutting-glove",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Free Cutting Glove",
+      "brand": "MCYCLE",
+      "description": "Ride in comfort and confidence with the MCYCLE Free Cutting Short Finger Cycling Gloves. Designed for road cyclists, MTB riders, and fitness enthusiasts, these lightweight half-finger gloves provide excellent breathability, grip, and shock absorption for every ride. The free-cut elastic fabric offers a seamless, pressure-free fit around the wrist, while the padded palm helps reduce road vibration and hand fatigue during long-distance rides. Quick-drying and highly breathable materials keep your hands cool and comfortable even during intense summer training sessions. Perfect for cycling, indoor training, commuting, fitness workouts, and outdoor adventures.",
+      "price": 1349,
+      "mrp": "Rs 1,349",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2b8215979400d9db228aae",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2b8215979400d9db228aae",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2b821680b66a5a5f317020",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2b8218979400d9db228ab0",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2b8219979400d9db228ab2"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-free-cutting-glove"
+      },
+      "keywords": "MCYCLE Free Cutting Glove MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "gloves",
+      "subCategory": ""
+    },
+    {
+      "id": 821905294,
+      "supplierProductId": "6a1fe88946b03bc94ca5a77c",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-free-cutting-short-finger-cycling-gloves",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-free-cutting-short-finger-cycling-gloves",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Free Cutting Short Finger Cycling Gloves",
+      "brand": "MCYCLE",
+      "description": "Ride in comfort and confidence with the MCYCLE Free Cutting Short Finger Cycling Gloves. Designed for road cyclists, MTB riders, and fitness enthusiasts, these lightweight half-finger gloves provide excellent breathability, grip, and shock absorption for every ride. The free-cut elastic fabric offers a seamless, pressure-free fit around the wrist, while the padded palm helps reduce road vibration and hand fatigue during long-distance rides. Quick-drying and highly breathable materials keep your hands cool and comfortable even during intense summer training sessions. Perfect for cycling, indoor training, commuting, fitness workouts, and outdoor adventures.",
+      "price": 1349,
+      "mrp": "Rs 1,349",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe6d2d476f19e4b6a7196",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe6d2d476f19e4b6a7196",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe6d5d476f19e4b6a7198",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe6d7bb486064bf6b6f26",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe6e1d476f19e4b6a719a"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizeAvailability": {
+        "M": true,
+        "L": false,
+        "XL": false
+      },
+      "variants": [
+        {
+          "id": 887207510,
+          "title": "M",
+          "available": true,
+          "price": 1349,
+          "compare_at_price": 1349,
+          "option1": "M",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 803985129,
+          "title": "L",
+          "available": false,
+          "price": 1349,
+          "compare_at_price": 1349,
+          "option1": "L",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 844932587,
+          "title": "XL",
+          "available": false,
+          "price": 1349,
+          "compare_at_price": 1349,
+          "option1": "XL",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-free-cutting-short-finger-cycling-gloves"
+      },
+      "keywords": "MCYCLE Free Cutting Short Finger Cycling Gloves MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "gloves",
+      "subCategory": ""
+    },
+    {
+      "id": 822090268,
+      "supplierProductId": "6a27e5dc80b66a5a5f315b59",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-free-cutting-short-finger-gloves-1",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-free-cutting-short-finger-gloves-1",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Free Cutting Short Finger Gloves",
+      "brand": "MCYCLE",
+      "description": "Ride in comfort and confidence with the MCYCLE Free Cutting Short Finger Cycling Gloves. Designed for road cyclists, MTB riders, and fitness enthusiasts, these lightweight half-finger gloves provide excellent breathability, grip, and shock absorption for every ride. The free-cut elastic fabric offers a seamless, pressure-free fit around the wrist, while the padded palm helps reduce road vibration and hand fatigue during long-distance rides. Quick-drying and highly breathable materials keep your hands cool and comfortable even during intense summer training sessions. Perfect for cycling, indoor training, commuting, fitness workouts, and outdoor adventures.",
+      "price": 1349,
+      "mrp": "Rs 1,349",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a27e5866430bbfb093c3f01",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a27e5866430bbfb093c3f01",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a27e58a979400d9db227660",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a27e58e80b66a5a5f315b57",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a27e5926430bbfb093c3f03"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-free-cutting-short-finger-gloves-1"
+      },
+      "keywords": "MCYCLE Free Cutting Short Finger Gloves MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "gloves",
+      "subCategory": ""
+    },
+    {
+      "id": 841771621,
+      "supplierProductId": "6a1fe3e546b03bc94ca5a767",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-knitted-sport-crew-socks",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-knitted-sport-crew-socks",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Knitted Sport Crew Socks",
+      "brand": "MCYCLE",
+      "description": "Experience all-day comfort with the MCYCLE Knitted Sport Crew Socks. Designed for cycling, running, gym workouts, and everyday sports activities, these lightweight performance socks feature a breathable knitted construction that promotes airflow and helps keep feet cool and dry. Made from premium quick-drying polyester fabric, these socks offer excellent moisture management, odor resistance, and lasting comfort during training sessions and daily wear. The crew-length design provides a secure fit while the soft stretch fabric ensures unrestricted movement and long-lasting durability. Perfect for cyclists, runners, gym enthusiasts, and active lifestyles.",
+      "price": 599,
+      "mrp": "Rs 599",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe21dbb486064bf6b6ef3",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe21dbb486064bf6b6ef3",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe223bb486064bf6b6ef5",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe22946b03bc94ca5a756",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe51446b03bc94ca5a76b",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe525bb486064bf6b6f1a"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-knitted-sport-crew-socks"
+      },
+      "keywords": "MCYCLE Knitted Sport Crew Socks MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
+      "id": 877902885,
+      "supplierProductId": "6a1fd762bb486064bf6b6e5f",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-pedal-slave-knitted-cycling-socks",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-pedal-slave-knitted-cycling-socks",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Pedal Slave Knitted Cycling Socks",
+      "brand": "MCYCLE",
+      "description": "Ride in comfort and style with the MCYCLE Pedal Slave Knitted Cycling Socks. Designed for cyclists and endurance athletes, these lightweight performance socks feature breathable moisture-wicking fabric that keeps your feet cool, dry, and comfortable throughout every ride. The high-elastic knitted construction provides a secure fit, while the reinforced heel and toe enhance durability for long-lasting performance. Whether you’re tackling long road rides, indoor trainer sessions, commuting, or running, these socks deliver reliable comfort and support.",
+      "price": 549,
+      "mrp": "Rs 549",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd448d476f19e4b6a70f5",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd448d476f19e4b6a70f5",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd534bb486064bf6b6e4e",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd44fd476f19e4b6a70f9",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd460bb486064bf6b6e3e",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd46ebb486064bf6b6e40",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd54146b03bc94ca5a6a2"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-pedal-slave-knitted-cycling-socks"
+      },
+      "keywords": "MCYCLE Pedal Slave Knitted Cycling Socks MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
+      "id": 865826108,
+      "supplierProductId": "6a1fda28d476f19e4b6a7133",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-pu-neoprene-cycling-overshoes",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-pu-neoprene-cycling-overshoes",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE PU Neoprene Cycling Overshoes",
+      "brand": "MCYCLE",
+      "description": "Stay protected from rain, wind, mud, and cold weather with the MCYCLE PU Neoprene Cycling Overshoes. Designed for road cyclists, MTB riders, and commuters, these high-performance shoe covers feature durable PU-coated neoprene construction that provides excellent water resistance, thermal insulation, and aerodynamic protection. The stretch-fit design ensures a snug fit over cycling shoes, while reinforced high-wear zones enhance durability for long-term use in challenging riding conditions",
+      "price": 1999,
+      "mrp": "Rs 1,999",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd799d476f19e4b6a710d",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd799d476f19e4b6a710d",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd817d476f19e4b6a7110",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd86ad476f19e4b6a7117"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": false,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-pu-neoprene-cycling-overshoes"
+      },
+      "keywords": "MCYCLE PU Neoprene Cycling Overshoes MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "shoes",
+      "subCategory": ""
+    },
+    {
+      "id": 871124759,
+      "supplierProductId": "6a1fdcc2d476f19e4b6a7153",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-spring-breathable-waterproof-cycling-shoe-cover",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-spring-breathable-waterproof-cycling-shoe-cover",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Spring Breathable Waterproof Cycling Shoe Cover",
+      "brand": "MCYCLE",
+      "description": "Protect your feet and cycling shoes from rain, wind, road spray, and dirt with the MCYCLE MP060 Cycling Shoe Cover. Designed for spring and mild-weather riding, this lightweight overshoe combines water-resistant protection with breathable comfort, helping riders stay dry without overheating. The high-stretch fabric delivers a secure aerodynamic fit, while reinforced wear zones enhance durability for everyday training, commuting, and long-distance rides. Suitable for both road and MTB cycling shoes",
+      "price": 1799,
+      "mrp": "Rs 1,799",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fda72bb486064bf6b6eaf",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fda72bb486064bf6b6eaf",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fda85d476f19e4b6a7135",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fda8e46b03bc94ca5a717",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fda97d476f19e4b6a7137",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdaa2bb486064bf6b6eb4",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdaaf46b03bc94ca5a719",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fdab2d476f19e4b6a7139"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-spring-breathable-waterproof-cycling-shoe-cover"
+      },
+      "keywords": "MCYCLE Spring Breathable Waterproof Cycling Shoe Cover MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "shoes",
+      "subCategory": ""
+    },
+    {
+      "id": 863040218,
+      "supplierProductId": "6a2038d646b03bc94ca5ab45",
+      "supplierSynced": true,
+      "sourceHandle": "performance-cycling-baselayer",
+      "sourceUrl": "https://www.cadencelife.in/products/performance-cycling-baselayer",
+      "stockSource": "cadencelife",
+      "name": "Performance Cycling Baselayer",
+      "brand": "Cadence Life",
+      "description": "Stay dry, comfortable, and focused on every ride with the Performance Cycling Baselayer. Designed as the first layer next to your skin, this lightweight technical garment efficiently wicks moisture away from the body, helping regulate temperature in both hot and cool conditions. The breathable stretch fabric delivers a second-skin fit that moves naturally with your body, while quick-drying technology prevents sweat buildup during intense training sessions. Whether worn under a cycling jersey in summer or layered beneath thermal clothing in winter, this baselayer enhances comfort throughout every ride. Baselayers are designed to move sweat away from the skin and help regulate body temperature during exercise.",
+      "price": 849,
+      "mrp": "Rs 849",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2037afd476f19e4b6a7628",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2037afd476f19e4b6a7628",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2037b046b03bc94ca5ab31",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2037b1bb486064bf6b725f",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2037b346b03bc94ca5ab33"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/performance-cycling-baselayer"
+      },
+      "keywords": "Performance Cycling Baselayer Cadence Life",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
+      "id": 825779206,
+      "supplierProductId": "6a269b0bf6e2e4a1ba93163f",
+      "supplierSynced": true,
+      "sourceHandle": "performance-running-cap",
+      "sourceUrl": "https://www.cadencelife.in/products/performance-running-cap",
+      "stockSource": "cadencelife",
+      "name": "Performance Running Cap",
+      "brand": "Cadence Life",
+      "description": "Stay cool, protected, and focused on every run with the Performance Running Cap. Designed for runners, cyclists, and outdoor athletes, this lightweight cap features breathable fabric and a moisture-wicking design to help keep sweat away from your face. The adjustable fit ensures all-day comfort, while the curved visor provides protection from sun and glare during training and race days. Perfect for running, cycling, walking, hiking, gym sessions, and outdoor adventures.",
+      "price": 749,
+      "mrp": "Rs 749",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269937f6e2e4a1ba931634",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269937f6e2e4a1ba931634",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269946fdacda7703a3f6ce",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a26994ff6e2e4a1ba931636",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a26995717b17b0ce093b278",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a26995efdacda7703a3f6d0",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269940fdacda7703a3f6cc"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/performance-running-cap"
+      },
+      "keywords": "Performance Running Cap Cadence Life",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "other",
+      "subCategory": ""
+    },
+    {
+      "id": 892523227,
+      "supplierProductId": "69dfc623ef41ff1cca41af06",
+      "supplierSynced": true,
+      "sourceHandle": "sample-product-1",
+      "sourceUrl": "https://www.cadencelife.in/products/sample-product-1",
+      "stockSource": "cadencelife",
+      "name": "Photochromic Sunglass KD",
+      "brand": "Cadence Life",
+      "description": "Upgrade your outdoor performance with these photochromic sports sunglasses, perfect for cycling, running, fishing, and everyday use. The smart lenses automatically adjust to light conditions, ensuring clear vision in both bright sun and low light. Designed with a lightweight TR90 frame and a wraparound fit, they offer all-day comfort and protection from wind, dust, and debris. Built for speed and style, they deliver the perfect balance of performance and durability for any outdoor activity.",
+      "price": 999,
+      "mrp": "Rs 999",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa2832f6d953135df8193",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa2832f6d953135df8193",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa286344558161af33e6a"
+      ],
+      "sizes": [
+        "White KD13",
+        "Black KD10"
+      ],
+      "sizeAvailability": {
+        "White KD13": false,
+        "Black KD10": false
+      },
+      "variants": [
+        {
+          "id": 829193582,
+          "title": "White KD13",
+          "available": false,
+          "price": 999,
+          "compare_at_price": 999,
+          "option1": "White KD13",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 893960169,
+          "title": "Black KD10",
+          "available": false,
+          "price": 999,
+          "compare_at_price": 999,
+          "option1": "Black KD10",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": false,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/sample-product-1"
+      },
+      "keywords": "Photochromic Sunglass KD Cadence Life",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "eyewear",
+      "subCategory": ""
+    },
+    {
+      "id": 809300846,
+      "supplierProductId": "69dfc626ef41ff1cca41af0c",
+      "supplierSynced": true,
+      "sourceHandle": "sample-product-2",
+      "sourceUrl": "https://www.cadencelife.in/products/sample-product-2",
+      "stockSource": "cadencelife",
+      "name": "Photochromic Sunglass SC",
+      "brand": "Cadence Life",
+      "description": "Boost your outdoor performance with these photochromic cycling sunglasses, designed for cyclists, runners, and athletes. The smart lenses automatically adjust to changing light, delivering clear vision in both bright sun and low-light conditions. The oversized wraparound design provides full protection from wind, dust, and debris, while the lightweight TR90 frame ensures all-day comfort. Perfect for cycling, running, hiking, and outdoor training, these sunglasses combine performance, protection, and style in one.",
+      "price": 999,
+      "mrp": "Rs 999",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69ef9c4c344558161af33e1d",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69ef9c4c344558161af33e1d",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69ef9c4d344558161af33e1f"
+      ],
+      "sizes": [
+        "Black SC7",
+        "White SC8"
+      ],
+      "sizeAvailability": {
+        "Black SC7": false,
+        "White SC8": false
+      },
+      "variants": [
+        {
+          "id": 810688037,
+          "title": "Black SC7",
+          "available": false,
+          "price": 999,
+          "compare_at_price": 999,
+          "option1": "Black SC7",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 832387786,
+          "title": "White SC8",
+          "available": false,
+          "price": 999,
+          "compare_at_price": 999,
+          "option1": "White SC8",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": false,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/sample-product-2"
+      },
+      "keywords": "Photochromic Sunglass SC Cadence Life",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "eyewear",
+      "subCategory": ""
+    },
+    {
+      "id": 801615825,
+      "supplierProductId": "6a0dea97b5277638b2f1236d",
+      "supplierSynced": true,
+      "sourceHandle": "riderace-bottle",
+      "sourceUrl": "https://www.cadencelife.in/products/riderace-bottle",
+      "stockSource": "cadencelife",
+      "name": "Riderace Bottle",
+      "brand": "Riderace",
+      "description": "",
+      "price": 549,
+      "mrp": "Rs 549",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fcce0bb486064bf6b6d8a",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fcce0bb486064bf6b6d8a",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fcce3d476f19e4b6a70b7",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fcce646b03bc94ca5a622",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fcce946b03bc94ca5a624",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fcceabb486064bf6b6d8c",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fccecbb486064bf6b6d8e"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Riderace",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/riderace-bottle"
+      },
+      "keywords": "Riderace Bottle Riderace",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "other",
+      "subCategory": ""
+    },
+    {
+      "id": 880324353,
+      "supplierProductId": "6a2696c6fdacda7703a3f6a5",
+      "supplierSynced": true,
+      "sourceHandle": "running-waist-belt",
+      "sourceUrl": "https://www.cadencelife.in/products/running-waist-belt",
+      "stockSource": "cadencelife",
+      "name": "Running Waist Belt",
+      "brand": "Cadence Life",
+      "description": "Stay hands-free and focused on your workout with this lightweight Running Waist Belt. Designed for runners, cyclists, walkers, and fitness enthusiasts, it securely carries your phone, keys, cash, cards, and other essentials while maintaining a comfortable, bounce-free fit. The water-resistant construction helps protect your belongings from sweat and light rain, making it ideal for both indoor and outdoor activities.",
+      "price": 899,
+      "mrp": "Rs 899",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2694f017b17b0ce093b255",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2694f017b17b0ce093b255",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2694f2fdacda7703a3f684",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2694f3f6e2e4a1ba931613",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269592fdacda7703a3f69f",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269593f6e2e4a1ba93161c",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2694f4f6e2e4a1ba931616",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2694f6fdacda7703a3f688",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a269595fdacda7703a3f6a1",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2694f5fdacda7703a3f686"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/running-waist-belt"
+      },
+      "keywords": "Running Waist Belt Cadence Life",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "bags",
+      "subCategory": ""
+    },
+    {
+      "id": 826078465,
+      "supplierProductId": "69dfc62aef41ff1cca41af13",
+      "supplierSynced": true,
+      "sourceHandle": "sample-product-3",
+      "sourceUrl": "https://www.cadencelife.in/products/sample-product-3",
+      "stockSource": "cadencelife",
+      "name": "Smart Fitness Band",
+      "brand": "Cadence Life",
+      "description": "Stay focused on your fitness without distractions. This screen-free smart fitness band is designed for comfort, accuracy, and long-lasting performance. With advanced sensors, it tracks your health 24/7-including heart rate, blood oxygen, sleep quality, and more-while syncing all data directly to your smartphone. Its ultra-light, minimal design makes it perfect for all-day wear, whether you’re working out, running, or sleeping. No screen means no interruptions-just pure performance and seamless tracking.",
+      "price": 3199,
+      "mrp": "Rs 3,199",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd146bb486064bf6b6e1b",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd146bb486064bf6b6e1b",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fd15046b03bc94ca5a658",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203d3d46b03bc94ca5abb7",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203d46bb486064bf6b72ed",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203d4fbb486064bf6b72ef",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203cd546b03bc94ca5abb3",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203cf1d476f19e4b6a76c2",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203d8146b03bc94ca5abbd",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a203d10d476f19e4b6a76c5"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/sample-product-3"
+      },
+      "keywords": "Smart Fitness Band Cadence Life",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "smart-watches",
+      "subCategory": ""
+    },
+    {
+      "id": 866766468,
+      "supplierProductId": "69f5baa44aa11e0189a6e4c3",
+      "supplierSynced": true,
+      "sourceHandle": "wnd",
+      "sourceUrl": "https://www.cadencelife.in/products/wnd",
+      "stockSource": "cadencelife",
+      "name": "Waterproof & Windproof Cycling Shoe Covers",
+      "brand": "rskit",
+      "description": "Stay protected in any weather with Rrskit cycling shoe covers, designed to keep your feet dry, clean, and comfortable during every ride. Made from lightweight, elastic, and waterproof material, these covers shield your shoes from rain, wind, mud, and road spray. The aerodynamic, stretch-fit design ensures a snug fit over your cycling shoes, reducing drag while maintaining flexibility and comfort. Whether you’re riding on wet roads or training in unpredictable conditions, these overshoes deliver reliable protection and performance. Built for road cyclists and MTB riders, they are easy to wear, durable, and perfect for daily rides or long-distance training.",
+      "price": 2099,
+      "mrp": "Rs 2,099",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba774aa11e0189a6e4bb",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba774aa11e0189a6e4bb",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba784aa11e0189a6e4bd",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba7915b9ca60423c725f",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba7b34d3b86ba0359264",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba7d34d3b86ba0359266",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba804aa11e0189a6e4bf",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba8215b9ca60423c7261",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba8315b9ca60423c7263",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69f5ba8515b9ca60423c7265"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": false,
+      "specs": [
+        "Brand : rskit",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/wnd"
+      },
+      "keywords": "Waterproof & Windproof Cycling Shoe Covers rskit",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "shoes",
+      "subCategory": ""
+    },
+    {
+      "id": 891334515,
+      "supplierProductId": "69efa9271ffe3df08ae8b34a",
+      "supplierSynced": true,
+      "sourceHandle": "x-tiger-polarised-sunglass-5-interchangeable-lens-kit",
+      "sourceUrl": "https://www.cadencelife.in/products/x-tiger-polarised-sunglass-5-interchangeable-lens-kit",
+      "stockSource": "cadencelife",
+      "name": "X-TIGER Polarised Sunglass- 3 Interchangeable Lens kit",
+      "brand": "X-TIGER",
+      "description": "Take your outdoor performance to the next level with X-TIGER polarized sports sunglasses, designed for cycling, running, fishing, and more. Featuring 5 interchangeable lenses, you can easily switch based on light conditions-whether it’s bright sunlight, low light, or night riding. The polarized lens reduces glare and enhances clarity, while the lightweight TR90 frame ensures durability and all-day comfort. With a wraparound design and adjustable nose pads, these sunglasses provide a secure fit and full protection from wind, dust, and debris. Perfect for athletes who need versatility, performance, and style in one complete eyewear system.",
+      "price": 1499,
+      "mrp": "Rs 1,499",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa93e1ffe3df08ae8b34b",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa93e1ffe3df08ae8b34b",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa893275febd8becb0da1",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa8d92f6d953135df821e",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa8e632738725dea4df6b",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa8e72f6d953135df8220",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa8e82f6d953135df8222"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": false,
+      "specs": [
+        "Brand : X-TIGER",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/x-tiger-polarised-sunglass-5-interchangeable-lens-kit"
+      },
+      "keywords": "X-TIGER Polarised Sunglass- 3 Interchangeable Lens kit X-TIGER",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "eyewear",
+      "subCategory": ""
+    },
+    {
+      "id": 884014120,
+      "supplierProductId": "69efa75e275febd8becb0d88",
+      "supplierSynced": true,
+      "sourceHandle": "x-tiger-polarized-sunglass-5-interchangeable-lens-kit",
+      "sourceUrl": "https://www.cadencelife.in/products/x-tiger-polarized-sunglass-5-interchangeable-lens-kit",
+      "stockSource": "cadencelife",
+      "name": "X-TIGER Polarized Sunglass-5 Interchangeable Lens kit",
+      "brand": "X-TIGER",
+      "description": "Take your outdoor performance to the next level with X-TIGER polarized sports sunglasses, designed for cycling, running, fishing, and more. Featuring 5 interchangeable lenses, you can easily switch based on light conditions-whether it’s bright sunlight, low light, or night riding. The polarized lens reduces glare and enhances clarity, while the lightweight TR90 frame ensures durability and all-day comfort. With a wraparound design and adjustable nose pads, these sunglasses provide a secure fit and full protection from wind, dust, and debris. Perfect for athletes who need versatility, performance, and style in one complete eyewear system.",
+      "price": 1799,
+      "mrp": "Rs 1,799",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa95332738725dea4df6f",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa95332738725dea4df6f",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa6db275febd8becb0d83",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa6dd2f6d953135df81b9",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa6df2f6d953135df81bb",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa6f52f6d953135df81c1"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": false,
+      "specs": [
+        "Brand : X-TIGER",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/x-tiger-polarized-sunglass-5-interchangeable-lens-kit"
+      },
+      "keywords": "X-TIGER Polarized Sunglass-5 Interchangeable Lens kit X-TIGER",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "eyewear",
+      "subCategory": ""
+    }
+  ]
+}

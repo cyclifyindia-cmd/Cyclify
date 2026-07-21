@@ -8,6 +8,7 @@ const routesPath = path.join(root, 'assets', 'js', 'product-routes.js');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const supplierPath = path.join(root, 'assets', 'data', 'cycletime-products.json');
 const fccSupplierPath = path.join(root, 'assets', 'data', 'fcc-products.json');
+const cadenceSupplierPath = path.join(root, 'assets', 'data', 'cadence-products.json');
 const template = fs.readFileSync(templatePath, 'utf8');
 
 function extractProducts(source) {
@@ -93,6 +94,14 @@ if (fs.existsSync(supplierPath)) {
 }
 if (fs.existsSync(fccSupplierPath)) {
   const supplierProducts = JSON.parse(fs.readFileSync(fccSupplierPath, 'utf8')).products || [];
+  supplierProducts.forEach(item => {
+    const existing = products.find(product => product.id === item.id || product.sourceHandle === item.sourceHandle);
+    if (existing) Object.assign(existing, item, { id: existing.id });
+    else products.push(item);
+  });
+}
+if (fs.existsSync(cadenceSupplierPath)) {
+  const supplierProducts = JSON.parse(fs.readFileSync(cadenceSupplierPath, 'utf8')).products || [];
   supplierProducts.forEach(item => {
     const existing = products.find(product => product.id === item.id || product.sourceHandle === item.sourceHandle);
     if (existing) Object.assign(existing, item, { id: existing.id });
