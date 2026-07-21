@@ -24,6 +24,7 @@ content="width=device-width,initial-scale=1">
 <script>window.CYCLIFY_PRODUCT_ID=10870271148225;</script>
 <script src="assets/js/product-routes.js"></script>
 <script src="assets/js/supplier-products.js"></script>
+<script src="assets/js/fcc-products.js"></script>
 <style>
 
 *{
@@ -2638,6 +2639,7 @@ detailStories:[
 ]}
 ];
 window.cyclifyMergeSupplierProducts(products,"");
+window.cyclifyMergeFccProducts(products,"");
 
 const params=new URLSearchParams(window.location.search);
 const productId=Number(window.CYCLIFY_PRODUCT_ID||params.get("id"))||1;

@@ -22,6 +22,7 @@ content="width=device-width,initial-scale=1">
 <meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
 <script src="assets/js/product-routes.js"></script>
 <script src="assets/js/supplier-products.js"></script>
+<script src="assets/js/fcc-products.js"></script>
 <style>
 
 *{
@@ -2504,6 +2505,7 @@ detailStories:[
 ]}
 ];
 window.cyclifyMergeSupplierProducts(products,"");
+window.cyclifyMergeFccProducts(products,"");
 
 const params=new URLSearchParams(window.location.search);
 const productId=Number(window.CYCLIFY_PRODUCT_ID||params.get("id"))||1;

@@ -7,6 +7,7 @@ const outputDir = path.join(root, 'products');
 const routesPath = path.join(root, 'assets', 'js', 'product-routes.js');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const supplierPath = path.join(root, 'assets', 'data', 'cycletime-products.json');
+const fccSupplierPath = path.join(root, 'assets', 'data', 'fcc-products.json');
 const template = fs.readFileSync(templatePath, 'utf8');
 
 function extractProducts(source) {
@@ -72,6 +73,15 @@ function descriptionFor(product) {
     .slice(0, 300);
 }
 
+function existingRoutes() {
+  if (!fs.existsSync(routesPath)) return {};
+  const source = fs.readFileSync(routesPath, 'utf8');
+  const match = source.match(/const routes=(\{[\s\S]*?\});/);
+  if (!match) return {};
+  try { return JSON.parse(match[1]); }
+  catch (error) { return {}; }
+}
+
 const products = extractProducts(template);
 if (fs.existsSync(supplierPath)) {
   const supplierProducts = JSON.parse(fs.readFileSync(supplierPath, 'utf8')).products || [];
@@ -81,7 +91,19 @@ if (fs.existsSync(supplierPath)) {
     else products.push(item);
   });
 }
-const routes = Object.fromEntries(products.map(product => [product.id, 'products/' + slugify(product.name) + '-' + product.id + '.html']));
+if (fs.existsSync(fccSupplierPath)) {
+  const supplierProducts = JSON.parse(fs.readFileSync(fccSupplierPath, 'utf8')).products || [];
+  supplierProducts.forEach(item => {
+    const existing = products.find(product => product.id === item.id || product.sourceHandle === item.sourceHandle);
+    if (existing) Object.assign(existing, item, { id: existing.id });
+    else products.push(item);
+  });
+}
+const previousRoutes = existingRoutes();
+const routes = Object.fromEntries(products.map(product => [
+  product.id,
+  previousRoutes[product.id] || 'products/' + slugify(product.name) + '-' + product.id + '.html'
+]));
 
 fs.mkdirSync(outputDir, { recursive: true });
 fs.mkdirSync(path.dirname(routesPath), { recursive: true });

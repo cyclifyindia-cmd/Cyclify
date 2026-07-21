@@ -20,6 +20,7 @@
 <meta name="twitter:image" content="https://cyclify.in/assets/categories/CAT_ACC.png">
 <script src="assets/js/product-routes.js"></script>
 <script src="assets/js/supplier-products.js"></script>
+<script src="assets/js/fcc-products.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#f5f5f5;padding-bottom:80px;color:#111827;animation:pageFade .45s ease both}
@@ -137,6 +138,7 @@ html{scroll-behavior:smooth}
 <script>
 const products=[];
 window.cyclifyMergeSupplierProducts(products,"accessories.html");
+window.cyclifyMergeFccProducts(products,"accessories.html");
 const categories=[
 {key:"mounts-cases",label:"Mounts & Cases",image:"assets/categories/CAT_ACC.png"},
 {key:"bags",label:"Bags",image:"assets/categories/CAT_ACC.png"},

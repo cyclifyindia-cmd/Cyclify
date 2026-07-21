@@ -1,4 +1,4 @@
-name: Sync Cycle Time catalogue
+name: Sync supplier catalogues
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: cycletime-catalogue-sync
+  group: supplier-catalogue-sync
   cancel-in-progress: false
 
 jobs:
@@ -31,6 +31,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Catalogue is already current."
           else
-            git commit -m "Sync Cycle Time catalogue"
+            git commit -m "Sync supplier catalogues"
             git push
           fi

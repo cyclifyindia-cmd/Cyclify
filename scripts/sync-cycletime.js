@@ -3,7 +3,7 @@ const path = require('path');
 const cheerio = require('cheerio');
 const iconv = require('iconv-lite');
 
-const root = 'C:/Users/user/Documents/GitHub/Cyclify';
+const root = path.resolve(__dirname, '..');
 const sourceBase = 'https://www.cycletimeindia.com';
 const dataPath = path.join(root, 'assets/data/cycletime-products.json');
 const scriptPath = path.join(root, 'assets/js/supplier-products.js');
