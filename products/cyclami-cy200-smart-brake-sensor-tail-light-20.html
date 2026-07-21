@@ -337,26 +337,144 @@ padding:20px;
 
 }
 
-.spec{
+.specification-section{
+padding:clamp(22px,4vw,48px);
+}
 
-padding:15px;
-background:#fafafa;
-border-radius:12px;
-margin-top:10px;
+.specification-heading{
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+gap:24px;
+padding-bottom:22px;
+border-bottom:1px solid #e7e9ed;
+}
 
+.spec-kicker{
+font-size:12px;
+font-weight:800;
+letter-spacing:0;
+text-transform:uppercase;
+color:#0057b8;
+margin:0 0 7px;
+}
+
+.specification-heading h3{
+font-size:clamp(26px,3vw,40px);
+line-height:1.08;
+margin:0;
+}
+
+.spec-summary{
+max-width:560px;
+font-size:14px;
+line-height:1.55;
+color:#5b6470;
+margin-top:9px;
+}
+
+.spec-source{
+display:inline-flex;
+align-items:center;
+gap:7px;
+color:#0057b8;
+font-size:13px;
+font-weight:700;
+text-decoration:none;
+white-space:nowrap;
+}
+
+.spec-source::after{content:"↗";}
+
+.spec-highlights{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:0;
+border-bottom:1px solid #e7e9ed;
+}
+
+.spec-highlight{
+padding:22px 20px 22px 0;
+min-width:0;
+}
+
+.spec-highlight+.spec-highlight{
+border-left:1px solid #e7e9ed;
+padding-left:20px;
+}
+
+.spec-highlight-label{
+display:block;
+font-size:11px;
+font-weight:800;
+text-transform:uppercase;
+color:#7a838e;
+margin-bottom:7px;
+}
+
+.spec-highlight-value{
+display:block;
+font-size:16px;
+font-weight:750;
+line-height:1.35;
+color:#16191d;
+overflow-wrap:anywhere;
+}
+
+.spec-groups{border-top:0;}
+
+.spec-group{
+display:grid;
+grid-template-columns:minmax(170px,230px) minmax(0,1fr);
+gap:clamp(20px,4vw,64px);
+padding:30px 0;
+border-bottom:1px solid #e7e9ed;
+}
+
+.spec-group h4{
+font-size:17px;
+line-height:1.35;
+margin:0;
+}
+
+.spec-table{margin:0;}
+
+.spec-row{
+display:grid;
+grid-template-columns:minmax(135px,34%) minmax(0,1fr);
+gap:22px;
+padding:12px 0;
+border-bottom:1px solid #f0f1f3;
+}
+
+.spec-row:first-child{padding-top:0;}
+.spec-row:last-child{border-bottom:0;padding-bottom:0;}
+
+.spec-row dt{
+font-size:13px;
+font-weight:700;
+color:#59616c;
+}
+
+.spec-row dd{
+font-size:14px;
+line-height:1.48;
+color:#15181c;
+margin:0;
+overflow-wrap:anywhere;
 }
 
 .product-detail-stories{
 display:grid;
 grid-template-columns:repeat(2,minmax(0,1fr));
 gap:18px;
-margin-top:22px;
+margin-top:34px;
 }
 
 .detail-story{
-background:#f7f8fa;
+background:#f5f6f7;
 overflow:hidden;
-border-radius:8px;
+border-radius:6px;
 }
 
 .detail-story img{
@@ -367,24 +485,30 @@ object-fit:cover;
 background:#fff;
 }
 
-.detail-story-copy{
-padding:16px;
-}
+.detail-story-copy{padding:18px;}
+.detail-story h4{font-size:18px;margin:0 0 7px;}
+.detail-story p{font-size:14px;line-height:1.55;color:#4a4f57;}
 
-.detail-story h4{
-font-size:18px;
-margin:0 0 7px;
-}
-
-.detail-story p{
-font-size:14px;
-line-height:1.55;
-color:#4a4f57;
-}
-
-@media(max-width:680px){
+@media(max-width:800px){
+.specification-heading{align-items:flex-start;flex-direction:column;gap:12px;}
+.spec-highlights{grid-template-columns:repeat(2,minmax(0,1fr));}
+.spec-highlight:nth-child(3){border-left:0;border-top:1px solid #e7e9ed;padding-left:0;}
+.spec-highlight:nth-child(4){border-top:1px solid #e7e9ed;}
+.spec-group{grid-template-columns:1fr;gap:16px;padding:24px 0;}
 .product-detail-stories{grid-template-columns:1fr;gap:12px;}
 .detail-story-copy{padding:14px;}
+}
+
+@media(max-width:480px){
+.specification-section{padding:22px 15px;}
+.specification-heading h3{font-size:27px;}
+.spec-summary{font-size:13px;}
+.spec-highlight{padding:17px 12px 17px 0;}
+.spec-highlight+.spec-highlight{padding-left:12px;}
+.spec-highlight:nth-child(3){padding-left:0;}
+.spec-highlight-value{font-size:14px;}
+.spec-row{grid-template-columns:minmax(96px,37%) minmax(0,1fr);gap:12px;padding:11px 0;}
+.spec-row dt,.spec-row dd{font-size:12.5px;}
 }
 
 /* RELATED */
@@ -740,6 +864,33 @@ gap:5px!important;
         "@type": "Brand",
         "name": "Cyclami"
       },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Brand",
+          "value": "CYCLAMI"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Model",
+          "value": "CY200"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Type",
+          "value": "Smart brake sensor tail light"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Use",
+          "value": "Rear visibility and braking alert"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Feature",
+          "value": "Smart brake sensing"
+        }
+      ],
       "offers": {
         "@type": "Offer",
         "url": "https://cyclify.in/products/cyclami-cy200-smart-brake-sensor-tail-light-20.html",
@@ -941,18 +1092,22 @@ Buy Now
 
 </div>
 
-<div class="section">
+<section class="section specification-section" aria-labelledby="specificationTitle">
 
-<h3>
-Specifications
-</h3>
-
-<div id="specList">
+<div class="specification-heading">
+<div>
+<p class="spec-kicker">Product details</p>
+<h3 id="specificationTitle">Specifications</h3>
+<p class="spec-summary" id="specSummaryText">Clear technical details for confident product comparison.</p>
+</div>
+<a class="spec-source" id="specSource" href="#" target="_blank" rel="noopener noreferrer" hidden>Verified source</a>
 </div>
 
+<div class="spec-highlights" id="specHighlights" aria-label="Key specifications"></div>
+<div class="spec-groups" id="specList"></div>
 <div class="product-detail-stories" id="productDetailStories"></div>
 
-</div>
+</section>
 
 
 <div class="section">
@@ -1794,24 +1949,44 @@ id:37,
 name:"Orome Valar TH50D Carbon Road Disc Brake Wheelset",
 price:85000,
 mrp:"Rs 85,000",
-image:"assets/products/orome-valar-th50d-2.png",
+image:"assets/products/orome-valar-th50d-black-main.jpg",
 images:[
+"assets/products/orome-valar-th50d-black-main.jpg",
 "assets/products/orome-valar-th50d-2.png",
 "assets/products/orome-valar-th50d-3.png",
 "assets/products/orome-valar-th50d-6.png"
 ],
 sizes:["Carbon"],
+specSource:{
+label:"Verified by ELVES / Orome",
+url:"https://elvesbike.com/wheels.php?id=136"
+},
 specs:[
 "Brand : Orome",
-"Model : Valar TH50D",
-"Type : Carbon road disc brake wheelset",
-"Material : Carbon fiber rim",
-"Rim Depth : 50mm",
-"Internal Width : 22mm",
-"External Width : 29mm",
-"Tyre Support : Tubeless compatible, 23-45mm tyres",
+"Model : Valar TH50D Black",
+"Type : Road disc brake wheelset",
+"Rim Material : Toray T800 carbon fibre",
+"Rim Surface : 24K carbon fibre",
+"Rim Finish : Zero-Coating Finished Technology",
+"Rim Depth : 50 mm",
+"Internal Width : 22 mm",
+"External Width : 29 mm",
+"Tyre Support : Tubeless ready; supports 23-45 mm tyres",
+"Hub : Custom ceramic-bearing CNC hub with 52T star ratchet system",
+"Freehub : Shimano-compatible 11-speed supplied; SRAM XDR and Shimano 12-speed Micro Spline available on request",
+"Spokes : PILLAR PSR TB2015 stainless steel",
+"Nipples : PILLAR TG aluminium nipples with spacers",
+"Axles : Front 12x100 mm; rear 12x142 mm thru-axle",
+"Weight : Approximately 1,445 g per pair",
+"Rider Weight Limit : 100 kg / 220 lb",
+"Maximum Tyre Pressure : 120 psi; 100 psi for tubeless",
 "Brake Type : Disc brake",
-"Use : Road cycling and performance riding"
+"Use : Performance road cycling"
+],
+detailStories:[
+{title:"50 mm T800 carbon rim",text:"The 24K carbon surface combines a 50 mm aero profile with a 22 mm internal and 29 mm external width for modern road tyres.",image:"assets/products/orome-valar-th50d-2.png"},
+{title:"Ceramic 52T ratchet hub",text:"The custom CNC hub uses ceramic bearings and a 52-tooth star ratchet system for fast, dependable engagement.",image:"assets/products/orome-valar-th50d-3.png"},
+{title:"PILLAR stainless spokes",text:"PILLAR PSR TB2015 stainless spokes and TG aluminium nipples complete the lightweight performance build.",image:"assets/products/orome-valar-th50d-6.png"}
 ]
 },
 
@@ -2486,6 +2661,11 @@ image:(product.images&&product.images.length?product.images:[product.image]).map
 description,
 sku:`CYCLIFY-${product.id}`,
 brand:{"@type":"Brand",name:brand},
+additionalProperty:(product.specs||[]).map(spec=>{
+const raw=String(spec||"");
+const separator=raw.indexOf(":");
+return separator>0?{"@type":"PropertyValue",name:raw.slice(0,separator).trim(),value:raw.slice(separator+1).trim()}:null;
+}).filter(Boolean),
 offers:{
 "@type":"Offer",
 url:canonical,
@@ -2799,14 +2979,81 @@ document.getElementById("productGallery").classList.toggle("zoomed");
 });
 
 const specList=document.getElementById("specList");
+const specHighlights=document.getElementById("specHighlights");
+const specSource=document.getElementById("specSource");
 
-product.specs.forEach(spec=>{
-specList.innerHTML+=`
-<div class="spec">
-${spec}
-</div>
-`;
+function parseProductSpec(spec){
+const raw=String(spec||"").trim();
+const separator=raw.indexOf(":");
+if(separator<0){return {label:"Detail",value:raw};}
+return {label:raw.slice(0,separator).trim(),value:raw.slice(separator+1).trim()};
+}
+
+function specificationGroup(label){
+const key=String(label||"").toLowerCase();
+if(/brand|model|type|use|colour|color/.test(key)){return "Overview";}
+if(/width|depth|weight|size|length|pressure|limit|dimension|capacity|axle/.test(key)){return "Dimensions and limits";}
+if(/shipping|included|package|warranty|accessor/.test(key)){return "Delivery and included items";}
+if(/material|frame|fork|rim|surface|finish|brake|wheel|tyre|tire|hub|spoke|nipple|freehub|bearing|groupset|derailleur|crank|cassette|chain|cockpit|handlebar|seat|saddle/.test(key)){return "Construction and components";}
+return "Performance and compatibility";
+}
+
+const parsedSpecs=(product.specs||[]).map(parseProductSpec).filter(spec=>spec.value);
+const highlightPriorities=[/model/i,/type/i,/material|rim material|frame/i,/weight|rim depth|capacity|brightness|pressure/i];
+const highlights=[];
+highlightPriorities.forEach(pattern=>{
+const match=parsedSpecs.find(spec=>pattern.test(spec.label)&&!highlights.includes(spec));
+if(match){highlights.push(match);}
 });
+parsedSpecs.forEach(spec=>{if(highlights.length<4&&!highlights.includes(spec)&&!/brand/i.test(spec.label)){highlights.push(spec);}});
+
+highlights.slice(0,4).forEach(spec=>{
+const item=document.createElement("div");
+item.className="spec-highlight";
+const label=document.createElement("span");
+label.className="spec-highlight-label";
+label.textContent=spec.label;
+const value=document.createElement("span");
+value.className="spec-highlight-value";
+value.textContent=spec.value;
+item.append(label,value);
+specHighlights.appendChild(item);
+});
+
+const groupedSpecs=new Map();
+parsedSpecs.forEach(spec=>{
+const group=specificationGroup(spec.label);
+if(!groupedSpecs.has(group)){groupedSpecs.set(group,[]);}
+groupedSpecs.get(group).push(spec);
+});
+
+groupedSpecs.forEach((specs,groupName)=>{
+const group=document.createElement("section");
+group.className="spec-group";
+const heading=document.createElement("h4");
+heading.textContent=groupName;
+const list=document.createElement("dl");
+list.className="spec-table";
+specs.forEach(spec=>{
+const row=document.createElement("div");
+row.className="spec-row";
+const term=document.createElement("dt");
+term.textContent=spec.label;
+const detail=document.createElement("dd");
+detail.textContent=spec.value;
+row.append(term,detail);
+list.appendChild(row);
+});
+group.append(heading,list);
+specList.appendChild(group);
+});
+
+if(product.specSource&&product.specSource.url){
+specSource.href=product.specSource.url;
+specSource.textContent=product.specSource.label||"Verified source";
+specSource.hidden=false;
+document.getElementById("specSummaryText").textContent="Technical details checked against the named product source. Specifications may be updated by the manufacturer.";
+}
 
 const productDetailStories=document.getElementById("productDetailStories");
 (product.detailStories||[]).forEach(detail=>{

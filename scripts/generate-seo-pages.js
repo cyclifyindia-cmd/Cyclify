@@ -101,6 +101,15 @@ for (const product of products) {
         description,
         sku: 'CYCLIFY-' + product.id,
         brand: { '@type': 'Brand', name: brand },
+        additionalProperty: (product.specs || []).map(spec => {
+          const raw = String(spec || '');
+          const separator = raw.indexOf(':');
+          return separator > 0 ? {
+            '@type': 'PropertyValue',
+            name: raw.slice(0, separator).trim(),
+            value: raw.slice(separator + 1).trim()
+          } : null;
+        }).filter(Boolean),
         offers: {
           '@type': 'Offer',
           url: canonical,
