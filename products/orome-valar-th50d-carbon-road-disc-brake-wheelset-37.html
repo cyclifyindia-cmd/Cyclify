@@ -1167,11 +1167,10 @@ Buy Now
 
 <div class="specification-heading">
 <div>
-<p class="spec-kicker">Product details</p>
-<h3 id="specificationTitle">Specifications</h3>
-<p class="spec-summary" id="specSummaryText">Clear technical details for confident product comparison.</p>
+<p class="spec-kicker">Product Overview</p>
+<h3 id="specificationTitle">Technical Specifications</h3>
+<p class="spec-summary" id="specSummaryText">Key specifications, compatibility and product information at a glance.</p>
 </div>
-<a class="spec-source" id="specSource" href="#" target="_blank" rel="noopener noreferrer" hidden>Verified source</a>
 </div>
 
 <div class="spec-highlights" id="specHighlights" aria-label="Key specifications"></div>
@@ -3051,7 +3050,6 @@ document.getElementById("productGallery").classList.toggle("zoomed");
 
 const specList=document.getElementById("specList");
 const specHighlights=document.getElementById("specHighlights");
-const specSource=document.getElementById("specSource");
 
 function parseProductSpec(spec){
 const raw=String(spec||"").trim();
@@ -3119,12 +3117,6 @@ group.append(heading,list);
 specList.appendChild(group);
 });
 
-if(product.specSource&&product.specSource.url){
-specSource.href=product.specSource.url;
-specSource.textContent=product.specSource.label||"Verified source";
-specSource.hidden=false;
-document.getElementById("specSummaryText").textContent="Technical details checked against the named product source. Specifications may be updated by the manufacturer.";
-}
 
 const productDetailStories=document.getElementById("productDetailStories");
 (product.detailStories||[]).forEach(detail=>{

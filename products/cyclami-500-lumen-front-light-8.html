@@ -1136,11 +1136,10 @@ Buy Now
 
 <div class="specification-heading">
 <div>
-<p class="spec-kicker">Product details</p>
-<h3 id="specificationTitle">Specifications</h3>
-<p class="spec-summary" id="specSummaryText">Clear technical details for confident product comparison.</p>
+<p class="spec-kicker">Product Overview</p>
+<h3 id="specificationTitle">Technical Specifications</h3>
+<p class="spec-summary" id="specSummaryText">Key specifications, compatibility and product information at a glance.</p>
 </div>
-<a class="spec-source" id="specSource" href="#" target="_blank" rel="noopener noreferrer" hidden>Verified source</a>
 </div>
 
 <div class="spec-highlights" id="specHighlights" aria-label="Key specifications"></div>
@@ -3030,22 +3029,23 @@ document.getElementById("productGallery").classList.toggle("zoomed");
 
 const specList=document.getElementById("specList");
 const specHighlights=document.getElementById("specHighlights");
-const specSource=document.getElementById("specSource");
 
 function parseProductSpec(spec){
 const raw=String(spec||"").trim();
 const separator=raw.indexOf(":");
-if(separator<0){return {label:"Detail",value:raw};}
-return {label:raw.slice(0,separator).trim(),value:raw.slice(separator+1).trim()};
+if(separator<0){return {label:"Product Information",value:raw};}
+let label=raw.slice(0,separator).trim();
+if(/^product\s+details?$/i.test(label)||/^details?$/i.test(label)){label="Product Information";}
+return {label,value:raw.slice(separator+1).trim()};
 }
 
 function specificationGroup(label){
 const key=String(label||"").toLowerCase();
 if(/brand|model|type|use|colour|color/.test(key)){return "Overview";}
-if(/width|depth|weight|size|length|pressure|limit|dimension|capacity|axle/.test(key)){return "Dimensions and limits";}
-if(/shipping|included|package|warranty|accessor/.test(key)){return "Delivery and included items";}
-if(/material|frame|fork|rim|surface|finish|brake|wheel|tyre|tire|hub|spoke|nipple|freehub|bearing|groupset|derailleur|crank|cassette|chain|cockpit|handlebar|seat|saddle/.test(key)){return "Construction and components";}
-return "Performance and compatibility";
+if(/width|depth|weight|size|length|pressure|limit|dimension|capacity|axle/.test(key)){return "Dimensions & Limits";}
+if(/shipping|included|package|warranty|accessor/.test(key)){return "Delivery & Included Items";}
+if(/material|frame|fork|rim|surface|finish|brake|wheel|tyre|tire|hub|spoke|nipple|freehub|bearing|groupset|derailleur|crank|cassette|chain|cockpit|handlebar|seat|saddle/.test(key)){return "Construction & Components";}
+return "Performance & Compatibility";
 }
 
 const parsedSpecs=(product.specs||[]).map(parseProductSpec).filter(spec=>spec.value);
@@ -3098,12 +3098,6 @@ group.append(heading,list);
 specList.appendChild(group);
 });
 
-if(product.specSource&&product.specSource.url){
-specSource.href=product.specSource.url;
-specSource.textContent=product.specSource.label||"Verified source";
-specSource.hidden=false;
-document.getElementById("specSummaryText").textContent="Technical details checked against the named product source. Specifications may be updated by the manufacturer.";
-}
 
 const productDetailStories=document.getElementById("productDetailStories");
 (product.detailStories||[]).forEach(detail=>{

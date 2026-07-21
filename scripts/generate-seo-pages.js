@@ -67,6 +67,11 @@ function absoluteUrl(value) {
   return 'https://cyclify.in/' + String(value).replace(/^\/+/, '');
 }
 
+function specificationName(value) {
+  const label = String(value || '').trim();
+  return /^(product\s+)?details?$/i.test(label) ? 'Product Information' : label;
+}
+
 function descriptionFor(product) {
   const details = product.description || (product.specs || []).slice(0, 3).join('. ');
   return ('Buy ' + product.name + ' online from Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + '. ' + details)
@@ -146,7 +151,7 @@ for (const product of products) {
           const separator = raw.indexOf(':');
           return separator > 0 ? {
             '@type': 'PropertyValue',
-            name: raw.slice(0, separator).trim(),
+            name: specificationName(raw.slice(0, separator)),
             value: raw.slice(separator + 1).trim()
           } : null;
         }).filter(Boolean),
