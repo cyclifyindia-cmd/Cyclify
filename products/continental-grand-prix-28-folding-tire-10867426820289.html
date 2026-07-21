@@ -301,6 +301,24 @@ text-decoration:line-through;
 cursor:not-allowed;
 }
 
+/* Adaptive product option controls */
+.size-options.dropdown-mode{display:block;}
+.option-select{
+width:100%;
+min-height:46px;
+padding:0 42px 0 13px;
+border:1px solid #cfd3da;
+border-radius:7px;
+background:#fff;
+color:#15181c;
+font:600 14px Arial,sans-serif;
+letter-spacing:0;
+outline:none;
+cursor:pointer;
+}
+.option-select:focus{border-color:#111827;box-shadow:0 0 0 3px rgba(17,24,39,.09);}
+.option-select:disabled{opacity:.5;cursor:not-allowed;}
+@media(max-width:480px){.option-select{min-height:44px;font-size:13px;}}
 /* BUTTONS */
 
 .buttons{
@@ -2814,7 +2832,7 @@ if(shippingNote&&product.available===false){shippingNote.textContent="Currently 
 
 function applySizeAvailability(){
 if(!product.sizes||!product.sizes.length){return;}
-document.querySelectorAll("#sizeOptions .size-btn").forEach(button=>{
+document.querySelectorAll("#sizeOptions [data-size]").forEach(button=>{
 const size=button.dataset.size;
 const unavailable=Boolean(isSizeUnavailable(size));
 button.disabled=unavailable;
@@ -2888,20 +2906,41 @@ const valveSection=document.getElementById("valveSection");
 const valveOptions=document.getElementById("valveOptions");
 const secondaryOptionLabel=document.getElementById("secondaryOptionLabel");
 
+function shouldUseDropdown(options){
+return options.length>6||options.some(option=>String(option).length>18);
+}
+
 if(product.sizes&&product.sizes.length){
 
 sizeSection.style.display="block";
 
+if(shouldUseDropdown(product.sizes)){
+sizeOptions.classList.add("dropdown-mode");
+const select=document.createElement("select");
+select.className="option-select size-select";
+select.setAttribute("aria-label","Select size");
 product.sizes.forEach(size=>{
-sizeOptions.innerHTML+=`
-<button
-class="size-btn"
-data-size="${size}"
-onclick="selectSize('${size}')">
-${size}
-</button>
-`;
+const option=document.createElement("option");
+option.value=size;
+option.textContent=size;
+option.dataset.size=size;
+option.selected=size===selectedSize;
+select.appendChild(option);
 });
+select.addEventListener("change",()=>selectSize(select.value));
+sizeOptions.appendChild(select);
+}
+else{
+product.sizes.forEach(size=>{
+const button=document.createElement("button");
+button.type="button";
+button.className="size-btn";
+button.dataset.size=size;
+button.textContent=size;
+button.addEventListener("click",()=>selectSize(size));
+sizeOptions.appendChild(button);
+});
+}
 
 }
 else{
@@ -2909,16 +2948,34 @@ else{
 sizeSection.style.display="none";
 
 }
-
 function renderSecondaryOptions(){
 secondaryOptions=getSecondaryOptions();
 if(!secondaryOptions.includes(selectedValveLength)){
 selectedValveLength=secondaryOptions.length?secondaryOptions[0]:"";
 }
 valveOptions.innerHTML="";
+valveOptions.classList.remove("dropdown-mode");
 if(secondaryOptions.length){
 valveSection.style.display="block";
-secondaryOptionLabel.textContent=product.secondaryLabel||(product.secondaryOptions?"Select Option":"Select Valve Length");
+const optionLabel=product.secondaryLabel||(product.secondaryOptions?"Select Option":"Select Valve Length");
+secondaryOptionLabel.textContent=optionLabel;
+
+if(shouldUseDropdown(secondaryOptions)){
+valveOptions.classList.add("dropdown-mode");
+const select=document.createElement("select");
+select.className="option-select secondary-select";
+select.setAttribute("aria-label",optionLabel);
+secondaryOptions.forEach(option=>{
+const choice=document.createElement("option");
+choice.value=option;
+choice.textContent=option;
+choice.selected=option===selectedValveLength;
+select.appendChild(choice);
+});
+select.addEventListener("change",()=>selectValveLength(select.value));
+valveOptions.appendChild(select);
+}
+else{
 secondaryOptions.forEach(option=>{
 const button=document.createElement("button");
 button.type="button";
@@ -2927,6 +2984,8 @@ button.textContent=option;
 button.addEventListener("click",()=>selectValveLength(option));
 valveOptions.appendChild(button);
 });
+}
+
 if(selectedValveLength){selectValveLength(selectedValveLength);}
 }
 else{
@@ -2944,6 +3003,8 @@ selectedSize=size;
 document.querySelectorAll("#sizeOptions .size-btn").forEach(button=>{
 button.classList.toggle("active",button.dataset.size===size);
 });
+const sizeSelect=document.querySelector("#sizeOptions .size-select");
+if(sizeSelect&&sizeSelect.value!==size){sizeSelect.value=size;}
 renderSecondaryOptions();
 updateCartButtonForSize();
 
@@ -2960,6 +3021,8 @@ selectedValveLength=length;
 document.querySelectorAll(".valve-btn").forEach(button=>{
 button.classList.toggle("active",button.textContent.trim()===length);
 });
+const secondarySelect=document.querySelector("#valveOptions .secondary-select");
+if(secondarySelect&&secondarySelect.value!==length){secondarySelect.value=length;}
 
 }
 
