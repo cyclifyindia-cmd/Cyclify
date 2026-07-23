@@ -3210,8 +3210,8 @@
         "28C / 1 Pair"
       ],
       "sizeAvailability": {
-        "23C / 1 Piece": true,
-        "23C / 1 Pair": true,
+        "23C / 1 Piece": false,
+        "23C / 1 Pair": false,
         "25C / 1 Piece": false,
         "25C / 1 Pair": false,
         "28C / 1 Piece": false,
@@ -3221,7 +3221,7 @@
         {
           "id": 49492848181441,
           "title": "23C / 1 Piece",
-          "available": true,
+          "available": false,
           "price": 2700,
           "compare_at_price": 0,
           "option1": "23C",
@@ -3231,7 +3231,7 @@
         {
           "id": 49882590838977,
           "title": "23C / 1 Pair",
-          "available": true,
+          "available": false,
           "price": 5400,
           "compare_at_price": 0,
           "option1": "23C",
@@ -3279,7 +3279,7 @@
           "option3": ""
         }
       ],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : Royal Traders",
         "Product Type : bicycle Tire",
@@ -8161,7 +8161,7 @@
         {
           "id": 49449015148737,
           "title": "Default Title",
-          "available": true,
+          "available": false,
           "price": 7900,
           "compare_at_price": 9480,
           "option1": "Default Title",
@@ -8169,7 +8169,7 @@
           "option3": ""
         }
       ],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : GPS Computer",
