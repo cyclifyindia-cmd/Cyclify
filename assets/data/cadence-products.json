@@ -700,6 +700,43 @@
       "subCategory": ""
     },
     {
+      "id": 832896565,
+      "supplierProductId": "6a638f21334a4eb2a822e06f",
+      "supplierSynced": true,
+      "sourceHandle": "oem-screenless-fitness-band",
+      "sourceUrl": "https://www.cadencelife.in/products/oem-screenless-fitness-band",
+      "stockSource": "cadencelife",
+      "name": "OEM Screenless Fitness Band",
+      "brand": "Cadence Life",
+      "description": "The Screenless Smart Bracelet is a lightweight health and fitness wearable designed for users who prefer continuous health tracking without the distraction of a display. It automatically records daily activity, heart rate, blood oxygen levels, sleep patterns, calories burned, and step count, syncing all data to the RWfit mobile app via Bluetooth. Its IP68 waterproof rating makes it suitable for everyday use, while the magnetic charging system and long battery life of up to 25 days (30 days standby) reduce charging frequency. The premium nylon strap and metal-plastic body provide a comfortable and durable design for all-day wear.",
+      "price": 3999,
+      "mrp": "Rs 3,999",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a638dedd610cc59217c2522",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a638dedd610cc59217c2522",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a638df0d610cc59217c2526",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a638f89d610cc59217c2561",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a638fa5334a4eb2a822e082"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Cadence Life",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/oem-screenless-fitness-band"
+      },
+      "keywords": "OEM Screenless Fitness Band Cadence Life",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "smart-watches",
+      "subCategory": ""
+    },
+    {
       "id": 863040218,
       "supplierProductId": "6a2038d646b03bc94ca5ab45",
       "supplierSynced": true,
