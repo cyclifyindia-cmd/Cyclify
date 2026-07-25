@@ -3653,7 +3653,7 @@
       "stockSource": "fcc",
       "name": "Toseek Carbon Stem",
       "brand": "TOSEEK",
-      "description": "Brand:TOSEEK Material:Carbon+Aluminum Finish：Black Matte Weight：125-145G Stem Length(C-C):60/70/80/90/100mm Stem Angle:±10/±17Degree Clamp Width：42mm Screw Torque:6N.m Stem Diameter For Handlebar: 31.8mm Stem Diameter For Fork: 28.6mm",
+      "description": "Upgrade your cycling performance with the Toseek Carbon Stem, a premium lightweight bicycle component designed for riders who demand superior control, stability, and responsive handling. Built with advanced carbon fiber technology, this high-performance carbon fiber bike stem delivers an excellent balance of strength, stiffness, and weight reduction, making it an ideal choice for road bikes, MTB bicycles, racing bikes, and professional cycling setups. The Toseek Carbon Stem is engineered to improve your bike’s handling and riding comfort by providing a strong and reliable connection between the handlebars and bicycle fork. Its lightweight construction helps reduce overall bike weight while maintaining the rigidity needed for precise steering, smooth control, and confident riding performance. Manufactured using high-quality carbon fiber materials, the Toseek Carbon Fiber Bicycle Stem offe",
       "price": 2499,
       "mrp": "Rs 3,500",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/6bPz4Az3.webp",
@@ -3663,9 +3663,156 @@
         "https://cdn.dotpe.in/longtail/store-items/8102112/yjAn0W2J.webp",
         "https://cdn.dotpe.in/longtail/store-items/8102112/NEzq6hvU.webp"
       ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [],
+      "sizes": [
+        "25° | 60 mm",
+        "25° | 70 mm",
+        "25° | 80 mm",
+        "25° | 90 mm",
+        "25° | 100 mm",
+        "25° | 110 mm",
+        "35° | 60 mm",
+        "35° | 70 mm",
+        "35° | 80 mm",
+        "35° | 90 mm",
+        "35° | 100 mm",
+        "35° | 110 mm"
+      ],
+      "sizeAvailability": {
+        "25° | 60 mm": true,
+        "25° | 70 mm": true,
+        "25° | 80 mm": true,
+        "25° | 90 mm": true,
+        "25° | 100 mm": true,
+        "25° | 110 mm": true,
+        "35° | 60 mm": true,
+        "35° | 70 mm": true,
+        "35° | 80 mm": true,
+        "35° | 90 mm": true,
+        "35° | 100 mm": true,
+        "35° | 110 mm": true
+      },
+      "variants": [
+        {
+          "id": 7409375,
+          "title": "25° | 60 mm",
+          "available": true,
+          "price": 2499,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409376,
+          "title": "25° | 70 mm",
+          "available": true,
+          "price": 2499,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409377,
+          "title": "25° | 80 mm",
+          "available": true,
+          "price": 2499,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409378,
+          "title": "25° | 90 mm",
+          "available": true,
+          "price": 2599,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409379,
+          "title": "25° | 100 mm",
+          "available": true,
+          "price": 2699,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409380,
+          "title": "25° | 110 mm",
+          "available": true,
+          "price": 2799,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409381,
+          "title": "35° | 60 mm",
+          "available": true,
+          "price": 2499,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409382,
+          "title": "35° | 70 mm",
+          "available": true,
+          "price": 2499,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409383,
+          "title": "35° | 80 mm",
+          "available": true,
+          "price": 2499,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409384,
+          "title": "35° | 90 mm",
+          "available": true,
+          "price": 2599,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409385,
+          "title": "35° | 100 mm",
+          "available": true,
+          "price": 2699,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7409386,
+          "title": "35° | 110 mm",
+          "available": true,
+          "price": 2799,
+          "compare_at_price": 3500,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        }
+      ],
       "available": true,
       "specs": [
         "Brand : TOSEEK",
