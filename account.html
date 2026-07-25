@@ -622,11 +622,18 @@ gap:5px!important;
 </div>
 
 <div class="quick-grid">
+<button type="button" class="card" id="ordersTab"><span>&#128230;</span>My Orders</button>
 <a href="cart.html" class="card"><span>&#128722;</span>View Cart</a>
 <a href="https://wa.me/message/MLT2FFSAEYGIP1" class="card"><span>&#128172;</span>Contact Cyclify</a>
 <a href="https://wa.me/message/MLT2FFSAEYGIP1?text=Hi%20Cyclify,%20I%20need%20help" class="card"><span>&#128736;</span>Support</a>
 <a href="https://wa.me/message/MLT2FFSAEYGIP1?text=Hi%20Cyclify,%20I%20want%20to%20track%20my%20order" class="card"><span>&#128230;</span>Track Order</a>
 </div>
+
+<section id="ordersPanel" style="display:none;margin:24px 0">
+<h2 style="margin:0 0 14px">My Orders</h2>
+<div class="message success" id="orderPlacedMessage"></div>
+<div id="ordersList"></div>
+</section>
 
 <button class="logout-btn" id="logoutBtn" type="button">Logout</button>
 </section>
@@ -817,12 +824,48 @@ authArea.style.display="none";
 dashboard.classList.add("active");
 profileName.textContent=user.displayName||"Cyclify Customer";
 profileUser.textContent=cleanMobileEmail(user.email)||user.phoneNumber||"Signed in";
+renderOrders(user);
+const params=new URLSearchParams(location.search);
+if(params.get("tab")==="orders")showOrders();
+const returnPage=params.get("return");
+if(returnPage&&/^[a-z0-9._-]+\.html$/i.test(returnPage)){location.replace(returnPage);}
 }
 else{
 authArea.style.display="block";
 dashboard.classList.remove("active");
 }
 }
+
+function showOrders(){
+document.getElementById("ordersPanel").style.display="block";
+document.getElementById("ordersPanel").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function renderOrders(user){
+const list=document.getElementById("ordersList");
+const orders=JSON.parse(localStorage.getItem(`cyclifyOrders:${user.uid}`)||"[]");
+const placed=new URLSearchParams(location.search).get("placed");
+if(placed){
+const message=document.getElementById("orderPlacedMessage");
+message.classList.add("show");
+message.textContent=`Payment successful. Order #${placed} has been placed.`;
+}
+if(!orders.length){
+list.innerHTML='<div style="padding:22px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;color:#667085">You have no orders yet.</div>';
+return;
+}
+list.innerHTML=orders.map(order=>`
+<article style="padding:18px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;margin-bottom:12px">
+<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<strong>Order #${order.number}</strong><span>${new Date(order.createdAt).toLocaleDateString("en-IN")}</span>
+</div>
+<p style="color:#087443;font-weight:700">● ${order.status}</p>
+<p>${order.items.reduce((n,item)=>n+(item.quantity||1),0)} item(s) · ₹${Number(order.total).toLocaleString("en-IN")}</p>
+<a href="https://wa.me/message/MLT2FFSAEYGIP1?text=${encodeURIComponent(`Hi Cyclify, I need help with order #${order.number}`)}" style="color:#0047ff;font-weight:700">Get support on WhatsApp</a>
+</article>`).join("");
+}
+
+document.getElementById("ordersTab").addEventListener("click",showOrders);
 
 function getAuthError(error){
 const code=error&&error.code?error.code:"";

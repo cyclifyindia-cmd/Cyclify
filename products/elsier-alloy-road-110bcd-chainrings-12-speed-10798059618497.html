@@ -3254,7 +3254,9 @@ window.location.href="cart.html";
 }
 
 function showBuyCooking(){
-alert("Buy Now is cooking. Online orders will open soon on Cyclify.");
+const item={id:product.id,name:product.name,price:product.price,image:product.image,size:selectedSize,valveLength:selectedValveLength,optionLabel:product.secondaryLabel||(product.valveLengths&&product.valveLengths.length?"Valve Length":""),quantity:1};
+sessionStorage.setItem("cyclifyCheckoutItems",JSON.stringify([item]));
+window.location.href="checkout.html";
 }
 
 </script>

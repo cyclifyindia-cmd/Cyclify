@@ -740,7 +740,8 @@ renderCart();
 
 
 function checkout(){
-alert("Buy Now is cooking. Online orders will open soon on Cyclify.");
+sessionStorage.removeItem("cyclifyCheckoutItems");
+window.location.href="checkout.html";
 }
 
 </script>

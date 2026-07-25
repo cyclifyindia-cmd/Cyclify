@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout | Cyclify</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--blue:#0047ff;--ink:#111827;--muted:#667085;--line:#e5e7eb;--soft:#f7f8fa}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:var(--soft)}
+header{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 max(20px,calc((100% - 1180px)/2))}
+header img{width:145px}.shell{max-width:1180px;margin:32px auto;padding:0 20px}.steps{color:var(--muted);font-size:14px;margin-bottom:22px}.steps b{color:var(--blue)}
+.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.7fr);gap:24px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:18px;box-shadow:0 5px 20px #1018280a}
+h1{margin:0 0 8px;font-size:30px}h2{font-size:20px;margin:0 0 20px}.intro{color:var(--muted);margin:0 0 25px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.full{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}input,select{width:100%;height:48px;border:1px solid #cfd4dc;border-radius:9px;padding:0 13px;font:inherit;background:#fff}input:focus,select:focus{outline:2px solid #0047ff22;border-color:var(--blue)}
+.check{display:flex;gap:10px;align-items:center;margin:2px 0 18px}.check input{width:18px;height:18px}.check label{margin:0;font-weight:500}.hidden{display:none}.payment{border:2px solid var(--blue);border-radius:11px;padding:16px}.payment strong{display:block}.payment span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
+.item{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.item img{width:58px;height:58px;object-fit:contain;border-radius:8px;background:var(--soft)}.item p{margin:0;font-weight:700;font-size:14px}.item small{color:var(--muted)}.money{font-weight:700;white-space:nowrap}
+.row{display:flex;justify-content:space-between;margin-top:14px}.total{font-size:20px;font-weight:800;border-top:1px solid var(--line);padding-top:16px}.pay{width:100%;border:0;border-radius:10px;background:var(--blue);color:#fff;padding:16px;font-size:16px;font-weight:800;cursor:pointer;margin-top:20px}.pay:disabled{opacity:.55;cursor:wait}.secure{text-align:center;font-size:12px;color:var(--muted)}
+.error{display:none;color:#b42318;background:#fef3f2;border-radius:8px;padding:11px;margin-bottom:16px}.error.show{display:block}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.summary{order:-1}.grid{grid-template-columns:1fr}.full{grid-column:auto}.shell{margin-top:20px}.card{padding:18px}}
+</style>
+</head>
+<body>
+<header><a href="index.html"><img src="assets/Logo-original.png" alt="Cyclify"></a></header>
+<main class="shell">
+<div class="steps"><b>Cart</b> &nbsp;›&nbsp; <b>Address</b> &nbsp;›&nbsp; Payment</div>
+<h1>Checkout</h1>
+<p class="intro">Enter your delivery details and review your order.</p>
+<div class="layout">
+<form id="checkoutForm">
+<div class="error" id="formError"></div>
+<section class="card">
+<h2>Shipping address</h2>
+<div class="grid">
+<div class="full"><label for="country">Country</label><select id="country" required></select></div>
+<div><label for="firstName">First name</label><input id="firstName" autocomplete="given-name" pattern="[A-Za-z ]+" title="Use alphabets only" required></div>
+<div><label for="lastName">Last name</label><input id="lastName" autocomplete="family-name" pattern="[A-Za-z ]+" title="Use alphabets only" required></div>
+<div class="full"><label for="address">Address</label><input id="address" autocomplete="address-line1" required></div>
+<div class="full"><label for="flat">Flat, house or building name <span style="font-weight:400">(optional)</span></label><input id="flat" autocomplete="address-line2"></div>
+<div><label for="pincode">Pincode / postal code</label><input id="pincode" autocomplete="postal-code" inputmode="numeric" required></div>
+<div><label for="city">City</label><input id="city" autocomplete="address-level2" required><small id="pinHint"></small></div>
+<div class="full"><label for="state">State</label><select id="state" autocomplete="address-level1" required></select></div>
+</div>
+</section>
+<section class="card">
+<h2>Billing address</h2>
+<div class="check"><input id="sameBilling" type="checkbox" checked><label for="sameBilling">Same as shipping address</label></div>
+<div id="billingFields" class="grid hidden">
+<div class="full"><label for="billingAddress">Billing address</label><input id="billingAddress"></div>
+<div><label for="billingCity">City</label><input id="billingCity"></div>
+<div><label for="billingState">State</label><input id="billingState"></div>
+<div><label for="billingPincode">Pincode / postal code</label><input id="billingPincode"></div>
+</div>
+<div class="check" style="margin-top:18px"><input id="addGst" type="checkbox"><label for="addGst">Add GST details (optional)</label></div>
+<div id="gstFields" class="grid hidden">
+<div><label for="gstin">GSTIN</label><input id="gstin" maxlength="15" pattern="[0-9A-Za-z]{15}"></div>
+<div><label for="businessName">Business name</label><input id="businessName"></div>
+</div>
+</section>
+<section class="card">
+<h2>Payment</h2>
+<div class="payment"><strong>Online payment</strong><span>The payment aggregator will be connected here shortly.</span></div>
+</section>
+</form>
+<aside class="summary">
+<section class="card">
+<h2>Your order</h2>
+<div id="items"></div>
+<div class="row"><span>Items</span><span id="itemCount"></span></div>
+<div class="row total"><span>Total</span><span id="total"></span></div>
+<button class="pay" id="payNow" type="submit" form="checkoutForm">Pay Now</button>
+<p class="secure">Secure checkout · Payment integration pending</p>
+</section>
+</aside>
+</div>
+</main>
+<script type="module" src="assets/js/checkout.js"></script>
+</body>
+</html>
