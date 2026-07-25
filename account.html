@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -615,6 +615,11 @@ gap:5px!important;
 <p>Login with mobile number or email to manage your Cyclify orders.</p>
 </div>
 
+<section class="panel active" id="authLoading" aria-live="polite">
+<strong>Opening your secure account…</strong>
+<p class="hint" style="margin:8px 0 0">Checking your signed-in session.</p>
+</section>
+
 <section class="dashboard" id="dashboard">
 <div class="profile-card">
 <strong id="profileName">Cyclify Customer</strong>
@@ -638,7 +643,7 @@ gap:5px!important;
 <button class="logout-btn" id="logoutBtn" type="button">Logout</button>
 </section>
 
-<section id="authArea">
+<section id="authArea" style="display:none">
 <div class="tabs">
 <button class="tab active" data-tab="login">Login</button>
 <button class="tab" data-tab="signup">Create</button>
@@ -755,6 +760,13 @@ updateProfile,
 onAuthStateChanged,
 signOut
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import {
+getFirestore,
+collection,
+query,
+orderBy,
+getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",
@@ -768,12 +780,14 @@ measurementId: "G-ZDE8EQN0XV"
 
 const app=initializeApp(firebaseConfig);
 const auth=getAuth(app);
+const db=getFirestore(app);
 const googleProvider=new GoogleAuthProvider();
 
 const authArea=document.getElementById("authArea");
 const dashboard=document.getElementById("dashboard");
 const profileName=document.getElementById("profileName");
 const profileUser=document.getElementById("profileUser");
+const authLoading=document.getElementById("authLoading");
 
 function normalizeUser(value){
 return value.trim().toLowerCase();
@@ -819,6 +833,7 @@ return email&&email.endsWith("@mobile.cyclify.in")?email.replace("@mobile.cyclif
 }
 
 function renderState(user){
+authLoading.style.display="none";
 if(user){
 authArea.style.display="none";
 dashboard.classList.add("active");
@@ -841,9 +856,19 @@ document.getElementById("ordersPanel").style.display="block";
 document.getElementById("ordersPanel").scrollIntoView({behavior:"smooth",block:"start"});
 }
 
-function renderOrders(user){
+async function renderOrders(user){
 const list=document.getElementById("ordersList");
-const orders=JSON.parse(localStorage.getItem(`cyclifyOrders:${user.uid}`)||"[]");
+list.innerHTML='<div style="padding:18px;color:#667085">Loading orders…</div>';
+let orders=[];
+try{
+const snapshot=await getDocs(query(collection(db,"customers",user.uid,"orders"),orderBy("createdAt","desc")));
+orders=snapshot.docs.map(item=>item.data());
+}
+catch(error){
+console.error(error);
+list.innerHTML='<div style="padding:22px;border:1px solid #fecaca;border-radius:12px;background:#fff;color:#b42318">We could not securely load your orders. Please try again.</div>';
+return;
+}
 const placed=new URLSearchParams(location.search).get("placed");
 if(placed){
 const message=document.getElementById("orderPlacedMessage");
@@ -986,6 +1011,7 @@ renderState(user);
 </script>
 
 <script src="assets/js/site-footer.js"></script>
+<script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -687,6 +687,7 @@ JSON.stringify(
 cart
 )
 );
+window.dispatchEvent(new CustomEvent("cyclify:cart-changed",{detail:cart}));
 
 }
 
@@ -747,9 +748,9 @@ window.location.href="checkout.html";
 </script>
 
 <script src="assets/js/site-footer.js"></script>
+<script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
-
 
 
 

@@ -3181,7 +3181,7 @@ relatedProducts.innerHTML+=`
 `;
 });
 
-function addToCart(){
+async function addToCart(){
 
 let cart=JSON.parse(localStorage.getItem("cart"))||[];
 let existing=cart.find(item=>
@@ -3207,6 +3207,7 @@ quantity:1
 }
 
 localStorage.setItem("cart",JSON.stringify(cart));
+await window.cyclifySaveCart?.(cart);
 updateCartCount();
 window.location.href="cart.html";
 
@@ -3221,6 +3222,7 @@ window.location.href="checkout.html";
 </script>
 
 <script src="assets/js/site-footer.js"></script>
+<script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
 
