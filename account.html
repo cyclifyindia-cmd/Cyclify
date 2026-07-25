@@ -628,6 +628,7 @@ gap:5px!important;
 
 <div class="quick-grid">
 <button type="button" class="card" id="ordersTab"><span>&#128230;</span>My Orders</button>
+<a href="admin.html" class="card" id="adminOrdersCard" style="display:none"><span>&#128272;</span>Admin Orders</a>
 <a href="cart.html" class="card"><span>&#128722;</span>View Cart</a>
 <a href="https://wa.me/message/MLT2FFSAEYGIP1" class="card"><span>&#128172;</span>Contact Cyclify</a>
 <a href="https://wa.me/message/MLT2FFSAEYGIP1?text=Hi%20Cyclify,%20I%20need%20help" class="card"><span>&#128736;</span>Support</a>
@@ -757,6 +758,7 @@ signInWithEmailAndPassword,
 signInWithPopup,
 GoogleAuthProvider,
 updateProfile,
+sendEmailVerification,
 onAuthStateChanged,
 signOut
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
@@ -839,6 +841,13 @@ authArea.style.display="none";
 dashboard.classList.add("active");
 profileName.textContent=user.displayName||"Cyclify Customer";
 profileUser.textContent=cleanMobileEmail(user.email)||user.phoneNumber||"Signed in";
+document.getElementById("adminOrdersCard").style.display=user.email?.toLowerCase()==="admin@cyclify.in"&&user.emailVerified?"":"none";
+if(user.email?.toLowerCase()==="admin@cyclify.in"&&!user.emailVerified&&!sessionStorage.getItem("cyclifyAdminVerificationSent")){
+sessionStorage.setItem("cyclifyAdminVerificationSent","1");
+sendEmailVerification(user).then(()=>{
+profileUser.textContent="admin@cyclify.in · Verification email sent";
+}).catch(error=>console.error("Unable to send verification email",error));
+}
 renderOrders(user);
 const params=new URLSearchParams(location.search);
 if(params.get("tab")==="orders")showOrders();
@@ -1014,8 +1023,6 @@ renderState(user);
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
-
-
 
 
 

@@ -6,7 +6,9 @@ service cloud.firestore {
     }
 
     function isAdmin() {
-      return signedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+      return signedIn()
+             && request.auth.token.email == "admin@cyclify.in"
+             && request.auth.token.email_verified == true;
     }
 
     match /usedListings/{listingId} {
@@ -32,7 +34,7 @@ service cloud.firestore {
     }
 
     match /admins/{uid} {
-      allow read: if signedIn() && request.auth.uid == uid;
+      allow read: if isAdmin();
       allow write: if false;
     }
 
@@ -50,6 +52,11 @@ service cloud.firestore {
         // Status changes must come from a trusted backend/admin integration.
         allow update, delete: if false;
       }
+    }
+
+    // Admin order dashboard uses a collection-group query across all customers.
+    match /{path=**}/orders/{orderId} {
+      allow read: if isAdmin();
     }
   }
 }
