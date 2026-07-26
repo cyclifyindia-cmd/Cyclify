@@ -453,16 +453,26 @@
         "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe6e1d476f19e4b6a719a"
       ],
       "sizes": [
+        "S",
         "M",
-        "L",
-        "XL"
+        "L"
       ],
       "sizeAvailability": {
+        "S": true,
         "M": true,
-        "L": false,
-        "XL": false
+        "L": true
       },
       "variants": [
+        {
+          "id": 886541796,
+          "title": "S",
+          "available": true,
+          "price": 1349,
+          "compare_at_price": 1349,
+          "option1": "S",
+          "option2": "",
+          "option3": ""
+        },
         {
           "id": 887207510,
           "title": "M",
@@ -476,20 +486,10 @@
         {
           "id": 803985129,
           "title": "L",
-          "available": false,
+          "available": true,
           "price": 1349,
           "compare_at_price": 1349,
           "option1": "L",
-          "option2": "",
-          "option3": ""
-        },
-        {
-          "id": 844932587,
-          "title": "XL",
-          "available": false,
-          "price": 1349,
-          "compare_at_price": 1349,
-          "option1": "XL",
           "option2": "",
           "option3": ""
         }
