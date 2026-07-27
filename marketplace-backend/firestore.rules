@@ -1,4 +1,4 @@
-﻿rules_version = '2';
+rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     function signedIn() {
@@ -12,6 +12,21 @@ service cloud.firestore {
                 && request.auth.token.email_verified == true)
                || exists(/databases/$(database)/documents/admins/$(request.auth.uid))
              );
+    }
+
+    function validAdminOrderUpdate() {
+      return request.resource.data.status in [
+               "Order Received",
+               "Order Shipped",
+               "Order Delivered"
+             ]
+             && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+               "status",
+               "tracking",
+               "updatedAt",
+               "shippedAt",
+               "deliveredAt"
+             ]);
     }
 
     match /usedListings/{listingId} {
@@ -41,7 +56,6 @@ service cloud.firestore {
       allow write: if false;
     }
 
-    // Every customer's commerce data is isolated by their Firebase Auth UID.
     match /customers/{uid} {
       allow read, create, update: if signedIn() && request.auth.uid == uid;
       allow delete: if false;
@@ -51,17 +65,18 @@ service cloud.firestore {
         allow create: if signedIn()
                       && request.auth.uid == uid
                       && request.resource.data.customerId == uid
-                      && request.resource.data.status == "Your order has been received";
-        // Status changes must come from a trusted backend/admin integration.
-        allow update, delete: if false;
+                      && request.resource.data.status in [
+                        "Your order has been received",
+                        "Order Received"
+                      ];
+        allow update: if isAdmin() && validAdminOrderUpdate();
+        allow delete: if false;
       }
     }
 
-    // Admin order dashboard uses a collection-group query across all customers.
     match /{path=**}/orders/{orderId} {
       allow read: if isAdmin();
+      allow update: if isAdmin() && validAdminOrderUpdate();
     }
   }
 }
-
-

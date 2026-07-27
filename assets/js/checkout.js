@@ -20,7 +20,7 @@ let pinTimer;
 pincode.addEventListener("input",()=>{
  clearTimeout(pinTimer);pinHint.textContent="";
  if(country.value!=="India"||!/^\d{6}$/.test(pincode.value))return;
- pinHint.textContent="Finding city…";
+ pinHint.textContent="Finding city...";
  pinTimer=setTimeout(async()=>{
   try{
    const response=await fetch(`https://api.postalpincode.in/pincode/${pincode.value}`);
@@ -37,9 +37,9 @@ function priceOf(item){return typeof item.price==="number"?item.price:Number(Str
 async function render(){
  const list=checkoutItems();
  if(!list.length){location.replace("cart.html");return}
- items.innerHTML=list.map(i=>`<div class="item"><img src="${i.image}" alt=""><div><p>${i.name}</p><small>Qty ${i.quantity||1}${i.size?` · ${i.size}`:""}</small></div><span class="money">₹${(priceOf(i)*(i.quantity||1)).toLocaleString("en-IN")}</span></div>`).join("");
+ items.innerHTML=list.map(i=>`<div class="item"><img src="${i.image}" alt=""><div><p>${i.name}</p><small>Qty ${i.quantity||1}${i.size?` | ${i.size}`:""}</small></div><span class="money">Rs. ${(priceOf(i)*(i.quantity||1)).toLocaleString("en-IN")}</span></div>`).join("");
  const count=list.reduce((n,i)=>n+(i.quantity||1),0),sum=list.reduce((n,i)=>n+priceOf(i)*(i.quantity||1),0);
- itemCount.textContent=count;total.textContent=`₹${sum.toLocaleString("en-IN")}`;
+ itemCount.textContent=count;total.textContent=`Rs. ${sum.toLocaleString("en-IN")}`;
  let saved=null;
  try{
   const customer=await getDoc(doc(db,"customers",signedInUser.uid));
@@ -54,7 +54,7 @@ checkoutForm.addEventListener("submit",async event=>{
  const list=checkoutItems(),addressData={};
  ["country","firstName","lastName","address","flat","pincode","city","state"].forEach(id=>addressData[id]=document.getElementById(id).value.trim());
  const total=list.reduce((n,i)=>n+priceOf(i)*(i.quantity||1),0);
- payNow.disabled=true;payNow.textContent="Saving order…";
+ payNow.disabled=true;payNow.textContent="Saving order...";
  try{
   const customerRef=doc(db,"customers",signedInUser.uid);
   const orderNumber=await runTransaction(db,async transaction=>{
@@ -62,7 +62,7 @@ checkoutForm.addEventListener("submit",async event=>{
    const next=Math.max(101,Number(customerSnapshot.data()?.nextOrderNumber)||101);
    transaction.set(customerRef,{shippingAddress:addressData,nextOrderNumber:next+1,cart:[],updatedAt:serverTimestamp()},{merge:true});
    const orderRef=doc(collection(db,"customers",signedInUser.uid,"orders"));
-   transaction.set(orderRef,{number:next,customerId:signedInUser.uid,status:"Your order has been received",createdAt:serverTimestamp(),items:list,total,address:addressData,billingSame:sameBilling.checked,billingAddress:sameBilling.checked?addressData:{address:billingAddress.value.trim(),city:billingCity.value.trim(),state:billingState.value.trim(),pincode:billingPincode.value.trim()},gstin:addGst.checked?gstin.value.trim():"",businessName:addGst.checked?businessName.value.trim():""});
+   transaction.set(orderRef,{number:next,customerId:signedInUser.uid,status:"Order Received",createdAt:serverTimestamp(),items:list,total,address:addressData,billingSame:sameBilling.checked,billingAddress:sameBilling.checked?addressData:{address:billingAddress.value.trim(),city:billingCity.value.trim(),state:billingState.value.trim(),pincode:billingPincode.value.trim()},gstin:addGst.checked?gstin.value.trim():"",businessName:addGst.checked?businessName.value.trim():""});
    return next;
   });
   localStorage.removeItem("cart");sessionStorage.removeItem("cyclifyCheckoutItems");

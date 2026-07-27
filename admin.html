@@ -1,94 +1,262 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Admin Orders | Cyclify</title>
+<title>Order Operations | Cyclify</title>
 <meta name="robots" content="noindex,nofollow">
 <style>
-:root{--blue:#0039a6;--ink:#101828;--muted:#667085;--line:#e4e7ec;--soft:#f7f8fa;--green:#067647}
-*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font-family:Arial,sans-serif}
-header{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(20px,calc((100% - 1240px)/2))}
-header img{width:135px}header a{color:var(--blue);text-decoration:none;font-weight:700}.shell{max-width:1240px;margin:30px auto;padding:0 20px}
-.heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px}.heading h1{margin:0 0 6px}.heading p{margin:0;color:var(--muted)}
-.refresh{border:1px solid var(--line);background:#fff;border-radius:9px;padding:11px 16px;font-weight:700;cursor:pointer}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px}.stat span{color:var(--muted);font-size:13px}.stat strong{display:block;font-size:25px;margin-top:7px}
-.notice{background:#fff;border:1px solid var(--line);border-radius:13px;padding:24px}.error{border-color:#fda29b;color:#b42318}
-.order{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:15px;overflow:hidden}.order-head{display:flex;justify-content:space-between;gap:16px;padding:17px 20px;background:#fafafa;border-bottom:1px solid var(--line)}
-.order-head strong{font-size:18px}.order-head small{display:block;color:var(--muted);margin-top:5px}.status{color:var(--green);font-weight:800}.order-body{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:20px}
-.order h3{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 10px}.order p{margin:5px 0;line-height:1.45}.items{grid-column:1/-1;border-top:1px solid var(--line);padding-top:16px}
-.item{display:flex;justify-content:space-between;gap:15px;margin:8px 0}.total{font-size:18px;font-weight:800}.wa{display:inline-block;margin-top:10px;color:#fff;background:#128c7e;border-radius:8px;padding:10px 13px;text-decoration:none;font-weight:700}
-@media(max-width:700px){.stats{grid-template-columns:1fr}.order-body{grid-template-columns:1fr}.items{grid-column:auto}.heading{align-items:start;flex-direction:column}}
+:root{--blue:#0754c9;--blue-soft:#edf4ff;--ink:#101828;--muted:#667085;--line:#dfe3e8;--soft:#f5f7f9;--white:#fff;--green:#087443;--green-soft:#ecfdf3;--amber:#b54708;--amber-soft:#fffaeb;--red:#b42318}
+*{box-sizing:border-box}
+body{margin:0;background:var(--soft);color:var(--ink);font-family:Arial,sans-serif;font-size:14px}
+button,input,select{font:inherit}
+header{height:68px;background:var(--white);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100% - 1380px)/2))}
+header img{display:block;width:128px;height:48px;object-fit:contain}
+.header-actions{display:flex;align-items:center;gap:10px}
+.header-actions a,.header-actions button{height:38px;border:1px solid var(--line);background:var(--white);border-radius:7px;padding:0 13px;color:var(--ink);text-decoration:none;font-weight:700;cursor:pointer}
+.shell{max-width:1380px;margin:0 auto;padding:24px 20px 50px}
+.page-head{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:20px}
+.page-head h1{font-size:26px;line-height:1.2;margin:0 0 5px}
+.page-head p{margin:0;color:var(--muted)}
+.primary{border:0;background:var(--blue);color:#fff;border-radius:7px;height:40px;padding:0 16px;font-weight:700;cursor:pointer}
+.primary:disabled{opacity:.55;cursor:wait}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);background:var(--white);border-radius:8px;margin-bottom:16px;overflow:hidden}
+.stat{padding:16px 18px;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat span{display:block;color:var(--muted);font-size:12px;margin-bottom:7px}
+.stat strong{font-size:23px;line-height:1}
+.tools{display:grid;grid-template-columns:minmax(240px,1fr) 190px;gap:10px;margin-bottom:16px}
+.tools input,.tools select,.fulfilment input,.fulfilment select{width:100%;height:42px;border:1px solid #cfd5dc;border-radius:7px;background:#fff;padding:0 12px;color:var(--ink)}
+.notice{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;color:var(--muted)}
+.notice.error{border-color:#fda29b;color:var(--red)}
+.order{background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:14px;overflow:hidden}
+.order-summary{display:grid;grid-template-columns:minmax(170px,1fr) minmax(170px,1fr) auto auto;gap:18px;align-items:center;padding:15px 18px;border-bottom:1px solid var(--line);background:#fbfcfd}
+.order-number{font-size:16px;font-weight:800}
+.subtle{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.status-pill{display:inline-flex;align-items:center;justify-content:center;min-height:28px;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:800;white-space:nowrap}
+.status-received{color:var(--amber);background:var(--amber-soft)}
+.status-shipped{color:#175cd3;background:var(--blue-soft)}
+.status-delivered{color:var(--green);background:var(--green-soft)}
+.order-total{font-size:17px;font-weight:800;text-align:right}
+.progress{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:17px 20px 7px}
+.progress-step{position:relative;text-align:center;color:#98a2b3;font-size:12px;font-weight:700;padding-top:24px}
+.progress-step:before{content:"";position:absolute;z-index:2;top:2px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#d0d5dd;border:3px solid #fff;box-shadow:0 0 0 1px #d0d5dd}
+.progress-step:after{content:"";position:absolute;z-index:1;top:10px;left:-50%;width:100%;height:2px;background:#e4e7ec}
+.progress-step:first-child:after{display:none}
+.progress-step.done{color:var(--green)}
+.progress-step.done:before{background:var(--green);box-shadow:0 0 0 1px var(--green)}
+.progress-step.done:after{background:var(--green)}
+.order-body{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:22px;padding:18px}
+.section h2{font-size:12px;color:var(--muted);margin:0 0 9px;text-transform:uppercase;letter-spacing:0}
+.section p{margin:4px 0;line-height:1.45}
+.items-list{border-top:1px solid var(--line);margin-top:10px;padding-top:8px}
+.item{display:flex;justify-content:space-between;gap:14px;margin:8px 0}
+.fulfilment{grid-column:1/-1;border-top:1px solid var(--line);padding-top:17px}
+.fulfilment-grid{display:grid;grid-template-columns:190px 1fr 1fr 1.2fr auto;gap:10px;align-items:end}
+.field label{display:block;color:var(--muted);font-size:12px;font-weight:700;margin:0 0 6px}
+.save-note{min-height:18px;margin:9px 0 0;color:var(--green);font-size:12px;font-weight:700}
+.tracking-link{color:var(--blue);font-weight:700;text-decoration:none}
+.empty{text-align:center;padding:45px 20px}
+@media(max-width:1000px){
+ .stats{grid-template-columns:repeat(3,1fr)}.stat:nth-child(3){border-right:0}.stat:nth-child(n+4){border-top:1px solid var(--line)}
+ .order-body{grid-template-columns:1fr 1fr}.section.items-section{grid-column:1/-1}
+ .fulfilment-grid{grid-template-columns:1fr 1fr}.fulfilment-grid .primary{width:100%}
+}
+@media(max-width:650px){
+ header{height:60px}.header-actions a{display:none}.shell{padding:18px 12px 40px}.page-head{align-items:flex-start}.page-head h1{font-size:22px}
+ .stats{grid-template-columns:1fr 1fr}.stat{border-top:1px solid var(--line)}.stat:nth-child(odd){border-right:1px solid var(--line)}.stat:nth-child(even){border-right:0}.stat:first-child,.stat:nth-child(2){border-top:0}
+ .tools{grid-template-columns:1fr}.order-summary{grid-template-columns:1fr auto;gap:10px}.order-summary>div:nth-child(2){grid-column:1/-1;order:3}.order-total{grid-column:2;grid-row:1}
+ .order-body{grid-template-columns:1fr}.section.items-section{grid-column:auto}.fulfilment-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<header><a href="index.html"><img src="assets/Logo-original.png" alt="Cyclify"></a><a href="account.html">My account</a></header>
+<header>
+ <a href="index.html"><img src="assets/Logo-original.png" alt="Cyclify"></a>
+ <div class="header-actions"><a href="account.html">My account</a><button id="logoutBtn" type="button">Sign out</button></div>
+</header>
 <main class="shell">
-<div class="heading"><div><h1>Admin Orders</h1><p>Private overview of customer orders received by Cyclify.</p></div><button class="refresh" id="refreshBtn" type="button">Refresh</button></div>
-<section id="loading" class="notice">Checking administrator accessâ€¦</section>
-<section id="content" hidden>
-<div class="stats"><div class="stat"><span>Total orders</span><strong id="orderCount">0</strong></div><div class="stat"><span>Items ordered</span><strong id="itemsCount">0</strong></div><div class="stat"><span>Order value</span><strong id="orderValue">â‚¹0</strong></div></div>
-<div id="orders"></div>
-</section>
+ <div class="page-head">
+  <div><h1>Order Operations</h1><p>Review, fulfil and track customer orders from one place.</p></div>
+  <button class="primary" id="refreshBtn" type="button">Refresh</button>
+ </div>
+ <section class="stats" aria-label="Order summary">
+  <div class="stat"><span>Total orders</span><strong id="orderCount">0</strong></div>
+  <div class="stat"><span>Order received</span><strong id="receivedCount">0</strong></div>
+  <div class="stat"><span>Shipped</span><strong id="shippedCount">0</strong></div>
+  <div class="stat"><span>Delivered</span><strong id="deliveredCount">0</strong></div>
+  <div class="stat"><span>Order value</span><strong id="orderValue">Rs. 0</strong></div>
+ </section>
+ <div class="tools">
+  <input id="searchOrders" type="search" placeholder="Search order number, customer, phone or tracking">
+  <select id="statusFilter" aria-label="Filter orders by status">
+   <option value="all">All statuses</option>
+   <option value="Order Received">Order Received</option>
+   <option value="Order Shipped">Order Shipped</option>
+   <option value="Order Delivered">Order Delivered</option>
+  </select>
+ </div>
+ <section id="loading" class="notice">Checking administrator access...</section>
+ <section id="content" hidden><div id="orders"></div></section>
 </main>
+
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import{getAuth,onAuthStateChanged}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-import{getFirestore,collectionGroup,getDocs}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import{getAuth,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import{getFirestore,collectionGroup,getDocs,doc,updateDoc,serverTimestamp}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
 const app=initializeApp({apiKey:"AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",authDomain:"cyclify-b809a.firebaseapp.com",projectId:"cyclify-b809a",storageBucket:"cyclify-b809a.firebasestorage.app",messagingSenderId:"748931097863",appId:"1:748931097863:web:0954f07a8245703f2751a2"});
 const auth=getAuth(app),db=getFirestore(app);
-let adminUser=null;
-const money=value=>`â‚¹${Number(value||0).toLocaleString("en-IN")}`;
+const statuses=["Order Received","Order Shipped","Order Delivered"];
+let allOrders=[];
+
+const money=value=>`Rs. ${Number(value||0).toLocaleString("en-IN")}`;
 const safe=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
-function showError(message){loading.className="notice error";loading.textContent=message;loading.hidden=false;content.hidden=true}
+const asDate=value=>{
+ if(!value)return null;
+ if(typeof value.toDate==="function")return value.toDate();
+ if(Number.isFinite(value.seconds))return new Date(value.seconds*1000);
+ const parsed=new Date(value);
+ return Number.isNaN(parsed.getTime())?null:parsed;
+};
+const normalizeStatus=value=>{
+ const status=String(value||"").toLowerCase();
+ if(status.includes("deliver"))return"Order Delivered";
+ if(status.includes("ship"))return"Order Shipped";
+ return"Order Received";
+};
+const statusIndex=value=>statuses.indexOf(normalizeStatus(value));
+const statusClass=value=>normalizeStatus(value).toLowerCase().replace("order ","status-");
+const validUrl=value=>/^https?:\/\//i.test(String(value||""))?String(value):"";
+
+function showError(message){
+ loading.className="notice error";
+ loading.textContent=message;
+ loading.hidden=false;
+ content.hidden=true;
+}
+
+function renderStats(){
+ orderCount.textContent=allOrders.length;
+ receivedCount.textContent=allOrders.filter(order=>normalizeStatus(order.status)==="Order Received").length;
+ shippedCount.textContent=allOrders.filter(order=>normalizeStatus(order.status)==="Order Shipped").length;
+ deliveredCount.textContent=allOrders.filter(order=>normalizeStatus(order.status)==="Order Delivered").length;
+ orderValue.textContent=money(allOrders.reduce((sum,order)=>sum+Number(order.total||0),0));
+}
+
+function renderOrders(){
+ const query=searchOrders.value.trim().toLowerCase();
+ const filter=statusFilter.value;
+ const data=allOrders.filter(order=>{
+  const address=order.address||{},tracking=order.tracking||{};
+  const searchable=[order.number,address.firstName,address.lastName,address.phone,tracking.number,tracking.courier].join(" ").toLowerCase();
+  return(!query||searchable.includes(query))&&(filter==="all"||normalizeStatus(order.status)===filter);
+ });
+ if(!data.length){
+  orders.innerHTML='<div class="notice empty">No orders match the current search and filter.</div>';
+  return;
+ }
+ orders.innerHTML=data.map(order=>{
+  const address=order.address||{},tracking=order.tracking||{},date=asDate(order.createdAt);
+  const currentStatus=normalizeStatus(order.status),currentIndex=statusIndex(currentStatus);
+  const phone=address.phone||"";
+  const trackingUrl=validUrl(tracking.url);
+  return`<article class="order" data-path="${safe(order.path)}">
+   <div class="order-summary">
+    <div><span class="order-number">Order #${safe(order.number)}</span><span class="subtle">${date?date.toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short"}):"Date pending"}</span></div>
+    <div><span class="status-pill ${statusClass(currentStatus)}">${safe(currentStatus)}</span>${tracking.number?`<span class="subtle">${safe(tracking.courier||"Courier")} - ${safe(tracking.number)}</span>`:""}</div>
+    <div class="subtle">${(order.items||[]).reduce((n,item)=>n+(item.quantity||1),0)} item(s)</div>
+    <div class="order-total">${money(order.total)}</div>
+   </div>
+   <div class="progress">${statuses.map((status,index)=>`<div class="progress-step ${index<=currentIndex?"done":""}">${status.replace("Order ","")}</div>`).join("")}</div>
+   <div class="order-body">
+    <section class="section"><h2>Customer</h2><p><strong>${safe(`${address.firstName||""} ${address.lastName||""}`.trim()||"Customer")}</strong></p>${phone?`<p>${safe(phone)}</p>`:""}<p class="subtle">Customer ID: ${safe(order.customerId)}</p></section>
+    <section class="section"><h2>Delivery address</h2><p>${safe(address.address)}${address.flat?`, ${safe(address.flat)}`:""}<br>${safe(address.city)}, ${safe(address.state)} ${safe(address.pincode)}<br>${safe(address.country)}</p>${order.gstin?`<p>GSTIN: ${safe(order.gstin)}<br>${safe(order.businessName)}</p>`:""}</section>
+    <section class="section items-section"><h2>Items</h2><div class="items-list">${(order.items||[]).map(item=>`<div class="item"><span>${safe(item.name)} x ${item.quantity||1}${item.size?` (${safe(item.size)})`:""}</span><strong>${money(Number(String(item.price).replace(/[^0-9.]/g,""))*(item.quantity||1))}</strong></div>`).join("")}<div class="item"><strong>Total</strong><strong>${money(order.total)}</strong></div></div></section>
+    <section class="fulfilment">
+     <div class="fulfilment-grid">
+      <div class="field"><label>Status</label><select class="status-select">${statuses.map(status=>`<option ${status===currentStatus?"selected":""}>${status}</option>`).join("")}</select></div>
+      <div class="field"><label>Courier</label><input class="courier-input" value="${safe(tracking.courier)}" placeholder="Example: Blue Dart"></div>
+      <div class="field"><label>Tracking number</label><input class="tracking-input" value="${safe(tracking.number)}" placeholder="AWB / tracking number"></div>
+      <div class="field"><label>Tracking link</label><input class="tracking-url-input" value="${safe(tracking.url)}" placeholder="https://courier.example/track">${trackingUrl?`<a class="tracking-link subtle" href="${safe(trackingUrl)}" target="_blank" rel="noopener">Open tracking page</a>`:""}</div>
+      <button class="primary save-order" type="button">Save update</button>
+     </div>
+     <p class="save-note" aria-live="polite"></p>
+    </section>
+   </div>
+  </article>`;
+ }).join("");
+}
+
 async function loadOrders(){
- loading.className="notice";loading.textContent="Loading customer ordersâ€¦";loading.hidden=false;content.hidden=true;
+ loading.className="notice";
+ loading.textContent="Loading customer orders...";
+ loading.hidden=false;
+ content.hidden=true;
  try{
   const snapshot=await getDocs(collectionGroup(db,"orders"));
-  const data=snapshot.docs.map(order=>({id:order.id,...order.data()})).sort((a,b)=>{
-   const aTime=a.createdAt?.toMillis?.()||0,bTime=b.createdAt?.toMillis?.()||0;
-   return bTime-aTime;
-  });
-  orderCount.textContent=data.length;
-  itemsCount.textContent=data.reduce((sum,order)=>sum+(order.items||[]).reduce((n,item)=>n+(item.quantity||1),0),0);
-  orderValue.textContent=money(data.reduce((sum,order)=>sum+Number(order.total||0),0));
-  orders.innerHTML=data.length?data.map(order=>{
-   const address=order.address||{},date=order.createdAt?.toDate?.();
-   const phone=address.phone||"";
-   return `<article class="order">
-    <div class="order-head"><div><strong>Order #${safe(order.number)}</strong><small>${date?date.toLocaleString("en-IN"):"Date pending"}</small></div><span class="status">${safe(order.status)}</span></div>
-    <div class="order-body">
-     <div><h3>Customer</h3><p><strong>${safe(`${address.firstName||""} ${address.lastName||""}`.trim()||"Customer")}</strong></p><p>UID: ${safe(order.customerId)}</p>${phone?`<p>${safe(phone)}</p>`:""}</div>
-     <div><h3>Delivery address</h3><p>${safe(address.address)}${address.flat?`, ${safe(address.flat)}`:""}<br>${safe(address.city)}, ${safe(address.state)} ${safe(address.pincode)}<br>${safe(address.country)}</p>${order.gstin?`<p>GSTIN: ${safe(order.gstin)}<br>${safe(order.businessName)}</p>`:""}</div>
-     <div class="items"><h3>Items</h3>${(order.items||[]).map(item=>`<div class="item"><span>${safe(item.name)} Ã— ${item.quantity||1}${item.size?` (${safe(item.size)})`:""}</span><strong>${money(Number(String(item.price).replace(/[^0-9.]/g,""))*(item.quantity||1))}</strong></div>`).join("")}<div class="item total"><span>Total</span><span>${money(order.total)}</span></div><a class="wa" href="https://wa.me/message/MLT2FFSAEYGIP1?text=${encodeURIComponent(`Regarding Cyclify order #${order.number}`)}">Open WhatsApp support</a></div>
-    </div>
-   </article>`}).join(""):'<div class="notice">No orders have been received yet.</div>';
-  loading.hidden=true;content.hidden=false;
+  allOrders=snapshot.docs.map(order=>({id:order.id,path:order.ref.path,...order.data()})).sort((a,b)=>(asDate(b.createdAt)?.getTime()||0)-(asDate(a.createdAt)?.getTime()||0));
+  renderStats();
+  renderOrders();
+  loading.hidden=true;
+  content.hidden=false;
  }catch(error){
   console.error("Cyclify admin order load failed",error);
   const detail=error?.code?` (${error.code})`:"";
-  showError(`Orders could not be loaded${detail}. Sign out, sign in again with admin@cyclify.in, then refresh this page.`);
+  showError(`Orders could not be loaded${detail}. Confirm the latest Firestore rules are published.`);
  }
 }
-refreshBtn.addEventListener("click",loadOrders);
-onAuthStateChanged(auth,async user=>{
- if(!user){
-  const loginUrl=(location.hostname==="127.0.0.1"||location.hostname==="localhost")
-   ?"https://cyclify.in/account.html?return=admin.html"
-   :`account.html?return=${encodeURIComponent("admin.html")}`;
-  location.replace(loginUrl);return
+
+orders.addEventListener("click",async event=>{
+ const button=event.target.closest(".save-order");
+ if(!button)return;
+ const orderElement=button.closest(".order"),note=orderElement.querySelector(".save-note");
+ const status=orderElement.querySelector(".status-select").value;
+ const courier=orderElement.querySelector(".courier-input").value.trim();
+ const trackingNumber=orderElement.querySelector(".tracking-input").value.trim();
+ const trackingUrl=orderElement.querySelector(".tracking-url-input").value.trim();
+ if(status==="Order Shipped"&&(!courier||!trackingNumber)){
+  note.style.color="var(--red)";
+  note.textContent="Courier and tracking number are required when an order is shipped.";
+  return;
  }
- try{await user.reload();await user.getIdToken(true);}catch(error){console.warn("Admin token refresh failed",error);}
+ if(trackingUrl&&!validUrl(trackingUrl)){
+  note.style.color="var(--red)";
+  note.textContent="Tracking link must start with http:// or https://";
+  return;
+ }
+ button.disabled=true;
+ button.textContent="Saving...";
+ note.textContent="";
+ try{
+  const update={status,tracking:{courier,number:trackingNumber,url:trackingUrl},updatedAt:serverTimestamp()};
+  if(status==="Order Shipped")update.shippedAt=serverTimestamp();
+  if(status==="Order Delivered")update.deliveredAt=serverTimestamp();
+  await updateDoc(doc(db,orderElement.dataset.path),update);
+  note.style.color="var(--green)";
+  note.textContent="Order updated. The customer can now see this status.";
+  button.textContent="Updated";
+  await loadOrders();
+ }catch(error){
+  console.error("Order update failed",error);
+  note.style.color="var(--red)";
+  note.textContent=`Update failed${error?.code?` (${error.code})`:""}. Confirm the latest Firestore rules are published.`;
+  button.disabled=false;
+  button.textContent="Save update";
+ }
+});
+
+searchOrders.addEventListener("input",renderOrders);
+statusFilter.addEventListener("change",renderOrders);
+refreshBtn.addEventListener("click",loadOrders);
+logoutBtn.addEventListener("click",()=>signOut(auth).then(()=>location.replace("account.html")));
+
+onAuthStateChanged(auth,async user=>{
+ if(!user){location.replace(`account.html?return=${encodeURIComponent("admin.html")}`);return}
+ try{await user.reload();await user.getIdToken(true);}catch(error){console.warn("Admin token refresh failed",error)}
  if(user.email?.toLowerCase()!=="admin@cyclify.in"){showError(`Access denied. Signed in as ${user.email||"an unknown account"}.`);return}
- adminUser=user;loadOrders();
+ loadOrders();
 });
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
