@@ -663,6 +663,7 @@ gap:5px!important;
 </div>
 <button class="primary-btn" type="submit">Login</button>
 <button class="secondary-btn" id="googleLoginBtn" type="button">Continue with Google</button>
+<button class="secondary-btn" id="resetPasswordBtn" type="button">Reset Firebase Password</button>
 </form>
 
 <form class="panel" id="signupPanel">
@@ -749,6 +750,11 @@ else{cartCount.style.display="none";}
 })();
 </script>
 
+<script>
+if((location.hostname==="127.0.0.1"||location.hostname==="localhost")&&new URLSearchParams(location.search).get("return")==="admin.html"){
+location.replace("https://cyclify.in/account.html?return=admin.html");
+}
+</script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import {
@@ -759,6 +765,7 @@ signInWithPopup,
 GoogleAuthProvider,
 updateProfile,
 sendEmailVerification,
+sendPasswordResetEmail,
 onAuthStateChanged,
 signOut
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
@@ -919,9 +926,18 @@ if(code.includes("auth/unauthorized-domain")){
 return "This domain is not authorized in Firebase. Add cyclify.in in Firebase Authentication settings.";
 }
 if(code.includes("auth/operation-not-allowed")){
-return "Please enable this sign-in method in Firebase Authentication.";
+return "Please enable Email/Password sign-in in Firebase Authentication.";
 }
-return "Login failed. Please try again.";
+if(code.includes("auth/too-many-requests")){
+return "Firebase temporarily blocked repeated attempts. Wait a few minutes or reset the password.";
+}
+if(code.includes("auth/network-request-failed")){
+return "Firebase could not be reached. Open the live cyclify.in account page and try again.";
+}
+if(code.includes("auth/api-key-not-valid")||code.includes("requests-from-referer")){
+return "Firebase rejected this website address. Use https://cyclify.in/account.html or update the API key website restrictions.";
+}
+return `Firebase login failed${code?` (${code})`:""}.`;
 }
 
 document.querySelectorAll(".tab").forEach(tab=>{
@@ -1000,6 +1016,20 @@ document.getElementById("googleLoginBtn").addEventListener("click",()=>{
 loginWithGoogle("loginMessage");
 });
 
+document.getElementById("resetPasswordBtn").addEventListener("click",async ()=>{
+const username=normalizeUser(document.getElementById("loginUser").value);
+if(!isEmail(username)){
+setMessage("loginMessage","error","Enter admin@cyclify.in first, then select Reset Firebase Password.");
+return;
+}
+try{
+await sendPasswordResetEmail(auth,username);
+setMessage("loginMessage","success",`Firebase password reset email sent to ${username}.`);
+}catch(error){
+setMessage("loginMessage","error",getAuthError(error));
+}
+});
+
 document.getElementById("googleSignupBtn").addEventListener("click",()=>{
 loginWithGoogle("signupMessage");
 });
@@ -1026,6 +1056,8 @@ renderState(user);
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
+
+
 
 
 

@@ -72,13 +72,20 @@ async function loadOrders(){
 }
 refreshBtn.addEventListener("click",loadOrders);
 onAuthStateChanged(auth,async user=>{
- if(!user){location.replace(`account.html?return=${encodeURIComponent("admin.html")}`);return}
+ if(!user){
+  const loginUrl=(location.hostname==="127.0.0.1"||location.hostname==="localhost")
+   ?"https://cyclify.in/account.html?return=admin.html"
+   :`account.html?return=${encodeURIComponent("admin.html")}`;
+  location.replace(loginUrl);return
+ }
  if(user.email?.toLowerCase()!=="admin@cyclify.in"||!user.emailVerified){showError("Access denied. Sign in with the verified Cyclify administrator account.");return}
  adminUser=user;loadOrders();
 });
 </script>
 </body>
 </html>
+
+
 
 
 
