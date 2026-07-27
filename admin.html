@@ -78,12 +78,15 @@ onAuthStateChanged(auth,async user=>{
    :`account.html?return=${encodeURIComponent("admin.html")}`;
   location.replace(loginUrl);return
  }
- if(user.email?.toLowerCase()!=="admin@cyclify.in"||!user.emailVerified){showError("Access denied. Sign in with the verified Cyclify administrator account.");return}
+ try{await user.reload();await user.getIdToken(true);}catch(error){console.warn("Admin token refresh failed",error);}
+ if(user.email?.toLowerCase()!=="admin@cyclify.in"){showError(`Access denied. Signed in as ${user.email||"an unknown account"}.`);return}
  adminUser=user;loadOrders();
 });
 </script>
 </body>
 </html>
+
+
 
 
 
