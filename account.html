@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -616,7 +616,7 @@ gap:5px!important;
 </div>
 
 <section class="panel active" id="authLoading" aria-live="polite">
-<strong>Opening your secure account…</strong>
+<strong>Opening your secure accountâ€¦</strong>
 <p class="hint" style="margin:8px 0 0">Checking your signed-in session.</p>
 </section>
 
@@ -845,14 +845,17 @@ document.getElementById("adminOrdersCard").style.display=user.email?.toLowerCase
 if(user.email?.toLowerCase()==="admin@cyclify.in"&&!user.emailVerified&&!sessionStorage.getItem("cyclifyAdminVerificationSent")){
 sessionStorage.setItem("cyclifyAdminVerificationSent","1");
 sendEmailVerification(user).then(()=>{
-profileUser.textContent="admin@cyclify.in · Verification email sent";
+profileUser.textContent="admin@cyclify.in Â· Verification email sent";
 }).catch(error=>console.error("Unable to send verification email",error));
 }
 renderOrders(user);
 const params=new URLSearchParams(location.search);
 if(params.get("tab")==="orders")showOrders();
 const returnPage=params.get("return");
-if(returnPage&&/^[a-z0-9._-]+\.html$/i.test(returnPage)){location.replace(returnPage);}
+if(returnPage&&/^[a-z0-9._-]+\.html$/i.test(returnPage)){
+const isUnverifiedAdmin=user.email?.toLowerCase()==="admin@cyclify.in"&&!user.emailVerified;
+if(!isUnverifiedAdmin){location.replace(returnPage);}
+}
 }
 else{
 authArea.style.display="block";
@@ -867,7 +870,7 @@ document.getElementById("ordersPanel").scrollIntoView({behavior:"smooth",block:"
 
 async function renderOrders(user){
 const list=document.getElementById("ordersList");
-list.innerHTML='<div style="padding:18px;color:#667085">Loading orders…</div>';
+list.innerHTML='<div style="padding:18px;color:#667085">Loading ordersâ€¦</div>';
 let orders=[];
 try{
 const snapshot=await getDocs(query(collection(db,"customers",user.uid,"orders"),orderBy("createdAt","desc")));
@@ -893,8 +896,8 @@ list.innerHTML=orders.map(order=>`
 <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
 <strong>Order #${order.number}</strong><span>${new Date(order.createdAt).toLocaleDateString("en-IN")}</span>
 </div>
-<p style="color:#087443;font-weight:700">● ${order.status}</p>
-<p>${order.items.reduce((n,item)=>n+(item.quantity||1),0)} item(s) · ₹${Number(order.total).toLocaleString("en-IN")}</p>
+<p style="color:#087443;font-weight:700">â— ${order.status}</p>
+<p>${order.items.reduce((n,item)=>n+(item.quantity||1),0)} item(s) Â· â‚¹${Number(order.total).toLocaleString("en-IN")}</p>
 <a href="https://wa.me/message/MLT2FFSAEYGIP1?text=${encodeURIComponent(`Hi Cyclify, I need help with order #${order.number}`)}" style="color:#0047ff;font-weight:700">Get support on WhatsApp</a>
 </article>`).join("");
 }
@@ -1023,6 +1026,9 @@ renderState(user);
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
+
+
+
 
 
 

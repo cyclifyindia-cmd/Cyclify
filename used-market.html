@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -932,10 +932,14 @@ currentUserIsAdmin=false;
 livePendingListings=[];
 liveMyPendingListings=[];
 if(user){
+const isVerifiedCyclifyAdmin=user.email?.toLowerCase()==="admin@cyclify.in"&&user.emailVerified;
+currentUserIsAdmin=isVerifiedCyclifyAdmin;
+if(!currentUserIsAdmin){
 try{
 const adminDoc=await firestoreDb.collection("admins").doc(user.uid).get();
 currentUserIsAdmin=adminDoc.exists;
 }catch(error){console.warn("Admin check unavailable",error);}
+}
 }
 refreshAuthNote();
 startLiveMarketplace();
@@ -983,6 +987,9 @@ else{cartCount.style.display="none";}
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
+
+
+
 
 
 
