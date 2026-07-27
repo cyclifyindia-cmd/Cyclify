@@ -149,7 +149,7 @@ function renderOrders(){
  const filter=statusFilter.value;
  const data=allOrders.filter(order=>{
   const address=order.address||{},tracking=order.tracking||{};
-  const searchable=[order.number,address.firstName,address.lastName,address.phone,tracking.number,tracking.courier].join(" ").toLowerCase();
+  const searchable=[order.number,address.firstName,address.lastName,address.phoneCode,address.phone,tracking.number,tracking.courier].join(" ").toLowerCase();
   return(!query||searchable.includes(query))&&(filter==="all"||normalizeStatus(order.status)===filter);
  });
  if(!data.length){
@@ -159,7 +159,7 @@ function renderOrders(){
  orders.innerHTML=data.map(order=>{
   const address=order.address||{},tracking=order.tracking||{},date=asDate(order.createdAt);
   const currentStatus=normalizeStatus(order.status),currentIndex=statusIndex(currentStatus);
-  const phone=address.phone||"";
+  const phone=[address.phoneCode,address.phone].filter(Boolean).join(" ");
   const trackingUrl=validUrl(tracking.url);
   return`<article class="order" data-path="${safe(order.path)}">
    <div class="order-summary">
