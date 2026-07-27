@@ -115,7 +115,7 @@ checkoutForm.addEventListener("submit",async event=>{
    const addresses=mergeAddresses(customerData.addresses,addressData,customerData.shippingAddress);
    transaction.set(customerRef,{shippingAddress:addressData,addresses,nextOrderNumber:next+1,cart:[],updatedAt:serverTimestamp()},{merge:true});
    const orderRef=doc(collection(db,"customers",signedInUser.uid,"orders"));
-   transaction.set(orderRef,{number:next,customerId:signedInUser.uid,status:"Order Received",createdAt:serverTimestamp(),items:list,total,address:addressData,billingSame:sameBilling.checked,billingAddress:sameBilling.checked?addressData:{address:billingAddress.value.trim(),city:billingCity.value.trim(),state:billingState.value.trim(),pincode:billingPincode.value.trim()},gstin:addGst.checked?gstin.value.trim():"",businessName:addGst.checked?businessName.value.trim():""});
+   transaction.set(orderRef,{number:next,customerId:signedInUser.uid,status:"Order Received",createdAt:serverTimestamp(),items:list,reviewableProductIds:[...new Set(list.map(item=>String(item.id||"")).filter(Boolean))],total,address:addressData,billingSame:sameBilling.checked,billingAddress:sameBilling.checked?addressData:{address:billingAddress.value.trim(),city:billingCity.value.trim(),state:billingState.value.trim(),pincode:billingPincode.value.trim()},gstin:addGst.checked?gstin.value.trim():"",businessName:addGst.checked?businessName.value.trim():""});
    return next;
   });
   localStorage.removeItem("cart");sessionStorage.removeItem("cyclifyCheckoutItems");

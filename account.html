@@ -608,7 +608,48 @@ gap:5px!important;
 .customer-progress-step.done:after{background:#087443}
 .tracking-details{background:#f8fafc;border-left:3px solid #0754c9;padding:12px 14px;margin:12px 0;line-height:1.55}
 .tracking-details a{color:#0754c9;font-weight:800;text-decoration:none}
-.customer-support{color:#0754c9;font-weight:800;text-decoration:none}</style>
+.customer-support{color:#0754c9;font-weight:800;text-decoration:none}
+.order-review-box{border-top:1px solid #e4e7ec;margin-top:16px;padding-top:15px}
+.order-review-title{font-size:13px;font-weight:800;margin:0 0 10px}
+.order-review-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid #f0f2f5}
+.order-review-item:first-of-type{border-top:0}
+.order-review-product{min-width:0;font-weight:700;overflow-wrap:anywhere}
+.order-review-action{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.review-status{font-size:12px;color:#667085;font-weight:700}
+.review-status.approved{color:#087443}
+.review-status.rejected{color:#b42318}
+.review-btn{height:34px;border:1px solid #0754c9;border-radius:7px;background:#fff;color:#0754c9;padding:0 12px;font-weight:800;cursor:pointer}
+.review-btn:hover{background:#edf4ff}
+.review-btn[disabled]{border-color:#d0d5dd;color:#98a2b3;background:#f9fafb;cursor:default}
+.review-dialog{width:min(560px,calc(100% - 24px));max-height:92vh;border:0;border-radius:8px;padding:0;box-shadow:0 24px 70px rgba(16,24,40,.24)}
+.review-dialog::backdrop{background:rgba(16,24,40,.58)}
+.review-modal{padding:22px}
+.review-modal-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:18px}
+.review-modal-head h2{margin:0 0 5px;font-size:21px}
+.review-modal-head p{margin:0;color:#667085;font-size:13px}
+.review-close{width:36px;height:36px;border:1px solid #d0d5dd;border-radius:7px;background:#fff;font-size:22px;line-height:1;cursor:pointer}
+.review-field{margin:14px 0}
+.review-field label{display:block;margin-bottom:7px;font-size:13px;font-weight:800}
+.review-field input[type="text"],.review-field textarea{width:100%;border:1px solid #cfd5dc;border-radius:7px;padding:11px 12px;font:inherit;color:#101828;background:#fff}
+.review-field textarea{min-height:118px;resize:vertical}
+.review-stars{display:flex;gap:6px}
+.review-star{width:43px;height:41px;border:1px solid #d0d5dd;border-radius:7px;background:#fff;color:#c3c7ce;font-size:25px;cursor:pointer}
+.review-star.selected{border-color:#f79009;background:#fffaeb;color:#f79009}
+.review-photo-picker{display:block;border:1px dashed #98a2b3;border-radius:7px;padding:13px;background:#f8fafc;cursor:pointer;text-align:center;color:#344054;font-weight:700}
+.review-photo-picker input{display:none}
+.review-photo-previews{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:9px}
+.review-photo-previews img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:7px;border:1px solid #e4e7ec}
+.review-submit{width:100%;height:43px;border:0;border-radius:7px;background:#0754c9;color:#fff;font-weight:800;cursor:pointer;margin-top:6px}
+.review-submit:disabled{opacity:.55;cursor:wait}
+.review-message{display:none;margin:10px 0 0;padding:10px 12px;border-radius:7px;font-size:13px}
+.review-message.show{display:block}
+.review-message.error{background:#fef3f2;color:#b42318}
+.review-message.success{background:#ecfdf3;color:#087443}
+@media(max-width:560px){
+.order-review-item{grid-template-columns:1fr}
+.order-review-action{justify-content:flex-start}
+.review-modal{padding:18px}
+}</style>
 </head>
 
 <body>
@@ -657,6 +698,40 @@ gap:5px!important;
 <div class="message success" id="orderPlacedMessage"></div>
 <div id="ordersList"></div>
 </section>
+
+<dialog class="review-dialog" id="reviewDialog">
+<div class="review-modal">
+<div class="review-modal-head">
+<div><h2>Review your purchase</h2><p id="reviewProductName"></p></div>
+<button class="review-close" id="closeReviewDialog" type="button" aria-label="Close review form">&times;</button>
+</div>
+<div class="review-field">
+<label>Your rating</label>
+<div class="review-stars" id="reviewStars" role="radiogroup" aria-label="Product rating">
+<button class="review-star" type="button" data-rating="1" aria-label="1 star">&#9733;</button>
+<button class="review-star" type="button" data-rating="2" aria-label="2 stars">&#9733;</button>
+<button class="review-star" type="button" data-rating="3" aria-label="3 stars">&#9733;</button>
+<button class="review-star" type="button" data-rating="4" aria-label="4 stars">&#9733;</button>
+<button class="review-star" type="button" data-rating="5" aria-label="5 stars">&#9733;</button>
+</div>
+</div>
+<div class="review-field">
+<label for="reviewTitle">Review title</label>
+<input id="reviewTitle" type="text" maxlength="80" placeholder="Summarise your experience">
+</div>
+<div class="review-field">
+<label for="reviewComment">Your review</label>
+<textarea id="reviewComment" minlength="10" maxlength="1500" placeholder="Tell other cyclists about the quality, fit and your experience"></textarea>
+</div>
+<div class="review-field">
+<label>Photos (optional, maximum 3)</label>
+<label class="review-photo-picker">Choose product photos<input id="reviewPhotos" type="file" accept="image/jpeg,image/png,image/webp" multiple></label>
+<div class="review-photo-previews" id="reviewPhotoPreviews"></div>
+</div>
+<div class="review-message" id="reviewMessage" aria-live="polite"></div>
+<button class="review-submit" id="submitReview" type="button">Submit for approval</button>
+</div>
+</dialog>
 
 <button class="logout-btn" id="logoutBtn" type="button">Logout</button>
 </section>
@@ -791,7 +866,11 @@ getFirestore,
 collection,
 query,
 orderBy,
-getDocs
+getDocs,
+doc,
+getDoc,
+setDoc,
+serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -808,6 +887,11 @@ const app=initializeApp(firebaseConfig);
 const auth=getAuth(app);
 const db=getFirestore(app);
 const googleProvider=new GoogleAuthProvider();
+const reviewMediaEndpoint="https://cyclify-used-market-media.cyclifyindia.workers.dev";
+let activeReview=null;
+let reviewRating=0;
+let reviewFiles=[];
+let customerOrders=[];
 
 const authArea=document.getElementById("authArea");
 const dashboard=document.getElementById("dashboard");
@@ -911,13 +995,52 @@ function trackingLink(value){
 return /^https?:\/\//i.test(String(value||""))?String(value):"";
 }
 
+function safe(value){
+return String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+}
+
+function reviewDocumentId(userId,orderId){
+return `${userId}__${orderId}`;
+}
+
+function reviewReference(userId,orderId,productId){
+return doc(db,"productReviews",String(productId),"reviews",reviewDocumentId(userId,orderId));
+}
+
+function deliveredReviewItems(order){
+const seen=new Set();
+return (order.items||[]).filter(item=>{
+const id=String(item.id||"");
+if(!id||seen.has(id))return false;
+seen.add(id);
+return true;
+});
+}
+
+function reviewActions(order,status){
+if(status!=="Order Delivered")return"";
+const items=deliveredReviewItems(order);
+if(!items.length)return"";
+return `<div class="order-review-box">
+<p class="order-review-title">Rate your delivered products</p>
+${items.map(item=>`<div class="order-review-item">
+<span class="order-review-product">${safe(item.name||"Cyclify product")}</span>
+<span class="order-review-action">
+<span class="review-status" data-review-status="${safe(order.id)}|${safe(item.id)}">Checking eligibility...</span>
+<button class="review-btn" type="button" data-review-order="${safe(order.id)}" data-review-product="${safe(item.id)}" disabled>Write review</button>
+</span>
+</div>`).join("")}
+</div>`;
+}
+
 async function renderOrders(user){
 const list=document.getElementById("ordersList");
 list.innerHTML='<div style="padding:18px;color:#667085">Loading orders...</div>';
 let orders=[];
 try{
 const snapshot=await getDocs(query(collection(db,"customers",user.uid,"orders"),orderBy("createdAt","desc")));
-orders=snapshot.docs.map(item=>item.data());
+orders=snapshot.docs.map(item=>({id:item.id,...item.data()}));
+customerOrders=orders;
 }
 catch(error){
 console.error(error);
@@ -952,9 +1075,193 @@ return `
 <p class="customer-order-meta">${(order.items||[]).reduce((n,item)=>n+(item.quantity||1),0)} item(s) | Rs. ${Number(order.total||0).toLocaleString("en-IN")}</p>
 ${statusIndex>=1&&tracking.number?`<div class="tracking-details"><strong>${tracking.courier||"Courier"}</strong><br>Tracking number: ${tracking.number}${url?`<br><a href="${url}" target="_blank" rel="noopener">Track shipment</a>`:""}</div>`:""}
 <a class="customer-support" href="https://wa.me/message/MLT2FFSAEYGIP1?text=${encodeURIComponent(`Hi Cyclify, I need help with order #${order.number}`)}">Get support on WhatsApp</a>
+${reviewActions(order,status)}
 </article>`;
 }).join("");
+await hydrateReviewButtons(user,orders);
 }
+
+async function hydrateReviewButtons(user,orders){
+const buttons=[...document.querySelectorAll("[data-review-order][data-review-product]")];
+await Promise.all(buttons.map(async button=>{
+const orderId=button.dataset.reviewOrder;
+const productId=button.dataset.reviewProduct;
+const status=document.querySelector(`[data-review-status="${CSS.escape(`${orderId}|${productId}`)}"]`);
+try{
+const snapshot=await getDoc(reviewReference(user.uid,orderId,productId));
+if(snapshot.exists()){
+const reviewStatus=String(snapshot.data().status||"pending");
+button.disabled=true;
+if(status){
+status.textContent=reviewStatus==="approved"?"Review published":reviewStatus==="rejected"?"Review not approved":"Pending approval";
+status.className=`review-status ${reviewStatus}`;
+}
+return;
+}
+button.disabled=false;
+if(status){status.textContent="Verified purchase";}
+}catch(error){
+console.error("Review eligibility check failed",error);
+button.disabled=true;
+if(status){status.textContent="Review unavailable";}
+}
+}));
+}
+
+function setReviewMessage(type,text){
+reviewMessage.className=`review-message show ${type}`;
+reviewMessage.textContent=text;
+}
+
+function resetReviewForm(){
+reviewRating=0;
+reviewFiles=[];
+reviewTitle.value="";
+reviewComment.value="";
+reviewPhotos.value="";
+reviewPhotoPreviews.innerHTML="";
+reviewMessage.className="review-message";
+reviewMessage.textContent="";
+reviewStars.querySelectorAll(".review-star").forEach(star=>star.classList.remove("selected"));
+submitReview.disabled=false;
+submitReview.textContent="Submit for approval";
+}
+
+function openReviewForm(orderId,productId){
+const order=customerOrders.find(item=>item.id===orderId);
+const item=order?.items?.find(product=>String(product.id)===String(productId));
+if(!order||!item)return;
+resetReviewForm();
+activeReview={order,item};
+reviewProductName.textContent=item.name||"Cyclify product";
+reviewDialog.showModal();
+}
+
+function loadImage(file){
+return new Promise((resolve,reject)=>{
+const image=new Image();
+const url=URL.createObjectURL(file);
+image.onload=()=>{URL.revokeObjectURL(url);resolve(image);};
+image.onerror=()=>{URL.revokeObjectURL(url);reject(new Error("The selected image could not be opened."));};
+image.src=url;
+});
+}
+
+function canvasBlob(canvas,quality){
+return new Promise(resolve=>canvas.toBlob(resolve,"image/jpeg",quality));
+}
+
+async function compressReviewImage(file){
+const image=await loadImage(file);
+const maxEdge=1400;
+const scale=Math.min(1,maxEdge/Math.max(image.naturalWidth,image.naturalHeight));
+const canvas=document.createElement("canvas");
+canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));
+canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));
+canvas.getContext("2d",{alpha:false}).drawImage(image,0,0,canvas.width,canvas.height);
+let blob=null;
+for(const quality of [.82,.7,.58,.46]){
+blob=await canvasBlob(canvas,quality);
+if(blob&&blob.size<=780*1024)break;
+}
+if(!blob||blob.size>800*1024)throw new Error("One photo is still too large after compression. Please choose a smaller image.");
+return new File([blob],`review-${Date.now()}.jpg`,{type:"image/jpeg"});
+}
+
+async function uploadReviewImage(file,user){
+const compressed=await compressReviewImage(file);
+const body=new FormData();
+body.append("file",compressed);
+body.append("kind","image");
+const response=await fetch(`${reviewMediaEndpoint}/upload`,{
+method:"POST",
+headers:{Authorization:`Bearer ${await user.getIdToken()}`},
+body
+});
+const result=await response.json().catch(()=>({}));
+if(!response.ok||!result.url)throw new Error(result.error||"Photo upload failed.");
+return result.url;
+}
+
+ordersList.addEventListener("click",event=>{
+const button=event.target.closest(".review-btn");
+if(!button||button.disabled)return;
+openReviewForm(button.dataset.reviewOrder,button.dataset.reviewProduct);
+});
+
+closeReviewDialog.addEventListener("click",()=>reviewDialog.close());
+reviewDialog.addEventListener("click",event=>{
+if(event.target===reviewDialog)reviewDialog.close();
+});
+
+reviewStars.addEventListener("click",event=>{
+const star=event.target.closest(".review-star");
+if(!star)return;
+reviewRating=Number(star.dataset.rating);
+reviewStars.querySelectorAll(".review-star").forEach(item=>item.classList.toggle("selected",Number(item.dataset.rating)<=reviewRating));
+});
+
+reviewPhotos.addEventListener("change",()=>{
+reviewFiles=[...reviewPhotos.files].slice(0,3);
+if(reviewPhotos.files.length>3)setReviewMessage("error","You can upload a maximum of 3 photos.");
+else{reviewMessage.className="review-message";reviewMessage.textContent="";}
+reviewPhotoPreviews.innerHTML="";
+reviewFiles.forEach(file=>{
+const image=document.createElement("img");
+image.src=URL.createObjectURL(file);
+image.alt="Selected review photo";
+image.onload=()=>URL.revokeObjectURL(image.src);
+reviewPhotoPreviews.appendChild(image);
+});
+});
+
+submitReview.addEventListener("click",async()=>{
+const user=auth.currentUser;
+const title=reviewTitle.value.trim();
+const comment=reviewComment.value.trim();
+if(!user||!activeReview){setReviewMessage("error","Please sign in again before submitting your review.");return;}
+if(reviewRating<1){setReviewMessage("error","Choose a star rating.");return;}
+if(title.length<2){setReviewMessage("error","Add a short review title.");return;}
+if(comment.length<10){setReviewMessage("error","Please write at least 10 characters about the product.");return;}
+submitReview.disabled=true;
+submitReview.textContent=reviewFiles.length?"Uploading photos...":"Submitting review...";
+try{
+const imageUrls=[];
+for(let index=0;index<reviewFiles.length;index++){
+submitReview.textContent=`Uploading photo ${index+1} of ${reviewFiles.length}...`;
+imageUrls.push(await uploadReviewImage(reviewFiles[index],user));
+}
+submitReview.textContent="Submitting review...";
+const {order,item}=activeReview;
+await setDoc(reviewReference(user.uid,order.id,item.id),{
+productId:String(item.id),
+productName:String(item.name||"Cyclify product"),
+userId:user.uid,
+userName:user.displayName||`${order.address?.firstName||""} ${order.address?.lastName||""}`.trim()||"Cyclify customer",
+orderId:order.id,
+orderNumber:order.number,
+rating:reviewRating,
+title,
+comment,
+imageUrls,
+status:"pending",
+verifiedPurchase:true,
+createdAt:serverTimestamp(),
+updatedAt:serverTimestamp()
+});
+setReviewMessage("success","Thank you. Your verified-purchase review is waiting for Cyclify approval.");
+submitReview.textContent="Submitted";
+setTimeout(async()=>{
+reviewDialog.close();
+await hydrateReviewButtons(user,customerOrders);
+},900);
+}catch(error){
+console.error("Review submission failed",error);
+setReviewMessage("error",error?.code==="permission-denied"?"This delivered order is not yet enabled for reviews. Please contact Cyclify support.":error.message||"Review submission failed. Please try again.");
+submitReview.disabled=false;
+submitReview.textContent="Submit for approval";
+}
+});
 
 document.getElementById("ordersTab").addEventListener("click",showOrders);
 

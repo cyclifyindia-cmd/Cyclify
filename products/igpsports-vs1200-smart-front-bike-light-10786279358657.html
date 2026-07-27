@@ -590,6 +590,38 @@ object-fit:contain;
 
 }
 
+.product-reviews-section{margin-top:28px}
+.reviews-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.reviews-heading h3{margin:0 0 5px;font-size:22px}
+.reviews-heading p{margin:0;color:#667085;font-size:13px}
+.review-summary{display:grid;grid-template-columns:190px minmax(260px,430px);gap:34px;align-items:center;border-top:1px solid #e4e7ec;border-bottom:1px solid #e4e7ec;padding:22px 0;margin-bottom:8px}
+.review-summary[hidden]{display:none}
+.review-score{display:flex;align-items:baseline;gap:6px}
+.review-score strong{font-size:42px;line-height:1}
+.review-score span{color:#667085;font-size:16px}
+.review-summary-stars,.published-review-stars{color:#f79009;letter-spacing:0}
+.review-summary-stars{font-size:23px;margin:8px 0 4px}
+.review-total{color:#667085;font-size:13px}
+.rating-bars{display:grid;gap:7px}
+.rating-bar{display:grid;grid-template-columns:38px 1fr 32px;gap:9px;align-items:center;color:#667085;font-size:12px}
+.rating-track{height:7px;background:#eaecf0;border-radius:999px;overflow:hidden}
+.rating-fill{height:100%;background:#f79009;border-radius:999px}
+.published-review{padding:19px 0;border-bottom:1px solid #e4e7ec}
+.published-review-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.published-review-head h4{margin:0;font-size:16px}
+.published-review-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#667085;font-size:12px;margin:7px 0 10px}
+.verified-review{display:inline-flex;align-items:center;min-height:23px;border-radius:999px;background:#ecfdf3;color:#087443;padding:2px 8px;font-weight:800}
+.published-review p{margin:0;color:#344054;line-height:1.6;white-space:pre-wrap}
+.published-review-images{display:grid;grid-template-columns:repeat(3,minmax(0,110px));gap:8px;margin-top:13px}
+.published-review-images img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:1px solid #e4e7ec;border-radius:7px}
+.reviews-empty{padding:28px 0;color:#667085;border-top:1px solid #e4e7ec}
+@media(max-width:650px){
+.reviews-heading{align-items:flex-start;flex-direction:column}
+.review-summary{grid-template-columns:1fr;gap:18px}
+.published-review-head{align-items:flex-start;flex-direction:column}
+.published-review-images{grid-template-columns:repeat(3,1fr)}
+}
+
 /* FOOTER FEATURES */
 
 .features{
@@ -1222,6 +1254,20 @@ Buy Now
 
 </section>
 
+<section class="section product-reviews-section" aria-labelledby="reviewsTitle">
+<div class="reviews-heading">
+<div><h3 id="reviewsTitle">Customer Reviews</h3><p>Reviews from customers who purchased this product on Cyclify.</p></div>
+</div>
+<div class="review-summary" id="reviewSummary" hidden>
+<div>
+<div class="review-score"><strong id="reviewAverage">0.0</strong><span>out of 5</span></div>
+<div class="review-summary-stars" id="reviewAverageStars" aria-hidden="true"></div>
+<div class="review-total" id="reviewCount">0 verified reviews</div>
+</div>
+<div class="rating-bars" id="ratingBars"></div>
+</div>
+<div id="productReviews"><div class="reviews-empty">Loading verified reviews...</div></div>
+</section>
 
 <div class="section">
 
@@ -2719,6 +2765,7 @@ window.cyclifyMergeCadenceProducts(products,"");
 const params=new URLSearchParams(window.location.search);
 const productId=Number(window.CYCLIFY_PRODUCT_ID||params.get("id"))||1;
 const product=products.find(item=>item.id===productId)||products[0];
+window.CYCLIFY_CURRENT_PRODUCT={id:String(product.id),name:product.name};
 let productImages=product.images||[product.image];
 let currentImageIndex=0;
 let selectedSize=product.sizes&&product.sizes.length?product.sizes[0]:"";
@@ -3301,10 +3348,9 @@ window.location.href="checkout.html";
 
 <script src="assets/js/site-footer.js"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
+<script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
-
 
 
 

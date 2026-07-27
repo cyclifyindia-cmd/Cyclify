@@ -57,16 +57,46 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .save-note{min-height:18px;margin:9px 0 0;color:var(--green);font-size:12px;font-weight:700}
 .tracking-link{color:var(--blue);font-weight:700;text-decoration:none}
 .empty{text-align:center;padding:45px 20px}
+.workspace-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:0 0 18px}
+.workspace-tab{border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);padding:11px 15px;font-weight:800;cursor:pointer}
+.workspace-tab.active{border-bottom-color:var(--blue);color:var(--blue)}
+.workspace-tab-count{display:inline-flex;min-width:21px;height:21px;align-items:center;justify-content:center;border-radius:999px;background:#e4e7ec;color:#344054;font-size:11px;margin-left:5px}
+.workspace-tab.active .workspace-tab-count{background:var(--blue-soft);color:var(--blue)}
+.review-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}
+.review-tools h2{font-size:18px;margin:0 0 4px}
+.review-tools p{margin:0;color:var(--muted)}
+.review-tools select{height:40px;border:1px solid #cfd5dc;border-radius:7px;background:#fff;padding:0 12px}
+.review-card{background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:13px;overflow:hidden}
+.review-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:15px 18px;border-bottom:1px solid var(--line);background:#fbfcfd}
+.review-product{font-size:16px;font-weight:800;margin-bottom:5px}
+.review-order-meta{color:var(--muted);font-size:12px}
+.review-rating{color:#f79009;font-size:19px;letter-spacing:0}
+.review-card-body{display:grid;grid-template-columns:minmax(180px,.7fr) minmax(0,1.5fr);gap:24px;padding:18px}
+.review-customer p{margin:4px 0}
+.verified-badge{display:inline-flex;align-items:center;min-height:25px;border-radius:999px;background:var(--green-soft);color:var(--green);padding:3px 9px;font-size:11px;font-weight:800;margin-top:7px}
+.review-copy h3{font-size:16px;margin:0 0 8px}
+.review-copy p{margin:0;line-height:1.55;color:#344054;white-space:pre-wrap}
+.review-images{display:grid;grid-template-columns:repeat(3,minmax(0,110px));gap:8px;margin-top:13px}
+.review-images a{display:block}
+.review-images img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:1px solid var(--line);border-radius:7px}
+.review-actions{display:flex;justify-content:flex-end;align-items:center;gap:8px;border-top:1px solid var(--line);padding:12px 18px}
+.review-actions button{height:37px;border-radius:7px;padding:0 14px;font-weight:800;cursor:pointer}
+.approve-review{border:0;background:var(--green);color:#fff}
+.reject-review{border:1px solid #fda29b;background:#fff;color:var(--red)}
+.review-actions button:disabled{opacity:.55;cursor:wait}
+.review-action-note{margin-right:auto;color:var(--muted);font-size:12px;font-weight:700}
 @media(max-width:1000px){
  .stats{grid-template-columns:repeat(3,1fr)}.stat:nth-child(3){border-right:0}.stat:nth-child(n+4){border-top:1px solid var(--line)}
  .order-body{grid-template-columns:1fr 1fr}.section.items-section{grid-column:1/-1}
  .fulfilment-grid{grid-template-columns:1fr 1fr}.fulfilment-grid .primary{width:100%}
+ .review-card-body{grid-template-columns:1fr}
 }
 @media(max-width:650px){
  header{height:60px}.header-actions a{display:none}.shell{padding:18px 12px 40px}.page-head{align-items:flex-start}.page-head h1{font-size:22px}
  .stats{grid-template-columns:1fr 1fr}.stat{border-top:1px solid var(--line)}.stat:nth-child(odd){border-right:1px solid var(--line)}.stat:nth-child(even){border-right:0}.stat:first-child,.stat:nth-child(2){border-top:0}
  .tools{grid-template-columns:1fr}.order-summary{grid-template-columns:1fr auto;gap:10px}.order-summary>div:nth-child(2){grid-column:1/-1;order:3}.order-total{grid-column:2;grid-row:1}
  .order-body{grid-template-columns:1fr}.section.items-section{grid-column:auto}.fulfilment-grid{grid-template-columns:1fr}
+ .workspace-tab{padding:10px}.review-tools{align-items:flex-start;flex-direction:column}.review-tools select{width:100%}.review-card-head{flex-direction:column}.review-images{grid-template-columns:repeat(3,1fr)}.review-actions{flex-wrap:wrap}.review-action-note{width:100%}
 }
 </style>
 </head>
@@ -80,6 +110,11 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
   <div><h1>Order Operations</h1><p>Review, fulfil and track customer orders from one place.</p></div>
   <button class="primary" id="refreshBtn" type="button">Refresh</button>
  </div>
+ <nav class="workspace-tabs" aria-label="Admin workspaces">
+  <button class="workspace-tab active" id="ordersWorkspaceTab" type="button">Orders</button>
+  <button class="workspace-tab" id="reviewsWorkspaceTab" type="button">Review approvals <span class="workspace-tab-count" id="pendingReviewCount">0</span></button>
+ </nav>
+ <section id="ordersWorkspace">
  <section class="stats" aria-label="Order summary">
   <div class="stat"><span>Total orders</span><strong id="orderCount">0</strong></div>
   <div class="stat"><span>Order received</span><strong id="receivedCount">0</strong></div>
@@ -98,6 +133,20 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
  </div>
  <section id="loading" class="notice">Checking administrator access...</section>
  <section id="content" hidden><div id="orders"></div></section>
+ </section>
+ <section id="reviewsWorkspace" hidden>
+  <div class="review-tools">
+   <div><h2>Customer reviews</h2><p>Approve verified-purchase reviews before they appear on product pages.</p></div>
+   <select id="reviewStatusFilter" aria-label="Filter reviews by approval status">
+    <option value="pending">Pending approval</option>
+    <option value="all">All reviews</option>
+    <option value="approved">Approved</option>
+    <option value="rejected">Rejected</option>
+   </select>
+  </div>
+  <section id="reviewLoading" class="notice">Loading customer reviews...</section>
+  <div id="reviewsList"></div>
+ </section>
 </main>
 
 <script type="module">
@@ -109,6 +158,7 @@ const app=initializeApp({apiKey:"AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",authDo
 const auth=getAuth(app),db=getFirestore(app);
 const statuses=["Order Received","Order Shipped","Order Delivered"];
 let allOrders=[];
+let allReviews=[];
 
 const money=value=>`Rs. ${Number(value||0).toLocaleString("en-IN")}`;
 const safe=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
@@ -128,6 +178,7 @@ const normalizeStatus=value=>{
 const statusIndex=value=>statuses.indexOf(normalizeStatus(value));
 const statusClass=value=>normalizeStatus(value).toLowerCase().replace("order ","status-");
 const validUrl=value=>/^https?:\/\//i.test(String(value||""))?String(value):"";
+const productIdsForOrder=order=>[...new Set((order.items||[]).map(item=>String(item.id||"")).filter(Boolean))];
 
 function showError(message){
  loading.className="notice error";
@@ -196,6 +247,17 @@ async function loadOrders(){
  try{
   const snapshot=await getDocs(collectionGroup(db,"orders"));
   allOrders=snapshot.docs.map(order=>({id:order.id,path:order.ref.path,...order.data()})).sort((a,b)=>(asDate(b.createdAt)?.getTime()||0)-(asDate(a.createdAt)?.getTime()||0));
+  const missingEligibility=allOrders.filter(order=>{
+   const expected=productIdsForOrder(order);
+   return expected.length&&(!Array.isArray(order.reviewableProductIds)||expected.some(id=>!order.reviewableProductIds.includes(id)));
+  });
+  if(missingEligibility.length){
+   const results=await Promise.allSettled(missingEligibility.map(order=>updateDoc(doc(db,order.path),{reviewableProductIds:productIdsForOrder(order)})));
+   results.forEach((result,index)=>{
+    if(result.status==="fulfilled")missingEligibility[index].reviewableProductIds=productIdsForOrder(missingEligibility[index]);
+    else console.warn("Review eligibility backfill failed",missingEligibility[index].path,result.reason);
+   });
+  }
   renderStats();
   renderOrders();
   loading.hidden=true;
@@ -205,6 +267,58 @@ async function loadOrders(){
   const detail=error?.code?` (${error.code})`:"";
   showError(`Orders could not be loaded${detail}. Confirm the latest Firestore rules are published.`);
  }
+}
+
+function reviewStars(value){
+const rating=Math.max(1,Math.min(5,Number(value)||1));
+return `${"&#9733;".repeat(rating)}<span style="color:#d0d5dd">${"&#9733;".repeat(5-rating)}</span>`;
+}
+
+function reviewStatusClass(value){
+const status=String(value||"pending");
+return status==="approved"?"status-delivered":status==="rejected"?"status-received":"status-shipped";
+}
+
+function renderReviews(){
+const filter=reviewStatusFilter.value;
+const data=allReviews.filter(review=>filter==="all"||String(review.status||"pending")===filter);
+pendingReviewCount.textContent=allReviews.filter(review=>String(review.status||"pending")==="pending").length;
+if(!data.length){
+reviewsList.innerHTML='<div class="notice empty">No reviews match this approval filter.</div>';
+return;
+}
+reviewsList.innerHTML=data.map(review=>{
+const submitted=asDate(review.createdAt);
+const images=Array.isArray(review.imageUrls)?review.imageUrls.filter(validUrl):[];
+const state=String(review.status||"pending");
+return `<article class="review-card" data-review-path="${safe(review.path)}">
+ <div class="review-card-head">
+  <div><div class="review-product">${safe(review.productName||`Product ${review.productId}`)}</div><div class="review-order-meta">Order #${safe(review.orderNumber)}${submitted?` - ${submitted.toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short"})}`:""}</div></div>
+  <div><span class="status-pill ${reviewStatusClass(state)}">${safe(state==="pending"?"Pending approval":state)}</span><div class="review-rating" aria-label="${safe(review.rating)} out of 5 stars">${reviewStars(review.rating)}</div></div>
+ </div>
+ <div class="review-card-body">
+  <section class="review-customer"><strong>${safe(review.userName||"Cyclify customer")}</strong><p class="subtle">Customer ID: ${safe(review.userId)}</p><span class="verified-badge">Verified purchase</span></section>
+  <section class="review-copy"><h3>${safe(review.title)}</h3><p>${safe(review.comment)}</p>${images.length?`<div class="review-images">${images.map(url=>`<a href="${safe(url)}" target="_blank" rel="noopener"><img src="${safe(url)}" alt="Customer review photo" loading="lazy"></a>`).join("")}</div>`:""}</section>
+ </div>
+ <div class="review-actions"><span class="review-action-note" aria-live="polite">${state==="approved"?"Visible on the product page":state==="rejected"?"Not visible to shoppers":"Waiting for your decision"}</span><button class="reject-review" type="button" data-review-status="rejected">Reject</button><button class="approve-review" type="button" data-review-status="approved">Approve</button></div>
+</article>`;
+}).join("");
+}
+
+async function loadReviews(){
+reviewLoading.hidden=false;
+reviewLoading.className="notice";
+reviewLoading.textContent="Loading customer reviews...";
+try{
+const snapshot=await getDocs(collectionGroup(db,"reviews"));
+allReviews=snapshot.docs.map(review=>({id:review.id,path:review.ref.path,...review.data()})).sort((a,b)=>(asDate(b.createdAt)?.getTime()||0)-(asDate(a.createdAt)?.getTime()||0));
+reviewLoading.hidden=true;
+renderReviews();
+}catch(error){
+console.error("Cyclify review load failed",error);
+reviewLoading.className="notice error";
+reviewLoading.textContent=`Reviews could not be loaded${error?.code?` (${error.code})`:""}. Confirm the latest Firestore rules are published.`;
+}
 }
 
 orders.addEventListener("click",async event=>{
@@ -229,7 +343,8 @@ orders.addEventListener("click",async event=>{
  button.textContent="Saving...";
  note.textContent="";
  try{
-  const update={status,tracking:{courier,number:trackingNumber,url:trackingUrl},updatedAt:serverTimestamp()};
+  const matchingOrder=allOrders.find(order=>order.path===orderElement.dataset.path);
+  const update={status,tracking:{courier,number:trackingNumber,url:trackingUrl},reviewableProductIds:productIdsForOrder(matchingOrder||{}),updatedAt:serverTimestamp()};
   if(status==="Order Shipped")update.shippedAt=serverTimestamp();
   if(status==="Order Delivered")update.deliveredAt=serverTimestamp();
   await updateDoc(doc(db,orderElement.dataset.path),update);
@@ -246,16 +361,48 @@ orders.addEventListener("click",async event=>{
  }
 });
 
+reviewsList.addEventListener("click",async event=>{
+const button=event.target.closest("[data-review-status]");
+if(!button)return;
+const card=button.closest(".review-card");
+const note=card.querySelector(".review-action-note");
+const nextStatus=button.dataset.reviewStatus;
+card.querySelectorAll("button").forEach(item=>item.disabled=true);
+note.textContent=nextStatus==="approved"?"Approving...":"Rejecting...";
+try{
+await updateDoc(doc(db,card.dataset.reviewPath),{status:nextStatus,moderatedAt:serverTimestamp(),moderatedBy:auth.currentUser.uid});
+note.style.color="var(--green)";
+note.textContent=nextStatus==="approved"?"Review approved and visible on the product page.":"Review rejected and hidden from shoppers.";
+await loadReviews();
+}catch(error){
+console.error("Review moderation failed",error);
+note.style.color="var(--red)";
+note.textContent=`Review update failed${error?.code?` (${error.code})`:""}.`;
+card.querySelectorAll("button").forEach(item=>item.disabled=false);
+}
+});
+
+function showWorkspace(name){
+const showOrders=name==="orders";
+ordersWorkspace.hidden=!showOrders;
+reviewsWorkspace.hidden=showOrders;
+ordersWorkspaceTab.classList.toggle("active",showOrders);
+reviewsWorkspaceTab.classList.toggle("active",!showOrders);
+}
+
 searchOrders.addEventListener("input",renderOrders);
 statusFilter.addEventListener("change",renderOrders);
-refreshBtn.addEventListener("click",loadOrders);
+reviewStatusFilter.addEventListener("change",renderReviews);
+ordersWorkspaceTab.addEventListener("click",()=>showWorkspace("orders"));
+reviewsWorkspaceTab.addEventListener("click",()=>showWorkspace("reviews"));
+refreshBtn.addEventListener("click",()=>Promise.all([loadOrders(),loadReviews()]));
 logoutBtn.addEventListener("click",()=>signOut(auth).then(()=>location.replace("account.html")));
 
 onAuthStateChanged(auth,async user=>{
  if(!user){location.replace(`account.html?return=${encodeURIComponent("admin.html")}`);return}
  try{await user.reload();await user.getIdToken(true);}catch(error){console.warn("Admin token refresh failed",error)}
  if(user.email?.toLowerCase()!=="admin@cyclify.in"){showError(`Access denied. Signed in as ${user.email||"an unknown account"}.`);return}
- loadOrders();
+ Promise.all([loadOrders(),loadReviews()]);
 });
 </script>
 </body>

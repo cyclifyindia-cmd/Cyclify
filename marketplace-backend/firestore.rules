@@ -23,9 +23,22 @@ service cloud.firestore {
              && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
                "status",
                "tracking",
+               "reviewableProductIds",
                "updatedAt",
                "shippedAt",
                "deliveredAt"
+             ]);
+    }
+
+    function validReviewModerationUpdate() {
+      return request.resource.data.status in [
+               "approved",
+               "rejected"
+             ]
+             && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+               "status",
+               "moderatedAt",
+               "moderatedBy"
              ]);
     }
 
@@ -74,9 +87,49 @@ service cloud.firestore {
       }
     }
 
+    match /productReviews/{productId}/reviews/{reviewId} {
+      allow read: if resource.data.status == "approved"
+                  || (signedIn() && resource.data.userId == request.auth.uid)
+                  || isAdmin();
+
+      allow create: if signedIn()
+                    && request.resource.data.userId == request.auth.uid
+                    && request.resource.data.productId == productId
+                    && reviewId == request.auth.uid + "__" + request.resource.data.orderId
+                    && request.resource.data.status == "pending"
+                    && request.resource.data.verifiedPurchase == true
+                    && request.resource.data.rating is int
+                    && request.resource.data.rating >= 1
+                    && request.resource.data.rating <= 5
+                    && request.resource.data.title is string
+                    && request.resource.data.title.size() >= 2
+                    && request.resource.data.title.size() <= 80
+                    && request.resource.data.comment is string
+                    && request.resource.data.comment.size() >= 10
+                    && request.resource.data.comment.size() <= 1500
+                    && request.resource.data.imageUrls is list
+                    && request.resource.data.imageUrls.size() <= 3
+                    && request.resource.data.orderId is string
+                    && exists(/databases/$(database)/documents/customers/$(request.auth.uid)/orders/$(request.resource.data.orderId))
+                    && get(/databases/$(database)/documents/customers/$(request.auth.uid)/orders/$(request.resource.data.orderId)).data.status == "Order Delivered"
+                    && get(/databases/$(database)/documents/customers/$(request.auth.uid)/orders/$(request.resource.data.orderId)).data.reviewableProductIds is list
+                    && get(/databases/$(database)/documents/customers/$(request.auth.uid)/orders/$(request.resource.data.orderId)).data.reviewableProductIds.hasAny([productId]);
+
+      allow update: if isAdmin() && validReviewModerationUpdate();
+      allow delete: if isAdmin();
+    }
+
     match /{path=**}/orders/{orderId} {
       allow read: if isAdmin();
       allow update: if isAdmin() && validAdminOrderUpdate();
+    }
+
+    match /{path=**}/reviews/{reviewId} {
+      allow read: if resource.data.status == "approved"
+                  || (signedIn() && resource.data.userId == request.auth.uid)
+                  || isAdmin();
+      allow update: if isAdmin() && validReviewModerationUpdate();
+      allow delete: if isAdmin();
     }
   }
 }
