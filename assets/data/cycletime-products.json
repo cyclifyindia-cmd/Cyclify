@@ -5960,7 +5960,7 @@
       "sizeAvailability": {
         "36": true,
         "37": true,
-        "38": true,
+        "38": false,
         "39": true,
         "40": true,
         "41": true,
@@ -5996,7 +5996,7 @@
         {
           "id": 49462579134657,
           "title": "38",
-          "available": true,
+          "available": false,
           "price": 5899,
           "compare_at_price": 6600,
           "option1": "38",

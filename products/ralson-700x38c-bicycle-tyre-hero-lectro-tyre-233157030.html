@@ -3329,7 +3329,16 @@ window.location.href="cart.html";
 }
 
 function showBuyCooking(){
-const item={id:product.id,name:product.name,price:product.price,image:product.image,size:selectedSize,valveLength:selectedValveLength,optionLabel:product.secondaryLabel||(product.valveLengths&&product.valveLengths.length?"Valve Length":""),quantity:1};
+const item={
+id:product.id,
+name:product.name,
+price:product.price,
+image:product.image,
+size:selectedSize,
+valveLength:selectedValveLength,
+optionLabel:product.secondaryLabel||(product.valveLengths&&product.valveLengths.length?"Valve Length":""),
+quantity:1
+};
 sessionStorage.setItem("cyclifyCheckoutItems",JSON.stringify([item]));
 window.location.href="checkout.html";
 }
@@ -3340,7 +3349,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
-
 
 
 
