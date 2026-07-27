@@ -8,6 +8,7 @@
 <style>
 :root{--blue:#0754c9;--blue-soft:#edf4ff;--ink:#101828;--muted:#667085;--line:#dfe3e8;--soft:#f5f7f9;--white:#fff;--green:#087443;--green-soft:#ecfdf3;--amber:#b54708;--amber-soft:#fffaeb;--red:#b42318}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{margin:0;background:var(--soft);color:var(--ink);font-family:Arial,sans-serif;font-size:14px}
 button,input,select{font:inherit}
 header{height:68px;background:var(--white);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100% - 1380px)/2))}
@@ -20,6 +21,17 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .page-head p{margin:0;color:var(--muted)}
 .primary{border:0;background:var(--blue);color:#fff;border-radius:7px;height:40px;padding:0 16px;font-weight:700;cursor:pointer}
 .primary:disabled{opacity:.55;cursor:wait}
+.admin-login{min-height:calc(100vh - 118px);display:grid;place-items:center;padding:32px 0}
+.admin-login-card{width:min(100%,430px);background:#fff;border:1px solid var(--line);border-radius:8px;padding:28px;box-shadow:0 18px 45px rgba(16,24,40,.08)}
+.admin-login-kicker{display:block;color:var(--blue);font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:10px}
+.admin-login-card h1{font-size:25px;margin:0 0 8px}
+.admin-login-card>p{color:var(--muted);line-height:1.5;margin:0 0 22px}
+.admin-login-card .field{margin-bottom:14px}
+.admin-login-card input{width:100%;height:44px;border:1px solid #cfd5dc;border-radius:7px;background:#fff;padding:0 12px;color:var(--ink)}
+.admin-login-card input:focus{outline:2px solid #b9d4ff;border-color:var(--blue)}
+.admin-login-card .primary{width:100%;height:44px;margin-top:4px}
+.admin-login-message{display:none;border:1px solid #fda29b;border-radius:7px;background:#fff6f5;color:var(--red);padding:11px 12px;margin:0 0 14px;line-height:1.4}
+.admin-login-message.show{display:block}
 .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);background:var(--white);border-radius:8px;margin-bottom:16px;overflow:hidden}
 .stat{padding:16px 18px;border-right:1px solid var(--line)}
 .stat:last-child{border:0}
@@ -103,9 +115,27 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 <body>
 <header>
  <a href="index.html"><img src="assets/Logo-original.png" alt="Cyclify"></a>
- <div class="header-actions"><a href="account.html">My account</a><button id="logoutBtn" type="button">Sign out</button></div>
+ <div class="header-actions" id="adminHeaderActions" hidden><a href="account.html">My account</a><button id="logoutBtn" type="button">Sign out</button></div>
 </header>
 <main class="shell">
+ <section class="admin-login" id="adminLogin" hidden>
+  <form class="admin-login-card" id="adminLoginForm">
+   <span class="admin-login-kicker">Private administrator access</span>
+   <h1>Admin sign in</h1>
+   <p>Use the Cyclify administrator password to open orders and review approvals.</p>
+   <div class="admin-login-message" id="adminLoginMessage" aria-live="polite"></div>
+   <div class="field">
+    <label for="adminEmail">Email</label>
+    <input id="adminEmail" type="email" value="admin@cyclify.in" autocomplete="username" readonly>
+   </div>
+   <div class="field">
+    <label for="adminPassword">Password</label>
+    <input id="adminPassword" type="password" autocomplete="current-password" required placeholder="Enter admin password">
+   </div>
+   <button class="primary" id="adminLoginButton" type="submit">Sign in to admin</button>
+  </form>
+ </section>
+ <div id="adminWorkspace" hidden>
  <div class="page-head">
   <div><h1>Order Operations</h1><p>Review, fulfil and track customer orders from one place.</p></div>
   <button class="primary" id="refreshBtn" type="button">Refresh</button>
@@ -147,16 +177,25 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
   <section id="reviewLoading" class="notice">Loading customer reviews...</section>
   <div id="reviewsList"></div>
  </section>
+ </div>
 </main>
 
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import{getAuth,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import{getFirestore,collectionGroup,getDocs,doc,updateDoc,serverTimestamp}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const app=initializeApp({apiKey:"AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",authDomain:"cyclify-b809a.firebaseapp.com",projectId:"cyclify-b809a",storageBucket:"cyclify-b809a.firebasestorage.app",messagingSenderId:"748931097863",appId:"1:748931097863:web:0954f07a8245703f2751a2"});
 const auth=getAuth(app),db=getFirestore(app);
+const ADMIN_EMAIL="admin@cyclify.in";
 const statuses=["Order Received","Order Shipped","Order Delivered"];
+const adminLogin=document.getElementById("adminLogin");
+const adminWorkspace=document.getElementById("adminWorkspace");
+const adminHeaderActions=document.getElementById("adminHeaderActions");
+const adminLoginForm=document.getElementById("adminLoginForm");
+const adminLoginMessage=document.getElementById("adminLoginMessage");
+const adminPassword=document.getElementById("adminPassword");
+const adminLoginButton=document.getElementById("adminLoginButton");
 let allOrders=[];
 let allReviews=[];
 
@@ -185,6 +224,37 @@ function showError(message){
  loading.textContent=message;
  loading.hidden=false;
  content.hidden=true;
+}
+
+function showAdminLogin(message=""){
+ adminLogin.hidden=false;
+ adminWorkspace.hidden=true;
+ adminHeaderActions.hidden=true;
+ adminLoginMessage.textContent=message;
+ adminLoginMessage.classList.toggle("show",Boolean(message));
+}
+
+function showAdminWorkspace(){
+ adminLogin.hidden=true;
+ adminWorkspace.hidden=false;
+ adminHeaderActions.hidden=false;
+ adminLoginMessage.classList.remove("show");
+ adminLoginMessage.textContent="";
+ adminPassword.value="";
+}
+
+function adminAuthError(error){
+ const code=String(error?.code||"");
+ if(code.includes("invalid-credential")||code.includes("wrong-password")||code.includes("user-not-found")){
+  return "The admin password is incorrect. Please try again.";
+ }
+ if(code.includes("too-many-requests")){
+  return "Too many unsuccessful attempts. Please wait a few minutes and try again.";
+ }
+ if(code.includes("network-request-failed")){
+  return "Firebase could not be reached. Check your connection and try again.";
+ }
+ return `Admin sign-in failed${code?` (${code})`:""}.`;
 }
 
 function renderStats(){
@@ -396,12 +466,36 @@ reviewStatusFilter.addEventListener("change",renderReviews);
 ordersWorkspaceTab.addEventListener("click",()=>showWorkspace("orders"));
 reviewsWorkspaceTab.addEventListener("click",()=>showWorkspace("reviews"));
 refreshBtn.addEventListener("click",()=>Promise.all([loadOrders(),loadReviews()]));
-logoutBtn.addEventListener("click",()=>signOut(auth).then(()=>location.replace("account.html")));
+logoutBtn.addEventListener("click",()=>signOut(auth));
+
+adminLoginForm.addEventListener("submit",async event=>{
+ event.preventDefault();
+ adminLoginMessage.classList.remove("show");
+ adminLoginMessage.textContent="";
+ adminLoginButton.disabled=true;
+ adminLoginButton.textContent="Signing in...";
+ try{
+  await signInWithEmailAndPassword(auth,ADMIN_EMAIL,adminPassword.value);
+ }catch(error){
+  console.error("Cyclify admin sign-in failed",error);
+  showAdminLogin(adminAuthError(error));
+ }finally{
+  adminLoginButton.disabled=false;
+  adminLoginButton.textContent="Sign in to admin";
+ }
+});
 
 onAuthStateChanged(auth,async user=>{
- if(!user){location.replace(`account.html?return=${encodeURIComponent("admin.html")}`);return}
+ if(!user){
+  showAdminLogin();
+  return;
+ }
  try{await user.reload();await user.getIdToken(true);}catch(error){console.warn("Admin token refresh failed",error)}
- if(user.email?.toLowerCase()!=="admin@cyclify.in"){showError(`Access denied. Signed in as ${user.email||"an unknown account"}.`);return}
+ if(user.email?.toLowerCase()!==ADMIN_EMAIL){
+  showAdminLogin("This page requires the Cyclify administrator account.");
+  return;
+ }
+ showAdminWorkspace();
  Promise.all([loadOrders(),loadReviews()]);
 });
 </script>

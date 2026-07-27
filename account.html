@@ -670,11 +670,11 @@ gap:5px!important;
 <main class="account-shell">
 <div class="account-title">
 <h1>My Account</h1>
-<p>Login with mobile number or email to manage your Cyclify orders.</p>
+<p>Continue securely with Google to manage your Cyclify orders.</p>
 </div>
 
 <section class="panel active" id="authLoading" aria-live="polite">
-<strong>Opening your secure accountâ€¦</strong>
+<strong>Opening your secure account...</strong>
 <p class="hint" style="margin:8px 0 0">Checking your signed-in session.</p>
 </section>
 
@@ -737,60 +737,12 @@ gap:5px!important;
 </section>
 
 <section id="authArea" style="display:none">
-<div class="tabs">
-<button class="tab active" data-tab="login">Login</button>
-<button class="tab" data-tab="signup">Create</button>
-<button class="tab" data-tab="otp">OTP</button>
-</div>
-
-<form class="panel active" id="loginPanel">
+<div class="panel active">
 <div class="message" id="loginMessage"></div>
-<div class="field">
-<label for="loginUser">Mobile number or email</label>
-<input id="loginUser" autocomplete="username" placeholder="9876543210 or name@email.com">
+<h2 style="margin:0 0 8px">Sign in to Cyclify</h2>
+<p class="hint" style="margin:0 0 18px">Use your Google account to view orders, saved addresses, and verified-purchase reviews.</p>
+<button class="primary-btn" id="googleLoginBtn" type="button">Continue with Google</button>
 </div>
-<div class="field">
-<label for="loginPassword">Password</label>
-<input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter password">
-</div>
-<button class="primary-btn" type="submit">Login</button>
-<button class="secondary-btn" id="googleLoginBtn" type="button">Continue with Google</button>
-<button class="secondary-btn" id="resetPasswordBtn" type="button">Reset Firebase Password</button>
-</form>
-
-<form class="panel" id="signupPanel">
-<div class="message" id="signupMessage"></div>
-<div class="field">
-<label for="signupName">Name</label>
-<input id="signupName" autocomplete="name" placeholder="Your name">
-</div>
-<div class="field">
-<label for="signupUser">Mobile number or email</label>
-<input id="signupUser" autocomplete="username" placeholder="9876543210 or name@email.com">
-</div>
-<div class="field">
-<label for="signupPassword">Password</label>
-<input id="signupPassword" type="password" autocomplete="new-password" placeholder="5 to 9 characters">
-</div>
-<p class="hint">Password must be 5 to 9 characters. Letters-only is allowed. You can also use capital letters, numbers, and symbols.</p>
-<button class="primary-btn" type="submit">Create Account</button>
-<button class="secondary-btn" id="googleSignupBtn" type="button">Continue with Google</button>
-</form>
-
-<form class="panel" id="otpPanel">
-<div class="message" id="otpMessage"></div>
-<div class="field">
-<label for="otpUser">Mobile number or email</label>
-<input id="otpUser" autocomplete="username" placeholder="9876543210 or name@email.com" disabled>
-</div>
-<button class="secondary-btn" id="sendOtpBtn" type="button">OTP Coming Soon</button>
-<div class="field" style="margin-top:12px">
-<label for="otpCode">OTP</label>
-<input id="otpCode" inputmode="numeric" placeholder="OTP login will be connected later" disabled>
-</div>
-<p class="hint">Mobile OTP will be connected after choosing an OTP provider. This option is visible now but not active.</p>
-<button class="primary-btn" type="submit">Notify Me Later</button>
-</form>
 </section>
 <section class="cyclify-contact-details" id="registeredAddress" aria-labelledby="registeredAddressTitle">
   <h2 id="registeredAddressTitle">Registered Address</h2>
@@ -842,22 +794,12 @@ else{cartCount.style.display="none";}
 })();
 </script>
 
-<script>
-if((location.hostname==="127.0.0.1"||location.hostname==="localhost")&&new URLSearchParams(location.search).get("return")==="admin.html"){
-location.replace("https://cyclify.in/account.html?return=admin.html");
-}
-</script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import {
 getAuth,
-createUserWithEmailAndPassword,
-signInWithEmailAndPassword,
 signInWithPopup,
 GoogleAuthProvider,
-updateProfile,
-sendEmailVerification,
-sendPasswordResetEmail,
 onAuthStateChanged,
 signOut
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
@@ -899,33 +841,6 @@ const profileName=document.getElementById("profileName");
 const profileUser=document.getElementById("profileUser");
 const authLoading=document.getElementById("authLoading");
 
-function normalizeUser(value){
-return value.trim().toLowerCase();
-}
-
-function isEmail(value){
-return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-}
-
-function isMobile(value){
-return /^[6-9]\d{9}$/.test(value);
-}
-
-function isValidUser(value){
-return isEmail(value)||isMobile(value);
-}
-
-function isValidPassword(value){
-return /^[A-Za-z0-9!@#$%^&*()_\-+=.?]{5,9}$/.test(value);
-}
-
-function getAuthEmail(username){
-if(isEmail(username)){
-return username;
-}
-return `${username}@mobile.cyclify.in`;
-}
-
 function setMessage(id,type,text){
 const box=document.getElementById(id);
 box.className=`message show ${type}`;
@@ -950,20 +865,9 @@ dashboard.classList.add("active");
 profileName.textContent=user.displayName||"Cyclify Customer";
 profileUser.textContent=cleanMobileEmail(user.email)||user.phoneNumber||"Signed in";
 document.getElementById("adminOrdersCard").style.display=user.email?.toLowerCase()==="admin@cyclify.in"&&user.emailVerified?"":"none";
-if(user.email?.toLowerCase()==="admin@cyclify.in"&&!user.emailVerified&&!sessionStorage.getItem("cyclifyAdminVerificationSent")){
-sessionStorage.setItem("cyclifyAdminVerificationSent","1");
-sendEmailVerification(user).then(()=>{
-profileUser.textContent="admin@cyclify.in Â· Verification email sent";
-}).catch(error=>console.error("Unable to send verification email",error));
-}
 renderOrders(user);
 const params=new URLSearchParams(location.search);
 if(params.get("tab")==="orders")showOrders();
-const returnPage=params.get("return");
-if(returnPage&&/^[a-z0-9._-]+\.html$/i.test(returnPage)){
-const isUnverifiedAdmin=user.email?.toLowerCase()==="admin@cyclify.in"&&!user.emailVerified;
-if(!isUnverifiedAdmin){location.replace(returnPage);}
-}
 }
 else{
 authArea.style.display="block";
@@ -1280,10 +1184,10 @@ if(code.includes("auth/unauthorized-domain")){
 return "This domain is not authorized in Firebase. Add cyclify.in in Firebase Authentication settings.";
 }
 if(code.includes("auth/operation-not-allowed")){
-return "Please enable Email/Password sign-in in Firebase Authentication.";
+return "Google sign-in is not enabled in Firebase Authentication.";
 }
 if(code.includes("auth/too-many-requests")){
-return "Firebase temporarily blocked repeated attempts. Wait a few minutes or reset the password.";
+return "Firebase temporarily blocked repeated attempts. Please wait a few minutes and try again.";
 }
 if(code.includes("auth/network-request-failed")){
 return "Firebase could not be reached. Open the live cyclify.in account page and try again.";
@@ -1293,68 +1197,6 @@ return "Firebase rejected this website address. Use https://cyclify.in/account.h
 }
 return `Firebase login failed${code?` (${code})`:""}.`;
 }
-
-document.querySelectorAll(".tab").forEach(tab=>{
-tab.addEventListener("click",()=>{
-document.querySelectorAll(".tab").forEach(item=>item.classList.remove("active"));
-document.querySelectorAll(".panel").forEach(panel=>panel.classList.remove("active"));
-tab.classList.add("active");
-document.getElementById(`${tab.dataset.tab}Panel`).classList.add("active");
-});
-});
-
-document.getElementById("signupPanel").addEventListener("submit",async event=>{
-event.preventDefault();
-clearMessage("signupMessage");
-
-const name=document.getElementById("signupName").value.trim();
-const username=normalizeUser(document.getElementById("signupUser").value);
-const password=document.getElementById("signupPassword").value;
-
-if(!name){
-setMessage("signupMessage","error","Please enter your name.");
-return;
-}
-
-if(!isValidUser(username)){
-setMessage("signupMessage","error","Use a valid Indian mobile number or email id.");
-return;
-}
-
-if(!isValidPassword(password)){
-setMessage("signupMessage","error","Password must be 5 to 9 characters and can use letters, numbers, or symbols.");
-return;
-}
-
-try{
-const credential=await createUserWithEmailAndPassword(auth,getAuthEmail(username),password);
-await updateProfile(credential.user,{displayName:name});
-setMessage("signupMessage","success","Account created successfully.");
-}
-catch(error){
-setMessage("signupMessage","error",getAuthError(error));
-}
-});
-
-document.getElementById("loginPanel").addEventListener("submit",async event=>{
-event.preventDefault();
-clearMessage("loginMessage");
-
-const username=normalizeUser(document.getElementById("loginUser").value);
-const password=document.getElementById("loginPassword").value;
-
-if(!isValidUser(username)){
-setMessage("loginMessage","error","Enter your registered mobile number or email id.");
-return;
-}
-
-try{
-await signInWithEmailAndPassword(auth,getAuthEmail(username),password);
-}
-catch(error){
-setMessage("loginMessage","error",getAuthError(error));
-}
-});
 
 async function loginWithGoogle(messageId){
 clearMessage(messageId);
@@ -1368,33 +1210,6 @@ setMessage(messageId,"error",getAuthError(error));
 
 document.getElementById("googleLoginBtn").addEventListener("click",()=>{
 loginWithGoogle("loginMessage");
-});
-
-document.getElementById("resetPasswordBtn").addEventListener("click",async ()=>{
-const username=normalizeUser(document.getElementById("loginUser").value);
-if(!isEmail(username)){
-setMessage("loginMessage","error","Enter admin@cyclify.in first, then select Reset Firebase Password.");
-return;
-}
-try{
-await sendPasswordResetEmail(auth,username);
-setMessage("loginMessage","success",`Firebase password reset email sent to ${username}.`);
-}catch(error){
-setMessage("loginMessage","error",getAuthError(error));
-}
-});
-
-document.getElementById("googleSignupBtn").addEventListener("click",()=>{
-loginWithGoogle("signupMessage");
-});
-
-document.getElementById("sendOtpBtn").addEventListener("click",()=>{
-setMessage("otpMessage","success","OTP login will be added after provider setup.");
-});
-
-document.getElementById("otpPanel").addEventListener("submit",event=>{
-event.preventDefault();
-setMessage("otpMessage","success","OTP login is not active yet. Please use Login or Create Account.");
 });
 
 document.getElementById("logoutBtn").addEventListener("click",async ()=>{
