@@ -24,23 +24,23 @@
         "XS",
         "S",
         "M",
-        "XL",
         "L",
+        "XL",
         "2XL",
+        "3XL",
         "4XL",
-        "5XL",
-        "3XL"
+        "5XL"
       ],
       "sizeAvailability": {
         "XS": true,
         "S": true,
         "M": true,
-        "XL": true,
         "L": true,
+        "XL": true,
         "2XL": true,
-        "4XL": true,
-        "5XL": false,
-        "3XL": true
+        "3XL": false,
+        "4XL": false,
+        "5XL": false
       },
       "variants": [
         {
@@ -74,16 +74,6 @@
           "option3": ""
         },
         {
-          "id": 50287896559809,
-          "title": "XL",
-          "available": true,
-          "price": 1590,
-          "compare_at_price": 1999,
-          "option1": "XL",
-          "option2": "",
-          "option3": ""
-        },
-        {
           "id": 50287896756417,
           "title": "L",
           "available": true,
@@ -95,6 +85,16 @@
         },
         {
           "id": 50287896953025,
+          "title": "XL",
+          "available": true,
+          "price": 1590,
+          "compare_at_price": 1999,
+          "option1": "XL",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50287897149633,
           "title": "2XL",
           "available": true,
           "price": 1590,
@@ -104,9 +104,19 @@
           "option3": ""
         },
         {
-          "id": 50287897149633,
+          "id": 50287897346241,
+          "title": "3XL",
+          "available": false,
+          "price": 1590,
+          "compare_at_price": 1999,
+          "option1": "3XL",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50313370108097,
           "title": "4XL",
-          "available": true,
+          "available": false,
           "price": 1590,
           "compare_at_price": 1999,
           "option1": "4XL",
@@ -114,22 +124,12 @@
           "option3": ""
         },
         {
-          "id": 50287897346241,
+          "id": 50441867854017,
           "title": "5XL",
           "available": false,
           "price": 1590,
           "compare_at_price": 1999,
           "option1": "5XL",
-          "option2": "",
-          "option3": ""
-        },
-        {
-          "id": 50313370108097,
-          "title": "3XL",
-          "available": true,
-          "price": 1590,
-          "compare_at_price": 1999,
-          "option1": "3XL",
           "option2": "",
           "option3": ""
         }
@@ -140,7 +140,7 @@
         "Econoride Bib shorts for every : weather cycling",
         "Perforated, multi : density chamois provides cushion",
         "🧴 Use mild, non : abrasive detergent",
-        "Size Options : XS, S, M, XL, L, 2XL, 4XL, 5XL, 3XL",
+        "Size Options : XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL",
         "Shipping : Free shipping across India"
       ],
       "specSource": {
@@ -5623,7 +5623,7 @@
         "11-34T"
       ],
       "sizeAvailability": {
-        "11-25T": true,
+        "11-25T": false,
         "11-28T": false,
         "11-34T": true
       },
@@ -5631,7 +5631,7 @@
         {
           "id": 49490548359361,
           "title": "11-25T",
-          "available": true,
+          "available": false,
           "price": 2800,
           "compare_at_price": 0,
           "option1": "11-25T",
@@ -8161,7 +8161,7 @@
         {
           "id": 49449015148737,
           "title": "Default Title",
-          "available": false,
+          "available": true,
           "price": 7900,
           "compare_at_price": 9480,
           "option1": "Default Title",
@@ -8169,7 +8169,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : GPS Computer",
