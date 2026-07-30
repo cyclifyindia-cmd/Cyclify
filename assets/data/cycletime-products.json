@@ -2523,12 +2523,11 @@
       "name": "Bicycle Roller Belt",
       "brand": "Royal Traders",
       "description": "",
-      "price": 699,
+      "price": 700,
       "mrp": "Rs 839",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_dc9739b4-ba5d-4432-9c41-451c7d941ca7.jpg?v=1757936376",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_ac074912-64a3-42e7-8012-6413ce549476.jpg?v=1785419722",
       "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_dc9739b4-ba5d-4432-9c41-451c7d941ca7.jpg?v=1757936376",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_c5b24674-693c-4d0b-bd8f-553f8b42ad29.jpg?v=1757936376"
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_ac074912-64a3-42e7-8012-6413ce549476.jpg?v=1785419722"
       ],
       "sizes": [],
       "sizeAvailability": {},
@@ -2536,15 +2535,15 @@
         {
           "id": 49542427148481,
           "title": "Default Title",
-          "available": false,
-          "price": 699,
+          "available": true,
+          "price": 700,
           "compare_at_price": 839,
           "option1": "Default Title",
           "option2": "",
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : Royal Traders",
         "Product Type : Bicycle Accessories",
