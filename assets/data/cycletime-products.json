@@ -11390,7 +11390,7 @@
       ],
       "sizeAvailability": {
         "140mm+7°": true,
-        "150mm+7°": true
+        "150mm+7°": false
       },
       "variants": [
         {
@@ -11406,7 +11406,7 @@
         {
           "id": 50011129348289,
           "title": "150mm+7°",
-          "available": true,
+          "available": false,
           "price": 3700,
           "compare_at_price": 4400,
           "option1": "150mm+7°",
