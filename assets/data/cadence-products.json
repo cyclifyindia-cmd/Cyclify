@@ -242,6 +242,42 @@
       "subCategory": ""
     },
     {
+      "id": 845606841,
+      "supplierProductId": "6a6c36b30218e54e7435f637",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-aerosocks",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-aerosocks",
+      "stockSource": "cadencelife",
+      "name": "MCYCLE Aerosocks",
+      "brand": "MCYCLE",
+      "description": "Complete your ride kit with the Mcycle MP013 Combined Printing Socks - a one-piece seamless-band design built from 100% polyester for a breathable, sweat-wicking fit mile after mile. Designed for cycling, running, and general outdoor sports, these aero-style socks combine sporty performance with striking digital and heat-transfer printed patterns. With anti-slip, quick-dry, and anti-bacterial properties, they're built to keep feet comfortable and fresh through long efforts in any season.",
+      "price": 1099,
+      "mrp": "Rs 1,099",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c3524babd0ed6dfe78705",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c3524babd0ed6dfe78705",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c3524b84176a030924085"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "100% polyester (main sock material : 97% Nylon + 3% spandex)",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-aerosocks"
+      },
+      "keywords": "MCYCLE Aerosocks MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
       "id": 815167776,
       "supplierProductId": "6a1fe6a046b03bc94ca5a777",
       "supplierSynced": true,
@@ -394,6 +430,46 @@
       "categoryPage": "wearables.html",
       "categoryLabel": "Wearables",
       "mainCategory": "jersey-shorts",
+      "subCategory": ""
+    },
+    {
+      "id": 834971880,
+      "supplierProductId": "6a6c3284b84176a03092403b",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-custom-pu-neoprene-cycling-overshoes",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-custom-pu-neoprene-cycling-overshoes",
+      "stockSource": "cadencelife",
+      "name": "Mcycle Custom PU Neoprene Cycling Overshoes",
+      "brand": "MCYCLE",
+      "description": "Gear up for every ride with the Mcycle MP038 Cycling Overshoes - a race-cut shoe cover engineered from durable PU and polyester fabric to keep your feet protected, streamlined, and comfortable in the saddle. Designed for road and mountain biking alike, these overshoes offer a snug, aerodynamic fit that layers easily over your existing cycling shoes, making them a versatile addition to your ride kit across the seasons.",
+      "price": 1749,
+      "mrp": "Rs 1,749",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c2f6b0218e54e7435f549",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c2f6b0218e54e7435f549",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c2f6cb84176a030923fe7",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c2f6ebabd0ed6dfe78653",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c2f74b84176a030923fe9",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c2f780218e54e7435f54c",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c2f7d0218e54e7435f54e",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c2f82babd0ed6dfe78655"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-custom-pu-neoprene-cycling-overshoes"
+      },
+      "keywords": "Mcycle Custom PU Neoprene Cycling Overshoes MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "shoes",
       "subCategory": ""
     },
     {
@@ -697,6 +773,45 @@
       "categoryPage": "wearables.html",
       "categoryLabel": "Wearables",
       "mainCategory": "shoes",
+      "subCategory": ""
+    },
+    {
+      "id": 885054636,
+      "supplierProductId": "6a6c38a4b84176a0309240fa",
+      "supplierSynced": true,
+      "sourceHandle": "mcycle-summer-sport-leg-warmer-breathable-bicycle-leg-sleeves-with-uv-protection",
+      "sourceUrl": "https://www.cadencelife.in/products/mcycle-summer-sport-leg-warmer-breathable-bicycle-leg-sleeves-with-uv-protection",
+      "stockSource": "cadencelife",
+      "name": "Mcycle Summer Sport Leg Warmer - Breathable Bicycle Leg Sleeves with UV Protection",
+      "brand": "MCYCLE",
+      "description": "Stay protected and comfortable on every ride with the Mcycle MP016 Leg Warmers. Crafted from a breathable cotton/bamboo fiber blend, these seamless leg sleeves offer anti-slip cuffs, UV protection, and quick-dry performance for warm-weather cycling. Their lightweight, snug fit layers easily under shorts or bibs, making them a versatile year-round accessory for road and casual riders alike.",
+      "price": 999,
+      "mrp": "Rs 999",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c3719babd0ed6dfe78754",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c3719babd0ed6dfe78754",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c371ab84176a0309240c2",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c371cbabd0ed6dfe78757",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c371dbabd0ed6dfe78759",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c371e0218e54e7435f642",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c371f0218e54e7435f644"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/mcycle-summer-sport-leg-warmer-breathable-bicycle-leg-sleeves-with-uv-protection"
+      },
+      "keywords": "Mcycle Summer Sport Leg Warmer - Breathable Bicycle Leg Sleeves with UV Protection MCYCLE",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "other",
       "subCategory": ""
     },
     {

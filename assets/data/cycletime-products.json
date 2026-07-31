@@ -274,7 +274,7 @@
         "XL / Orange": false,
         "XL / Yellow": true,
         "XL / Red": false,
-        "XL / Grey": true,
+        "XL / Grey": false,
         "XL / Blue": false,
         "XL / Green": false,
         "L / Black": true,
@@ -574,7 +574,7 @@
         {
           "id": 50292041842881,
           "title": "XL / Grey",
-          "available": true,
+          "available": false,
           "price": 1250,
           "compare_at_price": 1999,
           "option1": "XL",
