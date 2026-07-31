@@ -123,6 +123,7 @@
   "832513965": "products/aerosocks-832513965.html",
   "832896565": "products/oem-screenless-fitness-band-832896565.html",
   "834971880": "products/mcycle-custom-pu-neoprene-cycling-overshoes-834971880.html",
+  "841759245": "products/cycling-crossbody-sling-bag-water-resistant-lightweight-shoulder-bag-for-c-841759245.html",
   "841771621": "products/mcycle-knitted-sport-crew-socks-841771621.html",
   "845606841": "products/mcycle-aerosocks-845606841.html",
   "847842239": "products/cycplus-h2-heart-rate-monitor-dual-mode-ant-and-bluetooth-chest-strap-847842239.html",

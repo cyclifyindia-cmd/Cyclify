@@ -168,6 +168,42 @@
       "subCategory": ""
     },
     {
+      "id": 841759245,
+      "supplierProductId": "6a6cb5082e1dc0ec794a12ca",
+      "supplierSynced": true,
+      "sourceHandle": "cycling-crossbody-sling-bag-waterresistant-lightweight-shoulder-bag-for-cycling-outdoor-sports",
+      "sourceUrl": "https://www.cadencelife.in/products/cycling-crossbody-sling-bag-waterresistant-lightweight-shoulder-bag-for-cycling-outdoor-sports",
+      "stockSource": "cadencelife",
+      "name": "Cycling Crossbody Sling Bag | Water-Resistant Lightweight Shoulder Bag for Cycling & Outdoor Sports",
+      "brand": "MCYCLE",
+      "description": "Carry your essentials comfortably with this lightweight cycling crossbody sling bag, designed for riders who need quick access to their belongings on the go. Made from durable, water-resistant fabric, it offers ample space for your phone, wallet, keys, energy bars, mini tools, and other daily essentials while maintaining a compact, streamlined profile. The adjustable shoulder strap provides a secure and comfortable fit for cycling, commuting, travel, hiking, and everyday use. Multiple zippered compartments help keep your gear organized, while the lightweight construction ensures all-day comfort without restricting movement. Suitable for both men and women, this versatile sling bag is perfect for cycling and other outdoor adventures.",
+      "price": 1099,
+      "mrp": "Rs 1,099",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cb3c0c189789bbccd37dc",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cb3c0c189789bbccd37dc",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cb3c32e1dc0ec794a1293",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cb3c5fc1499752c1d2867"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/cycling-crossbody-sling-bag-waterresistant-lightweight-shoulder-bag-for-cycling-outdoor-sports"
+      },
+      "keywords": "Cycling Crossbody Sling Bag | Water-Resistant Lightweight Shoulder Bag for Cycling & Outdoor Sports MCYCLE",
+      "categoryPage": "components.html",
+      "categoryLabel": "Components",
+      "mainCategory": "maintenance",
+      "subCategory": "tools"
+    },
+    {
       "id": 847842239,
       "supplierProductId": "69f5c03b15b9ca60423c729d",
       "supplierSynced": true,
