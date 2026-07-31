@@ -1052,6 +1052,108 @@
       "subCategory": ""
     },
     {
+      "id": 801738400,
+      "supplierProductId": "6a6cae29c189789bbccd373c",
+      "supplierSynced": true,
+      "sourceHandle": "premium-cycling-arm-sleeves-uv-protection-cooling-compression-sleeves",
+      "sourceUrl": "https://www.cadencelife.in/products/premium-cycling-arm-sleeves-uv-protection-cooling-compression-sleeves",
+      "stockSource": "cadencelife",
+      "name": "Premium Cycling Arm Sleeves | UV Protection Cooling Compression Sleeves",
+      "brand": "MCYCLE",
+      "description": "Stay protected and comfortable on every ride with these premium cycling arm sleeves. Crafted from a lightweight, breathable polyester-spandex fabric, they deliver a snug compression fit that supports muscles, reduces fatigue, and keeps your arms cool in hot weather. The moisture-wicking, quick-dry material efficiently manages sweat, while the UPF/UV-protective fabric helps shield your skin from harmful sun exposure. Designed for cyclists, runners, and outdoor enthusiasts, these sleeves provide all-day comfort without restricting movement.",
+      "price": 1349,
+      "mrp": "Rs 1,349",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cac072e1dc0ec794a118e",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cac072e1dc0ec794a118e",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cac082e1dc0ec794a1191",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cac0ac189789bbccd3702",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cac0b2e1dc0ec794a1193",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cac0d2e1dc0ec794a1195",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cac0ffc1499752c1d2781"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/premium-cycling-arm-sleeves-uv-protection-cooling-compression-sleeves"
+      },
+      "keywords": "Premium Cycling Arm Sleeves | UV Protection Cooling Compression Sleeves MCYCLE",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "other",
+      "subCategory": ""
+    },
+    {
+      "id": 821614014,
+      "supplierProductId": "6a6cb1792e1dc0ec794a1238",
+      "supplierSynced": true,
+      "sourceHandle": "premium-half-finger-cycling-gloves-shock-absorbing-gel-padded-antislip-bike-gloves",
+      "sourceUrl": "https://www.cadencelife.in/products/premium-half-finger-cycling-gloves-shock-absorbing-gel-padded-antislip-bike-gloves",
+      "stockSource": "cadencelife",
+      "name": "Premium Half Finger Cycling Gloves | Shock Absorbing Gel Padded Anti-Slip Bike Gloves",
+      "brand": "MCYCLE",
+      "description": "Ride longer in comfort with these premium half-finger cycling gloves, designed to reduce hand fatigue and improve grip on every ride. Made with breathable, high-stretch Lycra fabric, the gloves keep your hands cool and dry while offering a flexible, comfortable fit. The microfiber leather palm features perforated ventilation holes and durable anti-slip construction for superior control. Strategically placed SBR shock-absorbing padding cushions vibrations from rough roads, while the reinforced thumb and palm areas provide added protection during long-distance rides. Silicone grip zones enhance handlebar control, making these gloves ideal for road cycling, MTB, commuting, fitness rides, and other outdoor sports.",
+      "price": 1349,
+      "mrp": "Rs 1,349",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cb0902e1dc0ec794a121b",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cb0902e1dc0ec794a121b",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cb0912e1dc0ec794a121d",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cb092c189789bbccd377d"
+      ],
+      "sizes": [
+        "Medium",
+        "Large"
+      ],
+      "sizeAvailability": {
+        "Medium": true,
+        "Large": true
+      },
+      "variants": [
+        {
+          "id": 829072192,
+          "title": "Medium",
+          "available": true,
+          "price": 1349,
+          "compare_at_price": 1349,
+          "option1": "Medium",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 853566442,
+          "title": "Large",
+          "available": true,
+          "price": 1349,
+          "compare_at_price": 1349,
+          "option1": "Large",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/premium-half-finger-cycling-gloves-shock-absorbing-gel-padded-antislip-bike-gloves"
+      },
+      "keywords": "Premium Half Finger Cycling Gloves | Shock Absorbing Gel Padded Anti-Slip Bike Gloves MCYCLE",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "gloves",
+      "subCategory": ""
+    },
+    {
       "id": 801615825,
       "supplierProductId": "6a0dea97b5277638b2f1236d",
       "supplierSynced": true,
@@ -1172,6 +1274,110 @@
       "categoryPage": "wearables.html",
       "categoryLabel": "Wearables",
       "mainCategory": "smart-watches",
+      "subCategory": ""
+    },
+    {
+      "id": 850427967,
+      "supplierProductId": "6a6caba62e1dc0ec794a1180",
+      "supplierSynced": true,
+      "sourceHandle": "thermal-compression-leg-sleeves-lightweight-uv-protective-sleeves",
+      "sourceUrl": "https://www.cadencelife.in/products/thermal-compression-leg-sleeves-lightweight-uv-protective-sleeves",
+      "stockSource": "cadencelife",
+      "name": "Thermal Compression Leg Sleeves | Lightweight UV Protective Sleeves",
+      "brand": "MCYCLE",
+      "description": "Enhance your cycling performance and protect your legs with these premium compression cycling leg sleeves. Designed for road cycling, MTB, running, and outdoor sports, they provide targeted muscle support while reducing fatigue during long rides. Made from a lightweight, breathable polyester-spandex blend, these sleeves offer excellent moisture-wicking performance to keep your legs cool and dry. The stretch fabric delivers a snug compression fit without restricting movement, while the UV-protective material helps shield your skin from harmful sun exposure. Suitable for both men and women, they are ideal for training, racing, commuting, and everyday outdoor activities.",
+      "price": 1199,
+      "mrp": "Rs 1,199",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca85bc189789bbccd3675",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca85bc189789bbccd3675",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca85dfc1499752c1d26fb",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca85efc1499752c1d26fd",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca85f2e1dc0ec794a1106",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca8612e1dc0ec794a1108",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca8622e1dc0ec794a110a"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/thermal-compression-leg-sleeves-lightweight-uv-protective-sleeves"
+      },
+      "keywords": "Thermal Compression Leg Sleeves | Lightweight UV Protective Sleeves MCYCLE",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "other",
+      "subCategory": ""
+    },
+    {
+      "id": 825557921,
+      "supplierProductId": "6a6cb038fc1499752c1d27f5",
+      "supplierSynced": true,
+      "sourceHandle": "traceless-cycling-arm-sleeves-seamless-uv-protection-cooling-compression-sleeves",
+      "sourceUrl": "https://www.cadencelife.in/products/traceless-cycling-arm-sleeves-seamless-uv-protection-cooling-compression-sleeves",
+      "stockSource": "cadencelife",
+      "name": "Traceless Cycling Arm Sleeves | Seamless UV Protection Cooling Compression Sleeves",
+      "brand": "MCYCLE",
+      "description": "Protect your arms from the sun while staying cool and comfortable with these solid color cycling arm sleeves. Made from a lightweight, breathable stretch fabric, they provide a snug compression fit that supports muscles, reduces fatigue, and enhances comfort during long rides. The moisture-wicking, quick-dry material helps keep sweat under control, while the UV-protective fabric shields your skin from harmful sun exposure. Designed with seamless comfort and an anti-slip fit, they’re ideal for cycling, running, hiking, golf, fishing, and other outdoor sports.",
+      "price": 649,
+      "mrp": "Rs 649",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cae8bfc1499752c1d27cd",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cae8bfc1499752c1d27cd",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cae8d2e1dc0ec794a11db",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cae8e2e1dc0ec794a11dd",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cae8f2e1dc0ec794a11df",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cae91fc1499752c1d27cf"
+      ],
+      "sizes": [
+        "Medium",
+        "Large"
+      ],
+      "sizeAvailability": {
+        "Medium": true,
+        "Large": true
+      },
+      "variants": [
+        {
+          "id": 871783791,
+          "title": "Medium",
+          "available": true,
+          "price": 649,
+          "compare_at_price": 649,
+          "option1": "Medium",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 838236511,
+          "title": "Large",
+          "available": true,
+          "price": 649,
+          "compare_at_price": 649,
+          "option1": "Large",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/traceless-cycling-arm-sleeves-seamless-uv-protection-cooling-compression-sleeves"
+      },
+      "keywords": "Traceless Cycling Arm Sleeves | Seamless UV Protection Cooling Compression Sleeves MCYCLE",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "other",
       "subCategory": ""
     },
     {
