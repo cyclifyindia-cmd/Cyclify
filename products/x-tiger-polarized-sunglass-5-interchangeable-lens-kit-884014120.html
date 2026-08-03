@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>X-TIGER Polarized Sunglass-5 Interchangeable Lens kit Price and Specifications | Cyclify</title>
+<title>X-TIGER Polarized Sunglass-5 Interchangeable | Cyclify India</title>
 
-<meta name="description" content="Buy X-TIGER Polarized Sunglass-5 Interchangeable Lens kit online from Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER polarized sports sunglasses, designed for cycling, running, fishing, and more. Featuring 5 interchangeable lenses, you can easily switch base">
+<meta name="description" content="Shop X-TIGER Polarized Sunglass-5 Interchangeable Lens kit at Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/x-tiger-polarized-sunglass-5-interchangeable-lens-kit-884014120.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="X-TIGER Polarized Sunglass-5 Interchangeable Lens kit Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy X-TIGER Polarized Sunglass-5 Interchangeable Lens kit online from Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER polarized sports sunglasses, designed for cycling, running, fishing, and more. Featuring 5 interchangeable lenses, you can easily switch base">
+<meta property="og:title" content="X-TIGER Polarized Sunglass-5 Interchangeable | Cyclify India">
+<meta property="og:description" content="Shop X-TIGER Polarized Sunglass-5 Interchangeable Lens kit at Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/x-tiger-polarized-sunglass-5-interchangeable-lens-kit-884014120.html">
 <meta property="og:image" content="https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa95332738725dea4df6f">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="X-TIGER Polarized Sunglass-5 Interchangeable Lens kit Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy X-TIGER Polarized Sunglass-5 Interchangeable Lens kit online from Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER polarized sports sunglasses, designed for cycling, running, fishing, and more. Featuring 5 interchangeable lenses, you can easily switch base">
+<meta name="twitter:title" content="X-TIGER Polarized Sunglass-5 Interchangeable | Cyclify India">
+<meta name="twitter:description" content="Shop X-TIGER Polarized Sunglass-5 Interchangeable Lens kit at Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER">
 <meta name="twitter:image" content="https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa95332738725dea4df6f">
 <script>window.CYCLIFY_PRODUCT_ID=884014120;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -947,7 +947,7 @@ body{padding-bottom:88px;}
         "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa6df2f6d953135df81bb",
         "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/69efa6f52f6d953135df81c1"
       ],
-      "description": "Buy X-TIGER Polarized Sunglass-5 Interchangeable Lens kit online from Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER polarized sports sunglasses, designed for cycling, running, fishing, and more. Featuring 5 interchangeable lenses, you can easily switch base",
+      "description": "Shop X-TIGER Polarized Sunglass-5 Interchangeable Lens kit at Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER",
       "sku": "CYCLIFY-884014120",
       "brand": {
         "@type": "Brand",
@@ -1017,7 +1017,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>X-TIGER Polarized Sunglass-5 Interchangeable Lens kit</h1><p>Price: Rs 1,799</p><p>Buy X-TIGER Polarized Sunglass-5 Interchangeable Lens kit online from Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER polarized sports sunglasses, designed for cycling, running, fishing, and more. Featuring 5 interchangeable lenses, you can easily switch base</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>X-TIGER Polarized Sunglass-5 Interchangeable Lens kit</h1><p>Price: Rs 1,799</p><p>Shop X-TIGER Polarized Sunglass-5 Interchangeable Lens kit at Cyclify India for Rs 1,799. Take your outdoor performance to the next level with X-TIGER</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2714,9 +2714,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2733,7 +2764,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3283,7 +3314,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

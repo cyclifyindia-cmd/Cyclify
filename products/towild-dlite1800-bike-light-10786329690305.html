@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>TOWILD DLite1800 Bike Light Price and Specifications | Cyclify</title>
+<title>TOWILD DLite1800 Bike Light | Cyclify India</title>
 
-<meta name="description" content="Buy TOWILD DLite1800 Bike Light online from Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens, enhancing visibility and safety during night rides or low-light conditions. Designed for durability and ease of use, it offers reliable performance">
+<meta name="description" content="Shop TOWILD DLite1800 Bike Light at Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/towild-dlite1800-bike-light-10786329690305.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="TOWILD DLite1800 Bike Light Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy TOWILD DLite1800 Bike Light online from Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens, enhancing visibility and safety during night rides or low-light conditions. Designed for durability and ease of use, it offers reliable performance">
+<meta property="og:title" content="TOWILD DLite1800 Bike Light | Cyclify India">
+<meta property="og:description" content="Shop TOWILD DLite1800 Bike Light at Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/towild-dlite1800-bike-light-10786329690305.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e3769511-1a6d-4664-b9a7-21f7e4ca3f4c.jpg?v=1754109197">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TOWILD DLite1800 Bike Light Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy TOWILD DLite1800 Bike Light online from Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens, enhancing visibility and safety during night rides or low-light conditions. Designed for durability and ease of use, it offers reliable performance">
+<meta name="twitter:title" content="TOWILD DLite1800 Bike Light | Cyclify India">
+<meta name="twitter:description" content="Shop TOWILD DLite1800 Bike Light at Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e3769511-1a6d-4664-b9a7-21f7e4ca3f4c.jpg?v=1754109197">
 <script>window.CYCLIFY_PRODUCT_ID=10786329690305;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -951,7 +951,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_4d4fac34-1cee-4805-818c-4d26a53814fc.jpg?v=1754109197",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_cb72f399-8afc-48b7-a150-2bd2d17b9d37.jpg?v=1754109197"
       ],
-      "description": "Buy TOWILD DLite1800 Bike Light online from Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens, enhancing visibility and safety during night rides or low-light conditions. Designed for durability and ease of use, it offers reliable performance",
+      "description": "Shop TOWILD DLite1800 Bike Light at Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens",
       "sku": "CYCLIFY-10786329690305",
       "brand": {
         "@type": "Brand",
@@ -1066,7 +1066,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>TOWILD DLite1800 Bike Light</h1><p>Price: Rs 6,199</p><p>Buy TOWILD DLite1800 Bike Light online from Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens, enhancing visibility and safety during night rides or low-light conditions. Designed for durability and ease of use, it offers reliable performance</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>TOWILD DLite1800 Bike Light</h1><p>Price: Rs 6,199</p><p>Shop TOWILD DLite1800 Bike Light at Cyclify India for Rs 6,199. The TOWILD DLite1800 Bike Light delivers powerful illumination with 1800 lumens</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2763,9 +2763,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2782,7 +2813,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3332,7 +3363,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

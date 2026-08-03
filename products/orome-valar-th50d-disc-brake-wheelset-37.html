@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>OROME VALAR TH50D Disc Brake Wheelset Price and Specifications | Cyclify</title>
+<title>OROME VALAR TH50D Disc Brake Wheelset | Cyclify India</title>
 
-<meta name="description" content="Buy OROME VALAR TH50D Disc Brake Wheelset online from Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight, aerodynamics and price. The Valar TH is an aero wheelset for the modern road bike. The Valar TH Series rims are made from Toray T800 carbon fibre, we the">
+<meta name="description" content="Shop OROME VALAR TH50D Disc Brake Wheelset at Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/orome-valar-th50d-disc-brake-wheelset-37.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="OROME VALAR TH50D Disc Brake Wheelset Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy OROME VALAR TH50D Disc Brake Wheelset online from Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight, aerodynamics and price. The Valar TH is an aero wheelset for the modern road bike. The Valar TH Series rims are made from Toray T800 carbon fibre, we the">
+<meta property="og:title" content="OROME VALAR TH50D Disc Brake Wheelset | Cyclify India">
+<meta property="og:description" content="Shop OROME VALAR TH50D Disc Brake Wheelset at Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/orome-valar-th50d-disc-brake-wheelset-37.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/TH50D-L2-c82a.jpg?v=1772873658">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OROME VALAR TH50D Disc Brake Wheelset Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy OROME VALAR TH50D Disc Brake Wheelset online from Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight, aerodynamics and price. The Valar TH is an aero wheelset for the modern road bike. The Valar TH Series rims are made from Toray T800 carbon fibre, we the">
+<meta name="twitter:title" content="OROME VALAR TH50D Disc Brake Wheelset | Cyclify India">
+<meta name="twitter:description" content="Shop OROME VALAR TH50D Disc Brake Wheelset at Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/TH50D-L2-c82a.jpg?v=1772873658">
 <script>window.CYCLIFY_PRODUCT_ID=37;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -948,7 +948,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/OROMEVALARTH50D8.jpg?v=1772873658",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/OROMEVALARTH50D7.jpg?v=1772873658"
       ],
-      "description": "Buy OROME VALAR TH50D Disc Brake Wheelset online from Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight, aerodynamics and price. The Valar TH is an aero wheelset for the modern road bike. The Valar TH Series rims are made from Toray T800 carbon fibre, we the",
+      "description": "Shop OROME VALAR TH50D Disc Brake Wheelset at Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight",
       "sku": "CYCLIFY-37",
       "brand": {
         "@type": "Brand",
@@ -1033,7 +1033,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>OROME VALAR TH50D Disc Brake Wheelset</h1><p>Price: Rs 87,000</p><p>Buy OROME VALAR TH50D Disc Brake Wheelset online from Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight, aerodynamics and price. The Valar TH is an aero wheelset for the modern road bike. The Valar TH Series rims are made from Toray T800 carbon fibre, we the</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>OROME VALAR TH50D Disc Brake Wheelset</h1><p>Price: Rs 87,000</p><p>Shop OROME VALAR TH50D Disc Brake Wheelset at Cyclify India for Rs 87,000. The OROME VALAR TH Series — The perfect balance of lightweight</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2730,9 +2730,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2749,7 +2780,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3299,7 +3330,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

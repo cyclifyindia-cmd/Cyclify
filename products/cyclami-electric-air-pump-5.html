@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>Cyclami Electric Air Pump Price and Specifications | Cyclify</title>
+<title>Cyclami Electric Air Pump | Cyclify India</title>
 
-<meta name="description" content="Buy Cyclami Electric Air Pump online from Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy Valve type Schrader Valve&amp;Presta Valve Gauge Yes Brand CYCLAMI Model HW-125 Max pressure UP TO 150 PSI Working hours ABOUT 250 SECONDS BATTERY C">
+<meta name="description" content="Shop Cyclami Electric Air Pump at Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/cyclami-electric-air-pump-5.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="Cyclami Electric Air Pump Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy Cyclami Electric Air Pump online from Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy Valve type Schrader Valve&amp;Presta Valve Gauge Yes Brand CYCLAMI Model HW-125 Max pressure UP TO 150 PSI Working hours ABOUT 250 SECONDS BATTERY C">
+<meta property="og:title" content="Cyclami Electric Air Pump | Cyclify India">
+<meta property="og:description" content="Shop Cyclami Electric Air Pump at Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/cyclami-electric-air-pump-5.html">
 <meta property="og:image" content="https://cdn.dotpe.in/longtail/store-items/8102112/Qvv1o9cW.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cyclami Electric Air Pump Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy Cyclami Electric Air Pump online from Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy Valve type Schrader Valve&amp;Presta Valve Gauge Yes Brand CYCLAMI Model HW-125 Max pressure UP TO 150 PSI Working hours ABOUT 250 SECONDS BATTERY C">
+<meta name="twitter:title" content="Cyclami Electric Air Pump | Cyclify India">
+<meta name="twitter:description" content="Shop Cyclami Electric Air Pump at Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy">
 <meta name="twitter:image" content="https://cdn.dotpe.in/longtail/store-items/8102112/Qvv1o9cW.webp">
 <script>window.CYCLIFY_PRODUCT_ID=5;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -946,7 +946,7 @@ body{padding-bottom:88px;}
         "https://cdn.dotpe.in/longtail/store-items/8102112/LtcOaVeL.webp",
         "https://cdn.dotpe.in/longtail/store-items/8102112/UutHJB72.webp"
       ],
-      "description": "Buy Cyclami Electric Air Pump online from Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy Valve type Schrader Valve&Presta Valve Gauge Yes Brand CYCLAMI Model HW-125 Max pressure UP TO 150 PSI Working hours ABOUT 250 SECONDS BATTERY C",
+      "description": "Shop Cyclami Electric Air Pump at Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy",
       "sku": "CYCLIFY-5",
       "brand": {
         "@type": "Brand",
@@ -1096,7 +1096,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Cyclami Electric Air Pump</h1><p>Price: Rs 5,250</p><p>Buy Cyclami Electric Air Pump online from Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy Valve type Schrader Valve&amp;Presta Valve Gauge Yes Brand CYCLAMI Model HW-125 Max pressure UP TO 150 PSI Working hours ABOUT 250 SECONDS BATTERY C</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Cyclami Electric Air Pump</h1><p>Price: Rs 5,250</p><p>Shop Cyclami Electric Air Pump at Cyclify India for Rs 5,250. Brand Name CYCLAMI Model Number HW-125 Pressure Up to 150 PSI Material Aluminum/Alloy</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2793,9 +2793,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2812,7 +2843,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3362,7 +3393,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

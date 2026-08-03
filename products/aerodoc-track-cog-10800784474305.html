@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>Aerodoc Track Cog Price and Specifications | Cyclify</title>
+<title>Aerodoc Track Cog | Cyclify India</title>
 
-<meta name="description" content="Buy Aerodoc Track Cog online from Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a high-performance, precision-machined fixed gear sprocket designed for track cyclists, urban riders, and fixed gear enthusiasts who demand smooth power">
+<meta name="description" content="Shop Aerodoc Track Cog at Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/aerodoc-track-cog-10800784474305.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="Aerodoc Track Cog Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy Aerodoc Track Cog online from Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a high-performance, precision-machined fixed gear sprocket designed for track cyclists, urban riders, and fixed gear enthusiasts who demand smooth power">
+<meta property="og:title" content="Aerodoc Track Cog | Cyclify India">
+<meta property="og:description" content="Shop Aerodoc Track Cog at Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/aerodoc-track-cog-10800784474305.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_07126328-70bd-4ab8-86b9-89b8e166b8ba.jpg?v=1756360289">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Aerodoc Track Cog Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy Aerodoc Track Cog online from Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a high-performance, precision-machined fixed gear sprocket designed for track cyclists, urban riders, and fixed gear enthusiasts who demand smooth power">
+<meta name="twitter:title" content="Aerodoc Track Cog | Cyclify India">
+<meta name="twitter:description" content="Shop Aerodoc Track Cog at Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_07126328-70bd-4ab8-86b9-89b8e166b8ba.jpg?v=1756360289">
 <script>window.CYCLIFY_PRODUCT_ID=10800784474305;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -945,7 +945,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_a585df85-b6cc-40ca-8de0-2c0524a0634e.jpg?v=1756360289",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_78deb997-c690-4754-b56e-87e9da6b91e8.jpg?v=1756360289"
       ],
-      "description": "Buy Aerodoc Track Cog online from Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a high-performance, precision-machined fixed gear sprocket designed for track cyclists, urban riders, and fixed gear enthusiasts who demand smooth power",
+      "description": "Shop Aerodoc Track Cog at Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a",
       "sku": "CYCLIFY-10800784474305",
       "brand": {
         "@type": "Brand",
@@ -1060,7 +1060,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Aerodoc Track Cog</h1><p>Price: Rs 1,798</p><p>Buy Aerodoc Track Cog online from Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a high-performance, precision-machined fixed gear sprocket designed for track cyclists, urban riders, and fixed gear enthusiasts who demand smooth power</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Aerodoc Track Cog</h1><p>Price: Rs 1,798</p><p>Shop Aerodoc Track Cog at Cyclify India for Rs 1,798. Aerodoc Track Cog – Precision-Engineered Fixed Gear Sprocket The Aerodoc Track Cog is a</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2757,9 +2757,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2776,7 +2807,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3326,7 +3357,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

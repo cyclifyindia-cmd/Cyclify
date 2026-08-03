@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>iGPSPORT BSC200S Cyclocomputer Price and Specifications | Cyclify</title>
+<title>iGPSPORT BSC200S Cyclocomputer | Cyclify India</title>
 
-<meta name="description" content="Buy iGPSPORT BSC200S Cyclocomputer online from Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful route navigation . After entering the destination, it can intelligently generate a route with turning directions, recalculate the planning remi">
+<meta name="description" content="Shop iGPSPORT BSC200S Cyclocomputer at Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/igpsport-bsc200s-cyclocomputer-41.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="iGPSPORT BSC200S Cyclocomputer Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy iGPSPORT BSC200S Cyclocomputer online from Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful route navigation . After entering the destination, it can intelligently generate a route with turning directions, recalculate the planning remi">
+<meta property="og:title" content="iGPSPORT BSC200S Cyclocomputer | Cyclify India">
+<meta property="og:description" content="Shop iGPSPORT BSC200S Cyclocomputer at Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/igpsport-bsc200s-cyclocomputer-41.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image.jpg?v=1754022773">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="iGPSPORT BSC200S Cyclocomputer Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy iGPSPORT BSC200S Cyclocomputer online from Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful route navigation . After entering the destination, it can intelligently generate a route with turning directions, recalculate the planning remi">
+<meta name="twitter:title" content="iGPSPORT BSC200S Cyclocomputer | Cyclify India">
+<meta name="twitter:description" content="Shop iGPSPORT BSC200S Cyclocomputer at Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image.jpg?v=1754022773">
 <script>window.CYCLIFY_PRODUCT_ID=41;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -948,7 +948,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2.jpg?v=1754022773",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1.jpg?v=1754022773"
       ],
-      "description": "Buy iGPSPORT BSC200S Cyclocomputer online from Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful route navigation . After entering the destination, it can intelligently generate a route with turning directions, recalculate the planning remi",
+      "description": "Shop iGPSPORT BSC200S Cyclocomputer at Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful",
       "sku": "CYCLIFY-41",
       "brand": {
         "@type": "Brand",
@@ -1038,7 +1038,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>iGPSPORT BSC200S Cyclocomputer</h1><p>Price: Rs 7,900</p><p>Buy iGPSPORT BSC200S Cyclocomputer online from Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful route navigation . After entering the destination, it can intelligently generate a route with turning directions, recalculate the planning remi</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>iGPSPORT BSC200S Cyclocomputer</h1><p>Price: Rs 7,900</p><p>Shop iGPSPORT BSC200S Cyclocomputer at Cyclify India for Rs 7,900. 【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2735,9 +2735,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2754,7 +2785,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3304,7 +3335,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

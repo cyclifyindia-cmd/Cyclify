@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>Elsier 60mm Valve Extender Price and Specifications | Cyclify</title>
+<title>Elsier 60mm Valve Extender | Cyclify India</title>
 
-<meta name="description" content="Buy Elsier 60mm Valve Extender online from Cyclify India for Rs 600. Product Description: Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for deep-section rims and aero wheels. Whether you're using tubes or tubular tires, this lightweight and durable extender ensures easy a">
+<meta name="description" content="Shop Elsier 60mm Valve Extender at Cyclify India for Rs 600. Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/elsier-60mm-valve-extender-10798083244225.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="Elsier 60mm Valve Extender Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy Elsier 60mm Valve Extender online from Cyclify India for Rs 600. Product Description: Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for deep-section rims and aero wheels. Whether you're using tubes or tubular tires, this lightweight and durable extender ensures easy a">
+<meta property="og:title" content="Elsier 60mm Valve Extender | Cyclify India">
+<meta property="og:description" content="Shop Elsier 60mm Valve Extender at Cyclify India for Rs 600. Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/elsier-60mm-valve-extender-10798083244225.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_ef450f41-c36f-4b63-ac5b-cbc671051c86.jpg?v=1755848276">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Elsier 60mm Valve Extender Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy Elsier 60mm Valve Extender online from Cyclify India for Rs 600. Product Description: Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for deep-section rims and aero wheels. Whether you're using tubes or tubular tires, this lightweight and durable extender ensures easy a">
+<meta name="twitter:title" content="Elsier 60mm Valve Extender | Cyclify India">
+<meta name="twitter:description" content="Shop Elsier 60mm Valve Extender at Cyclify India for Rs 600. Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_ef450f41-c36f-4b63-ac5b-cbc671051c86.jpg?v=1755848276">
 <script>window.CYCLIFY_PRODUCT_ID=10798083244225;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -945,7 +945,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_825e6cd9-a5f9-43a3-9547-11aead4cda08.jpg?v=1755848276",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_9db34398-b1a0-4e6a-b9bc-ced663699aba.jpg?v=1755848276"
       ],
-      "description": "Buy Elsier 60mm Valve Extender online from Cyclify India for Rs 600. Product Description: Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for deep-section rims and aero wheels. Whether you're using tubes or tubular tires, this lightweight and durable extender ensures easy a",
+      "description": "Shop Elsier 60mm Valve Extender at Cyclify India for Rs 600. Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for",
       "sku": "CYCLIFY-10798083244225",
       "brand": {
         "@type": "Brand",
@@ -1045,7 +1045,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Elsier 60mm Valve Extender</h1><p>Price: Rs 600</p><p>Buy Elsier 60mm Valve Extender online from Cyclify India for Rs 600. Product Description: Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for deep-section rims and aero wheels. Whether you're using tubes or tubular tires, this lightweight and durable extender ensures easy a</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Elsier 60mm Valve Extender</h1><p>Price: Rs 600</p><p>Shop Elsier 60mm Valve Extender at Cyclify India for Rs 600. Upgrade your ride with the Elsier 60mm Valve Extender, specially designed for</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2742,9 +2742,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2761,7 +2792,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3311,7 +3342,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

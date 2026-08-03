@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>iGPSPORT iGS800 Cyclocomputer Price and Specifications | Cyclify</title>
+<title>iGPSPORT iGS800 Cyclocomputer | Cyclify India</title>
 
-<meta name="description" content="Buy iGPSPORT iGS800 Cyclocomputer online from Cyclify India for Rs 29,900. Brand : iGPSPORT. Model : iGS800. Type : Premium GPS bike computer">
+<meta name="description" content="Shop iGPSPORT iGS800 Cyclocomputer at Cyclify India for Rs 29,900. Premium GPS bike computer">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/igpsport-igs800-cyclocomputer-46.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="iGPSPORT iGS800 Cyclocomputer Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy iGPSPORT iGS800 Cyclocomputer online from Cyclify India for Rs 29,900. Brand : iGPSPORT. Model : iGS800. Type : Premium GPS bike computer">
+<meta property="og:title" content="iGPSPORT iGS800 Cyclocomputer | Cyclify India">
+<meta property="og:description" content="Shop iGPSPORT iGS800 Cyclocomputer at Cyclify India for Rs 29,900. Premium GPS bike computer">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/igpsport-igs800-cyclocomputer-46.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bda0947d-eb60-46ca-adb4-cebd79aee406.jpg?v=1754027644">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="iGPSPORT iGS800 Cyclocomputer Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy iGPSPORT iGS800 Cyclocomputer online from Cyclify India for Rs 29,900. Brand : iGPSPORT. Model : iGS800. Type : Premium GPS bike computer">
+<meta name="twitter:title" content="iGPSPORT iGS800 Cyclocomputer | Cyclify India">
+<meta name="twitter:description" content="Shop iGPSPORT iGS800 Cyclocomputer at Cyclify India for Rs 29,900. Premium GPS bike computer">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bda0947d-eb60-46ca-adb4-cebd79aee406.jpg?v=1754027644">
 <script>window.CYCLIFY_PRODUCT_ID=46;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -948,7 +948,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_a83399c7-745f-4f95-a768-042047a15fff.jpg?v=1768564356",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/3_499d1db0-3ad2-41c9-bc12-47d038ee5ea3.webp?v=1768564195"
       ],
-      "description": "Buy iGPSPORT iGS800 Cyclocomputer online from Cyclify India for Rs 29,900. Brand : iGPSPORT. Model : iGS800. Type : Premium GPS bike computer",
+      "description": "Shop iGPSPORT iGS800 Cyclocomputer at Cyclify India for Rs 29,900. Premium GPS bike computer",
       "sku": "CYCLIFY-46",
       "brand": {
         "@type": "Brand",
@@ -1043,7 +1043,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>iGPSPORT iGS800 Cyclocomputer</h1><p>Price: Rs 29,900</p><p>Buy iGPSPORT iGS800 Cyclocomputer online from Cyclify India for Rs 29,900. Brand : iGPSPORT. Model : iGS800. Type : Premium GPS bike computer</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>iGPSPORT iGS800 Cyclocomputer</h1><p>Price: Rs 29,900</p><p>Shop iGPSPORT iGS800 Cyclocomputer at Cyclify India for Rs 29,900. Premium GPS bike computer</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2740,9 +2740,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2759,7 +2790,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3309,7 +3340,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

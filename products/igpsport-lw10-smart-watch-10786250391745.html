@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>iGPSPORT LW10 Smart Watch Price and Specifications | Cyclify</title>
+<title>iGPSPORT LW10 Smart Watch | Cyclify India</title>
 
-<meta name="description" content="Buy iGPSPORT LW10 Smart Watch online from Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS watch built for athletes and fitness enthusiasts. Combining a lightweight, modern design with a full suite of advanced features, the LW10 is you">
+<meta name="description" content="Shop iGPSPORT LW10 Smart Watch at Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/igpsport-lw10-smart-watch-10786250391745.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="iGPSPORT LW10 Smart Watch Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy iGPSPORT LW10 Smart Watch online from Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS watch built for athletes and fitness enthusiasts. Combining a lightweight, modern design with a full suite of advanced features, the LW10 is you">
+<meta property="og:title" content="iGPSPORT LW10 Smart Watch | Cyclify India">
+<meta property="og:description" content="Shop iGPSPORT LW10 Smart Watch at Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/igpsport-lw10-smart-watch-10786250391745.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_57a14536-09e6-440f-8eae-6d4eb8ae8112.jpg?v=1754102191">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="iGPSPORT LW10 Smart Watch Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy iGPSPORT LW10 Smart Watch online from Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS watch built for athletes and fitness enthusiasts. Combining a lightweight, modern design with a full suite of advanced features, the LW10 is you">
+<meta name="twitter:title" content="iGPSPORT LW10 Smart Watch | Cyclify India">
+<meta name="twitter:description" content="Shop iGPSPORT LW10 Smart Watch at Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_57a14536-09e6-440f-8eae-6d4eb8ae8112.jpg?v=1754102191">
 <script>window.CYCLIFY_PRODUCT_ID=10786250391745;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -950,7 +950,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_8146783f-d37f-428a-a027-c301b09ee385.jpg?v=1754102191",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_70c4bdeb-f807-45af-a9e4-673b22152181.jpg?v=1754102191"
       ],
-      "description": "Buy iGPSPORT LW10 Smart Watch online from Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS watch built for athletes and fitness enthusiasts. Combining a lightweight, modern design with a full suite of advanced features, the LW10 is you",
+      "description": "Shop iGPSPORT LW10 Smart Watch at Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS",
       "sku": "CYCLIFY-10786250391745",
       "brand": {
         "@type": "Brand",
@@ -1120,7 +1120,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>iGPSPORT LW10 Smart Watch</h1><p>Price: Rs 8,590</p><p>Buy iGPSPORT LW10 Smart Watch online from Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS watch built for athletes and fitness enthusiasts. Combining a lightweight, modern design with a full suite of advanced features, the LW10 is you</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>iGPSPORT LW10 Smart Watch</h1><p>Price: Rs 8,590</p><p>Shop iGPSPORT LW10 Smart Watch at Cyclify India for Rs 8,590. Elevate your training and daily life with the iGPSPORT LW10, a sleek and powerful GPS</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2817,9 +2817,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2836,7 +2867,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3386,7 +3417,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

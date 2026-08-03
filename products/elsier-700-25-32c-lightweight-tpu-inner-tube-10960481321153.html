@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>Elsier 700*25-32C Lightweight TPU Inner Tube Price and Specifications | Cyclify</title>
+<title>Elsier 700*25-32C Lightweight TPU Inner Tube | Cyclify India</title>
 
-<meta name="description" content="Buy Elsier 700*25-32C Lightweight TPU Inner Tube online from Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for performance and reliability. Made from advanced TPU material, it’s significantly lighter and more compact than traditional butyl tubes, helping ">
+<meta name="description" content="Shop Elsier 700*25-32C Lightweight TPU Inner Tube at Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/elsier-700-25-32c-lightweight-tpu-inner-tube-10960481321153.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="Elsier 700*25-32C Lightweight TPU Inner Tube Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy Elsier 700*25-32C Lightweight TPU Inner Tube online from Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for performance and reliability. Made from advanced TPU material, it’s significantly lighter and more compact than traditional butyl tubes, helping ">
+<meta property="og:title" content="Elsier 700*25-32C Lightweight TPU Inner Tube | Cyclify India">
+<meta property="og:description" content="Shop Elsier 700*25-32C Lightweight TPU Inner Tube at Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/elsier-700-25-32c-lightweight-tpu-inner-tube-10960481321153.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/Photoroom_20260422_161946.jpg?v=1777022685">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Elsier 700*25-32C Lightweight TPU Inner Tube Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy Elsier 700*25-32C Lightweight TPU Inner Tube online from Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for performance and reliability. Made from advanced TPU material, it’s significantly lighter and more compact than traditional butyl tubes, helping ">
+<meta name="twitter:title" content="Elsier 700*25-32C Lightweight TPU Inner Tube | Cyclify India">
+<meta name="twitter:description" content="Shop Elsier 700*25-32C Lightweight TPU Inner Tube at Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/Photoroom_20260422_161946.jpg?v=1777022685">
 <script>window.CYCLIFY_PRODUCT_ID=10960481321153;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -944,7 +944,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/Photoroom_20260422_161946.jpg?v=1777022685",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/Photoroom_20260422_160229.jpg?v=1777022706"
       ],
-      "description": "Buy Elsier 700*25-32C Lightweight TPU Inner Tube online from Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for performance and reliability. Made from advanced TPU material, it’s significantly lighter and more compact than traditional butyl tubes, helping ",
+      "description": "Shop Elsier 700*25-32C Lightweight TPU Inner Tube at Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for",
       "sku": "CYCLIFY-10960481321153",
       "brand": {
         "@type": "Brand",
@@ -1029,7 +1029,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Elsier 700*25-32C Lightweight TPU Inner Tube</h1><p>Price: Rs 849</p><p>Buy Elsier 700*25-32C Lightweight TPU Inner Tube online from Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for performance and reliability. Made from advanced TPU material, it’s significantly lighter and more compact than traditional butyl tubes, helping </p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Elsier 700*25-32C Lightweight TPU Inner Tube</h1><p>Price: Rs 849</p><p>Shop Elsier 700*25-32C Lightweight TPU Inner Tube at Cyclify India for Rs 849. Upgrade your ride with the Elsier Road TPU Inner Tube—engineered for</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2726,9 +2726,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2745,7 +2776,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3295,7 +3326,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

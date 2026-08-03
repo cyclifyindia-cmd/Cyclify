@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light Price and Specifications | Cyclify</title>
+<title>Cyclami CYC1700 1700 Lumens Rechargeable | Cyclify India</title>
 
-<meta name="description" content="Buy Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light online from Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable Bicycle Light The Cyclami CYC1700 Rechargeable Bicycle Light is a high-performance cycling light designed to provide exceptional visibility and s">
+<meta name="description" content="Shop Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light at Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/cyclami-cyc1700-waterproof-bicycle-light-10.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light online from Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable Bicycle Light The Cyclami CYC1700 Rechargeable Bicycle Light is a high-performance cycling light designed to provide exceptional visibility and s">
+<meta property="og:title" content="Cyclami CYC1700 1700 Lumens Rechargeable | Cyclify India">
+<meta property="og:description" content="Shop Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light at Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/cyclami-cyc1700-waterproof-bicycle-light-10.html">
 <meta property="og:image" content="https://cdn.dotpe.in/longtail/store-items/8102112/T6IanK1i.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light online from Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable Bicycle Light The Cyclami CYC1700 Rechargeable Bicycle Light is a high-performance cycling light designed to provide exceptional visibility and s">
+<meta name="twitter:title" content="Cyclami CYC1700 1700 Lumens Rechargeable | Cyclify India">
+<meta name="twitter:description" content="Shop Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light at Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable">
 <meta name="twitter:image" content="https://cdn.dotpe.in/longtail/store-items/8102112/T6IanK1i.webp">
 <script>window.CYCLIFY_PRODUCT_ID=10;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -946,7 +946,7 @@ body{padding-bottom:88px;}
         "https://cdn.dotpe.in/longtail/store-items/8102112/qhV4HKRV.webp",
         "https://cdn.dotpe.in/longtail/store-items/8102112/OxEVgxVc.webp"
       ],
-      "description": "Buy Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light online from Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable Bicycle Light The Cyclami CYC1700 Rechargeable Bicycle Light is a high-performance cycling light designed to provide exceptional visibility and s",
+      "description": "Shop Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light at Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable",
       "sku": "CYCLIFY-10",
       "brand": {
         "@type": "Brand",
@@ -1111,7 +1111,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light</h1><p>Price: Rs 6,300</p><p>Buy Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light online from Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable Bicycle Light The Cyclami CYC1700 Rechargeable Bicycle Light is a high-performance cycling light designed to provide exceptional visibility and s</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light</h1><p>Price: Rs 6,300</p><p>Shop Cyclami CYC1700 1700 Lumens Rechargeable Waterproof Bicycle Light LED Front Light at Cyclify India for Rs 6,300. Cyclami CYC1700 Rechargeable</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2808,9 +2808,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2827,7 +2858,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3377,7 +3408,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

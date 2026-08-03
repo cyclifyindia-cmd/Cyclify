@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>TOWILD TL03 Bike Tail Light Price and Specifications | Cyclify</title>
+<title>TOWILD TL03 Bike Tail Light | Cyclify India</title>
 
-<meta name="description" content="Buy TOWILD TL03 Bike Tail Light online from Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling safety. Designed for easy installation, it provides bright, consistent light to increase your visibility to motorists and pedestrians. Its du">
+<meta name="description" content="Shop TOWILD TL03 Bike Tail Light at Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/towild-tl03-bike-tail-light-10786884649153.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="TOWILD TL03 Bike Tail Light Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy TOWILD TL03 Bike Tail Light online from Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling safety. Designed for easy installation, it provides bright, consistent light to increase your visibility to motorists and pedestrians. Its du">
+<meta property="og:title" content="TOWILD TL03 Bike Tail Light | Cyclify India">
+<meta property="og:description" content="Shop TOWILD TL03 Bike Tail Light at Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/towild-tl03-bike-tail-light-10786884649153.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_777c2e36-8282-48f2-b07a-7d44f2945189.jpg?v=1755181089">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TOWILD TL03 Bike Tail Light Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy TOWILD TL03 Bike Tail Light online from Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling safety. Designed for easy installation, it provides bright, consistent light to increase your visibility to motorists and pedestrians. Its du">
+<meta name="twitter:title" content="TOWILD TL03 Bike Tail Light | Cyclify India">
+<meta name="twitter:description" content="Shop TOWILD TL03 Bike Tail Light at Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_777c2e36-8282-48f2-b07a-7d44f2945189.jpg?v=1755181089">
 <script>window.CYCLIFY_PRODUCT_ID=10786884649153;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -948,7 +948,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_9c4dd282-7870-433a-b5e6-efc6b16af027.jpg?v=1755181295",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_4d083f87-6593-459e-80c7-7075bae0c0ec.jpg?v=1755181317"
       ],
-      "description": "Buy TOWILD TL03 Bike Tail Light online from Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling safety. Designed for easy installation, it provides bright, consistent light to increase your visibility to motorists and pedestrians. Its du",
+      "description": "Shop TOWILD TL03 Bike Tail Light at Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling",
       "sku": "CYCLIFY-10786884649153",
       "brand": {
         "@type": "Brand",
@@ -1103,7 +1103,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>TOWILD TL03 Bike Tail Light</h1><p>Price: Rs 1,589</p><p>Buy TOWILD TL03 Bike Tail Light online from Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling safety. Designed for easy installation, it provides bright, consistent light to increase your visibility to motorists and pedestrians. Its du</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>TOWILD TL03 Bike Tail Light</h1><p>Price: Rs 1,589</p><p>Shop TOWILD TL03 Bike Tail Light at Cyclify India for Rs 1,589. The TOWILD TL03 Bike Tail Light offers reliable rear illumination for enhanced cycling</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2800,9 +2800,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2819,7 +2850,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3369,7 +3400,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

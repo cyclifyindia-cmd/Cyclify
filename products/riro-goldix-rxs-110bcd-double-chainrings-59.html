@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>RIRO GOLDIX RXS 110BCD Double Chainrings Price and Specifications | Cyclify</title>
+<title>RIRO GOLDIX RXS 110BCD Double Chainrings | Cyclify India</title>
 
-<meta name="description" content="Buy RIRO GOLDIX RXS 110BCD Double Chainrings online from Cyclify India for Rs 4,699. Brand : RIRO GOLDIX. Model : FC-RXS. Type : Semi-closed split double chainrings">
+<meta name="description" content="Shop RIRO GOLDIX RXS 110BCD Double Chainrings at Cyclify India for Rs 4,699. RIRO GOLDIX">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/riro-goldix-rxs-110bcd-double-chainrings-59.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="RIRO GOLDIX RXS 110BCD Double Chainrings Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy RIRO GOLDIX RXS 110BCD Double Chainrings online from Cyclify India for Rs 4,699. Brand : RIRO GOLDIX. Model : FC-RXS. Type : Semi-closed split double chainrings">
+<meta property="og:title" content="RIRO GOLDIX RXS 110BCD Double Chainrings | Cyclify India">
+<meta property="og:description" content="Shop RIRO GOLDIX RXS 110BCD Double Chainrings at Cyclify India for Rs 4,699. RIRO GOLDIX">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/riro-goldix-rxs-110bcd-double-chainrings-59.html">
 <meta property="og:image" content="https://cyclify.in/assets/products/riro-rxs-double-chainrings-1.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="RIRO GOLDIX RXS 110BCD Double Chainrings Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy RIRO GOLDIX RXS 110BCD Double Chainrings online from Cyclify India for Rs 4,699. Brand : RIRO GOLDIX. Model : FC-RXS. Type : Semi-closed split double chainrings">
+<meta name="twitter:title" content="RIRO GOLDIX RXS 110BCD Double Chainrings | Cyclify India">
+<meta name="twitter:description" content="Shop RIRO GOLDIX RXS 110BCD Double Chainrings at Cyclify India for Rs 4,699. RIRO GOLDIX">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/riro-rxs-double-chainrings-1.webp">
 <script>window.CYCLIFY_PRODUCT_ID=59;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -951,7 +951,7 @@ body{padding-bottom:88px;}
         "https://cyclify.in/assets/products/riro-rxs-double-chainrings-8.webp",
         "https://cyclify.in/assets/products/riro-rxs-double-chainrings-9.webp"
       ],
-      "description": "Buy RIRO GOLDIX RXS 110BCD Double Chainrings online from Cyclify India for Rs 4,699. Brand : RIRO GOLDIX. Model : FC-RXS. Type : Semi-closed split double chainrings",
+      "description": "Shop RIRO GOLDIX RXS 110BCD Double Chainrings at Cyclify India for Rs 4,699. RIRO GOLDIX",
       "sku": "CYCLIFY-59",
       "brand": {
         "@type": "Brand",
@@ -1061,7 +1061,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>RIRO GOLDIX RXS 110BCD Double Chainrings</h1><p>Price: Rs 4,699</p><p>Buy RIRO GOLDIX RXS 110BCD Double Chainrings online from Cyclify India for Rs 4,699. Brand : RIRO GOLDIX. Model : FC-RXS. Type : Semi-closed split double chainrings</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>RIRO GOLDIX RXS 110BCD Double Chainrings</h1><p>Price: Rs 4,699</p><p>Shop RIRO GOLDIX RXS 110BCD Double Chainrings at Cyclify India for Rs 4,699. RIRO GOLDIX</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2758,9 +2758,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2777,7 +2808,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3327,7 +3358,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

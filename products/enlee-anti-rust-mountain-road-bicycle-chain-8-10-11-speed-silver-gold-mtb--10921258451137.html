@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains Price and Specifications | Cyclify</title>
+<title>ENLEE Anti-Rust Mountain Road Bicycle Chain | Cyclify India</title>
 
-<meta name="description" content="Buy ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains online from Cyclify India for Rs 849. Brand : Royal Traders. Product Type : Bicycle Accessories. Colours Options : Silver, Golden">
+<meta name="description" content="Shop ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains at Cyclify India for Rs 849. Royal Traders">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/enlee-anti-rust-mountain-road-bicycle-chain-8-10-11-speed-silver-gold-mtb--10921258451137.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains online from Cyclify India for Rs 849. Brand : Royal Traders. Product Type : Bicycle Accessories. Colours Options : Silver, Golden">
+<meta property="og:title" content="ENLEE Anti-Rust Mountain Road Bicycle Chain | Cyclify India">
+<meta property="og:description" content="Shop ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains at Cyclify India for Rs 849. Royal Traders">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/enlee-anti-rust-mountain-road-bicycle-chain-8-10-11-speed-silver-gold-mtb--10921258451137.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/IMG-20230713-WA0053.jpg?v=1772091590">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains online from Cyclify India for Rs 849. Brand : Royal Traders. Product Type : Bicycle Accessories. Colours Options : Silver, Golden">
+<meta name="twitter:title" content="ENLEE Anti-Rust Mountain Road Bicycle Chain | Cyclify India">
+<meta name="twitter:description" content="Shop ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains at Cyclify India for Rs 849. Royal Traders">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/IMG-20230713-WA0053.jpg?v=1772091590">
 <script>window.CYCLIFY_PRODUCT_ID=10921258451137;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -952,7 +952,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/AI_O_Z8.jpg?v=1772092176",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/IMG-20230713-WA0052.jpg?v=1772095136"
       ],
-      "description": "Buy ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains online from Cyclify India for Rs 849. Brand : Royal Traders. Product Type : Bicycle Accessories. Colours Options : Silver, Golden",
+      "description": "Shop ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains at Cyclify India for Rs 849. Royal Traders",
       "sku": "CYCLIFY-10921258451137",
       "brand": {
         "@type": "Brand",
@@ -1037,7 +1037,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains</h1><p>Price: Rs 849</p><p>Buy ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains online from Cyclify India for Rs 849. Brand : Royal Traders. Product Type : Bicycle Accessories. Colours Options : Silver, Golden</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains</h1><p>Price: Rs 849</p><p>Shop ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains at Cyclify India for Rs 849. Royal Traders</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2734,9 +2734,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2753,7 +2784,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3303,7 +3334,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

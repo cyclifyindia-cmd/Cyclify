@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>TOWILD Bike Light Wireless Remote Control Price and Specifications | Cyclify</title>
+<title>TOWILD Bike Light Wireless Remote Control | Cyclify India</title>
 
-<meta name="description" content="Buy TOWILD Bike Light Wireless Remote Control online from Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories Wireless Remote Control. Designed for seamless operation, this remote allows you to control your bike lights effortlessly without taking your han">
+<meta name="description" content="Shop TOWILD Bike Light Wireless Remote Control at Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/towild-bike-light-wireless-remote-control-10786921382081.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="TOWILD Bike Light Wireless Remote Control Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy TOWILD Bike Light Wireless Remote Control online from Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories Wireless Remote Control. Designed for seamless operation, this remote allows you to control your bike lights effortlessly without taking your han">
+<meta property="og:title" content="TOWILD Bike Light Wireless Remote Control | Cyclify India">
+<meta property="og:description" content="Shop TOWILD Bike Light Wireless Remote Control at Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/towild-bike-light-wireless-remote-control-10786921382081.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5d55e52e-4d00-46d1-a2e9-29c2792d38ca.jpg?v=1755165402">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TOWILD Bike Light Wireless Remote Control Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy TOWILD Bike Light Wireless Remote Control online from Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories Wireless Remote Control. Designed for seamless operation, this remote allows you to control your bike lights effortlessly without taking your han">
+<meta name="twitter:title" content="TOWILD Bike Light Wireless Remote Control | Cyclify India">
+<meta name="twitter:description" content="Shop TOWILD Bike Light Wireless Remote Control at Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5d55e52e-4d00-46d1-a2e9-29c2792d38ca.jpg?v=1755165402">
 <script>window.CYCLIFY_PRODUCT_ID=10786921382081;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -946,7 +946,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_87d81a46-f102-4403-8ea3-c463b549b2b9.jpg?v=1755165456",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_41593fb7-3b06-49f7-92ad-e71c5ff4814b.jpg?v=1755165496"
       ],
-      "description": "Buy TOWILD Bike Light Wireless Remote Control online from Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories Wireless Remote Control. Designed for seamless operation, this remote allows you to control your bike lights effortlessly without taking your han",
+      "description": "Shop TOWILD Bike Light Wireless Remote Control at Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories",
       "sku": "CYCLIFY-10786921382081",
       "brand": {
         "@type": "Brand",
@@ -1041,7 +1041,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>TOWILD Bike Light Wireless Remote Control</h1><p>Price: Rs 949</p><p>Buy TOWILD Bike Light Wireless Remote Control online from Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories Wireless Remote Control. Designed for seamless operation, this remote allows you to control your bike lights effortlessly without taking your han</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>TOWILD Bike Light Wireless Remote Control</h1><p>Price: Rs 949</p><p>Shop TOWILD Bike Light Wireless Remote Control at Cyclify India for Rs 949. Enhance your cycling experience with the TOWILD Bike Light Accessories</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2738,9 +2738,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2757,7 +2788,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3307,7 +3338,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

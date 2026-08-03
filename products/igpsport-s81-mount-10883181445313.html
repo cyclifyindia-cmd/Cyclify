@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>IGPSPORT S81 Mount Price and Specifications | Cyclify</title>
+<title>IGPSPORT S81 Mount | Cyclify India</title>
 
-<meta name="description" content="Buy IGPSPORT S81 Mount online from Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro cameras and front lights. It is made of high quality material aluminum alloy and plastic adapter for long term use">
+<meta name="description" content="Shop IGPSPORT S81 Mount at Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/igpsport-s81-mount-10883181445313.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="IGPSPORT S81 Mount Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy IGPSPORT S81 Mount online from Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro cameras and front lights. It is made of high quality material aluminum alloy and plastic adapter for long term use">
+<meta property="og:title" content="IGPSPORT S81 Mount | Cyclify India">
+<meta property="og:description" content="Shop IGPSPORT S81 Mount at Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/igpsport-s81-mount-10883181445313.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_8947ec0c-ff86-496a-9c4f-16b7e3b9a0d2.jpg?v=1767768000">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="IGPSPORT S81 Mount Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy IGPSPORT S81 Mount online from Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro cameras and front lights. It is made of high quality material aluminum alloy and plastic adapter for long term use">
+<meta name="twitter:title" content="IGPSPORT S81 Mount | Cyclify India">
+<meta name="twitter:description" content="Shop IGPSPORT S81 Mount at Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_8947ec0c-ff86-496a-9c4f-16b7e3b9a0d2.jpg?v=1767768000">
 <script>window.CYCLIFY_PRODUCT_ID=10883181445313;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -945,7 +945,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e52cc11c-ac3a-44e2-85a1-f9e0c674172c.jpg?v=1767767481",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_4aac8743-de35-4396-a952-b5fa6acf2a35.jpg?v=1767768000"
       ],
-      "description": "Buy IGPSPORT S81 Mount online from Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro cameras and front lights. It is made of high quality material aluminum alloy and plastic adapter for long term use",
+      "description": "Shop IGPSPORT S81 Mount at Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro",
       "sku": "CYCLIFY-10883181445313",
       "brand": {
         "@type": "Brand",
@@ -1025,7 +1025,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>IGPSPORT S81 Mount</h1><p>Price: Rs 990</p><p>Buy IGPSPORT S81 Mount online from Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro cameras and front lights. It is made of high quality material aluminum alloy and plastic adapter for long term use</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>IGPSPORT S81 Mount</h1><p>Price: Rs 990</p><p>Shop IGPSPORT S81 Mount at Cyclify India for Rs 990. DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2722,9 +2722,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2741,7 +2772,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3291,7 +3322,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 

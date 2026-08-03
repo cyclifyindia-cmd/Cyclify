@@ -6,20 +6,20 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>Aerodoc Professional cycling Gel Padded bib shorts Price and Specifications | Cyclify</title>
+<title>Aerodoc Professional cycling Gel Padded bib | Cyclify India</title>
 
-<meta name="description" content="Buy Aerodoc Professional cycling Gel Padded bib shorts online from Cyclify India for Rs 2,900. PREMIUM &amp; COMFORTABLE – These Cycling Bib Shorts are suitable for all levels of cyclists, which includes road biking or mountain biker. Even if you’re sweaty the Short’s quick-dry feature makes you feel mo">
+<meta name="description" content="Shop Aerodoc Professional cycling Gel Padded bib shorts at Cyclify India for Rs 2,900. PREMIUM &amp; COMFORTABLE – These Cycling Bib Shorts are suitable">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://cyclify.in/products/aerodoc-professional-cycling-gel-padded-bib-shorts-10995627851969.html">
 <meta property="og:site_name" content="Cyclify">
-<meta property="og:title" content="Aerodoc Professional cycling Gel Padded bib shorts Price and Specifications | Cyclify">
-<meta property="og:description" content="Buy Aerodoc Professional cycling Gel Padded bib shorts online from Cyclify India for Rs 2,900. PREMIUM &amp; COMFORTABLE – These Cycling Bib Shorts are suitable for all levels of cyclists, which includes road biking or mountain biker. Even if you’re sweaty the Short’s quick-dry feature makes you feel mo">
+<meta property="og:title" content="Aerodoc Professional cycling Gel Padded bib | Cyclify India">
+<meta property="og:description" content="Shop Aerodoc Professional cycling Gel Padded bib shorts at Cyclify India for Rs 2,900. PREMIUM &amp; COMFORTABLE – These Cycling Bib Shorts are suitable">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://cyclify.in/products/aerodoc-professional-cycling-gel-padded-bib-shorts-10995627851969.html">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a2e90159-0f36-4d74-a546-383d8efca938.jpg?v=1780729415">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Aerodoc Professional cycling Gel Padded bib shorts Price and Specifications | Cyclify">
-<meta name="twitter:description" content="Buy Aerodoc Professional cycling Gel Padded bib shorts online from Cyclify India for Rs 2,900. PREMIUM &amp; COMFORTABLE – These Cycling Bib Shorts are suitable for all levels of cyclists, which includes road biking or mountain biker. Even if you’re sweaty the Short’s quick-dry feature makes you feel mo">
+<meta name="twitter:title" content="Aerodoc Professional cycling Gel Padded bib | Cyclify India">
+<meta name="twitter:description" content="Shop Aerodoc Professional cycling Gel Padded bib shorts at Cyclify India for Rs 2,900. PREMIUM &amp; COMFORTABLE – These Cycling Bib Shorts are suitable">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a2e90159-0f36-4d74-a546-383d8efca938.jpg?v=1780729415">
 <script>window.CYCLIFY_PRODUCT_ID=10995627851969;</script>
 <script src="assets/js/product-routes.js"></script>
@@ -951,7 +951,7 @@ body{padding-bottom:88px;}
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_06ca27f7-9972-4d8a-86d8-7264651a8cc7.jpg?v=1780729414",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_5569e0e3-adf2-4f66-9084-e0a9b13b2d44.jpg?v=1780729414"
       ],
-      "description": "Buy Aerodoc Professional cycling Gel Padded bib shorts online from Cyclify India for Rs 2,900. PREMIUM & COMFORTABLE – These Cycling Bib Shorts are suitable for all levels of cyclists, which includes road biking or mountain biker. Even if you’re sweaty the Short’s quick-dry feature makes you feel mo",
+      "description": "Shop Aerodoc Professional cycling Gel Padded bib shorts at Cyclify India for Rs 2,900. PREMIUM & COMFORTABLE – These Cycling Bib Shorts are suitable",
       "sku": "CYCLIFY-10995627851969",
       "brand": {
         "@type": "Brand",
@@ -1091,7 +1091,7 @@ body{padding-bottom:88px;}
 </head>
 
 <body>
-<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Aerodoc Professional cycling Gel Padded bib shorts</h1><p>Price: Rs 2,900</p><p>Buy Aerodoc Professional cycling Gel Padded bib shorts online from Cyclify India for Rs 2,900. PREMIUM &amp; COMFORTABLE – These Cycling Bib Shorts are suitable for all levels of cyclists, which includes road biking or mountain biker. Even if you’re sweaty the Short’s quick-dry feature makes you feel mo</p></main></noscript>
+<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>Aerodoc Professional cycling Gel Padded bib shorts</h1><p>Price: Rs 2,900</p><p>Shop Aerodoc Professional cycling Gel Padded bib shorts at Cyclify India for Rs 2,900. PREMIUM &amp; COMFORTABLE – These Cycling Bib Shorts are suitable</p></main></noscript>
 
 <div class="topbar">
 <a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
@@ -2788,9 +2788,40 @@ if(/^https?:\/\//i.test(value)){return value;}
 return `https://cyclify.in/${String(value).replace(/^\/+/,"")}`;
 }
 
+function cleanSeoText(value){
+return String(value||"").replace(/\.{3,}$/g,"").replace(/\s+/g," ").replace(/\s+([,.;:])/g,"$1").trim();
+}
+
+function truncateSeoText(value,maxLength){
+const text=cleanSeoText(value);
+if(text.length<=maxLength){return text;}
+const shortened=text.slice(0,maxLength+1).replace(/\s+\S*$/,"").replace(/[,:;.-]+$/,"");
+return shortened||text.slice(0,maxLength).trim();
+}
+
+function productSeoTitle(){
+const suffix=" | Cyclify India";
+const maxNameLength=60-suffix.length;
+let name=cleanSeoText(product.name);
+if(name.length>maxNameLength){name=name.replace(/\s*\([^)]*\)\s*$/,"");}
+return `${truncateSeoText(name,maxNameLength)}${suffix}`;
+}
+
+function productSeoDetail(){
+const candidates=[product.description].concat(product.specs||[]);
+const productName=cleanSeoText(product.name).toLowerCase();
+for(const candidate of candidates){
+let detail=cleanSeoText(candidate);
+if(!detail||detail.length<18){continue;}
+detail=detail.replace(/^[^:]{1,28}:\s*/,"");
+if(detail&&detail.toLowerCase()!==productName){return detail;}
+}
+return "Authentic cycling equipment with free shipping across India.";
+}
+
 function plainProductDescription(){
-const specs=(product.specs||[]).slice(0,3).join(". ");
-return `Buy ${product.name} on Cyclify India. Price INR ${product.price.toLocaleString()}. ${specs}`.slice(0,300);
+const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
 function upsertMeta(selector,create,content){
@@ -2807,7 +2838,7 @@ return element;
 
 function setProductSeo(){
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
-const title=`${product.name} | Cyclify`;
+const title=productSeoTitle();
 const description=plainProductDescription();
 const image=absoluteSiteUrl(product.image);
 document.title=title;
@@ -3357,7 +3388,6 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
 
 
