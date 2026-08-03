@@ -4,6 +4,9 @@
   const style = document.createElement("style");
   style.id = "cyclifyFooterStyles";
   style.textContent = `
+    .card .price::before,.price-line .price::before{content:"Cyclify Price";display:block;margin:0 0 3px;color:#087a3d;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.08em;text-transform:uppercase}
+    .price-line .price::before{font-size:11px}
+    .card .mrp,.price-line .mrp{font-size:15px!important;text-decoration-line:line-through;text-decoration-color:#e53935;text-decoration-thickness:2px;text-decoration-skip-ink:none}
     .cyclify-footer{position:relative;margin-top:34px;background:#1d1d1f;color:#f8fafc;font-family:Arial,Helvetica,sans-serif;letter-spacing:0}
     .cyclify-footer::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#ff7a00 0 33%,#fff 33% 66%,#159447 66%)}
     .cyclify-footer *{box-sizing:border-box}
