@@ -7,7 +7,7 @@
     .cyclify-footer{position:relative;margin-top:34px;background:#1d1d1f;color:#f8fafc;font-family:Arial,Helvetica,sans-serif;letter-spacing:0}
     .cyclify-footer::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#ff7a00 0 33%,#fff 33% 66%,#159447 66%)}
     .cyclify-footer *{box-sizing:border-box}
-    .cyclify-footer__inner{width:min(1180px,100%);margin:0 auto;padding:38px 24px 28px;display:grid;grid-template-columns:minmax(290px,1.5fr) repeat(2,minmax(160px,.7fr));gap:44px}
+    .cyclify-footer__inner{width:min(1180px,100%);margin:0 auto;padding:38px 24px 28px;display:grid;grid-template-columns:minmax(270px,1.35fr) repeat(3,minmax(145px,.7fr));gap:34px}
     .cyclify-footer__brand img{display:block;width:min(260px,82%);height:70px;object-fit:contain;object-position:left center}
     .cyclify-footer__brand-copy{max-width:430px;margin:16px 0 0;color:#e5e7eb;font-size:16px;line-height:1.55}
     .cyclify-footer__vision{max-width:430px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
@@ -39,6 +39,17 @@
         <p class="cyclify-footer__brand-copy">Cyclify is located in Tuticorin, India.</p>
         <div class="cyclify-footer__vision"><strong>Vision</strong><span>Premium rides, honest prices.</span></div>
       </section>
+      <nav aria-label="Popular cycling categories">
+        <h2 class="cyclify-footer__heading">Popular Categories</h2>
+        <div class="cyclify-footer__links">
+          <a href="smart-trainers.html">Smart Trainers</a>
+          <a href="bike-computers.html">Bike Computers</a>
+          <a href="bike-lights.html">Bike Lights</a>
+          <a href="carbon-wheelsets.html">Carbon Wheelsets</a>
+          <a href="cycling-helmets.html">Cycling Helmets</a>
+          <a href="bike-drivetrain.html">Drivetrain Components</a>
+        </div>
+      </nav>
       <nav aria-label="Information">
         <h2 class="cyclify-footer__heading">Information</h2>
         <div class="cyclify-footer__links">
