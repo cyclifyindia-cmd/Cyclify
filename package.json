@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "generate:seo": "node scripts/generate-seo-pages.js",
+    "audit:seo": "node scripts/audit-seo.js",
     "sync:cycletime": "node scripts/sync-cycletime.js",
     "sync:fcc": "node scripts/sync-fcc.js",
     "sync:cadence": "node scripts/sync-cadence.js",
