@@ -56,18 +56,18 @@
       <nav aria-label="Information">
         <h2 class="cyclify-footer__heading">Information</h2>
         <div class="cyclify-footer__links">
-          <a href="index.html">About Us</a>
-          <a href="account.html">Contact Us</a>
-          <a href="used-market.html#rules">Terms of Use</a>
+          <a href="about-us.html">About Us</a>
+          <a href="contact-us.html">Contact Us</a>
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
           <a href="exchange-policy.html">Exchange Policy</a>
-          <a href="account.html">Privacy &amp; Account</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
         </div>
       </nav>
       <nav aria-label="Our services">
         <h2 class="cyclify-footer__heading">Our Services</h2>
         <div class="cyclify-footer__links">
           <a href="https://wa.me/message/MLT2FFSAEYGIP1?text=Hi%20Cyclify,%20I%20want%20to%20track%20my%20order">Track Order</a>
-          <a href="cart.html">Shipping</a>
+          <a href="shipping-policy.html">Shipping Policy</a>
           <a href="used-market.html">Used Market</a>
         </div>
       </nav>

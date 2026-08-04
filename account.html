@@ -740,8 +740,14 @@ gap:5px!important;
 <div class="panel active">
 <div class="message" id="loginMessage"></div>
 <h2 style="margin:0 0 8px">Sign in to Cyclify</h2>
-<p class="hint" style="margin:0 0 18px">Use your Google account to view orders, saved addresses, and verified-purchase reviews.</p>
+<p class="hint" style="margin:0 0 18px">Customers can continue with Google. Approved business reviewers can use their provided demo credentials.</p>
 <button class="primary-btn" id="googleLoginBtn" type="button">Continue with Google</button>
+<div style="display:flex;align-items:center;gap:10px;margin:18px 0;color:#777;font-size:12px"><span style="height:1px;background:#e2e2e2;flex:1"></span><span>REVIEWER LOGIN</span><span style="height:1px;background:#e2e2e2;flex:1"></span></div>
+<form id="reviewerLoginForm">
+<div class="field"><label for="reviewerEmail">Reviewer email</label><input id="reviewerEmail" type="email" autocomplete="username" required></div>
+<div class="field"><label for="reviewerPassword">Password</label><input id="reviewerPassword" type="password" autocomplete="current-password" required></div>
+<button class="secondary-btn" id="reviewerLoginBtn" type="submit">Sign in as reviewer</button>
+</form>
 </div>
 </section>
 <section class="cyclify-contact-details" id="registeredAddress" aria-labelledby="registeredAddressTitle">
@@ -749,8 +755,9 @@ gap:5px!important;
   <address>
     <strong>CYCLIFY INDIA</strong>
     <span>GSTIN: 33JOJPD5578G1ZN</span>
-    <span>1/193, Thenral Nagar, Udankudi, Tuticorin</span>
-    <span>India</span>
+    <span>1/193, Thenral Nagar, Udankudi, Tuticorin, Tamil Nadu - 628203, India</span>
+    <span>Email: <a href="mailto:admin@cyclify.in">admin@cyclify.in</a></span>
+    <span>Phone: <a href="tel:+917418498045">+91 74184 98045</a></span>
   </address>
 </section>
 </main>
@@ -799,6 +806,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/fireba
 import {
 getAuth,
 signInWithPopup,
+signInWithEmailAndPassword,
 GoogleAuthProvider,
 onAuthStateChanged,
 signOut
@@ -1203,6 +1211,23 @@ clearMessage(messageId);
 try{
 await signInWithPopup(auth,googleProvider);
 }
+
+async function loginAsReviewer(){
+clearMessage("loginMessage");
+const email=document.getElementById("reviewerEmail").value.trim();
+const password=document.getElementById("reviewerPassword").value;
+const button=document.getElementById("reviewerLoginBtn");
+button.disabled=true;
+button.textContent="Signing in...";
+try{
+await signInWithEmailAndPassword(auth,email,password);
+}
+catch(error){
+setMessage("loginMessage","error",getAuthError(error));
+button.disabled=false;
+button.textContent="Sign in as reviewer";
+}
+}
 catch(error){
 setMessage(messageId,"error",getAuthError(error));
 }
@@ -1210,6 +1235,11 @@ setMessage(messageId,"error",getAuthError(error));
 
 document.getElementById("googleLoginBtn").addEventListener("click",()=>{
 loginWithGoogle("loginMessage");
+});
+
+document.getElementById("reviewerLoginForm").addEventListener("submit",event=>{
+event.preventDefault();
+loginAsReviewer();
 });
 
 document.getElementById("logoutBtn").addEventListener("click",async ()=>{
