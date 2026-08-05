@@ -1333,9 +1333,36 @@
         "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca8612e1dc0ec794a1108",
         "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca8622e1dc0ec794a110a"
       ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [],
+      "sizes": [
+        "medium",
+        "large"
+      ],
+      "sizeAvailability": {
+        "medium": false,
+        "large": true
+      },
+      "variants": [
+        {
+          "id": 801231845,
+          "title": "medium",
+          "available": false,
+          "price": 1199,
+          "compare_at_price": 1199,
+          "option1": "medium",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 899196457,
+          "title": "large",
+          "available": true,
+          "price": 1199,
+          "compare_at_price": 1199,
+          "option1": "large",
+          "option2": "",
+          "option3": ""
+        }
+      ],
       "available": true,
       "specs": [
         "Brand : MCYCLE",
