@@ -224,40 +224,62 @@ margin-top:15px;
 }
 
 .price-line{
-display:flex;
-align-items:baseline;
-flex-wrap:wrap;
-gap:7px 12px;
-margin:9px 0 18px;
+max-width:390px;
+margin:9px 0 16px;
+padding:8px 10px 7px;
+border:1.5px solid #ff5a00;
+border-radius:11px;
+background:#fff;
+box-shadow:0 4px 11px rgba(20,24,28,.055);
 }
 
-.price{
-font-size:32px;
-font-weight:bold;
+.deal-head{display:flex;align-items:center;gap:7px;padding:0 0 5px}
+.deal-head img{display:block;width:94px;max-width:42%;height:auto}
+.deal-divider{width:2px;height:18px;background:linear-gradient(#a96e00,#ffd86a,#a96e00)}
+.deal-word{font-size:15px;line-height:1;font-weight:900;letter-spacing:.05em;background:linear-gradient(100deg,#8b5a00 0%,#d99a00 20%,#fff0a6 38%,#f6c84b 50%,#9b6500 70%,#ffd969 84%,#8b5a00 100%);background-size:240% auto;color:transparent;-webkit-background-clip:text;background-clip:text;animation:dealGlaze 2.8s linear infinite}
+@keyframes dealGlaze{0%{background-position:220% center}100%{background-position:-20% center}}
+@media(prefers-reduced-motion:reduce){.deal-word{animation:none;background-position:50% center}}
+
+.deal-main{display:flex;align-items:center;justify-content:flex-start;gap:9px;padding:3px 0 7px}
+.deal-price{
+font-family:Arial,Helvetica,sans-serif;
+font-size:29px;
+font-weight:700;
+letter-spacing:-.025em;
 margin:0;
-line-height:1.1;
+line-height:1;
+color:#171a1d;
 }
 
-.mrp{
+.deal-off{display:inline-flex;align-items:center;background:#ff5a00;color:#fff;font-size:9px;font-weight:800;line-height:1;padding:5px 7px;border-radius:6px;white-space:nowrap}
+.deal-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #eceeef;padding-top:6px;white-space:nowrap}
+.deal-mrp{
 color:#7a7f87;
 margin:0;
-font-size:14px;
+font-size:10px;
 line-height:1.2;
+text-decoration-line:line-through;
+text-decoration-color:#e53935;
+text-decoration-thickness:1.5px;
+text-decoration-skip-ink:none;
 }
+.deal-save{display:inline-flex;align-items:center;background:#079b2b;color:#fff;border-radius:999px;padding:3px 7px;font-size:9px;font-weight:800;line-height:1;white-space:nowrap}
 
 .shipping-note{
 display:inline-flex;
 align-items:center;
-background:#e8f7ef;
+gap:4px;
+margin-left:auto;
+background:transparent;
 color:#087a3d;
-font-size:12px;
+font-size:10px;
 font-weight:bold;
 line-height:1;
-padding:5px 8px;
-border-radius:5px;
-margin:0;
+padding:0;
+border-radius:0;
 white-space:nowrap;
 }
+.shipping-note .shipping-icon{font-size:14px;line-height:1}
 
 .size-section{
 margin:0 0 20px;
@@ -925,10 +947,8 @@ body{padding-bottom:96px;}
 @media(max-width:480px){
 body{padding-bottom:88px;}
 .product{padding:14px;}
-.price-line{flex-wrap:nowrap;align-items:center;gap:5px;margin:8px 0 14px;}
-.price{font-size:24px;white-space:nowrap;}
-.mrp{font-size:10px;white-space:nowrap;}
-.shipping-note{font-size:9.5px;padding:3px 4px;}
+.price-line{max-width:100%;margin:8px 0 14px;padding:8px 9px 7px;}
+.deal-head img{width:88px}.deal-price{font-size:27px}.deal-meta{gap:5px}.deal-mrp{font-size:9px}.deal-save{font-size:8px;padding:3px 6px}.shipping-note{font-size:9px}
 .buttons{gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));}
 .btn{min-height:48px;padding:11px 8px;font-size:15px;}
 }</style>
@@ -1107,24 +1127,10 @@ id="productName">
 
 </div>
 
-<div class="price-line">
-
-<div class="price"
-id="productPrice">
-
-</div>
-
-<div class="mrp"
-id="productMrp">
-
-MRP Rs 2,10,000
-
-</div>
-
-<div class="shipping-note">
-Free Shipping
-</div>
-
+<div class="price-line" aria-label="Cyclify deal price">
+<div class="deal-head"><img src="assets/Logo-dark.png" alt="Cyclify"><span class="deal-divider"></span><span class="deal-word">DEAL</span></div>
+<div class="deal-main"><div class="deal-price" id="productPrice"></div><div class="deal-off" id="productDiscount"></div></div>
+<div class="deal-meta"><div class="deal-mrp" id="productMrp">MRP Rs 2,10,000</div><div class="deal-save" id="productSave"></div><div class="shipping-note"><span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span></div></div>
 </div>
 
 <div class="size-section"
@@ -2861,9 +2867,29 @@ cartCount.style.display="none";
 
 updateCartCount();
 
+function productMoneyNumber(value){
+return Number(String(value||"").replace(/[^0-9.]/g,""))||0;
+}
+
+function updateProductPriceDisplay(){
+const price=Math.round(Number(product.price)||0);
+const mrp=productMoneyNumber(product.mrp);
+const saving=Math.max(0,Math.round(mrp-price));
+const discount=mrp>price?Math.round((saving/mrp)*100):0;
+document.getElementById("productPrice").textContent=`₹${price.toLocaleString("en-IN")}`;
+const mrpElement=document.getElementById("productMrp");
+const saveElement=document.getElementById("productSave");
+const discountElement=document.getElementById("productDiscount");
+mrpElement.textContent=mrp?`MRP ₹${mrp.toLocaleString("en-IN")}`:"";
+saveElement.textContent=saving?`Save ₹${saving.toLocaleString("en-IN")}`:"";
+discountElement.textContent=discount?`${discount}% OFF`:"";
+mrpElement.hidden=!mrp;
+saveElement.hidden=!saving;
+discountElement.hidden=!discount;
+}
+
 document.getElementById("productName").textContent=product.name;
-document.getElementById("productPrice").textContent=`Rs ${product.price.toLocaleString()}`;
-document.getElementById("productMrp").textContent=`MRP ${product.mrp}`;
+updateProductPriceDisplay();
 
 function normalizeSizeValue(value){
 return String(value||"").replace(/\s+/g," ").trim();
@@ -2931,12 +2957,11 @@ const prices=variants.map(variant=>normalizeSourceMoney(variant.price)).filter(B
 const compares=variants.map(variant=>normalizeSourceMoney(variant.compare_at_price)).filter(Boolean);
 if(prices.length){
 product.price=Math.min(...prices);
-document.getElementById("productPrice").textContent=`Rs ${product.price.toLocaleString()}`;
 }
 if(compares.length){
 product.mrp=`Rs ${Math.max(...compares).toLocaleString()}`;
-document.getElementById("productMrp").textContent=`MRP ${product.mrp}`;
 }
+updateProductPriceDisplay();
 product.available=variants.some(variant=>variant.available);
 product.available=variants.some(variant=>variant.available);
 product.available=variants.some(variant=>variant.available);
@@ -3319,8 +3344,5 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
-
-
 
 
