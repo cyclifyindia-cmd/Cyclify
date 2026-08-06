@@ -4,9 +4,14 @@
   const style = document.createElement("style");
   style.id = "cyclifyFooterStyles";
   style.textContent = `
-    .card .price::before,.price-line .price::before{content:"Cyclify Price";display:block;margin:0 0 3px;color:#087a3d;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.08em;text-transform:uppercase}
-    .price-line .price::before{font-size:11px}
-    .card .mrp,.price-line .mrp{font-size:15px!important;text-decoration-line:line-through;text-decoration-color:#e53935;text-decoration-thickness:2px;text-decoration-skip-ink:none}
+    .card .price::before{content:"Cyclify Deal";display:block;margin:0 0 3px;color:#b66b00;font-size:9px;font-weight:900;line-height:1.1;letter-spacing:.07em;text-transform:uppercase}
+    .card .price{font-weight:700!important;letter-spacing:-.015em}
+    .card .mrp{font-size:11px!important;text-decoration-line:line-through;text-decoration-color:#e53935;text-decoration-thickness:1.5px;text-decoration-skip-ink:none}
+    .cyclify-card-deal-meta{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-top:6px;padding-top:6px;border-top:1px solid #eceeef;font-family:Arial,Helvetica,sans-serif;white-space:nowrap}
+    .cyclify-card-saving{display:inline-flex;align-items:center;border-radius:999px;background:#eaf8ee;color:#087a3d;padding:3px 6px;font-size:9px;font-weight:800;line-height:1}
+    .cyclify-card-discount{display:inline-flex;align-items:center;border-radius:5px;background:#ff5a00;color:#fff;padding:3px 6px;font-size:9px;font-weight:900;line-height:1}
+    .cyclify-card-shipping{display:inline-flex;align-items:center;gap:3px;margin-left:auto;color:#087a3d;font-size:9px;font-weight:800;line-height:1}
+    @media(max-width:480px){.cyclify-card-deal-meta{gap:3px}.cyclify-card-saving,.cyclify-card-discount,.cyclify-card-shipping{font-size:8px;padding-left:4px;padding-right:4px}.cyclify-card-shipping{padding-left:0;padding-right:0}}
     .cyclify-footer{position:relative;margin-top:34px;background:#1d1d1f;color:#f8fafc;font-family:Arial,Helvetica,sans-serif;letter-spacing:0}
     .cyclify-footer::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#ff7a00 0 33%,#fff 33% 66%,#159447 66%)}
     .cyclify-footer *{box-sizing:border-box}
@@ -31,6 +36,58 @@
     @media(max-width:420px){.cyclify-footer__inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 16px;padding-left:16px;padding-right:16px}.cyclify-footer__brand{grid-column:1/-1}.cyclify-footer__heading{margin-bottom:12px;font-size:16px}.cyclify-footer__links{gap:10px}.cyclify-footer__links a{width:auto;font-size:13px}.cyclify-footer__bottom-inner{padding-left:16px;padding-right:16px}}
   `;
   document.head.appendChild(style);
+
+  function moneyNumber(value) {
+    return Number(String(value || "").replace(/[^0-9.]/g, "")) || 0;
+  }
+
+  function enhanceProductCard(card) {
+    if (card.dataset.cyclifyDealReady === "true") return;
+    const priceElement = card.querySelector(".price");
+    const mrpElement = card.querySelector(".mrp");
+    if (!priceElement || !mrpElement) return;
+    const price = Math.round(moneyNumber(priceElement.textContent));
+    const mrp = Math.round(moneyNumber(mrpElement.textContent));
+    if (!price) return;
+    card.dataset.cyclifyDealReady = "true";
+    priceElement.textContent = `₹${price.toLocaleString("en-IN")}`;
+    mrpElement.textContent = mrp ? `MRP ₹${mrp.toLocaleString("en-IN")}` : "";
+    mrpElement.hidden = !mrp;
+    const saving = mrp > price ? mrp - price : 0;
+    const discount = saving ? Math.round((saving / mrp) * 100) : 0;
+    const meta = document.createElement("div");
+    meta.className = "cyclify-card-deal-meta";
+    if (saving) {
+      const savingElement = document.createElement("span");
+      savingElement.className = "cyclify-card-saving";
+      savingElement.textContent = `Save ₹${saving.toLocaleString("en-IN")}`;
+      meta.appendChild(savingElement);
+    }
+    if (discount) {
+      const discountElement = document.createElement("span");
+      discountElement.className = "cyclify-card-discount";
+      discountElement.textContent = `${discount}% OFF`;
+      meta.appendChild(discountElement);
+    }
+    card.querySelectorAll(".ship").forEach(element => element.remove());
+    const shippingElement = document.createElement("span");
+    shippingElement.className = "cyclify-card-shipping";
+    shippingElement.innerHTML = '<span aria-hidden="true">🚚</span><span>Free Shipping</span>';
+    meta.appendChild(shippingElement);
+    mrpElement.insertAdjacentElement("afterend", meta);
+  }
+
+  function enhanceProductCards(root) {
+    if (root.matches?.(".card")) enhanceProductCard(root);
+    root.querySelectorAll?.(".card").forEach(enhanceProductCard);
+  }
+
+  enhanceProductCards(document);
+  new MutationObserver(records => {
+    records.forEach(record => record.addedNodes.forEach(node => {
+      if (node.nodeType === 1) enhanceProductCards(node);
+    }));
+  }).observe(document.body, { childList: true, subtree: true });
 
   const footer = document.createElement("footer");
   footer.id = "cyclifyFooter";
