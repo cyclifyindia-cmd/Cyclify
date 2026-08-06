@@ -21,7 +21,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .page-head p{margin:0;color:var(--muted)}
 .primary{border:0;background:var(--blue);color:#fff;border-radius:7px;height:40px;padding:0 16px;font-weight:700;cursor:pointer}
 .primary:disabled{opacity:.55;cursor:wait}
-.admin-login{min-height:calc(100vh - 118px);display:grid;place-items:center;padding:32px 0}
+.admin-login{min-height:calc(100vh - 118px);display:grid;grid-template-columns:repeat(2,minmax(0,430px));align-items:center;justify-content:center;gap:18px;padding:32px 0}
 .admin-login-card{width:min(100%,430px);background:#fff;border:1px solid var(--line);border-radius:8px;padding:28px;box-shadow:0 18px 45px rgba(16,24,40,.08)}
 .admin-login-kicker{display:block;color:var(--blue);font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:10px}
 .admin-login-card h1{font-size:25px;margin:0 0 8px}
@@ -32,6 +32,9 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .admin-login-card .primary{width:100%;height:44px;margin-top:4px}
 .admin-login-message{display:none;border:1px solid #fda29b;border-radius:7px;background:#fff6f5;color:var(--red);padding:11px 12px;margin:0 0 14px;line-height:1.4}
 .admin-login-message.show{display:block}
+.reviewer-login-card{border-color:#f1c27a}
+.reviewer-login-card .admin-login-kicker{color:#a05a00}
+.reviewer-login-card .primary{background:#a05a00}
 .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);background:var(--white);border-radius:8px;margin-bottom:16px;overflow:hidden}
 .stat{padding:16px 18px;border-right:1px solid var(--line)}
 .stat:last-child{border:0}
@@ -109,6 +112,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
  .tools{grid-template-columns:1fr}.order-summary{grid-template-columns:1fr auto;gap:10px}.order-summary>div:nth-child(2){grid-column:1/-1;order:3}.order-total{grid-column:2;grid-row:1}
  .order-body{grid-template-columns:1fr}.section.items-section{grid-column:auto}.fulfilment-grid{grid-template-columns:1fr}
  .workspace-tab{padding:10px}.review-tools{align-items:flex-start;flex-direction:column}.review-tools select{width:100%}.review-card-head{flex-direction:column}.review-images{grid-template-columns:repeat(3,1fr)}.review-actions{flex-wrap:wrap}.review-action-note{width:100%}
+ .admin-login{grid-template-columns:minmax(0,430px);align-content:center}
 }
 </style>
 </head>
@@ -133,6 +137,21 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
     <input id="adminPassword" type="password" autocomplete="current-password" required placeholder="Enter admin password">
    </div>
    <button class="primary" id="adminLoginButton" type="submit">Sign in to admin</button>
+  </form>
+  <form class="admin-login-card reviewer-login-card" id="reviewerLoginForm">
+   <span class="admin-login-kicker">Payment reviewer access</span>
+   <h1>Reviewer sign in</h1>
+   <p>Use the demo credentials provided by Cyclify. Successful sign-in opens the customer account review view.</p>
+   <div class="admin-login-message" id="reviewerLoginMessage" aria-live="polite"></div>
+   <div class="field">
+    <label for="reviewerEmail">Reviewer email</label>
+    <input id="reviewerEmail" type="email" autocomplete="username" required placeholder="Enter reviewer email">
+   </div>
+   <div class="field">
+    <label for="reviewerPassword">Password</label>
+    <input id="reviewerPassword" type="password" autocomplete="current-password" required placeholder="Enter reviewer password">
+   </div>
+   <button class="primary" id="reviewerLoginButton" type="submit">Sign in as reviewer</button>
   </form>
  </section>
  <div id="adminWorkspace" hidden>
@@ -196,6 +215,12 @@ const adminLoginForm=document.getElementById("adminLoginForm");
 const adminLoginMessage=document.getElementById("adminLoginMessage");
 const adminPassword=document.getElementById("adminPassword");
 const adminLoginButton=document.getElementById("adminLoginButton");
+const reviewerLoginForm=document.getElementById("reviewerLoginForm");
+const reviewerLoginMessage=document.getElementById("reviewerLoginMessage");
+const reviewerEmail=document.getElementById("reviewerEmail");
+const reviewerPassword=document.getElementById("reviewerPassword");
+const reviewerLoginButton=document.getElementById("reviewerLoginButton");
+let reviewerRedirectPending=false;
 let allOrders=[];
 let allReviews=[];
 
@@ -253,6 +278,9 @@ function adminAuthError(error){
  }
  if(code.includes("network-request-failed")){
   return "Firebase could not be reached. Check your connection and try again.";
+ }
+ if(code.includes("requests-from-referer")||code.includes("api-key-not-valid")){
+  return "Sign-in is disabled on this local preview. Open https://cyclify.in/admin.html to sign in securely.";
  }
  return `Admin sign-in failed${code?` (${code})`:""}.`;
 }
@@ -485,6 +513,26 @@ adminLoginForm.addEventListener("submit",async event=>{
  }
 });
 
+reviewerLoginForm.addEventListener("submit",async event=>{
+ event.preventDefault();
+ reviewerLoginMessage.classList.remove("show");
+ reviewerLoginMessage.textContent="";
+ reviewerLoginButton.disabled=true;
+ reviewerLoginButton.textContent="Signing in...";
+ reviewerRedirectPending=true;
+ try{
+  await signInWithEmailAndPassword(auth,reviewerEmail.value.trim(),reviewerPassword.value);
+  window.location.assign("account.html");
+ }catch(error){
+  reviewerRedirectPending=false;
+  console.error("Cyclify reviewer sign-in failed",error);
+  reviewerLoginMessage.textContent=adminAuthError(error);
+  reviewerLoginMessage.classList.add("show");
+  reviewerLoginButton.disabled=false;
+  reviewerLoginButton.textContent="Sign in as reviewer";
+ }
+});
+
 onAuthStateChanged(auth,async user=>{
  if(!user){
   showAdminLogin();
@@ -492,6 +540,7 @@ onAuthStateChanged(auth,async user=>{
  }
  try{await user.reload();await user.getIdToken(true);}catch(error){console.warn("Admin token refresh failed",error)}
  if(user.email?.toLowerCase()!==ADMIN_EMAIL){
+  if(reviewerRedirectPending){window.location.assign("account.html");return;}
   showAdminLogin("This page requires the Cyclify administrator account.");
   return;
  }
