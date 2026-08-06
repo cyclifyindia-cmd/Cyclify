@@ -258,6 +258,18 @@ background:#0039a6;
 color:white;
 }
 
+.auth-fallback-btn{
+margin-top:10px;
+border:1px solid #cfd5dc;
+background:#fff;
+color:#1d2939;
+}
+
+.primary-btn:disabled,.auth-fallback-btn:disabled{
+cursor:wait;
+opacity:.7;
+}
+
 .secondary-btn{
 background:#f0f4ff;
 color:#0039a6;
@@ -743,6 +755,8 @@ gap:5px!important;
 <h2 style="margin:0 0 8px">Sign in to Cyclify</h2>
 <p class="hint" style="margin:0 0 18px">Customers can continue securely with Google.</p>
 <button class="primary-btn" id="googleLoginBtn" type="button">Continue with Google</button>
+<button class="secondary-btn auth-fallback-btn" id="googleRedirectBtn" type="button">Trouble with the popup? Use secure redirect</button>
+<p class="hint" style="margin:12px 0 0">The redirect option works better when a browser blocks login popups.</p>
 </div>
 </section>
 <section class="cyclify-contact-details" id="registeredAddress" aria-labelledby="registeredAddressTitle">
@@ -796,14 +810,34 @@ else{cartCount.style.display="none";}
 })();
 </script>
 
+<script>
+window.__cyclifyAccountAuthReady=false;
+window.setTimeout(()=>{
+if(window.__cyclifyAccountAuthReady)return;
+const loading=document.getElementById("authLoading");
+const authArea=document.getElementById("authArea");
+const message=document.getElementById("loginMessage");
+if(loading)loading.style.display="none";
+if(authArea)authArea.style.display="block";
+if(message){
+message.className="message show error";
+message.textContent="The secure login service is taking longer than expected. Check your internet connection, then refresh this page or use the secure redirect option.";
+}
+},10000);
+</script>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import {
 getAuth,
 signInWithPopup,
+signInWithRedirect,
+getRedirectResult,
 GoogleAuthProvider,
 onAuthStateChanged,
-signOut
+signOut,
+setPersistence,
+browserLocalPersistence
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import {
 getFirestore,
@@ -831,6 +865,7 @@ const app=initializeApp(firebaseConfig);
 const auth=getAuth(app);
 const db=getFirestore(app);
 const googleProvider=new GoogleAuthProvider();
+googleProvider.setCustomParameters({prompt:"select_account"});
 const reviewMediaEndpoint="https://cyclify-used-market-media.cyclifyindia.workers.dev";
 let activeReview=null;
 let reviewRating=0;
@@ -1202,29 +1237,91 @@ return `Firebase login failed${code?` (${code})`:""}.`;
 
 async function loginWithGoogle(messageId){
 clearMessage(messageId);
+const button=document.getElementById("googleLoginBtn");
+button.disabled=true;
+button.textContent="Opening Google...";
 try{
 await signInWithPopup(auth,googleProvider);
 }
 catch(error){
 setMessage(messageId,"error",getAuthError(error));
 }
+finally{
+button.disabled=false;
+button.textContent="Continue with Google";
+}
+}
+
+async function loginWithGoogleRedirect(messageId){
+clearMessage(messageId);
+const button=document.getElementById("googleRedirectBtn");
+button.disabled=true;
+button.textContent="Redirecting securely...";
+try{
+await signInWithRedirect(auth,googleProvider);
+}
+catch(error){
+setMessage(messageId,"error",getAuthError(error));
+button.disabled=false;
+button.textContent="Trouble with the popup? Use secure redirect";
+}
+}
+
+function safeReturnPath(value){
+if(!value)return"";
+try{
+const url=new URL(value,location.origin);
+if(url.origin!==location.origin)return"";
+return `${url.pathname}${url.search}${url.hash}`;
+}catch{return"";}
 }
 
 document.getElementById("googleLoginBtn").addEventListener("click",()=>{
 loginWithGoogle("loginMessage");
 });
 
-document.getElementById("logoutBtn").addEventListener("click",async ()=>{
-await signOut(auth);
+document.getElementById("googleRedirectBtn").addEventListener("click",()=>{
+loginWithGoogleRedirect("loginMessage");
 });
 
+document.getElementById("logoutBtn").addEventListener("click",async ()=>{
+try{await signOut(auth);}catch(error){
+console.error("Cyclify sign-out failed",error);
+setMessage("loginMessage","error","Sign-out could not be completed. Refresh the page and try again.");
+}
+});
+
+async function startAccountAuth(){
+try{
+await setPersistence(auth,browserLocalPersistence);
+await getRedirectResult(auth);
+}catch(error){
+console.error("Cyclify authentication setup failed",error);
+setMessage("loginMessage","error",getAuthError(error));
+}
+window.__cyclifyAccountAuthReady=true;
 onAuthStateChanged(auth,user=>{
 renderState(user);
 if(user){
-const returnTo=new URLSearchParams(location.search).get("return");
-if(returnTo&&/^(?![a-z]+:|\/\/)[\w./?=&%-]+$/i.test(returnTo))location.replace(returnTo);
+const returnTo=safeReturnPath(new URLSearchParams(location.search).get("return"));
+if(returnTo)location.replace(returnTo);
 }
+},error=>{
+console.error("Cyclify session check failed",error);
+authLoading.style.display="none";
+authArea.style.display="block";
+dashboard.classList.remove("active");
+setMessage("loginMessage","error","We could not verify your session. Check your connection and try again.");
 });
+}
+
+window.addEventListener("offline",()=>setMessage("loginMessage","error","You are offline. Reconnect to the internet to sign in."));
+window.addEventListener("online",()=>{
+const message=document.getElementById("loginMessage");
+if(message.textContent.includes("offline"))clearMessage("loginMessage");
+});
+
+startAccountAuth();
 </script>
 
 <script src="assets/js/site-footer.js"></script>
