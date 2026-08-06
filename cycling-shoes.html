@@ -478,7 +478,9 @@ if(existing){existing.quantity++;}
 else{cart.push({id:product.id,name:product.name,price:product.price,image:product.image,quantity:1});}
 localStorage.setItem("cart",JSON.stringify(cart));
 updateCartCount();
-window.location.href="cart.html";
+const cartAction=window.cyclifyCartAction||"cart";
+window.cyclifyCartAction="";
+if(cartAction!=="add")window.location.href=cartAction==="buy"?"checkout.html":"cart.html";
 }
 
 searchInput.addEventListener("input",renderProducts);
@@ -503,10 +505,8 @@ reader.readAsDataURL(file);
 }
 })();
 </script>
-<script src="assets/js/site-footer.js?v=20260807-grid-pricing"></script>
+<script src="assets/js/site-footer.js?v=20260807-buy-now"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
-
-
 

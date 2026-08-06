@@ -4,20 +4,25 @@
   const style = document.createElement("style");
   style.id = "cyclifyFooterStyles";
   style.textContent = `
-    .cyclify-card-pricing{display:grid;gap:4px;margin-top:2px;font-family:Arial,Helvetica,sans-serif}
-    .cyclify-card-deal-title{display:flex;align-items:center;gap:4px;height:11px;font-size:9px;font-style:italic;font-weight:900;line-height:1;letter-spacing:.045em;text-transform:uppercase}
+    .cyclify-card-pricing{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"title title" "price actions" "sub actions";column-gap:7px;row-gap:4px;margin-top:2px;font-family:Arial,Helvetica,sans-serif}
+    .cyclify-card-deal-title{grid-area:title;display:flex;align-items:center;gap:4px;height:11px;font-size:9px;font-style:italic;font-weight:900;line-height:1;letter-spacing:.045em;text-transform:uppercase}
     .cyclify-card-deal-brand{color:#ef5b12}
     .cyclify-card-deal-word{color:#b47b12;background:linear-gradient(105deg,#8b5a05 0%,#e7b63b 35%,#fff1a4 48%,#c8870b 61%,#8b5a05 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:cyclifyDealGlaze 2.8s ease-in-out infinite}
     @keyframes cyclifyDealGlaze{0%,24%{background-position:100% 0}70%,100%{background-position:-110% 0}}
-    .cyclify-card-price-line,.cyclify-card-sub-line{display:flex;align-items:center;min-width:0;gap:5px;white-space:nowrap}
+    .cyclify-card-price-line,.cyclify-card-sub-line{display:flex;align-items:center;min-width:0;gap:5px;white-space:nowrap}.cyclify-card-price-line{grid-area:price}.cyclify-card-sub-line{grid-area:sub}
     .card .price{margin:0!important;font-weight:700!important;letter-spacing:-.015em;line-height:1.05}
     .card .mrp{display:inline-block;margin:0!important;color:#777!important;font-size:10.5px!important;font-weight:600;line-height:1.2;text-decoration:none!important;background:linear-gradient(to bottom,transparent 47%,rgba(184,112,24,.82) 48%,rgba(184,112,24,.82) 55%,transparent 56%)}
-    .cyclify-card-saving{display:inline-flex;align-items:center;border-radius:999px;background:#eaf8ee;color:#087a3d;padding:2.5px 6px;font-size:9.5px;font-weight:800;line-height:1}
-    .cyclify-card-discount{display:inline-flex;align-items:center;border-radius:4px;background:#ff5a00;color:#fff;padding:2px 5px;font-size:8px;font-weight:900;line-height:1}
-    .cyclify-card-shipping{display:inline-flex;align-items:center;gap:2px;margin-left:auto;color:#087a3d;font-size:9.5px;font-weight:800;line-height:1}
-    .cyclify-card-pricing .bottom{display:flex!important;margin-left:auto!important}
-    .cyclify-card-pricing .add{min-height:0!important;padding:4px 7px!important;border:1px solid #d8dce2!important;border-radius:7px!important;font-size:9px!important;line-height:1!important;white-space:nowrap}
-    @media(max-width:480px){.cyclify-card-price-line,.cyclify-card-sub-line{gap:3px}.card .mrp{font-size:9px!important}.cyclify-card-saving,.cyclify-card-shipping{font-size:8.5px;padding-left:4px;padding-right:4px}.cyclify-card-discount{font-size:7.5px;padding-left:3px;padding-right:3px}.cyclify-card-shipping{padding-left:0;padding-right:0}.cyclify-card-pricing .add{padding:4px 5px!important;font-size:8px!important}}
+    .cyclify-card-saving{display:inline-flex;align-items:center;border-radius:999px;background:#eaf8ee;color:#087a3d;padding:3px 7px;font-size:10.5px;font-weight:800;line-height:1}
+    .cyclify-card-discount{display:inline-flex;align-items:center;border-radius:4px;background:#ff5a00;color:#fff;padding:3px 6px;font-size:10px;font-weight:900;line-height:1}
+    .cyclify-card-actions{grid-area:actions;align-self:end;display:grid;justify-items:end;gap:5px}
+    .cyclify-card-shipping{display:inline-flex;align-items:center;gap:2px;color:#087a3d;font-size:10.5px;font-weight:800;line-height:1}
+    .cyclify-card-pricing .bottom{display:flex!important;align-items:center!important;gap:5px!important;margin:0!important}
+    .cyclify-card-pricing .add{min-height:0!important;padding:5px 10px!important;border:1px solid #0754c9!important;border-radius:7px!important;background:#0754c9!important;color:#fff!important;font-size:10px!important;line-height:1!important;white-space:nowrap}
+    .cyclify-card-cart-add{display:grid;place-items:center;width:25px;height:25px;padding:0;border:1px solid #d5dae1;border-radius:7px;background:#fff;color:#0754c9;cursor:pointer;box-shadow:0 2px 6px rgba(16,24,40,.08)}
+    .cyclify-card-cart-add svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .cyclify-card-cart-add.added{border-color:#087443;background:#ecfdf3;color:#087443}
+    .price-line .deal-save,.price-line .deal-off,.price-line .shipping-note{font-size:11.5px!important}.price-line .deal-save{padding:4px 9px!important}.price-line .deal-off{padding:5px 8px!important}.price-line .shipping-note{font-weight:800!important}
+    @media(max-width:480px){.cyclify-card-pricing{column-gap:4px}.cyclify-card-price-line,.cyclify-card-sub-line{gap:3px}.card .mrp{font-size:9px!important}.cyclify-card-saving,.cyclify-card-shipping{font-size:9px;padding-left:4px;padding-right:4px}.cyclify-card-discount{font-size:8.5px;padding-left:4px;padding-right:4px}.cyclify-card-shipping{padding-left:0;padding-right:0}.cyclify-card-pricing .add{padding:4px 7px!important;font-size:8.5px!important}.price-line .deal-save,.price-line .deal-off,.price-line .shipping-note{font-size:10px!important}}
     .cyclify-footer{position:relative;margin-top:34px;background:#1d1d1f;color:#f8fafc;font-family:Arial,Helvetica,sans-serif;letter-spacing:0}
     .cyclify-footer::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#ff7a00 0 33%,#fff 33% 66%,#159447 66%)}
     .cyclify-footer *{box-sizing:border-box}
@@ -89,10 +94,62 @@
     const shippingElement = document.createElement("span");
     shippingElement.className = "cyclify-card-shipping";
     shippingElement.innerHTML = '<span aria-hidden="true">&#10003;</span><span>Free Shipping</span>';
-    priceLine.appendChild(shippingElement);
+    const actions = document.createElement("div");
+    actions.className = "cyclify-card-actions";
+    pricing.appendChild(actions);
+    actions.appendChild(shippingElement);
     subLine.insertAdjacentElement("afterbegin", mrpElement);
     const bottom = card.querySelector(".bottom");
-    if (bottom) subLine.appendChild(bottom);
+    if (bottom) {
+      const buyButton = bottom.querySelector(".add");
+      if (buyButton) {
+        const clickCode = buyButton.getAttribute("onclick") || "";
+        const idMatch = clickCode.match(/addToCart\(event,\s*([0-9]+)\s*\)/);
+        buyButton.textContent = "Buy Now";
+        if (idMatch) {
+          const productId = Number(idMatch[1]);
+          buyButton.removeAttribute("onclick");
+          buyButton.addEventListener("click", event => {
+            event.preventDefault();
+            event.stopPropagation();
+            if (typeof window.addToCart !== "function") return;
+            window.cyclifyCartAction = "buy";
+            sessionStorage.removeItem("cyclifyCheckoutItems");
+            window.addToCart(event, productId);
+            if (window.cyclifyCartAction !== "buy") {
+              try {
+                const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+                const selected = cart.find(item => String(item.id) === String(productId));
+                if (selected) sessionStorage.setItem("cyclifyCheckoutItems", JSON.stringify([{ ...selected, quantity: 1 }]));
+              } catch (error) {
+                console.warn("Cyclify Buy Now item preparation failed", error);
+              }
+            }
+          });
+          const quickAddButton = document.createElement("button");
+          quickAddButton.type = "button";
+          quickAddButton.className = "cyclify-card-cart-add";
+          quickAddButton.setAttribute("aria-label", "Add to cart");
+          quickAddButton.title = "Add to cart";
+          quickAddButton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5h2.3l1.6 9.1a2 2 0 0 0 2 1.7h7.2a2 2 0 0 0 2-1.6L20 8H6.3"/><path d="M10 20h.01M17 20h.01M16.5 3.5v5M14 6h5"/></svg>';
+          quickAddButton.addEventListener("click", event => {
+            event.preventDefault();
+            event.stopPropagation();
+            if (typeof window.addToCart !== "function") return;
+            window.cyclifyCartAction = "add";
+            window.addToCart(event, productId);
+            quickAddButton.classList.add("added");
+            quickAddButton.setAttribute("aria-label", "Added to cart");
+            window.setTimeout(() => {
+              quickAddButton.classList.remove("added");
+              quickAddButton.setAttribute("aria-label", "Add to cart");
+            }, 1200);
+          });
+          bottom.appendChild(quickAddButton);
+        }
+      }
+      actions.insertAdjacentElement("afterbegin", bottom);
+    }
   }
 
   function enhanceProductCards(root) {
