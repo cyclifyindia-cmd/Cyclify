@@ -119,8 +119,13 @@ checkoutForm.addEventListener("submit",async event=>{
  addressFields.forEach(id=>addressData[id]=document.getElementById(id).value.trim());
  if(!paymentConfig.enabled||!paymentConfig.createSessionUrl){formError.textContent="Online payment is not configured yet. Please contact Cyclify support.";formError.classList.add("show");return}
  const billingData=sameBilling.checked?addressData:{address:billingAddress.value.trim(),city:billingCity.value.trim(),state:billingState.value.trim(),pincode:billingPincode.value.trim()};
- const attemptId=sessionStorage.getItem("cyclifyPaymentAttemptId")||crypto.randomUUID();
+ const cartFingerprint=JSON.stringify(list.map(item=>[String(item.id),Number(item.quantity||1),String(item.size||item.valveLength||"")]));
+ const previousFingerprint=sessionStorage.getItem("cyclifyPaymentCartFingerprint");
+ const attemptId=previousFingerprint===cartFingerprint&&sessionStorage.getItem("cyclifyPaymentAttemptId")
+  ?sessionStorage.getItem("cyclifyPaymentAttemptId")
+  :(crypto.randomUUID?.()||`${Date.now()}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`);
  sessionStorage.setItem("cyclifyPaymentAttemptId",attemptId);
+ sessionStorage.setItem("cyclifyPaymentCartFingerprint",cartFingerprint);
  payNow.disabled=true;payNow.textContent="Opening secure payment...";
  try{
   const controller=new AbortController();
