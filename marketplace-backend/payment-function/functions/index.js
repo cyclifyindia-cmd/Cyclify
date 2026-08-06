@@ -1,5 +1,6 @@
 const { onRequest } = require("firebase-functions/v2/https");
 const { logger } = require("firebase-functions");
+const { createHash } = require("node:crypto");
 const { initializeApp } = require("firebase-admin/app");
 const { getAuth } = require("firebase-admin/auth");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
@@ -132,7 +133,8 @@ exports.createPaymentSession = onRequest({ region: REGION, timeoutSeconds: 30, m
 async function finalizeVerifiedEvent(event) {
   if (!event?.verified) throw new Error("Webhook was not verified.");
   if (!event.eventId || !event.paymentId || !validAttemptId(event.attemptId) || !PAYMENT_STATES.has(event.status)) throw new Error("Invalid verified webhook event.");
-  const eventRef = db.collection("paymentEvents").doc(text(event.eventId, 180));
+  const eventDocumentId = createHash("sha256").update(String(event.eventId)).digest("hex");
+  const eventRef = db.collection("paymentEvents").doc(eventDocumentId);
   const attemptRef = db.collection("paymentAttempts").doc(event.attemptId);
   return db.runTransaction(async transaction => {
     const [eventSnapshot, attemptSnapshot] = await Promise.all([transaction.get(eventRef), transaction.get(attemptRef)]);
@@ -153,8 +155,9 @@ async function finalizeVerifiedEvent(event) {
         createdAt: FieldValue.serverTimestamp(), updatedAt: FieldValue.serverTimestamp(), paidAt: FieldValue.serverTimestamp(),
       });
     }
+    const nextStatus = attempt.status === "paid" && !["refund_pending", "refunded"].includes(event.status) ? "paid" : event.status;
     transaction.set(eventRef, { eventId: text(event.eventId, 180), paymentId: text(event.paymentId, 180), attemptId: event.attemptId, status: event.status, orderId, processedAt: FieldValue.serverTimestamp() });
-    transaction.update(attemptRef, { status: event.status, paymentId: text(event.paymentId, 180), orderId, updatedAt: FieldValue.serverTimestamp(), ...(event.status === "paid" ? { paidAt: FieldValue.serverTimestamp() } : {}) });
+    transaction.update(attemptRef, { status: nextStatus, paymentId: text(event.paymentId, 180), orderId, updatedAt: FieldValue.serverTimestamp(), ...(event.status === "paid" ? { paidAt: FieldValue.serverTimestamp() } : {}) });
     return { duplicate: false, orderId };
   });
 }

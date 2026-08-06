@@ -11,6 +11,7 @@ const pages = [
   "electronics.html", "elves-bikes.html", "sava-bikes.html",
   "smart-trainers.html", "wearables.html", "wheels-tyres.html",
 ];
+const dataFiles = ["cycletime-products.json", "fcc-products.json", "cadence-products.json"];
 
 const catalog = new Map();
 function addProduct(product, source) {
@@ -40,14 +41,17 @@ for (const page of pages) {
   products.forEach(product => addProduct(product, page));
 }
 
-for (const file of ["cycletime-products.json", "fcc-products.json", "cadence-products.json"]) {
+for (const file of dataFiles) {
   const payload = JSON.parse(fs.readFileSync(path.join(root, "assets", "data", file), "utf8"));
   if (!Array.isArray(payload.products)) throw new Error(`Product list missing in ${file}`);
   payload.products.forEach(product => addProduct(product, file));
 }
 
 const output = {
-  generatedAt: new Date().toISOString(),
+  generatedAt: new Date(Math.max(
+    ...pages.map(file => fs.statSync(path.join(root, file)).mtimeMs),
+    ...dataFiles.map(file => fs.statSync(path.join(root, "assets", "data", file)).mtimeMs),
+  )).toISOString(),
   currency: "INR",
   products: Object.fromEntries([...catalog.entries()].sort(([a], [b]) => a.localeCompare(b, "en", { numeric: true }))),
 };
