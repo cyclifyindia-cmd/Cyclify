@@ -9,7 +9,7 @@
 :root{--blue:#0047ff;--ink:#111827;--muted:#667085;--line:#e5e7eb;--soft:#f7f8fa}
 *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:var(--soft)}
 header{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 max(20px,calc((100% - 1180px)/2))}
-header img{width:145px}.shell{max-width:1180px;margin:32px auto;padding:0 20px}.steps{color:var(--muted);font-size:14px;margin-bottom:22px}.steps b{color:var(--blue)}
+header img{width:145px}.shell{max-width:1180px;margin:32px auto;padding:0 20px}.steps{display:grid;grid-template-columns:repeat(3,1fr);max-width:520px;margin:0 0 24px;padding:0;list-style:none}.step{position:relative;color:var(--muted);font-size:12px;font-weight:800;text-align:center}.step:before{content:"";display:block;width:24px;height:24px;margin:0 auto 7px;border:2px solid #d0d5dd;border-radius:50%;background:#fff}.step:not(:last-child):after{content:"";position:absolute;z-index:-1;top:12px;left:50%;width:100%;height:2px;background:#d0d5dd}.step.done,.step.active{color:var(--blue)}.step.done:before{content:"✓";border-color:var(--blue);background:var(--blue);color:#fff;line-height:20px}.step.active:before{border:7px solid var(--blue)}
 .layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.7fr);gap:24px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:18px;box-shadow:0 5px 20px #1018280a}
 h1{margin:0 0 8px;font-size:30px}h2{font-size:20px;margin:0 0 20px}.intro{color:var(--muted);margin:0 0 25px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.full{grid-column:1/-1}
 label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}input,select{width:100%;height:48px;border:1px solid #cfd4dc;border-radius:9px;padding:0 13px;font:inherit;background:#fff}input:focus,select:focus{outline:2px solid #0047ff22;border-color:var(--blue)}
@@ -17,7 +17,7 @@ label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}input,selec
 .phone-row{display:grid;grid-template-columns:110px 1fr;gap:10px}.phone-row input:first-of-type{text-align:center}
 .check{display:flex;gap:10px;align-items:center;margin:2px 0 18px}.check input{width:18px;height:18px}.check label{margin:0;font-weight:500}.hidden{display:none}.payment{border:2px solid var(--blue);border-radius:11px;padding:16px}.payment strong{display:block}.payment span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
 .item{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.item img{width:58px;height:58px;object-fit:contain;border-radius:8px;background:var(--soft)}.item p{margin:0;font-weight:700;font-size:14px}.item small{color:var(--muted)}.money{font-weight:700;white-space:nowrap}
-.row{display:flex;justify-content:space-between;margin-top:14px}.total{font-size:20px;font-weight:800;border-top:1px solid var(--line);padding-top:16px}.pay{width:100%;border:0;border-radius:10px;background:var(--blue);color:#fff;padding:16px;font-size:16px;font-weight:800;cursor:pointer;margin-top:20px}.pay:disabled{opacity:.55;cursor:wait}.secure{text-align:center;font-size:12px;color:var(--muted)}
+.row{display:flex;justify-content:space-between;margin-top:14px}.total{font-size:20px;font-weight:800;border-top:1px solid var(--line);padding-top:16px}.pay{width:100%;border:0;border-radius:10px;background:var(--blue);color:#fff;padding:16px;font-size:16px;font-weight:800;cursor:pointer;margin-top:20px}.pay:disabled{opacity:.55;cursor:wait}.secure{text-align:center;font-size:12px;color:var(--muted);line-height:1.5}.summary-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.summary-head h2{margin-bottom:0}.summary-head a{color:var(--blue);font-size:13px;font-weight:700}.delivery-note{display:flex;gap:9px;margin-top:14px;padding:12px;border-radius:9px;background:#ecfdf3;color:#087443;font-size:12px;line-height:1.45}.checkout-help{text-align:center;margin-top:10px;font-size:12px}.checkout-help a{color:var(--blue)}
 .error{display:none;color:#b42318;background:#fef3f2;border-radius:8px;padding:11px;margin-bottom:16px}.error.show{display:block}
 @media(max-width:800px){.layout{grid-template-columns:1fr}.summary{order:-1}.grid{grid-template-columns:1fr}.full{grid-column:auto}.shell{margin-top:20px}.card{padding:18px}}
 @media(max-width:420px){.phone-row{grid-template-columns:92px 1fr}}
@@ -26,7 +26,7 @@ label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}input,selec
 <body>
 <header><a href="index.html"><img src="assets/Logo-original.png" alt="Cyclify"></a></header>
 <main class="shell">
-<div class="steps"><b>Cart</b> &nbsp;›&nbsp; <b>Address</b> &nbsp;›&nbsp; Payment</div>
+<ol class="steps" aria-label="Checkout progress"><li class="step done">Cart</li><li class="step active">Address</li><li class="step">Payment</li></ol>
 <h1>Checkout</h1>
 <p class="intro">Enter your delivery details and review your order.</p>
 <div class="layout">
@@ -79,12 +79,15 @@ label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}input,selec
 </form>
 <aside class="summary">
 <section class="card">
-<h2>Your order</h2>
+<div class="summary-head"><h2>Your order</h2><a href="cart.html">Edit cart</a></div>
 <div id="items"></div>
 <div class="row"><span>Items</span><span id="itemCount"></span></div>
+<div class="row"><span>Standard delivery</span><strong style="color:#087443">FREE</strong></div>
 <div class="row total"><span>Total</span><span id="total"></span></div>
+<div class="delivery-note"><strong>✓</strong><span>Estimated delivery in 3–6 business days after confirmed payment.</span></div>
 <button class="pay" id="payNow" type="submit" form="checkoutForm">Pay Now</button>
-<p class="secure">Your order is confirmed only after verified payment.</p>
+<p class="secure">Secure payment. Your order is created only after server verification.</p>
+<p class="checkout-help">Need help? <a href="https://wa.me/message/MLT2FFSAEYGIP1?text=Hi%20Cyclify,%20I%20need%20checkout%20help">Chat with Cyclify</a></p>
 </section>
 </aside>
 </div>

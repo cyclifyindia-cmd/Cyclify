@@ -128,12 +128,23 @@ margin-top:20px;
 }
 
 .total{
-
-font-size:22px;
-font-weight:bold;
-margin:20px 0;
-
+margin:18px 0 0;
+padding:16px;
+border:1px solid #e6e8ed;
+border-radius:12px;
+background:#fff;
+font-size:15px;
+font-weight:600;
 }
+
+.total-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:10px}
+.total-row:last-child{margin:0;padding-top:12px;border-top:1px solid #eceef1;font-size:21px;font-weight:900}
+.free-delivery{color:#087a3d;font-weight:800}
+.checkout-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px;color:#475467;font-size:11px;text-align:center}
+.checkout-trust span{padding:8px 5px;border-radius:9px;background:#f8fafc;border:1px solid #edf0f3}
+.cart-step{margin:0 0 14px;color:#667085;font-size:12px;font-weight:700;text-align:center}
+.cart-step strong{color:#0039a6}
+@media(max-width:420px){.checkout-trust{font-size:10px}.checkout{font-size:16px}}
 
 .empty-cart{
 background:white;
@@ -503,6 +514,8 @@ else{cartCount.style.display="none";}
 <div
 class="cart-container">
 
+<div class="cart-step"><strong>1 Cart</strong> &nbsp;&rsaquo;&nbsp; 2 Address &nbsp;&rsaquo;&nbsp; 3 Payment</div>
+
 <div
 id="cartItems">
 
@@ -518,7 +531,7 @@ id="totalPrice">
 class="checkout"
 onclick="checkout()">
 
-Buy Now
+Proceed to secure checkout
 
 </button>
 
@@ -561,7 +574,7 @@ container.innerHTML=`
 
 document.getElementById(
 "totalPrice"
-).innerText="";
+).innerHTML="";
 
 checkoutButton.disabled=true;
 
@@ -674,12 +687,11 @@ onclick=
 
 );
 
-document.getElementById(
-"totalPrice"
-).innerText=
-
-"Total: Rs "+
-total.toLocaleString();
+document.getElementById("totalPrice").innerHTML=`
+<div class="total-row"><span>Subtotal</span><strong>₹${total.toLocaleString("en-IN")}</strong></div>
+<div class="total-row"><span>Standard delivery</span><span class="free-delivery">FREE</span></div>
+<div class="total-row"><span>Total</span><strong>₹${total.toLocaleString("en-IN")}</strong></div>
+<div class="checkout-trust"><span>✓ Secure checkout</span><span>✓ Free delivery</span><span>✓ 3–6 business days</span></div>`;
 
 localStorage.setItem(
 "cart",
@@ -751,6 +763,4 @@ window.location.href="checkout.html";
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
-
-
 

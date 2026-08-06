@@ -20,8 +20,15 @@ const countries=["India","Australia","Bangladesh","Bhutan","Canada","France","Ge
 const states=["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"];
 country.innerHTML=countries.map(x=>`<option${x==="India"?" selected":""}>${x}</option>`).join("");
 state.innerHTML='<option value="">Select state</option>'+states.map(x=>`<option>${x}</option>`).join("");
-sameBilling.onchange=()=>billingFields.classList.toggle("hidden",sameBilling.checked);
-addGst.onchange=()=>gstFields.classList.toggle("hidden",!addGst.checked);
+function syncOptionalFields(){
+ billingFields.classList.toggle("hidden",sameBilling.checked);
+ [billingAddress,billingCity,billingState,billingPincode].forEach(field=>field.required=!sameBilling.checked);
+ gstFields.classList.toggle("hidden",!addGst.checked);
+ gstin.required=addGst.checked;businessName.required=addGst.checked;
+}
+sameBilling.onchange=syncOptionalFields;
+addGst.onchange=syncOptionalFields;
+syncOptionalFields();
 function updateCountryFields(value){
  const india=value==="India";
  pincode.inputMode=india?"numeric":"text";
@@ -89,7 +96,8 @@ async function render(){
  if(!list.length){location.replace("cart.html");return}
  items.innerHTML=list.map(i=>`<div class="item"><img src="${i.image}" alt=""><div><p>${i.name}</p><small>Qty ${i.quantity||1}${i.size?` | ${i.size}`:""}</small></div><span class="money">Rs. ${(priceOf(i)*(i.quantity||1)).toLocaleString("en-IN")}</span></div>`).join("");
  const count=list.reduce((n,i)=>n+(i.quantity||1),0),sum=list.reduce((n,i)=>n+priceOf(i)*(i.quantity||1),0);
- itemCount.textContent=count;total.textContent=`Rs. ${sum.toLocaleString("en-IN")}`;
+ itemCount.textContent=`${count} item${count===1?"":"s"}`;total.textContent=`₹${sum.toLocaleString("en-IN")}`;
+ if(paymentConfig.enabled)payNow.textContent=`Pay ₹${sum.toLocaleString("en-IN")}`;
  let saved=null;
  try{
   const customer=await getDoc(doc(db,"customers",signedInUser.uid));
@@ -111,19 +119,27 @@ checkoutForm.addEventListener("submit",async event=>{
  addressFields.forEach(id=>addressData[id]=document.getElementById(id).value.trim());
  if(!paymentConfig.enabled||!paymentConfig.createSessionUrl){formError.textContent="Online payment is not configured yet. Please contact Cyclify support.";formError.classList.add("show");return}
  const billingData=sameBilling.checked?addressData:{address:billingAddress.value.trim(),city:billingCity.value.trim(),state:billingState.value.trim(),pincode:billingPincode.value.trim()};
+ const attemptId=sessionStorage.getItem("cyclifyPaymentAttemptId")||crypto.randomUUID();
+ sessionStorage.setItem("cyclifyPaymentAttemptId",attemptId);
  payNow.disabled=true;payNow.textContent="Opening secure payment...";
  try{
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),20000);
   const response=await fetch(paymentConfig.createSessionUrl,{
    method:"POST",
-   headers:{"Authorization":`Bearer ${await signedInUser.getIdToken()}`,"Content-Type":"application/json"},
-   body:JSON.stringify({items:list,address:addressData,billingSame:sameBilling.checked,billingAddress:billingData,gstin:addGst.checked?gstin.value.trim():"",businessName:addGst.checked?businessName.value.trim():""})
+   headers:{"Authorization":`Bearer ${await signedInUser.getIdToken()}`,"Content-Type":"application/json","Idempotency-Key":attemptId},
+   body:JSON.stringify({attemptId,items:list,address:addressData,billingSame:sameBilling.checked,billingAddress:billingData,gstin:addGst.checked?gstin.value.trim():"",businessName:addGst.checked?businessName.value.trim():""}),
+   signal:controller.signal
   });
+  clearTimeout(timeout);
   const result=await response.json().catch(()=>({}));
   if(!response.ok)throw new Error(result.error||"The payment service could not start checkout.");
   const checkoutUrl=new URL(result.checkoutUrl,location.origin);
   if(checkoutUrl.protocol!=="https:"&&checkoutUrl.origin!==location.origin)throw new Error("The payment service returned an unsafe checkout address.");
   location.assign(checkoutUrl.href);
  }catch(error){
-  console.error(error);formError.textContent=error.message||"We could not open secure payment. Please try again.";formError.classList.add("show");payNow.disabled=false;payNow.textContent="Pay Now";
+  console.error(error);formError.textContent=error.name==="AbortError"?"The payment service took too long to respond. No charge was made. Please try again.":error.message||"We could not open secure payment. Please try again.";formError.classList.add("show");payNow.disabled=false;
+  const sum=list.reduce((amount,item)=>amount+priceOf(item)*(item.quantity||1),0);
+  payNow.textContent=`Pay ₹${sum.toLocaleString("en-IN")}`;
  }
 });
