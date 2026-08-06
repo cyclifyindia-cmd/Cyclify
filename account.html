@@ -1211,6 +1211,10 @@ clearMessage(messageId);
 try{
 await signInWithPopup(auth,googleProvider);
 }
+catch(error){
+setMessage(messageId,"error",getAuthError(error));
+}
+}
 
 async function loginAsReviewer(){
 clearMessage("loginMessage");
@@ -1226,10 +1230,6 @@ catch(error){
 setMessage("loginMessage","error",getAuthError(error));
 button.disabled=false;
 button.textContent="Sign in as reviewer";
-}
-}
-catch(error){
-setMessage(messageId,"error",getAuthError(error));
 }
 }
 
@@ -1248,6 +1248,10 @@ await signOut(auth);
 
 onAuthStateChanged(auth,user=>{
 renderState(user);
+if(user){
+const returnTo=new URLSearchParams(location.search).get("return");
+if(returnTo&&/^(?![a-z]+:|\/\/)[\w./?=&%-]+$/i.test(returnTo))location.replace(returnTo);
+}
 });
 </script>
 

@@ -1,12 +1,17 @@
 import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import{getAuth,onAuthStateChanged}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-import{getFirestore,doc,getDoc,setDoc,collection,runTransaction,serverTimestamp}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import{getFirestore,doc,getDoc}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 const app=initializeApp({apiKey:"AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",authDomain:"cyclify-b809a.firebaseapp.com",projectId:"cyclify-b809a",storageBucket:"cyclify-b809a.firebasestorage.app",messagingSenderId:"748931097863",appId:"1:748931097863:web:0954f07a8245703f2751a2"});
 const auth=getAuth(app);
 const db=getFirestore(app);
 let signedInUser=null;
 let savedAddresses=[];
 let fillingSavedAddress=false;
+const paymentConfig=window.CYCLIFY_PAYMENT_CONFIG||{};
+paymentTitle.textContent=paymentConfig.provider?`Pay securely with ${paymentConfig.provider}`:"Secure online payment";
+paymentStatus.textContent=paymentConfig.enabled?"You will continue to the secure payment page.":"Online payments are temporarily unavailable. Please contact Cyclify to complete your order.";
+payNow.disabled=!paymentConfig.enabled;
+if(!paymentConfig.enabled)payNow.textContent="Payment unavailable";
 onAuthStateChanged(auth,user=>{
  if(!user){location.replace(`account.html?return=${encodeURIComponent("checkout.html")}`);return}
  signedInUser=user;render();
@@ -104,23 +109,21 @@ checkoutForm.addEventListener("submit",async event=>{
  if(!/^\+?[0-9]{1,4}$/.test(phoneCode.value.trim())||!/^[0-9 ]{6,15}$/.test(phone.value.trim())){formError.textContent="Enter a valid country code and phone number.";formError.classList.add("show");return}
  const list=checkoutItems(),addressData={};
  addressFields.forEach(id=>addressData[id]=document.getElementById(id).value.trim());
- const total=list.reduce((n,i)=>n+priceOf(i)*(i.quantity||1),0);
- payNow.disabled=true;payNow.textContent="Saving order...";
+ if(!paymentConfig.enabled||!paymentConfig.createSessionUrl){formError.textContent="Online payment is not configured yet. Please contact Cyclify support.";formError.classList.add("show");return}
+ const billingData=sameBilling.checked?addressData:{address:billingAddress.value.trim(),city:billingCity.value.trim(),state:billingState.value.trim(),pincode:billingPincode.value.trim()};
+ payNow.disabled=true;payNow.textContent="Opening secure payment...";
  try{
-  const customerRef=doc(db,"customers",signedInUser.uid);
-  const orderNumber=await runTransaction(db,async transaction=>{
-   const customerSnapshot=await transaction.get(customerRef);
-   const customerData=customerSnapshot.data()||{};
-   const next=Math.max(101,Number(customerData.nextOrderNumber)||101);
-   const addresses=mergeAddresses(customerData.addresses,addressData,customerData.shippingAddress);
-   transaction.set(customerRef,{shippingAddress:addressData,addresses,nextOrderNumber:next+1,cart:[],updatedAt:serverTimestamp()},{merge:true});
-   const orderRef=doc(collection(db,"customers",signedInUser.uid,"orders"));
-   transaction.set(orderRef,{number:next,customerId:signedInUser.uid,status:"Order Received",createdAt:serverTimestamp(),items:list,reviewableProductIds:[...new Set(list.map(item=>String(item.id||"")).filter(Boolean))],total,address:addressData,billingSame:sameBilling.checked,billingAddress:sameBilling.checked?addressData:{address:billingAddress.value.trim(),city:billingCity.value.trim(),state:billingState.value.trim(),pincode:billingPincode.value.trim()},gstin:addGst.checked?gstin.value.trim():"",businessName:addGst.checked?businessName.value.trim():""});
-   return next;
+  const response=await fetch(paymentConfig.createSessionUrl,{
+   method:"POST",
+   headers:{"Authorization":`Bearer ${await signedInUser.getIdToken()}`,"Content-Type":"application/json"},
+   body:JSON.stringify({items:list,address:addressData,billingSame:sameBilling.checked,billingAddress:billingData,gstin:addGst.checked?gstin.value.trim():"",businessName:addGst.checked?businessName.value.trim():""})
   });
-  localStorage.removeItem("cart");sessionStorage.removeItem("cyclifyCheckoutItems");
-  location.href=`account.html?tab=orders&placed=${orderNumber}`;
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(result.error||"The payment service could not start checkout.");
+  const checkoutUrl=new URL(result.checkoutUrl,location.origin);
+  if(checkoutUrl.protocol!=="https:"&&checkoutUrl.origin!==location.origin)throw new Error("The payment service returned an unsafe checkout address.");
+  location.assign(checkoutUrl.href);
  }catch(error){
-  console.error(error);formError.textContent="We could not securely save your order. Please try again.";formError.classList.add("show");payNow.disabled=false;payNow.textContent="Pay Now";
+  console.error(error);formError.textContent=error.message||"We could not open secure payment. Please try again.";formError.classList.add("show");payNow.disabled=false;payNow.textContent="Pay Now";
  }
 });

@@ -74,7 +74,7 @@ label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}input,selec
 </section>
 <section class="card">
 <h2>Payment</h2>
-<div class="payment"><strong>Online payment</strong><span>The payment aggregator will be connected here shortly.</span></div>
+<div class="payment"><strong id="paymentTitle">Secure online payment</strong><span id="paymentStatus">Checking payment availability...</span></div>
 </section>
 </form>
 <aside class="summary">
@@ -84,11 +84,12 @@ label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}input,selec
 <div class="row"><span>Items</span><span id="itemCount"></span></div>
 <div class="row total"><span>Total</span><span id="total"></span></div>
 <button class="pay" id="payNow" type="submit" form="checkoutForm">Pay Now</button>
-<p class="secure">Secure checkout · Payment integration pending</p>
+<p class="secure">Your order is confirmed only after verified payment.</p>
 </section>
 </aside>
 </div>
 </main>
+<script src="assets/js/payment-config.js"></script>
 <script type="module" src="assets/js/checkout.js"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
