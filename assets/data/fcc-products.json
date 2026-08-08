@@ -157,189 +157,6 @@
       "subCategory": ""
     },
     {
-      "id": 23,
-      "supplierProductId": 32167372,
-      "supplierSynced": true,
-      "sourceHandle": "Cyclami-1200-Lumen-High-Brightness-Bicycle-Light",
-      "sourceUrl": "https://www.fccracing.com/product/Cyclami-1200-Lumen-High-Brightness-Bicycle-Light",
-      "stockSource": "fcc",
-      "name": "Cyclami 1200 Lumen High Brightness Bicycle Light",
-      "brand": "Cyclami",
-      "description": "Product Specification Light intensity - 1200 Lumen Lighting Mode - High/Medium/Low/Burst/Sos strobe Wick Model - 2*Osram P7 Batteries - 18650 Rechargeable lithium battery 2500Mah Endurance - Approx 4.5-13H (Laboratory data) Material - Aluminum Waterproofing - IPX6 Sizes - 109x39x28mm weights - ~~ 164g",
-      "price": 4200,
-      "mrp": "Rs 4,500",
-      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/i7Y8CR4p.webp",
-      "images": [
-        "https://cdn.dotpe.in/longtail/store-items/8102112/i7Y8CR4p.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/Ym2mvYfI.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/CbAqWBsk.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/eczreFCC.webp"
-      ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [],
-      "available": true,
-      "specs": [
-        "Brand : Cyclami",
-        "Product Type : Lights",
-        "Five customizable modes : High, Medium, Low, Burst, and SOS Strobe, tailored for different scenarios—from night rides to distress signaling.",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.fccracing.com/product/Cyclami-1200-Lumen-High-Brightness-Bicycle-Light"
-      },
-      "keywords": "Cyclami 1200 Lumen High Brightness Bicycle Light Lights Cyclami",
-      "categoryPage": "electronics.html",
-      "categoryLabel": "Electronics",
-      "mainCategory": "lights",
-      "subCategory": ""
-    },
-    {
-      "id": 28,
-      "supplierProductId": 33155886,
-      "supplierSynced": true,
-      "sourceHandle": "cyclami-1800-lumen-usb-rechargeable-bicycle-front-light",
-      "sourceUrl": "https://www.fccracing.com/product/cyclami-1800-lumen-usb-rechargeable-bicycle-front-light",
-      "stockSource": "fcc",
-      "name": "Cyclami 1800 Lumen USB Rechargeable Bicycle Front Light",
-      "brand": "Cyclami",
-      "description": "The Cyclami 1800 Lumen USB Rechargeable Bicycle Front Light is a powerful and reliable headlight designed for cyclists who demand maximum visibility and performance. With an impressive 1800 lumens of high brightness, it provides a wide and clear beam, helping you ride safely on dark roads, highways, and trails. It features 4 lighting modes, allowing you to adjust brightness according to different riding conditions such as commuting, night riding, or off-road cycling. Powered by a long-lasting 3200mAh high-capacity battery, this headlight delivers extended runtime, making it ideal for long rides. The Type-C fast charging support ensures quick and convenient recharging so you are always ready for your next ride. The light comes with a detachable and removable clip mount, allowing you to easily switch between front mount and hanging mount options for flexible installation based on your pref",
-      "price": 3000,
-      "mrp": "Rs 3,200",
-      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/G82eQlvo.webp",
-      "images": [
-        "https://cdn.dotpe.in/longtail/store-items/8102112/G82eQlvo.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/EEX99CwS.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/N7M8GKTC.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/gaYelShj.webp"
-      ],
-      "sizes": [
-        "1800"
-      ],
-      "sizeAvailability": {
-        "1800": true
-      },
-      "variants": [
-        {
-          "id": 7386712,
-          "title": "1800",
-          "available": true,
-          "price": 3000,
-          "compare_at_price": 3200,
-          "option1": "[object Object]",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : Cyclami",
-        "Product Type : Lights",
-        "High Brightness : 1800 lumens powerful LED output for maximum road visibility",
-        "Lighting Modes : 4 adjustable lighting modes for different riding conditions",
-        "Rechargeable Battery : 3200mAh high-capacity battery for extended usage",
-        "Fast Charging : Type-C charging support for quick and easy charging",
-        "Flexible Mounting : Detachable clip mount for front or hanging installation",
-        "Waterproof Design : IPX6 waterproof protection for rain and wet weather",
-        "Wide Beam Coverage : Improved road visibility for safer riding",
-        "Multi-Purpose Use : Suitable for MTB, road bikes, and commuting",
-        "Brightness : 1800 Lumens",
-        "Battery Capacity : 3200mAh",
-        "Charging Port : Type-C USB",
-        "Waterproof Rating : IPX6",
-        "Mount Type : Detachable Clip Mount",
-        "Usage : MTB, Road Bike, Professional Cycling",
-        "Installation Type : Front Mount / Hanging Mount",
-        "Long Runtime : High-capacity 3200mAh battery supports long-distance riding",
-        "Fast Recharge : Type-C charging reduces waiting time between rides",
-        "Efficient Power Use : Smart power management improves battery performance",
-        "Reliable Backup : Ideal for daily use and long night rides",
-        "Convenient Charging : Easy charging with common Type-C cables",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.fccracing.com/product/cyclami-1800-lumen-usb-rechargeable-bicycle-front-light"
-      },
-      "keywords": "Cyclami 1800 Lumen USB Rechargeable Bicycle Front Light Lights Cyclami",
-      "categoryPage": "electronics.html",
-      "categoryLabel": "Electronics",
-      "mainCategory": "lights",
-      "subCategory": ""
-    },
-    {
-      "id": 13,
-      "supplierProductId": 33155878,
-      "supplierSynced": true,
-      "sourceHandle": "cyclami-br2000-bicycle-light",
-      "sourceUrl": "https://www.fccracing.com/product/cyclami-br2000-bicycle-light",
-      "stockSource": "fcc",
-      "name": "Cyclami 2000LM BR2000 Rainproof Bicycle Light",
-      "brand": "Cyclami",
-      "description": "2000 Lumens Rechargeable Bike Front Light with Type-C Charging & IPX6 Waterproof Upgrade your cycling experience with this powerful 2000 Lumens Rechargeable Bike Front Light designed for night rides, city commutes, and outdoor adventures. Built with high-performance LED technology, this bike light delivers ultra-bright illumination that improves visibility and enhances riding safety on dark roads, trails, and low-light conditions. The built-in 4500mAh lithium battery provides a long runtime of up to 10 hours, making it suitable for daily commuting as well as extended cycling trips. Its lightweight and compact design allows easy installation without adding extra bulk to your handlebar setup. With fast Type-C charging, battery level alerts, multiple lighting modes, and IPX6 waterproof protection, this bicycle front light is made to perform reliably in different weather conditions. Whether ",
-      "price": 4300,
-      "mrp": "Rs 4,500",
-      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/eSNNFA6Y.webp",
-      "images": [
-        "https://cdn.dotpe.in/longtail/store-items/8102112/eSNNFA6Y.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/jIuSXmAk.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/jInHsXDT.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/fnk8dyPg.webp"
-      ],
-      "sizes": [
-        "2000"
-      ],
-      "sizeAvailability": {
-        "2000": true
-      },
-      "variants": [
-        {
-          "id": 7386706,
-          "title": "2000",
-          "available": true,
-          "price": 4300,
-          "compare_at_price": 4500,
-          "option1": "[object Object]",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : Cyclami",
-        "Product Type : Lights",
-        "Brightness : Ultra-bright 2000 lumens LED output for maximum road visibility",
-        "Battery Capacity : Built-in 4500mAh rechargeable lithium battery",
-        "Runtime : Up to 4–10 hours depending on lighting mode used",
-        "Charging Type : Fast and convenient Type-C charging support",
-        "Waterproof Rating : IPX6 waterproof protection for rainy conditions",
-        "Lighting Modes : Multiple adjustable brightness and flashing modes",
-        "Battery Alert : Smart battery level indicator for charging updates",
-        "Design : Lightweight, compact, and easy-to-mount body",
-        "Usage : Suitable for road cycling, mountain biking, commuting, and touring",
-        "Build : Durable construction for everyday outdoor riding use",
-        "LED Output : 2000 Lumens",
-        "Battery Type : Rechargeable Lithium Battery",
-        "Charging Port : Type-C USB",
-        "Waterproof Level : IPX6",
-        "Product Weight : 190g",
-        "Dimensions : 109 x 39 x 28mm",
-        "Material : Durable ABS + Aluminum Alloy",
-        "Mount Type : Handlebar Mount",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.fccracing.com/product/cyclami-br2000-bicycle-light"
-      },
-      "keywords": "Cyclami 2000LM BR2000 Rainproof Bicycle Light Lights Cyclami",
-      "categoryPage": "electronics.html",
-      "categoryLabel": "Electronics",
-      "mainCategory": "lights",
-      "subCategory": ""
-    },
-    {
       "id": 33,
       "supplierProductId": 32854414,
       "supplierSynced": true,
@@ -631,6 +448,59 @@
       "subCategory": ""
     },
     {
+      "id": 28,
+      "supplierProductId": 33155886,
+      "supplierSynced": true,
+      "sourceHandle": "cyclami-1800-lumen-usb-rechargeable-bicycle-front-light",
+      "sourceUrl": "https://www.fccracing.com/product/cyclami-1800-lumen-usb-rechargeable-bicycle-front-light",
+      "stockSource": "fcc",
+      "name": "Cyclami Ai 1200 Lumen Bicycle Front Light",
+      "brand": "Cyclami",
+      "description": "Illuminate your ride with confidence using the Cyclami AI 1200 Lumen Bicycle Front Light, a high-performance rechargeable bicycle front light designed for road cycling, mountain biking, commuting, touring, gravel riding, and off-road adventures. Delivering a powerful 1200-lumen output, this Cyclami AI-1200 Bike Light provides bright, wide, and clear illumination to help you see the road, trail, turns, and obstacles ahead during low-light and night-time rides. Whether you're commuting through city streets, training before sunrise, riding after sunset, or exploring dark MTB and off-road trails, this 1200 lumen bike headlight offers a practical combination of brightness, battery capacity, versatile lighting modes, convenient charging, flexible mounting, and weather-resistant protection. A built-in 2500mAh rechargeable battery provides dependable power for regular cycling, commuting, trainin",
+      "price": 3000,
+      "mrp": "Rs 3,200",
+      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/OBm5xlge.webp",
+      "images": [
+        "https://cdn.dotpe.in/longtail/store-items/8102112/OBm5xlge.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/UJVzAHoX.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/6jK1lPs7.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/aFAjYVgG.webp"
+      ],
+      "sizes": [
+        "1200"
+      ],
+      "sizeAvailability": {
+        "1200": true
+      },
+      "variants": [
+        {
+          "id": 7422772,
+          "title": "1200",
+          "available": true,
+          "price": 3000,
+          "compare_at_price": 3200,
+          "option1": "[object Object]",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : Cyclami",
+        "Product Type : Lights",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.fccracing.com/product/cyclami-1800-lumen-usb-rechargeable-bicycle-front-light"
+      },
+      "keywords": "Cyclami Ai 1200 Lumen Bicycle Front Light Lights Cyclami",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "lights",
+      "subCategory": ""
+    },
+    {
       "id": 9,
       "supplierProductId": 33155883,
       "supplierSynced": true,
@@ -779,6 +649,77 @@
         "url": "https://www.fccracing.com/product/cyclami-br1000-super-bright-led-bicycle-headlight"
       },
       "keywords": "Cyclami BR1000 Super Bright LED Bicycle Headlight Lights Cyclami",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "lights",
+      "subCategory": ""
+    },
+    {
+      "id": 13,
+      "supplierProductId": 33155878,
+      "supplierSynced": true,
+      "sourceHandle": "cyclami-br2000-bicycle-light",
+      "sourceUrl": "https://www.fccracing.com/product/cyclami-br2000-bicycle-light",
+      "stockSource": "fcc",
+      "name": "Cyclami BR2000 Rainproof Bicycle Light 2000Lm",
+      "brand": "Cyclami",
+      "description": "2000 Lumens Rechargeable Bike Front Light with Type-C Charging & IPX6 Waterproof Upgrade your cycling experience with this powerful 2000 Lumens Rechargeable Bike Front Light designed for night rides, city commutes, and outdoor adventures. Built with high-performance LED technology, this bike light delivers ultra-bright illumination that improves visibility and enhances riding safety on dark roads, trails, and low-light conditions. The built-in 4500mAh lithium battery provides a long runtime of up to 10 hours, making it suitable for daily commuting as well as extended cycling trips. Its lightweight and compact design allows easy installation without adding extra bulk to your handlebar setup. With fast Type-C charging, battery level alerts, multiple lighting modes, and IPX6 waterproof protection, this bicycle front light is made to perform reliably in different weather conditions. Whether ",
+      "price": 4300,
+      "mrp": "Rs 4,500",
+      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/eSNNFA6Y.webp",
+      "images": [
+        "https://cdn.dotpe.in/longtail/store-items/8102112/eSNNFA6Y.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/jIuSXmAk.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/jInHsXDT.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/fnk8dyPg.webp"
+      ],
+      "sizes": [
+        "2000"
+      ],
+      "sizeAvailability": {
+        "2000": true
+      },
+      "variants": [
+        {
+          "id": 7386706,
+          "title": "2000",
+          "available": true,
+          "price": 4300,
+          "compare_at_price": 4500,
+          "option1": "[object Object]",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : Cyclami",
+        "Product Type : Lights",
+        "Brightness : Ultra-bright 2000 lumens LED output for maximum road visibility",
+        "Battery Capacity : Built-in 4500mAh rechargeable lithium battery",
+        "Runtime : Up to 4–10 hours depending on lighting mode used",
+        "Charging Type : Fast and convenient Type-C charging support",
+        "Waterproof Rating : IPX6 waterproof protection for rainy conditions",
+        "Lighting Modes : Multiple adjustable brightness and flashing modes",
+        "Battery Alert : Smart battery level indicator for charging updates",
+        "Design : Lightweight, compact, and easy-to-mount body",
+        "Usage : Suitable for road cycling, mountain biking, commuting, and touring",
+        "Build : Durable construction for everyday outdoor riding use",
+        "LED Output : 2000 Lumens",
+        "Battery Type : Rechargeable Lithium Battery",
+        "Charging Port : Type-C USB",
+        "Waterproof Level : IPX6",
+        "Product Weight : 190g",
+        "Dimensions : 109 x 39 x 28mm",
+        "Material : Durable ABS + Aluminum Alloy",
+        "Mount Type : Handlebar Mount",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.fccracing.com/product/cyclami-br2000-bicycle-light"
+      },
+      "keywords": "Cyclami BR2000 Rainproof Bicycle Light 2000Lm Lights Cyclami",
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
@@ -992,6 +933,45 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "sensors",
+      "subCategory": ""
+    },
+    {
+      "id": 23,
+      "supplierProductId": 32167372,
+      "supplierSynced": true,
+      "sourceHandle": "Cyclami-1200-Lumen-High-Brightness-Bicycle-Light",
+      "sourceUrl": "https://www.fccracing.com/product/Cyclami-1200-Lumen-High-Brightness-Bicycle-Light",
+      "stockSource": "fcc",
+      "name": "Cyclami Cyc 1200 Lumen High Brightness Bicycle Light",
+      "brand": "Cyclami",
+      "description": "Product Specification Light intensity - 1200 Lumen Lighting Mode - High/Medium/Low/Burst/Sos strobe Wick Model - 2*Osram P7 Batteries - 18650 Rechargeable lithium battery 2500Mah Endurance - Approx 4.5-13H (Laboratory data) Material - Aluminum Waterproofing - IPX6 Sizes - 109x39x28mm weights - ~~ 164g",
+      "price": 4200,
+      "mrp": "Rs 4,500",
+      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/i7Y8CR4p.webp",
+      "images": [
+        "https://cdn.dotpe.in/longtail/store-items/8102112/i7Y8CR4p.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/Ym2mvYfI.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/CbAqWBsk.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/eczreFCC.webp"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [],
+      "available": true,
+      "specs": [
+        "Brand : Cyclami",
+        "Product Type : Lights",
+        "Five customizable modes : High, Medium, Low, Burst, and SOS Strobe, tailored for different scenarios—from night rides to distress signaling.",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.fccracing.com/product/Cyclami-1200-Lumen-High-Brightness-Bicycle-Light"
+      },
+      "keywords": "Cyclami Cyc 1200 Lumen High Brightness Bicycle Light Lights Cyclami",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "lights",
       "subCategory": ""
     },
     {
