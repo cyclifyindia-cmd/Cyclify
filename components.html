@@ -42,8 +42,8 @@ body{background:#f5f5f5;padding-bottom:80px}
 .category-pill{min-width:96px;border:none;background:white;padding:0;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:bold;color:#222;cursor:pointer;scroll-snap-align:start;position:relative}
 .category-icon{width:70px;height:58px;border-radius:14px;background:#eef5ff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
 .category-icon img{width:100%;height:100%;object-fit:contain;padding:6px}
-.category-pill.active{color:#0039a6}
-.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:#0039a6}
+.category-pill.active{color:#ff5a00}
+.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:linear-gradient(90deg,#ff5a00 0 68%,#0a9e00 68% 100%)}
 .category-summary{padding:12px 15px;background:#f5f5f5;font-size:14px;font-weight:bold;color:#333}
 .products{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
 .card{background:white;border-right:1px solid #eee;border-bottom:1px solid #eee;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
@@ -408,15 +408,15 @@ window.cyclifyMergeSupplierProducts(products,"components.html");
 window.cyclifyMergeFccProducts(products,"components.html");
 window.cyclifyMergeCadenceProducts(products,"components.html");
 const categories=[
-{key:"drivetrain",label:"Drivetrain",image:"assets/products/thinkrider-12-speed-11-34-cassette-1.jpg"},
-{key:"maintenance",label:"Maintenance",image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp"},
-{key:"cockpit",label:"Cockpit",image:"assets/products/toseek-tr30-handlebar-2.webp"}
+{key:"drivetrain",label:"Drivetrain",image:"assets/categories/internal-components-v2.png",size:"300% 200%",position:"0% 0%"},
+{key:"maintenance",label:"Maintenance",image:"assets/categories/internal-components-v2.png",size:"300% 200%",position:"50% 0%"},
+{key:"cockpit",label:"Cockpit",image:"assets/categories/internal-components-v2.png",size:"300% 200%",position:"100% 0%"}
 ];
 
 const wheelSubCategories=[
-{key:"tools",parent:"maintenance",label:"Tools",image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp"},
-{key:"handlebars",parent:"cockpit",label:"Handlebars",image:"assets/products/toseek-tr30-handlebar-2.webp"},
-{key:"aerobars",parent:"cockpit",label:"Aerobars",image:"assets/products/toseek-ttf10-tt-bar-2.webp"}
+{key:"tools",parent:"maintenance",label:"Tools",image:"assets/categories/internal-components-v2.png",size:"300% 200%",position:"0% 100%"},
+{key:"handlebars",parent:"cockpit",label:"Handlebars",image:"assets/categories/internal-components-v2.png",size:"300% 200%",position:"50% 100%"},
+{key:"aerobars",parent:"cockpit",label:"Aerobars",image:"assets/categories/internal-components-v2.png",size:"300% 200%",position:"100% 100%"}
 ];
 const container=document.getElementById("products");
 const categoryStrip=document.getElementById("categoryStrip");
@@ -453,7 +453,7 @@ activeSubCategory="";
 
 categoryStrip.innerHTML=visibleCategories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
@@ -469,7 +469,7 @@ activeSubCategory="";
 
 subCategoryStrip.innerHTML=visibleSubCategories.map(category=>`
 <button class="category-pill ${category.key===activeSubCategory?"active":""}" onclick="selectSubCategory('${category.key}')">
-<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
@@ -646,5 +646,3 @@ else{cartCount.style.display="none";}
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
-
-

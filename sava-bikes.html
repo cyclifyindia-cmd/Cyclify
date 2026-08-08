@@ -240,7 +240,7 @@ padding:6px;
 }
 
 .category-pill.active{
-color:#0039a6;
+color:#ff5a00;
 }
 
 .category-pill.active::after{
@@ -250,7 +250,7 @@ bottom:-10px;
 width:44px;
 height:4px;
 border-radius:8px;
-background:#0039a6;
+background:linear-gradient(90deg,#ff5a00 0 68%,#0a9e00 68% 100%);
 }
 
 .category-summary{
@@ -893,8 +893,8 @@ const filterSelect=document.getElementById("filterSelect");
 let activeCategory=new URLSearchParams(window.location.search).get("category")||"sava";
 
 const categories=[
-{key:"sava",label:"SAVA",image:"assets/products/sava-hawkeye.jpg"},
-{key:"elves",label:"ELVES",image:"assets/products/elves-falath-evo-plus-2.png"}
+{key:"sava",label:"SAVA",image:"assets/categories/internal-bikes-v2.png",size:"200% 100%",position:"0% 0%"},
+{key:"elves",label:"ELVES",image:"assets/categories/internal-bikes-v2.png",size:"200% 100%",position:"100% 0%"}
 ];
 
 function getProductCategory(product){
@@ -991,7 +991,7 @@ Add to cart
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
@@ -1195,4 +1195,3 @@ reader.readAsDataURL(file);
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
-

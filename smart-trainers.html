@@ -200,7 +200,7 @@ padding:6px;
 }
 
 .category-pill.active{
-color:#0039a6;
+color:#ff5a00;
 }
 
 .category-pill.active::after{
@@ -210,7 +210,7 @@ bottom:-10px;
 width:44px;
 height:4px;
 border-radius:8px;
-background:#0039a6;
+background:linear-gradient(90deg,#ff5a00 0 68%,#0a9e00 68% 100%);
 }
 
 .category-summary{
@@ -1002,13 +1002,13 @@ const filterSelect=document.getElementById("filterSelect");
 let activeCategory=new URLSearchParams(window.location.search).get("category")||"smart-trainer";
 
 const categories=[
-{key:"smart-trainer",label:"Smart Trainer",image:"assets/products/thinkrider-x2-max-1.jpg"},
-{key:"bike-computer",label:"Bike Computer",image:"assets/products/cat-bike-computer.png"},
-{key:"lights",label:"Lights",image:"assets/products/cat-lights.png"},
-{key:"electric-pump",label:"Electric Pump",image:"assets/products/cat-electric-pump.png"},
-{key:"power-meter",label:"Power Meter",image:"assets/products/cat-power-meter.png"},
-{key:"sensors",label:"Sensors",image:"assets/products/cyclami-c1-sensor-1.webp"},
-{key:"wireless-groupset",label:"Electric Groupset",image:"assets/products/cat-wireless-groupset.png"}
+{key:"smart-trainer",label:"Smart Trainer",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"0% 0%"},
+{key:"bike-computer",label:"Bike Computer",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"33.333% 0%"},
+{key:"lights",label:"Lights",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"66.667% 0%"},
+{key:"electric-pump",label:"Electric Pump",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"100% 0%"},
+{key:"power-meter",label:"Power Meter",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"0% 100%"},
+{key:"sensors",label:"Sensors",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"33.333% 100%"},
+{key:"wireless-groupset",label:"Electric Groupset",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"66.667% 100%"}
 ];
 
 function getProductCategory(product){
@@ -1101,7 +1101,7 @@ activeCategory="";
 
 categoryStrip.innerHTML=visibleCategories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
 <span>${category.label}</span>
 </button>
 `).join("");

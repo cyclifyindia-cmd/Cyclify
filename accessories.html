@@ -47,8 +47,8 @@ html{scroll-behavior:smooth}
 .category-pill:hover{transform:translateY(-1px)}
 .category-icon{width:72px;height:60px;border-radius:14px;background:#eef5ff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
 .category-icon img{width:100%;height:100%;object-fit:contain;padding:7px}
-.category-pill.active{color:#0039a6}
-.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:#0039a6}
+.category-pill.active{color:#ff5a00}
+.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:linear-gradient(90deg,#ff5a00 0 68%,#0a9e00 68% 100%)}
 .category-summary{padding:12px 15px;background:#f5f5f5;font-size:14px;font-weight:bold;color:#333}
 .products{display:grid;grid-template-columns:repeat(2,1fr);gap:0;animation:catalogFade .38s ease both}
 .card{background:white;border-right:1px solid #eee;border-bottom:1px solid #eee;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;animation:cardSettle .42s ease both}
@@ -142,12 +142,12 @@ window.cyclifyMergeSupplierProducts(products,"accessories.html");
 window.cyclifyMergeFccProducts(products,"accessories.html");
 window.cyclifyMergeCadenceProducts(products,"accessories.html");
 const categories=[
-{key:"mounts-cases",label:"Mounts & Cases",image:"assets/categories/CAT_ACC.png"},
-{key:"bags",label:"Bags",image:"assets/categories/CAT_ACC.png"},
-{key:"bottle-cages",label:"Bottle Cages",image:"assets/categories/CAT_ACC.png"},
-{key:"pedals-cleats",label:"Pedals & Cleats",image:"assets/categories/CAT_ACC.png"},
-{key:"tapes",label:"Tapes",image:"assets/categories/CAT_ACC.png"},
-{key:"other",label:"Other",image:"assets/categories/CAT_ACC.png"}
+{key:"mounts-cases",label:"Mounts & Cases",image:"assets/categories/internal-accessories-v2.png",size:"300% 200%",position:"0% 0%"},
+{key:"bags",label:"Bags",image:"assets/categories/internal-accessories-v2.png",size:"300% 200%",position:"50% 0%"},
+{key:"bottle-cages",label:"Bottle Cages",image:"assets/categories/internal-accessories-v2.png",size:"300% 200%",position:"100% 0%"},
+{key:"pedals-cleats",label:"Pedals & Cleats",image:"assets/categories/internal-accessories-v2.png",size:"300% 200%",position:"0% 100%"},
+{key:"tapes",label:"Tapes",image:"assets/categories/internal-accessories-v2.png",size:"300% 200%",position:"50% 100%"},
+{key:"other",label:"Other",image:"assets/categories/internal-accessories-v2.png",size:"300% 200%",position:"100% 100%"}
 ];
 
 const container=document.getElementById("products");
@@ -173,7 +173,7 @@ return product.mainCategory||product.category||"other";
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
 <span>${category.label}</span>
 </button>
 `).join("");

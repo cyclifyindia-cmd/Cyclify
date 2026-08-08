@@ -42,8 +42,8 @@ body{background:#f5f5f5;padding-bottom:80px}
 .category-pill{min-width:96px;border:none;background:white;padding:0;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:bold;color:#222;cursor:pointer;scroll-snap-align:start;position:relative}
 .category-icon{width:70px;height:58px;border-radius:14px;background:#eef5ff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
 .category-icon img{width:100%;height:100%;object-fit:contain;padding:6px}
-.category-pill.active{color:#0039a6}
-.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:#0039a6}
+.category-pill.active{color:#ff5a00}
+.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:linear-gradient(90deg,#ff5a00 0 68%,#0a9e00 68% 100%)}
 .category-summary{padding:12px 15px;background:#f5f5f5;font-size:14px;font-weight:bold;color:#333}
 .products{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
 .card{background:white;border-right:1px solid #eee;border-bottom:1px solid #eee;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
@@ -401,18 +401,18 @@ window.cyclifyMergeFccProducts(products,"wheels-tyres.html");
 window.cyclifyMergeCadenceProducts(products,"wheels-tyres.html");
 
 const categories=[
-{key:"wheels",label:"Wheels",image:"assets/products/orome-valar-th50d-black-main.jpg"},
-{key:"tyres",label:"Tyres",image:"assets/categories/CAT_Wheels.png"},
-{key:"tubes",label:"Tubes",image:"assets/products/cyclami-tpu-tube-1.webp"},
-{key:"valve",label:"Valve",image:"assets/products/cyclami-presta-valves-1.webp"},
-{key:"freehub-body",label:"Freehub Body",image:"assets/categories/CAT_Wheels.png"},
-{key:"tools",label:"Tools",image:"assets/products/cyclami-tyre-lever-3.webp"},
-{key:"hubs",label:"Hubs",image:"assets/categories/CAT_Wheels.png"}
+{key:"wheels",label:"Wheels",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"0% 0%"},
+{key:"tyres",label:"Tyres",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"33.333% 0%"},
+{key:"tubes",label:"Tubes",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"66.667% 0%"},
+{key:"valve",label:"Valve",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"100% 0%"},
+{key:"freehub-body",label:"Freehub Body",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"0% 100%"},
+{key:"tools",label:"Tools",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"33.333% 100%"},
+{key:"hubs",label:"Hubs",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"66.667% 100%"}
 ];
 
 const wheelSubCategories=[
-{key:"alloy",label:"Alloy",image:"assets/categories/CAT_Wheels.png"},
-{key:"carbon",label:"Carbon",image:"assets/products/orome-valar-th50d-black-main.jpg"}
+{key:"alloy",label:"Alloy",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"100% 100%"},
+{key:"carbon",label:"Carbon",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"0% 0%"}
 ];
 
 const container=document.getElementById("products");
@@ -450,7 +450,7 @@ activeSubCategory="";
 
 categoryStrip.innerHTML=visibleCategories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
@@ -466,7 +466,7 @@ activeSubCategory="";
 
 subCategoryStrip.innerHTML=visibleSubCategories.map(category=>`
 <button class="category-pill ${category.key===activeSubCategory?"active":""}" onclick="selectSubCategory('${category.key}')">
-<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
