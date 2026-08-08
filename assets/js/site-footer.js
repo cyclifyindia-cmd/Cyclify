@@ -4,25 +4,28 @@
   const style = document.createElement("style");
   style.id = "cyclifyFooterStyles";
   style.textContent = `
-    .cyclify-card-pricing{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"title title" "price actions" "sub actions";column-gap:7px;row-gap:4px;margin-top:2px;font-family:Arial,Helvetica,sans-serif}
-    .cyclify-card-deal-title{grid-area:title;display:flex;align-items:center;gap:4px;height:11px;font-size:9px;font-style:italic;font-weight:900;line-height:1;letter-spacing:.045em;text-transform:uppercase}
+    .card{container-type:inline-size}
+    .card .details h3{font-size:15px;line-height:1.3;margin-bottom:8px}
+    .cyclify-card-pricing{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"title title" "price actions" "sub actions";column-gap:14px;row-gap:7px;margin-top:4px;padding:11px 12px 12px;border:1px solid #f0dfd2;border-radius:12px;background:linear-gradient(135deg,#fff 0%,#fffaf5 100%);box-shadow:0 5px 16px rgba(42,30,18,.055);font-family:Arial,Helvetica,sans-serif}
+    .cyclify-card-deal-title{grid-area:title;display:flex;align-items:center;gap:5px;font-size:10.5px;font-style:italic;font-weight:900;line-height:1;letter-spacing:.05em;text-transform:uppercase}
     .cyclify-card-deal-brand{color:#ef5b12}
     .cyclify-card-deal-word{color:#b47b12;background:linear-gradient(105deg,#8b5a05 0%,#e7b63b 35%,#fff1a4 48%,#c8870b 61%,#8b5a05 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:cyclifyDealGlaze 2.8s ease-in-out infinite}
     @keyframes cyclifyDealGlaze{0%,24%{background-position:100% 0}70%,100%{background-position:-110% 0}}
-    .cyclify-card-price-line,.cyclify-card-sub-line{display:flex;align-items:center;min-width:0;gap:5px;white-space:nowrap}.cyclify-card-price-line{grid-area:price}.cyclify-card-sub-line{grid-area:sub}
-    .card .price{margin:0!important;font-weight:700!important;letter-spacing:-.015em;line-height:1.05}
-    .card .mrp{display:inline-block;margin:0!important;color:#777!important;font-size:10.5px!important;font-weight:600;line-height:1.2;text-decoration:none!important;background:linear-gradient(to bottom,transparent 47%,rgba(184,112,24,.82) 48%,rgba(184,112,24,.82) 55%,transparent 56%)}
-    .cyclify-card-saving{display:inline-flex;align-items:center;border-radius:999px;background:#eaf8ee;color:#087a3d;padding:3px 7px;font-size:10.5px;font-weight:800;line-height:1}
-    .cyclify-card-discount{display:inline-flex;align-items:center;border-radius:4px;background:#ff5a00;color:#fff;padding:3px 6px;font-size:10px;font-weight:900;line-height:1}
-    .cyclify-card-actions{grid-area:actions;align-self:end;display:grid;justify-items:end;gap:5px}
-    .cyclify-card-shipping{display:inline-flex;align-items:center;gap:2px;color:#087a3d;font-size:10.5px;font-weight:800;line-height:1}
+    .cyclify-card-price-line,.cyclify-card-sub-line{display:flex;align-items:center;min-width:0;gap:7px;white-space:nowrap}.cyclify-card-price-line{grid-area:price}.cyclify-card-sub-line{grid-area:sub}
+    .card .price{margin:0!important;font-size:20px!important;font-weight:750!important;letter-spacing:-.025em;line-height:1.05;color:#141414}
+    .card .mrp{display:inline-block;margin:0!important;color:#727272!important;font-size:11.5px!important;font-weight:650;line-height:1.2;text-decoration:none!important;background:linear-gradient(to bottom,transparent 47%,rgba(201,113,26,.8) 48%,rgba(201,113,26,.8) 55%,transparent 56%)}
+    .cyclify-card-saving{display:inline-flex;align-items:center;border-radius:999px;background:#e9f8ee;color:#087a3d;padding:4px 8px;font-size:11.5px;font-weight:850;line-height:1}
+    .cyclify-card-discount{display:inline-flex;align-items:center;border-radius:5px;background:#ff5a00;color:#fff;padding:4px 7px;font-size:10.5px;font-weight:900;line-height:1;box-shadow:0 2px 5px rgba(255,90,0,.18)}
+    .cyclify-card-actions{grid-area:actions;align-self:end;display:grid;justify-items:end;gap:7px}
+    .cyclify-card-shipping{display:inline-flex;align-items:center;gap:3px;color:#087a3d;font-size:11.5px;font-weight:850;line-height:1}
     .cyclify-card-pricing .bottom{display:flex!important;align-items:center!important;gap:5px!important;margin:0!important}
-    .cyclify-card-pricing .add{min-height:0!important;padding:5px 10px!important;border:1px solid #0754c9!important;border-radius:7px!important;background:#0754c9!important;color:#fff!important;font-size:10px!important;line-height:1!important;white-space:nowrap}
-    .cyclify-card-cart-add{display:grid;place-items:center;width:25px;height:25px;padding:0;border:1px solid #d5dae1;border-radius:7px;background:#fff;color:#0754c9;cursor:pointer;box-shadow:0 2px 6px rgba(16,24,40,.08)}
-    .cyclify-card-cart-add svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .cyclify-card-pricing .add{min-height:32px!important;padding:7px 13px!important;border:1px solid #0754c9!important;border-radius:8px!important;background:linear-gradient(180deg,#1264dc,#0754c9)!important;color:#fff!important;font-size:11px!important;font-weight:850!important;line-height:1!important;white-space:nowrap;box-shadow:0 4px 9px rgba(7,84,201,.2)}
+    .cyclify-card-cart-add{display:grid;place-items:center;width:32px;height:32px;padding:0;border:1px solid #ccd6e5;border-radius:8px;background:#fff;color:#0754c9;cursor:pointer;box-shadow:0 3px 8px rgba(16,24,40,.09)}
+    .cyclify-card-cart-add svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     .cyclify-card-cart-add.added{border-color:#087443;background:#ecfdf3;color:#087443}
     .price-line .deal-save,.price-line .deal-off,.price-line .shipping-note{font-size:11.5px!important}.price-line .deal-save{padding:4px 9px!important}.price-line .deal-off{padding:5px 8px!important}.price-line .shipping-note{font-weight:800!important}
-    @media(max-width:480px){.cyclify-card-pricing{column-gap:4px}.cyclify-card-price-line,.cyclify-card-sub-line{gap:3px}.card .mrp{font-size:9px!important}.cyclify-card-saving,.cyclify-card-shipping{font-size:9px;padding-left:4px;padding-right:4px}.cyclify-card-discount{font-size:8.5px;padding-left:4px;padding-right:4px}.cyclify-card-shipping{padding-left:0;padding-right:0}.cyclify-card-pricing .add{padding:4px 7px!important;font-size:8.5px!important}.price-line .deal-save,.price-line .deal-off,.price-line .shipping-note{font-size:10px!important}}
+    @container (max-width:360px){.card .details h3{font-size:12.5px}.cyclify-card-pricing{grid-template-columns:minmax(0,1fr);grid-template-areas:"title" "price" "sub" "actions";gap:6px;padding:9px}.cyclify-card-deal-title{font-size:9px}.cyclify-card-price-line,.cyclify-card-sub-line{gap:4px}.card .price{font-size:16px!important}.card .mrp{font-size:9.5px!important}.cyclify-card-saving{font-size:9px;padding:3px 5px}.cyclify-card-discount{font-size:8.5px;padding:3px 5px}.cyclify-card-actions{width:100%;grid-template-columns:1fr auto;align-items:center;gap:5px}.cyclify-card-actions .bottom{grid-column:2;grid-row:1}.cyclify-card-shipping{grid-column:1;grid-row:1;justify-self:start;font-size:9.5px}.cyclify-card-pricing .add{min-height:29px!important;padding:6px 9px!important;font-size:9px!important}.cyclify-card-cart-add{width:29px;height:29px}.cyclify-card-cart-add svg{width:15px;height:15px}}
+    @media(max-width:480px){.price-line .deal-save,.price-line .deal-off,.price-line .shipping-note{font-size:10px!important}}
     .cyclify-footer{position:relative;margin-top:34px;background:#1d1d1f;color:#f8fafc;font-family:Arial,Helvetica,sans-serif;letter-spacing:0}
     .cyclify-footer::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#ff7a00 0 33%,#fff 33% 66%,#159447 66%)}
     .cyclify-footer *{box-sizing:border-box}
