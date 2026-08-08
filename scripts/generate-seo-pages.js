@@ -6,13 +6,60 @@ const root = path.resolve(__dirname, '..');
 const templatePath = path.join(root, 'product.html');
 const outputDir = path.join(root, 'products');
 const routesPath = path.join(root, 'assets', 'js', 'product-routes.js');
+const searchIndexPath = path.join(root, 'assets', 'js', 'search-index.js');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const seoStatePath = path.join(root, 'assets', 'data', 'seo-lastmod.json');
 const supplierPath = path.join(root, 'assets', 'data', 'cycletime-products.json');
 const fccSupplierPath = path.join(root, 'assets', 'data', 'fcc-products.json');
 const cadenceSupplierPath = path.join(root, 'assets', 'data', 'cadence-products.json');
 const guidesPath = path.join(root, 'assets', 'data', 'guides.json');
-const versionedScripts = ['supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'site-footer.js'];
+const categoryCatalogs = [
+  { page: 'bikes-frames.html', file: 'catalog-bikes-frames.js' },
+  { page: 'wearables.html', file: 'catalog-wearables.js' },
+  { page: 'accessories.html', file: 'catalog-accessories.js' },
+  { page: 'components.html', file: 'catalog-components.js' },
+  { page: 'wheels-tyres.html', file: 'catalog-wheels-tyres.js' },
+  { page: 'electronics.html', file: 'catalog-electronics.js' }
+];
+
+function supplierProductsFrom(file) {
+  if (!fs.existsSync(file)) return [];
+  return JSON.parse(fs.readFileSync(file, 'utf8')).products || [];
+}
+
+const supplierCatalogues = {
+  cycletime: supplierProductsFrom(supplierPath),
+  fcc: supplierProductsFrom(fccSupplierPath),
+  cadence: supplierProductsFrom(cadenceSupplierPath).filter(item => {
+    const normalized = String(item.brand || '') + ' ' + String(item.name || '');
+    return !/(xoss|cyclami|thinkrider)/i.test(normalized);
+  })
+};
+
+categoryCatalogs.forEach(({ page, file }) => {
+  const catalogue = {
+    cycletime: supplierCatalogues.cycletime.filter(item => item.categoryPage === page),
+    fcc: supplierCatalogues.fcc.filter(item => item.categoryPage === page),
+    cadence: supplierCatalogues.cadence.filter(item => item.categoryPage === page)
+  };
+  const source = '(function(){\n' +
+    '  const normalise=value=>String(value||"").toLowerCase().replace(/[^a-z0-9]+/g,"");\n' +
+    '  const merge=(target,items,page)=>{items.filter(item=>!page||item.categoryPage===page).forEach(item=>{const existing=target.find(product=>product.id===item.id||product.sourceHandle===item.sourceHandle||normalise(product.name)===normalise(item.name));if(existing){const id=existing.id;Object.assign(existing,item,{id});}else{target.push({...item});}});return target;};\n' +
+    '  const catalogue=' + JSON.stringify(catalogue) + ';\n' +
+    '  window.CYCLIFY_CYCLETIME_PRODUCTS=catalogue.cycletime;\n' +
+    '  window.CYCLIFY_FCC_PRODUCTS=catalogue.fcc;\n' +
+    '  window.CYCLIFY_CADENCE_PRODUCTS=catalogue.cadence;\n' +
+    '  window.cyclifyMergeSupplierProducts=(target,page)=>merge(target,catalogue.cycletime,page);\n' +
+    '  window.cyclifyMergeFccProducts=(target,page)=>merge(target,catalogue.fcc,page);\n' +
+    '  window.cyclifyMergeCadenceProducts=(target,page)=>merge(target,catalogue.cadence,page);\n' +
+    '})();\n';
+  fs.writeFileSync(path.join(root, 'assets', 'js', file), source, 'utf8');
+});
+
+const versionedScripts = [
+  'product-routes.js', 'supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'search-index.js', 'site-footer.js',
+  ...categoryCatalogs.map(item => item.file)
+];
 const scriptVersions = Object.fromEntries(versionedScripts.map(file => {
   const source = fs.readFileSync(path.join(root, 'assets', 'js', file));
   return [file, crypto.createHash('sha256').update(source).digest('hex').slice(0, 10)];
@@ -27,7 +74,8 @@ function versionCustomerScripts(source) {
   return updated;
 }
 
-const template = versionCustomerScripts(fs.readFileSync(templatePath, 'utf8'));
+const rawTemplate = fs.readFileSync(templatePath, 'utf8');
+let template = rawTemplate;
 const today = new Date().toISOString().slice(0, 10);
 let previousSeoState = {};
 try { previousSeoState = JSON.parse(fs.readFileSync(seoStatePath, 'utf8')); }
@@ -38,6 +86,19 @@ function stableHash(value) {
   return crypto.createHash('sha256').update(typeof value === 'string' ? value : JSON.stringify(value)).digest('hex').slice(0, 16);
 }
 
+function writeFileWithRetry(file, content, encoding = 'utf8') {
+  for (let attempt = 1; attempt <= 8; attempt += 1) {
+    try {
+      fs.writeFileSync(file, content, encoding);
+      return;
+    } catch (error) {
+      const retryable = ['UNKNOWN', 'EBUSY', 'EPERM', 'EACCES'].includes(error.code);
+      if (!retryable || attempt === 8) throw error;
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, attempt * 40);
+    }
+  }
+}
+
 function lastmodFor(url, fingerprint) {
   const hash = stableHash(fingerprint);
   const previous = previousSeoState[url];
@@ -46,8 +107,7 @@ function lastmodFor(url, fingerprint) {
   return lastmod;
 }
 
-function extractProducts(source) {
-  const marker = 'const products=';
+function extractProducts(source, marker = 'const products=') {
   const markerIndex = source.indexOf(marker);
   if (markerIndex < 0) throw new Error('Product data was not found in product.html');
   const start = source.indexOf('[', markerIndex);
@@ -178,6 +238,11 @@ function existingRoutes() {
 }
 
 const products = extractProducts(template);
+const homepageSearchProducts = extractProducts(
+  fs.readFileSync(path.join(root, 'index.html'), 'utf8'),
+  'const searchProducts ='
+);
+const homepageSearchById = new Map(homepageSearchProducts.map(product => [String(product.id), product]));
 if (fs.existsSync(supplierPath)) {
   const supplierProducts = JSON.parse(fs.readFileSync(supplierPath, 'utf8')).products || [];
   supplierProducts.forEach(item => {
@@ -229,11 +294,30 @@ const routes = Object.fromEntries(products.map(product => {
 
 fs.mkdirSync(outputDir, { recursive: true });
 fs.mkdirSync(path.dirname(routesPath), { recursive: true });
-fs.writeFileSync(
-  routesPath,
-  '(function(){\n  const routes=' + JSON.stringify(routes, null, 2) + ';\n  window.CYCLIFY_PRODUCT_ROUTES=routes;\n  window.cyclifyProductUrl=function(id){return routes[id]||("product.html?id="+encodeURIComponent(id));};\n})();\n',
-  'utf8'
-);
+const routesSource = '(function(){\n  const routes=' + JSON.stringify(routes, null, 2) + ';\n  window.CYCLIFY_PRODUCT_ROUTES=routes;\n  window.cyclifyProductUrl=function(id){return routes[id]||("product.html?id="+encodeURIComponent(id));};\n})();\n';
+fs.writeFileSync(routesPath, routesSource, 'utf8');
+scriptVersions['product-routes.js'] = crypto.createHash('sha256').update(routesSource).digest('hex').slice(0, 10);
+template = versionCustomerScripts(rawTemplate);
+
+const categoryLabels = {
+  'bikes-frames.html': 'Bikes & Frames',
+  'wearables.html': 'Wearables',
+  'accessories.html': 'Accessories',
+  'components.html': 'Components',
+  'wheels-tyres.html': 'Wheels & Tyres',
+  'electronics.html': 'Electronics'
+};
+const compactSearchProducts = primaryProducts.map(product => ({
+  id: product.id,
+  name: cleanText(product.name),
+  price: Number(product.price) || 0,
+  image: product.image || (product.images || [])[0] || 'assets/Logo-dark-preview.png',
+  category: product.categoryLabel || categoryLabels[product.categoryPage] || product.category || homepageSearchById.get(String(product.id))?.category || 'Cycling',
+  keywords: cleanText(product.keywords || homepageSearchById.get(String(product.id))?.keywords || [product.mainCategory, product.subCategory, product.category].filter(Boolean).join(' '))
+}));
+const searchIndexSource = 'window.CYCLIFY_SEARCH_PRODUCTS=' + JSON.stringify(compactSearchProducts) + ';\n';
+fs.writeFileSync(searchIndexPath, searchIndexSource, 'utf8');
+scriptVersions['search-index.js'] = crypto.createHash('sha256').update(searchIndexSource).digest('hex').slice(0, 10);
 
 const generatedRoutes = new Set();
 const productLastmods = new Map();
@@ -339,10 +423,13 @@ for (const product of primaryProducts) {
   page = page.replace(/<meta name="twitter:title" content="[^"]*">/, '<meta name="twitter:title" content="' + escapeHtml(title) + '">');
   page = page.replace(/<meta name="twitter:description" content="[^"]*">/, '<meta name="twitter:description" content="' + escapeHtml(description) + '">');
   page = page.replace(/<meta name="twitter:image" content="[^"]*">/, '<meta name="twitter:image" content="' + escapeHtml(image) + '">');
-  page = page.replace('<script src="assets/js/product-routes.js"></script>', '<script>window.CYCLIFY_PRODUCT_ID=' + product.id + ';</script>\n<script src="assets/js/product-routes.js"></script>');
+  page = page.replace(
+    /<script src="assets\/js\/product-routes\.js(?:\?v=[^"]+)?"><\/script>/,
+    '<script>window.CYCLIFY_PRODUCT_ID=' + product.id + ';</script>\n$&'
+  );
   page = page.replace('</head>', '<script type="application/ld+json" id="cyclify-product-schema">\n' + JSON.stringify(schema, null, 2).replace(/<\//g, '<\\/') + '\n</script>\n</head>');
   page = page.replace('<body>', '<body>\n<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>' + escapeHtml(product.name) + '</h1><p>Price: Rs ' + Number(product.price).toLocaleString('en-IN') + '</p><p>' + escapeHtml(description) + '</p></main></noscript>');
-  fs.writeFileSync(path.join(root, route), page, 'utf8');
+  writeFileWithRetry(path.join(root, route), page, 'utf8');
 }
 
 const primaryByNameAndPrice = new Map(primaryProducts.map(product => [normalizedProductKey(product), product]));

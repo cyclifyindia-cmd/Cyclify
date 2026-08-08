@@ -18,10 +18,8 @@
 <meta name="twitter:title" content="Bicycle Tubes in India | Cyclify">
 <meta name="twitter:description" content="Shop lightweight TPU and bicycle inner tubes in popular road cycling sizes from Cyclify India.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/orome-valar-th50d-1.png">
-<script src="assets/js/product-routes.js"></script>
-<script src="assets/js/supplier-products.js?v=9a2423d531"></script>
-<script src="assets/js/fcc-products.js?v=e3c38db2c7"></script>
-<script src="assets/js/cadence-products.js?v=1191c82e93"></script>
+<script src="assets/js/product-routes.js?v=e4300b6893"></script>
+<script src="assets/js/catalog-wheels-tyres.js?v=53b8ef117b"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#f5f5f5;padding-bottom:80px}
@@ -309,6 +307,7 @@ gap:5px!important;
   ]
 }
 </script>
+<style>.card{content-visibility:auto;contain-intrinsic-size:0 430px}</style>
 </head>
 <body>
 <div class="topbar">
@@ -401,18 +400,18 @@ window.cyclifyMergeFccProducts(products,"wheels-tyres.html");
 window.cyclifyMergeCadenceProducts(products,"wheels-tyres.html");
 
 const categories=[
-{key:"wheels",label:"Wheels",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"0% 0%"},
-{key:"tyres",label:"Tyres",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"33.333% 0%"},
-{key:"tubes",label:"Tubes",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"66.667% 0%"},
-{key:"valve",label:"Valve",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"100% 0%"},
-{key:"freehub-body",label:"Freehub Body",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"0% 100%"},
-{key:"tools",label:"Tools",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"33.333% 100%"},
-{key:"hubs",label:"Hubs",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"66.667% 100%"}
+{key:"wheels",label:"Wheels",image:"assets/categories/internal-wheels-v2-optimized.webp",size:"400% 200%",position:"0% 0%"},
+{key:"tyres",label:"Tyres",image:"assets/categories/internal-wheels-v2-optimized.webp",size:"400% 200%",position:"33.333% 0%"},
+{key:"tubes",label:"Tubes",image:"assets/categories/internal-wheels-v2-optimized.webp",size:"400% 200%",position:"66.667% 0%"},
+{key:"valve",label:"Valve",image:"assets/categories/internal-wheels-v2-optimized.webp",size:"400% 200%",position:"100% 0%"},
+{key:"freehub-body",label:"Freehub Body",image:"assets/categories/internal-wheels-v2-optimized.webp",size:"400% 200%",position:"0% 100%"},
+{key:"tools",label:"Tools",image:"assets/categories/internal-wheels-v2-optimized.webp",size:"400% 200%",position:"33.333% 100%"},
+{key:"hubs",label:"Hubs",image:"assets/categories/internal-wheels-v2-optimized.webp",size:"400% 200%",position:"66.667% 100%"}
 ];
 
 const wheelSubCategories=[
-{key:"alloy",label:"Alloy",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"100% 100%"},
-{key:"carbon",label:"Carbon",image:"assets/categories/internal-wheels-v2.png",size:"400% 200%",position:"0% 0%"}
+{key:"alloy",label:"Alloy",image:"assets/categories/internal-wheels-v2-optimized.webp",size:"400% 200%",position:"100% 100%"},
+{key:"carbon",label:"Carbon",image:"assets/categories/internal-wheels-v2-optimized.webp",size:"400% 200%",position:"0% 0%"}
 ];
 
 const container=document.getElementById("products");
@@ -513,10 +512,10 @@ container.innerHTML=`<div class="empty-state">No products found in this category
 return;
 }
 
-filteredProducts.forEach(product=>{
-container.innerHTML+=`
+filteredProducts.forEach((product,index)=>{
+container.insertAdjacentHTML("beforeend",`
 <div class="card" onclick="openProduct(${product.id})" tabindex="0" role="link" onkeydown="handleCardKey(event,${product.id})">
-<img src="${product.image}" alt="${product.name}">
+<img src="${product.image}" alt="${product.name}" loading="${index<4?"eager":"lazy"}" decoding="async" fetchpriority="${index<2?"high":"auto"}">
 <div class="details">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
@@ -527,7 +526,7 @@ container.innerHTML+=`
 </div>
 </div>
 </div>
-`;
+`);
 });
 }
 

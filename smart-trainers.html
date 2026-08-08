@@ -18,10 +18,8 @@
 <meta name="twitter:title" content="Smart Bike Trainers in India | Cyclify">
 <meta name="twitter:description" content="Shop smart bike trainers and indoor cycling accessories in India with genuine products and free shipping from Cyclify.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/thinkrider-x2-max-1.jpg">
-<script src="assets/js/product-routes.js"></script>
-<script src="assets/js/supplier-products.js?v=9a2423d531"></script>
-<script src="assets/js/fcc-products.js?v=e3c38db2c7"></script>
-<script src="assets/js/cadence-products.js?v=1191c82e93"></script>
+<script src="assets/js/product-routes.js?v=e4300b6893"></script>
+<script src="assets/js/catalog-electronics.js?v=a39a4954f7"></script>
 <style>
 *{
 margin:0;
@@ -627,6 +625,7 @@ gap:5px!important;
   ]
 }
 </script>
+<style>.card{content-visibility:auto;contain-intrinsic-size:0 430px}</style>
 </head>
 <body>
 
@@ -1002,13 +1001,13 @@ const filterSelect=document.getElementById("filterSelect");
 let activeCategory=new URLSearchParams(window.location.search).get("category")||"smart-trainer";
 
 const categories=[
-{key:"smart-trainer",label:"Smart Trainer",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"0% 0%"},
-{key:"bike-computer",label:"Bike Computer",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"33.333% 0%"},
-{key:"lights",label:"Lights",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"66.667% 0%"},
-{key:"electric-pump",label:"Electric Pump",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"100% 0%"},
-{key:"power-meter",label:"Power Meter",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"0% 100%"},
-{key:"sensors",label:"Sensors",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"33.333% 100%"},
-{key:"wireless-groupset",label:"Electric Groupset",image:"assets/categories/internal-electronics-v2.png",size:"400% 200%",position:"66.667% 100%"}
+{key:"smart-trainer",label:"Smart Trainer",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"0% 0%"},
+{key:"bike-computer",label:"Bike Computer",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"33.333% 0%"},
+{key:"lights",label:"Lights",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"66.667% 0%"},
+{key:"electric-pump",label:"Electric Pump",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"100% 0%"},
+{key:"power-meter",label:"Power Meter",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"0% 100%"},
+{key:"sensors",label:"Sensors",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"33.333% 100%"},
+{key:"wireless-groupset",label:"Electric Groupset",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"66.667% 100%"}
 ];
 
 function getProductCategory(product){
@@ -1069,27 +1068,6 @@ cartCount.style.display="none";
 
 updateCartCount();
 
-products.forEach(product=>{
-container.innerHTML+=`
-<div class="card"
-onclick="openProduct(${product.id})"
-tabindex="0"
-role="link"
-onkeydown="handleCardKey(event,${product.id})">
-<img src="${product.image}">
-<div class="details">
-<h3>${product.name}</h3>
-<div class="price">Rs ${product.price.toLocaleString()}</div>
-<div class="mrp">MRP ${product.mrp}</div>
-<div class="ship">${product.available===false?"Out of stock":"Free Shipping"}</div>
-<div class="bottom">
-<button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
-</div>
-</div>
-</div>
-`;
-});
-
 function renderCategories(){
 const visibleCategories=categories.filter(category=>
 products.some(product=>getProductCategory(product)===category.key)
@@ -1147,14 +1125,14 @@ container.innerHTML=`<div class="empty-state">No products found in this category
 return;
 }
 
-filteredProducts.forEach(product=>{
-container.innerHTML+=`
+filteredProducts.forEach((product,index)=>{
+container.insertAdjacentHTML("beforeend",`
 <div class="card"
 onclick="openProduct(${product.id})"
 tabindex="0"
 role="link"
 onkeydown="handleCardKey(event,${product.id})">
-<img src="${product.image}">
+<img src="${product.image}" alt="${product.name}" loading="${index<4?"eager":"lazy"}" decoding="async" fetchpriority="${index<2?"high":"auto"}">
 <div class="details">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
@@ -1165,7 +1143,7 @@ onkeydown="handleCardKey(event,${product.id})">
 </div>
 </div>
 </div>
-`;
+`);
 });
 }
 

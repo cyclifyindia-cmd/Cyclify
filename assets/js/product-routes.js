@@ -61,6 +61,7 @@
   "61": "products/toseek-tr30-carbon-road-handlebar-61.html",
   "62": "products/toseek-ttf10-full-carbon-relax-handlebar-tt-bar-62.html",
   "63": "products/sava-aurora-a7l-pro-carbon-road-bike-63.html",
+  "64": "products/flr-pr-350-road-bike-pedals-64.html",
   "230708292": "products/toseek-ultralight-weight-full-carbon-saddle-230708292.html",
   "230741493": "products/ralson-foldable-tyres-230741493.html",
   "230919508": "products/toseek-eva-leather-comfortable-saddle-230919508.html",

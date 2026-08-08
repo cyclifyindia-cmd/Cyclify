@@ -14,6 +14,19 @@ const pages = [
 const dataFiles = ["cycletime-products.json", "fcc-products.json", "cadence-products.json"];
 
 const catalog = new Map();
+function writeFileWithRetry(file, content) {
+  for (let attempt = 1; attempt <= 8; attempt += 1) {
+    try {
+      fs.writeFileSync(file, content, "utf8");
+      return;
+    } catch (error) {
+      const retryable = ["UNKNOWN", "EBUSY", "EPERM", "EACCES"].includes(error.code);
+      if (!retryable || attempt === 8) throw error;
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, attempt * 40);
+    }
+  }
+}
+
 function addProduct(product, source) {
   const id = String(product.id ?? "").trim();
   const price = Number(product.price);
@@ -57,5 +70,5 @@ const output = {
 };
 const outputPath = path.join(root, "marketplace-backend", "payment-function", "functions", "catalog.json");
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-fs.writeFileSync(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+writeFileWithRetry(outputPath, `${JSON.stringify(output, null, 2)}\n`);
 console.log(`Payment catalog: ${catalog.size} products -> ${path.relative(root, outputPath)}`);

@@ -22,10 +22,8 @@ content="width=device-width, initial-scale=1">
 <meta name="twitter:title" content="ELVES Carbon Road Bikes India | Cyclify">
 <meta name="twitter:description" content="Shop ELVES carbon road bikes and frames in India with detailed specifications from Cyclify.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/elves-falath-evo-plus-2.png">
-<script src="assets/js/product-routes.js"></script>
-<script src="assets/js/supplier-products.js?v=9a2423d531"></script>
-<script src="assets/js/fcc-products.js?v=e3c38db2c7"></script>
-<script src="assets/js/cadence-products.js?v=1191c82e93"></script>
+<script src="assets/js/product-routes.js?v=e4300b6893"></script>
+<script src="assets/js/catalog-bikes-frames.js?v=0809e31621"></script>
 <style>
 
 *{
@@ -753,6 +751,7 @@ gap:5px!important;
   ]
 }
 </script>
+<style>.card{content-visibility:auto;contain-intrinsic-size:0 430px}</style>
 </head>
 
 <body>
@@ -893,8 +892,8 @@ const filterSelect=document.getElementById("filterSelect");
 let activeCategory=new URLSearchParams(window.location.search).get("category")||"elves";
 
 const categories=[
-{key:"sava",label:"SAVA",image:"assets/categories/internal-bikes-v2.png",size:"200% 100%",position:"0% 0%"},
-{key:"elves",label:"ELVES",image:"assets/categories/internal-bikes-v2.png",size:"200% 100%",position:"100% 0%"}
+{key:"sava",label:"SAVA",image:"assets/categories/internal-bikes-v2-optimized.webp",size:"200% 100%",position:"0% 0%"},
+{key:"elves",label:"ELVES",image:"assets/categories/internal-bikes-v2-optimized.webp",size:"200% 100%",position:"100% 0%"}
 ];
 
 function getProductCategory(product){
@@ -931,62 +930,6 @@ cartCount.style.display="none";
 }
 
 updateCartCount();
-
-
-products.forEach(product=>{
-
-container.innerHTML+=`
-
-<div class="card"
-onclick="openProduct(${product.id})"
-tabindex="0"
-role="link"
-onkeydown="handleCardKey(event,${product.id})">
-
-<img
-src="${product.image}">
-
-<div class="details">
-
-<h3>
-${product.name}
-</h3>
-
-<div class="price">
-
-Rs ${product.price.toLocaleString()}
-
-</div>
-
-<div class="mrp">
-
-MRP ${product.mrp}
-
-</div>
-
-<div class="ship">
-Free Shipping
-</div>
-
-<div class="bottom">
-
-<button
-class="add"
-onclick="addToCart(event,${product.id})">
-
-Add to cart
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-});
 
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
@@ -1037,14 +980,14 @@ container.innerHTML=`<div class="empty-state">No products found in this category
 return;
 }
 
-filteredProducts.forEach(product=>{
-container.innerHTML+=`
+filteredProducts.forEach((product,index)=>{
+container.insertAdjacentHTML("beforeend",`
 <div class="card"
 onclick="openProduct(${product.id})"
 tabindex="0"
 role="link"
 onkeydown="handleCardKey(event,${product.id})">
-<img src="${product.image}">
+<img src="${product.image}" alt="${product.name}" loading="${index<4?"eager":"lazy"}" decoding="async" fetchpriority="${index<2?"high":"auto"}">
 <div class="details">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
@@ -1055,7 +998,7 @@ onkeydown="handleCardKey(event,${product.id})">
 </div>
 </div>
 </div>
-`;
+`);
 });
 }
 

@@ -19,10 +19,8 @@
 <meta name="twitter:title" content="Cyclify India | Premium Cycles, Cycling Parts and Accessories">
 <meta name="twitter:description" content="Cyclify India is an online premium cycling store for road bikes, carbon frames, smart trainers, cycling electronics, wheels, components and riding gear.">
 <meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
-<script src="assets/js/product-routes.js"></script>
-<script src="assets/js/supplier-products.js?v=9a2423d531"></script>
-<script src="assets/js/fcc-products.js?v=e3c38db2c7"></script>
-<script src="assets/js/cadence-products.js?v=1191c82e93"></script>
+<script src="assets/js/product-routes.js?v=e4300b6893"></script>
+<script src="assets/js/search-index.js?v=89b2ffcde6"></script>
 <style>
 
 *{
@@ -675,12 +673,12 @@ overflow:hidden;
 box-shadow:0 8px 22px rgba(15,23,42,.08);
 }
 
-.bikes{background-image:url('assets/categories/CAT_BIKEE.png');}
-.wearables{background-image:url('assets/categories/CAT_Wearables.png');}
-.accessories{background-image:url('assets/categories/CAT_ACC.png');}
-.components{background-image:url('assets/categories/CAT_Components.png');}
-.wheels{background-image:url('assets/categories/CAT_Wheels.png');}
-.electronics{background-image:url('assets/categories/CAT_Electronics.png');}
+.bikes{background-image:url('assets/categories/CAT_BIKEE-optimized.webp');}
+.wearables{background-image:url('assets/categories/CAT_Wearables-optimized.webp');}
+.accessories{background-image:url('assets/categories/CAT_ACC-optimized.webp');}
+.components{background-image:url('assets/categories/CAT_Components-optimized.webp');}
+.wheels{background-image:url('assets/categories/CAT_Wheels-optimized.webp');}
+.electronics{background-image:url('assets/categories/CAT_Electronics-optimized.webp');}
 
 .features{
 background:white;
@@ -786,27 +784,27 @@ overflow:hidden;
 }
 
 .bikes{
-background-image:url('assets/categories/CAT_BIKEE.png');
+background-image:url('assets/categories/CAT_BIKEE-optimized.webp');
 }
 
 .wearables{
-background-image:url('assets/categories/CAT_Wearables.png');
+background-image:url('assets/categories/CAT_Wearables-optimized.webp');
 }
 
 .accessories{
-background-image:url('assets/categories/CAT_ACC.png');
+background-image:url('assets/categories/CAT_ACC-optimized.webp');
 }
 
 .components{
-background-image:url('assets/categories/CAT_Components.png');
+background-image:url('assets/categories/CAT_Components-optimized.webp');
 }
 
 .wheels{
-background-image:url('assets/categories/CAT_Wheels.png');
+background-image:url('assets/categories/CAT_Wheels-optimized.webp');
 }
 
 .electronics{
-background-image:url('assets/categories/CAT_Electronics.png');
+background-image:url('assets/categories/CAT_Electronics-optimized.webp');
 }
 
 .hero{
@@ -1175,10 +1173,10 @@ autocomplete="off">
 <section class="home-carousel" id="homeCarousel" aria-label="Featured offers">
 <div class="home-carousel-track" id="homeCarouselTrack">
 <a href="bikes-frames.html?category=elves" class="home-carousel-slide" aria-label="Shop ELVES EVO Plus and EXP bikes">
-<img src="assets/banners/elves-evo-exp-banner.png" alt="ELVES EVO Plus and EXP road bikes">
+<img src="assets/banners/elves-evo-exp-banner-optimized.webp" alt="ELVES EVO Plus and EXP road bikes" width="1600" height="667" fetchpriority="high" decoding="async">
 </a>
 <a href="bikes-frames.html" class="home-carousel-slide" aria-label="Shop bikes and frames">
-<img src="assets/banners/google-reviews-india.png" alt="Cyclify India Google customer reviews">
+<img src="assets/banners/google-reviews-india-optimized.webp" alt="Cyclify India Google customer reviews" width="1600" height="533" loading="lazy" decoding="async">
 <span class="home-carousel-cta">Shop Now</span>
 </a>
 </div>
@@ -1321,28 +1319,8 @@ const searchProducts = [
 {id:62,name:"TOSEEK TTF10 Full Carbon Relax Handlebar TT Bar",price:7699,image:"assets/products/toseek-ttf10-tt-bar-2.webp",category:"Components",keywords:"toseek ttf10 carbon relax handlebar tt bar aerobar triathlon 340 cockpit"},
 {id:63,name:"SAVA Aurora A7L Pro Carbon Road Bike",price:140000,image:"assets/products/sava-aurora-a7l-pro-1.jpg",category:"Bikes & Frames",keywords:"sava aurora a7l pro carbon road bike shimano 105 r7120 24 speed black blue white red S M L"}
 ];
-(window.CYCLIFY_CYCLETIME_PRODUCTS||[]).forEach(product=>{
-const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
-const existing=searchProducts.find(item=>item.id===product.id);
-if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
-});
-(window.CYCLIFY_FCC_PRODUCTS||[]).forEach(product=>{
-const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
-const existing=searchProducts.find(item=>item.id===product.id);
-if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
-});
-(window.CYCLIFY_CADENCE_PRODUCTS||[]).forEach(product=>{
-const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
-const existing=searchProducts.find(item=>item.id===product.id);
-if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
-});
-(window.CYCLIFY_CYCLETIME_PRODUCTS||[]).forEach(product=>{
-const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
-const existing=searchProducts.find(item=>item.id===product.id);
-if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
-});
-(window.CYCLIFY_CYCLETIME_PRODUCTS||[]).forEach(product=>{
-const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
+(window.CYCLIFY_SEARCH_PRODUCTS||[]).forEach(product=>{
+const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.category,keywords:product.keywords||""};
 const existing=searchProducts.find(item=>item.id===product.id);
 if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
 });

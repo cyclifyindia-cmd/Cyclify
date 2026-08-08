@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T19:18:58.063Z",
+  "generatedAt": "2026-08-08T17:29:40.821Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -163,7 +163,7 @@
     },
     "13": {
       "id": "13",
-      "name": "Cyclami 2000LM BR2000 Rainproof Bicycle Light",
+      "name": "Cyclami BR2000 Rainproof Bicycle Light 2000Lm",
       "price": 4300,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/eSNNFA6Y.webp",
@@ -295,7 +295,7 @@
     },
     "23": {
       "id": "23",
-      "name": "Cyclami 1200 Lumen High Brightness Bicycle Light",
+      "name": "Cyclami Cyc 1200 Lumen High Brightness Bicycle Light",
       "price": 4200,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/i7Y8CR4p.webp",
@@ -347,15 +347,15 @@
     },
     "28": {
       "id": "28",
-      "name": "Cyclami 1800 Lumen USB Rechargeable Bicycle Front Light",
+      "name": "Cyclami Ai 1200 Lumen Bicycle Front Light",
       "price": 3000,
       "available": true,
-      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/G82eQlvo.webp",
+      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/OBm5xlge.webp",
       "sizes": [
-        "1800"
+        "1200"
       ],
       "sizeAvailability": {
-        "1800": true
+        "1200": true
       },
       "sourcePage": "electronics.html"
     },
@@ -511,7 +511,7 @@
       "id": "41",
       "name": "iGPSPORT BSC200S Cyclocomputer",
       "price": 7900,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image.jpg?v=1754022773",
       "sizes": [],
       "sizeAvailability": {},
@@ -837,6 +837,16 @@
       ],
       "sizeAvailability": {},
       "sourcePage": "sava-bikes.html"
+    },
+    "64": {
+      "id": "64",
+      "name": "FLR PR-350 Road Bike Pedals",
+      "price": 2500,
+      "available": true,
+      "image": "assets/products/flr-pr350-pedals-1.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html"
     },
     "230708292": {
       "id": "230708292",
@@ -1846,7 +1856,7 @@
       "id": "871124759",
       "name": "MCYCLE Spring Breathable Waterproof Cycling Shoe Cover",
       "price": 1799,
-      "available": true,
+      "available": false,
       "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fda72bb486064bf6b6eaf",
       "sizes": [],
       "sizeAvailability": {},
