@@ -2,8 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
+const guideData = JSON.parse(fs.readFileSync(path.join(root, 'assets', 'data', 'guides.json'), 'utf8')).guides || [];
+const guideFiles = guideData.map(guide => guide.slug + '/index.html');
 const files = fs.readdirSync(root).filter(file => file.endsWith('.html'))
-  .concat(fs.readdirSync(path.join(root, 'products')).filter(file => file.endsWith('.html')).map(file => 'products/' + file));
+  .concat(fs.readdirSync(path.join(root, 'products')).filter(file => file.endsWith('.html')).map(file => 'products/' + file))
+  .concat(guideFiles);
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const failures = [];
 const canonicals = new Map();
@@ -28,6 +31,11 @@ files.forEach(relative => {
   if (!title || title.length > 65) failures.push(relative + ': title length ' + title.length);
   if (!description || description.length > 160) failures.push(relative + ': description length ' + description.length);
   if (!canonical) failures.push(relative + ': missing canonical');
+  if (relative.startsWith('products/') || relative === 'guides.html' || guideFiles.includes(relative)) {
+    const renderedSource = source.replace(/<noscript\b[\s\S]*?<\/noscript>/gi, '');
+    const h1Count = [...renderedSource.matchAll(/<h1\b/gi)].length;
+    if (h1Count !== 1) failures.push(relative + ': expected one H1, found ' + h1Count);
+  }
   if (canonical) {
     const owners = canonicals.get(canonical) || [];
     owners.push(relative);
@@ -55,6 +63,10 @@ canonicals.forEach((owners, canonical) => {
 });
 
 if (new Set(sitemapUrls).size !== sitemapUrls.length) failures.push('Sitemap contains duplicate URLs');
+for (const entry of sitemap.matchAll(/<url>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?<lastmod>([^<]+)<\/lastmod>[\s\S]*?<\/url>/g)) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(entry[2])) failures.push('Invalid sitemap lastmod for ' + entry[1]);
+  if (entry[2] > new Date().toISOString().slice(0, 10)) failures.push('Future sitemap lastmod for ' + entry[1]);
+}
 sitemapUrls.forEach(value => {
   const url = new URL(value);
   if (!fs.existsSync(localFileForUrl(url))) failures.push('Sitemap target is missing: ' + url.pathname);

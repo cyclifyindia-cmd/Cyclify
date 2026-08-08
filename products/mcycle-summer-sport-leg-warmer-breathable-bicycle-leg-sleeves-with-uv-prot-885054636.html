@@ -940,6 +940,11 @@ gap:5px!important;
 
 .feature{color:inherit;text-decoration:none}
 
+.product-breadcrumb{width:min(1040px,calc(100% - 28px));margin:14px auto 0;display:flex;align-items:center;gap:7px;color:#667085;font-size:12px;line-height:1.4}
+.product-breadcrumb a{color:#475467;font-weight:700;text-decoration:none}
+.product-breadcrumb a:hover,.product-breadcrumb a:focus-visible{color:#0754c9;text-decoration:underline}
+.product-breadcrumb [aria-current="page"]{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
 /* Always-visible product purchase controls */
 body{padding-bottom:96px;}
 .btn{min-height:50px;border-radius:7px;cursor:pointer;}
@@ -1027,6 +1032,12 @@ body{padding-bottom:88px;}
         {
           "@type": "ListItem",
           "position": 2,
+          "name": "Accessories",
+          "item": "https://cyclify.in/accessories.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
           "name": "Mcycle Summer Sport Leg Warmer - Breathable Bicycle Leg Sleeves with UV Protection",
           "item": "https://cyclify.in/products/mcycle-summer-sport-leg-warmer-breathable-bicycle-leg-sleeves-with-uv-prot-885054636.html"
         }
@@ -1087,6 +1098,12 @@ else{cartCount.style.display="none";}
 })();
 </script>
 
+<nav class="product-breadcrumb" aria-label="Breadcrumb">
+<a href="index.html">Home</a><span aria-hidden="true">›</span>
+<a href="index.html" id="productCategoryLink">Products</a><span aria-hidden="true">›</span>
+<span id="breadcrumbProductName" aria-current="page">Product</span>
+</nav>
+
 <div class="product">
 
 <div class="gallery"
@@ -1118,10 +1135,10 @@ id="imageCount">
 id="productThumbs">
 </div>
 
-<div class="name"
+<h1 class="name"
 id="productName">
 
-</div>
+</h1>
 
 <div class="price-line" aria-label="Cyclify deal price">
 <div class="deal-head"><img src="assets/Logo-dark.png" alt="Cyclify"><span class="deal-divider"></span><span class="deal-word">DEAL</span></div>
@@ -2705,6 +2722,13 @@ const params=new URLSearchParams(window.location.search);
 const productId=Number(window.CYCLIFY_PRODUCT_ID||params.get("id"))||1;
 const product=products.find(item=>item.id===productId)||products[0];
 window.CYCLIFY_CURRENT_PRODUCT={id:String(product.id),name:product.name};
+const productCategoryLink=document.getElementById("productCategoryLink");
+const breadcrumbProductName=document.getElementById("breadcrumbProductName");
+if(productCategoryLink){
+productCategoryLink.href=product.categoryPage||"index.html";
+productCategoryLink.textContent=product.categoryLabel||"Products";
+}
+if(breadcrumbProductName){breadcrumbProductName.textContent=product.name;}
 let productImages=product.images||[product.image];
 let currentImageIndex=0;
 let selectedSize=product.sizes&&product.sizes.length?product.sizes[0]:"";
@@ -3287,8 +3311,17 @@ productDetailStories.appendChild(article);
 
 const relatedProducts=document.getElementById("relatedProducts");
 
+const relatedCategory=product.categoryPage||product.mainCategory||"";
 products
 .filter(item=>item.id!==product.id)
+.sort((a,b)=>{
+const aCategory=(a.categoryPage||a.mainCategory||"")===relatedCategory?0:1;
+const bCategory=(b.categoryPage||b.mainCategory||"")===relatedCategory?0:1;
+if(aCategory!==bCategory){return aCategory-bCategory;}
+if((a.available===false)!==(b.available===false)){return a.available===false?1:-1;}
+return String(a.name).localeCompare(String(b.name));
+})
+.slice(0,8)
 .forEach(item=>{
 relatedProducts.innerHTML+=`
 <a class="related-card" href="${cyclifyProductUrl(item.id)}">
@@ -3352,9 +3385,8 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=71f172e9bd"></script>
+<script src="assets/js/site-footer.js?v=8268ac3164"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-

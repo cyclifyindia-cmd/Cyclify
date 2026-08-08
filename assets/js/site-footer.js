@@ -202,6 +202,7 @@
         <h2 class="cyclify-footer__heading">Information</h2>
         <div class="cyclify-footer__links">
           <a href="about-us.html">About Us</a>
+          <a href="guides.html">Cycling Guides</a>
           <a href="contact-us.html">Contact Us</a>
           <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
           <a href="exchange-policy.html">Exchange Policy</a>
