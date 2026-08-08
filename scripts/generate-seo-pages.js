@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const root = path.resolve(__dirname, '..');
 const templatePath = path.join(root, 'product.html');
@@ -9,7 +10,22 @@ const sitemapPath = path.join(root, 'sitemap.xml');
 const supplierPath = path.join(root, 'assets', 'data', 'cycletime-products.json');
 const fccSupplierPath = path.join(root, 'assets', 'data', 'fcc-products.json');
 const cadenceSupplierPath = path.join(root, 'assets', 'data', 'cadence-products.json');
-const template = fs.readFileSync(templatePath, 'utf8');
+const versionedScripts = ['supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'site-footer.js'];
+const scriptVersions = Object.fromEntries(versionedScripts.map(file => {
+  const source = fs.readFileSync(path.join(root, 'assets', 'js', file));
+  return [file, crypto.createHash('sha256').update(source).digest('hex').slice(0, 10)];
+}));
+
+function versionCustomerScripts(source) {
+  let updated = source;
+  Object.entries(scriptVersions).forEach(([file, version]) => {
+    const escaped = file.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    updated = updated.replace(new RegExp('assets/js/' + escaped + '(?:\\?v=[^"\\s<]+)?', 'g'), 'assets/js/' + file + '?v=' + version);
+  });
+  return updated;
+}
+
+const template = versionCustomerScripts(fs.readFileSync(templatePath, 'utf8'));
 
 function extractProducts(source) {
   const marker = 'const products=';
@@ -342,6 +358,13 @@ landingPages.forEach(landing => {
   }
   page = page.replace('<div class="category-strip"', '<p class="seo-landing-copy" style="margin:0;padding:14px 4%;color:#4b5563;font-size:15px;line-height:1.55">' + escapeHtml(landing.description) + '</p>\n<div class="category-strip"');
   fs.writeFileSync(path.join(root, landing.file), page, 'utf8');
+});
+
+fs.readdirSync(root).filter(file => file.endsWith('.html')).forEach(file => {
+  const filePath = path.join(root, file);
+  const source = fs.readFileSync(filePath, 'utf8');
+  const updated = versionCustomerScripts(source);
+  if (updated !== source) fs.writeFileSync(filePath, updated, 'utf8');
 });
 
 const legacyRedirects = {

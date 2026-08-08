@@ -18,11 +18,13 @@
     .cyclify-card-discount{display:inline-flex;align-items:center;border-radius:5px;background:#ff5a00;color:#fff;padding:4px 7px;font-size:10.5px;font-weight:900;line-height:1;box-shadow:0 2px 5px rgba(255,90,0,.18)}
     .cyclify-card-actions{grid-area:actions;align-self:end;display:grid;justify-items:end;gap:7px}
     .cyclify-card-shipping{display:inline-flex;align-items:center;gap:3px;color:#087a3d;font-size:11.5px;font-weight:850;line-height:1}
+    .cyclify-card-shipping.unavailable{color:#b42318}
     .cyclify-card-pricing .bottom{display:flex!important;align-items:center!important;gap:5px!important;margin:0!important}
     .cyclify-card-pricing .add{min-height:32px!important;padding:7px 13px!important;border:1px solid #0754c9!important;border-radius:8px!important;background:linear-gradient(180deg,#1264dc,#0754c9)!important;color:#fff!important;font-size:11px!important;font-weight:850!important;line-height:1!important;white-space:nowrap;box-shadow:0 4px 9px rgba(7,84,201,.2)}
     .cyclify-card-cart-add{display:grid;place-items:center;width:32px;height:32px;padding:0;border:1px solid #ccd6e5;border-radius:8px;background:#fff;color:#0754c9;cursor:pointer;box-shadow:0 3px 8px rgba(16,24,40,.09)}
     .cyclify-card-cart-add svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     .cyclify-card-cart-add.added{border-color:#087443;background:#ecfdf3;color:#087443}
+    .cyclify-card-pricing .add:disabled{border-color:#d0d5dd!important;background:#eef0f3!important;color:#667085!important;box-shadow:none!important;cursor:not-allowed}
     .price-line .deal-save,.price-line .deal-off,.price-line .shipping-note{font-size:11.5px!important}.price-line .deal-save{padding:4px 9px!important}.price-line .deal-off{padding:5px 8px!important}.price-line .shipping-note{font-weight:800!important}
     @container (max-width:360px){.card .details h3{font-size:12.5px}.cyclify-card-pricing{grid-template-columns:minmax(0,1fr);grid-template-areas:"title" "price" "sub" "actions";gap:6px;padding:9px}.cyclify-card-deal-title{font-size:9px}.cyclify-card-price-line,.cyclify-card-sub-line{gap:4px}.card .price{font-size:16px!important}.card .mrp{font-size:9.5px!important}.cyclify-card-saving{font-size:9px;padding:3px 5px}.cyclify-card-discount{font-size:8.5px;padding:3px 5px}.cyclify-card-actions{width:100%;grid-template-columns:1fr auto;align-items:center;gap:5px}.cyclify-card-actions .bottom{grid-column:2;grid-row:1}.cyclify-card-shipping{grid-column:1;grid-row:1;justify-self:start;font-size:9.5px}.cyclify-card-pricing .add{min-height:29px!important;padding:6px 9px!important;font-size:9px!important}.cyclify-card-cart-add{width:29px;height:29px}.cyclify-card-cart-add svg{width:15px;height:15px}}
     @media(max-width:480px){.price-line .deal-save,.price-line .deal-off,.price-line .shipping-note{font-size:10px!important}}
@@ -93,10 +95,14 @@
       discountElement.textContent = `${discount}% OFF`;
       priceLine.appendChild(discountElement);
     }
-    card.querySelectorAll(".ship").forEach(element => element.remove());
+    const originalShippingElements = [...card.querySelectorAll(".ship")];
+    const outOfStock = originalShippingElements.some(element => /out\s*of\s*stock/i.test(element.textContent || ""));
+    originalShippingElements.forEach(element => element.remove());
     const shippingElement = document.createElement("span");
-    shippingElement.className = "cyclify-card-shipping";
-    shippingElement.innerHTML = '<span aria-hidden="true">&#10003;</span><span>Free Shipping</span>';
+    shippingElement.className = `cyclify-card-shipping${outOfStock ? " unavailable" : ""}`;
+    shippingElement.innerHTML = outOfStock
+      ? '<span aria-hidden="true">&#9679;</span><span>Out of Stock</span>'
+      : '<span aria-hidden="true">&#10003;</span><span>Free Shipping</span>';
     const actions = document.createElement("div");
     actions.className = "cyclify-card-actions";
     pricing.appendChild(actions);
@@ -108,8 +114,12 @@
       if (buyButton) {
         const clickCode = buyButton.getAttribute("onclick") || "";
         const idMatch = clickCode.match(/addToCart\(event,\s*([0-9]+)\s*\)/);
-        buyButton.textContent = "Buy Now";
-        if (idMatch) {
+        buyButton.textContent = outOfStock ? "Out of Stock" : "Buy Now";
+        if (outOfStock) {
+          buyButton.removeAttribute("onclick");
+          buyButton.disabled = true;
+          buyButton.setAttribute("aria-disabled", "true");
+        } else if (idMatch) {
           const productId = Number(idMatch[1]);
           buyButton.removeAttribute("onclick");
           buyButton.addEventListener("click", event => {

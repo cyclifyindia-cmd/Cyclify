@@ -23,9 +23,9 @@ content="width=device-width,initial-scale=1">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7052f714-3ee2-446c-a413-efc4be1eabf4.jpg?v=1780736237">
 <script>window.CYCLIFY_PRODUCT_ID=10995644694721;</script>
 <script src="assets/js/product-routes.js"></script>
-<script src="assets/js/supplier-products.js"></script>
-<script src="assets/js/fcc-products.js"></script>
-<script src="assets/js/cadence-products.js?v=1"></script>
+<script src="assets/js/supplier-products.js?v=9a2423d531"></script>
+<script src="assets/js/fcc-products.js?v=e3c38db2c7"></script>
+<script src="assets/js/cadence-products.js?v=1191c82e93"></script>
 <style>
 
 *{
@@ -2929,13 +2929,27 @@ return product.sizeAvailability&&Object.prototype.hasOwnProperty.call(product.si
 
 function updateCartButtonForSize(){
 productAvailableForCart=product.available!==false&&(!selectedSize||!isSizeUnavailable(selectedSize));
-document.querySelectorAll(".cartbtn,.buybtn").forEach(button=>{button.disabled=!productAvailableForCart;});
+const cartButton=document.querySelector(".cartbtn");
+const buyButton=document.querySelector(".buybtn");
+if(cartButton){
+cartButton.disabled=!productAvailableForCart;
+cartButton.textContent=productAvailableForCart?"Add to Cart":"Out of Stock";
+}
+if(buyButton){
+buyButton.disabled=!productAvailableForCart;
+buyButton.hidden=!productAvailableForCart;
+}
 const shippingNote=document.querySelector(".shipping-note");
-if(shippingNote&&product.available===false){shippingNote.textContent="Currently out of stock";shippingNote.classList.add("stock-unavailable");}
+if(shippingNote){
+shippingNote.classList.toggle("stock-unavailable",!productAvailableForCart);
+shippingNote.innerHTML=productAvailableForCart
+?'<span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span>'
+:'<span aria-hidden="true">●</span><span>Currently out of stock</span>';
+}
 }
 
 function applySizeAvailability(){
-if(!product.sizes||!product.sizes.length){return;}
+if(!product.sizes||!product.sizes.length){updateCartButtonForSize();return;}
 document.querySelectorAll("#sizeOptions [data-size]").forEach(button=>{
 const size=button.dataset.size;
 const unavailable=Boolean(isSizeUnavailable(size));
@@ -2981,8 +2995,6 @@ if(compares.length){
 product.mrp=`Rs ${Math.max(...compares).toLocaleString()}`;
 }
 updateProductPriceDisplay();
-product.available=variants.some(variant=>variant.available);
-product.available=variants.some(variant=>variant.available);
 product.available=variants.some(variant=>variant.available);
 const variantAvailability={};
 let hasAvailabilityData=false;
@@ -3311,6 +3323,9 @@ relatedProducts.innerHTML+=`
 
 async function addToCart(){
 
+updateCartButtonForSize();
+if(!productAvailableForCart){return;}
+
 let cart=JSON.parse(localStorage.getItem("cart"))||[];
 let existing=cart.find(item=>
 item.id===product.id&&
@@ -3342,6 +3357,8 @@ window.location.href="cart.html";
 }
 
 function showBuyCooking(){
+updateCartButtonForSize();
+if(!productAvailableForCart){return;}
 const item={
 id:product.id,
 name:product.name,
@@ -3358,10 +3375,9 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=20260807-offer-actions"></script>
+<script src="assets/js/site-footer.js?v=71f172e9bd"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>
 </html>
-
 
