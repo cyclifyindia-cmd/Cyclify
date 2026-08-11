@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 const iconv = require('iconv-lite');
+const { applyPriceOverrides } = require('./price-overrides');
 
 const root = path.resolve(__dirname, '..');
 const sourceBase = 'https://www.cycletimeindia.com';
@@ -200,6 +201,7 @@ function writeIfChanged(file, content) {
 async function main() {
   const raw = await fetchCatalogue();
   const products = raw.map(transform).sort((a, b) => a.name.localeCompare(b.name));
+  applyPriceOverrides(products);
   const duplicateIds = products.filter((item, index) => products.findIndex(other => other.id === item.id) !== index);
   if (duplicateIds.length) throw new Error(`Duplicate generated IDs: ${duplicateIds.map(item => item.id).join(', ')}`);
 

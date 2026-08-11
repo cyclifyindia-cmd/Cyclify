@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
+const { applyPriceOverrides } = require('./price-overrides');
 
 const root = path.resolve(__dirname, '..');
 const sourceBase = 'https://www.fccracing.com';
@@ -317,6 +318,7 @@ async function main() {
   }
   if (!products.length) throw new Error('FCC product pages returned no usable records; previous catalogue kept unchanged.');
   products.sort((a, b) => a.name.localeCompare(b.name));
+  applyPriceOverrides(products);
 
   const duplicateIds = products.filter((item, index) => products.findIndex(other => other.id === item.id) !== index);
   if (duplicateIds.length) throw new Error(`Duplicate generated IDs: ${duplicateIds.map(item => item.id).join(', ')}`);

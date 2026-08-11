@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
+const { applyPriceOverrides } = require('./price-overrides');
 
 const root = path.resolve(__dirname, '..');
 const sourceBase = 'https://www.cadencelife.in';
@@ -297,6 +298,7 @@ async function main() {
   }
   if (!products.length) throw new Error('Cadence Life product pages returned no permitted records; previous catalogue kept unchanged.');
   products.sort((a, b) => a.name.localeCompare(b.name));
+  applyPriceOverrides(products);
   const duplicateIds = products.filter((item, index) => products.findIndex(other => other.id === item.id) !== index);
   if (duplicateIds.length) throw new Error(`Duplicate generated IDs: ${duplicateIds.map(item => item.id).join(', ')}`);
   const protectedMatches = products.filter(isProtectedProduct);

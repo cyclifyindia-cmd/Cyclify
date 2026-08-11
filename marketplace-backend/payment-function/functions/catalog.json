@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-11T08:47:40.227Z",
+  "generatedAt": "2026-08-11T14:36:22.304Z",
   "currency": "INR",
   "products": {
     "1": {
       "id": "1",
       "name": "SAVA Hawkeye SLR7 105 Di2",
-      "price": 189900,
+      "price": 175000,
       "available": true,
       "image": "assets/products/sava-hawkeye.jpg",
       "sizes": [
@@ -477,7 +477,7 @@
     "38": {
       "id": "38",
       "name": "ThinkRider XX PRO Foldable Smart Trainer",
-      "price": 51999,
+      "price": 49999,
       "available": true,
       "image": "assets/products/thinkrider-xx-pro-1.png",
       "sizes": [
@@ -490,7 +490,7 @@
     "39": {
       "id": "39",
       "name": "ThinkRider VS 200 Virtual Shifting Controller",
-      "price": 5999,
+      "price": 4999,
       "available": true,
       "image": "https://thinkrider.com/cdn/shop/files/VS200-12_960x.jpg?v=1768188298",
       "sizes": [],
@@ -500,7 +500,7 @@
     "40": {
       "id": "40",
       "name": "ThinkRider Speed Cadence Sensor",
-      "price": 2200,
+      "price": 1999,
       "available": true,
       "image": "https://thinkrider.com/cdn/shop/files/SpeedCadenceSensor1_1200x.jpg?v=1767941722",
       "sizes": [],
@@ -540,7 +540,7 @@
     "44": {
       "id": "44",
       "name": "iGPSPORT BSC300T Cyclocomputer",
-      "price": 14300,
+      "price": 13800,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",
       "sizes": [],
@@ -570,7 +570,7 @@
     "47": {
       "id": "47",
       "name": "iGPSPORT BiNavi Cyclocomputer",
-      "price": 24900,
+      "price": 24800,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189",
       "sizes": [],
@@ -580,7 +580,7 @@
     "48": {
       "id": "48",
       "name": "Elsier Road Cycling Shoes",
-      "price": 5899,
+      "price": 5799,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e0a7528f-b25a-4b81-b7e7-5102541dd737.jpg?v=1754918672",
       "sizes": [
@@ -718,7 +718,7 @@
     "54": {
       "id": "54",
       "name": "ThinkRider TPU 28g Ultralight Bicycle Tube",
-      "price": 500,
+      "price": 499,
       "available": true,
       "image": "assets/products/thinkrider-tpu-28g-tube-1.webp",
       "sizes": [
@@ -730,7 +730,7 @@
     "55": {
       "id": "55",
       "name": "ThinkRider Bike Trainer Front Wheel Block",
-      "price": 999,
+      "price": 499,
       "available": true,
       "image": "assets/products/thinkrider-front-wheel-block-1.png",
       "sizes": [],
@@ -750,7 +750,7 @@
     "57": {
       "id": "57",
       "name": "ThinkRider Heart Rate Monitor with Chest Belt",
-      "price": 2800,
+      "price": 2600,
       "available": true,
       "image": "assets/products/thinkrider-heart-rate-monitor-1.jpg",
       "sizes": [],
@@ -760,7 +760,7 @@
     "58": {
       "id": "58",
       "name": "ThinkRider NL-15 Pro Bicycle Torque Wrench Set",
-      "price": 4200,
+      "price": 3999,
       "available": true,
       "image": "assets/products/thinkrider-nl15-pro-torque-wrench-1.webp",
       "sizes": [],
@@ -3895,7 +3895,7 @@
     "10995644694721": {
       "id": "10995644694721",
       "name": "Fusion Gel Padded Cycling Bib Shorts",
-      "price": 2500,
+      "price": 2400,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7052f714-3ee2-446c-a413-efc4be1eabf4.jpg?v=1780736237",
       "sizes": [
@@ -3911,7 +3911,7 @@
     "11040886161601": {
       "id": "11040886161601",
       "name": "iGPSPORT BSC500 Cyclocomputer",
-      "price": 19500,
+      "price": 19200,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500.webp?v=1786352378",
       "sizes": [],
