@@ -7,6 +7,7 @@ const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const catalogPayload = require("./catalog.json");
 const {
   createProviderOrder,
+  createProviderRefund,
   verifyPaymentSignature,
   fetchProviderPayment,
   verifyProviderWebhook,
@@ -21,6 +22,7 @@ const SITE_ORIGINS = new Set(["https://cyclify.in", "https://www.cyclify.in"]);
 const PAYMENT_STATES = new Set(["created", "pending", "paid", "failed", "cancelled", "expired", "refund_pending", "refunded"]);
 const RAZORPAY_API_SECRETS = ["RAZORPAY_KEY_ID", "RAZORPAY_KEY_SECRET"];
 const RAZORPAY_WEBHOOK_SECRETS = [...RAZORPAY_API_SECRETS, "RAZORPAY_WEBHOOK_SECRET"];
+const ADMIN_EMAIL = "admin@cyclify.in";
 
 function cors(req, res) {
   const origin = req.get("origin") || "";
@@ -41,6 +43,14 @@ async function authenticatedUser(req) {
   if (!authorization.startsWith("Bearer ")) return null;
   try { return await getAuth().verifyIdToken(authorization.slice(7), true); }
   catch { return null; }
+}
+
+async function authenticatedAdmin(req) {
+  const user = await authenticatedUser(req);
+  if (!user) return null;
+  if (String(user.email || "").toLowerCase() === ADMIN_EMAIL && user.email_verified === true) return user;
+  const adminRecord = await db.collection("admins").doc(user.uid).get();
+  return adminRecord.exists ? user : null;
 }
 
 function text(value, max = 180) {
@@ -83,6 +93,17 @@ function validatedCart(items) {
 
 function validAttemptId(value) {
   return /^[A-Za-z0-9_-]{16,80}$/.test(String(value || ""));
+}
+
+function validDocumentId(value) {
+  return /^[A-Za-z0-9_-]{1,128}$/.test(String(value || ""));
+}
+
+function resolvedPaymentState(current, incoming) {
+  if (current === "refunded") return "refunded";
+  if (current === "refund_pending" && !["refunded"].includes(incoming)) return "refund_pending";
+  if (current === "paid" && !["refund_pending", "refunded"].includes(incoming)) return "paid";
+  return incoming;
 }
 
 function orderNumber(attemptId) {
@@ -190,6 +211,7 @@ async function finalizeVerifiedEvent(event) {
     if (!attemptSnapshot.exists) throw new Error("Payment attempt not found.");
     const attempt = attemptSnapshot.data();
     if (event.currency !== attempt.currency || Number(event.amount) !== Number(attempt.amount)) throw new Error("Payment amount or currency mismatch.");
+    const nextStatus = resolvedPaymentState(attempt.status, event.status);
     let orderId = attempt.orderId || "";
     if (event.status === "paid" && !orderId) {
       orderId = orderNumber(event.attemptId);
@@ -205,17 +227,19 @@ async function finalizeVerifiedEvent(event) {
       });
     }
     if (["refund_pending", "refunded"].includes(event.status) && orderId) {
+      const refundComplete = nextStatus === "refunded";
       const orderRef = db.collection("customers").doc(attempt.customerId).collection("orders").doc(orderId);
       transaction.update(orderRef, {
-        paymentStatus: event.status === "refunded" ? "Refunded" : "Refund Pending",
-        refundStatus: event.status,
+        status: refundComplete ? "Order Cancelled & Refunded" : "Order Cancellation Requested",
+        paymentStatus: refundComplete ? "Refunded" : "Refund Pending",
+        refundStatus: refundComplete ? "refunded" : "refund_pending",
+        "refundRequest.status": refundComplete ? "completed" : "processing",
         updatedAt: FieldValue.serverTimestamp(),
-        ...(event.status === "refunded"
+        ...(refundComplete
           ? { refundedAt: FieldValue.serverTimestamp() }
           : { refundRequestedAt: FieldValue.serverTimestamp() }),
       });
     }
-    const nextStatus = attempt.status === "paid" && !["refund_pending", "refunded"].includes(event.status) ? "paid" : event.status;
     transaction.set(eventRef, { eventId: text(event.eventId, 180), paymentId: text(event.paymentId, 180), providerOrderId: text(attempt.providerOrderId, 180), attemptId: event.attemptId, status: event.status, orderId, processedAt: FieldValue.serverTimestamp() });
     transaction.update(attemptRef, { status: nextStatus, paymentId: text(event.paymentId, 180), orderId, updatedAt: FieldValue.serverTimestamp(), ...(event.status === "paid" ? { paidAt: FieldValue.serverTimestamp() } : {}) });
     return { duplicate: false, orderId };
@@ -276,6 +300,114 @@ exports.verifyRazorpayPayment = onRequest(endpointOptions(RAZORPAY_API_SECRETS),
   }
 });
 
+exports.cancelAndRefundOrder = onRequest(endpointOptions(RAZORPAY_API_SECRETS, 5), async (req, res) => {
+  if (!cors(req, res)) return send(res, 403, { error: "Origin not allowed." });
+  if (req.method === "OPTIONS") return res.status(204).end();
+  if (req.method !== "POST") return send(res, 405, { error: "Method not allowed." });
+  let orderRef = null;
+  let reservation = null;
+  try {
+    const admin = await authenticatedAdmin(req);
+    if (!admin) return send(res, 403, { error: "Cyclify administrator access is required." });
+    const customerId = text(req.body?.customerId, 128);
+    const orderId = text(req.body?.orderId, 128);
+    if (!validDocumentId(customerId) || !validDocumentId(orderId)) return send(res, 400, { error: "Invalid customer or order reference." });
+    orderRef = db.collection("customers").doc(customerId).collection("orders").doc(orderId);
+    reservation = await db.runTransaction(async transaction => {
+      const snapshot = await transaction.get(orderRef);
+      if (!snapshot.exists) throw new ProviderVerificationError("Order not found.");
+      const order = snapshot.data();
+      if (order.customerId !== customerId || String(order.number || orderId) !== orderId) throw new ProviderVerificationError("Order reference mismatch.");
+      if (order.paymentStatus === "Refunded" || order.status === "Order Cancelled & Refunded") {
+        return { alreadyRefunded: true };
+      }
+      const refundState = String(order.refundRequest?.status || "");
+      if (["processing", "submitted"].includes(refundState) || order.paymentStatus === "Refund Pending") {
+        return { inProgress: true };
+      }
+      if (order.status !== "Order Received") throw new ProviderVerificationError("Only an order that has not shipped can be cancelled automatically.");
+      if (order.paymentProvider !== "Razorpay" || order.paymentStatus !== "Paid" || !order.paymentId || !order.providerOrderId) {
+        throw new ProviderVerificationError("This order does not have a captured Razorpay payment available for refund.");
+      }
+      transaction.update(orderRef, {
+        status: "Order Cancellation Requested",
+        paymentStatus: "Refund Pending",
+        refundStatus: "requested",
+        refundRequest: {
+          status: "processing",
+          requestedBy: admin.uid,
+          requestedByEmail: text(admin.email, 180),
+          requestedAt: FieldValue.serverTimestamp(),
+        },
+        updatedAt: FieldValue.serverTimestamp(),
+      });
+      return {
+        locked: true,
+        previousStatus: order.status,
+        previousPaymentStatus: order.paymentStatus,
+        paymentId: text(order.paymentId, 180),
+        providerOrderId: text(order.providerOrderId, 180),
+        amount: Number(order.total),
+      };
+    });
+    if (reservation.alreadyRefunded) return send(res, 200, { success: true, alreadyRefunded: true, orderId });
+    if (reservation.inProgress) return send(res, 202, { success: true, pending: true, orderId });
+    const refund = await createProviderRefund({
+      paymentId: reservation.paymentId,
+      providerOrderId: reservation.providerOrderId,
+      amount: reservation.amount,
+      orderId,
+      requestedBy: admin.uid,
+    });
+    await db.runTransaction(async transaction => {
+      const snapshot = await transaction.get(orderRef);
+      if (!snapshot.exists) throw new Error("Order disappeared while recording its refund.");
+      const current = snapshot.data();
+      const alreadyFinal = current.paymentStatus === "Refunded" || current.status === "Order Cancelled & Refunded" || refund.alreadyRefunded;
+      transaction.update(orderRef, {
+        status: alreadyFinal ? "Order Cancelled & Refunded" : "Order Cancellation Requested",
+        paymentStatus: alreadyFinal ? "Refunded" : "Refund Pending",
+        refundStatus: alreadyFinal ? "refunded" : text(refund.status, 40),
+        refundId: text(refund.refundId, 180),
+        refundAmount: Number(refund.amount || reservation.amount * 100) / 100,
+        "refundRequest.status": alreadyFinal ? "completed" : "submitted",
+        "refundRequest.submittedAt": FieldValue.serverTimestamp(),
+        updatedAt: FieldValue.serverTimestamp(),
+        ...(alreadyFinal ? { refundedAt: FieldValue.serverTimestamp() } : {}),
+      });
+    });
+    return send(res, 200, { success: true, pending: !refund.alreadyRefunded, orderId });
+  } catch (error) {
+    logger.error("cancelAndRefundOrder failed", { code: error.code, message: error.message, statusCode: error.statusCode });
+    if (orderRef && reservation?.locked) {
+      try {
+        await db.runTransaction(async transaction => {
+          const snapshot = await transaction.get(orderRef);
+          if (!snapshot.exists) return;
+          const current = snapshot.data();
+          if (current.paymentStatus === "Refunded" || current.status === "Order Cancelled & Refunded") return;
+          if (current.refundRequest?.status !== "processing") return;
+          transaction.update(orderRef, {
+            status: reservation.previousStatus,
+            paymentStatus: reservation.previousPaymentStatus,
+            refundStatus: "failed",
+            "refundRequest.status": "failed",
+            "refundRequest.failedAt": FieldValue.serverTimestamp(),
+            updatedAt: FieldValue.serverTimestamp(),
+          });
+        });
+      } catch (restoreError) {
+        logger.error("cancelAndRefundOrder rollback failed", { message: restoreError.message });
+      }
+    }
+    const status = providerHttpStatus(error);
+    if (status === 401) return send(res, 401, { error: "Razorpay authentication failed. The order was not cancelled." });
+    if (status === 503) return send(res, 503, { error: "Razorpay is not configured. The order was not cancelled." });
+    if (status === 500) return send(res, 500, { error: "Razorpay could not issue the refund. The order remains active." });
+    return send(res, 400, { error: error.message || "The order could not be cancelled." });
+  }
+});
+
 exports.paymentWebhook = onRequest(endpointOptions(RAZORPAY_WEBHOOK_SECRETS, 10), async (req, res) => {
   if (req.method !== "POST") return send(res, 405, { error: "Method not allowed." });
   try {
@@ -290,4 +422,4 @@ exports.paymentWebhook = onRequest(endpointOptions(RAZORPAY_WEBHOOK_SECRETS, 10)
   }
 });
 
-exports._test = { cleanAddress, validatedCart, validAttemptId, orderNumber, finalizeVerifiedEvent };
+exports._test = { cleanAddress, validatedCart, validAttemptId, validDocumentId, resolvedPaymentState, orderNumber, finalizeVerifiedEvent };

@@ -36,3 +36,10 @@ test("maps supported Razorpay webhook events to internal payment states", () => 
   assert.equal(adapter._test.webhookStatus("refund.processed", { amount: 1000, amount_refunded: 1000 }, { amount: 1000 }), "refunded");
   assert.equal(adapter._test.webhookStatus("refund.processed", { amount: 1000, amount_refunded: 500 }, { amount: 500 }), "refund_pending");
 });
+
+test("calculates the remaining amount for full and partially refunded payments", () => {
+  assert.equal(adapter._test.remainingRefundAmount({ amount: 3500000, amount_refunded: 0 }), 3500000);
+  assert.equal(adapter._test.remainingRefundAmount({ amount: 3500000, amount_refunded: 500000 }), 3000000);
+  assert.equal(adapter._test.remainingRefundAmount({ amount: 3500000, amount_refunded: 3500000 }), 0);
+  assert.throws(() => adapter._test.remainingRefundAmount({ amount: 1000, amount_refunded: 2000 }), /invalid refund amounts/);
+});

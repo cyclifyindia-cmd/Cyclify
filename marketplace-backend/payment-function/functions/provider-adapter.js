@@ -106,6 +106,48 @@ async function fetchProviderPayment(paymentId) {
   return client().payments.fetch(paymentId);
 }
 
+function remainingRefundAmount(payment) {
+  const amount = Number(payment?.amount);
+  const refunded = Number(payment?.amount_refunded || 0);
+  if (!Number.isSafeInteger(amount) || amount < 100 || !Number.isSafeInteger(refunded) || refunded < 0 || refunded > amount) {
+    throw new ProviderVerificationError("Razorpay returned invalid refund amounts.");
+  }
+  return amount - refunded;
+}
+
+async function createProviderRefund({ paymentId, providerOrderId, amount, orderId, requestedBy }) {
+  const payment = await fetchProviderPayment(paymentId);
+  const expectedAmount = rupeesToPaise(amount);
+  if (String(payment.order_id || "") !== String(providerOrderId || "") || Number(payment.amount) !== expectedAmount) {
+    throw new ProviderVerificationError("The Razorpay payment does not match this Cyclify order.");
+  }
+  const remaining = remainingRefundAmount(payment);
+  if (remaining === 0 || payment.status === "refunded") {
+    return { alreadyRefunded: true, refundId: "", status: "processed", amount: 0 };
+  }
+  if (payment.status !== "captured") {
+    throw new ProviderVerificationError("Only a captured Razorpay payment can be refunded.");
+  }
+  const refund = await client().payments.refund(paymentId, {
+    amount: remaining,
+    speed: "normal",
+    notes: {
+      cyclifyOrderId: String(orderId || "").slice(0, 256),
+      requestedBy: String(requestedBy || "").slice(0, 256),
+      reason: "Order cancelled by Cyclify administrator",
+    },
+  });
+  if (!refund?.id || Number(refund.amount) !== remaining) {
+    throw new ProviderVerificationError("Razorpay returned an invalid refund response.");
+  }
+  return {
+    alreadyRefunded: false,
+    refundId: String(refund.id),
+    status: String(refund.status || "pending"),
+    amount: Number(refund.amount),
+  };
+}
+
 async function orderForWebhook(razorpay, payloadOrder, payment) {
   if (payloadOrder?.id) return payloadOrder;
   if (!payment?.order_id) throw new ProviderVerificationError("The Razorpay event has no order id.");
@@ -165,10 +207,11 @@ async function verifyProviderWebhook({ headers, rawBody }) {
 
 module.exports = {
   createProviderOrder,
+  createProviderRefund,
   verifyPaymentSignature,
   fetchProviderPayment,
   verifyProviderWebhook,
   ProviderNotConfiguredError,
   ProviderVerificationError,
-  _test: { credentials, receiptFor, rupeesToPaise, paiseToRupees, safeHexMatch, webhookStatus },
+  _test: { credentials, receiptFor, rupeesToPaise, paiseToRupees, remainingRefundAmount, safeHexMatch, webhookStatus },
 };

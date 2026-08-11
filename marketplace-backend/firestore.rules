@@ -15,7 +15,9 @@ service cloud.firestore {
     }
 
     function validAdminOrderUpdate() {
-      return request.resource.data.status in [
+      return resource.data.status != "Order Cancellation Requested"
+             && resource.data.status != "Order Cancelled & Refunded"
+             && request.resource.data.status in [
                "Order Received",
                "Order Shipped",
                "Order Delivered"
