@@ -1,0 +1,9 @@
+{
+  "functions": {
+    "source": "payment-function/functions",
+    "runtime": "nodejs22"
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}

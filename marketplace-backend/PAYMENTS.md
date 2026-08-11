@@ -14,7 +14,7 @@ Cyclify uses Razorpay Standard Checkout on the static storefront and Firebase HT
 
 ## Secrets and deployment
 
-Firebase Functions requires the Blaze plan. From `marketplace-backend/payment-function`, select the `cyclify-b809a` project and add all three secrets:
+Firebase Functions requires the Blaze plan. From `marketplace-backend`, select the `cyclify-b809a` project and add all three secrets:
 
 ```powershell
 firebase use cyclify-b809a
@@ -29,7 +29,7 @@ Rebuild the trusted product catalogue from the repository root, then deploy the 
 
 ```powershell
 npm run build:payment-catalog
-cd marketplace-backend/payment-function
+cd marketplace-backend
 firebase deploy --only firestore:rules,functions:createRazorpayOrder,functions:verifyRazorpayPayment,functions:paymentWebhook
 ```
 
