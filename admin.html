@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Order Operations | Cyclify</title>
+<title>Cyclify Admin | Orders &amp; Reviews</title>
 <meta name="robots" content="noindex,nofollow">
 <style>
 :root{--blue:#0754c9;--blue-soft:#edf4ff;--ink:#101828;--muted:#667085;--line:#dfe3e8;--soft:#f5f7f9;--white:#fff;--green:#087443;--green-soft:#ecfdf3;--amber:#b54708;--amber-soft:#fffaeb;--red:#b42318}
@@ -35,19 +35,22 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .reviewer-login-card{border-color:#f1c27a}
 .reviewer-login-card .admin-login-kicker{color:#a05a00}
 .reviewer-login-card .primary{background:#a05a00}
-.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);background:var(--white);border-radius:8px;margin-bottom:16px;overflow:hidden}
-.stat{padding:16px 18px;border-right:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);background:var(--white);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.stat{padding:10px 14px;border-right:1px solid var(--line)}
 .stat:last-child{border:0}
-.stat span{display:block;color:var(--muted);font-size:12px;margin-bottom:7px}
-.stat strong{font-size:23px;line-height:1}
-.tools{display:grid;grid-template-columns:minmax(240px,1fr) 190px;gap:10px;margin-bottom:16px}
+.stat span{display:block;color:var(--muted);font-size:11px;margin-bottom:4px}
+.stat strong{font-size:19px;line-height:1.1}
+.tools{display:grid;grid-template-columns:minmax(260px,1fr) minmax(420px,1fr);gap:10px;margin-bottom:13px}
+.filter-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px}.filter-controls.with-date{grid-template-columns:1fr 1fr minmax(135px,.8fr)}
 .tools input,.tools select,.fulfilment input,.fulfilment select{width:100%;height:42px;border:1px solid #cfd5dc;border-radius:7px;background:#fff;padding:0 12px;color:var(--ink)}
 .notice{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;color:var(--muted)}
 .notice.error{border-color:#fda29b;color:var(--red)}
 .order{background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:14px;overflow:hidden}
-.order-summary{display:grid;grid-template-columns:minmax(170px,1fr) minmax(170px,1fr) auto auto;gap:18px;align-items:center;padding:15px 18px;border-bottom:1px solid var(--line);background:#fbfcfd}
+.order-summary{display:grid;grid-template-columns:minmax(165px,.8fr) minmax(230px,1.35fr) minmax(190px,.9fr) auto;gap:18px;align-items:center;padding:13px 16px;background:#fbfcfd;cursor:pointer;list-style:none}
+.order-summary::-webkit-details-marker{display:none}.order[open]>.order-summary{border-bottom:1px solid var(--line);background:#fff}.order-summary:hover{background:#f7f9fb}
 .order-number{font-size:16px;font-weight:800}
 .subtle{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.order-products strong{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.order-products .subtle{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .status-pill{display:inline-flex;align-items:center;justify-content:center;min-height:28px;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:800;white-space:nowrap}
 .payment-pill{display:inline-flex;margin-top:5px;padding:3px 8px;border-radius:999px;background:#ecfdf3;color:#087443;font-size:11px;font-weight:800}.payment-pill.refund-pending{background:#fff7e6;color:#b54708}.payment-pill.refunded{background:#f2f4f7;color:#344054}
 .status-received{color:var(--amber);background:var(--amber-soft)}
@@ -55,7 +58,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .status-delivered{color:var(--green);background:var(--green-soft)}
 .status-cancelling{color:var(--amber);background:var(--amber-soft)}
 .status-cancelled{color:var(--red);background:#fff1f0}
-.order-total{font-size:17px;font-weight:800;text-align:right}
+.order-value{display:flex;align-items:center;justify-content:flex-end;gap:12px}.order-total{font-size:17px;font-weight:800;text-align:right;white-space:nowrap}.order-chevron{display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;color:var(--muted);font-size:16px;transition:transform .18s ease,background .18s ease}.order[open] .order-chevron{transform:rotate(180deg);background:var(--blue-soft);color:var(--blue)}
 .progress{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:17px 20px 7px}
 .progress-step{position:relative;text-align:center;color:#98a2b3;font-size:12px;font-weight:700;padding-top:24px}
 .progress-step:before{content:"";position:absolute;z-index:2;top:2px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#d0d5dd;border:3px solid #fff;box-shadow:0 0 0 1px #d0d5dd}
@@ -78,7 +81,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .cancellation-banner{margin:14px 18px 0;border:1px solid #f1c27a;border-radius:7px;background:#fffaeb;color:#934b00;padding:12px 14px;font-weight:700}.cancellation-banner.cancelled{border-color:#d0d5dd;background:#f2f4f7;color:#344054}
 .refund-dialog{width:min(92vw,520px);border:0;border-radius:12px;padding:0;box-shadow:0 24px 70px rgba(16,24,40,.25);color:var(--ink)}.refund-dialog::backdrop{background:rgba(16,24,40,.58)}.refund-dialog-head{padding:22px 24px 12px}.refund-dialog-head span{display:inline-flex;border-radius:999px;background:#fff1f0;color:var(--red);padding:5px 9px;font-size:11px;font-weight:900;text-transform:uppercase}.refund-dialog h2{margin:12px 0 7px;font-size:22px}.refund-dialog p{margin:0;color:var(--muted);line-height:1.55}.refund-dialog-warning{margin:16px 24px!important;border-left:3px solid var(--red);background:#fff6f5;color:#7a271a!important;padding:12px 14px}.refund-password{margin:0 24px 12px}.refund-password label{display:block;margin-bottom:6px;font-size:13px;font-weight:800}.refund-password input{width:100%;height:43px;border:1px solid #d0d5dd;border-radius:7px;padding:0 12px;font:inherit;box-sizing:border-box}.refund-password input:focus{outline:3px solid rgba(255,90,0,.16);border-color:var(--orange)}.refund-dialog-error{min-height:18px;margin:0 24px!important;color:var(--red)!important;font-weight:700}.refund-dialog-actions{display:flex;justify-content:flex-end;gap:9px;border-top:1px solid var(--line);padding:16px 24px 20px;margin-top:15px}.refund-dialog-actions button{height:41px;border-radius:7px;padding:0 15px;font-weight:800;cursor:pointer}.keep-order{border:1px solid var(--line);background:#fff;color:var(--ink)}.confirm-refund{border:0;background:var(--red);color:#fff}.refund-dialog-actions button:disabled{opacity:.55;cursor:wait}
 .empty{text-align:center;padding:45px 20px}
-.workspace-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:0 0 18px}
+.workspace-nav{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:0 0 14px}.workspace-tabs{display:flex;flex:1;gap:4px;border-bottom:1px solid var(--line);margin:0}.workspace-nav .primary{height:38px;margin-bottom:1px}
 .workspace-tab{border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);padding:11px 15px;font-weight:800;cursor:pointer}
 .workspace-tab.active{border-bottom-color:var(--blue);color:var(--blue)}
 .workspace-tab-count{display:inline-flex;min-width:21px;height:21px;align-items:center;justify-content:center;border-radius:999px;background:#e4e7ec;color:#344054;font-size:11px;margin-left:5px}
@@ -108,6 +111,8 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .review-action-note{margin-right:auto;color:var(--muted);font-size:12px;font-weight:700}
 @media(max-width:1000px){
  .stats{grid-template-columns:repeat(3,1fr)}.stat:nth-child(3){border-right:0}.stat:nth-child(n+4){border-top:1px solid var(--line)}
+ .tools{grid-template-columns:1fr}.filter-controls.with-date{grid-template-columns:1fr 1fr minmax(135px,.8fr)}
+ .order-summary{grid-template-columns:minmax(160px,.8fr) minmax(220px,1.2fr) minmax(180px,.9fr) auto}
  .order-body{grid-template-columns:1fr 1fr}.section.items-section{grid-column:1/-1}
  .fulfilment-grid{grid-template-columns:1fr 1fr}.fulfilment-grid .primary{width:100%}
  .review-card-body{grid-template-columns:1fr}
@@ -115,7 +120,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 @media(max-width:650px){
  header{height:60px}.header-actions a{display:none}.shell{padding:18px 12px 40px}.page-head{align-items:flex-start}.page-head h1{font-size:22px}
  .stats{grid-template-columns:1fr 1fr}.stat{border-top:1px solid var(--line)}.stat:nth-child(odd){border-right:1px solid var(--line)}.stat:nth-child(even){border-right:0}.stat:first-child,.stat:nth-child(2){border-top:0}
- .tools{grid-template-columns:1fr}.order-summary{grid-template-columns:1fr auto;gap:10px}.order-summary>div:nth-child(2){grid-column:1/-1;order:3}.order-total{grid-column:2;grid-row:1}
+ .workspace-nav{align-items:stretch;gap:8px}.workspace-tabs{overflow-x:auto}.workspace-nav .primary{height:39px;white-space:nowrap}.tools{grid-template-columns:1fr}.filter-controls,.filter-controls.with-date{grid-template-columns:1fr}.order-summary{grid-template-columns:minmax(0,1fr) auto;gap:10px}.order-products{grid-column:1/-1;order:3}.order-status{grid-column:1/-1;order:4}.order-value{grid-column:2;grid-row:1}
  .order-body{grid-template-columns:1fr}.section.items-section{grid-column:auto}.fulfilment-grid{grid-template-columns:1fr}
  .workspace-tab{padding:10px}.review-tools{align-items:flex-start;flex-direction:column}.review-tools select{width:100%}.review-card-head{flex-direction:column}.review-images{grid-template-columns:repeat(3,1fr)}.review-actions{flex-wrap:wrap}.review-action-note{width:100%}
  .admin-login{grid-template-columns:minmax(0,430px);align-content:center}
@@ -161,14 +166,13 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
   </form>
  </section>
  <div id="adminWorkspace" hidden>
- <div class="page-head">
-  <div><h1>Order Operations</h1><p>Review, fulfil and track customer orders from one place.</p></div>
-  <button class="primary" id="refreshBtn" type="button">Refresh</button>
+ <div class="workspace-nav">
+  <nav class="workspace-tabs" aria-label="Admin workspaces">
+   <button class="workspace-tab active" id="ordersWorkspaceTab" type="button">Orders</button>
+   <button class="workspace-tab" id="reviewsWorkspaceTab" type="button">Review approvals <span class="workspace-tab-count" id="pendingReviewCount">0</span></button>
+  </nav>
+  <button class="primary" id="refreshBtn" type="button">Refresh orders</button>
  </div>
- <nav class="workspace-tabs" aria-label="Admin workspaces">
-  <button class="workspace-tab active" id="ordersWorkspaceTab" type="button">Orders</button>
-  <button class="workspace-tab" id="reviewsWorkspaceTab" type="button">Review approvals <span class="workspace-tab-count" id="pendingReviewCount">0</span></button>
- </nav>
  <section id="ordersWorkspace">
  <section class="stats" aria-label="Order summary">
   <div class="stat"><span>Total orders</span><strong id="orderCount">0</strong></div>
@@ -179,14 +183,24 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
  </section>
  <div class="tools">
   <input id="searchOrders" type="search" placeholder="Search order number, customer, phone or tracking">
-  <select id="statusFilter" aria-label="Filter orders by status">
-   <option value="all">All statuses</option>
-   <option value="Order Received">Order Received</option>
-   <option value="Order Shipped">Order Shipped</option>
-   <option value="Order Delivered">Order Delivered</option>
-   <option value="Order Cancellation Requested">Cancellation & Refund Processing</option>
-   <option value="Order Cancelled & Refunded">Order Cancelled & Refunded</option>
-  </select>
+  <div class="filter-controls" id="filterControls">
+   <select id="statusFilter" aria-label="Filter orders by status">
+    <option value="all">All statuses</option>
+    <option value="Order Received">Order Received</option>
+    <option value="Order Shipped">Order Shipped</option>
+    <option value="Order Delivered">Order Delivered</option>
+    <option value="Order Cancellation Requested">Cancellation & Refund Processing</option>
+    <option value="Order Cancelled & Refunded">Order Cancelled & Refunded</option>
+   </select>
+   <select id="dateRangeFilter" aria-label="Filter orders by date period">
+    <option value="all">All dates</option>
+    <option value="date">Choose a date</option>
+    <option value="month">This month</option>
+    <option value="three-months">Last 3 months</option>
+    <option value="year">This year</option>
+   </select>
+   <input id="customOrderDate" type="date" aria-label="Choose order date" hidden>
+  </div>
  </div>
  <section id="loading" class="notice">Checking administrator access...</section>
  <section id="content" hidden><div id="orders"></div></section>
@@ -244,6 +258,11 @@ const refundDialogError=document.getElementById("refundDialogError");
 const refundAdminPassword=document.getElementById("refundAdminPassword");
 const keepOrderButton=document.getElementById("keepOrderButton");
 const confirmRefundButton=document.getElementById("confirmRefundButton");
+const searchOrders=document.getElementById("searchOrders");
+const statusFilter=document.getElementById("statusFilter");
+const dateRangeFilter=document.getElementById("dateRangeFilter");
+const customOrderDate=document.getElementById("customOrderDate");
+const filterControls=document.getElementById("filterControls");
 let reviewerRedirectPending=false;
 let allOrders=[];
 let allReviews=[];
@@ -317,43 +336,72 @@ function adminAuthError(error){
  return `Admin sign-in failed${code?` (${code})`:""}.`;
 }
 
-function renderStats(){
- orderCount.textContent=allOrders.length;
- receivedCount.textContent=allOrders.filter(order=>normalizeStatus(order.status)==="Order Received").length;
- shippedCount.textContent=allOrders.filter(order=>normalizeStatus(order.status)==="Order Shipped").length;
- deliveredCount.textContent=allOrders.filter(order=>normalizeStatus(order.status)==="Order Delivered").length;
- orderValue.textContent=money(allOrders.reduce((sum,order)=>sum+Number(order.total||0),0));
+const displayOrderStatus=order=>{
+ const paymentStatus=String(order?.paymentStatus||"Paid");
+ if(paymentStatus==="Refunded")return"Order Cancelled & Refunded";
+ if(paymentStatus==="Refund Pending")return"Order Cancellation Requested";
+ return normalizeStatus(order?.status);
+};
+const localDateKey=date=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
+
+function matchesDateRange(order){
+ const range=dateRangeFilter.value;
+ if(range==="all")return true;
+ const date=asDate(order.createdAt);
+ if(!date)return false;
+ const now=new Date();
+ if(range==="date")return!customOrderDate.value||localDateKey(date)===customOrderDate.value;
+ if(range==="month")return date>=new Date(now.getFullYear(),now.getMonth(),1);
+ if(range==="three-months")return date>=new Date(now.getFullYear(),now.getMonth()-2,1);
+ if(range==="year")return date>=new Date(now.getFullYear(),0,1);
+ return true;
 }
 
-function renderOrders(){
+function filteredOrders(){
  const query=searchOrders.value.trim().toLowerCase();
  const filter=statusFilter.value;
- const data=allOrders.filter(order=>{
+ return allOrders.filter(order=>{
   const address=order.address||{},tracking=order.tracking||{};
-  const searchable=[order.number,address.firstName,address.lastName,address.phoneCode,address.phone,tracking.number,tracking.courier].join(" ").toLowerCase();
-  return(!query||searchable.includes(query))&&(filter==="all"||normalizeStatus(order.status)===filter);
+  const productNames=(order.items||[]).map(item=>item.name).join(" ");
+  const searchable=[order.number,address.firstName,address.lastName,address.phoneCode,address.phone,tracking.number,tracking.courier,productNames].join(" ").toLowerCase();
+  return(!query||searchable.includes(query))&&(filter==="all"||displayOrderStatus(order)===filter)&&matchesDateRange(order);
  });
+}
+
+function renderStats(data){
+ orderCount.textContent=data.length;
+ receivedCount.textContent=data.filter(order=>displayOrderStatus(order)==="Order Received").length;
+ shippedCount.textContent=data.filter(order=>displayOrderStatus(order)==="Order Shipped").length;
+ deliveredCount.textContent=data.filter(order=>displayOrderStatus(order)==="Order Delivered").length;
+ orderValue.textContent=money(data.reduce((sum,order)=>sum+Number(order.total||0),0));
+}
+
+function renderOrders(data){
  if(!data.length){
-  orders.innerHTML='<div class="notice empty">No orders match the current search and filter.</div>';
+  orders.innerHTML='<div class="notice empty">No orders match the selected search, status and date filters.</div>';
   return;
  }
  orders.innerHTML=data.map(order=>{
   const address=order.address||{},tracking=order.tracking||{},date=asDate(order.createdAt);
   const paymentStatus=String(order.paymentStatus||"Paid");
-  const currentStatus=paymentStatus==="Refunded"?"Order Cancelled & Refunded":paymentStatus==="Refund Pending"?"Order Cancellation Requested":normalizeStatus(order.status),currentIndex=statusIndex(currentStatus);
+  const currentStatus=displayOrderStatus(order),currentIndex=statusIndex(currentStatus);
   const paymentClass=paymentStatus==="Refunded"?"refunded":paymentStatus==="Refund Pending"?"refund-pending":"paid";
   const cancellationLocked=currentStatus==="Order Cancellation Requested"||currentStatus==="Order Cancelled & Refunded"||paymentStatus==="Refund Pending"||paymentStatus==="Refunded";
   const canCancel=!cancellationLocked&&currentStatus==="Order Received"&&paymentStatus==="Paid"&&Boolean(order.paymentId)&&Boolean(cancelRefundUrl);
   const statusOptions=cancellationLocked?`<option selected>${safe(currentStatus)}</option>`:statuses.map(status=>`<option ${status===currentStatus?"selected":""}>${status}</option>`).join("");
   const phone=[address.phoneCode,address.phone].filter(Boolean).join(" ");
   const trackingUrl=validUrl(tracking.url);
-  return`<article class="order" data-path="${safe(order.path)}">
-   <div class="order-summary">
+  const orderItems=Array.isArray(order.items)?order.items:[];
+  const itemCount=orderItems.reduce((total,item)=>total+(Number(item.quantity)||1),0);
+  const leadProduct=orderItems[0]?.name||"Product information unavailable";
+  const additionalProducts=orderItems.length>1?` + ${orderItems.length-1} more product${orderItems.length>2?"s":""}`:"";
+  return`<details class="order" data-path="${safe(order.path)}">
+   <summary class="order-summary">
     <div><span class="order-number">Order #${safe(order.number)}</span><span class="subtle">${date?date.toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short"}):"Date pending"}</span></div>
-    <div><span class="status-pill ${statusClass(currentStatus)}">${safe(currentStatus)}</span><span class="payment-pill ${paymentClass}">Payment: ${safe(paymentStatus)}</span>${tracking.number?`<span class="subtle">${safe(tracking.courier||"Courier")} - ${safe(tracking.number)}</span>`:""}</div>
-    <div class="subtle">${(order.items||[]).reduce((n,item)=>n+(item.quantity||1),0)} item(s)</div>
-    <div class="order-total">${money(order.total)}</div>
-   </div>
+    <div class="order-products"><strong title="${safe(leadProduct)}">${safe(leadProduct)}</strong><span class="subtle">${itemCount} item${itemCount===1?"":"s"}${safe(additionalProducts)}</span></div>
+    <div class="order-status"><span class="status-pill ${statusClass(currentStatus)}">${safe(currentStatus)}</span><span class="payment-pill ${paymentClass}">Payment: ${safe(paymentStatus)}</span>${tracking.number?`<span class="subtle">${safe(tracking.courier||"Courier")} - ${safe(tracking.number)}</span>`:""}</div>
+    <div class="order-value"><span class="order-total">${money(order.total)}</span><span class="order-chevron" aria-hidden="true">⌄</span></div>
+   </summary>
    ${cancellationLocked?`<div class="cancellation-banner ${currentStatus==="Order Cancelled & Refunded"?"cancelled":""}">${currentStatus==="Order Cancelled & Refunded"?"Refund confirmed. This order is closed and must not be fulfilled.":"Cancellation accepted. Waiting for Razorpay to confirm the refund."}</div>`:`<div class="progress">${statuses.map((status,index)=>`<div class="progress-step ${index<=currentIndex?"done":""}">${status.replace("Order ","")}</div>`).join("")}</div>`}
    <div class="order-body">
     <section class="section"><h2>Customer</h2><p><strong>${safe(`${address.firstName||""} ${address.lastName||""}`.trim()||"Customer")}</strong></p>${phone?`<p>${safe(phone)}</p>`:""}<p class="subtle">Customer ID: ${safe(order.customerId)}</p></section>
@@ -371,8 +419,14 @@ function renderOrders(){
      <p class="save-note" aria-live="polite"></p>
     </section>
    </div>
-  </article>`;
+  </details>`;
  }).join("");
+}
+
+function renderOrderDashboard(){
+ const data=filteredOrders();
+ renderStats(data);
+ renderOrders(data);
 }
 
 async function loadOrders(){
@@ -394,8 +448,7 @@ async function loadOrders(){
     else console.warn("Review eligibility backfill failed",missingEligibility[index].path,result.reason);
    });
   }
-  renderStats();
-  renderOrders();
+  renderOrderDashboard();
   loading.hidden=true;
   content.hidden=false;
  }catch(error){
@@ -584,8 +637,16 @@ ordersWorkspaceTab.classList.toggle("active",showOrders);
 reviewsWorkspaceTab.classList.toggle("active",!showOrders);
 }
 
-searchOrders.addEventListener("input",renderOrders);
-statusFilter.addEventListener("change",renderOrders);
+searchOrders.addEventListener("input",renderOrderDashboard);
+statusFilter.addEventListener("change",renderOrderDashboard);
+dateRangeFilter.addEventListener("change",()=>{
+ const choosingDate=dateRangeFilter.value==="date";
+ customOrderDate.hidden=!choosingDate;
+ filterControls.classList.toggle("with-date",choosingDate);
+ if(choosingDate&&!customOrderDate.value)customOrderDate.value=localDateKey(new Date());
+ renderOrderDashboard();
+});
+customOrderDate.addEventListener("change",renderOrderDashboard);
 reviewStatusFilter.addEventListener("change",renderReviews);
 ordersWorkspaceTab.addEventListener("click",()=>showWorkspace("orders"));
 reviewsWorkspaceTab.addEventListener("click",()=>showWorkspace("reviews"));
