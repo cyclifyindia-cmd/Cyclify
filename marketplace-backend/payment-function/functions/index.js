@@ -204,6 +204,17 @@ async function finalizeVerifiedEvent(event) {
         createdAt: FieldValue.serverTimestamp(), updatedAt: FieldValue.serverTimestamp(), paidAt: FieldValue.serverTimestamp(),
       });
     }
+    if (["refund_pending", "refunded"].includes(event.status) && orderId) {
+      const orderRef = db.collection("customers").doc(attempt.customerId).collection("orders").doc(orderId);
+      transaction.update(orderRef, {
+        paymentStatus: event.status === "refunded" ? "Refunded" : "Refund Pending",
+        refundStatus: event.status,
+        updatedAt: FieldValue.serverTimestamp(),
+        ...(event.status === "refunded"
+          ? { refundedAt: FieldValue.serverTimestamp() }
+          : { refundRequestedAt: FieldValue.serverTimestamp() }),
+      });
+    }
     const nextStatus = attempt.status === "paid" && !["refund_pending", "refunded"].includes(event.status) ? "paid" : event.status;
     transaction.set(eventRef, { eventId: text(event.eventId, 180), paymentId: text(event.paymentId, 180), providerOrderId: text(attempt.providerOrderId, 180), attemptId: event.attemptId, status: event.status, orderId, processedAt: FieldValue.serverTimestamp() });
     transaction.update(attemptRef, { status: nextStatus, paymentId: text(event.paymentId, 180), orderId, updatedAt: FieldValue.serverTimestamp(), ...(event.status === "paid" ? { paidAt: FieldValue.serverTimestamp() } : {}) });

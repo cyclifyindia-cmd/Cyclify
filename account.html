@@ -610,6 +610,8 @@ gap:5px!important;
 .customer-order-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
 .customer-order-date{color:#667085;font-size:13px}
 .customer-order-status{display:inline-block;margin:12px 0 4px;padding:5px 10px;border-radius:999px;background:#edf4ff;color:#175cd3;font-weight:800;font-size:13px}
+.customer-payment-status{display:inline-block;margin:12px 0 4px 6px;padding:5px 10px;border-radius:999px;background:#ecfdf3;color:#087443;font-weight:800;font-size:13px}
+.customer-payment-status.refund-pending{background:#fff7e6;color:#b54708}.customer-payment-status.refunded{background:#f2f4f7;color:#344054}
 .customer-order-meta{color:#475467;margin:7px 0}
 .customer-progress{display:grid;grid-template-columns:repeat(3,1fr);margin:18px 0 14px}
 .customer-progress-step{position:relative;text-align:center;padding-top:23px;color:#98a2b3;font-size:12px;font-weight:700}
@@ -1001,6 +1003,8 @@ return;
 const stages=["Received","Shipped","Delivered"];
 list.innerHTML=orders.map(order=>{
 const status=customerOrderStatus(order.status);
+const paymentStatus=String(order.paymentStatus||"Paid");
+const paymentClass=paymentStatus==="Refunded"?"refunded":paymentStatus==="Refund Pending"?"refund-pending":"paid";
 const statusIndex=status==="Order Delivered"?2:status==="Order Shipped"?1:0;
 const date=orderDate(order.createdAt);
 const tracking=order.tracking||{};
@@ -1012,6 +1016,7 @@ return `
 <span class="customer-order-date">${date?date.toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short"}):"Date pending"}</span>
 </div>
 <span class="customer-order-status">${status}</span>
+<span class="customer-payment-status ${paymentClass}">Payment: ${paymentStatus}</span>
 <div class="customer-progress">${stages.map((stage,index)=>`<div class="customer-progress-step ${index<=statusIndex?"done":""}">${stage}</div>`).join("")}</div>
 <p class="customer-order-meta">${(order.items||[]).reduce((n,item)=>n+(item.quantity||1),0)} item(s) | Rs. ${Number(order.total||0).toLocaleString("en-IN")}</p>
 ${statusIndex>=1&&tracking.number?`<div class="tracking-details"><strong>${tracking.courier||"Courier"}</strong><br>Tracking number: ${tracking.number}${url?`<br><a href="${url}" target="_blank" rel="noopener">Track shipment</a>`:""}</div>`:""}

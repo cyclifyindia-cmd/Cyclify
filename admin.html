@@ -49,6 +49,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .order-number{font-size:16px;font-weight:800}
 .subtle{display:block;color:var(--muted);font-size:12px;margin-top:4px}
 .status-pill{display:inline-flex;align-items:center;justify-content:center;min-height:28px;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:800;white-space:nowrap}
+.payment-pill{display:inline-flex;margin-top:5px;padding:3px 8px;border-radius:999px;background:#ecfdf3;color:#087443;font-size:11px;font-weight:800}.payment-pill.refund-pending{background:#fff7e6;color:#b54708}.payment-pill.refunded{background:#f2f4f7;color:#344054}
 .status-received{color:var(--amber);background:var(--amber-soft)}
 .status-shipped{color:#175cd3;background:var(--blue-soft)}
 .status-delivered{color:var(--green);background:var(--green-soft)}
@@ -308,12 +309,14 @@ function renderOrders(){
  orders.innerHTML=data.map(order=>{
   const address=order.address||{},tracking=order.tracking||{},date=asDate(order.createdAt);
   const currentStatus=normalizeStatus(order.status),currentIndex=statusIndex(currentStatus);
+  const paymentStatus=String(order.paymentStatus||"Paid");
+  const paymentClass=paymentStatus==="Refunded"?"refunded":paymentStatus==="Refund Pending"?"refund-pending":"paid";
   const phone=[address.phoneCode,address.phone].filter(Boolean).join(" ");
   const trackingUrl=validUrl(tracking.url);
   return`<article class="order" data-path="${safe(order.path)}">
    <div class="order-summary">
     <div><span class="order-number">Order #${safe(order.number)}</span><span class="subtle">${date?date.toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short"}):"Date pending"}</span></div>
-    <div><span class="status-pill ${statusClass(currentStatus)}">${safe(currentStatus)}</span>${tracking.number?`<span class="subtle">${safe(tracking.courier||"Courier")} - ${safe(tracking.number)}</span>`:""}</div>
+    <div><span class="status-pill ${statusClass(currentStatus)}">${safe(currentStatus)}</span><span class="payment-pill ${paymentClass}">Payment: ${safe(paymentStatus)}</span>${tracking.number?`<span class="subtle">${safe(tracking.courier||"Courier")} - ${safe(tracking.number)}</span>`:""}</div>
     <div class="subtle">${(order.items||[]).reduce((n,item)=>n+(item.quantity||1),0)} item(s)</div>
     <div class="order-total">${money(order.total)}</div>
    </div>
