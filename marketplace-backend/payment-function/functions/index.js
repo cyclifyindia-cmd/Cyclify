@@ -1,4 +1,5 @@
 const { onRequest } = require("firebase-functions/v2/https");
+const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 const { logger } = require("firebase-functions");
 const { createHash } = require("node:crypto");
 const { initializeApp } = require("firebase-admin/app");
@@ -14,6 +15,10 @@ const {
   ProviderNotConfiguredError,
   ProviderVerificationError,
 } = require("./provider-adapter");
+const {
+  sendNewOrderWhatsApp,
+  WhatsAppNotConfiguredError,
+} = require("./whatsapp-notifier");
 
 initializeApp();
 const db = getFirestore();
@@ -22,6 +27,7 @@ const SITE_ORIGINS = new Set(["https://cyclify.in", "https://www.cyclify.in"]);
 const PAYMENT_STATES = new Set(["created", "pending", "paid", "failed", "cancelled", "expired", "refund_pending", "refunded"]);
 const RAZORPAY_API_SECRETS = ["RAZORPAY_KEY_ID", "RAZORPAY_KEY_SECRET"];
 const RAZORPAY_WEBHOOK_SECRETS = [...RAZORPAY_API_SECRETS, "RAZORPAY_WEBHOOK_SECRET"];
+const WHATSAPP_SECRETS = ["WHATSAPP_ACCESS_TOKEN", "WHATSAPP_PHONE_NUMBER_ID", "WHATSAPP_ADMIN_NUMBER"];
 const ADMIN_EMAIL = "admin@cyclify.in";
 const ADMIN_SENSITIVE_ACTION_MAX_AGE_SECONDS = 5 * 60;
 
@@ -428,6 +434,61 @@ exports.paymentWebhook = onRequest(endpointOptions(RAZORPAY_WEBHOOK_SECRETS, 10)
     if (error instanceof ProviderNotConfiguredError) return send(res, 503, { error: "Payment provider is not connected yet." });
     if (!(error instanceof ProviderVerificationError)) return send(res, 500, { error: "Webhook processing failed. Razorpay can retry safely." });
     return send(res, 400, { error: "Webhook rejected." });
+  }
+});
+
+exports.notifyAdminNewOrder = onDocumentCreated({
+  document: "customers/{customerId}/orders/{orderId}",
+  region: REGION,
+  timeoutSeconds: 30,
+  memory: "256MiB",
+  maxInstances: 5,
+  secrets: WHATSAPP_SECRETS,
+}, async event => {
+  const snapshot = event.data;
+  if (!snapshot) return;
+  const order = snapshot.data();
+  if (order.paymentProvider !== "Razorpay" || order.paymentStatus !== "Paid" || !order.paymentId || !order.providerOrderId) {
+    logger.warn("WhatsApp notification skipped for an unverified order", { orderId: event.params.orderId });
+    return;
+  }
+  try {
+    const reserved = await db.runTransaction(async transaction => {
+      const currentSnapshot = await transaction.get(snapshot.ref);
+      if (!currentSnapshot.exists) return false;
+      const notificationStatus = currentSnapshot.data().adminNotifications?.whatsapp?.status;
+      if (["sending", "sent"].includes(notificationStatus)) return false;
+      transaction.update(snapshot.ref, {
+        "adminNotifications.whatsapp.status": "sending",
+        "adminNotifications.whatsapp.attempts": FieldValue.increment(1),
+        "adminNotifications.whatsapp.lastAttemptAt": FieldValue.serverTimestamp(),
+      });
+      return true;
+    });
+    if (!reserved) return;
+    const result = await sendNewOrderWhatsApp(order);
+    await snapshot.ref.update({
+      "adminNotifications.whatsapp.status": "sent",
+      "adminNotifications.whatsapp.messageId": result.messageId,
+      "adminNotifications.whatsapp.sentAt": FieldValue.serverTimestamp(),
+      "adminNotifications.whatsapp.lastError": FieldValue.delete(),
+    });
+    logger.info("WhatsApp new-order notification sent", { orderId: event.params.orderId });
+  } catch (error) {
+    logger.error("WhatsApp new-order notification failed", {
+      orderId: event.params.orderId,
+      configurationError: error instanceof WhatsAppNotConfiguredError,
+      message: error.message,
+    });
+    try {
+      await snapshot.ref.update({
+        "adminNotifications.whatsapp.status": "failed",
+        "adminNotifications.whatsapp.lastError": String(error.message || "Notification failed.").slice(0, 240),
+        "adminNotifications.whatsapp.failedAt": FieldValue.serverTimestamp(),
+      });
+    } catch (updateError) {
+      logger.error("Could not record WhatsApp notification failure", { orderId: event.params.orderId, message: updateError.message });
+    }
   }
 });
 
