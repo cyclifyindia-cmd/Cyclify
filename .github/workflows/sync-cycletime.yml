@@ -22,7 +22,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run sync:catalog
+      - name: Sync suppliers and rebuild website and payment catalogues
+        run: npm run sync:catalog
+      - name: Verify generated pages and SEO
+        run: npm run audit:seo
       - name: Publish catalogue changes
         run: |
           git config user.name "github-actions[bot]"
