@@ -265,7 +265,7 @@ exports.verifyRazorpayPayment = onRequest(endpointOptions(RAZORPAY_API_SECRETS),
   }
 });
 
-exports.paymentWebhook = onRequest(endpointOptions(RAZORPAY_WEBHOOK_SECRETS, 30), async (req, res) => {
+exports.paymentWebhook = onRequest(endpointOptions(RAZORPAY_WEBHOOK_SECRETS, 10), async (req, res) => {
   if (req.method !== "POST") return send(res, 405, { error: "Method not allowed." });
   try {
     const event = await verifyProviderWebhook({ headers: req.headers, rawBody: req.rawBody });
