@@ -5,8 +5,13 @@
   "engines": {
     "node": "22"
   },
+  "scripts": {
+    "check": "node --check index.js && node --check provider-adapter.js && npm test",
+    "test": "node --test test/*.test.js"
+  },
   "dependencies": {
     "firebase-admin": "^13.0.0",
-    "firebase-functions": "^6.0.0"
+    "firebase-functions": "^6.0.0",
+    "razorpay": "^2.9.8"
   }
 }

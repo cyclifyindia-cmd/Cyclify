@@ -53,6 +53,8 @@ if(!/^[A-Za-z0-9_-]{16,80}$/.test(attemptId)){
     render("success",data);
    }else if(state==="failed"||state==="expired")render("failed",data);
    else if(state==="cancelled")render("cancelled",data);
+   else if(requestedState==="cancelled")render("cancelled",data);
+   else if(requestedState==="failed")render("failed",data);
    else render("verifying",data);
   },()=>{
    render(requestedState==="success"?"verifying":requestedState);
