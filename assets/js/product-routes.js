@@ -208,6 +208,7 @@
   "10985019965633": "products/igpsport-bike-computer-tempered-film-bsc200s-300t-10985019965633.html",
   "10809960857793": "products/igpsport-bsc-100s-computer-protective-case-10809960857793.html",
   "10862389002433": "products/igpsport-bsc-200s-300t-bike-computer-protective-case-10862389002433.html",
+  "11040886161601": "products/igpsport-bsc500-cyclocomputer-11040886161601.html",
   "10785797079233": "products/igpsport-cad70-cadence-sensor-10785797079233.html",
   "10848166281409": "products/igpsport-et6-smart-emoji-taillight-10848166281409.html",
   "10785804583105": "products/igpsport-hr50-heart-rate-monitor-10785804583105.html",

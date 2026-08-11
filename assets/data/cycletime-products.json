@@ -7878,7 +7878,7 @@
         {
           "id": 49963570462913,
           "title": "Default Title",
-          "available": false,
+          "available": true,
           "price": 20400,
           "compare_at_price": 24489,
           "option1": "Default Title",
@@ -7886,7 +7886,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : GPS Computer",
@@ -7951,7 +7951,7 @@
         {
           "id": 49449176662209,
           "title": "Default Title",
-          "available": false,
+          "available": true,
           "price": 24900,
           "compare_at_price": 31080,
           "option1": "Default Title",
@@ -7959,7 +7959,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : GPS Computer",
@@ -8102,7 +8102,7 @@
         {
           "id": 49843919421633,
           "title": "Default Title",
-          "available": false,
+          "available": true,
           "price": 4499,
           "compare_at_price": 5900,
           "option1": "Default Title",
@@ -8110,7 +8110,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : Bicycle Accessories",
@@ -8246,6 +8246,59 @@
         "url": "https://www.cycletimeindia.com/products/igpsports-bsc300t"
       },
       "keywords": "iGPSPORT BSC300T Cyclocomputer GPS Computer CycleTimeIndia",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "bike-computer",
+      "subCategory": ""
+    },
+    {
+      "id": 11040886161601,
+      "supplierProductId": 11040886161601,
+      "supplierSynced": true,
+      "sourceHandle": "igpsport-bsc500-cyclocomputer",
+      "sourceUrl": "https://www.cycletimeindia.com/products/igpsport-bsc500-cyclocomputer",
+      "stockSource": "cycletime",
+      "name": "iGPSPORT BSC500 Cyclocomputer",
+      "brand": "iGPSPORT",
+      "description": "[3.3\" Vivid Touchscreen] - High-res, sun-readable color screen with hybrid touch/button controls for smooth operation. [Long-Lasting Battery] - Up to 25 hours in demanding use, or 35 hours in battery-saver mode.[Precision Dual-Band GNSS & Complete Navigation System] – Full GNSS with Dual-Band tracking for ultra-precise positioning in any terrain. A highly complete navigation system with Offline 2.0 maps, turn-by-turn guidance, Back-to-Start, and instant one-tap re-routing for a seamless riding experience. [Smart Safety & Audio] - Built-in speaker for voice navigation alerts and a smart bike bell for urban/group safety. Access the bell via a q",
+      "price": 19500,
+      "mrp": "Rs 19,500",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500.webp?v=1786352378",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500.webp?v=1786352378",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500-bike-computer-usp.webp?v=1786352378",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500-cycling-computer.webp?v=1786352378",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500-support-navigation.jpg?v=1786352378",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500-with-built-in-speaker.jpg?v=1786352379",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/iGPSPORT-BSC500-with-bell.jpg?v=1786352378"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 50483337691329,
+          "title": "Default Title",
+          "available": true,
+          "price": 19500,
+          "compare_at_price": 0,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : iGPSPORT",
+        "Product Type : GPS Computer",
+        "[3.3\" Vivid Touchscreen] : High-res, sun-readable color screen with hybrid touch/button controls for smooth operation.",
+        "[Advanced iClimb 2.0] : Delivers real-time gradient analysis and specialized climb planning for both road and mountain biking.",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/igpsport-bsc500-cyclocomputer"
+      },
+      "keywords": "iGPSPORT BSC500 Cyclocomputer GPS Computer CycleTimeIndia",
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
@@ -8642,7 +8695,7 @@
       "name": "iGPSPORT M80 Out-Front Bike Mount",
       "brand": "iGPSPORT",
       "description": "Secure your cycling computer and enhance your riding experience with the iGPSPORT M80 Out-Front Bike Mount. Designed for superior strength, optimal visibility, and a clean cockpit, the M80 is the ultimate upgrade for any cyclist who wants a safe and stylish way to view their data. Key Features: Out-Front, Golden Visual Angle: The M80 places your bike computer in a forward position, directly in your line of sight. This \"golden angle\" allows you to easily read your data without taking your eyes far from the road, significantly improving safety and focus. Universal Compatibility: Don't worry about brand-specific mounts. The M80 is widely compati",
-      "price": 700,
+      "price": 720,
       "mrp": "Rs 840",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7a4f0099-335e-485b-98f2-978b6926cd45.jpg?v=1754032520",
       "images": [
@@ -8659,15 +8712,15 @@
         {
           "id": 49449239249089,
           "title": "Default Title",
-          "available": false,
-          "price": 700,
+          "available": true,
+          "price": 720,
           "compare_at_price": 840,
           "option1": "Default Title",
           "option2": "",
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : Bike Mount",
