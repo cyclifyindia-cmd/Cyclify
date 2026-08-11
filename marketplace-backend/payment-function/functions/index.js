@@ -23,6 +23,7 @@ const PAYMENT_STATES = new Set(["created", "pending", "paid", "failed", "cancell
 const RAZORPAY_API_SECRETS = ["RAZORPAY_KEY_ID", "RAZORPAY_KEY_SECRET"];
 const RAZORPAY_WEBHOOK_SECRETS = [...RAZORPAY_API_SECRETS, "RAZORPAY_WEBHOOK_SECRET"];
 const ADMIN_EMAIL = "admin@cyclify.in";
+const ADMIN_SENSITIVE_ACTION_MAX_AGE_SECONDS = 5 * 60;
 
 function cors(req, res) {
   const origin = req.get("origin") || "";
@@ -51,6 +52,13 @@ async function authenticatedAdmin(req) {
   if (String(user.email || "").toLowerCase() === ADMIN_EMAIL && user.email_verified === true) return user;
   const adminRecord = await db.collection("admins").doc(user.uid).get();
   return adminRecord.exists ? user : null;
+}
+
+function hasRecentAuthentication(user, nowSeconds = Math.floor(Date.now() / 1000)) {
+  const authenticatedAt = Number(user?.auth_time);
+  return Number.isFinite(authenticatedAt)
+    && authenticatedAt <= nowSeconds + 30
+    && nowSeconds - authenticatedAt <= ADMIN_SENSITIVE_ACTION_MAX_AGE_SECONDS;
 }
 
 function text(value, max = 180) {
@@ -309,6 +317,7 @@ exports.cancelAndRefundOrder = onRequest(endpointOptions(RAZORPAY_API_SECRETS, 5
   try {
     const admin = await authenticatedAdmin(req);
     if (!admin) return send(res, 403, { error: "Cyclify administrator access is required." });
+    if (!hasRecentAuthentication(admin)) return send(res, 401, { error: "Re-enter your admin password before issuing a refund." });
     const customerId = text(req.body?.customerId, 128);
     const orderId = text(req.body?.orderId, 128);
     if (!validDocumentId(customerId) || !validDocumentId(orderId)) return send(res, 400, { error: "Invalid customer or order reference." });
@@ -422,4 +431,4 @@ exports.paymentWebhook = onRequest(endpointOptions(RAZORPAY_WEBHOOK_SECRETS, 10)
   }
 });
 
-exports._test = { cleanAddress, validatedCart, validAttemptId, validDocumentId, resolvedPaymentState, orderNumber, finalizeVerifiedEvent };
+exports._test = { cleanAddress, validatedCart, validAttemptId, validDocumentId, resolvedPaymentState, orderNumber, hasRecentAuthentication, finalizeVerifiedEvent };

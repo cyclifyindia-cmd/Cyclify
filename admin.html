@@ -76,7 +76,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .tracking-link{color:var(--blue);font-weight:700;text-decoration:none}
 .cancel-refund{height:40px;border:1px solid #fda29b;background:#fff;color:var(--red);border-radius:7px;padding:0 14px;font-weight:800;cursor:pointer}.cancel-refund:hover{background:#fff6f5}.cancel-refund:disabled{opacity:.55;cursor:wait}
 .cancellation-banner{margin:14px 18px 0;border:1px solid #f1c27a;border-radius:7px;background:#fffaeb;color:#934b00;padding:12px 14px;font-weight:700}.cancellation-banner.cancelled{border-color:#d0d5dd;background:#f2f4f7;color:#344054}
-.refund-dialog{width:min(92vw,520px);border:0;border-radius:12px;padding:0;box-shadow:0 24px 70px rgba(16,24,40,.25);color:var(--ink)}.refund-dialog::backdrop{background:rgba(16,24,40,.58)}.refund-dialog-head{padding:22px 24px 12px}.refund-dialog-head span{display:inline-flex;border-radius:999px;background:#fff1f0;color:var(--red);padding:5px 9px;font-size:11px;font-weight:900;text-transform:uppercase}.refund-dialog h2{margin:12px 0 7px;font-size:22px}.refund-dialog p{margin:0;color:var(--muted);line-height:1.55}.refund-dialog-warning{margin:16px 24px!important;border-left:3px solid var(--red);background:#fff6f5;color:#7a271a!important;padding:12px 14px}.refund-dialog-error{min-height:18px;margin:0 24px!important;color:var(--red)!important;font-weight:700}.refund-dialog-actions{display:flex;justify-content:flex-end;gap:9px;border-top:1px solid var(--line);padding:16px 24px 20px;margin-top:15px}.refund-dialog-actions button{height:41px;border-radius:7px;padding:0 15px;font-weight:800;cursor:pointer}.keep-order{border:1px solid var(--line);background:#fff;color:var(--ink)}.confirm-refund{border:0;background:var(--red);color:#fff}.refund-dialog-actions button:disabled{opacity:.55;cursor:wait}
+.refund-dialog{width:min(92vw,520px);border:0;border-radius:12px;padding:0;box-shadow:0 24px 70px rgba(16,24,40,.25);color:var(--ink)}.refund-dialog::backdrop{background:rgba(16,24,40,.58)}.refund-dialog-head{padding:22px 24px 12px}.refund-dialog-head span{display:inline-flex;border-radius:999px;background:#fff1f0;color:var(--red);padding:5px 9px;font-size:11px;font-weight:900;text-transform:uppercase}.refund-dialog h2{margin:12px 0 7px;font-size:22px}.refund-dialog p{margin:0;color:var(--muted);line-height:1.55}.refund-dialog-warning{margin:16px 24px!important;border-left:3px solid var(--red);background:#fff6f5;color:#7a271a!important;padding:12px 14px}.refund-password{margin:0 24px 12px}.refund-password label{display:block;margin-bottom:6px;font-size:13px;font-weight:800}.refund-password input{width:100%;height:43px;border:1px solid #d0d5dd;border-radius:7px;padding:0 12px;font:inherit;box-sizing:border-box}.refund-password input:focus{outline:3px solid rgba(255,90,0,.16);border-color:var(--orange)}.refund-dialog-error{min-height:18px;margin:0 24px!important;color:var(--red)!important;font-weight:700}.refund-dialog-actions{display:flex;justify-content:flex-end;gap:9px;border-top:1px solid var(--line);padding:16px 24px 20px;margin-top:15px}.refund-dialog-actions button{height:41px;border-radius:7px;padding:0 15px;font-weight:800;cursor:pointer}.keep-order{border:1px solid var(--line);background:#fff;color:var(--ink)}.confirm-refund{border:0;background:var(--red);color:#fff}.refund-dialog-actions button:disabled{opacity:.55;cursor:wait}
 .empty{text-align:center;padding:45px 20px}
 .workspace-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:0 0 18px}
 .workspace-tab{border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);padding:11px 15px;font-weight:800;cursor:pointer}
@@ -210,15 +210,16 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 <dialog class="refund-dialog" id="refundDialog" aria-labelledby="refundDialogTitle">
  <div class="refund-dialog-head"><span>Irreversible action</span><h2 id="refundDialogTitle">Cancel and refund this order?</h2><p id="refundDialogSummary"></p></div>
  <p class="refund-dialog-warning">This securely issues a full Razorpay refund. After confirmation, the customer will see the cancellation and a 3–5 working-day refund message.</p>
+ <div class="refund-password"><label for="refundAdminPassword">Confirm your admin password</label><input id="refundAdminPassword" type="password" autocomplete="current-password" required></div>
  <p class="refund-dialog-error" id="refundDialogError" aria-live="polite"></p>
  <div class="refund-dialog-actions"><button class="keep-order" id="keepOrderButton" type="button">Keep order</button><button class="confirm-refund" id="confirmRefundButton" type="button">Yes, cancel &amp; refund</button></div>
 </dialog>
 
 <script src="assets/js/payment-config.js"></script>
 <script type="module">
-import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-import{getFirestore,collectionGroup,getDocs,doc,updateDoc,serverTimestamp}from"https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import{initializeApp}from"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut,EmailAuthProvider,reauthenticateWithCredential}from"https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+import{getFirestore,collectionGroup,getDocs,doc,updateDoc,serverTimestamp}from"https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
 const app=initializeApp({apiKey:"AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",authDomain:"cyclify-b809a.firebaseapp.com",projectId:"cyclify-b809a",storageBucket:"cyclify-b809a.firebasestorage.app",messagingSenderId:"748931097863",appId:"1:748931097863:web:0954f07a8245703f2751a2"});
 const auth=getAuth(app),db=getFirestore(app);
@@ -240,6 +241,7 @@ const reviewerLoginButton=document.getElementById("reviewerLoginButton");
 const refundDialog=document.getElementById("refundDialog");
 const refundDialogSummary=document.getElementById("refundDialogSummary");
 const refundDialogError=document.getElementById("refundDialogError");
+const refundAdminPassword=document.getElementById("refundAdminPassword");
 const keepOrderButton=document.getElementById("keepOrderButton");
 const confirmRefundButton=document.getElementById("confirmRefundButton");
 let reviewerRedirectPending=false;
@@ -463,10 +465,12 @@ orders.addEventListener("click",async event=>{
   pendingRefundOrder=order;
   refundDialogSummary.textContent=`Order #${order.number||order.id} · ${money(order.total)}. This action cannot be reversed from Cyclify.`;
   refundDialogError.textContent="";
+  refundAdminPassword.value="";
   keepOrderButton.disabled=false;
   confirmRefundButton.disabled=false;
   confirmRefundButton.textContent="Yes, cancel & refund";
   refundDialog.showModal();
+  refundAdminPassword.focus();
   return;
  }
  const button=event.target.closest(".save-order");
@@ -511,12 +515,16 @@ orders.addEventListener("click",async event=>{
 keepOrderButton.addEventListener("click",()=>{
  if(confirmRefundButton.disabled)return;
  pendingRefundOrder=null;
+ refundAdminPassword.value="";
  refundDialog.close();
 });
 
 refundDialog.addEventListener("cancel",event=>{
  if(confirmRefundButton.disabled)event.preventDefault();
- else pendingRefundOrder=null;
+ else{
+  pendingRefundOrder=null;
+  refundAdminPassword.value="";
+ }
 });
 
 confirmRefundButton.addEventListener("click",async()=>{
@@ -526,6 +534,10 @@ confirmRefundButton.addEventListener("click",async()=>{
  confirmRefundButton.textContent="Issuing refund...";
  refundDialogError.textContent="";
  try{
+  const password=refundAdminPassword.value;
+  if(!password)throw new Error("Enter your admin password to confirm this refund.");
+  const credential=EmailAuthProvider.credential(auth.currentUser.email,password);
+  await reauthenticateWithCredential(auth.currentUser,credential);
   const token=await auth.currentUser.getIdToken(true);
   const response=await fetch(cancelRefundUrl,{method:"POST",headers:{Authorization:`Bearer ${token}`,"Content-Type":"application/json"},body:JSON.stringify({customerId:pendingRefundOrder.customerId,orderId:pendingRefundOrder.id})});
   const data=await response.json().catch(()=>({}));
@@ -535,7 +547,8 @@ confirmRefundButton.addEventListener("click",async()=>{
   await loadOrders();
  }catch(error){
   console.error("Cancel and refund failed",error);
-  refundDialogError.textContent=error.message||"The order was not cancelled. Please try again.";
+  const code=String(error?.code||"");
+  refundDialogError.textContent=code.includes("invalid-credential")||code.includes("wrong-password")?"The admin password is incorrect. The order was not cancelled.":error.message||"The order was not cancelled. Please try again.";
   keepOrderButton.disabled=false;
   confirmRefundButton.disabled=false;
   confirmRefundButton.textContent="Yes, cancel & refund";
