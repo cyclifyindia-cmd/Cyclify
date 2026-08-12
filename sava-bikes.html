@@ -22,8 +22,10 @@ content="width=device-width, initial-scale=1">
 <meta name="twitter:title" content="SAVA Carbon Road Bikes India | Cyclify">
 <meta name="twitter:description" content="Shop SAVA carbon road bikes in India with detailed specifications and free shipping from Cyclify.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/elves-falath-evo-plus-2.png">
-<script src="assets/js/product-routes.js?v=d953f4dee3"></script>
-<script src="assets/js/catalog-bikes-frames.js?v=0809e31621"></script>
+<script src="assets/js/product-routes.js"></script>
+<script src="assets/js/supplier-products.js"></script>
+<script src="assets/js/fcc-products.js"></script>
+<script src="assets/js/cadence-products.js?v=1"></script>
 <style>
 
 *{
@@ -238,7 +240,7 @@ padding:6px;
 }
 
 .category-pill.active{
-color:#ff5a00;
+color:#0039a6;
 }
 
 .category-pill.active::after{
@@ -248,7 +250,7 @@ bottom:-10px;
 width:44px;
 height:4px;
 border-radius:8px;
-background:linear-gradient(90deg,#ff5a00 0 68%,#0a9e00 68% 100%);
+background:#0039a6;
 }
 
 .category-summary{
@@ -751,20 +753,7 @@ gap:5px!important;
   ]
 }
 </script>
-<style>
-.category-strip,
-.sub-category-strip{padding:4px 10px 7px;gap:10px}
-.sub-category-strip{padding-top:4px}
-.category-pill{min-width:88px;background:transparent;gap:3px;font-size:11px;line-height:1.15}
-.category-icon{width:64px;height:49px;border-radius:0;background-color:transparent;box-shadow:none}
-.category-pill.active::after{bottom:-6px;width:36px;height:3px}
-.category-summary{padding:8px 15px;font-size:13px}
-@media(max-width:560px){
-.category-pill{min-width:82px}
-.category-icon{width:60px;height:45px}
-}
-</style>
-<style>.card{content-visibility:auto;contain-intrinsic-size:0 430px}</style>
+<link rel="stylesheet" href="assets/css/category-premium.css" media="(min-width: 901px)">
 </head>
 
 <body>
@@ -786,7 +775,7 @@ gap:5px!important;
 </div>
 </div>
 
-<div class="page-title"><h1 class="page-heading" style="margin:0">SAVA Carbon Road Bikes</h1><div class="catalog-tools">
+<div class="page-title"><h1 class="page-heading">SAVA Carbon Road Bikes</h1><div class="catalog-tools">
 <select id="sortSelect" aria-label="Sort products">
 <option value="featured">Sort</option>
 <option value="price-low">Price: Low to High</option>
@@ -844,9 +833,9 @@ const products=[
 
 {
 id:1,
-name:"SAVA HAWKEYE F20",
-price:175000,
-mrp:"Rs 1,99,999",
+name:"SAVA Hawkeye SLR7 105 Di2",
+price:189900,
+mrp:"Rs 2,10,000",
 image:"assets/products/sava-hawkeye.jpg",
 sizes:["49","52","54","56"]
 },
@@ -882,7 +871,7 @@ sizes:["XS","S","M","L","XL"]
 id:63,
 name:"SAVA Aurora A7L Pro Carbon Road Bike",
 price:140000,
-mrp:"Rs 1,99,999",
+mrp:"Rs 1,40,000",
 image:"assets/products/sava-aurora-a7l-pro-1.jpg",
 sizes:["S","M","L"]
 }
@@ -905,8 +894,8 @@ const filterSelect=document.getElementById("filterSelect");
 let activeCategory=new URLSearchParams(window.location.search).get("category")||"sava";
 
 const categories=[
-{key:"sava",label:"SAVA",image:"assets/categories/internal-bikes-v2-optimized.webp",size:"200% 100%",position:"0% 0%"},
-{key:"elves",label:"ELVES",image:"assets/categories/internal-bikes-v2-optimized.webp",size:"200% 100%",position:"100% 0%"}
+{key:"sava",label:"SAVA",image:"assets/products/sava-hawkeye.jpg"},
+{key:"elves",label:"ELVES",image:"assets/products/elves-falath-evo-plus-2.png"}
 ];
 
 function getProductCategory(product){
@@ -944,10 +933,66 @@ cartCount.style.display="none";
 
 updateCartCount();
 
+
+products.forEach(product=>{
+
+container.innerHTML+=`
+
+<div class="card"
+onclick="openProduct(${product.id})"
+tabindex="0"
+role="link"
+onkeydown="handleCardKey(event,${product.id})">
+
+<img
+src="${product.image}">
+
+<div class="details">
+
+<h3>
+${product.name}
+</h3>
+
+<div class="price">
+
+Rs ${product.price.toLocaleString()}
+
+</div>
+
+<div class="mrp">
+
+MRP ${product.mrp}
+
+</div>
+
+<div class="ship">
+Free Shipping
+</div>
+
+<div class="bottom">
+
+<button
+class="add"
+onclick="addToCart(event,${product.id})">
+
+Add to cart
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
+<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
@@ -993,14 +1038,14 @@ container.innerHTML=`<div class="empty-state">No products found in this category
 return;
 }
 
-filteredProducts.forEach((product,index)=>{
-container.insertAdjacentHTML("beforeend",`
+filteredProducts.forEach(product=>{
+container.innerHTML+=`
 <div class="card"
 onclick="openProduct(${product.id})"
 tabindex="0"
 role="link"
 onkeydown="handleCardKey(event,${product.id})">
-<img src="${product.image}" alt="${product.name}" loading="${index<4?"eager":"lazy"}" decoding="async" fetchpriority="${index<2?"high":"auto"}">
+<img src="${product.image}">
 <div class="details">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
@@ -1011,7 +1056,7 @@ onkeydown="handleCardKey(event,${product.id})">
 </div>
 </div>
 </div>
-`);
+`;
 });
 }
 
@@ -1118,9 +1163,7 @@ JSON.stringify(cart)
 );
 
 updateCartCount();
-const cartAction=window.cyclifyCartAction||"cart";
-window.cyclifyCartAction="";
-if(cartAction!=="add")window.location.href=cartAction==="buy"?"checkout.html":"cart.html";
+window.location.href="cart.html";
 
 }
 
@@ -1147,7 +1190,14 @@ reader.readAsDataURL(file);
 })();
 </script>
 
-<script src="assets/js/site-footer.js?v=7e21b96475"></script>
+<script src="assets/js/site-footer.js"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+

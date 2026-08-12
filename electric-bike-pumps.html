@@ -18,8 +18,10 @@
 <meta name="twitter:title" content="Electric Bike Pumps in India | Cyclify">
 <meta name="twitter:description" content="Shop compact electric bicycle pumps and portable tyre inflators with free shipping across India.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/thinkrider-x2-max-1.jpg">
-<script src="assets/js/product-routes.js?v=d953f4dee3"></script>
-<script src="assets/js/catalog-electronics.js?v=09fcce5e39"></script>
+<script src="assets/js/product-routes.js"></script>
+<script src="assets/js/supplier-products.js"></script>
+<script src="assets/js/fcc-products.js"></script>
+<script src="assets/js/cadence-products.js?v=1"></script>
 <style>
 *{
 margin:0;
@@ -198,7 +200,7 @@ padding:6px;
 }
 
 .category-pill.active{
-color:#ff5a00;
+color:#0039a6;
 }
 
 .category-pill.active::after{
@@ -208,7 +210,7 @@ bottom:-10px;
 width:44px;
 height:4px;
 border-radius:8px;
-background:linear-gradient(90deg,#ff5a00 0 68%,#0a9e00 68% 100%);
+background:#0039a6;
 }
 
 .category-summary{
@@ -625,20 +627,7 @@ gap:5px!important;
   ]
 }
 </script>
-<style>
-.category-strip,
-.sub-category-strip{padding:4px 10px 7px;gap:10px}
-.sub-category-strip{padding-top:4px}
-.category-pill{min-width:88px;background:transparent;gap:3px;font-size:11px;line-height:1.15}
-.category-icon{width:64px;height:49px;border-radius:0;background-color:transparent;box-shadow:none}
-.category-pill.active::after{bottom:-6px;width:36px;height:3px}
-.category-summary{padding:8px 15px;font-size:13px}
-@media(max-width:560px){
-.category-pill{min-width:82px}
-.category-icon{width:60px;height:45px}
-}
-</style>
-<style>.card{content-visibility:auto;contain-intrinsic-size:0 430px}</style>
+<link rel="stylesheet" href="assets/css/category-premium.css" media="(min-width: 901px)">
 </head>
 <body>
 
@@ -659,7 +648,7 @@ gap:5px!important;
 </div>
 </div>
 
-<div class="page-title"><h1 class="page-heading" style="margin:0">Electric Bike Pumps</h1><div class="catalog-tools">
+<div class="page-title"><h1 class="page-heading">Electric Bike Pumps</h1><div class="catalog-tools">
 <select id="sortSelect" aria-label="Sort products">
 <option value="featured">Sort</option>
 <option value="price-low">Price: Low to High</option>
@@ -898,7 +887,7 @@ sizes:["Black"]
 {
 id:36,
 name:"ThinkRider X2 Max Smart Trainer",
-price:35000,
+price:40000,
 mrp:"Rs 40,000",
 image:"assets/products/thinkrider-x2-max-1.jpg",
 sizes:["Black","White"]
@@ -906,7 +895,7 @@ sizes:["Black","White"]
 {
 id:38,
 name:"ThinkRider XX PRO Foldable Smart Trainer",
-price:49999,
+price:51999,
 mrp:"Rs 51,999",
 image:"assets/products/thinkrider-xx-pro-1.png",
 sizes:["White","Black"]
@@ -914,7 +903,7 @@ sizes:["White","Black"]
 {
 id:39,
 name:"ThinkRider VS 200 Virtual Shifting Controller",
-price:4999,
+price:5999,
 mrp:"Rs 5,999",
 image:"https://thinkrider.com/cdn/shop/files/VS200-12_960x.jpg?v=1768188298",
 sizes:[]
@@ -922,8 +911,8 @@ sizes:[]
 {
 id:40,
 name:"ThinkRider Speed Cadence Sensor",
-price:1999,
-mrp:"Rs 3,300",
+price:2200,
+mrp:"Rs 2,200",
 image:"https://thinkrider.com/cdn/shop/files/SpeedCadenceSensor1_1200x.jpg?v=1767941722",
 sizes:[]
 }
@@ -955,8 +944,8 @@ sizes:[]
 {
 id:44,
 name:"iGPSPORT BSC300T Cyclocomputer",
-price:13800,
-mrp:"Rs 17,973",
+price:14300,
+mrp:"\u20b917,973",
 image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",
 sizes:[]
 },
@@ -979,15 +968,15 @@ sizes:[]
 {
 id:47,
 name:"iGPSPORT BiNavi Cyclocomputer",
-price:24800,
-mrp:"Rs 31,080",
+price:24900,
+mrp:"\u20b931,080",
 image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189",
 sizes:[]
 },
 {
 id:55,
 name:"ThinkRider Bike Trainer Front Wheel Block",
-price:499,
+price:999,
 mrp:"Rs 999",
 image:"assets/products/thinkrider-front-wheel-block-1.png",
 sizes:[]
@@ -995,8 +984,8 @@ sizes:[]
 {
 id:57,
 name:"ThinkRider Heart Rate Monitor with Chest Belt",
-price:2600,
-mrp:"Rs 3,400",
+price:2800,
+mrp:"Rs 2,800",
 image:"assets/products/thinkrider-heart-rate-monitor-1.jpg",
 sizes:[]
 }
@@ -1014,13 +1003,13 @@ const filterSelect=document.getElementById("filterSelect");
 let activeCategory=new URLSearchParams(window.location.search).get("category")||"electric-pump";
 
 const categories=[
-{key:"smart-trainer",label:"Smart Trainer",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"0% 0%"},
-{key:"bike-computer",label:"Bike Computer",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"33.333% 0%"},
-{key:"lights",label:"Lights",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"66.667% 0%"},
-{key:"electric-pump",label:"Electric Pump",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"100% 0%"},
-{key:"power-meter",label:"Power Meter",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"0% 100%"},
-{key:"sensors",label:"Sensors",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"33.333% 100%"},
-{key:"wireless-groupset",label:"Electric Groupset",image:"assets/categories/internal-electronics-v2-optimized.webp",size:"400% 200%",position:"66.667% 100%"}
+{key:"smart-trainer",label:"Smart Trainer",image:"assets/products/thinkrider-x2-max-1.jpg"},
+{key:"bike-computer",label:"Bike Computer",image:"assets/products/cat-bike-computer.png"},
+{key:"lights",label:"Lights",image:"assets/products/cat-lights.png"},
+{key:"electric-pump",label:"Electric Pump",image:"assets/products/cat-electric-pump.png"},
+{key:"power-meter",label:"Power Meter",image:"assets/products/cat-power-meter.png"},
+{key:"sensors",label:"Sensors",image:"assets/products/cyclami-c1-sensor-1.webp"},
+{key:"wireless-groupset",label:"Electric Groupset",image:"assets/products/cat-wireless-groupset.png"}
 ];
 
 function getProductCategory(product){
@@ -1081,6 +1070,27 @@ cartCount.style.display="none";
 
 updateCartCount();
 
+products.forEach(product=>{
+container.innerHTML+=`
+<div class="card"
+onclick="openProduct(${product.id})"
+tabindex="0"
+role="link"
+onkeydown="handleCardKey(event,${product.id})">
+<img src="${product.image}">
+<div class="details">
+<h3>${product.name}</h3>
+<div class="price">Rs ${product.price.toLocaleString()}</div>
+<div class="mrp">MRP ${product.mrp}</div>
+<div class="ship">${product.available===false?"Out of stock":"Free Shipping"}</div>
+<div class="bottom">
+<button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
+</div>
+</div>
+</div>
+`;
+});
+
 function renderCategories(){
 const visibleCategories=categories.filter(category=>
 products.some(product=>getProductCategory(product)===category.key)
@@ -1092,7 +1102,7 @@ activeCategory="";
 
 categoryStrip.innerHTML=visibleCategories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
+<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
@@ -1138,14 +1148,14 @@ container.innerHTML=`<div class="empty-state">No products found in this category
 return;
 }
 
-filteredProducts.forEach((product,index)=>{
-container.insertAdjacentHTML("beforeend",`
+filteredProducts.forEach(product=>{
+container.innerHTML+=`
 <div class="card"
 onclick="openProduct(${product.id})"
 tabindex="0"
 role="link"
 onkeydown="handleCardKey(event,${product.id})">
-<img src="${product.image}" alt="${product.name}" loading="${index<4?"eager":"lazy"}" decoding="async" fetchpriority="${index<2?"high":"auto"}">
+<img src="${product.image}">
 <div class="details">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
@@ -1156,7 +1166,7 @@ onkeydown="handleCardKey(event,${product.id})">
 </div>
 </div>
 </div>
-`);
+`;
 });
 }
 
@@ -1220,9 +1230,7 @@ quantity:1
 
 localStorage.setItem("cart",JSON.stringify(cart));
 updateCartCount();
-const cartAction=window.cyclifyCartAction||"cart";
-window.cyclifyCartAction="";
-if(cartAction!=="add")window.location.href=cartAction==="buy"?"checkout.html":"cart.html";
+window.location.href="cart.html";
 }
 </script>
 
@@ -1264,7 +1272,7 @@ else{cartCount.style.display="none";}
 })();
 </script>
 
-<script src="assets/js/site-footer.js?v=7e21b96475"></script>
+<script src="assets/js/site-footer.js"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>

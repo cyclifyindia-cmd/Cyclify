@@ -18,8 +18,10 @@
 <meta name="twitter:title" content="Cycling Components and Drivetrain Parts | Cyclify">
 <meta name="twitter:description" content="Shop cycling components including cassettes, chains, chainrings, cranksets, derailleurs and groupsets for road and MTB bikes.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/thinkrider-12-speed-11-34-cassette-1.jpg">
-<script src="assets/js/product-routes.js?v=d953f4dee3"></script>
-<script src="assets/js/catalog-components.js?v=2ded026841"></script>
+<script src="assets/js/product-routes.js"></script>
+<script src="assets/js/supplier-products.js"></script>
+<script src="assets/js/fcc-products.js"></script>
+<script src="assets/js/cadence-products.js?v=1"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#f5f5f5;padding-bottom:80px}
@@ -40,8 +42,8 @@ body{background:#f5f5f5;padding-bottom:80px}
 .category-pill{min-width:96px;border:none;background:white;padding:0;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:bold;color:#222;cursor:pointer;scroll-snap-align:start;position:relative}
 .category-icon{width:70px;height:58px;border-radius:14px;background:#eef5ff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
 .category-icon img{width:100%;height:100%;object-fit:contain;padding:6px}
-.category-pill.active{color:#ff5a00}
-.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:linear-gradient(90deg,#ff5a00 0 68%,#0a9e00 68% 100%)}
+.category-pill.active{color:#0039a6}
+.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:#0039a6}
 .category-summary{padding:12px 15px;background:#f5f5f5;font-size:14px;font-weight:bold;color:#333}
 .products{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
 .card{background:white;border-right:1px solid #eee;border-bottom:1px solid #eee;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
@@ -307,20 +309,7 @@ gap:5px!important;
   ]
 }
 </script>
-<style>
-.category-strip,
-.sub-category-strip{padding:4px 10px 7px;gap:10px}
-.sub-category-strip{padding-top:4px}
-.category-pill{min-width:88px;background:transparent;gap:3px;font-size:11px;line-height:1.15}
-.category-icon{width:64px;height:49px;border-radius:0;background-color:transparent;box-shadow:none}
-.category-pill.active::after{bottom:-6px;width:36px;height:3px}
-.category-summary{padding:8px 15px;font-size:13px}
-@media(max-width:560px){
-.category-pill{min-width:82px}
-.category-icon{width:60px;height:45px}
-}
-</style>
-<style>.card{content-visibility:auto;contain-intrinsic-size:0 430px}</style>
+<link rel="stylesheet" href="assets/css/category-premium.css" media="(min-width: 901px)">
 </head>
 <body>
 <div class="topbar">
@@ -332,7 +321,7 @@ gap:5px!important;
 </div>
 </div>
 
-<div class="page-title"><h1 class="page-heading" style="margin:0">Components</h1><div class="catalog-tools">
+<div class="page-title"><span class="page-heading">Components</span><div class="catalog-tools">
 <select id="sortSelect" aria-label="Sort products">
 <option value="featured">Sort</option>
 <option value="price-low">Price: Low to High</option>
@@ -370,7 +359,7 @@ mainCategory:"drivetrain"
 {
 id:58,
 name:"ThinkRider NL-15 Pro Bicycle Torque Wrench Set",
-price:3999,
+price:4200,
 mrp:"Rs 4,500",
 image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp",
 sizes:[],
@@ -420,15 +409,15 @@ window.cyclifyMergeSupplierProducts(products,"components.html");
 window.cyclifyMergeFccProducts(products,"components.html");
 window.cyclifyMergeCadenceProducts(products,"components.html");
 const categories=[
-{key:"drivetrain",label:"Drivetrain",image:"assets/categories/internal-components-v2-optimized.webp",size:"300% 200%",position:"0% 0%"},
-{key:"maintenance",label:"Maintenance",image:"assets/categories/internal-components-v2-optimized.webp",size:"300% 200%",position:"50% 0%"},
-{key:"cockpit",label:"Cockpit",image:"assets/categories/internal-components-v2-optimized.webp",size:"300% 200%",position:"100% 0%"}
+{key:"drivetrain",label:"Drivetrain",image:"assets/products/thinkrider-12-speed-11-34-cassette-1.jpg"},
+{key:"maintenance",label:"Maintenance",image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp"},
+{key:"cockpit",label:"Cockpit",image:"assets/products/toseek-tr30-handlebar-2.webp"}
 ];
 
 const wheelSubCategories=[
-{key:"tools",parent:"maintenance",label:"Tools",image:"assets/categories/internal-components-v2-optimized.webp",size:"300% 200%",position:"0% 100%"},
-{key:"handlebars",parent:"cockpit",label:"Handlebars",image:"assets/categories/internal-components-v2-optimized.webp",size:"300% 200%",position:"50% 100%"},
-{key:"aerobars",parent:"cockpit",label:"Aerobars",image:"assets/categories/internal-components-v2-optimized.webp",size:"300% 200%",position:"100% 100%"}
+{key:"tools",parent:"maintenance",label:"Tools",image:"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp"},
+{key:"handlebars",parent:"cockpit",label:"Handlebars",image:"assets/products/toseek-tr30-handlebar-2.webp"},
+{key:"aerobars",parent:"cockpit",label:"Aerobars",image:"assets/products/toseek-ttf10-tt-bar-2.webp"}
 ];
 const container=document.getElementById("products");
 const categoryStrip=document.getElementById("categoryStrip");
@@ -465,7 +454,7 @@ activeSubCategory="";
 
 categoryStrip.innerHTML=visibleCategories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
+<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
@@ -481,7 +470,7 @@ activeSubCategory="";
 
 subCategoryStrip.innerHTML=visibleSubCategories.map(category=>`
 <button class="category-pill ${category.key===activeSubCategory?"active":""}" onclick="selectSubCategory('${category.key}')">
-<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
+<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
@@ -528,10 +517,10 @@ container.innerHTML=`<div class="empty-state">No products found in this category
 return;
 }
 
-filteredProducts.forEach((product,index)=>{
-container.insertAdjacentHTML("beforeend",`
+filteredProducts.forEach(product=>{
+container.innerHTML+=`
 <div class="card" onclick="openProduct(${product.id})" tabindex="0" role="link" onkeydown="handleCardKey(event,${product.id})">
-<img src="${product.image}" alt="${product.name}" loading="${index<4?"eager":"lazy"}" decoding="async" fetchpriority="${index<2?"high":"auto"}">
+<img src="${product.image}" alt="${product.name}">
 <div class="details">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
@@ -542,7 +531,7 @@ container.insertAdjacentHTML("beforeend",`
 </div>
 </div>
 </div>
-`);
+`;
 });
 }
 
@@ -604,9 +593,7 @@ quantity:1
 
 localStorage.setItem("cart",JSON.stringify(cart));
 updateCartCount();
-const cartAction=window.cyclifyCartAction||"cart";
-window.cyclifyCartAction="";
-if(cartAction!=="add")window.location.href=cartAction==="buy"?"checkout.html":"cart.html";
+window.location.href="cart.html";
 }
 
 searchInput.addEventListener("input",renderProducts);
@@ -654,7 +641,15 @@ else{cartCount.style.display="none";}
 })();
 </script>
 
-<script src="assets/js/site-footer.js?v=7e21b96475"></script>
+<script src="assets/js/site-footer.js"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+

@@ -18,8 +18,10 @@
 <meta name="twitter:title" content="Road Cycling Helmets in India | Cyclify">
 <meta name="twitter:description" content="Shop road and MTB cycling helmets in India with size options from leading cycling brands.">
 <meta name="twitter:image" content="https://cyclify.in/assets/categories/CAT_Wearables.png">
-<script src="assets/js/product-routes.js?v=d953f4dee3"></script>
-<script src="assets/js/catalog-wearables.js?v=9e1cff73d4"></script>
+<script src="assets/js/product-routes.js"></script>
+<script src="assets/js/supplier-products.js"></script>
+<script src="assets/js/fcc-products.js"></script>
+<script src="assets/js/cadence-products.js?v=1"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#f5f5f5;padding-bottom:80px;color:#111827;animation:pageFade .45s ease both}
@@ -45,8 +47,8 @@ html{scroll-behavior:smooth}
 .category-pill:hover{transform:translateY(-1px)}
 .category-icon{width:72px;height:60px;border-radius:14px;background:#eef5ff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
 .category-icon img{width:100%;height:100%;object-fit:contain;padding:7px}
-.category-pill.active{color:#ff5a00}
-.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:linear-gradient(90deg,#ff5a00 0 68%,#0a9e00 68% 100%)}
+.category-pill.active{color:#0039a6}
+.category-pill.active::after{content:"";position:absolute;bottom:-10px;width:44px;height:4px;border-radius:8px;background:#0039a6}
 .category-summary{padding:12px 15px;background:#f5f5f5;font-size:14px;font-weight:bold;color:#333}
 .products{display:grid;grid-template-columns:repeat(2,1fr);gap:0;animation:catalogFade .38s ease both}
 .card{background:white;border-right:1px solid #eee;border-bottom:1px solid #eee;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;animation:cardSettle .42s ease both}
@@ -105,20 +107,7 @@ html{scroll-behavior:smooth}
   ]
 }
 </script>
-<style>
-.category-strip,
-.sub-category-strip{padding:4px 10px 7px;gap:10px}
-.sub-category-strip{padding-top:4px}
-.category-pill{min-width:88px;background:transparent;gap:3px;font-size:11px;line-height:1.15}
-.category-icon{width:64px;height:49px;border-radius:0;background-color:transparent;box-shadow:none}
-.category-pill.active::after{bottom:-6px;width:36px;height:3px}
-.category-summary{padding:8px 15px;font-size:13px}
-@media(max-width:560px){
-.category-pill{min-width:82px}
-.category-icon{width:60px;height:45px}
-}
-</style>
-<style>.card{content-visibility:auto;contain-intrinsic-size:0 430px}</style>
+<link rel="stylesheet" href="assets/css/category-premium.css" media="(min-width: 901px)">
 </head>
 <body>
 <div class="topbar">
@@ -130,7 +119,7 @@ html{scroll-behavior:smooth}
 </div>
 </div>
 
-<div class="page-title"><h1 class="page-heading" style="margin:0">Road Cycling Helmets</h1><div class="catalog-tools">
+<div class="page-title"><h1 class="page-heading">Road Cycling Helmets</h1><div class="catalog-tools">
 <select id="sortSelect" aria-label="Sort products">
 <option value="featured">Sort</option>
 <option value="price-low">Price: Low to High</option>
@@ -343,12 +332,12 @@ window.cyclifyMergeSupplierProducts(products,"wearables.html");
 window.cyclifyMergeFccProducts(products,"wearables.html");
 window.cyclifyMergeCadenceProducts(products,"wearables.html");
 const categories=[
-{key:"helmets",label:"Helmets",image:"assets/categories/internal-wearables-v2-optimized.webp",size:"300% 200%",position:"0% 0%"},
-{key:"jersey-shorts",label:"Jersey & Shorts",image:"assets/categories/internal-wearables-v2-optimized.webp",size:"300% 200%",position:"50% 0%"},
-{key:"shoes",label:"Shoes",image:"assets/categories/internal-wearables-v2-optimized.webp",size:"300% 200%",position:"100% 0%"},
-{key:"smart-watches",label:"Smart Watches",image:"assets/categories/internal-wearables-v2-optimized.webp",size:"300% 200%",position:"0% 100%"},
-{key:"eyewear",label:"Eyewear",image:"assets/categories/internal-wearables-v2-optimized.webp",size:"300% 200%",position:"50% 100%"},
-{key:"gloves",label:"Gloves",image:"assets/categories/internal-wearables-v2-optimized.webp",size:"300% 200%",position:"100% 100%"}
+{key:"helmets",label:"Helmets",image:"assets/categories/CAT_Wearables.png"},
+{key:"jersey-shorts",label:"Jersey & Shorts",image:"assets/categories/CAT_Wearables.png"},
+{key:"shoes",label:"Shoes",image:"assets/categories/CAT_Wearables.png"},
+{key:"smart-watches",label:"Smart Watches",image:"assets/categories/CAT_Wearables.png"},
+{key:"eyewear",label:"Eyewear",image:"assets/categories/CAT_Wearables.png"},
+{key:"gloves",label:"Gloves",image:"assets/categories/CAT_Wearables.png"}
 ];
 
 const container=document.getElementById("products");
@@ -374,7 +363,7 @@ return product.mainCategory||product.category||"";
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon" role="img" aria-label="${category.label}" style="background-image:url('${category.image}');background-size:${category.size};background-position:${category.position};background-repeat:no-repeat"></span>
+<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
@@ -418,10 +407,10 @@ const message=activeCategory?"Products for this wearable category will appear he
 container.innerHTML=`<div class="empty-state"><strong>No products added yet</strong><span>${message}</span></div>`;
 return;
 }
-filteredProducts.forEach((product,index)=>{
-container.insertAdjacentHTML("beforeend",`
+filteredProducts.forEach(product=>{
+container.innerHTML+=`
 <div class="card" onclick="openProduct(${product.id})" tabindex="0" role="link" onkeydown="handleCardKey(event,${product.id})">
-<img src="${product.image}" alt="${product.name}" loading="${index<4?"eager":"lazy"}" decoding="async" fetchpriority="${index<2?"high":"auto"}">
+<img src="${product.image}" alt="${product.name}">
 <div class="details">
 <h3>${product.name}</h3>
 <div class="price">Rs ${product.price.toLocaleString()}</div>
@@ -429,7 +418,7 @@ container.insertAdjacentHTML("beforeend",`
 <div class="ship">${product.available===false?"Out of stock":"Free Shipping"}</div>
 <div class="bottom"><button class="add" id="add-${product.id}" ${product.available===false?"disabled":""} onclick="addToCart(event,${product.id})">${product.available===false?"Out of stock":"Add to cart"}</button></div>
 </div>
-</div>`);
+</div>`;
 });
 }
 
@@ -490,9 +479,7 @@ if(existing){existing.quantity++;}
 else{cart.push({id:product.id,name:product.name,price:product.price,image:product.image,quantity:1});}
 localStorage.setItem("cart",JSON.stringify(cart));
 updateCartCount();
-const cartAction=window.cyclifyCartAction||"cart";
-window.cyclifyCartAction="";
-if(cartAction!=="add")window.location.href=cartAction==="buy"?"checkout.html":"cart.html";
+window.location.href="cart.html";
 }
 
 searchInput.addEventListener("input",renderProducts);
@@ -517,7 +504,11 @@ reader.readAsDataURL(file);
 }
 })();
 </script>
-<script src="assets/js/site-footer.js?v=7e21b96475"></script>
+<script src="assets/js/site-footer.js"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
+
+
+
+
