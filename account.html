@@ -851,9 +851,21 @@ else{cartCount.style.display="none";}
 <script>
 try{
 const preview=JSON.parse(localStorage.getItem("cyclifyAccountPreview")||"null");
-if(preview&&preview.name){document.getElementById("authLoadingText").textContent=`Welcome back, ${preview.name}. Confirming your session...`;}
-else{document.body.classList.add("auth-signed-out");}
-}catch(_error){}
+const loading=document.getElementById("authLoading");
+const authPanel=document.getElementById("authArea");
+const accountDashboard=document.getElementById("dashboard");
+loading.style.display="none";
+if(preview&&preview.name){
+document.body.classList.add("auth-signed-in");
+authPanel.style.display="none";
+accountDashboard.classList.add("active");
+document.getElementById("profileName").textContent=preview.name;
+document.getElementById("profileUser").textContent=preview.email||"Signed in";
+}else{
+document.body.classList.add("auth-signed-out");
+authPanel.style.display="block";
+}
+}catch(_error){document.body.classList.add("auth-signed-out");}
 </script>
 
 <script type="module">
@@ -934,6 +946,17 @@ function cleanMobileEmail(email){
 return email&&email.endsWith("@mobile.cyclify.in")?email.replace("@mobile.cyclify.in",""):email;
 }
 
+async function continueRequestedJourney(userId){
+const returnTo=new URLSearchParams(location.search).get("return");
+if(returnTo!=="checkout.html")return false;
+for(let attempt=0;attempt<160;attempt++){
+if(window.cyclifyCartHydrated&&localStorage.getItem("cyclifyCartOwner")===userId)break;
+await new Promise(resolve=>setTimeout(resolve,50));
+}
+location.replace("checkout.html");
+return true;
+}
+
 function renderState(user){
 authLoading.style.display="none";
 document.body.classList.toggle("auth-signed-in",Boolean(user));
@@ -945,8 +968,9 @@ profileName.textContent=user.displayName||"Cyclify Customer";
 profileUser.textContent=cleanMobileEmail(user.email)||user.phoneNumber||"Signed in";
 localStorage.setItem("cyclifyAccountPreview",JSON.stringify({name:user.displayName||"Cyclify Customer",email:cleanMobileEmail(user.email)||""}));
 document.getElementById("adminOrdersCard").style.display=user.email?.toLowerCase()==="admin@cyclify.in"&&user.emailVerified?"":"none";
-requestAnimationFrame(()=>renderOrders(user));
 const params=new URLSearchParams(location.search);
+if(params.get("return")==="checkout.html"){void continueRequestedJourney(user.uid);return;}
+requestAnimationFrame(()=>renderOrders(user));
 if(params.get("tab")==="orders")showOrders();
 }
 else{
