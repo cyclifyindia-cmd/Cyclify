@@ -7,7 +7,6 @@
 
 <meta name="description" content="Login to your Cyclify account to manage your profile and future orders.">
 <meta name="robots" content="noindex,follow">
-<meta name="cyclify-release" content="account-auth-fix-2026-08-07">
 <link rel="canonical" href="https://cyclify.in/account.html">
 <meta property="og:site_name" content="Cyclify">
 <meta property="og:title" content="My Account | Cyclify">
@@ -19,6 +18,9 @@
 <meta name="twitter:title" content="My Account | Cyclify">
 <meta name="twitter:description" content="Login to your Cyclify account to manage your profile and future orders.">
 <meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
+<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://identitytoolkit.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://firestore.googleapis.com" crossorigin>
 <style>
 *{
 margin:0;
@@ -213,6 +215,21 @@ border-color:#0039a6;
 box-shadow:0 0 0 2px rgba(0,57,166,.1);
 }
 
+.auth-divider{display:flex;align-items:center;gap:12px;margin:18px 0;color:#8a8f98;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:.08em}
+.auth-divider::before,.auth-divider::after{content:"";height:1px;flex:1;background:#e4e7ec}
+.auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:6px}
+.auth-actions .secondary-btn{margin-top:0}
+.auth-link{display:block;width:100%;margin-top:12px;padding:4px;border:0;background:none;color:#0039a6;font-size:13px;font-weight:bold;cursor:pointer;text-align:center}
+.verification-notice{display:none;margin:0 0 14px;padding:12px 14px;border:1px solid #f0d99b;border-radius:12px;background:#fff9e8;color:#6e5311;font-size:13px;line-height:1.45}
+.verification-notice.show{display:block}
+.verification-notice button{margin-top:8px;padding:0;border:0;background:none;color:#0039a6;font-weight:bold;cursor:pointer}
+.account-skeleton{display:grid;gap:9px}
+.account-skeleton span{display:block;height:12px;border-radius:999px;background:linear-gradient(90deg,#edf0f3 25%,#f8f9fa 45%,#edf0f3 65%);background-size:220% 100%;animation:accountShimmer 1.2s linear infinite}
+.account-skeleton span:first-child{width:46%;height:18px}.account-skeleton span:nth-child(2){width:72%}.account-skeleton span:nth-child(3){width:58%}
+.account-skeleton p{margin:3px 0 0;color:#70757d;font-size:12px}
+@keyframes accountShimmer{to{background-position:-220% 0}}
+@media(prefers-reduced-motion:reduce){.account-skeleton span{animation:none}}
+
 .hint{
 font-size:12px;
 color:#666;
@@ -256,18 +273,6 @@ cursor:pointer;
 .primary-btn{
 background:#0039a6;
 color:white;
-}
-
-.auth-fallback-btn{
-margin-top:10px;
-border:1px solid #cfd5dc;
-background:#fff;
-color:#1d2939;
-}
-
-.primary-btn:disabled,.auth-fallback-btn:disabled{
-cursor:wait;
-opacity:.7;
 }
 
 .secondary-btn{
@@ -610,9 +615,6 @@ gap:5px!important;
 .customer-order-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
 .customer-order-date{color:#667085;font-size:13px}
 .customer-order-status{display:inline-block;margin:12px 0 4px;padding:5px 10px;border-radius:999px;background:#edf4ff;color:#175cd3;font-weight:800;font-size:13px}
-.customer-order-status.cancelling{background:#fff7e6;color:#b54708}.customer-order-status.cancelled{background:#fff1f0;color:#b42318}
-.customer-payment-status{display:inline-block;margin:12px 0 4px 6px;padding:5px 10px;border-radius:999px;background:#ecfdf3;color:#087443;font-weight:800;font-size:13px}
-.customer-payment-status.refund-pending{background:#fff7e6;color:#b54708}.customer-payment-status.refunded{background:#f2f4f7;color:#344054}
 .customer-order-meta{color:#475467;margin:7px 0}
 .customer-progress{display:grid;grid-template-columns:repeat(3,1fr);margin:18px 0 14px}
 .customer-progress-step{position:relative;text-align:center;padding-top:23px;color:#98a2b3;font-size:12px;font-weight:700}
@@ -624,7 +626,6 @@ gap:5px!important;
 .customer-progress-step.done:after{background:#087443}
 .tracking-details{background:#f8fafc;border-left:3px solid #0754c9;padding:12px 14px;margin:12px 0;line-height:1.55}
 .tracking-details a{color:#0754c9;font-weight:800;text-decoration:none}
-.customer-refund-note{margin:14px 0;padding:13px 15px;border-left:3px solid #f79009;border-radius:7px;background:#fffaeb;color:#7a4a00;line-height:1.55;font-weight:700}.customer-refund-note.refunded{border-left-color:#12b76a;background:#ecfdf3;color:#05603a}
 .customer-support{color:#0754c9;font-weight:800;text-decoration:none}
 .order-review-box{border-top:1px solid #e4e7ec;margin-top:16px;padding-top:15px}
 .order-review-title{font-size:13px;font-weight:800;margin:0 0 10px}
@@ -687,15 +688,21 @@ gap:5px!important;
 <main class="account-shell">
 <div class="account-title">
 <h1>My Account</h1>
-<p>Continue securely with Google to manage your Cyclify orders.</p>
+<p>Sign in securely to manage your Cyclify orders and profile.</p>
 </div>
 
 <section class="panel active" id="authLoading" aria-live="polite">
-<strong>Opening your secure account...</strong>
-<p class="hint" style="margin:8px 0 0">Checking your signed-in session.</p>
+<div class="account-skeleton" aria-label="Restoring your account">
+<span></span><span></span><span></span>
+<p id="authLoadingText">Restoring your secure session...</p>
+</div>
 </section>
 
 <section class="dashboard" id="dashboard">
+<div class="verification-notice" id="emailVerificationNotice">
+Please verify your email address to fully secure your Cyclify account.
+<button id="resendVerificationBtn" type="button">Resend verification email</button>
+</div>
 <div class="profile-card">
 <strong id="profileName">Cyclify Customer</strong>
 <span id="profileUser"></span>
@@ -757,10 +764,16 @@ gap:5px!important;
 <div class="panel active">
 <div class="message" id="loginMessage"></div>
 <h2 style="margin:0 0 8px">Sign in to Cyclify</h2>
-<p class="hint" style="margin:0 0 18px">Customers can continue securely with Google.</p>
+<p class="hint" style="margin:0 0 18px">Access orders, saved addresses, and verified-purchase reviews.</p>
 <button class="primary-btn" id="googleLoginBtn" type="button">Continue with Google</button>
-<button class="secondary-btn auth-fallback-btn" id="googleRedirectBtn" type="button">Trouble with the popup? Use secure redirect</button>
-<p class="hint" style="margin:12px 0 0">The redirect option works better when a browser blocks login popups.</p>
+<div class="auth-divider">or use email</div>
+<form id="emailAuthForm">
+<div class="field"><label for="accountName">Name <span style="font-weight:normal;color:#777">(for new accounts)</span></label><input id="accountName" type="text" maxlength="60" autocomplete="name" placeholder="Your name"></div>
+<div class="field"><label for="accountEmail">Email address</label><input id="accountEmail" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com"></div>
+<div class="field"><label for="accountPassword">Password</label><input id="accountPassword" type="password" minlength="6" autocomplete="current-password" required placeholder="Minimum 6 characters"></div>
+<div class="auth-actions"><button class="primary-btn" id="emailLoginBtn" type="submit">Sign in</button><button class="secondary-btn" id="emailRegisterBtn" type="button">Create account</button></div>
+<button class="auth-link" id="forgotPasswordBtn" type="button">Forgot password?</button>
+</form>
 </div>
 </section>
 <section class="cyclify-contact-details" id="registeredAddress" aria-labelledby="registeredAddressTitle">
@@ -768,9 +781,8 @@ gap:5px!important;
   <address>
     <strong>CYCLIFY INDIA</strong>
     <span>GSTIN: 33JOJPD5578G1ZN</span>
-    <span>1/193, Thenral Nagar, Udankudi, Tuticorin, Tamil Nadu - 628203, India</span>
-    <span>Email: <a href="mailto:admin@cyclify.in">admin@cyclify.in</a></span>
-    <span>Phone: <a href="tel:+917418498045">+91 74184 98045</a></span>
+    <span>1/193, Thenral Nagar, Udankudi, Tuticorin</span>
+    <span>India</span>
   </address>
 </section>
 </main>
@@ -815,34 +827,28 @@ else{cartCount.style.display="none";}
 </script>
 
 <script>
-window.__cyclifyAccountAuthReady=false;
-window.setTimeout(()=>{
-if(window.__cyclifyAccountAuthReady)return;
-const loading=document.getElementById("authLoading");
-const authArea=document.getElementById("authArea");
-const message=document.getElementById("loginMessage");
-if(loading)loading.style.display="none";
-if(authArea)authArea.style.display="block";
-if(message){
-message.className="message show error";
-message.textContent="The secure login service is taking longer than expected. Check your internet connection, then refresh this page or use the secure redirect option.";
-}
-},10000);
+try{
+const preview=JSON.parse(localStorage.getItem("cyclifyAccountPreview")||"null");
+if(preview&&preview.name){document.getElementById("authLoadingText").textContent=`Welcome back, ${preview.name}. Confirming your session...`;}
+}catch(_error){}
 </script>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import {
 getAuth,
 signInWithPopup,
-signInWithRedirect,
-getRedirectResult,
 GoogleAuthProvider,
 onAuthStateChanged,
 signOut,
 setPersistence,
-browserLocalPersistence
-} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+browserLocalPersistence,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+sendPasswordResetEmail,
+sendEmailVerification,
+updateProfile
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import {
 getFirestore,
 collection,
@@ -853,7 +859,7 @@ doc,
 getDoc,
 setDoc,
 serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",
@@ -867,9 +873,9 @@ measurementId: "G-ZDE8EQN0XV"
 
 const app=initializeApp(firebaseConfig);
 const auth=getAuth(app);
+setPersistence(auth,browserLocalPersistence).catch(()=>{});
 const db=getFirestore(app);
 const googleProvider=new GoogleAuthProvider();
-googleProvider.setCustomParameters({prompt:"select_account"});
 const reviewMediaEndpoint="https://cyclify-used-market-media.cyclifyindia.workers.dev";
 let activeReview=null;
 let reviewRating=0;
@@ -881,6 +887,11 @@ const dashboard=document.getElementById("dashboard");
 const profileName=document.getElementById("profileName");
 const profileUser=document.getElementById("profileUser");
 const authLoading=document.getElementById("authLoading");
+const emailVerificationNotice=document.getElementById("emailVerificationNotice");
+const emailAuthForm=document.getElementById("emailAuthForm");
+const accountEmail=document.getElementById("accountEmail");
+const accountPassword=document.getElementById("accountPassword");
+const accountName=document.getElementById("accountName");
 
 function setMessage(id,type,text){
 const box=document.getElementById(id);
@@ -905,12 +916,16 @@ authArea.style.display="none";
 dashboard.classList.add("active");
 profileName.textContent=user.displayName||"Cyclify Customer";
 profileUser.textContent=cleanMobileEmail(user.email)||user.phoneNumber||"Signed in";
+localStorage.setItem("cyclifyAccountPreview",JSON.stringify({name:user.displayName||"Cyclify Customer",email:cleanMobileEmail(user.email)||""}));
+const usesPassword=user.providerData.some(provider=>provider.providerId==="password");
+emailVerificationNotice.classList.toggle("show",usesPassword&&!user.emailVerified);
 document.getElementById("adminOrdersCard").style.display=user.email?.toLowerCase()==="admin@cyclify.in"&&user.emailVerified?"":"none";
-renderOrders(user);
+requestAnimationFrame(()=>renderOrders(user));
 const params=new URLSearchParams(location.search);
 if(params.get("tab")==="orders")showOrders();
 }
 else{
+localStorage.removeItem("cyclifyAccountPreview");
 authArea.style.display="block";
 dashboard.classList.remove("active");
 }
@@ -931,8 +946,6 @@ return Number.isNaN(parsed.getTime())?null:parsed;
 
 function customerOrderStatus(value){
 const status=String(value||"").toLowerCase();
-if(status.includes("cancelled")&&status.includes("refund")){return "Order Cancelled & Refunded";}
-if(status.includes("cancellation")){return "Order Cancellation Requested";}
 if(status.includes("deliver")){return "Order Delivered";}
 if(status.includes("ship")){return "Order Shipped";}
 return "Order Received";
@@ -1006,11 +1019,7 @@ return;
 }
 const stages=["Received","Shipped","Delivered"];
 list.innerHTML=orders.map(order=>{
-const paymentStatus=String(order.paymentStatus||"Paid");
-const status=paymentStatus==="Refunded"?"Order Cancelled & Refunded":paymentStatus==="Refund Pending"?"Order Cancellation Requested":customerOrderStatus(order.status);
-const paymentClass=paymentStatus==="Refunded"?"refunded":paymentStatus==="Refund Pending"?"refund-pending":"paid";
-const cancellationPending=status==="Order Cancellation Requested";
-const cancelled=status==="Order Cancelled & Refunded";
+const status=customerOrderStatus(order.status);
 const statusIndex=status==="Order Delivered"?2:status==="Order Shipped"?1:0;
 const date=orderDate(order.createdAt);
 const tracking=order.tracking||{};
@@ -1021,11 +1030,10 @@ return `
 <strong>Order #${order.number}</strong>
 <span class="customer-order-date">${date?date.toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short"}):"Date pending"}</span>
 </div>
-<span class="customer-order-status ${cancelled?"cancelled":cancellationPending?"cancelling":""}">${safe(status)}</span>
-<span class="customer-payment-status ${paymentClass}">Payment: ${safe(paymentStatus)}</span>
-${cancellationPending||cancelled?`<div class="customer-refund-note ${cancelled?"refunded":""}">${cancelled?"Your order has been cancelled and the full refund has been issued. Your amount will be refunded to the original payment method within 3–5 working days.":"Your cancellation is confirmed and the full refund is being processed. Your amount will be refunded within 3–5 working days after confirmation."}</div>`:`<div class="customer-progress">${stages.map((stage,index)=>`<div class="customer-progress-step ${index<=statusIndex?"done":""}">${stage}</div>`).join("")}</div>`}
+<span class="customer-order-status">${status}</span>
+<div class="customer-progress">${stages.map((stage,index)=>`<div class="customer-progress-step ${index<=statusIndex?"done":""}">${stage}</div>`).join("")}</div>
 <p class="customer-order-meta">${(order.items||[]).reduce((n,item)=>n+(item.quantity||1),0)} item(s) | Rs. ${Number(order.total||0).toLocaleString("en-IN")}</p>
-${!cancellationPending&&!cancelled&&statusIndex>=1&&tracking.number?`<div class="tracking-details"><strong>${tracking.courier||"Courier"}</strong><br>Tracking number: ${tracking.number}${url?`<br><a href="${url}" target="_blank" rel="noopener">Track shipment</a>`:""}</div>`:""}
+${statusIndex>=1&&tracking.number?`<div class="tracking-details"><strong>${tracking.courier||"Courier"}</strong><br>Tracking number: ${tracking.number}${url?`<br><a href="${url}" target="_blank" rel="noopener">Track shipment</a>`:""}</div>`:""}
 <a class="customer-support" href="https://wa.me/message/MLT2FFSAEYGIP1?text=${encodeURIComponent(`Hi Cyclify, I need help with order #${order.number}`)}">Get support on WhatsApp</a>
 ${reviewActions(order,status)}
 </article>`;
@@ -1220,7 +1228,7 @@ document.getElementById("ordersTab").addEventListener("click",showOrders);
 function getAuthError(error){
 const code=error&&error.code?error.code:"";
 if(code.includes("auth/email-already-in-use")){
-return "Account already exists. Please login.";
+return "An account already exists for this email. Please sign in instead.";
 }
 if(code.includes("auth/invalid-credential")||code.includes("auth/wrong-password")||code.includes("auth/user-not-found")){
 return "Wrong username or password.";
@@ -1232,8 +1240,12 @@ if(code.includes("auth/unauthorized-domain")){
 return "This domain is not authorized in Firebase. Add cyclify.in in Firebase Authentication settings.";
 }
 if(code.includes("auth/operation-not-allowed")){
-return "Google sign-in is not enabled in Firebase Authentication.";
+return "This sign-in method is not enabled yet in Firebase Authentication.";
 }
+if(code.includes("auth/weak-password"))return "Use a password with at least 6 characters.";
+if(code.includes("auth/invalid-email"))return "Enter a valid email address.";
+if(code.includes("auth/user-disabled"))return "This account has been disabled. Please contact Cyclify support.";
+if(code.includes("auth/account-exists-with-different-credential"))return "This email already uses another sign-in method. Continue with Google, then link email login later.";
 if(code.includes("auth/too-many-requests")){
 return "Firebase temporarily blocked repeated attempts. Please wait a few minutes and try again.";
 }
@@ -1248,94 +1260,71 @@ return `Firebase login failed${code?` (${code})`:""}.`;
 
 async function loginWithGoogle(messageId){
 clearMessage(messageId);
-const button=document.getElementById("googleLoginBtn");
-button.disabled=true;
-button.textContent="Opening Google...";
 try{
 await signInWithPopup(auth,googleProvider);
 }
 catch(error){
 setMessage(messageId,"error",getAuthError(error));
 }
-finally{
-button.disabled=false;
-button.textContent="Continue with Google";
-}
-}
-
-async function loginWithGoogleRedirect(messageId){
-clearMessage(messageId);
-const button=document.getElementById("googleRedirectBtn");
-button.disabled=true;
-button.textContent="Redirecting securely...";
-try{
-await signInWithRedirect(auth,googleProvider);
-}
-catch(error){
-setMessage(messageId,"error",getAuthError(error));
-button.disabled=false;
-button.textContent="Trouble with the popup? Use secure redirect";
-}
-}
-
-function safeReturnPath(value){
-if(!value)return"";
-try{
-const url=new URL(value,location.origin);
-if(url.origin!==location.origin)return"";
-return `${url.pathname}${url.search}${url.hash}`;
-}catch{return"";}
 }
 
 document.getElementById("googleLoginBtn").addEventListener("click",()=>{
 loginWithGoogle("loginMessage");
 });
 
-document.getElementById("googleRedirectBtn").addEventListener("click",()=>{
-loginWithGoogleRedirect("loginMessage");
+emailAuthForm.addEventListener("submit",async event=>{
+event.preventDefault();
+clearMessage("loginMessage");
+try{
+await signInWithEmailAndPassword(auth,accountEmail.value.trim(),accountPassword.value);
+}
+catch(error){setMessage("loginMessage","error",getAuthError(error));}
+});
+
+document.getElementById("emailRegisterBtn").addEventListener("click",async()=>{
+clearMessage("loginMessage");
+if(!emailAuthForm.reportValidity())return;
+try{
+const credential=await createUserWithEmailAndPassword(auth,accountEmail.value.trim(),accountPassword.value);
+if(accountName.value.trim())await updateProfile(credential.user,{displayName:accountName.value.trim()});
+await sendEmailVerification(credential.user,{url:"https://cyclify.in/account.html"});
+setMessage("loginMessage","success","Account created. We sent a verification link to your email.");
+renderState(credential.user);
+}
+catch(error){setMessage("loginMessage","error",getAuthError(error));}
+});
+
+document.getElementById("forgotPasswordBtn").addEventListener("click",async()=>{
+clearMessage("loginMessage");
+const email=accountEmail.value.trim();
+if(!email){accountEmail.focus();setMessage("loginMessage","error","Enter your email address first.");return;}
+try{
+await sendPasswordResetEmail(auth,email,{url:"https://cyclify.in/account.html"});
+setMessage("loginMessage","success","If an account exists for this email, a password-reset link has been sent.");
+}
+catch(error){setMessage("loginMessage","error",getAuthError(error));}
+});
+
+document.getElementById("resendVerificationBtn").addEventListener("click",async()=>{
+if(!auth.currentUser)return;
+try{
+await sendEmailVerification(auth.currentUser,{url:"https://cyclify.in/account.html"});
+emailVerificationNotice.firstChild.textContent="Verification email sent. Please check your inbox. ";
+}
+catch(error){setMessage("loginMessage","error",getAuthError(error));}
 });
 
 document.getElementById("logoutBtn").addEventListener("click",async ()=>{
-try{await signOut(auth);}catch(error){
-console.error("Cyclify sign-out failed",error);
-setMessage("loginMessage","error","Sign-out could not be completed. Refresh the page and try again.");
-}
+localStorage.removeItem("cyclifyAccountPreview");
+await signOut(auth);
 });
 
-async function startAccountAuth(){
-try{
-await setPersistence(auth,browserLocalPersistence);
-await getRedirectResult(auth);
-}catch(error){
-console.error("Cyclify authentication setup failed",error);
-setMessage("loginMessage","error",getAuthError(error));
-}
-window.__cyclifyAccountAuthReady=true;
 onAuthStateChanged(auth,user=>{
 renderState(user);
-if(user){
-const returnTo=safeReturnPath(new URLSearchParams(location.search).get("return"));
-if(returnTo)location.replace(returnTo);
-}
-},error=>{
-console.error("Cyclify session check failed",error);
-authLoading.style.display="none";
-authArea.style.display="block";
-dashboard.classList.remove("active");
-setMessage("loginMessage","error","We could not verify your session. Check your connection and try again.");
 });
-}
-
-window.addEventListener("offline",()=>setMessage("loginMessage","error","You are offline. Reconnect to the internet to sign in."));
-window.addEventListener("online",()=>{
-const message=document.getElementById("loginMessage");
-if(message.textContent.includes("offline"))clearMessage("loginMessage");
-});
-
-startAccountAuth();
 </script>
 
-<script src="assets/js/site-footer.js?v=7e21b96475"></script>
+<script src="assets/js/site-footer.js"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
