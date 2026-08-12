@@ -107,7 +107,7 @@ function cartTotal(list) {
 }
 function resetPayButton(list = checkoutItems()) {
   payNow.disabled = !paymentReady;
-  payNow.textContent = paymentReady ? `Pay \u20B9${cartTotal(list).toLocaleString("en-IN")}` : "Payment unavailable";
+  payNow.textContent = paymentReady ? "Pay Now" : "Payment unavailable";
 }
 function showError(message) {
   formError.textContent = message;
@@ -115,17 +115,37 @@ function showError(message) {
   formError.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
-const addressFields = ["country", "firstName", "lastName", "phoneCode", "phone", "address", "flat", "pincode", "city", "state"];
+const addressFields = ["fullName", "flat", "address", "pincode", "city", "state", "phoneCode", "phone", "country"];
+
+function splitFullName(fullName) {
+  const parts = String(fullName || "").trim().split(/\s+/).filter(Boolean);
+  const firstName = parts.shift() || "";
+  return { firstName, lastName: parts.join(" ") || firstName };
+}
+function canonicalAddress(value = {}) {
+  const legacyName = [value.firstName, value.lastName].filter(Boolean).join(" ").trim();
+  return {
+    fullName: String(value.fullName || legacyName || "").trim(),
+    flat: String(value.flat || "").trim(),
+    address: String(value.address || "").trim(),
+    pincode: String(value.pincode || "").trim(),
+    city: String(value.city || "").trim(),
+    state: String(value.state || "").trim(),
+    phoneCode: String(value.phoneCode || "+91").trim(),
+    phone: String(value.phone || "").trim(),
+    country: String(value.country || "India").trim(),
+  };
+}
 function currentAddressValue() {
   const value = {};
   addressFields.forEach(key => { value[key] = byId(key).value.trim(); });
-  return value;
+  return canonicalAddress(value);
 }
 function renderDeliveryPreview(collapse = false) {
   const value = currentAddressValue();
-  const complete = ["firstName", "lastName", "phone", "address", "pincode", "city", "state"].every(key => value[key]);
+  const complete = ["fullName", "phone", "flat", "address", "pincode", "city", "state"].every(key => value[key]);
   if (complete && collapse) {
-    byId("deliveryName").textContent = `${value.firstName} ${value.lastName}`.trim();
+    byId("deliveryName").textContent = value.fullName;
     byId("deliveryAddress").textContent = [value.flat, value.address, value.city, value.state, value.pincode, value.country].filter(Boolean).join(", ");
     byId("deliveryPhone").textContent = `${value.phoneCode} ${value.phone}`.trim();
     deliveryPreview.classList.remove("hidden");
@@ -135,39 +155,49 @@ function renderDeliveryPreview(collapse = false) {
     addressFieldsPanel.classList.remove("hidden");
   }
 }
+function showAddressRequired(invalid) {
+  renderDeliveryPreview(false);
+  showError(savedAddresses.length
+    ? "Please fill your delivery address or select a saved address."
+    : "Please fill your delivery address before continuing to payment.");
+  invalid?.focus();
+}
 changeAddressBtn.addEventListener("click", () => {
   renderDeliveryPreview(false);
-  byId("firstName").focus();
+  byId("fullName").focus();
 });
 useAddressBtn.addEventListener("click", () => {
   const invalid = addressFields.map(byId).find(field => !field.checkValidity());
-  if (invalid) { invalid.reportValidity(); invalid.focus(); return; }
+  if (invalid) { showAddressRequired(invalid); invalid.reportValidity(); return; }
   renderDeliveryPreview(true);
   byId("addressEditor").scrollIntoView({ behavior: "smooth", block: "start" });
 });
+
 function addressKey(value) {
-  return addressFields.map(key => String(value?.[key] || "").trim().toLowerCase()).join("|");
+  const canonical = canonicalAddress(value);
+  return addressFields.map(key => String(canonical[key] || "").trim().toLowerCase()).join("|");
 }
 function mergeAddresses(existing, current, legacy) {
-  const list = [current, ...(Array.isArray(existing) ? existing : []), legacy].filter(Boolean);
+  const list = [current, ...(Array.isArray(existing) ? existing : []), legacy].filter(Boolean).map(canonicalAddress);
   return list.filter((item, index) => list.findIndex(candidate => addressKey(candidate) === addressKey(item)) === index).slice(0, 10);
 }
 function addressLabel(value) {
-  const name = [value.firstName, value.lastName].filter(Boolean).join(" ");
-  return [name, value.address, value.city, value.pincode].filter(Boolean).join(", ");
+  const canonical = canonicalAddress(value);
+  return [canonical.fullName, canonical.address, canonical.city, canonical.pincode].filter(Boolean).join(", ");
 }
 function escapeText(value) {
   return String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 }
 function fillAddress(value) {
   fillingSavedAddress = true;
-  updateCountryFields(value?.country || "India");
+  const canonical = canonicalAddress(value);
+  updateCountryFields(canonical.country);
   addressFields.forEach(key => {
     const field = byId(key);
-    if (field) field.value = value?.[key] ?? (key === "phoneCode" ? "+91" : "");
+    if (field) field.value = canonical[key];
   });
   fillingSavedAddress = false;
-  renderDeliveryPreview(Boolean(value?.address));
+  renderDeliveryPreview(Boolean(canonical.address));
 }
 function renderSavedAddresses() {
   if (!savedAddresses.length) {
@@ -245,12 +275,18 @@ function checkoutResultIsValid(result) {
 checkoutForm.addEventListener("submit", async event => {
   event.preventDefault();
   formError.classList.remove("show");
+  const invalidAddress = addressFields.map(byId).find(field => !field.checkValidity());
+  if (invalidAddress) {
+    showAddressRequired(invalidAddress);
+    invalidAddress.reportValidity();
+    return;
+  }
   if (!checkoutForm.checkValidity()) {
     checkoutForm.reportValidity();
     return;
   }
-  if (!/^[A-Za-z ]+$/.test(byId("firstName").value) || !/^[A-Za-z ]+$/.test(byId("lastName").value)) {
-    showError("First and last name can contain alphabets only.");
+  if (!/^[A-Za-z .'-]+$/.test(byId("fullName").value.trim())) {
+    showError("Enter a valid full name.");
     return;
   }
   if (!/^\+?[0-9]{1,4}$/.test(byId("phoneCode").value.trim()) || !/^[0-9 ]{6,15}$/.test(byId("phone").value.trim())) {
@@ -263,8 +299,8 @@ checkoutForm.addEventListener("submit", async event => {
   }
 
   const list = checkoutItems();
-  const addressData = {};
-  addressFields.forEach(id => { addressData[id] = byId(id).value.trim(); });
+  const addressData = currentAddressValue();
+  Object.assign(addressData, splitFullName(addressData.fullName));
   const billingData = sameBilling.checked ? addressData : {
     address: byId("billingAddress").value.trim(),
     city: byId("billingCity").value.trim(),
