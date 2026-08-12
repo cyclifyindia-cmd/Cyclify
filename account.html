@@ -215,14 +215,16 @@ border-color:#0039a6;
 box-shadow:0 0 0 2px rgba(0,57,166,.1);
 }
 
-.auth-divider{display:flex;align-items:center;gap:12px;margin:18px 0;color:#8a8f98;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:.08em}
+.auth-divider{display:flex;align-items:center;gap:12px;margin:22px 0;color:#8a8f98;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:.08em}
 .auth-divider::before,.auth-divider::after{content:"";height:1px;flex:1;background:#e4e7ec}
-.auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:6px}
-.auth-actions .secondary-btn{margin-top:0}
-.auth-link{display:block;width:100%;margin-top:12px;padding:4px;border:0;background:none;color:#0039a6;font-size:13px;font-weight:bold;cursor:pointer;text-align:center}
-.verification-notice{display:none;margin:0 0 14px;padding:12px 14px;border:1px solid #f0d99b;border-radius:12px;background:#fff9e8;color:#6e5311;font-size:13px;line-height:1.45}
-.verification-notice.show{display:block}
-.verification-notice button{margin-top:8px;padding:0;border:0;background:none;color:#0039a6;font-weight:bold;cursor:pointer}
+.auth-link{display:block;padding:0;border:0;background:none;color:#174ea6;font-size:13px;font-weight:700;cursor:pointer;text-align:right}
+.auth-premium-card{display:grid;grid-template-columns:minmax(300px,.85fr) minmax(390px,1.15fr);min-height:610px;overflow:hidden;border:1px solid #e1e5eb;border-radius:24px;background:#fff;box-shadow:0 24px 70px rgba(19,30,52,.12)}
+.auth-intro{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:54px 44px;overflow:hidden;background:linear-gradient(145deg,#081b3b,#0a397d 68%,#075bc0);color:#fff}
+.auth-intro::before{content:"";position:absolute;right:-120px;bottom:-140px;width:340px;height:340px;border:70px solid rgba(255,255,255,.055);border-radius:50%}
+.auth-intro::after{content:"";position:absolute;top:52px;right:38px;width:58px;height:4px;border-radius:9px;background:#ff6b2c;box-shadow:22px 13px 0 rgba(255,255,255,.9)}
+.auth-intro>*{position:relative;z-index:1}.auth-intro-kicker{margin:0 0 18px;color:#9fc8ff;font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.auth-intro h2{max-width:370px;margin:0;font-size:42px;line-height:1.05;letter-spacing:-.035em}.auth-intro>div>p:last-child{max-width:390px;margin:18px 0 0;color:#d4e4fb;font-size:14px;line-height:1.7}.auth-benefits{display:grid;gap:15px;margin-top:34px}.auth-benefits span{display:flex;align-items:center;gap:11px;color:#ecf5ff;font-size:13px;font-weight:700}.auth-benefits i{width:24px;height:24px;display:grid;place-items:center;flex:none;border:1px solid rgba(255,255,255,.3);border-radius:50%;font-size:11px;font-style:normal}.auth-secure{color:#a9c5e8;font-size:11px;line-height:1.5}
+.auth-login{padding:48px 52px;align-self:center}.auth-login-head{margin-bottom:22px}.auth-login-head h2{margin:0;color:#101828;font-size:27px;letter-spacing:-.025em}.auth-login-head p{margin:8px 0 0;color:#667085;font-size:13px;line-height:1.55}.google-auth-btn{height:50px;display:flex;align-items:center;justify-content:center;gap:12px;border:1px solid #d0d5dd!important;background:#fff!important;color:#1d2939!important;box-shadow:0 1px 3px rgba(16,24,40,.06);transition:border-color .2s,box-shadow .2s,transform .2s}.google-auth-btn:hover{border-color:#98a2b3!important;box-shadow:0 5px 15px rgba(16,24,40,.09);transform:translateY(-1px)}.google-auth-btn svg{width:19px;height:19px}.email-login-title{margin:0 0 17px;color:#344054;font-size:14px;font-weight:800}.auth-login .field{margin-bottom:15px}.auth-login .field label{color:#344054;font-size:12px}.auth-login .field input{height:48px;border-color:#d0d5dd;border-radius:9px;background:#fff;padding:0 14px}.auth-login .field input:focus{border-color:#1f5da8;box-shadow:0 0 0 3px rgba(31,93,168,.11)}.password-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}.password-row label{margin:0!important}.auth-submit{height:49px;margin-top:5px;border-radius:9px!important;background:#ff632e!important;box-shadow:0 8px 20px rgba(255,99,46,.18)}.auth-submit:hover{background:#e85221!important}.create-account-box{margin-top:20px;padding-top:20px;border-top:1px solid #eaecf0;text-align:center}.create-account-box p{margin:0 0 11px;color:#667085;font-size:12px}.create-account-btn{height:46px;margin:0!important;border:1px solid #b9c6d8!important;border-radius:9px!important;background:#f7f9fc!important;color:#174ea6!important}.legal-copy{margin:17px 0 0;color:#98a2b3;font-size:10px;line-height:1.5;text-align:center}
+.auth-signed-out .account-shell{max-width:1040px;padding-top:26px}.auth-signed-out .account-title{padding:8px 2px 18px}.auth-signed-out .account-title h1{font-size:30px}.auth-signed-out #registeredAddress{max-width:620px;margin:26px auto 0}
 .account-skeleton{display:grid;gap:9px}
 .account-skeleton span{display:block;height:12px;border-radius:999px;background:linear-gradient(90deg,#edf0f3 25%,#f8f9fa 45%,#edf0f3 65%);background-size:220% 100%;animation:accountShimmer 1.2s linear infinite}
 .account-skeleton span:first-child{width:46%;height:18px}.account-skeleton span:nth-child(2){width:72%}.account-skeleton span:nth-child(3){width:58%}
@@ -347,6 +349,7 @@ margin-bottom:6px;
 .tabs{gap:6px}
 .tab{font-size:12px;padding:11px 5px}
 .quick-grid{grid-template-columns:1fr}
+.auth-signed-out .account-shell{padding:12px}.auth-premium-card{display:block;min-height:0;border-radius:16px}.auth-intro{display:none}.auth-login{padding:26px 20px}.auth-login-head h2{font-size:24px}.auth-signed-out .account-title h1{font-size:24px}.auth-signed-out .account-title p{line-height:1.45}.auth-divider{margin:19px 0}.google-auth-btn{height:48px}
 }
 
 html{
@@ -699,10 +702,6 @@ gap:5px!important;
 </section>
 
 <section class="dashboard" id="dashboard">
-<div class="verification-notice" id="emailVerificationNotice">
-Please verify your email address to fully secure your Cyclify account.
-<button id="resendVerificationBtn" type="button">Resend verification email</button>
-</div>
 <div class="profile-card">
 <strong id="profileName">Cyclify Customer</strong>
 <span id="profileUser"></span>
@@ -761,19 +760,30 @@ Please verify your email address to fully secure your Cyclify account.
 </section>
 
 <section id="authArea" style="display:none">
-<div class="panel active">
+<div class="auth-premium-card">
+<aside class="auth-intro">
+<div>
+<p class="auth-intro-kicker">Cyclify rider account</p>
+<h2>Everything for your ride, in one place.</h2>
+<p>Track orders, manage your shopping and get support from people who understand cycling.</p>
+<div class="auth-benefits"><span><i>✓</i>Fast order access</span><span><i>✓</i>Secure Firebase login</span><span><i>✓</i>Verified-purchase reviews</span></div>
+</div>
+<p class="auth-secure">Your account is protected using encrypted authentication. Cyclify never stores your password.</p>
+</aside>
+<div class="auth-login">
 <div class="message" id="loginMessage"></div>
-<h2 style="margin:0 0 8px">Sign in to Cyclify</h2>
-<p class="hint" style="margin:0 0 18px">Access orders, saved addresses, and verified-purchase reviews.</p>
-<button class="primary-btn" id="googleLoginBtn" type="button">Continue with Google</button>
-<div class="auth-divider">or use email</div>
+<div class="auth-login-head"><h2>Welcome to Cyclify</h2><p>Sign in to continue to your account.</p></div>
+<button class="primary-btn google-auth-btn" id="googleLoginBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.23c0-.71-.06-1.4-.18-2.07H12v3.91h5.38a4.6 4.6 0 0 1-1.99 3.02v2.54h3.23c1.89-1.74 2.98-4.31 2.98-7.4Z"/><path fill="#34A853" d="M12 22c2.7 0 4.97-.9 6.62-2.42l-3.23-2.5c-.9.6-2.04.96-3.39.96-2.61 0-4.82-1.76-5.61-4.13H3.05v2.58A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.39 13.91A6 6 0 0 1 6.08 12c0-.66.11-1.3.31-1.91V7.51H3.05A10 10 0 0 0 2 12c0 1.61.39 3.14 1.05 4.49l3.34-2.58Z"/><path fill="#EA4335" d="M12 5.96c1.47 0 2.78.5 3.82 1.49l2.87-2.87A9.63 9.63 0 0 0 12 2a10 10 0 0 0-8.95 5.51l3.34 2.58C7.18 7.72 9.39 5.96 12 5.96Z"/></svg>Sign in with Google</button>
+<div class="auth-divider">or</div>
+<p class="email-login-title">Login with your email ID and password</p>
 <form id="emailAuthForm">
-<div class="field"><label for="accountName">Name <span style="font-weight:normal;color:#777">(for new accounts)</span></label><input id="accountName" type="text" maxlength="60" autocomplete="name" placeholder="Your name"></div>
-<div class="field"><label for="accountEmail">Email address</label><input id="accountEmail" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com"></div>
-<div class="field"><label for="accountPassword">Password</label><input id="accountPassword" type="password" minlength="6" autocomplete="current-password" required placeholder="Minimum 6 characters"></div>
-<div class="auth-actions"><button class="primary-btn" id="emailLoginBtn" type="submit">Sign in</button><button class="secondary-btn" id="emailRegisterBtn" type="button">Create account</button></div>
-<button class="auth-link" id="forgotPasswordBtn" type="button">Forgot password?</button>
+<div class="field"><label for="accountEmail">Email ID</label><input id="accountEmail" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com"></div>
+<div class="field"><div class="password-row"><label for="accountPassword">Password</label><button class="auth-link" id="forgotPasswordBtn" type="button">Forgot password?</button></div><input id="accountPassword" type="password" minlength="6" autocomplete="current-password" required placeholder="Enter your password"></div>
+<button class="primary-btn auth-submit" id="emailLoginBtn" type="submit">Sign in</button>
+<div class="create-account-box"><p>New to Cyclify?</p><button class="secondary-btn create-account-btn" id="emailRegisterBtn" type="button">Create account</button></div>
+<p class="legal-copy">By continuing, you agree to Cyclify's account and privacy terms.</p>
 </form>
+</div>
 </div>
 </section>
 <section class="cyclify-contact-details" id="registeredAddress" aria-labelledby="registeredAddressTitle">
@@ -830,6 +840,7 @@ else{cartCount.style.display="none";}
 try{
 const preview=JSON.parse(localStorage.getItem("cyclifyAccountPreview")||"null");
 if(preview&&preview.name){document.getElementById("authLoadingText").textContent=`Welcome back, ${preview.name}. Confirming your session...`;}
+else{document.body.classList.add("auth-signed-out");}
 }catch(_error){}
 </script>
 
@@ -845,9 +856,7 @@ setPersistence,
 browserLocalPersistence,
 createUserWithEmailAndPassword,
 signInWithEmailAndPassword,
-sendPasswordResetEmail,
-sendEmailVerification,
-updateProfile
+sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import {
 getFirestore,
@@ -887,11 +896,9 @@ const dashboard=document.getElementById("dashboard");
 const profileName=document.getElementById("profileName");
 const profileUser=document.getElementById("profileUser");
 const authLoading=document.getElementById("authLoading");
-const emailVerificationNotice=document.getElementById("emailVerificationNotice");
 const emailAuthForm=document.getElementById("emailAuthForm");
 const accountEmail=document.getElementById("accountEmail");
 const accountPassword=document.getElementById("accountPassword");
-const accountName=document.getElementById("accountName");
 
 function setMessage(id,type,text){
 const box=document.getElementById(id);
@@ -911,14 +918,14 @@ return email&&email.endsWith("@mobile.cyclify.in")?email.replace("@mobile.cyclif
 
 function renderState(user){
 authLoading.style.display="none";
+document.body.classList.toggle("auth-signed-in",Boolean(user));
+document.body.classList.toggle("auth-signed-out",!user);
 if(user){
 authArea.style.display="none";
 dashboard.classList.add("active");
 profileName.textContent=user.displayName||"Cyclify Customer";
 profileUser.textContent=cleanMobileEmail(user.email)||user.phoneNumber||"Signed in";
 localStorage.setItem("cyclifyAccountPreview",JSON.stringify({name:user.displayName||"Cyclify Customer",email:cleanMobileEmail(user.email)||""}));
-const usesPassword=user.providerData.some(provider=>provider.providerId==="password");
-emailVerificationNotice.classList.toggle("show",usesPassword&&!user.emailVerified);
 document.getElementById("adminOrdersCard").style.display=user.email?.toLowerCase()==="admin@cyclify.in"&&user.emailVerified?"":"none";
 requestAnimationFrame(()=>renderOrders(user));
 const params=new URLSearchParams(location.search);
@@ -1286,9 +1293,7 @@ clearMessage("loginMessage");
 if(!emailAuthForm.reportValidity())return;
 try{
 const credential=await createUserWithEmailAndPassword(auth,accountEmail.value.trim(),accountPassword.value);
-if(accountName.value.trim())await updateProfile(credential.user,{displayName:accountName.value.trim()});
-await sendEmailVerification(credential.user,{url:"https://cyclify.in/account.html"});
-setMessage("loginMessage","success","Account created. We sent a verification link to your email.");
+setMessage("loginMessage","success","Account created. You are now signed in.");
 renderState(credential.user);
 }
 catch(error){setMessage("loginMessage","error",getAuthError(error));}
@@ -1301,15 +1306,6 @@ if(!email){accountEmail.focus();setMessage("loginMessage","error","Enter your em
 try{
 await sendPasswordResetEmail(auth,email,{url:"https://cyclify.in/account.html"});
 setMessage("loginMessage","success","If an account exists for this email, a password-reset link has been sent.");
-}
-catch(error){setMessage("loginMessage","error",getAuthError(error));}
-});
-
-document.getElementById("resendVerificationBtn").addEventListener("click",async()=>{
-if(!auth.currentUser)return;
-try{
-await sendEmailVerification(auth.currentUser,{url:"https://cyclify.in/account.html"});
-emailVerificationNotice.firstChild.textContent="Verification email sent. Please check your inbox. ";
 }
 catch(error){setMessage("loginMessage","error",getAuthError(error));}
 });
