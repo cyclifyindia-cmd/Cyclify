@@ -162,6 +162,13 @@ function showAddressRequired(invalid) {
     : "Please fill your delivery address before continuing to payment.");
   invalid?.focus();
 }
+payNow.addEventListener("click", event => {
+  const invalidAddress = addressFields.map(byId).find(field => !field.checkValidity());
+  if (!invalidAddress) return;
+  event.preventDefault();
+  showAddressRequired(invalidAddress);
+});
+
 changeAddressBtn.addEventListener("click", () => {
   renderDeliveryPreview(false);
   byId("fullName").focus();
