@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-12T13:48:27.406Z",
+  "generatedAt": "2026-08-12T17:12:55.850Z",
   "currency": "INR",
   "products": {
     "1": {
       "id": "1",
-      "name": "SAVA HAWKEYE F20",
+      "name": "SAVA Hawkeye SLR7 105 Di2",
       "price": 175000,
       "available": true,
       "image": "assets/products/sava-hawkeye.jpg",
@@ -450,7 +450,7 @@
     "36": {
       "id": "36",
       "name": "ThinkRider X2 Max Smart Trainer",
-      "price": 35000,
+      "price": 40000,
       "available": true,
       "image": "assets/products/thinkrider-x2-max-1.jpg",
       "sizes": [
@@ -837,16 +837,6 @@
       ],
       "sizeAvailability": {},
       "sourcePage": "sava-bikes.html"
-    },
-    "64": {
-      "id": "64",
-      "name": "FLR PR-350 Road Bike Pedals",
-      "price": 2500,
-      "available": true,
-      "image": "assets/products/flr-pr350-pedals-1.webp",
-      "sizes": [],
-      "sizeAvailability": {},
-      "sourcePage": "accessories.html"
     },
     "230708292": {
       "id": "230708292",
