@@ -163,3 +163,5 @@ body{background:var(--home-paper);color:var(--home-ink)}
 .home-feature-band__number{display:none}
 .home-cta{background:#b9380d}
 .home-cta .home-eyebrow{color:#fff}
+
+.store-header .search-placeholder{color:#4b5563}
