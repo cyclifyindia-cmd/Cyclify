@@ -1,0 +1,51 @@
+/* Desktop category imagery: preserve the full artwork and keep it crisp. */
+.category-strip,
+.sub-category-strip {
+  gap: 18px !important;
+  padding-top: 16px !important;
+  padding-bottom: 18px !important;
+  background: #fafaf8 !important;
+}
+
+.category-pill {
+  min-width: 112px !important;
+  gap: 10px !important;
+  color: #232823 !important;
+  font-size: 12px !important;
+  letter-spacing: .02em;
+  transition: color .25s ease, transform .25s ease !important;
+}
+
+.category-icon {
+  width: 92px !important;
+  height: 82px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #f2f3f0 !important;
+  border: 1px solid #e0e3dd !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 22px rgba(20, 25, 20, .055) !important;
+  transition: border-color .25s ease, box-shadow .25s ease, background .25s ease !important;
+}
+
+.category-icon img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 9px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+.category-pill:hover { transform: translateY(-3px) !important; }
+.category-pill:hover .category-icon,
+.category-pill.active .category-icon {
+  background: #fff !important;
+  border-color: #bfc5bc !important;
+  box-shadow: 0 12px 30px rgba(20, 25, 20, .11) !important;
+}
+
+.category-pill.active { color: #d94e22 !important; }
+.category-pill.active::after { background: #d94e22 !important; }
