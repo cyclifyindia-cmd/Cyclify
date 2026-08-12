@@ -202,7 +202,7 @@
   footer.innerHTML = `
     <div class="cyclify-footer__inner">
       <section class="cyclify-footer__brand" aria-label="About Cyclify">
-        <a href="index.html" aria-label="Cyclify home"><img src="assets/Logo.png" alt="Cyclify"></a>
+        <a href="index.html" aria-label="Cyclify home"><img src="assets/logo-footer.webp" alt="Cyclify" width="700" height="205" loading="lazy" decoding="async"></a>
         <p class="cyclify-footer__brand-copy">Cyclify is located in Tuticorin, India.</p>
         <div class="cyclify-footer__vision"><strong>Vision</strong><span>Premium rides, honest prices.</span></div>
       </section>
