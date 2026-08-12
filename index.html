@@ -1084,6 +1084,10 @@ gap:5px!important;
 }
 .feature{color:inherit;text-decoration:none}
 </style>
+<style>
+.home-announcement,.home-nav,.home-main{display:none}
+@media(min-width:901px){.home-announcement{display:flex}.home-nav{display:flex}.home-main{display:block}.legacy-mobile-home,.legacy-mobile-features{display:none!important}}
+</style>
 <link rel="stylesheet" href="assets/css/home-redesign.css" media="(min-width: 901px)">
 <script type="application/ld+json" id="cyclify-site-schema">
 {
@@ -1192,6 +1196,23 @@ autocomplete="off">
 
 
 
+
+<main class="desktop-home-grid legacy-mobile-home">
+<div class="offer">
+<section class="home-carousel" id="homeCarousel" aria-label="Featured offers">
+<div class="home-carousel-track" id="homeCarouselTrack">
+<a href="bikes-frames.html?category=elves" class="home-carousel-slide" aria-label="Shop ELVES EVO Plus and EXP bikes"><img src="assets/banners/elves-evo-exp-banner.png" alt="ELVES EVO Plus and EXP road bikes"></a>
+<a href="bikes-frames.html" class="home-carousel-slide" aria-label="Shop bikes and frames"><img src="assets/banners/google-reviews-india.png" alt="Cyclify India Google customer reviews"><span class="home-carousel-cta">Shop Now</span></a>
+</div>
+<div class="home-carousel-dots" aria-label="Choose banner"><button class="home-carousel-dot active" type="button" aria-label="Show ELVES banner" data-slide="0"></button><button class="home-carousel-dot" type="button" aria-label="Show reviews banner" data-slide="1"></button></div>
+</section>
+</div>
+<script>
+(function(){const carousel=document.getElementById("homeCarousel"),track=document.getElementById("homeCarouselTrack"),dots=Array.from(document.querySelectorAll(".home-carousel-dot"));if(!carousel||!track||dots.length<2)return;let activeSlide=0,timer;function showSlide(index){activeSlide=(index+dots.length)%dots.length;track.style.transform=`translateX(-${activeSlide*100}%)`;dots.forEach((dot,dotIndex)=>dot.classList.toggle("active",dotIndex===activeSlide))}function startCarousel(){clearInterval(timer);timer=setInterval(()=>showSlide(activeSlide+1),5000)}dots.forEach(dot=>dot.addEventListener("click",()=>{showSlide(Number(dot.dataset.slide));startCarousel()}));carousel.addEventListener("mouseenter",()=>clearInterval(timer));carousel.addEventListener("mouseleave",startCarousel);carousel.addEventListener("focusin",()=>clearInterval(timer));carousel.addEventListener("focusout",startCarousel);startCarousel()})();
+</script>
+<div class="categories"><a href="bikes-frames.html" class="category bikes"></a><a href="wearables.html" class="category wearables"></a><a href="accessories.html" class="category accessories"></a><a href="components.html" class="category components"></a><a href="wheels-tyres.html" class="category wheels"></a><a href="electronics.html" class="category electronics"></a></div>
+</main>
+<div class="features legacy-mobile-features"><div class="feature">Authentic Products</div><div class="feature">Fast Delivery</div><a class="feature" href="exchange-policy.html">7-Day Exchange</a><div class="feature">Secure Shopping</div></div>
 
 <main class="home-main">
   <section class="home-hero">
