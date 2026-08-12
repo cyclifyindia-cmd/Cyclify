@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T05:47:05.685Z",
+  "generatedAt": "2026-08-12T09:32:35.755Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -1633,7 +1633,7 @@
     "822090268": {
       "id": "822090268",
       "name": "MCYCLE Free Cutting Short Finger Gloves",
-      "price": 1349,
+      "price": 1149,
       "available": true,
       "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a27e5866430bbfb093c3f01",
       "sizes": [],
@@ -1835,8 +1835,8 @@
     "866164518": {
       "id": "866164518",
       "name": "MCYCLE Free Cutting Glove",
-      "price": 1349,
-      "available": false,
+      "price": 1149,
+      "available": true,
       "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2b8215979400d9db228aae",
       "sizes": [],
       "sizeAvailability": {},
