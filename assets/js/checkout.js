@@ -20,6 +20,10 @@ const paymentTitle = byId("paymentTitle");
 const paymentStatus = byId("paymentStatus");
 const sameBilling = byId("sameBilling");
 const addGst = byId("addGst");
+const addressFieldsPanel = byId("addressFieldsPanel");
+const deliveryPreview = byId("deliveryPreview");
+const changeAddressBtn = byId("changeAddressBtn");
+const useAddressBtn = byId("useAddressBtn");
 const paymentConfig = window.CYCLIFY_PAYMENT_CONFIG || {};
 const paymentReady = Boolean(paymentConfig.enabled && paymentConfig.createOrderUrl && paymentConfig.verifyPaymentUrl);
 let signedInUser = null;
@@ -112,6 +116,35 @@ function showError(message) {
 }
 
 const addressFields = ["country", "firstName", "lastName", "phoneCode", "phone", "address", "flat", "pincode", "city", "state"];
+function currentAddressValue() {
+  const value = {};
+  addressFields.forEach(key => { value[key] = byId(key).value.trim(); });
+  return value;
+}
+function renderDeliveryPreview(collapse = false) {
+  const value = currentAddressValue();
+  const complete = ["firstName", "lastName", "phone", "address", "pincode", "city", "state"].every(key => value[key]);
+  if (complete && collapse) {
+    byId("deliveryName").textContent = `${value.firstName} ${value.lastName}`.trim();
+    byId("deliveryAddress").textContent = [value.flat, value.address, value.city, value.state, value.pincode, value.country].filter(Boolean).join(", ");
+    byId("deliveryPhone").textContent = `${value.phoneCode} ${value.phone}`.trim();
+    deliveryPreview.classList.remove("hidden");
+    addressFieldsPanel.classList.add("hidden");
+  } else {
+    deliveryPreview.classList.add("hidden");
+    addressFieldsPanel.classList.remove("hidden");
+  }
+}
+changeAddressBtn.addEventListener("click", () => {
+  renderDeliveryPreview(false);
+  byId("firstName").focus();
+});
+useAddressBtn.addEventListener("click", () => {
+  const invalid = addressFields.map(byId).find(field => !field.checkValidity());
+  if (invalid) { invalid.reportValidity(); invalid.focus(); return; }
+  renderDeliveryPreview(true);
+  byId("addressEditor").scrollIntoView({ behavior: "smooth", block: "start" });
+});
 function addressKey(value) {
   return addressFields.map(key => String(value?.[key] || "").trim().toLowerCase()).join("|");
 }
@@ -134,6 +167,7 @@ function fillAddress(value) {
     if (field) field.value = value?.[key] ?? (key === "phoneCode" ? "+91" : "");
   });
   fillingSavedAddress = false;
+  renderDeliveryPreview(Boolean(value?.address));
 }
 function renderSavedAddresses() {
   if (!savedAddresses.length) {
@@ -146,11 +180,14 @@ function renderSavedAddresses() {
   fillAddress(savedAddresses[0]);
 }
 byId("savedAddress").addEventListener("change", () => {
-  if (byId("savedAddress").value === "new") fillAddress({ country: "India", phoneCode: "+91" });
-  else fillAddress(savedAddresses[Number(byId("savedAddress").value)]);
+  if (byId("savedAddress").value === "new") {
+    fillAddress({ country: "India", phoneCode: "+91" });
+    renderDeliveryPreview(false);
+  } else fillAddress(savedAddresses[Number(byId("savedAddress").value)]);
 });
 addressFields.forEach(key => byId(key).addEventListener("input", () => {
   if (!fillingSavedAddress && savedAddresses.length) byId("savedAddress").value = "new";
+  if (!fillingSavedAddress) renderDeliveryPreview(false);
 }));
 
 async function render() {
