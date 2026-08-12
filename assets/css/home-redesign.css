@@ -154,3 +154,12 @@ body{background:var(--home-paper);color:var(--home-ink)}
   .home-service-grid a,.home-service-grid a:first-child{padding:28px 8px;border-right:0;border-bottom:1px solid #bfc4bf}
   .home-cta__inner{align-items:flex-start;flex-direction:column;gap:32px}.home-cta h2{font-size:44px}
 }
+
+/* WCAG AA contrast refinements */
+.search-placeholder{color:#4b5563}
+.home-nav__sale{color:#9a3412!important}
+.home-trust small{color:#4b5563}
+.home-category small,.home-service-grid b{color:#9a3412}
+.home-feature-band__number{display:none}
+.home-cta{background:#b9380d}
+.home-cta .home-eyebrow{color:#fff}
