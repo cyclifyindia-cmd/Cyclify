@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T05:49:46.783Z",
+  "generatedAt": "2026-08-13T09:34:26.453Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -2634,7 +2634,7 @@
         "38CM": true,
         "40CM": false,
         "42CM": false,
-        "36CM": true
+        "36CM": false
       },
       "sourcePage": "components.html"
     },
