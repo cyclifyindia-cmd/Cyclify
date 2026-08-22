@@ -1203,9 +1203,37 @@ aria-label="Search products">
 <section class="home-carousel" id="homeCarousel" aria-label="Featured offers">
 <div class="home-carousel-track" id="homeCarouselTrack">
 <a href="bikes-frames.html?category=elves" class="home-carousel-slide" aria-label="Shop ELVES EVO Plus and EXP bikes"><img src="assets/elves-evo-exp-banner-mobile.webp" alt="ELVES EVO Plus and EXP road bikes" width="800" height="334" fetchpriority="high" decoding="async"></a>
+<a href="bikes-frames.html" class="home-carousel-slide" aria-label="Shop bikes and frames"><img src="assets/banners/google-reviews-india-optimized.webp" alt="Cyclify India Google customer reviews" width="1400" height="467" loading="lazy" decoding="async"><span class="home-carousel-cta">Shop Now</span></a>
 </div>
+<div class="home-carousel-dots" aria-label="Choose banner"><button class="home-carousel-dot active" type="button" aria-label="Show ELVES banner" data-slide="0" aria-pressed="true"></button><button class="home-carousel-dot" type="button" aria-label="Show reviews banner" data-slide="1" aria-pressed="false"></button></div>
 </section>
 </div>
+<script>
+(function(){
+const carousel=document.getElementById("homeCarousel"),track=document.getElementById("homeCarouselTrack"),dots=Array.from(document.querySelectorAll("#homeCarousel .home-carousel-dot"));
+if(!carousel||!track||dots.length<2)return;
+const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let activeSlide=0,timer;
+function showSlide(index){
+activeSlide=(index+dots.length)%dots.length;
+track.style.transform=`translateX(-${activeSlide*100}%)`;
+dots.forEach((dot,dotIndex)=>{
+const active=dotIndex===activeSlide;
+dot.classList.toggle("active",active);
+dot.setAttribute("aria-pressed",String(active));
+});
+}
+function stopCarousel(){window.clearInterval(timer);timer=undefined;}
+function startCarousel(){stopCarousel();if(!reduceMotion&&!document.hidden)timer=window.setInterval(()=>showSlide(activeSlide+1),5000);}
+dots.forEach(dot=>dot.addEventListener("click",()=>{showSlide(Number(dot.dataset.slide));startCarousel();}));
+carousel.addEventListener("mouseenter",stopCarousel);
+carousel.addEventListener("mouseleave",startCarousel);
+carousel.addEventListener("focusin",stopCarousel);
+carousel.addEventListener("focusout",startCarousel);
+document.addEventListener("visibilitychange",()=>document.hidden?stopCarousel():startCarousel());
+startCarousel();
+})();
+</script>
 <div class="categories"><a href="bikes-frames.html" class="category bikes" aria-label="Bikes and frames"><img src="assets/category-bikes-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="wearables.html" class="category wearables" aria-label="Cycling apparel and wearables"><img src="assets/category-wearables-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="accessories.html" class="category accessories" aria-label="Cycling accessories"><img src="assets/category-accessories-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="components.html" class="category components" aria-label="Bike components"><img src="assets/category-components-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="wheels-tyres.html" class="category wheels" aria-label="Wheels and tyres"><img src="assets/category-wheels-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="electronics.html" class="category electronics" aria-label="Cycling electronics"><img src="assets/category-electronics-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a></div>
 </main>
 <section class="home-popular home-popular--mobile legacy-mobile-popular" id="popularProductsMobile" aria-labelledby="popularProductsMobileTitle"></section>
