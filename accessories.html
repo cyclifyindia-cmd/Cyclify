@@ -108,6 +108,7 @@ html{scroll-behavior:smooth}
 }
 </script>
 <link rel="stylesheet" href="assets/css/category-premium.css" media="(min-width: 901px)">
+<link rel="stylesheet" href="assets/css/category-icons-theme.css">
 </head>
 <body>
 <div class="topbar">
@@ -143,12 +144,12 @@ window.cyclifyMergeSupplierProducts(products,"accessories.html");
 window.cyclifyMergeFccProducts(products,"accessories.html");
 window.cyclifyMergeCadenceProducts(products,"accessories.html");
 const categories=[
-{key:"mounts-cases",label:"Mounts & Cases",image:"assets/categories/CAT_ACC.png"},
-{key:"bags",label:"Bags",image:"assets/categories/CAT_ACC.png"},
-{key:"bottle-cages",label:"Bottle Cages",image:"assets/categories/CAT_ACC.png"},
-{key:"pedals-cleats",label:"Pedals & Cleats",image:"assets/categories/CAT_ACC.png"},
-{key:"tapes",label:"Tapes",image:"assets/categories/CAT_ACC.png"},
-{key:"other",label:"Other",image:"assets/categories/CAT_ACC.png"}
+{key:"mounts-cases",label:"Mounts & Cases",image:"assets/categories/subcategories-v2/accessory-mounts-cases.webp"},
+{key:"bags",label:"Bags",image:"assets/categories/subcategories-v2/accessory-bags.webp"},
+{key:"bottle-cages",label:"Bottle Cages",image:"assets/categories/subcategories-v2/accessory-bottle-cages.webp"},
+{key:"pedals-cleats",label:"Pedals & Cleats",image:"assets/categories/subcategories-v2/accessory-pedals-cleats.webp"},
+{key:"tapes",label:"Tapes",image:"assets/categories/subcategories-v2/accessory-tapes.webp"},
+{key:"other",label:"Other",image:"assets/categories/subcategories-v2/accessory-other.webp"}
 ];
 
 const container=document.getElementById("products");
@@ -174,7 +175,7 @@ return product.mainCategory||product.category||"other";
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span class="category-icon"><img src="${category.image}" alt="${category.label}" width="320" height="320" loading="lazy" decoding="async"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
