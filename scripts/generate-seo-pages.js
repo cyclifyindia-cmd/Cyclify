@@ -448,7 +448,11 @@ staleProductFiles.forEach(file => {
       if (primary) targetRoute = routes[primary.id];
     }
   }
-  if (!targetRoute || targetRoute === relativeRoute) return;
+  if (!targetRoute) {
+    fs.unlinkSync(path.join(outputDir, file));
+    return;
+  }
+  if (targetRoute === relativeRoute) return;
   const targetUrl = 'https://cyclify.in/' + targetRoute;
   fs.writeFileSync(path.join(outputDir, file), redirectPage(targetUrl, 'This product now has one official Cyclify page.'), 'utf8');
 });
