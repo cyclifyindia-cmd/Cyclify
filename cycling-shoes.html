@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="Shop performance road cycling shoes in India with clear size options and free shipping.">
 <meta name="twitter:image" content="https://cyclify.in/assets/categories/CAT_Wearables.png">
 <script src="assets/js/product-routes.js?v=03663c0ce8"></script>
-<script src="assets/js/supplier-products.js?v=5787c8856b"></script>
+<script src="assets/js/supplier-products.js?v=7d47274b49"></script>
 <script src="assets/js/fcc-products.js?v=9a3796903c"></script>
 <script src="assets/js/cadence-products.js?v=a1f1fc1ecf"></script>
 <style>
@@ -108,6 +108,7 @@ html{scroll-behavior:smooth}
 }
 </script>
 <link rel="stylesheet" href="assets/css/category-premium.css" media="(min-width: 901px)">
+<link rel="stylesheet" href="assets/css/category-icons-theme.css">
 </head>
 <body>
 <div class="topbar">
@@ -332,12 +333,12 @@ window.cyclifyMergeSupplierProducts(products,"wearables.html");
 window.cyclifyMergeFccProducts(products,"wearables.html");
 window.cyclifyMergeCadenceProducts(products,"wearables.html");
 const categories=[
-{key:"helmets",label:"Helmets",image:"assets/categories/CAT_Wearables.png"},
-{key:"jersey-shorts",label:"Jersey & Shorts",image:"assets/categories/CAT_Wearables.png"},
-{key:"shoes",label:"Shoes",image:"assets/categories/CAT_Wearables.png"},
-{key:"smart-watches",label:"Smart Watches",image:"assets/categories/CAT_Wearables.png"},
-{key:"eyewear",label:"Eyewear",image:"assets/categories/CAT_Wearables.png"},
-{key:"gloves",label:"Gloves",image:"assets/categories/CAT_Wearables.png"}
+{key:"helmets",label:"Helmets",image:"assets/categories/subcategories-v2/wearable-helmets.webp"},
+{key:"jersey-shorts",label:"Jersey & Shorts",image:"assets/categories/subcategories-v2/wearable-jersey-shorts.webp"},
+{key:"shoes",label:"Shoes",image:"assets/categories/subcategories-v2/wearable-shoes.webp"},
+{key:"smart-watches",label:"Smart Watches",image:"assets/categories/subcategories-v2/wearable-smart-watches.webp"},
+{key:"eyewear",label:"Eyewear",image:"assets/categories/subcategories-v2/wearable-eyewear.webp"},
+{key:"gloves",label:"Gloves",image:"assets/categories/subcategories-v2/wearable-gloves.webp"}
 ];
 
 const container=document.getElementById("products");
@@ -363,7 +364,7 @@ return product.mainCategory||product.category||"";
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
-<span class="category-icon"><img src="${category.image}" alt="${category.label}"></span>
+<span class="category-icon"><img src="${category.image}" alt="${category.label}" width="320" height="320" loading="lazy" decoding="async"></span>
 <span>${category.label}</span>
 </button>
 `).join("");
