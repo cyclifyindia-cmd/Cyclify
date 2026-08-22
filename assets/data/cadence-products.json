@@ -152,7 +152,7 @@
       "sizes": [],
       "sizeAvailability": {},
       "variants": [],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : Cadence Life",
         "Shipping : Free shipping across India"
@@ -414,7 +414,7 @@
       "sizes": [],
       "sizeAvailability": {},
       "variants": [],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : MCYCLE",
         "Shipping : Free shipping across India"
@@ -453,7 +453,7 @@
       "sizes": [],
       "sizeAvailability": {},
       "variants": [],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : MCYCLE",
         "Shipping : Free shipping across India"
@@ -832,9 +832,24 @@
         "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c371e0218e54e7435f642",
         "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c371f0218e54e7435f644"
       ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [],
+      "sizes": [
+        "large"
+      ],
+      "sizeAvailability": {
+        "large": true
+      },
+      "variants": [
+        {
+          "id": 823871068,
+          "title": "large",
+          "available": true,
+          "price": 999,
+          "compare_at_price": 999,
+          "option1": "large",
+          "option2": "",
+          "option3": ""
+        }
+      ],
       "available": true,
       "specs": [
         "Brand : MCYCLE",
@@ -1334,24 +1349,12 @@
         "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6ca8622e1dc0ec794a110a"
       ],
       "sizes": [
-        "medium",
         "large"
       ],
       "sizeAvailability": {
-        "medium": false,
         "large": true
       },
       "variants": [
-        {
-          "id": 801231845,
-          "title": "medium",
-          "available": false,
-          "price": 1199,
-          "compare_at_price": 1199,
-          "option1": "medium",
-          "option2": "",
-          "option3": ""
-        },
         {
           "id": 899196457,
           "title": "large",
@@ -1379,6 +1382,68 @@
       "subCategory": ""
     },
     {
+      "id": 818359247,
+      "supplierProductId": "6a825c7320f73bf96875027f",
+      "supplierSynced": true,
+      "sourceHandle": "traceless-cycling-arm-sleeves-seamless-uv-protection-cooling-compression-sleeves-1",
+      "sourceUrl": "https://www.cadencelife.in/products/traceless-cycling-arm-sleeves-seamless-uv-protection-cooling-compression-sleeves-1",
+      "stockSource": "cadencelife",
+      "name": "Traceless Cycling Arm Sleeves | Seamless UV Protection Cooling Compression Sleeves",
+      "brand": "MCYCLE",
+      "description": "Protect your arms from the sun while staying cool and comfortable with these solid color cycling arm sleeves. Made from a lightweight, breathable stretch fabric, they provide a snug compression fit that supports muscles, reduces fatigue, and enhances comfort during long rides. The moisture-wicking, quick-dry material helps keep sweat under control, while the UV-protective fabric shields your skin from harmful sun exposure. Designed with seamless comfort and an anti-slip fit, they’re ideal for cycling, running, hiking, golf, fishing, and other outdoor sports.",
+      "price": 699,
+      "mrp": "Rs 699",
+      "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a825c1f20f73bf968750277",
+      "images": [
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a825c1f20f73bf968750277",
+        "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a825c2120f73bf968750279"
+      ],
+      "sizes": [
+        "medium",
+        "large"
+      ],
+      "sizeAvailability": {
+        "medium": true,
+        "large": true
+      },
+      "variants": [
+        {
+          "id": 884369237,
+          "title": "medium",
+          "available": true,
+          "price": 699,
+          "compare_at_price": 699,
+          "option1": "medium",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 816918841,
+          "title": "large",
+          "available": true,
+          "price": 699,
+          "compare_at_price": 699,
+          "option1": "large",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : MCYCLE",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cadencelife.in/products/traceless-cycling-arm-sleeves-seamless-uv-protection-cooling-compression-sleeves-1"
+      },
+      "keywords": "Traceless Cycling Arm Sleeves | Seamless UV Protection Cooling Compression Sleeves MCYCLE",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "other",
+      "subCategory": ""
+    },
+    {
       "id": 825557921,
       "supplierProductId": "6a6cb038fc1499752c1d27f5",
       "supplierSynced": true,
@@ -1399,31 +1464,31 @@
         "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6cae91fc1499752c1d27cf"
       ],
       "sizes": [
-        "Medium",
-        "Large"
+        "medium",
+        "large"
       ],
       "sizeAvailability": {
-        "Medium": true,
-        "Large": true
+        "medium": true,
+        "large": true
       },
       "variants": [
         {
-          "id": 871783791,
-          "title": "Medium",
+          "id": 852498063,
+          "title": "medium",
           "available": true,
           "price": 699,
           "compare_at_price": 699,
-          "option1": "Medium",
+          "option1": "medium",
           "option2": "",
           "option3": ""
         },
         {
-          "id": 838236511,
-          "title": "Large",
+          "id": 866227967,
+          "title": "large",
           "available": true,
           "price": 699,
           "compare_at_price": 699,
-          "option1": "Large",
+          "option1": "large",
           "option2": "",
           "option3": ""
         }
