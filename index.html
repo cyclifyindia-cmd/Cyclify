@@ -1086,7 +1086,7 @@ gap:5px!important;
 .home-announcement,.home-nav,.home-main{display:none}
 .category{background-image:none!important}
 .category img{display:block;width:100%;height:100%;object-fit:contain}
-@media(min-width:901px){.home-announcement{display:flex}.home-nav{display:flex}.home-main{display:block}.legacy-mobile-home,.legacy-mobile-features{display:none!important}}
+@media(min-width:901px){.home-announcement{display:flex}.home-nav{display:flex}.home-main{display:block}.legacy-mobile-home,.legacy-mobile-features,.legacy-mobile-popular{display:none!important}}
 </style>
 <link rel="stylesheet" href="assets/css/home-redesign.css?v=20260812-3" media="(min-width: 901px)">
 <script type="application/ld+json" id="cyclify-site-schema">
@@ -1208,6 +1208,7 @@ aria-label="Search products">
 </div>
 <div class="categories"><a href="bikes-frames.html" class="category bikes" aria-label="Bikes and frames"><img src="assets/category-bikes-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="wearables.html" class="category wearables" aria-label="Cycling apparel and wearables"><img src="assets/category-wearables-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="accessories.html" class="category accessories" aria-label="Cycling accessories"><img src="assets/category-accessories-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="components.html" class="category components" aria-label="Bike components"><img src="assets/category-components-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="wheels-tyres.html" class="category wheels" aria-label="Wheels and tyres"><img src="assets/category-wheels-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a><a href="electronics.html" class="category electronics" aria-label="Cycling electronics"><img src="assets/category-electronics-mobile.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></a></div>
 </main>
+<section class="home-popular home-popular--mobile legacy-mobile-popular" id="popularProductsMobile" aria-labelledby="popularProductsMobileTitle"></section>
 <div class="features legacy-mobile-features"><div class="feature">Authentic Products</div><div class="feature">Fast Delivery</div><a class="feature" href="exchange-policy.html">7-Day Exchange</a><div class="feature">Secure Shopping</div></div>
 
 <main class="home-main">
@@ -1251,8 +1252,9 @@ aria-label="Search products">
       </a>
 
       <style id="home-popular-styles">
-      .home-category-grid{grid-auto-flow:row dense}
-      .home-popular{grid-column:1/-1;position:relative;overflow:hidden;padding:34px;background:var(--home-charcoal,#171b18);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:#fff;content-visibility:auto;contain-intrinsic-size:720px}
+      .home-popular{position:relative;overflow:hidden;padding:34px;background:var(--home-charcoal,#171b18);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:#fff;content-visibility:auto;contain-intrinsic-size:720px}
+      .home-popular--desktop{width:min(calc(100% - 48px),1280px);margin:0 auto 64px}
+      .home-popular--mobile{margin:12px 10px 16px;padding:18px 10px 14px;border-radius:10px;contain-intrinsic-size:620px}
       .home-popular::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--home-orange,#f26422)}
       .home-popular__head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:24px}
       .home-popular__head .home-eyebrow{margin-bottom:8px;color:#ffb28f}
@@ -1265,17 +1267,16 @@ aria-label="Search products">
       .home-popular-card img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;padding:10px;background:#f5f6f3}
       .home-popular-card__copy{padding:13px 12px 15px}
       .home-popular-card small{display:block;margin-bottom:6px;color:#717871;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-      .home-popular-card h3{min-height:2.55em;margin:0 0 9px;color:var(--home-charcoal,#171b18);font:700 17px/1.25 "Barlow Condensed",sans-serif;text-transform:none}
+      .home-popular-card h3{min-height:2.55em;margin:0 0 9px;font:700 17px/1.25 "Barlow Condensed",sans-serif;text-transform:none}
       .home-popular-card strong{color:var(--home-orange,#f26422);font-size:14px}
       .home-popular__actions{display:flex;justify-content:center;margin-top:24px}
       .home-popular-more{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:0 25px;border:1px solid rgba(255,255,255,.58);border-radius:2px;color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;transition:background .25s ease,color .25s ease,border-color .25s ease}
       .home-popular-more:hover{background:#fff;border-color:#fff;color:var(--home-charcoal,#171b18)}
-      @media(max-width:1100px){.home-popular-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-      @media(max-width:680px){.home-popular{padding:26px 14px 22px;contain-intrinsic-size:1050px}.home-popular__head{display:block;margin-bottom:18px}.home-popular__head>p{margin-top:10px;font-size:12px}.home-popular-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.home-popular-card__copy{padding:11px 10px 13px}.home-popular-card h3{font-size:15px}.home-popular-card img{padding:7px}.home-popular__actions{margin-top:18px}.home-popular-more{width:100%}}
+      @media(max-width:900px){.home-popular__head{display:block;margin-bottom:14px}.home-popular__head>p{margin-top:8px;font-size:11px}.home-popular__head h2{font-size:30px}.home-popular-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.home-popular-card__copy{padding:8px 7px 10px}.home-popular-card h3{min-height:3.6em;margin-bottom:6px;font-size:12px;line-height:1.18}.home-popular-card small{margin-bottom:4px;font-size:7px}.home-popular-card strong{font-size:12px}.home-popular-card img{padding:5px}.home-popular-card>span{top:6px;left:6px;padding:4px 5px;font-size:8px}.home-popular__actions{margin-top:14px}.home-popular-more{width:100%;min-height:40px}}
       </style>
-      <div class="home-popular" id="popularProducts" aria-labelledby="popularProductsTitle">
+      <div class="home-popular home-popular--desktop" id="popularProductsDesktop" aria-labelledby="popularProductsDesktopTitle">
         <header class="home-popular__head">
-          <div><p class="home-eyebrow"><span></span> Popular now</p><h2 id="popularProductsTitle">Rider favourites</h2></div>
+          <div><p class="home-eyebrow"><span></span> Popular now</p><h2 id="popularProductsDesktopTitle">Rider favourites</h2></div>
           <p>Six performance picks Cyclify shoppers explore most—kept quick to scan and easy to compare.</p>
         </header>
         <div class="home-popular-grid">
@@ -1290,15 +1291,32 @@ aria-label="Search products">
       </div>
       <script>
       (function(){
-        const shelf=document.getElementById("popularProducts");
-        if(!shelf)return;
+        const desktopShelf=document.getElementById("popularProductsDesktop");
+        const mobileShelf=document.getElementById("popularProductsMobile");
+        if(!desktopShelf)return;
         const key="cyclifyPopularClicksV1";
         let clicks={};
         try{clicks=JSON.parse(localStorage.getItem(key)||"{}")||{}}catch(error){clicks={}}
-        const grid=shelf.querySelector(".home-popular-grid");
-        const cards=Array.from(grid.querySelectorAll("[data-popular-product]"));
-        cards.sort((a,b)=>(Number(clicks[b.dataset.popularProduct]||0)-Number(clicks[a.dataset.popularProduct]||0))||(Number(a.querySelector("span").textContent)-Number(b.querySelector("span").textContent)));
-        cards.forEach((card,index)=>{card.querySelector("span").textContent=String(index+1).padStart(2,"0");grid.appendChild(card)});
+        function rankShelf(shelf){
+          if(!shelf)return;
+          const grid=shelf.querySelector(".home-popular-grid");
+          if(!grid)return;
+          const cards=Array.from(grid.querySelectorAll("[data-popular-product]"));
+          cards.sort((a,b)=>(Number(clicks[b.dataset.popularProduct]||0)-Number(clicks[a.dataset.popularProduct]||0))||(Number(a.querySelector("span").textContent)-Number(b.querySelector("span").textContent)));
+          cards.forEach((card,index)=>{card.querySelector("span").textContent=String(index+1).padStart(2,"0");grid.appendChild(card)});
+        }
+        function mountShelves(){
+          const categorySection=desktopShelf.closest(".home-section");
+          if(categorySection){categorySection.insertAdjacentElement("afterend",desktopShelf)}
+          if(mobileShelf&&!mobileShelf.children.length){
+            mobileShelf.innerHTML=desktopShelf.innerHTML;
+            const mobileTitle=mobileShelf.querySelector("#popularProductsDesktopTitle");
+            if(mobileTitle){mobileTitle.id="popularProductsMobileTitle"}
+          }
+          rankShelf(desktopShelf);
+          rankShelf(mobileShelf);
+        }
+        if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",mountShelves,{once:true})}else{mountShelves()}
         document.addEventListener("click",event=>{
           const link=event.target.closest('a[href*="product.html?id="]');
           if(!link)return;
