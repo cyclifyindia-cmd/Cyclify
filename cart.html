@@ -539,15 +539,34 @@ Proceed to secure checkout
 
 <script>
 
+function normalizeKnownCartPrices(items){
+
+let changed=false;
+
+items.forEach(item=>{
+
+const id=String(item.id??item.productId??"");
+const price=typeof item.price==="number"?item.price:Number(String(item.price).replace(/[^0-9.]/g,""));
+
+if(id==="36"&&price===40000){item.price=35000;changed=true;}
+
+});
+
+if(changed){localStorage.setItem("cart",JSON.stringify(items));}
+
+return items;
+
+}
+
 let cart=
 
-JSON.parse(
+normalizeKnownCartPrices(JSON.parse(
 
 localStorage.getItem(
 "cart"
 )
 
-)||[];
+)||[]);
 
 renderCart();
 
