@@ -12,15 +12,18 @@ const pages = [
   "smart-trainers.html", "wearables.html", "wheels-tyres.html",
 ];
 const dataFiles = ["cycletime-products.json", "fcc-products.json", "cadence-products.json"];
+const externalProductFiles = ["assets/js/tfsa-products.js"];
 const expected = new Map();
 
 function addProduct(product, source) {
   const id = String(product.id ?? "").trim();
-  const price = Number(product.price);
-  if (!id || !product.name || !Number.isInteger(price) || price < 1) {
+  const sellingPrice = Number(product.price);
+  const preorderDeposit = Number(product.preorderDeposit || 0);
+  const price = preorderDeposit > 0 ? preorderDeposit : sellingPrice;
+  if (!id || !product.name || !Number.isInteger(sellingPrice) || sellingPrice < 1 || !Number.isInteger(price) || price < 1) {
     throw new Error(`Invalid source product in ${source}: ${id || "missing id"}`);
   }
-  expected.set(id, {
+  const record = {
     id,
     name: String(product.name),
     price,
@@ -29,7 +32,12 @@ function addProduct(product, source) {
     sizes: Array.isArray(product.sizes) ? product.sizes.map(String) : [],
     sizeAvailability: product.sizeAvailability && typeof product.sizeAvailability === "object" ? product.sizeAvailability : {},
     sourcePage: product.categoryPage || source,
-  });
+  };
+  if (preorderDeposit > 0) {
+    record.sellingPrice = sellingPrice;
+    record.preorderDeposit = preorderDeposit;
+  }
+  expected.set(id, record);
 }
 
 for (const page of pages) {
@@ -46,6 +54,15 @@ for (const file of dataFiles) {
   payload.products.forEach(product => addProduct(product, file));
 }
 
+for (const file of externalProductFiles) {
+  const source = fs.readFileSync(path.join(root, file), "utf8");
+  const sandbox = { window: {} };
+  vm.runInNewContext(source, sandbox, { timeout: 1000, filename: file });
+  const products = sandbox.window.CYCLIFY_TFSA_PRODUCTS;
+  if (!Array.isArray(products)) throw new Error(`Product list missing in ${file}`);
+  products.forEach(product => addProduct(product, file));
+}
+
 const catalogPath = path.join(root, "marketplace-backend", "payment-function", "functions", "catalog.json");
 const payload = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 if (payload.currency !== "INR" || !payload.products || typeof payload.products !== "object") {
@@ -54,7 +71,7 @@ if (payload.currency !== "INR" || !payload.products || typeof payload.products !
 
 const actual = new Map(Object.entries(payload.products));
 const issues = [];
-const checkedFields = ["id", "name", "price", "available", "image", "sizes", "sizeAvailability", "sourcePage"];
+const checkedFields = ["id", "name", "price", "sellingPrice", "preorderDeposit", "available", "image", "sizes", "sizeAvailability", "sourcePage"];
 
 for (const [id, sourceProduct] of expected) {
   const paymentProduct = actual.get(id);

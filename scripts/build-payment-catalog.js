@@ -12,6 +12,7 @@ const pages = [
   "smart-trainers.html", "wearables.html", "wheels-tyres.html",
 ];
 const dataFiles = ["cycletime-products.json", "fcc-products.json", "cadence-products.json"];
+const externalProductFiles = ["assets/js/tfsa-products.js"];
 
 const catalog = new Map();
 function writeFileWithRetry(file, content) {
@@ -29,8 +30,10 @@ function writeFileWithRetry(file, content) {
 
 function addProduct(product, source) {
   const id = String(product.id ?? "").trim();
-  const price = Number(product.price);
-  if (!id || !product.name || !Number.isInteger(price) || price < 1) {
+  const sellingPrice = Number(product.price);
+  const preorderDeposit = Number(product.preorderDeposit || 0);
+  const price = preorderDeposit > 0 ? preorderDeposit : sellingPrice;
+  if (!id || !product.name || !Number.isInteger(sellingPrice) || sellingPrice < 1 || !Number.isInteger(price) || price < 1) {
     throw new Error(`Invalid payment product in ${source}: ${id || "missing id"}`);
   }
   const record = {
@@ -43,6 +46,10 @@ function addProduct(product, source) {
     sizeAvailability: product.sizeAvailability && typeof product.sizeAvailability === "object" ? product.sizeAvailability : {},
     sourcePage: product.categoryPage || source,
   };
+  if (preorderDeposit > 0) {
+    record.sellingPrice = sellingPrice;
+    record.preorderDeposit = preorderDeposit;
+  }
   catalog.set(id, record);
 }
 
@@ -60,10 +67,20 @@ for (const file of dataFiles) {
   payload.products.forEach(product => addProduct(product, file));
 }
 
+for (const file of externalProductFiles) {
+  const source = fs.readFileSync(path.join(root, file), "utf8");
+  const sandbox = { window: {} };
+  vm.runInNewContext(source, sandbox, { timeout: 1000, filename: file });
+  const products = sandbox.window.CYCLIFY_TFSA_PRODUCTS;
+  if (!Array.isArray(products)) throw new Error(`Product list missing in ${file}`);
+  products.forEach(product => addProduct(product, file));
+}
+
 const output = {
   generatedAt: new Date(Math.max(
     ...pages.map(file => fs.statSync(path.join(root, file)).mtimeMs),
     ...dataFiles.map(file => fs.statSync(path.join(root, "assets", "data", file)).mtimeMs),
+    ...externalProductFiles.map(file => fs.statSync(path.join(root, file)).mtimeMs),
   )).toISOString(),
   currency: "INR",
   products: Object.fromEntries([...catalog.entries()].sort(([a], [b]) => a.localeCompare(b, "en", { numeric: true }))),

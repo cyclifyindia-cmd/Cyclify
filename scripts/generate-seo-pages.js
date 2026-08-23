@@ -219,7 +219,9 @@ function usefulDetail(product) {
 function descriptionFor(product) {
   const intro = product.priceOnRequest
     ? 'Pre-order ' + cleanText(product.name) + ' from Cyclify India; selling price is confirmed before payment.'
-    : 'Shop ' + cleanText(product.name) + ' at Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + '.';
+    : (product.preorderDeposit
+      ? 'Pre-order ' + cleanText(product.name) + ' at Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + ' with a Rs ' + Number(product.preorderDeposit).toLocaleString('en-IN') + ' deposit.'
+      : 'Shop ' + cleanText(product.name) + ' at Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + '.');
   return truncateAtWord(intro + ' ' + usefulDetail(product), 150);
 }
 
@@ -340,6 +342,7 @@ for (const product of primaryProducts) {
     description: product.description,
     price: product.price,
     mrp: product.mrp,
+    preorderDeposit: product.preorderDeposit,
     available: product.available,
     sizes: product.sizes,
     sizeAvailability: product.sizeAvailability,
@@ -389,7 +392,7 @@ for (const product of primaryProducts) {
           url: canonical,
           priceCurrency: 'INR',
           price: String(product.price),
-          availability: product.available === false ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
+          availability: product.available === false ? 'https://schema.org/OutOfStock' : (product.preorder ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock'),
           itemCondition: 'https://schema.org/NewCondition',
           shippingDetails: {
             '@type': 'OfferShippingDetails',
