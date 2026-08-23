@@ -140,6 +140,8 @@ font-weight:600;
 .total-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:10px}
 .total-row:last-child{margin:0;padding-top:12px;border-top:1px solid #eceef1;font-size:21px;font-weight:900}
 .free-delivery{color:#087a3d;font-weight:800}
+.preorder-note{margin-top:7px;padding:8px 10px;border:1px solid #ffd8c8;border-radius:8px;background:#fff6f1;color:#9d3d17;font-size:11px;font-weight:700;line-height:1.45}
+.deposit-due{color:#b83f13;font-weight:850}
 .checkout-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px;color:#475467;font-size:11px;text-align:center}
 .checkout-trust span{padding:8px 5px;border-radius:9px;background:#f8fafc;border:1px solid #edf0f3}
 .cart-step{margin:0 0 14px;color:#667085;font-size:12px;font-weight:700;text-align:center}
@@ -609,6 +611,8 @@ return;
 checkoutButton.disabled=false;
 
 let total=0;
+let payableNow=0;
+let hasPreorder=false;
 
 cart.forEach(
 
@@ -629,6 +633,11 @@ Number(String(item.price).replace(/[^0-9.]/g,""));
 total +=
 price*
 item.quantity;
+
+const preorderDeposit=Number(item.preorderDeposit)||0;
+const paymentPrice=preorderDeposit>0?preorderDeposit:price;
+payableNow+=paymentPrice*item.quantity;
+hasPreorder=hasPreorder||preorderDeposit>0;
 
 container.innerHTML +=`
 
@@ -660,6 +669,12 @@ Size: ${item.size}
 ${item.valveLength?`
 <div class="size">
 ${item.optionLabel||"Valve Length"}: ${item.valveLength}
+</div>
+`:""}
+
+${preorderDeposit>0?`
+<div class="preorder-note">
+₹${preorderDeposit.toLocaleString("en-IN")} preorder deposit today. Remaining ₹${Math.max(0,price-preorderDeposit).toLocaleString("en-IN")} per frame is payable after size${item.customPainting?" and custom paint":""} confirmation.
 </div>
 `:""}
 
@@ -707,10 +722,11 @@ onclick=
 );
 
 document.getElementById("totalPrice").innerHTML=`
-<div class="total-row"><span>Subtotal</span><strong>₹${total.toLocaleString("en-IN")}</strong></div>
+<div class="total-row"><span>${hasPreorder?"Order value":"Subtotal"}</span><strong>₹${total.toLocaleString("en-IN")}</strong></div>
 <div class="total-row"><span>Standard delivery</span><span class="free-delivery">FREE</span></div>
-<div class="total-row"><span>Total</span><strong>₹${total.toLocaleString("en-IN")}</strong></div>
-<div class="checkout-trust"><span>✓ Secure checkout</span><span>✓ Free delivery</span><span>✓ 3–6 business days</span></div>`;
+${hasPreorder?`<div class="total-row"><span>Preorder payment</span><strong class="deposit-due">₹1 per frame</strong></div>`:""}
+<div class="total-row"><span>${hasPreorder?"Payable now":"Total"}</span><strong>₹${(hasPreorder?payableNow:total).toLocaleString("en-IN")}</strong></div>
+<div class="checkout-trust"><span>✓ Secure checkout</span><span>✓ Free delivery</span><span>✓ ${hasPreorder?"10–12 day delivery":"3–6 business days"}</span></div>`;
 
 localStorage.setItem(
 "cart",

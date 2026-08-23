@@ -24,7 +24,7 @@ content="width=device-width,initial-scale=1">
 <script src="assets/js/supplier-products.js?v=4271721665"></script>
 <script src="assets/js/fcc-products.js?v=e3c38db2c7"></script>
 <script src="assets/js/cadence-products.js?v=1b41bf6b2c"></script>
-<script src="assets/js/tfsa-products.js?v=da2e4d93c1"></script>
+<script src="assets/js/tfsa-products.js?v=df24385152"></script>
 <style>
 
 *{
@@ -304,6 +304,12 @@ font-weight:750;
 }
 
 .fulfilment-pill.preorder{
+border-color:#ffd4c3;
+background:#fff5f0;
+color:#b83f13;
+}
+
+.fulfilment-pill.deposit{
 border-color:#ffd4c3;
 background:#fff5f0;
 color:#b83f13;
@@ -2873,7 +2879,9 @@ return "Authentic cycling equipment with free shipping across India.";
 function plainProductDescription(){
 const intro=product.priceOnRequest
 ?`Pre-order ${cleanSeoText(product.name)} from Cyclify India; selling price is confirmed before payment.`
-:`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${Number(product.price).toLocaleString("en-IN")}.`;
+:(product.preorderDeposit
+?`Pre-order ${cleanSeoText(product.name)} at Cyclify India for Rs ${Number(product.price).toLocaleString("en-IN")} with a Rs ${Number(product.preorderDeposit).toLocaleString("en-IN")} deposit.`
+:`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${Number(product.price).toLocaleString("en-IN")}.`);
 return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
@@ -2926,7 +2934,7 @@ schema.offers={
 url:canonical,
 priceCurrency:"INR",
 price:String(product.price),
-availability:product.available===false?"https://schema.org/OutOfStock":"https://schema.org/InStock",
+availability:product.available===false?"https://schema.org/OutOfStock":(product.preorder?"https://schema.org/PreOrder":"https://schema.org/InStock"),
 itemCondition:"https://schema.org/NewCondition",
 shippingDetails:{
 "@type":"OfferShippingDetails",
@@ -3007,13 +3015,13 @@ discountElement.hidden=!discount;
 const priceLine=document.getElementById("productPriceLine");
 if(priceLine){priceLine.classList.toggle("price-on-request",Boolean(product.priceOnRequest));}
 const dealWord=document.getElementById("productDealWord");
-if(dealWord){dealWord.textContent=product.preorder?"PRE-ORDER":"DEAL";}
+if(dealWord){dealWord.textContent="DEAL";}
 }
 
 function renderProductFulfilment(){
 const fulfilment=document.getElementById("productFulfilment");
 const flags=[];
-if(product.preorder){flags.push('<span class="fulfilment-pill preorder">Pre-order item</span>');}
+if(Number(product.preorderDeposit)>0){flags.push(`<span class="fulfilment-pill deposit">₹${Number(product.preorderDeposit).toLocaleString("en-IN")} preorder deposit today</span>`);}
 if(product.deliveryText){flags.push(`<span class="fulfilment-pill">${product.deliveryText}</span>`);}
 if(product.customPainting){flags.push('<span class="fulfilment-pill paint">Custom painting available</span>');}
 fulfilment.innerHTML=flags.join("");
@@ -3049,12 +3057,12 @@ const cartButton=document.querySelector(".cartbtn");
 const buyButton=document.querySelector(".buybtn");
 if(cartButton){
 cartButton.disabled=!productAvailableForCart;
-cartButton.textContent=productAvailableForCart?(product.preorder?"Pre-Order Enquiry":"Add to Cart"):"Out of Stock";
+cartButton.textContent=productAvailableForCart?"Add to Cart":"Out of Stock";
 }
 if(buyButton){
 buyButton.disabled=!productAvailableForCart;
 buyButton.hidden=!productAvailableForCart;
-buyButton.textContent=product.preorder?"Pre-Order & Buy":"Buy Now";
+buyButton.textContent="Buy Now";
 }
 const shippingNote=document.querySelector(".shipping-note");
 if(shippingNote){
@@ -3523,6 +3531,11 @@ cart.push({
 id:product.id,
 name:product.name,
 price:product.price,
+mrp:product.mrp,
+preorder:Boolean(product.preorder),
+preorderDeposit:Number(product.preorderDeposit)||0,
+deliveryText:product.deliveryText||"",
+customPainting:Boolean(product.customPainting),
 image:product.image,
 size:selectedSize,
 valveLength:selectedValveLength,
@@ -3549,6 +3562,11 @@ const item={
 id:product.id,
 name:product.name,
 price:product.price,
+mrp:product.mrp,
+preorder:Boolean(product.preorder),
+preorderDeposit:Number(product.preorderDeposit)||0,
+deliveryText:product.deliveryText||"",
+customPainting:Boolean(product.customPainting),
 image:product.image,
 size:selectedSize,
 valveLength:selectedValveLength,
