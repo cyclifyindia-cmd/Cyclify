@@ -487,7 +487,7 @@ const landingPages = [
   { file: 'bike-drivetrain.html', source: 'components.html', category: 'drivetrain', title: 'Bike Drivetrain Components India | Cyclify', heading: 'Bike Drivetrain Components', description: 'Shop bicycle cranksets, chainrings, cassettes and drivetrain upgrades from Cyclify India.' },
   { file: 'sava-bikes.html', source: 'bikes-frames.html', category: 'sava', title: 'SAVA Carbon Road Bikes India | Cyclify', heading: 'SAVA Carbon Road Bikes', description: 'Shop SAVA carbon road bikes in India with detailed specifications and free shipping from Cyclify.' },
   { file: 'elves-bikes.html', source: 'bikes-frames.html', category: 'elves', title: 'ELVES Carbon Road Bikes India | Cyclify', heading: 'ELVES Carbon Road Bikes', description: 'Shop ELVES carbon road bikes and frames in India with detailed specifications from Cyclify.' },
-  { file: 'tfsa-frames.html', source: 'bikes-frames.html', category: 'tfsa', title: 'TFSA Carbon Road Frames India | Cyclify', heading: 'TFSA Carbon Road Frames', description: 'Explore TFSA carbon road frames in India with full frame parameters, XS to XL preorder options, custom painting and multi-angle product photos.' }
+  { file: 'tfsa-frames.html', source: 'bikes-frames.html', category: 'tfsa', title: 'TFSA Carbon Road Frames India | Cyclify', heading: 'TFSA Carbon Road Frames', description: 'Explore TFSA carbon road frames in India with full frame parameters, manufacturer-numbered sizes, custom painting and multi-angle product photos.' }
 ];
 
 landingPages.forEach(landing => {
