@@ -117,12 +117,27 @@ function checkoutItems() {
 function priceOf(item) {
   return typeof item.price === "number" ? item.price : Number(String(item.price).replace(/[^0-9.]/g, "")) || 0;
 }
+function preorderDepositOf(item) {
+  const value = Number(item?.preorderDeposit || 0);
+  return Number.isInteger(value) && value > 0 ? value : 0;
+}
+function paymentPriceOf(item) {
+  return preorderDepositOf(item) || priceOf(item);
+}
 function cartTotal(list) {
-  return list.reduce((amount, item) => amount + priceOf(item) * Number(item.quantity || 1), 0);
+  return list.reduce((amount, item) => amount + paymentPriceOf(item) * Number(item.quantity || 1), 0);
 }
 function resetPayButton(list = checkoutItems()) {
   payNow.disabled = !paymentReady;
-  payNow.textContent = paymentReady ? "Pay Now" : "Payment unavailable";
+  if (!paymentReady) {
+    payNow.textContent = "Payment unavailable";
+    return;
+  }
+  const amount = cartTotal(list);
+  const onlyPreorders = list.length > 0 && list.every(item => preorderDepositOf(item) > 0);
+  payNow.textContent = onlyPreorders
+    ? `Pay \u20B9${amount.toLocaleString("en-IN")} Preorder Deposit`
+    : (list.some(item => preorderDepositOf(item) > 0) ? `Pay \u20B9${amount.toLocaleString("en-IN")} Now` : "Pay Now");
 }
 function showError(message) {
   formError.textContent = message;
@@ -248,9 +263,31 @@ async function render() {
     location.replace("cart.html");
     return;
   }
-  byId("items").innerHTML = list.map(item => `<div class="item"><img src="${escapeText(item.image)}" alt=""><div><p>${escapeText(item.name)}</p><small>Qty ${Number(item.quantity || 1)}${item.size ? ` | ${escapeText(item.size)}` : ""}</small></div><span class="money">\u20B9${(priceOf(item) * Number(item.quantity || 1)).toLocaleString("en-IN")}</span></div>`).join("");
+  const hasPreorder = list.some(item => preorderDepositOf(item) > 0);
+  const orderValue = list.reduce((amount, item) => amount + priceOf(item) * Number(item.quantity || 1), 0);
+  const depositTotal = list.reduce((amount, item) => amount + preorderDepositOf(item) * Number(item.quantity || 1), 0);
+  byId("items").innerHTML = list.map(item => {
+    const quantity = Number(item.quantity || 1);
+    const framePrice = priceOf(item);
+    const deposit = preorderDepositOf(item);
+    const remaining = Math.max(0, framePrice - deposit);
+    const preorderCopy = deposit > 0
+      ? `<small class="preorder-copy">Frame price \u20B9${framePrice.toLocaleString("en-IN")}. \u20B9${deposit.toLocaleString("en-IN")} is charged today; remaining \u20B9${remaining.toLocaleString("en-IN")} per frame is payable after size${item.customPainting ? " and custom paint" : ""} confirmation.</small>`
+      : "";
+    return `<div class="item"><img src="${escapeText(item.image)}" alt=""><div><p>${escapeText(item.name)}</p><small>Qty ${quantity}${item.size ? ` | Size ${escapeText(item.size)}` : ""}</small>${preorderCopy}</div><span class="money ${deposit > 0 ? "deposit-money" : ""}">${deposit > 0 ? `\u20B9${(deposit * quantity).toLocaleString("en-IN")} deposit` : `\u20B9${(framePrice * quantity).toLocaleString("en-IN")}`}</span></div>`;
+  }).join("");
   const count = list.reduce((number, item) => number + Number(item.quantity || 1), 0);
   byId("itemCount").textContent = `${count} item${count === 1 ? "" : "s"}`;
+  byId("orderValueRow").hidden = !hasPreorder;
+  byId("depositRow").hidden = !hasPreorder;
+  if (hasPreorder) {
+    byId("orderValue").textContent = `\u20B9${orderValue.toLocaleString("en-IN")}`;
+    byId("depositTotal").textContent = `\u20B9${depositTotal.toLocaleString("en-IN")}`;
+    byId("totalLabel").innerHTML = "Payable now<small>\u20B91 preorder deposit per TFSA frame</small>";
+    byId("savingNote").innerHTML = '<span aria-hidden="true">✓</span> Remaining frame balance is payable only after size and custom-paint confirmation';
+    byId("deliveryTiming").innerHTML = "<strong>FREE delivery</strong> in approximately 10–12 days after final order confirmation.";
+    if (paymentReady) paymentStatus.textContent = "Only the clearly shown preorder deposit is charged now. The remaining frame balance is collected after Cyclify confirms your size and custom paint.";
+  }
   byId("total").textContent = `\u20B9${cartTotal(list).toLocaleString("en-IN")}`;
   resetPayButton(list);
   let saved = null;
@@ -371,7 +408,7 @@ checkoutForm.addEventListener("submit", async event => {
       currency: order.currency,
       order_id: order.orderId,
       name: "CYCLIFY INDIA",
-      description: "Cyclify secure checkout",
+      description: list.some(item => preorderDepositOf(item) > 0) ? "Cyclify TFSA preorder deposit" : "Cyclify secure checkout",
       image: "https://cyclify.in/assets/Logo-original.png",
       prefill: {
         name: `${addressData.firstName} ${addressData.lastName}`.trim(),
