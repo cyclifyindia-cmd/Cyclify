@@ -12,6 +12,7 @@ const seoStatePath = path.join(root, 'assets', 'data', 'seo-lastmod.json');
 const supplierPath = path.join(root, 'assets', 'data', 'cycletime-products.json');
 const fccSupplierPath = path.join(root, 'assets', 'data', 'fcc-products.json');
 const cadenceSupplierPath = path.join(root, 'assets', 'data', 'cadence-products.json');
+const tfsaProductsPath = path.join(root, 'assets', 'js', 'tfsa-products.js');
 const guidesPath = path.join(root, 'assets', 'data', 'guides.json');
 const categoryCatalogs = [
   { page: 'bikes-frames.html', file: 'catalog-bikes-frames.js' },
@@ -57,7 +58,7 @@ categoryCatalogs.forEach(({ page, file }) => {
 });
 
 const versionedScripts = [
-  'product-routes.js', 'supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'search-index.js', 'site-footer.js',
+  'product-routes.js', 'supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'tfsa-products.js', 'search-index.js', 'site-footer.js',
   ...categoryCatalogs.map(item => item.file)
 ];
 const scriptVersions = Object.fromEntries(versionedScripts.map(file => {
@@ -87,9 +88,12 @@ function stableHash(value) {
 }
 
 function writeFileWithRetry(file, content, encoding = 'utf8') {
+  const normalizedContent = typeof content === 'string'
+    ? content.replace(/\r\n?/g, '\n')
+    : content;
   for (let attempt = 1; attempt <= 8; attempt += 1) {
     try {
-      fs.writeFileSync(file, content, encoding);
+      fs.writeFileSync(file, normalizedContent, encoding);
       return;
     } catch (error) {
       const retryable = ['UNKNOWN', 'EBUSY', 'EPERM', 'EACCES'].includes(error.code);
@@ -213,7 +217,9 @@ function usefulDetail(product) {
 }
 
 function descriptionFor(product) {
-  const intro = 'Shop ' + cleanText(product.name) + ' at Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + '.';
+  const intro = product.priceOnRequest
+    ? 'Pre-order ' + cleanText(product.name) + ' from Cyclify India; selling price is confirmed before payment.'
+    : 'Shop ' + cleanText(product.name) + ' at Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + '.';
   return truncateAtWord(intro + ' ' + usefulDetail(product), 150);
 }
 
@@ -238,6 +244,9 @@ function existingRoutes() {
 }
 
 const products = extractProducts(template);
+if (fs.existsSync(tfsaProductsPath)) {
+  products.push(...extractProducts(fs.readFileSync(tfsaProductsPath, 'utf8'), 'const tfsaProducts='));
+}
 const homepageSearchProducts = extractProducts(
   fs.readFileSync(path.join(root, 'index.html'), 'utf8'),
   'const searchProducts ='
@@ -311,6 +320,7 @@ const compactSearchProducts = primaryProducts.map(product => ({
   id: product.id,
   name: cleanText(product.name),
   price: Number(product.price) || 0,
+  priceOnRequest: Boolean(product.priceOnRequest),
   image: product.image || (product.images || [])[0] || 'assets/Logo-dark-preview.png',
   category: product.categoryLabel || categoryLabels[product.categoryPage] || product.category || homepageSearchById.get(String(product.id))?.category || 'Cycling',
   keywords: cleanText(product.keywords || homepageSearchById.get(String(product.id))?.keywords || [product.mainCategory, product.subCategory, product.category].filter(Boolean).join(' '))
@@ -340,7 +350,7 @@ for (const product of primaryProducts) {
   const title = titleFor(product);
   const description = descriptionFor(product);
   const image = absoluteUrl(product.image || (product.images || [])[0] || 'assets/Logo-dark-preview.png');
-  const inferredBrand = (product.name.match(/^(SAVA|ELVES|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i) || ['Cyclify'])[0];
+  const inferredBrand = (product.name.match(/^(SAVA|ELVES|TFSA|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i) || ['Cyclify'])[0];
   const brand = product.brand || (product.id === 16 ? 'Cyclami' : inferredBrand);
   const breadcrumbItems = [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cyclify.in/' }
@@ -409,6 +419,9 @@ for (const product of primaryProducts) {
       }
     ]
   };
+  if (product.priceOnRequest || !(Number(product.price) > 0)) {
+    delete schema['@graph'][0].offers;
+  }
 
   let page = template;
   page = page.replace('<head>', '<head>\n<base href="../">');
@@ -428,7 +441,8 @@ for (const product of primaryProducts) {
     '<script>window.CYCLIFY_PRODUCT_ID=' + product.id + ';</script>\n$&'
   );
   page = page.replace('</head>', '<script type="application/ld+json" id="cyclify-product-schema">\n' + JSON.stringify(schema, null, 2).replace(/<\//g, '<\\/') + '\n</script>\n</head>');
-  page = page.replace('<body>', '<body>\n<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>' + escapeHtml(product.name) + '</h1><p>Price: Rs ' + Number(product.price).toLocaleString('en-IN') + '</p><p>' + escapeHtml(description) + '</p></main></noscript>');
+  const noscriptPrice = product.priceOnRequest ? 'Price on request' : 'Price: Rs ' + Number(product.price).toLocaleString('en-IN');
+  page = page.replace('<body>', '<body>\n<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>' + escapeHtml(product.name) + '</h1><p>' + escapeHtml(noscriptPrice) + '</p><p>' + escapeHtml(description) + '</p></main></noscript>');
   writeFileWithRetry(path.join(root, route), page, 'utf8');
 }
 
@@ -469,7 +483,8 @@ const landingPages = [
   { file: 'cycling-shoes.html', source: 'wearables.html', category: 'shoes', title: 'Road Cycling Shoes in India | Cyclify', heading: 'Road Cycling Shoes', description: 'Shop performance road cycling shoes in India with clear size options and free shipping.' },
   { file: 'bike-drivetrain.html', source: 'components.html', category: 'drivetrain', title: 'Bike Drivetrain Components India | Cyclify', heading: 'Bike Drivetrain Components', description: 'Shop bicycle cranksets, chainrings, cassettes and drivetrain upgrades from Cyclify India.' },
   { file: 'sava-bikes.html', source: 'bikes-frames.html', category: 'sava', title: 'SAVA Carbon Road Bikes India | Cyclify', heading: 'SAVA Carbon Road Bikes', description: 'Shop SAVA carbon road bikes in India with detailed specifications and free shipping from Cyclify.' },
-  { file: 'elves-bikes.html', source: 'bikes-frames.html', category: 'elves', title: 'ELVES Carbon Road Bikes India | Cyclify', heading: 'ELVES Carbon Road Bikes', description: 'Shop ELVES carbon road bikes and frames in India with detailed specifications from Cyclify.' }
+  { file: 'elves-bikes.html', source: 'bikes-frames.html', category: 'elves', title: 'ELVES Carbon Road Bikes India | Cyclify', heading: 'ELVES Carbon Road Bikes', description: 'Shop ELVES carbon road bikes and frames in India with detailed specifications from Cyclify.' },
+  { file: 'tfsa-frames.html', source: 'bikes-frames.html', category: 'tfsa', title: 'TFSA Carbon Road Frames India | Cyclify', heading: 'TFSA Carbon Road Frames', description: 'Explore TFSA carbon road frames in India with full frame parameters, XS to XL preorder options, custom painting and multi-angle product photos.' }
 ];
 
 landingPages.forEach(landing => {
