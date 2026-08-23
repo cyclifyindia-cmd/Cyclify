@@ -99,7 +99,16 @@ function validatedCart(items) {
     if (size && product.sizes.length && !product.sizes.includes(size)) throw new Error(`The selected option for ${product.name} is invalid.`);
     if (size && product.sizeAvailability[size] === false) throw new Error(`${product.name} (${size}) is out of stock.`);
     total += product.price * quantity;
-    return { id: product.id, name: product.name, price: product.price, quantity, image: product.image, size };
+    return {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      sellingPrice: Number(product.sellingPrice || product.price),
+      preorderDeposit: Number(product.preorderDeposit || 0),
+      quantity,
+      image: product.image,
+      size,
+    };
   });
   if (!Number.isSafeInteger(total) || total < 1) throw new Error("The order total is invalid.");
   return { items: cleanItems, total };

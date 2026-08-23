@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T04:26:41.387Z",
+  "generatedAt": "2026-08-23T07:39:10.976Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -837,6 +837,117 @@
       ],
       "sizeAvailability": {},
       "sourcePage": "sava-bikes.html"
+    },
+    "7501": {
+      "id": "7501",
+      "name": "TFSA JH-15 Carbon Endurance Road Frameset",
+      "price": 1,
+      "available": true,
+      "image": "assets/products/tfsa/tfsa-jh15-01.webp",
+      "sizes": [
+        "48",
+        "51",
+        "54",
+        "56"
+      ],
+      "sizeAvailability": {},
+      "sourcePage": "bikes-frames.html?category=tfsa",
+      "sellingPrice": 70000,
+      "preorderDeposit": 1
+    },
+    "7502": {
+      "id": "7502",
+      "name": "TFSA JH-19 Carbon Road Disc Frameset",
+      "price": 1,
+      "available": true,
+      "image": "assets/products/tfsa/tfsa-jh19-01.webp",
+      "sizes": [
+        "44",
+        "49",
+        "52",
+        "54",
+        "56",
+        "58"
+      ],
+      "sizeAvailability": {},
+      "sourcePage": "bikes-frames.html?category=tfsa",
+      "sellingPrice": 65000,
+      "preorderDeposit": 1
+    },
+    "7503": {
+      "id": "7503",
+      "name": "TFSA JH-33 Carbon Disc Brake Road Frameset",
+      "price": 1,
+      "available": true,
+      "image": "assets/products/tfsa/tfsa-jh33-01.webp",
+      "sizes": [
+        "44",
+        "46.5",
+        "49",
+        "52",
+        "54",
+        "56",
+        "58"
+      ],
+      "sizeAvailability": {},
+      "sourcePage": "bikes-frames.html?category=tfsa",
+      "sellingPrice": 65000,
+      "preorderDeposit": 1
+    },
+    "7504": {
+      "id": "7504",
+      "name": "TFSA JH-10 Carbon Aero Road Frameset",
+      "price": 1,
+      "available": true,
+      "image": "assets/products/tfsa/tfsa-jh10-01.webp",
+      "sizes": [
+        "47",
+        "49",
+        "52",
+        "54",
+        "56"
+      ],
+      "sizeAvailability": {},
+      "sourcePage": "bikes-frames.html?category=tfsa",
+      "sellingPrice": 70000,
+      "preorderDeposit": 1
+    },
+    "7505": {
+      "id": "7505",
+      "name": "TFSA JH-35 Lightweight Carbon Road Frameset",
+      "price": 1,
+      "available": true,
+      "image": "assets/products/tfsa/tfsa-jh35-01.webp",
+      "sizes": [
+        "49",
+        "52",
+        "54",
+        "56",
+        "58"
+      ],
+      "sizeAvailability": {},
+      "sourcePage": "bikes-frames.html?category=tfsa",
+      "sellingPrice": 100000,
+      "preorderDeposit": 1
+    },
+    "7506": {
+      "id": "7506",
+      "name": "TFSA JH-06 Carbon Rim Brake Road Frameset",
+      "price": 1,
+      "available": true,
+      "image": "assets/products/tfsa/tfsa-jh06-01.webp",
+      "sizes": [
+        "44",
+        "49",
+        "52",
+        "54",
+        "56",
+        "58"
+      ],
+      "sizeAvailability": {},
+      "sourcePage": "bikes-frames.html?category=tfsa",
+      "sellingPrice": 45000,
+      "preorderDeposit": 1
     },
     "230708292": {
       "id": "230708292",
