@@ -22,10 +22,11 @@ content="width=device-width, initial-scale=1">
 <meta name="twitter:title" content="SAVA Carbon Road Bikes India | Cyclify">
 <meta name="twitter:description" content="Shop SAVA carbon road bikes in India with detailed specifications and free shipping from Cyclify.">
 <meta name="twitter:image" content="https://cyclify.in/assets/products/elves-falath-evo-plus-2.png">
-<script src="assets/js/product-routes.js?v=03663c0ce8"></script>
-<script src="assets/js/supplier-products.js?v=7d47274b49"></script>
+<script src="assets/js/product-routes.js?v=be805bb38c"></script>
+<script src="assets/js/supplier-products.js?v=df3d2e1fcf"></script>
 <script src="assets/js/fcc-products.js?v=9a3796903c"></script>
 <script src="assets/js/cadence-products.js?v=a1f1fc1ecf"></script>
+<script src="assets/js/tfsa-products.js?v=df24385152"></script>
 <style>
 
 *{
@@ -347,6 +348,7 @@ margin-bottom:2px;
 
 font-size:14px;
 color:gray;
+text-decoration:line-through;
 
 margin-bottom:6px;
 
@@ -359,6 +361,25 @@ font-weight:bold;
 color:#087a3d;
 margin-bottom:10px;
 
+}
+
+.card.preorder-card{
+position:relative;
+}
+
+.price.price-on-request{
+font-size:14px;
+color:#14261d;
+}
+
+.preorder-card .ship{
+color:#147a42;
+}
+
+.preorder-card .add{
+border-color:#f05a28;
+background:#f05a28;
+color:#fff;
 }
 
 .bottom{
@@ -881,6 +902,7 @@ sizes:["S","M","L"]
 window.cyclifyMergeSupplierProducts(products,"bikes-frames.html");
 window.cyclifyMergeFccProducts(products,"bikes-frames.html");
 window.cyclifyMergeCadenceProducts(products,"bikes-frames.html");
+window.cyclifyMergeTfsaProducts(products,"bikes-frames.html");
 
 
 const container=
@@ -896,12 +918,11 @@ let activeCategory=new URLSearchParams(window.location.search).get("category")||
 
 const categories=[
 {key:"sava",label:"SAVA",image:"assets/products/sava-hawkeye.jpg"},
-{key:"elves",label:"ELVES",image:"assets/products/elves-falath-evo-plus-2.png"}
+{key:"elves",label:"ELVES",image:"assets/products/elves-falath-evo-plus-2.png"},
+{key:"tfsa",label:"TFSA",image:"assets/products/tfsa/tfsa-jh15-01.webp"}
 ];
 
 function getProductCategory(product){
-if(product.mainCategory){return product.mainCategory;}
-if(product.mainCategory){return product.mainCategory;}
 if(product.mainCategory){return product.mainCategory;}
 const name=product.name.toLowerCase();
 
@@ -911,6 +932,10 @@ return "sava";
 
 if(name.includes("elves")){
 return "elves";
+}
+
+if(name.includes("tfsa")){
+return "tfsa";
 }
 
 return "all";
@@ -935,61 +960,6 @@ cartCount.style.display="none";
 updateCartCount();
 
 
-products.forEach(product=>{
-
-container.innerHTML+=`
-
-<div class="card"
-onclick="openProduct(${product.id})"
-tabindex="0"
-role="link"
-onkeydown="handleCardKey(event,${product.id})">
-
-<img
-src="${product.image}">
-
-<div class="details">
-
-<h3>
-${product.name}
-</h3>
-
-<div class="price">
-
-Rs ${product.price.toLocaleString()}
-
-</div>
-
-<div class="mrp">
-
-MRP ${product.mrp}
-
-</div>
-
-<div class="ship">
-Free Shipping
-</div>
-
-<div class="bottom">
-
-<button
-class="add"
-onclick="addToCart(event,${product.id})">
-
-Add to cart
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-});
-
 function renderCategories(){
 categoryStrip.innerHTML=categories.map(category=>`
 <button class="category-pill ${category.key===activeCategory?"active":""}" onclick="selectCategory('${category.key}')">
@@ -999,8 +969,24 @@ categoryStrip.innerHTML=categories.map(category=>`
 `).join("");
 }
 
+function productPriceText(product){
+if(product.priceOnRequest){return "Price on request";}
+return `Rs ${Number(product.price||0).toLocaleString("en-IN")}`;
+}
+
+function productShippingText(product){
+if(product.preorder){return product.deliveryText||"Pre-order";}
+return product.available===false?"Out of stock":"Free Shipping";
+}
+
+function productActionText(product){
+if(product.preorder){return "Pre-Order & Buy";}
+return product.available===false?"Out of stock":"Add to cart";
+}
+
 function productPassesFilter(product){
 const selected=filterSelect?filterSelect.value:"all";
+if(product.priceOnRequest){return selected==="all";}
 const price=Number(product.price)||0;
 if(selected==="under-5000"){return price<5000;}
 if(selected==="5000-20000"){return price>=5000&&price<=20000;}
@@ -1011,8 +997,13 @@ return true;
 function sortProducts(list){
 const selected=sortSelect?sortSelect.value:"featured";
 const sorted=[...list];
-if(selected==="price-low"){sorted.sort((a,b)=>(Number(a.price)||0)-(Number(b.price)||0));}
-else if(selected==="price-high"){sorted.sort((a,b)=>(Number(b.price)||0)-(Number(a.price)||0));}
+const sortablePrice=product=>product.priceOnRequest?Number.POSITIVE_INFINITY:(Number(product.price)||0);
+if(selected==="price-low"){sorted.sort((a,b)=>sortablePrice(a)-sortablePrice(b));}
+else if(selected==="price-high"){sorted.sort((a,b)=>{
+const aPrice=a.priceOnRequest?Number.NEGATIVE_INFINITY:(Number(a.price)||0);
+const bPrice=b.priceOnRequest?Number.NEGATIVE_INFINITY:(Number(b.price)||0);
+return bPrice-aPrice;
+});}
 else if(selected==="name"){sorted.sort((a,b)=>a.name.localeCompare(b.name));}
 return sorted;
 }
@@ -1041,19 +1032,19 @@ return;
 
 filteredProducts.forEach(product=>{
 container.innerHTML+=`
-<div class="card"
+<div class="card ${product.preorder?"preorder-card":""}"
 onclick="openProduct(${product.id})"
 tabindex="0"
 role="link"
 onkeydown="handleCardKey(event,${product.id})">
-<img src="${product.image}">
+<img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
 <div class="details">
 <h3>${product.name}</h3>
-<div class="price">Rs ${product.price.toLocaleString()}</div>
-<div class="mrp">MRP ${product.mrp}</div>
-<div class="ship">${product.available===false?"Out of stock":"Free Shipping"}</div>
+<div class="price ${product.priceOnRequest?"price-on-request":""}">${productPriceText(product)}</div>
+${product.mrp?`<div class="mrp">MRP ${product.mrp}</div>`:""}
+<div class="ship">${productShippingText(product)}</div>
 <div class="bottom">
-<button class="add" onclick="addToCart(event,${product.id})">Add to cart</button>
+<button class="add" ${product.available===false?"disabled":""} onclick="addToCart(event,${product.id})">${productActionText(product)}</button>
 </div>
 </div>
 </div>

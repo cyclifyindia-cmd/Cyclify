@@ -1555,9 +1555,9 @@ let searchCatalogPromise=null;
 function loadSearchCatalogs(){
 if(searchCatalogPromise)return searchCatalogPromise;
 searchCatalogPromise=Promise.all([
-loadCatalogScript("assets/js/supplier-products.js?v=4271721665"),
-loadCatalogScript("assets/js/fcc-products.js?v=e3c38db2c7"),
-loadCatalogScript("assets/js/cadence-products.js?v=1b41bf6b2c"),
+loadCatalogScript("assets/js/supplier-products.js?v=df3d2e1fcf"),
+loadCatalogScript("assets/js/fcc-products.js?v=9a3796903c"),
+loadCatalogScript("assets/js/cadence-products.js?v=a1f1fc1ecf"),
 loadCatalogScript("assets/js/tfsa-products.js?v=df24385152")
 ]).then(()=>{
 mergeSearchCatalog(window.CYCLIFY_CYCLETIME_PRODUCTS);

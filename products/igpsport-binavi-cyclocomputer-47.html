@@ -22,10 +22,11 @@ content="width=device-width,initial-scale=1">
 <meta name="twitter:description" content="Shop iGPSPORT BiNavi Cyclocomputer at Cyclify India for Rs 24,800. 【Quick analysis of complex road books】-Whether it's a 100-km weekend adventure or">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189">
 <script>window.CYCLIFY_PRODUCT_ID=47;</script>
-<script src="assets/js/product-routes.js?v=03663c0ce8"></script>
-<script src="assets/js/supplier-products.js?v=7d47274b49"></script>
+<script src="assets/js/product-routes.js?v=be805bb38c"></script>
+<script src="assets/js/supplier-products.js?v=df3d2e1fcf"></script>
 <script src="assets/js/fcc-products.js?v=9a3796903c"></script>
 <script src="assets/js/cadence-products.js?v=a1f1fc1ecf"></script>
+<script src="assets/js/tfsa-products.js?v=df24385152"></script>
 <style>
 
 *{
@@ -264,6 +265,7 @@ text-decoration-thickness:1.5px;
 text-decoration-skip-ink:none;
 }
 .deal-save{display:inline-flex;align-items:center;background:#079b2b;color:#fff;border-radius:999px;padding:3px 7px;font-size:9px;font-weight:800;line-height:1;white-space:nowrap}
+.deal-mrp[hidden],.deal-save[hidden],.deal-off[hidden]{display:none!important;}
 
 .shipping-note{
 display:inline-flex;
@@ -280,6 +282,58 @@ border-radius:0;
 white-space:nowrap;
 }
 .shipping-note .shipping-icon{font-size:14px;line-height:1}
+
+.product-fulfilment{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+max-width:520px;
+margin:-4px 0 20px;
+}
+
+.fulfilment-pill{
+display:inline-flex;
+align-items:center;
+gap:6px;
+min-height:32px;
+padding:7px 11px;
+border:1px solid #e5e8e7;
+border-radius:999px;
+background:#fff;
+color:#23342b;
+font-size:12px;
+font-weight:750;
+}
+
+.fulfilment-pill.preorder{
+border-color:#ffd4c3;
+background:#fff5f0;
+color:#b83f13;
+}
+
+.fulfilment-pill.deposit{
+border-color:#ffd4c3;
+background:#fff5f0;
+color:#b83f13;
+}
+
+.fulfilment-pill.paint{
+border-color:#cde9d9;
+background:#f1fbf5;
+color:#116d3d;
+}
+
+.price-line.price-on-request .deal-word{
+background:none;
+color:#b83f13;
+-webkit-text-fill-color:currentColor;
+animation:none;
+}
+
+.price-line.price-on-request .deal-price{
+font-size:23px;
+letter-spacing:-.01em;
+}
 
 .size-section{
 margin:0 0 20px;
@@ -393,6 +447,14 @@ color:white;
 background:#25D366;
 color:white;
 
+}
+
+.buttons.preorder-mode .cartbtn{
+background:#183126;
+}
+
+.buttons.preorder-mode .buybtn{
+background:#f05a28;
 }
 
 /* SECTION */
@@ -557,6 +619,83 @@ background:#fff;
 .detail-story h4{font-size:18px;margin:0 0 7px;}
 .detail-story p{font-size:14px;line-height:1.55;color:#4a4f57;}
 
+.product-features-block,
+.multi-angle-block{
+padding:30px 0 0;
+}
+
+.product-features-block h3,
+.multi-angle-block h3{
+font-size:clamp(22px,2.6vw,32px);
+line-height:1.15;
+margin:0 0 17px;
+}
+
+.product-features-list{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px 18px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.product-features-list li{
+position:relative;
+padding:14px 15px 14px 42px;
+border:1px solid #e7ebe8;
+border-radius:10px;
+background:#fafcfb;
+color:#29332e;
+font-size:14px;
+line-height:1.48;
+}
+
+.product-features-list li::before{
+content:"✓";
+position:absolute;
+left:14px;
+top:14px;
+display:grid;
+place-items:center;
+width:19px;
+height:19px;
+border-radius:50%;
+background:#169653;
+color:#fff;
+font-size:12px;
+font-weight:900;
+}
+
+.multi-angle-grid{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:12px;
+}
+
+.multi-angle-card{
+overflow:hidden;
+border:1px solid #e6e9e7;
+border-radius:10px;
+background:#fff;
+}
+
+.multi-angle-card img{
+display:block;
+width:100%;
+aspect-ratio:4/3;
+object-fit:contain;
+background:#fff;
+}
+
+.multi-angle-card span{
+display:block;
+padding:10px 12px;
+border-top:1px solid #edf0ee;
+color:#36413b;
+font-size:12px;
+font-weight:700;
+}
 @media(max-width:800px){
 .specification-heading{align-items:flex-start;flex-direction:column;gap:12px;}
 .spec-highlights{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -565,6 +704,7 @@ background:#fff;
 .spec-group{grid-template-columns:1fr;gap:16px;padding:24px 0;}
 .product-detail-stories{grid-template-columns:1fr;gap:12px;}
 .detail-story-copy{padding:14px;}
+.multi-angle-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 
 @media(max-width:480px){
@@ -577,6 +717,9 @@ background:#fff;
 .spec-highlight-value{font-size:14px;}
 .spec-row{grid-template-columns:minmax(96px,37%) minmax(0,1fr);gap:12px;padding:11px 0;}
 .spec-row dt,.spec-row dd{font-size:12.5px;}
+.product-features-list{grid-template-columns:1fr;}
+.multi-angle-grid{gap:8px;}
+.multi-angle-card span{padding:8px 9px;font-size:11px;}
 }
 
 /* RELATED */
@@ -1186,11 +1329,13 @@ id="productName">
 
 </h1>
 
-<div class="price-line" aria-label="Cyclify deal price">
-<div class="deal-head"><img src="assets/Logo-dark.png" alt="Cyclify"><span class="deal-divider"></span><span class="deal-word">DEAL</span></div>
+<div class="price-line" id="productPriceLine" aria-label="Cyclify deal price">
+<div class="deal-head"><img src="assets/Logo-dark.png" alt="Cyclify"><span class="deal-divider"></span><span class="deal-word" id="productDealWord">DEAL</span></div>
 <div class="deal-main"><div class="deal-price" id="productPrice"></div><div class="deal-off" id="productDiscount"></div></div>
 <div class="deal-meta"><div class="deal-mrp" id="productMrp">MRP Rs 2,10,000</div><div class="deal-save" id="productSave"></div><div class="shipping-note"><span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span></div></div>
 </div>
+
+<div class="product-fulfilment" id="productFulfilment" hidden></div>
 
 <div class="size-section"
 id="sizeSection">
@@ -1218,7 +1363,7 @@ id="valveOptions">
 
 </div>
 
-<div class="buttons">
+<div class="buttons" id="productButtons">
 
 <button
 class="btn cartbtn"
@@ -1248,11 +1393,20 @@ Buy Now
 <h3 id="specificationTitle">Technical Specifications</h3>
 <p class="spec-summary" id="specSummaryText">Key specifications, compatibility and product information at a glance.</p>
 </div>
+<a class="spec-source" id="specSourceLink" href="#" target="_blank" rel="noopener" hidden>View source</a>
 </div>
 
 <div class="spec-highlights" id="specHighlights" aria-label="Key specifications"></div>
 <div class="spec-groups" id="specList"></div>
 <div class="product-detail-stories" id="productDetailStories"></div>
+<section class="product-features-block" id="productFeaturesBlock" hidden>
+<h3>Product Features</h3>
+<ul class="product-features-list" id="productFeaturesList"></ul>
+</section>
+<section class="multi-angle-block" id="multiAngleBlock" hidden>
+<h3>Multi-angle Product Photos</h3>
+<div class="multi-angle-grid" id="multiAngleGrid"></div>
+</section>
 
 </section>
 
@@ -2289,7 +2443,8 @@ image:"https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-459
 images:["https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_a194f6d6-bc9a-42a5-b87c-a714668e1745.jpg?v=1772279862","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BG02_-_-17.webp?v=1772279862","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3b99bfd1-85e5-48e7-8d03-5f438e4d8395.jpg?v=1768563958","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_23.jpg?v=1768563958","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_22.jpg?v=1768563958","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_21.jpg?v=1768563958","https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_20.jpg?v=1768563958"],
 sizes:[],
 specs:["Brand : iGPSPORT","Model : BiNavi","Type : GPS bike computer and navigator","Navigation : Advanced route analysis and turn prompts","Safety : Curve and all-terrain sensing alerts","Display : Map zoom and pop-up turn warnings","Use : Long rides, training and route navigation"]
-},
+}
+,
 
 {
   id: 48,
@@ -2800,6 +2955,7 @@ specs:[
 window.cyclifyMergeSupplierProducts(products,"");
 window.cyclifyMergeFccProducts(products,"");
 window.cyclifyMergeCadenceProducts(products,"");
+window.cyclifyMergeTfsaProducts(products,"");
 
 const params=new URLSearchParams(window.location.search);
 const productId=Number(window.CYCLIFY_PRODUCT_ID||params.get("id"))||1;
@@ -2860,7 +3016,11 @@ return "Authentic cycling equipment with free shipping across India.";
 }
 
 function plainProductDescription(){
-const intro=`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${product.price.toLocaleString()}.`;
+const intro=product.priceOnRequest
+?`Pre-order ${cleanSeoText(product.name)} from Cyclify India; selling price is confirmed before payment.`
+:(product.preorderDeposit
+?`Pre-order ${cleanSeoText(product.name)} at Cyclify India for Rs ${Number(product.price).toLocaleString("en-IN")} with a Rs ${Number(product.preorderDeposit).toLocaleString("en-IN")} deposit.`
+:`Shop ${cleanSeoText(product.name)} at Cyclify India for Rs ${Number(product.price).toLocaleString("en-IN")}.`);
 return truncateSeoText(`${intro} ${productSeoDetail()}`,150);
 }
 
@@ -2891,7 +3051,7 @@ upsertMeta('meta[property="og:image"]',{tag:"meta",attrs:{property:"og:image"}},
 upsertMeta('meta[name="twitter:title"]',{tag:"meta",attrs:{name:"twitter:title"}},title);
 upsertMeta('meta[name="twitter:description"]',{tag:"meta",attrs:{name:"twitter:description"}},description);
 upsertMeta('meta[name="twitter:image"]',{tag:"meta",attrs:{name:"twitter:image"}},image);
-const inferredBrand=(product.name.match(/^(SAVA|ELVES|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i)||["Cyclify"])[0];
+const inferredBrand=(product.name.match(/^(SAVA|ELVES|TFSA|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i)||["Cyclify"])[0];
 const brand=product.brand||(product.id===16?"Cyclami":inferredBrand);
 const schema={
 "@context":"https://schema.org",
@@ -2905,13 +3065,15 @@ additionalProperty:(product.specs||[]).map(spec=>{
 const raw=String(spec||"");
 const separator=raw.indexOf(":");
 return separator>0?{"@type":"PropertyValue",name:raw.slice(0,separator).trim(),value:raw.slice(separator+1).trim()}:null;
-}).filter(Boolean),
-offers:{
+}).filter(Boolean)
+};
+if(!product.priceOnRequest&&Number(product.price)>0){
+schema.offers={
 "@type":"Offer",
 url:canonical,
 priceCurrency:"INR",
 price:String(product.price),
-availability:product.available===false?"https://schema.org/OutOfStock":"https://schema.org/InStock",
+availability:product.available===false?"https://schema.org/OutOfStock":(product.preorder?"https://schema.org/PreOrder":"https://schema.org/InStock"),
 itemCondition:"https://schema.org/NewCondition",
 shippingDetails:{
 "@type":"OfferShippingDetails",
@@ -2926,8 +3088,8 @@ merchantReturnDays:7,
 returnMethod:"https://schema.org/ReturnByMail",
 merchantReturnLink:"https://cyclify.in/exchange-policy.html"
 }
-}
 };
+}
 let script=document.getElementById("cyclify-product-schema");
 if(!script){
 script=document.createElement("script");
@@ -2979,7 +3141,7 @@ const price=Math.round(Number(product.price)||0);
 const mrp=productMoneyNumber(product.mrp);
 const saving=Math.max(0,Math.round(mrp-price));
 const discount=mrp>price?Math.round((saving/mrp)*100):0;
-document.getElementById("productPrice").textContent=`₹${price.toLocaleString("en-IN")}`;
+document.getElementById("productPrice").textContent=product.priceOnRequest?"Price on request":`₹${price.toLocaleString("en-IN")}`;
 const mrpElement=document.getElementById("productMrp");
 const saveElement=document.getElementById("productSave");
 const discountElement=document.getElementById("productDiscount");
@@ -2989,10 +3151,27 @@ discountElement.textContent=discount?`${discount}% OFF`:"";
 mrpElement.hidden=!mrp;
 saveElement.hidden=!saving;
 discountElement.hidden=!discount;
+const priceLine=document.getElementById("productPriceLine");
+if(priceLine){priceLine.classList.toggle("price-on-request",Boolean(product.priceOnRequest));}
+const dealWord=document.getElementById("productDealWord");
+if(dealWord){dealWord.textContent="DEAL";}
+}
+
+function renderProductFulfilment(){
+const fulfilment=document.getElementById("productFulfilment");
+const flags=[];
+if(Number(product.preorderDeposit)>0){flags.push(`<span class="fulfilment-pill deposit">₹${Number(product.preorderDeposit).toLocaleString("en-IN")} preorder deposit today</span>`);}
+if(product.deliveryText){flags.push(`<span class="fulfilment-pill">${product.deliveryText}</span>`);}
+if(product.customPainting){flags.push('<span class="fulfilment-pill paint">Custom painting available</span>');}
+fulfilment.innerHTML=flags.join("");
+fulfilment.hidden=!flags.length;
+const buttons=document.getElementById("productButtons");
+if(buttons){buttons.classList.toggle("preorder-mode",Boolean(product.preorder));}
 }
 
 document.getElementById("productName").textContent=product.name;
 updateProductPriceDisplay();
+renderProductFulfilment();
 
 function normalizeSizeValue(value){
 return String(value||"").replace(/\s+/g," ").trim();
@@ -3022,12 +3201,15 @@ cartButton.textContent=productAvailableForCart?"Add to Cart":"Out of Stock";
 if(buyButton){
 buyButton.disabled=!productAvailableForCart;
 buyButton.hidden=!productAvailableForCart;
+buyButton.textContent="Buy Now";
 }
 const shippingNote=document.querySelector(".shipping-note");
 if(shippingNote){
 shippingNote.classList.toggle("stock-unavailable",!productAvailableForCart);
 shippingNote.innerHTML=productAvailableForCart
-?'<span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span>'
+?(product.preorder
+?`<span class="shipping-icon" aria-hidden="true">⏳</span><span>${product.deliveryText||"Pre-order delivery"}</span>`
+:'<span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span>')
 :'<span aria-hidden="true">●</span><span>Currently out of stock</span>';
 }
 }
@@ -3303,6 +3485,16 @@ document.getElementById("productGallery").classList.toggle("zoomed");
 
 const specList=document.getElementById("specList");
 const specHighlights=document.getElementById("specHighlights");
+const specificationTitle=document.getElementById("specificationTitle");
+const specSummaryText=document.getElementById("specSummaryText");
+const specSourceLink=document.getElementById("specSourceLink");
+if(product.specSectionTitle){specificationTitle.textContent=product.specSectionTitle;}
+if(product.specSummary){specSummaryText.textContent=product.specSummary;}
+if(product.specSource&&product.specSource.url){
+specSourceLink.href=product.specSource.url;
+specSourceLink.textContent=product.specSource.label||"View specification source";
+specSourceLink.hidden=false;
+}
 
 function parseProductSpec(spec){
 const raw=String(spec||"").trim();
@@ -3392,6 +3584,32 @@ article.append(image,copy);
 productDetailStories.appendChild(article);
 });
 
+const productFeaturesBlock=document.getElementById("productFeaturesBlock");
+const productFeaturesList=document.getElementById("productFeaturesList");
+(product.productFeatures||[]).forEach(feature=>{
+const item=document.createElement("li");
+item.textContent=feature;
+productFeaturesList.appendChild(item);
+});
+productFeaturesBlock.hidden=!productFeaturesList.children.length;
+
+const multiAngleBlock=document.getElementById("multiAngleBlock");
+const multiAngleGrid=document.getElementById("multiAngleGrid");
+(product.multiAnglePhotos||[]).forEach((photo,index)=>{
+const figure=document.createElement("figure");
+figure.className="multi-angle-card";
+const image=document.createElement("img");
+image.src=photo.image;
+image.alt=`${product.name} - ${photo.label||`view ${index+1}`}`;
+image.loading="lazy";
+image.decoding="async";
+const label=document.createElement("span");
+label.textContent=photo.label||`View ${index+1}`;
+figure.append(image,label);
+multiAngleGrid.appendChild(figure);
+});
+multiAngleBlock.hidden=!multiAngleGrid.children.length;
+
 const relatedProducts=document.getElementById("relatedProducts");
 
 const relatedCategory=product.categoryPage||product.mainCategory||"";
@@ -3414,10 +3632,28 @@ relatedProducts.innerHTML+=`
 `;
 });
 
+function startPreorderInquiry(){
+updateCartButtonForSize();
+if(!productAvailableForCart){return;}
+const lines=[
+"Hello Cyclify, I want to pre-order:",
+product.name,
+`Size: ${selectedSize||"To be confirmed"}`,
+product.deliveryText||"Delivery: 10–12 days",
+product.customPainting?"Custom painting: Please share options":"",
+`Product: ${absoluteSiteUrl(cyclifyProductUrl(product.id))}`
+].filter(Boolean);
+window.location.href=`https://wa.me/917418498045?text=${encodeURIComponent(lines.join("\n"))}`;
+}
+
 async function addToCart(){
 
 updateCartButtonForSize();
 if(!productAvailableForCart){return;}
+if(product.purchaseMode==="preorder-inquiry"){
+startPreorderInquiry();
+return;
+}
 
 let cart=JSON.parse(localStorage.getItem("cart"))||[];
 let existing=cart.find(item=>
@@ -3434,6 +3670,11 @@ cart.push({
 id:product.id,
 name:product.name,
 price:product.price,
+mrp:product.mrp,
+preorder:Boolean(product.preorder),
+preorderDeposit:Number(product.preorderDeposit)||0,
+deliveryText:product.deliveryText||"",
+customPainting:Boolean(product.customPainting),
 image:product.image,
 size:selectedSize,
 valveLength:selectedValveLength,
@@ -3452,10 +3693,19 @@ window.location.href="cart.html";
 function showBuyCooking(){
 updateCartButtonForSize();
 if(!productAvailableForCart){return;}
+if(product.purchaseMode==="preorder-inquiry"){
+startPreorderInquiry();
+return;
+}
 const item={
 id:product.id,
 name:product.name,
 price:product.price,
+mrp:product.mrp,
+preorder:Boolean(product.preorder),
+preorderDeposit:Number(product.preorderDeposit)||0,
+deliveryText:product.deliveryText||"",
+customPainting:Boolean(product.customPainting),
 image:product.image,
 size:selectedSize,
 valveLength:selectedValveLength,
