@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Cyclify India | Premium Cycles, Cycling Parts and Accessories">
 <meta name="twitter:description" content="Cyclify India is an online premium cycling store for road bikes, carbon frames, smart trainers, cycling electronics, wheels, components and riding gear.">
 <meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
-<script src="assets/js/product-routes.js?v=03663c0ce8" defer></script>
+<script src="assets/js/product-routes.js?v=be805bb38c" defer></script>
 <link rel="preload" as="image" href="assets/elves-evo-exp-banner-mobile.webp" media="(max-width: 900px)" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1534,7 +1534,7 @@ const searchProducts = [
 ];
 function mergeSearchCatalog(products){
 (products||[]).forEach(product=>{
-const mapped={id:product.id,name:product.name,price:product.price,image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
+const mapped={id:product.id,name:product.name,price:product.price,priceOnRequest:Boolean(product.priceOnRequest),image:product.image,category:product.categoryLabel,keywords:product.keywords||""};
 const existing=searchProducts.find(item=>item.id===product.id);
 if(existing){Object.assign(existing,mapped);}else{searchProducts.push(mapped);}
 });
@@ -1555,13 +1555,15 @@ let searchCatalogPromise=null;
 function loadSearchCatalogs(){
 if(searchCatalogPromise)return searchCatalogPromise;
 searchCatalogPromise=Promise.all([
-loadCatalogScript("assets/js/supplier-products.js?v=7d47274b49"),
-loadCatalogScript("assets/js/fcc-products.js?v=9a3796903c"),
-loadCatalogScript("assets/js/cadence-products.js?v=a1f1fc1ecf")
+loadCatalogScript("assets/js/supplier-products.js?v=4271721665"),
+loadCatalogScript("assets/js/fcc-products.js?v=e3c38db2c7"),
+loadCatalogScript("assets/js/cadence-products.js?v=1b41bf6b2c"),
+loadCatalogScript("assets/js/tfsa-products.js?v=da2e4d93c1")
 ]).then(()=>{
 mergeSearchCatalog(window.CYCLIFY_CYCLETIME_PRODUCTS);
 mergeSearchCatalog(window.CYCLIFY_FCC_PRODUCTS);
 mergeSearchCatalog(window.CYCLIFY_CADENCE_PRODUCTS);
+mergeSearchCatalog(window.CYCLIFY_TFSA_PRODUCTS);
 if(document.activeElement===input)renderSearchResults();
 }).catch(error=>console.warn("Extended search catalogue could not be loaded",error));
 return searchCatalogPromise;
@@ -1634,8 +1636,9 @@ placeholder.style.display="flex";
 
 });
 
-function formatPrice(price){
-return "Rs. "+price.toLocaleString("en-IN");
+function formatPrice(product){
+if(product.priceOnRequest){return "Price on request";}
+return "Rs. "+Number(product.price||0).toLocaleString("en-IN");
 }
 
 function getSearchMatches(){
@@ -1680,7 +1683,7 @@ searchResults.innerHTML=matches.map(product=>`
 <img src="${product.image}" alt="${product.name}">
 <div>
 <strong>${product.name}</strong>
-<span>${product.category} | ${formatPrice(product.price)}</span>
+<span>${product.category} | ${formatPrice(product)}</span>
 </div>
 </a>
 `).join("");
