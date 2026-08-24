@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T09:05:19.719Z",
+  "generatedAt": "2026-08-24T13:13:34.064Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -4574,6 +4574,50 @@
       "sizes": [],
       "sizeAvailability": {},
       "sourcePage": "electronics.html"
+    },
+    "11050848780481": {
+      "id": "11050848780481",
+      "name": "ProbingRollingStone Frameset",
+      "price": 180000,
+      "available": true,
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_18_ddc6f7b8-b69c-4e0b-9e6b-3950c7fcd051.jpg?v=1787565694",
+      "sizes": [
+        "ICE CRACK - SILVER GREEN / 46",
+        "ICE CRACK - SILVER GREEN / 49",
+        "ICE CRACK - SILVER GREEN / 52",
+        "ICE CRACK - SILVER GREEN / 54",
+        "ICE CRACK - GOLD SILVER / 46",
+        "ICE CRACK - GOLD SILVER / 49",
+        "ICE CRACK - GOLD SILVER / 52",
+        "ICE CRACK - GOLD SILVER / 54",
+        "ICE CRACK - GREEN ORANGE / 46",
+        "ICE CRACK - GREEN ORANGE / 49",
+        "ICE CRACK - GREEN ORANGE / 52",
+        "ICE CRACK - GREEN ORANGE / 54",
+        "ICE CRACK - BLUE/SILVER / 46",
+        "ICE CRACK - BLUE/SILVER / 49",
+        "ICE CRACK - BLUE/SILVER / 52",
+        "ICE CRACK - BLUE/SILVER / 54"
+      ],
+      "sizeAvailability": {
+        "ICE CRACK - SILVER GREEN / 46": false,
+        "ICE CRACK - SILVER GREEN / 49": true,
+        "ICE CRACK - SILVER GREEN / 52": true,
+        "ICE CRACK - SILVER GREEN / 54": true,
+        "ICE CRACK - GOLD SILVER / 46": false,
+        "ICE CRACK - GOLD SILVER / 49": true,
+        "ICE CRACK - GOLD SILVER / 52": true,
+        "ICE CRACK - GOLD SILVER / 54": false,
+        "ICE CRACK - GREEN ORANGE / 46": false,
+        "ICE CRACK - GREEN ORANGE / 49": true,
+        "ICE CRACK - GREEN ORANGE / 52": false,
+        "ICE CRACK - GREEN ORANGE / 54": false,
+        "ICE CRACK - BLUE/SILVER / 46": true,
+        "ICE CRACK - BLUE/SILVER / 49": false,
+        "ICE CRACK - BLUE/SILVER / 52": false,
+        "ICE CRACK - BLUE/SILVER / 54": false
+      },
+      "sourcePage": "bikes-frames.html"
     }
   }
 }

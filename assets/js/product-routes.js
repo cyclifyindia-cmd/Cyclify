@@ -246,6 +246,7 @@
   "10909612900545": "products/orome-valar-bh56d-disc-brake-wheelset-10909612900545.html",
   "10795496374465": "products/orome-valar-sk40d-road-disc-wheelset-all-carbon-six-spoke-super-light-whee-10795496374465.html",
   "10863612854465": "products/osmar-magnetic-quick-release-water-bottle-750ml-10863612854465.html",
+  "11050848780481": "products/probingrollingstone-frameset-11050848780481.html",
   "10961758060737": "products/prologo-dimension-tri-saddle-10961758060737.html",
   "10961740660929": "products/prologo-scratch-m5-agx-140mm-saddle-10961740660929.html",
   "10926986035393": "products/ralson-eco-racer-lite-folding-tubeless-ready-training-tyre-10926986035393.html",
