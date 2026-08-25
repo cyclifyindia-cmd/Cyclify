@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T04:54:46.259Z",
+  "generatedAt": "2026-08-25T09:01:16.327Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -2447,7 +2447,7 @@
       "id": "10786942255297",
       "name": "Elsier Road Cycling Cleats",
       "price": 699,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bb37d1a2-85f2-408c-b38c-67431aada3c2.jpg?v=1755164088",
       "sizes": [],
       "sizeAvailability": {},
@@ -3309,7 +3309,7 @@
       "id": "10886702203073",
       "name": "Elsier Carbon Saddle",
       "price": 4999,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_12_972631cb-fb94-4b36-a5d6-904917ade973.jpg?v=1770873341",
       "sizes": [],
       "sizeAvailability": {},
@@ -4578,7 +4578,7 @@
     "11050848780481": {
       "id": "11050848780481",
       "name": "ProbingRollingStone Frameset",
-      "price": 180000,
+      "price": 179000,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_18_ddc6f7b8-b69c-4e0b-9e6b-3950c7fcd051.jpg?v=1787565694",
       "sizes": [
