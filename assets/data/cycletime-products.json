@@ -5797,7 +5797,7 @@
         {
           "id": 49900435865793,
           "title": "Default Title",
-          "available": false,
+          "available": true,
           "price": 4999,
           "compare_at_price": 5998,
           "option1": "Default Title",
@@ -5805,7 +5805,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : Elsier",
         "Product Type : Bicycle Accessories",

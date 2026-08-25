@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T09:01:16.327Z",
+  "generatedAt": "2026-08-25T13:12:12.751Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -3309,7 +3309,7 @@
       "id": "10886702203073",
       "name": "Elsier Carbon Saddle",
       "price": 4999,
-      "available": false,
+      "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_12_972631cb-fb94-4b36-a5d6-904917ade973.jpg?v=1770873341",
       "sizes": [],
       "sizeAvailability": {},
