@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T05:36:19.968Z",
+  "generatedAt": "2026-08-31T16:10:44.293Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -2131,7 +2131,7 @@
       "id": "10786266185921",
       "name": "iGPSPORT VS500 Smart Light",
       "price": 3500,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1a0b384-34c5-4592-9469-22bdf6705231.jpg?v=1754103597",
       "sizes": [],
       "sizeAvailability": {},
