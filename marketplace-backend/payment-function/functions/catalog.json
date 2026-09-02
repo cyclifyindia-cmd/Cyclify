@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T12:47:25.087Z",
+  "generatedAt": "2026-09-02T19:23:59.217Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -2630,16 +2630,16 @@
       ],
       "sizeAvailability": {
         "11-25T": false,
-        "11-28T": false,
+        "11-28T": true,
         "11-34T": true
       },
       "sourcePage": "components.html"
     },
     "10798170865857": {
       "id": "10798170865857",
-      "name": "Elsier Road Bicycle Cassette-Silver-12Speed 11-30T",
-      "price": 3900,
-      "available": false,
+      "name": "Elsier Road Bicycle Cassette-Silver-12Speed",
+      "price": 3500,
+      "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_45481c85-934a-4df1-80e6-8bfb9c0d2213.jpg?v=1755862919",
       "sizes": [],
       "sizeAvailability": {},

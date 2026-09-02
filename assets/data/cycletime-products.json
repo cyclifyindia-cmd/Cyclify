@@ -6618,7 +6618,7 @@
       ],
       "sizeAvailability": {
         "11-25T": false,
-        "11-28T": false,
+        "11-28T": true,
         "11-34T": true
       },
       "variants": [
@@ -6635,7 +6635,7 @@
         {
           "id": 49490548392129,
           "title": "11-28T",
-          "available": false,
+          "available": true,
           "price": 2800,
           "compare_at_price": 0,
           "option1": "11-28T",
@@ -6683,10 +6683,10 @@
       "sourceHandle": "elsier-road-bicycle-cassette-silver-12speed-11-30",
       "sourceUrl": "https://www.cycletimeindia.com/products/elsier-road-bicycle-cassette-silver-12speed-11-30",
       "stockSource": "cycletime",
-      "name": "Elsier Road Bicycle Cassette-Silver-12Speed 11-30T",
+      "name": "Elsier Road Bicycle Cassette-Silver-12Speed",
       "brand": "Elsier",
       "description": "Product Description: Take your road cycling to the next level with the Elsier 12-Speed Road Bicycle Cassette (11-30T). Designed for precision, performance, and durability, this cassette offers a smooth gear range that’s perfect for climbs, sprints, and everything in between. With a polished silver finish and premium build quality, it’s the ideal upgrade for your 12-speed drivetrain. 🔧 Key Features: 12-Speed Compatibility: Engineered to work seamlessly with 12-speed road bike drivetrains (Shimano, SRAM-compatible – check specific compatibility). 11-30T Gear Range: Offers a versatile spread for efficient cadence control across flats and climbs",
-      "price": 3900,
+      "price": 3500,
       "mrp": "Rs 4,680",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_45481c85-934a-4df1-80e6-8bfb9c0d2213.jpg?v=1755862919",
       "images": [
@@ -6699,15 +6699,15 @@
         {
           "id": 49490560843969,
           "title": "Default Title",
-          "available": false,
-          "price": 3900,
+          "available": true,
+          "price": 3500,
           "compare_at_price": 4680,
           "option1": "Default Title",
           "option2": "",
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : Elsier",
         "Product Type : Bicycle Accessories",
@@ -6722,7 +6722,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/elsier-road-bicycle-cassette-silver-12speed-11-30"
       },
-      "keywords": "Elsier Road Bicycle Cassette-Silver-12Speed 11-30T Bicycle Accessories Royal Traders",
+      "keywords": "Elsier Road Bicycle Cassette-Silver-12Speed Bicycle Accessories Royal Traders",
       "categoryPage": "components.html",
       "categoryLabel": "Components",
       "mainCategory": "drivetrain",
