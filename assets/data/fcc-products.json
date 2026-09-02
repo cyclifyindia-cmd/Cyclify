@@ -1693,69 +1693,6 @@
       "subCategory": ""
     },
     {
-      "id": 233109418,
-      "supplierProductId": 33109418,
-      "supplierSynced": true,
-      "sourceHandle": "ecoracer-lite-foldable-tube",
-      "sourceUrl": "https://www.fccracing.com/product/ecoracer-lite-foldable-tube",
-      "stockSource": "fcc",
-      "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre",
-      "brand": "Ecoracer",
-      "description": "Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre, engineered for cyclists who demand uncompromising performance, durability, and control. Designed with AU Glide technology, this tyre minimizes rolling resistance while maximizing traction, ensuring a smooth, efficient, and high-speed ride on every terrain.",
-      "price": 2600,
-      "mrp": "Rs 2,800",
-      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
-      "images": [
-        "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/Mg3eo5H6.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/tmszL3FS.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/I7ygfgdw.webp"
-      ],
-      "sizes": [
-        "700x35C"
-      ],
-      "sizeAvailability": {
-        "700x35C": true
-      },
-      "variants": [
-        {
-          "id": 7309705,
-          "title": "700x35C",
-          "available": true,
-          "price": 2600,
-          "compare_at_price": 2800,
-          "option1": "[object Object]",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : Ecoracer",
-        "Product Type : Eco Racer Tyre Tube",
-        "Tubeless Ready : Better puncture protection and improved ride comfort",
-        "AU Glide Technology : Lower rolling resistance for smoother speed",
-        "Foldable Design : Lightweight, portable, and easy to install",
-        "Enhanced Grip : Optimized tread for strong traction and control",
-        "Durable Construction : Built for long-lasting training and daily rides",
-        "Model : Ecoracer Lite",
-        "Type : Foldable Training Tyre",
-        "Technology : AU Glide",
-        "Compatibility : Tubeless Ready",
-        "Usage : Road Cycling / Training / Endurance Riding",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.fccracing.com/product/ecoracer-lite-foldable-tube"
-      },
-      "keywords": "Ecoracer Lite Foldable Tubeless Ready Training Tyre Eco Racer Tyre Tube Ralson Ecoracer",
-      "categoryPage": "wheels-tyres.html",
-      "categoryLabel": "Wheels & Tyres",
-      "mainCategory": "tyres",
-      "subCategory": ""
-    },
-    {
       "id": 233156553,
       "supplierProductId": 33156553,
       "supplierSynced": true,
@@ -1765,8 +1702,8 @@
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700 * 35C) Tyre for Bicycle",
       "brand": "Ecoracer",
       "description": "About this item Foldable tubeless-ready road training tyre designed for high-performance cycling Advanced AU Glide technology reduces rolling resistance for faster and smoother rides 60 TPI high-strength nylon casing delivers excellent durability and puncture resistance Tubeless-ready construction improves grip, ride comfort, and flat protection Optimized 700×35C size offers the perfect balance of speed, stability, and control Lightweight design supports efficient acceleration and responsive handling Enhanced traction ensures confident cornering and reliable performance on varied terrain Ideal for endurance rides, daily training, and long-distance road cycling Durable construction built to handle demanding riding conditions with consistent performance Provides smooth rolling efficiency for improved energy transfer and riding comfort",
-      "price": 2599,
-      "mrp": "Rs 2,999",
+      "price": 2800,
+      "mrp": "Rs 2,800",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/Nw1gNKPf.webp",
       "images": [
         "https://cdn.dotpe.in/longtail/store-items/8102112/Nw1gNKPf.webp",
@@ -1803,8 +1740,8 @@
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle",
       "brand": "Ecoracer",
       "description": "Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre, engineered for cyclists who demand uncompromising performance, durability, and control. Designed with AU Glide technology, this tyre minimizes rolling resistance while maximizing traction, ensuring a smooth, efficient, and high-speed ride on every terrain.",
-      "price": 2999,
-      "mrp": "Rs 3,500",
+      "price": 2900,
+      "mrp": "Rs 2,900",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/jjRzQsIy.webp",
       "images": [
         "https://cdn.dotpe.in/longtail/store-items/8102112/jjRzQsIy.webp",
@@ -1823,8 +1760,8 @@
           "id": 7360778,
           "title": "700x40c",
           "available": true,
-          "price": 2999,
-          "compare_at_price": 3500,
+          "price": 2900,
+          "compare_at_price": 2900,
           "option1": "[object Object]",
           "option2": "",
           "option3": ""
@@ -1851,6 +1788,59 @@
         "url": "https://www.fccracing.com/product/ecoracer-lite-foldable-tubeless-ready-training-tyre"
       },
       "keywords": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle Eco Racer Tyre Tube Ralson Ecoracer",
+      "categoryPage": "wheels-tyres.html",
+      "categoryLabel": "Wheels & Tyres",
+      "mainCategory": "tyres",
+      "subCategory": ""
+    },
+    {
+      "id": 233109418,
+      "supplierProductId": 33109418,
+      "supplierSynced": true,
+      "sourceHandle": "ecoracer-lite-foldable-tube",
+      "sourceUrl": "https://www.fccracing.com/product/ecoracer-lite-foldable-tube",
+      "stockSource": "fcc",
+      "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32 C",
+      "brand": "Ecoracer",
+      "description": "Upgrade your road cycling experience with the Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32C, a high-performance road bike tyre designed for cyclists who demand an excellent balance of speed, comfort, durability, grip, and rolling efficiency. Engineered for daily training, endurance rides, long-distance cycling, and performance-focused road riding, this lightweight tyre delivers reliable performance across a wide range of riding conditions. The Ecoracer Lite 700x32C tyre is designed to provide smooth and efficient rolling performance while maintaining the comfort and stability that modern road cyclists expect. The 32C width offers an ideal balance between speed and ride comfort, providing greater road contact and improved confidence compared with narrower road tyres. Whether you are training for endurance events, completing daily fitness rides, or covering long distances on ",
+      "price": 2700,
+      "mrp": "Rs 2,700",
+      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
+      "images": [
+        "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/Mg3eo5H6.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/tmszL3FS.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/I7ygfgdw.webp"
+      ],
+      "sizes": [
+        "700x32C"
+      ],
+      "sizeAvailability": {
+        "700x32C": true
+      },
+      "variants": [
+        {
+          "id": 7439898,
+          "title": "700x32C",
+          "available": true,
+          "price": 2700,
+          "compare_at_price": 2700,
+          "option1": "[object Object]",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : Ecoracer",
+        "Product Type : Eco Racer Tyre Tube",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.fccracing.com/product/ecoracer-lite-foldable-tube"
+      },
+      "keywords": "Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32 C Eco Racer Tyre Tube Ralson Ecoracer",
       "categoryPage": "wheels-tyres.html",
       "categoryLabel": "Wheels & Tyres",
       "mainCategory": "tyres",

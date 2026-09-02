@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T04:35:30.521Z",
+  "generatedAt": "2026-09-02T12:47:25.087Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -605,7 +605,7 @@
         "39": true,
         "40": true,
         "41": true,
-        "42": true,
+        "42": false,
         "43": false,
         "44": false,
         "45": false,
@@ -1471,22 +1471,22 @@
     },
     "233109418": {
       "id": "233109418",
-      "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre",
-      "price": 2600,
+      "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32 C",
+      "price": 2700,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
       "sizes": [
-        "700x35C"
+        "700x32C"
       ],
       "sizeAvailability": {
-        "700x35C": true
+        "700x32C": true
       },
       "sourcePage": "wheels-tyres.html"
     },
     "233144605": {
       "id": "233144605",
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle",
-      "price": 2999,
+      "price": 2900,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/jjRzQsIy.webp",
       "sizes": [
@@ -1614,7 +1614,7 @@
     "233156553": {
       "id": "233156553",
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700 * 35C) Tyre for Bicycle",
-      "price": 2599,
+      "price": 2800,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/Nw1gNKPf.webp",
       "sizes": [],
