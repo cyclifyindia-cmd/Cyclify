@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T04:35:01.253Z",
+  "generatedAt": "2026-09-03T12:50:39.057Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -521,7 +521,7 @@
       "id": "42",
       "name": "iGPSPORT BSC100Max Cyclocomputer",
       "price": 4499,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max.webp?v=1772281342",
       "sizes": [],
       "sizeAvailability": {},
