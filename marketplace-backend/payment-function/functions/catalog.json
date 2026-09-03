@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T22:39:36.970Z",
+  "generatedAt": "2026-09-03T04:35:01.253Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -1585,13 +1585,13 @@
       "id": "233156114",
       "name": "XOSS ARENA Dual Speed Cadence Sensor ANT+",
       "price": 1450,
-      "available": true,
+      "available": false,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/LfkQrpNF.webp",
       "sizes": [
         "Black"
       ],
       "sizeAvailability": {
-        "Black": true
+        "Black": false
       },
       "sourcePage": "electronics.html"
     },
