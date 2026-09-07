@@ -1177,7 +1177,7 @@
       "stockSource": "fcc",
       "name": "Cyclami MTB TPU Inner Tube Anti-Oxidation Lightweight Bicycle Tube 65g",
       "brand": "Cyclami",
-      "description": "Cyclami MTB TPU Inner Tube 29 Inch Ultra-Lightweight Bicycle Tube – 65g Upgrade your mountain biking experience with the Cyclami MTB TPU Inner Tube 29 Inch, designed for riders who want maximum performance with minimum weight. Constructed from advanced TPU (Thermoplastic Polyurethane) material, this ultra-light bicycle tube weighs only 65g, helping reduce rotational mass for quicker acceleration, easier climbing, and a more responsive ride. The tube features excellent anti-oxidation and anti-aging properties, providing a long service life of up to 3–5 years under normal use. Its durable TPU construction offers enhanced puncture and tear resistance while maintaining superior air retention for reliable performance. Whether you're tackling technical trails, long-distance rides, or everyday mountain biking adventures, this compact and lightweight tube is easy to carry as a spare and delivers",
+      "description": "The Cyclami MTB TPU Inner Tube Anti-Oxidation Lightweight Bicycle Tube 65g is designed for mountain bike riders who want to reduce rotational weight without compromising everyday reliability. Made from advanced TPU (Thermoplastic Polyurethane) material, this ultralight MTB inner tube weighs approximately 65g ±3g, making it significantly lighter than many conventional butyl tubes and an excellent upgrade for performance-focused cyclists. Reducing weight at the wheels can help create a more responsive riding feel, especially during acceleration, climbing, and technical trail riding. The lightweight construction of the Cyclami TPU inner tube makes it suitable for riders looking to optimise their MTB setup while also carrying a compact emergency spare on long rides. The tube is available for compatible 26-inch, 27.5-inch, and 29-inch mountain bike wheels, providing useful versatility across ",
       "price": 1100,
       "mrp": "Rs 1,200",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/vLOcCvnu.webp",
@@ -4322,13 +4322,13 @@
         "Black"
       ],
       "sizeAvailability": {
-        "Black": false
+        "Black": true
       },
       "variants": [
         {
           "id": 7386898,
           "title": "Black",
-          "available": false,
+          "available": true,
           "price": 1450,
           "compare_at_price": 1500,
           "option1": "[object Object]",
@@ -4336,7 +4336,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : XOSS",
         "Product Type : Sensors",

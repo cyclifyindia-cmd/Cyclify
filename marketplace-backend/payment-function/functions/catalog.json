@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T04:43:16.753Z",
+  "generatedAt": "2026-09-07T14:15:52.577Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -1585,13 +1585,13 @@
       "id": "233156114",
       "name": "XOSS ARENA Dual Speed Cadence Sensor ANT+",
       "price": 1450,
-      "available": false,
+      "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/LfkQrpNF.webp",
       "sizes": [
         "Black"
       ],
       "sizeAvailability": {
-        "Black": false
+        "Black": true
       },
       "sourcePage": "electronics.html"
     },
@@ -4567,10 +4567,10 @@
     },
     "11048872345793": {
       "id": "11048872345793",
-      "name": "iGPSPORT LANYARD FOR BIKE COMPUTERS",
+      "name": "LANYARD FOR BIKE COMPUTERS",
       "price": 249,
       "available": true,
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_da45d8dd-a3f5-42a2-ad59-997f810c9e1f.jpg?v=1787205910",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955",
       "sizes": [],
       "sizeAvailability": {},
       "sourcePage": "electronics.html"
