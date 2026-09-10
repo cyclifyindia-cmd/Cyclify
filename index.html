@@ -1555,8 +1555,8 @@ let searchCatalogPromise=null;
 function loadSearchCatalogs(){
 if(searchCatalogPromise)return searchCatalogPromise;
 searchCatalogPromise=Promise.all([
-loadCatalogScript("assets/js/supplier-products.js?v=f1cfcbe361"),
-loadCatalogScript("assets/js/fcc-products.js?v=c0a2a8b3c4"),
+loadCatalogScript("assets/js/supplier-products.js?v=e42d2c4e8a"),
+loadCatalogScript("assets/js/fcc-products.js?v=ac5708bcee"),
 loadCatalogScript("assets/js/cadence-products.js?v=a1f1fc1ecf"),
 loadCatalogScript("assets/js/tfsa-products.js?v=df24385152")
 ]).then(()=>{

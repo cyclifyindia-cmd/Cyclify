@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T04:44:19.525Z",
+  "generatedAt": "2026-09-10T12:56:02.523Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -541,7 +541,7 @@
       "id": "44",
       "name": "iGPSPORT BSC300T Cyclocomputer",
       "price": 13800,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",
       "sizes": [],
       "sizeAvailability": {},
@@ -1148,7 +1148,7 @@
     "232900242": {
       "id": "232900242",
       "name": "Ralson 700x28C Bicycle Tyre & Tube Combo Pair – Set of 2 Tyres and 2 Tubes",
-      "price": 1699,
+      "price": 1899,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/3H50ZC2Z.webp",
       "sizes": [],
@@ -2447,7 +2447,7 @@
       "id": "10786942255297",
       "name": "Elsier Road Cycling Cleats",
       "price": 699,
-      "available": false,
+      "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bb37d1a2-85f2-408c-b38c-67431aada3c2.jpg?v=1755164088",
       "sizes": [],
       "sizeAvailability": {},
