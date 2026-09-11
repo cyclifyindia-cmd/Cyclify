@@ -199,6 +199,7 @@
   "10897911021761": "products/elsier-road-bike-chainring-130-bcd-8-11-speed-compatible-10897911021761.html",
   "10786952839361": "products/elsier-road-cycling-cleat-pedals-10786952839361.html",
   "10786942255297": "products/elsier-road-cycling-cleats-10786942255297.html",
+  "11070326472897": "products/elsier-road-cycling-combo-shoes-pedals-and-cleats-11070326472897.html",
   "10798054637761": "products/elsier-super-wear-resistant-chain-10798054637761.html",
   "10792111866049": "products/elsier-track-cycling-cog-12t-10792111866049.html",
   "10863595290817": "products/elves-aule-ct-ti-pedals-10863595290817.html",

@@ -6918,6 +6918,205 @@
       "subCategory": ""
     },
     {
+      "id": 11070326472897,
+      "supplierProductId": 11070326472897,
+      "supplierSynced": true,
+      "sourceHandle": "elsier-road-cycling-combo-shoes-pedals-cleats",
+      "sourceUrl": "https://www.cycletimeindia.com/products/elsier-road-cycling-combo-shoes-pedals-cleats",
+      "stockSource": "cycletime",
+      "name": "Elsier Road Cycling Combo – Shoes, Pedals & Cleats",
+      "brand": "Elsier",
+      "description": "Elsier Performance Cycling ComboRoad cycling shoes + pedals + matching cleats — ₹9,999.Get your road cycling footwear and pedal setup together. Select your shoe size before adding the combo to your cart.What's included Elsier Road Cycling Shoes — 1 pair (₹5,899). Elsier Road Cycling Cleat Pedals — 1 pair (₹4,100). Matching cycling cleats — 1 pair, included with the pedals. Total combo price: ₹9,999. No additional charge for the included cleats.Product details Shoes with dual rotary dial closures and a 3-bolt road-cleat mounting pattern. Pedals supplied with their matching cleats. Pedal weight: 302 g per pair. Size availability is shown in the",
+      "price": 9999,
+      "mrp": "Rs 9,999",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/elsier-shoes-pedals-cleats-combo-9999_915d2682-e91b-4682-b61d-f01121289c03.png?v=1789155566",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/elsier-shoes-pedals-cleats-combo-9999_915d2682-e91b-4682-b61d-f01121289c03.png?v=1789155566",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_544457e6-3f93-44f9-886f-b6fbee7baac9.jpg?v=1789155291",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_c412c032-59db-4498-89e9-4b52885d4ace.jpg?v=1789155291"
+      ],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48"
+      ],
+      "sizeAvailability": {
+        "36": true,
+        "37": true,
+        "38": true,
+        "39": true,
+        "40": true,
+        "41": true,
+        "42": false,
+        "43": false,
+        "44": false,
+        "45": false,
+        "46": false,
+        "47": true,
+        "48": true
+      },
+      "variants": [
+        {
+          "id": 50588281340097,
+          "title": "36",
+          "available": true,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "36",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281372865,
+          "title": "37",
+          "available": true,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "37",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281405633,
+          "title": "38",
+          "available": true,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "38",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281438401,
+          "title": "39",
+          "available": true,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "39",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281471169,
+          "title": "40",
+          "available": true,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "40",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281503937,
+          "title": "41",
+          "available": true,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "41",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281536705,
+          "title": "42",
+          "available": false,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "42",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281569473,
+          "title": "43",
+          "available": false,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "43",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281602241,
+          "title": "44",
+          "available": false,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "44",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281635009,
+          "title": "45",
+          "available": false,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "45",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281667777,
+          "title": "46",
+          "available": false,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "46",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281700545,
+          "title": "47",
+          "available": true,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "47",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50588281733313,
+          "title": "48",
+          "available": true,
+          "price": 9999,
+          "compare_at_price": 0,
+          "option1": "48",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : Elsier",
+        "Product Type : Cycling Shoes & Pedals Combo",
+        "Total combo price : ₹9,999. No additional charge for the included cleats.",
+        "Shoes with dual rotary dial closures and a 3 : bolt road-cleat mounting pattern.",
+        "Shoe size Options : 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/elsier-road-cycling-combo-shoes-pedals-cleats"
+      },
+      "keywords": "Elsier Road Cycling Combo – Shoes, Pedals & Cleats Cycling Shoes & Pedals Combo Elsier",
+      "categoryPage": "wearables.html",
+      "categoryLabel": "Wearables",
+      "mainCategory": "shoes",
+      "subCategory": ""
+    },
+    {
       "id": 48,
       "supplierProductId": 10788861870273,
       "supplierSynced": true,

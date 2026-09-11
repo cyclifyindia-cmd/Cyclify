@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T19:10:31.579Z",
+  "generatedAt": "2026-09-11T22:36:03.156Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -4618,6 +4618,44 @@
         "ICE CRACK - BLUE/SILVER / 54": false
       },
       "sourcePage": "bikes-frames.html"
+    },
+    "11070326472897": {
+      "id": "11070326472897",
+      "name": "Elsier Road Cycling Combo – Shoes, Pedals & Cleats",
+      "price": 9999,
+      "available": true,
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/elsier-shoes-pedals-cleats-combo-9999_915d2682-e91b-4682-b61d-f01121289c03.png?v=1789155566",
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48"
+      ],
+      "sizeAvailability": {
+        "36": true,
+        "37": true,
+        "38": true,
+        "39": true,
+        "40": true,
+        "41": true,
+        "42": false,
+        "43": false,
+        "44": false,
+        "45": false,
+        "46": false,
+        "47": true,
+        "48": true
+      },
+      "sourcePage": "wearables.html"
     }
   }
 }
