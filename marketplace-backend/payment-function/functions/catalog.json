@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T04:49:35.140Z",
+  "generatedAt": "2026-09-13T13:19:23.994Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -2109,7 +2109,7 @@
     },
     "10785814773953": {
       "id": "10785814773953",
-      "name": "iGPSPORT TL30 Smart Tailight",
+      "name": "iGPSPORT TL30 Smart Tail Light",
       "price": 2900,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2ed193b0-b19d-48a6-93f2-412e057deba0.jpg?v=1754036015",
@@ -2139,7 +2139,7 @@
     },
     "10786279358657": {
       "id": "10786279358657",
-      "name": "IGPSPORTS VS1200 Smart Front Bike Light",
+      "name": "iGPSPORT VS1200 Smart Front Bike Light",
       "price": 5849,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297",
@@ -2475,7 +2475,7 @@
     },
     "10795496374465": {
       "id": "10795496374465",
-      "name": "OROME VALAR SK40D Road Disc Wheelset - ALL CARBON SIX SPOKE SUPER-LIGHT WHEELSET",
+      "name": "OROME VALAR SK40D Carbon Disc Wheelset",
       "price": 109900,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/SK40D-Shimano1112SOROMEVALARSK40DRoadDiscWheelset-ALLCARBONSIXSPOKESUPER-LIGHTWHEELSET.jpg?v=1755434714",
@@ -2883,7 +2883,7 @@
     },
     "10805815836865": {
       "id": "10805815836865",
-      "name": "Elsier Bike Aero Seatpost Bag Hard Shell Bike Seatpost Torpedo Saddle Bag Large Capacity Cycling Storage Bag Cycling Accessories",
+      "name": "Elsier Aero Hard Shell Seatpost Saddle Bag",
       "price": 1299,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_5c4b6a73-c93b-4d40-b008-fa8a2cb1aa20.jpg?v=1757338624",
@@ -3261,7 +3261,7 @@
     },
     "10882444034241": {
       "id": "10882444034241",
-      "name": "UNO 17° Bicycle Stem – Lightweight, Strong &amp; Performance-Focused",
+      "name": "UNO 17° Bicycle Stem",
       "price": 1499,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_885ae31e-c8bf-4ac3-b66e-68f6d6f016ed.jpg?v=1767685867",
@@ -3281,7 +3281,7 @@
     },
     "10882459861185": {
       "id": "10882459861185",
-      "name": "FMFXTR Bicycle Stem Lightweight Design Made Of High-strength Aluminum Alloy ±7° Adjustment Stem",
+      "name": "FMFXTR ±7° Aluminium Bicycle Stem",
       "price": 1499,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_47b77359-c4ce-4f4b-a315-bdaeabbd3b67.jpg?v=1767689613",
@@ -3383,7 +3383,7 @@
     },
     "10917606162625": {
       "id": "10917606162625",
-      "name": "Ultra-Light Carbon Fiber Road Bike Saddle –Performance Cycling Seat with Center Relief Cutout",
+      "name": "Carbon Fibre Road Bike Saddle with Centre Cutout",
       "price": 9999,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_c8fad13d-f266-465f-9e05-bd05084cfe04.jpg?v=1771585357",
@@ -3409,7 +3409,7 @@
     },
     "10920749007041": {
       "id": "10920749007041",
-      "name": "UNO+7° Bicycle Stem – Lightweight, Strong & amp; Performance-Focused 140mm And 150mm",
+      "name": "UNO +7° Bicycle Stem – 140mm & 150mm",
       "price": 3700,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7f356476-a704-4ee1-92eb-7616e7f3eac3.jpg?v=1772008415",
@@ -3425,7 +3425,7 @@
     },
     "10921258451137": {
       "id": "10921258451137",
-      "name": "ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains",
+      "name": "ENLEE 8/10/11-Speed Bicycle Chain",
       "price": 849,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/IMG-20230713-WA0053.jpg?v=1772091590",
@@ -4567,7 +4567,7 @@
     },
     "11048872345793": {
       "id": "11048872345793",
-      "name": "LANYARD FOR BIKE COMPUTERS",
+      "name": "Bike Computer Safety Lanyard",
       "price": 249,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955",

@@ -1049,7 +1049,7 @@
       "stockSource": "cycletime",
       "name": "Aerodoc Grayish Men Cycling Skinsuit",
       "brand": "Aerodoc",
-      "description": "",
+      "description": "The Aerodoc Grayish men's cycling skinsuit offers a one-piece outfit for your cycling wardrobe.Select your sizeReview the available sizes and photographs, and confirm garment measurements with CycleTimeIndia if you need sizing help. Check the padding details before ordering for your intended ride.",
       "price": 2800,
       "mrp": "Rs 3,499",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_fe83423c-cad5-4ef8-beff-fee07ed409de.jpg?v=1763725375",
@@ -1176,6 +1176,7 @@
       "specs": [
         "Brand : Aerodoc",
         "Product Type : Cloth",
+        "The Aerodoc Grayish men's cycling skinsuit offers a one : piece outfit for your cycling wardrobe.",
         "Size Half Sleeves Options : M, L, XL",
         "SIZE Full Sleeves Options : XS, M, XL",
         "Shipping : Free shipping across India"
@@ -2474,7 +2475,7 @@
       "stockSource": "cycletime",
       "name": "Bicycle Pedal Wrench Double Sided",
       "brand": "Royal Traders",
-      "description": "",
+      "description": "A double-sided bicycle pedal wrench for pedal fitting and removal.Check your pedal fittingConfirm that the wrench size and clearance match the flats on your pedal axle. Some pedals require an Allen key instead. Follow the pedal manufacturer's fitting and torque instructions.",
       "price": 499,
       "mrp": "Rs 1,399",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_b9fc1e5e-3147-4038-a2a9-23f21e318eb7.jpg?v=1757937423",
@@ -2501,6 +2502,8 @@
       "specs": [
         "Brand : Royal Traders",
         "Product Type : Bicycle Accessories",
+        "A double : sided bicycle pedal wrench for pedal fitting and removal.",
+        "Product Details : A double-sided bicycle pedal wrench for pedal fitting and removal.Check your pedal fittingConfirm that the wrench size and clearance match the flats on your pedal axle. Some pedals require an Allen key instead. Follow the pedal manufacturer",
         "Shipping : Free shipping across India"
       ],
       "specSource": {
@@ -2522,7 +2525,7 @@
       "stockSource": "cycletime",
       "name": "Bicycle Roller Belt",
       "brand": "Royal Traders",
-      "description": "",
+      "description": "Replace a worn bicycle roller belt to keep your indoor roller setup ready for training.Check compatibility before orderingCompare your existing belt dimensions and roller model with this replacement. Contact CycleTimeIndia with your roller model and a photo of the old belt if you need help confirming fit.",
       "price": 700,
       "mrp": "Rs 839",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_ac074912-64a3-42e7-8012-6413ce549476.jpg?v=1785419722",
@@ -2547,6 +2550,7 @@
       "specs": [
         "Brand : Royal Traders",
         "Product Type : Bicycle Accessories",
+        "Product Details : Replace a worn bicycle roller belt to keep your indoor roller setup ready for training.Check compatibility before orderingCompare your existing belt dimensions and roller model with this replacement. Contact CycleTimeIndia with your roller",
         "Shipping : Free shipping across India"
       ],
       "specSource": {
@@ -2557,6 +2561,53 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "smart-trainer",
+      "subCategory": ""
+    },
+    {
+      "id": 11048872345793,
+      "supplierProductId": 11048872345793,
+      "supplierSynced": true,
+      "sourceHandle": "igpsport-lanyard-for-bike-computers",
+      "sourceUrl": "https://www.cycletimeindia.com/products/igpsport-lanyard-for-bike-computers",
+      "stockSource": "cycletime",
+      "name": "Bike Computer Safety Lanyard",
+      "brand": "CycleTimeIndia",
+      "description": "A practical accessory for cyclists who want extra peace of mind on every ride. The cyclocomputer lanyard keeps your device safely tethered without interfering with normal operation, making it a useful addition to any cycling setup.",
+      "price": 249,
+      "mrp": "Rs 298",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 50514133811393,
+          "title": "Default Title",
+          "available": true,
+          "price": 249,
+          "compare_at_price": 298,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : CycleTimeIndia",
+        "Product Type : Bicycle Accessories",
+        "Product Details : A practical accessory for cyclists who want extra peace of mind on every ride. The cyclocomputer lanyard keeps your device safely tethered without interfering with normal operation, making it a useful addition to any cycling setup.",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/igpsport-lanyard-for-bike-computers"
+      },
+      "keywords": "Bike Computer Safety Lanyard Bicycle Accessories CycleTimeIndia",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "bike-computer",
       "subCategory": ""
     },
     {
@@ -3080,6 +3131,62 @@
       "categoryLabel": "Wearables",
       "mainCategory": "helmets",
       "subCategory": ""
+    },
+    {
+      "id": 10917606162625,
+      "supplierProductId": 10917606162625,
+      "supplierSynced": true,
+      "sourceHandle": "ultra-light-carbon-fiber-road-bike-saddle-performance-cycling-seat-with-center-relief-cutout",
+      "sourceUrl": "https://www.cycletimeindia.com/products/ultra-light-carbon-fiber-road-bike-saddle-performance-cycling-seat-with-center-relief-cutout",
+      "stockSource": "cycletime",
+      "name": "Carbon Fibre Road Bike Saddle with Centre Cutout",
+      "brand": "Cycletimeindia",
+      "description": "Product Description Elevate your ride with this premium carbon fiber bike saddle, engineered for performance, comfort, and weight savings. Crafted from high-strength carbon materials, this saddle is optimized for competitive road cycling, time trials, triathlons, and lightweight bike builds. Designed with precision and rider comfort in mind, it combines an anatomic pressure relief channel, ultra-lightweight structure, and ergonomic shaping to enhance endurance and reduce fatigue on long rides. 🔍 Key Features & Specifications 🛠️ Construction & Materials High-quality carbon fiber shell for maximum strength and minimal weight Lightweight yet h",
+      "price": 9999,
+      "mrp": "Rs 13,999",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_c8fad13d-f266-465f-9e05-bd05084cfe04.jpg?v=1771585357",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_c8fad13d-f266-465f-9e05-bd05084cfe04.jpg?v=1771585357",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_e0cab05d-ed13-47b8-87bf-ced5cbe49452.jpg?v=1771585279",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_b91e141b-5a14-436f-b71f-8d8c8ad26c92.jpg?v=1771585279"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 50000534667457,
+          "title": "Default Title",
+          "available": true,
+          "price": 9999,
+          "compare_at_price": 13999,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : Cycletimeindia",
+        "Product Type : Bicycle Accessories",
+        "High : quality carbon fiber shell for maximum strength and minimal weight",
+        "Sleek matte black finish for an attractive, race : ready look",
+        "Length : Approx. 240 mm",
+        "Widest Front Width : 125 mm",
+        "Nose Width : 60 mm",
+        "Central cut : out / pressure relief channel reduces perineal pressure and improves blood flow",
+        "Ultra : light at 167g – excellent for weight-conscious cyclists",
+        "Rider : friendly ergonomic design for long distance comfort",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/ultra-light-carbon-fiber-road-bike-saddle-performance-cycling-seat-with-center-relief-cutout"
+      },
+      "keywords": "Carbon Fibre Road Bike Saddle with Centre Cutout Bicycle Accessories Cycletimeindia",
+      "categoryPage": "components.html",
+      "categoryLabel": "Components",
+      "mainCategory": "drivetrain",
+      "subCategory": "drivetrain-parts"
     },
     {
       "id": 11048671051969,
@@ -4404,7 +4511,7 @@
       "stockSource": "cycletime",
       "name": "Cycling Onepiece",
       "brand": "Royal Traders",
-      "description": "",
+      "description": "A one-piece cycling outfit for riders choosing an integrated top-and-shorts style.Choose your sizeReview the available sizes and product photographs before ordering. Contact CycleTimeIndia to confirm measurements, padding and fit for your intended riding use.",
       "price": 2800,
       "mrp": "Rs 2,800",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_5c3e34ea-9e6c-4c5e-9deb-514678572700.jpg?v=1763539345",
@@ -4566,6 +4673,7 @@
       "specs": [
         "Brand : Royal Traders",
         "Product Type : Cloth",
+        "A one : piece cycling outfit for riders choosing an integrated top-and-shorts style.",
         "Size Full Sleeves Options : M, S, XL",
         "Size Half Sleeves Options : 2xs, M, L, XL",
         "Shipping : Free shipping across India"
@@ -4589,7 +4697,7 @@
       "stockSource": "cycletime",
       "name": "Cycling Skinsuit",
       "brand": "Royal Traders",
-      "description": "",
+      "description": "Choose a cycling skinsuit for a one-piece riding outfit.Fit and size guidanceCheck the available sizes and product photographs. Contact CycleTimeIndia to confirm garment measurements and padding details before selecting your size.",
       "price": 2800,
       "mrp": "Rs 3,499",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_e7bc3d0a-0e73-4d47-855d-9730e7ae3e1c.jpg?v=1763541245",
@@ -4679,6 +4787,7 @@
       "specs": [
         "Brand : Royal Traders",
         "Product Type : Cloth",
+        "Choose a cycling skinsuit for a one : piece riding outfit.",
         "Size Full Sleeves Options : XS, L, M",
         "Size Half Sleeves Options : L, M",
         "Shipping : Free shipping across India"
@@ -5133,6 +5242,68 @@
       "subCategory": ""
     },
     {
+      "id": 10805815836865,
+      "supplierProductId": 10805815836865,
+      "supplierSynced": true,
+      "sourceHandle": "elsier-bike-aero-seatpost",
+      "sourceUrl": "https://www.cycletimeindia.com/products/elsier-bike-aero-seatpost",
+      "stockSource": "cycletime",
+      "name": "Elsier Aero Hard Shell Seatpost Saddle Bag",
+      "brand": "Elsier",
+      "description": "Elsier Bike Aero Seatpost Bag Hard Shell Bike Seatpost Torpedo Saddle Bag Large Capacity Cycling Storage Bag | Cycling Accessories Features: 1. Spacious Storage: This road bike tail bag boasts a large capacity design, perfect for storing essentials like tools and spare tube, making it a convenient accessory for carrying all your necessities while cycling. 2. Water-Resistant: Engineered for everyday use, the bicycle saddle bag's water-resistant capabilities allow for worry-free cycling in light rain, ensuring your belongings stay dry and protected. 3. Reinforced Support: With its thickened support structure, this bike teardrop seatpost bag saf",
+      "price": 1299,
+      "mrp": "Rs 1,990",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_5c4b6a73-c93b-4d40-b008-fa8a2cb1aa20.jpg?v=1757338624",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_5c4b6a73-c93b-4d40-b008-fa8a2cb1aa20.jpg?v=1757338624",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_f9f835d6-2bb2-4bb7-add7-60cee2952776.jpg?v=1757339879",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7_9440f08f-00f4-4acb-a61b-1bffce2cb9fe.jpg?v=1757339902",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_13ed97ec-f990-4dcb-8cd8-7afe280a5a4b.jpg?v=1757338624",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_636aaf23-2a6d-48dd-b36c-08068daf9aa7.jpg?v=1757338625",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_96720fc5-7e4a-44d4-b690-f2f56cf4c774.jpg?v=1757338783",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_07b217bb-bf7f-4ac4-9e96-1c6e0bc53e4a.jpg?v=1757338624"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 49525624635585,
+          "title": "Default Title",
+          "available": true,
+          "price": 1299,
+          "compare_at_price": 1990,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : Elsier",
+        "Product Type : Bicycle Accessories",
+        "1. Spacious Storage : This road bike tail bag boasts a large capacity design, perfect for storing essentials like tools and spare tube, making it a convenient accessory for carrying all your necessities while cycling.",
+        "2. Water : Resistant: Engineered for everyday use, the bicycle saddle bag's water-resistant capabilities allow for worry-free cycling in light rain, ensuring your belongings stay dry and protected.",
+        "3. Reinforced Support : With its thickened support structure, this bike teardrop seatpost bag safeguards your items from being crushed, providing peace of mind that your contents are secure during rides.",
+        "4. Aerodynamic Shape : The streamlined design of this road bike pannier minimizes air resistance, ensuring that your speed and performance are not compromised while you ride.",
+        "5. Easy Mounting : The bike seatpost torpedo saddle bag features a single nut installation system that is both easy and quick, allowing for a hassle-free setup.",
+        "Main Material : PC + Silicone",
+        "Color : Black",
+        "Size : Approx. 15 × 12 × 6 cm (excluding mounting clamp)",
+        "Net Weight : Approx. 180g",
+        "Compatibility : Road, TT, MTB & Hybrid Bikes",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/elsier-bike-aero-seatpost"
+      },
+      "keywords": "Elsier Aero Hard Shell Seatpost Saddle Bag Bicycle Accessories Royal Traders",
+      "categoryPage": "components.html",
+      "categoryLabel": "Components",
+      "mainCategory": "cockpit",
+      "subCategory": "saddles"
+    },
+    {
       "id": 10864481992897,
       "supplierProductId": 10864481992897,
       "supplierSynced": true,
@@ -5502,68 +5673,6 @@
       "subCategory": ""
     },
     {
-      "id": 10805815836865,
-      "supplierProductId": 10805815836865,
-      "supplierSynced": true,
-      "sourceHandle": "elsier-bike-aero-seatpost",
-      "sourceUrl": "https://www.cycletimeindia.com/products/elsier-bike-aero-seatpost",
-      "stockSource": "cycletime",
-      "name": "Elsier Bike Aero Seatpost Bag Hard Shell Bike Seatpost Torpedo Saddle Bag Large Capacity Cycling Storage Bag Cycling Accessories",
-      "brand": "Elsier",
-      "description": "Elsier Bike Aero Seatpost Bag Hard Shell Bike Seatpost Torpedo Saddle Bag Large Capacity Cycling Storage Bag | Cycling Accessories Features: 1. Spacious Storage: This road bike tail bag boasts a large capacity design, perfect for storing essentials like tools and spare tube, making it a convenient accessory for carrying all your necessities while cycling. 2. Water-Resistant: Engineered for everyday use, the bicycle saddle bag's water-resistant capabilities allow for worry-free cycling in light rain, ensuring your belongings stay dry and protected. 3. Reinforced Support: With its thickened support structure, this bike teardrop seatpost bag saf",
-      "price": 1299,
-      "mrp": "Rs 1,990",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_5c4b6a73-c93b-4d40-b008-fa8a2cb1aa20.jpg?v=1757338624",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_5c4b6a73-c93b-4d40-b008-fa8a2cb1aa20.jpg?v=1757338624",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_f9f835d6-2bb2-4bb7-add7-60cee2952776.jpg?v=1757339879",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7_9440f08f-00f4-4acb-a61b-1bffce2cb9fe.jpg?v=1757339902",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_13ed97ec-f990-4dcb-8cd8-7afe280a5a4b.jpg?v=1757338624",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_636aaf23-2a6d-48dd-b36c-08068daf9aa7.jpg?v=1757338625",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_96720fc5-7e4a-44d4-b690-f2f56cf4c774.jpg?v=1757338783",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_07b217bb-bf7f-4ac4-9e96-1c6e0bc53e4a.jpg?v=1757338624"
-      ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [
-        {
-          "id": 49525624635585,
-          "title": "Default Title",
-          "available": true,
-          "price": 1299,
-          "compare_at_price": 1990,
-          "option1": "Default Title",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : Elsier",
-        "Product Type : Bicycle Accessories",
-        "1. Spacious Storage : This road bike tail bag boasts a large capacity design, perfect for storing essentials like tools and spare tube, making it a convenient accessory for carrying all your necessities while cycling.",
-        "2. Water : Resistant: Engineered for everyday use, the bicycle saddle bag's water-resistant capabilities allow for worry-free cycling in light rain, ensuring your belongings stay dry and protected.",
-        "3. Reinforced Support : With its thickened support structure, this bike teardrop seatpost bag safeguards your items from being crushed, providing peace of mind that your contents are secure during rides.",
-        "4. Aerodynamic Shape : The streamlined design of this road bike pannier minimizes air resistance, ensuring that your speed and performance are not compromised while you ride.",
-        "5. Easy Mounting : The bike seatpost torpedo saddle bag features a single nut installation system that is both easy and quick, allowing for a hassle-free setup.",
-        "Main Material : PC + Silicone",
-        "Color : Black",
-        "Size : Approx. 15 × 12 × 6 cm (excluding mounting clamp)",
-        "Net Weight : Approx. 180g",
-        "Compatibility : Road, TT, MTB & Hybrid Bikes",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.cycletimeindia.com/products/elsier-bike-aero-seatpost"
-      },
-      "keywords": "Elsier Bike Aero Seatpost Bag Hard Shell Bike Seatpost Torpedo Saddle Bag Large Capacity Cycling Storage Bag Cycling Accessories Bicycle Accessories Royal Traders",
-      "categoryPage": "components.html",
-      "categoryLabel": "Components",
-      "mainCategory": "cockpit",
-      "subCategory": "saddles"
-    },
-    {
       "id": 10798094155969,
       "supplierProductId": 10798094155969,
       "supplierSynced": true,
@@ -5642,7 +5751,7 @@
       "stockSource": "cycletime",
       "name": "ELSIER Carbon Bottle Cages",
       "brand": "Elsier",
-      "description": "",
+      "description": "Elsier carbon bottle cages for your bicycle hydration setup.Choose the right fitCheck the available options, frame mounting points and bottle fit before ordering. If space inside your frame is limited, confirm bottle access and clearance with CycleTimeIndia.",
       "price": 1499,
       "mrp": "Rs 1,499",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_f202c2f8-9dab-4fcb-847c-589be78c9ae3.jpg?v=1761998709",
@@ -5671,6 +5780,7 @@
       "specs": [
         "Brand : Elsier",
         "Product Type : Bicycle Accessories",
+        "Product Details : Elsier carbon bottle cages for your bicycle hydration setup.Choose the right fitCheck the available options, frame mounting points and bottle fit before ordering. If space inside your frame is limited, confirm bottle access and clearance wi",
         "Shipping : Free shipping across India"
       ],
       "specSource": {
@@ -8486,7 +8596,7 @@
       "sourceHandle": "enlee-anti-rust-mountain-road-bicycle-chain-8-10-11-speed-silver-gold-mtb-cycle-and-road-cycle-chains",
       "sourceUrl": "https://www.cycletimeindia.com/products/enlee-anti-rust-mountain-road-bicycle-chain-8-10-11-speed-silver-gold-mtb-cycle-and-road-cycle-chains",
       "stockSource": "cycletime",
-      "name": "ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains",
+      "name": "ENLEE 8/10/11-Speed Bicycle Chain",
       "brand": "Royal Traders",
       "description": "",
       "price": 849,
@@ -8570,7 +8680,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/enlee-anti-rust-mountain-road-bicycle-chain-8-10-11-speed-silver-gold-mtb-cycle-and-road-cycle-chains"
       },
-      "keywords": "ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains Bicycle Accessories Royal Traders",
+      "keywords": "ENLEE 8/10/11-Speed Bicycle Chain Bicycle Accessories Royal Traders",
       "categoryPage": "components.html",
       "categoryLabel": "Components",
       "mainCategory": "drivetrain",
@@ -8635,7 +8745,7 @@
       "sourceHandle": "fmfxtr-bicycle-stem-lightweight-design-made-of-high-strength-aluminum-alloy-7-adjustment-stem",
       "sourceUrl": "https://www.cycletimeindia.com/products/fmfxtr-bicycle-stem-lightweight-design-made-of-high-strength-aluminum-alloy-7-adjustment-stem",
       "stockSource": "cycletime",
-      "name": "FMFXTR Bicycle Stem Lightweight Design Made Of High-strength Aluminum Alloy ±7° Adjustment Stem",
+      "name": "FMFXTR ±7° Aluminium Bicycle Stem",
       "brand": "Cycletimeindia",
       "description": "",
       "price": 1499,
@@ -8687,7 +8797,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/fmfxtr-bicycle-stem-lightweight-design-made-of-high-strength-aluminum-alloy-7-adjustment-stem"
       },
-      "keywords": "FMFXTR Bicycle Stem Lightweight Design Made Of High-strength Aluminum Alloy ±7° Adjustment Stem Bicycle Accessories Cycletimeindia",
+      "keywords": "FMFXTR ±7° Aluminium Bicycle Stem Bicycle Accessories Cycletimeindia",
       "categoryPage": "components.html",
       "categoryLabel": "Components",
       "mainCategory": "cockpit",
@@ -10097,7 +10207,7 @@
       "stockSource": "cycletime",
       "name": "iGPSPORT Silicone Case For BSC 100Max Computer",
       "brand": "iGPSPORT",
-      "description": "",
+      "description": "A silicone protective case for the iGPSPORT BSC100Max bike computer.Model compatibilityChoose this case for the BSC100Max. Check your computer's model name before ordering; similarly named iGPSPORT computers may use different cases. This listing is for the case, not the bike computer.",
       "price": 700,
       "mrp": "Rs 840",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_2a74e509-80c5-4749-a220-d22a1e889968.jpg?v=1770293870",
@@ -10122,6 +10232,7 @@
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : Bicycle computer case",
+        "Product Details : A silicone protective case for the iGPSPORT BSC100Max bike computer.Model compatibilityChoose this case for the BSC100Max. Check your computer's model name before ordering; similarly named iGPSPORT computers may use different cases. This li",
         "Shipping : Free shipping across India"
       ],
       "specSource": {
@@ -10312,7 +10423,7 @@
       "sourceHandle": "igpsports-tl30-smart-bike-taillight",
       "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-tl30-smart-bike-taillight",
       "stockSource": "cycletime",
-      "name": "iGPSPORT TL30 Smart Tailight",
+      "name": "iGPSPORT TL30 Smart Tail Light",
       "brand": "iGPSPORT",
       "description": "The TL30 Smart Bike Taillight is designed for cyclists who prioritize safety, visibility, and smart features. Whether you ride during the day or night, on roads or trails, the TL30 keeps you visible and protected with intelligent lighting technology. Key Features: 🔴 Smart Brake SensingInstantly increases brightness when braking to alert vehicles behind you. 🌙 Auto On/Off Light SensorAutomatically turns on in low light and off in daylight to save battery. 💡 Ultra-Bright LEDHigh-intensity red LED ensures you're seen from a long distance—even in low visibility conditions. 🔋 USB RechargeableLong-lasting battery with fast USB charging. No need",
       "price": 2900,
@@ -10358,7 +10469,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/igpsports-tl30-smart-bike-taillight"
       },
-      "keywords": "iGPSPORT TL30 Smart Tailight Bicycle Smart Lights CycleTimeIndia",
+      "keywords": "iGPSPORT TL30 Smart Tail Light Bicycle Smart Lights CycleTimeIndia",
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
@@ -10434,6 +10545,71 @@
       "categoryPage": "accessories.html",
       "categoryLabel": "Accessories",
       "mainCategory": "other",
+      "subCategory": ""
+    },
+    {
+      "id": 10786279358657,
+      "supplierProductId": 10786279358657,
+      "supplierSynced": true,
+      "sourceHandle": "igpsports-vs1200-smart-front-bike-light",
+      "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-vs1200-smart-front-bike-light",
+      "stockSource": "cycletime",
+      "name": "iGPSPORT VS1200 Smart Front Bike Light",
+      "brand": "iGPSPORT",
+      "description": "Product Description The IGPSPORTS VS1200 Smart Front Bike Light offers advanced illumination tailored for serious cyclists. Designed with intelligent brightness adjustment, it enhances visibility in varying conditions while conserving battery life. Its durable build ensures reliable performance on all terrains, making it an essential accessory for safe and efficient night riding. IGPSPORT VS1200 Smart Front Bike Light Light up your ride with the IGPSPORT VS1200, a high-performance smart front bike light built for serious cyclists and night riders. Featuring an ultra-bright 1200-lumen output, smart light sensors, and multiple modes, this compa",
+      "price": 5849,
+      "mrp": "Rs 7,800",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/1_d1e37fa9-2a6d-4689-b7d4-da7652dd5aaf.webp?v=1768567682",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_e28f3301-434d-44a5-b97b-0d406f8e2cd2.jpg?v=1768567682",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_5b079d00-b4d7-425a-857a-27b1a0be5473.jpg?v=1768567682",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_9755073b-ab4a-45e3-89e4-892a8becb5ba.jpg?v=1768567682",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_433fb2ab-e834-491a-9499-8836e03548bc.jpg?v=1768567682",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_50263965-1c88-46ad-84ca-bca8b5a2bd5b.jpg?v=1768567682",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_3ea9c38e-8381-4faf-9ac3-45df7bc8116d.jpg?v=1768567682"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 49451639177409,
+          "title": "Default Title",
+          "available": false,
+          "price": 5849,
+          "compare_at_price": 7800,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": false,
+      "specs": [
+        "Brand : iGPSPORT",
+        "Product Type : Bicycle Smart Lights",
+        "Material : ‎Aluminum",
+        "Power Source : ‎Battery Powered",
+        "Water Resistance Level : Waterproof",
+        "Mounting Type : ‎Handlebar Mount",
+        "Country of Origin : China",
+        "Light up your ride with the IGPSPORT VS1200, a high : performance smart front bike light built for serious cyclists and night riders. Featuring an ultra-bright 1200-lumen output, smart light sensors, and multiple modes, this compact light ensures maximum visibility and safety in any condition.",
+        "Ultra : Bright Output: Up to 1200 lumens for powerful illumination on dark roads and trails.",
+        "Smart Light Sensor : Automatically adjusts brightness based on surrounding light conditions.",
+        "Multiple Modes : Includes High, Medium, Low, Flash, and Smart mode for all riding scenarios.",
+        "Long Battery Life : USB-C rechargeable battery offers up to 15 hours of runtime.",
+        "IPX6 Waterproof : Durable design built to withstand rain and tough riding conditions.",
+        "Quick Release Mount : Easy to attach and detach with secure handlebar mounting.",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/igpsports-vs1200-smart-front-bike-light"
+      },
+      "keywords": "iGPSPORT VS1200 Smart Front Bike Light Bicycle Smart Lights Royal Traders",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "lights",
       "subCategory": ""
     },
     {
@@ -10552,71 +10728,6 @@
       "subCategory": ""
     },
     {
-      "id": 10786279358657,
-      "supplierProductId": 10786279358657,
-      "supplierSynced": true,
-      "sourceHandle": "igpsports-vs1200-smart-front-bike-light",
-      "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-vs1200-smart-front-bike-light",
-      "stockSource": "cycletime",
-      "name": "IGPSPORTS VS1200 Smart Front Bike Light",
-      "brand": "iGPSPORT",
-      "description": "Product Description The IGPSPORTS VS1200 Smart Front Bike Light offers advanced illumination tailored for serious cyclists. Designed with intelligent brightness adjustment, it enhances visibility in varying conditions while conserving battery life. Its durable build ensures reliable performance on all terrains, making it an essential accessory for safe and efficient night riding. IGPSPORT VS1200 Smart Front Bike Light Light up your ride with the IGPSPORT VS1200, a high-performance smart front bike light built for serious cyclists and night riders. Featuring an ultra-bright 1200-lumen output, smart light sensors, and multiple modes, this compa",
-      "price": 5849,
-      "mrp": "Rs 7,800",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/1_d1e37fa9-2a6d-4689-b7d4-da7652dd5aaf.webp?v=1768567682",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_e28f3301-434d-44a5-b97b-0d406f8e2cd2.jpg?v=1768567682",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_5b079d00-b4d7-425a-857a-27b1a0be5473.jpg?v=1768567682",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_9755073b-ab4a-45e3-89e4-892a8becb5ba.jpg?v=1768567682",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_433fb2ab-e834-491a-9499-8836e03548bc.jpg?v=1768567682",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_50263965-1c88-46ad-84ca-bca8b5a2bd5b.jpg?v=1768567682",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_3ea9c38e-8381-4faf-9ac3-45df7bc8116d.jpg?v=1768567682"
-      ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [
-        {
-          "id": 49451639177409,
-          "title": "Default Title",
-          "available": false,
-          "price": 5849,
-          "compare_at_price": 7800,
-          "option1": "Default Title",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": false,
-      "specs": [
-        "Brand : iGPSPORT",
-        "Product Type : Bicycle Smart Lights",
-        "Material : ‎Aluminum",
-        "Power Source : ‎Battery Powered",
-        "Water Resistance Level : Waterproof",
-        "Mounting Type : ‎Handlebar Mount",
-        "Country of Origin : China",
-        "Light up your ride with the IGPSPORT VS1200, a high : performance smart front bike light built for serious cyclists and night riders. Featuring an ultra-bright 1200-lumen output, smart light sensors, and multiple modes, this compact light ensures maximum visibility and safety in any condition.",
-        "Ultra : Bright Output: Up to 1200 lumens for powerful illumination on dark roads and trails.",
-        "Smart Light Sensor : Automatically adjusts brightness based on surrounding light conditions.",
-        "Multiple Modes : Includes High, Medium, Low, Flash, and Smart mode for all riding scenarios.",
-        "Long Battery Life : USB-C rechargeable battery offers up to 15 hours of runtime.",
-        "IPX6 Waterproof : Durable design built to withstand rain and tough riding conditions.",
-        "Quick Release Mount : Easy to attach and detach with secure handlebar mounting.",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.cycletimeindia.com/products/igpsports-vs1200-smart-front-bike-light"
-      },
-      "keywords": "IGPSPORTS VS1200 Smart Front Bike Light Bicycle Smart Lights Royal Traders",
-      "categoryPage": "electronics.html",
-      "categoryLabel": "Electronics",
-      "mainCategory": "lights",
-      "subCategory": ""
-    },
-    {
       "id": 10800779460801,
       "supplierProductId": 10800779460801,
       "supplierSynced": true,
@@ -10666,53 +10777,6 @@
       "categoryLabel": "Components",
       "mainCategory": "drivetrain",
       "subCategory": "drivetrain-parts"
-    },
-    {
-      "id": 11048872345793,
-      "supplierProductId": 11048872345793,
-      "supplierSynced": true,
-      "sourceHandle": "igpsport-lanyard-for-bike-computers",
-      "sourceUrl": "https://www.cycletimeindia.com/products/igpsport-lanyard-for-bike-computers",
-      "stockSource": "cycletime",
-      "name": "LANYARD FOR BIKE COMPUTERS",
-      "brand": "CycleTimeIndia",
-      "description": "A practical accessory for cyclists who want extra peace of mind on every ride. The cyclocomputer lanyard keeps your device safely tethered without interfering with normal operation, making it a useful addition to any cycling setup.",
-      "price": 249,
-      "mrp": "Rs 298",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955"
-      ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [
-        {
-          "id": 50514133811393,
-          "title": "Default Title",
-          "available": true,
-          "price": 249,
-          "compare_at_price": 298,
-          "option1": "Default Title",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : CycleTimeIndia",
-        "Product Type : Bicycle Accessories",
-        "Product Details : A practical accessory for cyclists who want extra peace of mind on every ride. The cyclocomputer lanyard keeps your device safely tethered without interfering with normal operation, making it a useful addition to any cycling setup.",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.cycletimeindia.com/products/igpsport-lanyard-for-bike-computers"
-      },
-      "keywords": "LANYARD FOR BIKE COMPUTERS Bicycle Accessories CycleTimeIndia",
-      "categoryPage": "electronics.html",
-      "categoryLabel": "Electronics",
-      "mainCategory": "bike-computer",
-      "subCategory": ""
     },
     {
       "id": 10800437985473,
@@ -12203,7 +12267,7 @@
       "sourceHandle": "orome-valar-sk40d-road-disc-wheelset-all-carbon-six-spoke-super-light-wheelset",
       "sourceUrl": "https://www.cycletimeindia.com/products/orome-valar-sk40d-road-disc-wheelset-all-carbon-six-spoke-super-light-wheelset",
       "stockSource": "cycletime",
-      "name": "OROME VALAR SK40D Road Disc Wheelset - ALL CARBON SIX SPOKE SUPER-LIGHT WHEELSET",
+      "name": "OROME VALAR SK40D Carbon Disc Wheelset",
       "brand": "My Store",
       "description": "Our OROME Valar SK40D Wheelset Is Designed with A One-Piece Rim and Bladed Aero Spoke Construction. This Lightweight Wheelset, Weighs in At Just 1378g/Pair and Is Not Only Suitable for TT And Triathlons, But Also for Road and Gravel Use. The Tubeless Ready SK40D Clincher Disc Wheelsets, Has A 40mm Deep Profile, 22mm Internal And 29mm External Widths Intended to Excel with Wider Road and Gravel Tires. Six Carbon Aero Spoke Design Offers Exceptional Aero Performance and Perfect Control in Crosswinds. Our VALAR SK40D Wheelset Is Assembled with TPI Ceramic Bearings with A CNC Hub. The Freehub Driver Is Similar in Design to DT Swiss' Star Ratchet ",
       "price": 109900,
@@ -12243,7 +12307,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/orome-valar-sk40d-road-disc-wheelset-all-carbon-six-spoke-super-light-wheelset"
       },
-      "keywords": "OROME VALAR SK40D Road Disc Wheelset - ALL CARBON SIX SPOKE SUPER-LIGHT WHEELSET My Store",
+      "keywords": "OROME VALAR SK40D Carbon Disc Wheelset My Store",
       "categoryPage": "wheels-tyres.html",
       "categoryLabel": "Wheels & Tyres",
       "mainCategory": "wheels",
@@ -14864,60 +14928,70 @@
       "subCategory": ""
     },
     {
-      "id": 10917606162625,
-      "supplierProductId": 10917606162625,
+      "id": 10920749007041,
+      "supplierProductId": 10920749007041,
       "supplierSynced": true,
-      "sourceHandle": "ultra-light-carbon-fiber-road-bike-saddle-performance-cycling-seat-with-center-relief-cutout",
-      "sourceUrl": "https://www.cycletimeindia.com/products/ultra-light-carbon-fiber-road-bike-saddle-performance-cycling-seat-with-center-relief-cutout",
+      "sourceHandle": "uno-7-bicycle-stem-lightweight-strong-amp-performance-focused-140mm-and-150mm",
+      "sourceUrl": "https://www.cycletimeindia.com/products/uno-7-bicycle-stem-lightweight-strong-amp-performance-focused-140mm-and-150mm",
       "stockSource": "cycletime",
-      "name": "Ultra-Light Carbon Fiber Road Bike Saddle –Performance Cycling Seat with Center Relief Cutout",
-      "brand": "Cycletimeindia",
-      "description": "Product Description Elevate your ride with this premium carbon fiber bike saddle, engineered for performance, comfort, and weight savings. Crafted from high-strength carbon materials, this saddle is optimized for competitive road cycling, time trials, triathlons, and lightweight bike builds. Designed with precision and rider comfort in mind, it combines an anatomic pressure relief channel, ultra-lightweight structure, and ergonomic shaping to enhance endurance and reduce fatigue on long rides. 🔍 Key Features & Specifications 🛠️ Construction & Materials High-quality carbon fiber shell for maximum strength and minimal weight Lightweight yet h",
-      "price": 9999,
-      "mrp": "Rs 13,999",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_c8fad13d-f266-465f-9e05-bd05084cfe04.jpg?v=1771585357",
+      "name": "UNO +7° Bicycle Stem – 140mm & 150mm",
+      "brand": "UNO",
+      "description": "",
+      "price": 3700,
+      "mrp": "Rs 4,400",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7f356476-a704-4ee1-92eb-7616e7f3eac3.jpg?v=1772008415",
       "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_c8fad13d-f266-465f-9e05-bd05084cfe04.jpg?v=1771585357",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_e0cab05d-ed13-47b8-87bf-ced5cbe49452.jpg?v=1771585279",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_b91e141b-5a14-436f-b71f-8d8c8ad26c92.jpg?v=1771585279"
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7f356476-a704-4ee1-92eb-7616e7f3eac3.jpg?v=1772008415",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_8f2ce0ed-5c07-4b97-ac12-0e4e85193a20.jpg?v=1772008415",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_e385ae6a-7ac9-4212-9759-3474a64c6b2b.jpg?v=1772008415",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_5bb48894-d631-41d2-b7fa-d4fbf900c28b.jpg?v=1772008579"
       ],
-      "sizes": [],
-      "sizeAvailability": {},
+      "sizes": [
+        "140mm+7°",
+        "150mm+7°"
+      ],
+      "sizeAvailability": {
+        "140mm+7°": true,
+        "150mm+7°": true
+      },
       "variants": [
         {
-          "id": 50000534667457,
-          "title": "Default Title",
+          "id": 50011129315521,
+          "title": "140mm+7°",
           "available": true,
-          "price": 9999,
-          "compare_at_price": 13999,
-          "option1": "Default Title",
+          "price": 3700,
+          "compare_at_price": 4400,
+          "option1": "140mm+7°",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50011129348289,
+          "title": "150mm+7°",
+          "available": true,
+          "price": 3700,
+          "compare_at_price": 4400,
+          "option1": "150mm+7°",
           "option2": "",
           "option3": ""
         }
       ],
       "available": true,
       "specs": [
-        "Brand : Cycletimeindia",
+        "Brand : UNO",
         "Product Type : Bicycle Accessories",
-        "High : quality carbon fiber shell for maximum strength and minimal weight",
-        "Sleek matte black finish for an attractive, race : ready look",
-        "Length : Approx. 240 mm",
-        "Widest Front Width : 125 mm",
-        "Nose Width : 60 mm",
-        "Central cut : out / pressure relief channel reduces perineal pressure and improves blood flow",
-        "Ultra : light at 167g – excellent for weight-conscious cyclists",
-        "Rider : friendly ergonomic design for long distance comfort",
+        "Size Options : 140mm+7°, 150mm+7°",
         "Shipping : Free shipping across India"
       ],
       "specSource": {
         "label": "Live supplier specification",
-        "url": "https://www.cycletimeindia.com/products/ultra-light-carbon-fiber-road-bike-saddle-performance-cycling-seat-with-center-relief-cutout"
+        "url": "https://www.cycletimeindia.com/products/uno-7-bicycle-stem-lightweight-strong-amp-performance-focused-140mm-and-150mm"
       },
-      "keywords": "Ultra-Light Carbon Fiber Road Bike Saddle –Performance Cycling Seat with Center Relief Cutout Bicycle Accessories Cycletimeindia",
+      "keywords": "UNO +7° Bicycle Stem – 140mm & 150mm Bicycle Accessories CycleTimeIndia",
       "categoryPage": "components.html",
       "categoryLabel": "Components",
-      "mainCategory": "drivetrain",
-      "subCategory": "drivetrain-parts"
+      "mainCategory": "cockpit",
+      "subCategory": "stems"
     },
     {
       "id": 10882444034241,
@@ -14926,7 +15000,7 @@
       "sourceHandle": "uno-17-bicycle-stem-lightweight-strong-amp-performance-focused",
       "sourceUrl": "https://www.cycletimeindia.com/products/uno-17-bicycle-stem-lightweight-strong-amp-performance-focused",
       "stockSource": "cycletime",
-      "name": "UNO 17° Bicycle Stem – Lightweight, Strong &amp; Performance-Focused",
+      "name": "UNO 17° Bicycle Stem",
       "brand": "UNO",
       "description": "UNO 17° Bicycle Stem – Lightweight, Strong & Performance-Focused Upgrade your ride with the UNO 17° Bicycle Stem, designed for cyclists who demand precision, strength, and a clean professional look. Crafted from high-quality alloy, this stem delivers excellent stiffness while keeping the weight low, making it ideal for road bikes, MTB, and performance-oriented builds. The 17-degree angle provides an aggressive yet comfortable riding position, improving handling, control, and power transfer. Whether you’re racing, training, or upgrading your bike setup, UNO stems are trusted worldwide for their durability and performance. With a secure 4-bolt ",
       "price": 1499,
@@ -15010,73 +15084,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/uno-17-bicycle-stem-lightweight-strong-amp-performance-focused"
       },
-      "keywords": "UNO 17° Bicycle Stem – Lightweight, Strong &amp; Performance-Focused Bicycle Accessories Royal Traders",
-      "categoryPage": "components.html",
-      "categoryLabel": "Components",
-      "mainCategory": "cockpit",
-      "subCategory": "stems"
-    },
-    {
-      "id": 10920749007041,
-      "supplierProductId": 10920749007041,
-      "supplierSynced": true,
-      "sourceHandle": "uno-7-bicycle-stem-lightweight-strong-amp-performance-focused-140mm-and-150mm",
-      "sourceUrl": "https://www.cycletimeindia.com/products/uno-7-bicycle-stem-lightweight-strong-amp-performance-focused-140mm-and-150mm",
-      "stockSource": "cycletime",
-      "name": "UNO+7° Bicycle Stem – Lightweight, Strong & amp; Performance-Focused 140mm And 150mm",
-      "brand": "UNO",
-      "description": "",
-      "price": 3700,
-      "mrp": "Rs 4,400",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7f356476-a704-4ee1-92eb-7616e7f3eac3.jpg?v=1772008415",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7f356476-a704-4ee1-92eb-7616e7f3eac3.jpg?v=1772008415",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_8f2ce0ed-5c07-4b97-ac12-0e4e85193a20.jpg?v=1772008415",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_e385ae6a-7ac9-4212-9759-3474a64c6b2b.jpg?v=1772008415",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_5bb48894-d631-41d2-b7fa-d4fbf900c28b.jpg?v=1772008579"
-      ],
-      "sizes": [
-        "140mm+7°",
-        "150mm+7°"
-      ],
-      "sizeAvailability": {
-        "140mm+7°": true,
-        "150mm+7°": true
-      },
-      "variants": [
-        {
-          "id": 50011129315521,
-          "title": "140mm+7°",
-          "available": true,
-          "price": 3700,
-          "compare_at_price": 4400,
-          "option1": "140mm+7°",
-          "option2": "",
-          "option3": ""
-        },
-        {
-          "id": 50011129348289,
-          "title": "150mm+7°",
-          "available": true,
-          "price": 3700,
-          "compare_at_price": 4400,
-          "option1": "150mm+7°",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : UNO",
-        "Product Type : Bicycle Accessories",
-        "Size Options : 140mm+7°, 150mm+7°",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.cycletimeindia.com/products/uno-7-bicycle-stem-lightweight-strong-amp-performance-focused-140mm-and-150mm"
-      },
-      "keywords": "UNO+7° Bicycle Stem – Lightweight, Strong & amp; Performance-Focused 140mm And 150mm Bicycle Accessories CycleTimeIndia",
+      "keywords": "UNO 17° Bicycle Stem Bicycle Accessories Royal Traders",
       "categoryPage": "components.html",
       "categoryLabel": "Components",
       "mainCategory": "cockpit",
