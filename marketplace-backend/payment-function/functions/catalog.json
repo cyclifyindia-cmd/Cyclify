@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T20:19:17.251Z",
+  "generatedAt": "2026-09-15T04:56:16.954Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -2081,7 +2081,7 @@
       "id": "10785802158273",
       "name": "iGPSPORT M80 Out-Front Bike Mount",
       "price": 720,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7a4f0099-335e-485b-98f2-978b6926cd45.jpg?v=1754032520",
       "sizes": [],
       "sizeAvailability": {},

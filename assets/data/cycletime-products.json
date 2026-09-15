@@ -10012,7 +10012,7 @@
         {
           "id": 49449239249089,
           "title": "Default Title",
-          "available": true,
+          "available": false,
           "price": 720,
           "compare_at_price": 840,
           "option1": "Default Title",
@@ -10020,7 +10020,7 @@
           "option3": ""
         }
       ],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : Bike Mount",
