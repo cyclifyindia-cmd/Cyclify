@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T04:50:53.442Z",
+  "generatedAt": "2026-09-16T13:31:04.909Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -604,7 +604,7 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": true,
         "43": true,
         "44": true,
@@ -2151,7 +2151,7 @@
       "id": "10786293219521",
       "name": "iGPSPORT VS800 Smart Light",
       "price": 4500,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/olo.jpg?v=1772531110",
       "sizes": [],
       "sizeAvailability": {},
@@ -4646,7 +4646,7 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": true,
         "43": true,
         "44": true,
