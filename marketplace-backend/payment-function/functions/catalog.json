@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T13:31:04.909Z",
+  "generatedAt": "2026-09-16T19:34:43.099Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -4656,6 +4656,16 @@
         "48": true
       },
       "sourcePage": "wearables.html"
+    },
+    "11079648673985": {
+      "id": "11079648673985",
+      "name": "iGPSPORT BSC500 Cyclocomputer Protective Case",
+      "price": 700,
+      "available": true,
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-16at11.48.28AM.jpg?v=1789566947",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html"
     }
   }
 }

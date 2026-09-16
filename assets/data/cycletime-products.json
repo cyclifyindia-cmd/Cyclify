@@ -9705,6 +9705,53 @@
       "subCategory": ""
     },
     {
+      "id": 11079648673985,
+      "supplierProductId": 11079648673985,
+      "supplierSynced": true,
+      "sourceHandle": "igpsport-bsc500-cyclocomputer-protective-case",
+      "sourceUrl": "https://www.cycletimeindia.com/products/igpsport-bsc500-cyclocomputer-protective-case",
+      "stockSource": "cycletime",
+      "name": "iGPSPORT BSC500 Cyclocomputer Protective Case",
+      "brand": "iGPSPORT",
+      "description": "",
+      "price": 700,
+      "mrp": "Rs 700",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-16at11.48.28AM.jpg?v=1789566947",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-16at11.48.28AM.jpg?v=1789566947",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-09-16_at_11.48.28_AM_1.jpg?v=1789566983"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 50607414542529,
+          "title": "Default Title",
+          "available": true,
+          "price": 700,
+          "compare_at_price": 0,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : iGPSPORT",
+        "Product Type : Bicycle computer case",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/igpsport-bsc500-cyclocomputer-protective-case"
+      },
+      "keywords": "iGPSPORT BSC500 Cyclocomputer Protective Case Bicycle computer case CycleTimeIndia",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "bike-computer",
+      "subCategory": ""
+    },
+    {
       "id": 10785797079233,
       "supplierProductId": 10785797079233,
       "supplierSynced": true,
