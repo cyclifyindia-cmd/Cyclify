@@ -237,6 +237,7 @@
   "10785800454337": "products/igpsport-spd70-speed-sensor-10785800454337.html",
   "10823281967297": "products/igpsport-sr-mini-smart-radar-taillight-10823281967297.html",
   "10785814773953": "products/igpsport-tl30-smart-tailight-10785814773953.html",
+  "11078502940865": "products/igpsport-tl50-ultra-light-smart-taillight-ride-smart-ride-light-11078502940865.html",
   "11042901328065": "products/igpsport-verun-gps-sports-watch-11042901328065.html",
   "10786279358657": "products/igpsports-vs1200-smart-front-bike-light-10786279358657.html",
   "10786266185921": "products/igpsport-vs500-smart-light-10786266185921.html",

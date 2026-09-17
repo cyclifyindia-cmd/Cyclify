@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T04:54:25.422Z",
+  "generatedAt": "2026-09-17T13:28:48.751Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -604,11 +604,11 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": false,
+        "41": true,
         "42": true,
         "43": true,
         "44": true,
-        "45": true,
+        "45": false,
         "46": true,
         "47": true,
         "48": true
@@ -4646,16 +4646,26 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": false,
+        "41": true,
         "42": true,
         "43": true,
         "44": true,
-        "45": true,
+        "45": false,
         "46": true,
         "47": true,
         "48": true
       },
       "sourcePage": "wearables.html"
+    },
+    "11078502940865": {
+      "id": "11078502940865",
+      "name": "iGPSPORT TL50 Ultra-Light Smart Taillight Ride Smart Ride Light",
+      "price": 2900,
+      "available": true,
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/S5eacb39103ba425586cec4da1382ecebv_jpg_960x960q75_jpg.avif?v=1789630165",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html"
     },
     "11079648673985": {
       "id": "11079648673985",

@@ -7066,11 +7066,11 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": false,
+        "41": true,
         "42": true,
         "43": true,
         "44": true,
-        "45": true,
+        "45": false,
         "46": true,
         "47": true,
         "48": true
@@ -7129,7 +7129,7 @@
         {
           "id": 50588281503937,
           "title": "41",
-          "available": false,
+          "available": true,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "41",
@@ -7169,7 +7169,7 @@
         {
           "id": 50588281635009,
           "title": "45",
-          "available": true,
+          "available": false,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "45",
@@ -7266,11 +7266,11 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": false,
+        "41": true,
         "42": true,
         "43": true,
         "44": true,
-        "45": true,
+        "45": false,
         "46": true,
         "47": true,
         "48": true
@@ -7329,7 +7329,7 @@
         {
           "id": 49462579232961,
           "title": "41",
-          "available": false,
+          "available": true,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "41",
@@ -7369,7 +7369,7 @@
         {
           "id": 49462579364033,
           "title": "45",
-          "available": true,
+          "available": false,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "45",
@@ -10517,6 +10517,61 @@
         "url": "https://www.cycletimeindia.com/products/igpsports-tl30-smart-bike-taillight"
       },
       "keywords": "iGPSPORT TL30 Smart Tail Light Bicycle Smart Lights CycleTimeIndia",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "lights",
+      "subCategory": ""
+    },
+    {
+      "id": 11078502940865,
+      "supplierProductId": 11078502940865,
+      "supplierSynced": true,
+      "sourceHandle": "igpsport-tl50-ultra-light-smart-taillight-ride-smart-ride-light",
+      "sourceUrl": "https://www.cycletimeindia.com/products/igpsport-tl50-ultra-light-smart-taillight-ride-smart-ride-light",
+      "stockSource": "cycletime",
+      "name": "iGPSPORT TL50 Ultra-Light Smart Taillight Ride Smart Ride Light",
+      "brand": "iGPSPORT",
+      "description": "iGPSPORT TL50 Smart Bicycle Tail Light Smart Tail Light with Automatic Brake Detection The iGPSPORT TL50 features intelligent sensing that automatically activates the brake light when slowing down, enhancing rider safety with real-time visibility. 6 Lighting Modes for Versatile Use Equipped with 6 lighting modes, including steady, flashing, and automatic brake-light modes, the TL50 adapts to different riding conditions and preferences for optimal visibility. USB Rechargeable with Long-Lasting Battery Powered by a built-in rechargeable battery, the TL50 supports convenient USB charging, providing extended usage and easy recharging with a stand",
+      "price": 2900,
+      "mrp": "Rs 2,900",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/S5eacb39103ba425586cec4da1382ecebv_jpg_960x960q75_jpg.avif?v=1789630165",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/S5eacb39103ba425586cec4da1382ecebv_jpg_960x960q75_jpg.avif?v=1789630165",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/0f99bc95e836908eeed81aefea46193c.jpg?v=1789537878",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_10_4c17fb1f-a5fa-4c57-bc38-4b515049abd5.jpg?v=1789538181",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/S3477b8af7c49416987c9f8940a59d610M.avif?v=1789630313",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_c39f72af-a31b-48eb-92fc-69148ec246a6.jpg?v=1789538181",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_11_eaeee8da-4473-4530-b982-0e947469f25e.jpg?v=1789539885",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_d2a7334c-96a5-4158-8073-a09990afc3cd.jpg?v=1789538181",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/0fd2aca18590c634cfc9e4514ba6fe88.jpg?v=1789537891"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 50605570654401,
+          "title": "Default Title",
+          "available": true,
+          "price": 2900,
+          "compare_at_price": 0,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : iGPSPORT",
+        "Product Type : Bicycle Smart Lights",
+        "Powered by a built : in rechargeable battery, the TL50 supports convenient USB charging, providing extended usage and easy recharging with a standard USB cable.",
+        "Product Details : iGPSPORT TL50 Smart Bicycle Tail Light Smart Tail Light with Automatic Brake Detection The iGPSPORT TL50 features intelligent sensing that automatically activates the brake light when slowing down, enhancing rider safety with real-time visi",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/igpsport-tl50-ultra-light-smart-taillight-ride-smart-ride-light"
+      },
+      "keywords": "iGPSPORT TL50 Ultra-Light Smart Taillight Ride Smart Ride Light Bicycle Smart Lights CycleTimeIndia",
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
