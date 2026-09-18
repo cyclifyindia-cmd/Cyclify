@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T04:44:59.367Z",
+  "generatedAt": "2026-09-18T12:59:10.494Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -599,7 +599,7 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": true,
+        "36": false,
         "37": true,
         "38": true,
         "39": true,
@@ -609,7 +609,7 @@
         "43": true,
         "44": true,
         "45": false,
-        "46": true,
+        "46": false,
         "47": true,
         "48": true
       },
@@ -4641,7 +4641,7 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": true,
+        "36": false,
         "37": true,
         "38": true,
         "39": true,
@@ -4651,7 +4651,7 @@
         "43": true,
         "44": true,
         "45": false,
-        "46": true,
+        "46": false,
         "47": true,
         "48": true
       },

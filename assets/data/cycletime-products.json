@@ -7061,7 +7061,7 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": true,
+        "36": false,
         "37": true,
         "38": true,
         "39": true,
@@ -7071,7 +7071,7 @@
         "43": true,
         "44": true,
         "45": false,
-        "46": true,
+        "46": false,
         "47": true,
         "48": true
       },
@@ -7079,7 +7079,7 @@
         {
           "id": 50588281340097,
           "title": "36",
-          "available": true,
+          "available": false,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "36",
@@ -7179,7 +7179,7 @@
         {
           "id": 50588281667777,
           "title": "46",
-          "available": true,
+          "available": false,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "46",
@@ -7261,7 +7261,7 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": true,
+        "36": false,
         "37": true,
         "38": true,
         "39": true,
@@ -7271,7 +7271,7 @@
         "43": true,
         "44": true,
         "45": false,
-        "46": true,
+        "46": false,
         "47": true,
         "48": true
       },
@@ -7279,7 +7279,7 @@
         {
           "id": 49462579069121,
           "title": "36",
-          "available": true,
+          "available": false,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "36",
@@ -7379,7 +7379,7 @@
         {
           "id": 49462579396801,
           "title": "46",
-          "available": true,
+          "available": false,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "46",
@@ -10533,7 +10533,7 @@
       "brand": "iGPSPORT",
       "description": "iGPSPORT TL50 Smart Bicycle Tail Light Smart Tail Light with Automatic Brake Detection The iGPSPORT TL50 features intelligent sensing that automatically activates the brake light when slowing down, enhancing rider safety with real-time visibility. 6 Lighting Modes for Versatile Use Equipped with 6 lighting modes, including steady, flashing, and automatic brake-light modes, the TL50 adapts to different riding conditions and preferences for optimal visibility. USB Rechargeable with Long-Lasting Battery Powered by a built-in rechargeable battery, the TL50 supports convenient USB charging, providing extended usage and easy recharging with a stand",
       "price": 2900,
-      "mrp": "Rs 2,900",
+      "mrp": "Rs 3,285",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/S5eacb39103ba425586cec4da1382ecebv_jpg_960x960q75_jpg.avif?v=1789630165",
       "images": [
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/S5eacb39103ba425586cec4da1382ecebv_jpg_960x960q75_jpg.avif?v=1789630165",
@@ -10553,7 +10553,7 @@
           "title": "Default Title",
           "available": true,
           "price": 2900,
-          "compare_at_price": 0,
+          "compare_at_price": 3285,
           "option1": "Default Title",
           "option2": "",
           "option3": ""
