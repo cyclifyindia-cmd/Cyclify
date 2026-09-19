@@ -2172,7 +2172,7 @@
         "14T": true,
         "15T": true,
         "16T": true,
-        "17T": false
+        "17T": true
       },
       "variants": [
         {
@@ -2218,7 +2218,7 @@
         {
           "id": 49502470766785,
           "title": "17T",
-          "available": false,
+          "available": true,
           "price": 1798,
           "compare_at_price": 2158,
           "option1": "17T",
@@ -4884,7 +4884,7 @@
       "sizeAvailability": {
         "11-25T Cassette & Chain": false,
         "11-28T Cassette & Chain": false,
-        "11-34T Cassette & Chain": false
+        "11-34T Cassette & Chain": true
       },
       "variants": [
         {
@@ -4910,7 +4910,7 @@
         {
           "id": 49930408624321,
           "title": "11-34T Cassette & Chain",
-          "available": false,
+          "available": true,
           "price": 4499,
           "compare_at_price": 5399,
           "option1": "11-34T Cassette & Chain",
@@ -4918,7 +4918,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : Elsier",
         "Product Type : Bicycle Accessories",
@@ -7061,7 +7061,7 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": false,
+        "36": true,
         "37": true,
         "38": true,
         "39": true,
@@ -7070,8 +7070,8 @@
         "42": true,
         "43": true,
         "44": true,
-        "45": false,
-        "46": false,
+        "45": true,
+        "46": true,
         "47": true,
         "48": true
       },
@@ -7079,7 +7079,7 @@
         {
           "id": 50588281340097,
           "title": "36",
-          "available": false,
+          "available": true,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "36",
@@ -7169,7 +7169,7 @@
         {
           "id": 50588281635009,
           "title": "45",
-          "available": false,
+          "available": true,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "45",
@@ -7179,7 +7179,7 @@
         {
           "id": 50588281667777,
           "title": "46",
-          "available": false,
+          "available": true,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "46",
@@ -7261,7 +7261,7 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": false,
+        "36": true,
         "37": true,
         "38": true,
         "39": true,
@@ -7270,8 +7270,8 @@
         "42": true,
         "43": true,
         "44": true,
-        "45": false,
-        "46": false,
+        "45": true,
+        "46": true,
         "47": true,
         "48": true
       },
@@ -7279,7 +7279,7 @@
         {
           "id": 49462579069121,
           "title": "36",
-          "available": false,
+          "available": true,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "36",
@@ -7369,7 +7369,7 @@
         {
           "id": 49462579364033,
           "title": "45",
-          "available": false,
+          "available": true,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "45",
@@ -7379,7 +7379,7 @@
         {
           "id": 49462579396801,
           "title": "46",
-          "available": false,
+          "available": true,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "46",

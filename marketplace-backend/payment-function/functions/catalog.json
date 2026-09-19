@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T04:38:53.413Z",
+  "generatedAt": "2026-09-19T12:30:50.846Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -599,7 +599,7 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": false,
+        "36": true,
         "37": true,
         "38": true,
         "39": true,
@@ -608,8 +608,8 @@
         "42": true,
         "43": true,
         "44": true,
-        "45": false,
-        "46": false,
+        "45": true,
+        "46": true,
         "47": true,
         "48": true
       },
@@ -2877,7 +2877,7 @@
         "14T": true,
         "15T": true,
         "16T": true,
-        "17T": false
+        "17T": true
       },
       "sourcePage": "components.html"
     },
@@ -3329,7 +3329,7 @@
       "id": "10896193552577",
       "name": "ELSIER 11-Speed Cassette & Chain Combo",
       "price": 4499,
-      "available": false,
+      "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_a1e32454-1088-40c6-ba07-0252b0204add.jpg?v=1769259746",
       "sizes": [
         "11-25T Cassette & Chain",
@@ -3339,7 +3339,7 @@
       "sizeAvailability": {
         "11-25T Cassette & Chain": false,
         "11-28T Cassette & Chain": false,
-        "11-34T Cassette & Chain": false
+        "11-34T Cassette & Chain": true
       },
       "sourcePage": "components.html"
     },
@@ -4641,7 +4641,7 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": false,
+        "36": true,
         "37": true,
         "38": true,
         "39": true,
@@ -4650,8 +4650,8 @@
         "42": true,
         "43": true,
         "44": true,
-        "45": false,
-        "46": false,
+        "45": true,
+        "46": true,
         "47": true,
         "48": true
       },
