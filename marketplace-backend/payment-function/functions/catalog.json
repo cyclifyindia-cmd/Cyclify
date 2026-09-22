@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T04:57:51.702Z",
+  "generatedAt": "2026-09-22T13:25:53.462Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -606,7 +606,7 @@
         "40": true,
         "41": false,
         "42": false,
-        "43": true,
+        "43": false,
         "44": false,
         "45": true,
         "46": true,
@@ -3060,7 +3060,7 @@
     "10860841631937": {
       "id": "10860841631937",
       "name": "Aerodoc Mineral Green Cycling Skinsuit",
-      "price": 3500,
+      "price": 4000,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_b850668a-5434-4531-ba6d-15540f384990.jpg?v=1763721183",
       "sizes": [
@@ -3088,7 +3088,7 @@
     "10860852248769": {
       "id": "10860852248769",
       "name": "Aerodoc Grayish Men Cycling Skinsuit",
-      "price": 2800,
+      "price": 3200,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_fe83423c-cad5-4ef8-beff-fee07ed409de.jpg?v=1763725375",
       "sizes": [
@@ -4648,7 +4648,7 @@
         "40": true,
         "41": false,
         "42": false,
-        "43": true,
+        "43": false,
         "44": false,
         "45": true,
         "46": true,
