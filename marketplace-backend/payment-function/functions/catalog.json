@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T04:46:34.783Z",
+  "generatedAt": "2026-09-23T13:39:36.977Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -608,9 +608,9 @@
         "42": false,
         "43": false,
         "44": false,
-        "45": true,
-        "46": true,
-        "47": true,
+        "45": false,
+        "46": false,
+        "47": false,
         "48": true
       },
       "sourcePage": "wearables.html"
@@ -4650,9 +4650,9 @@
         "42": false,
         "43": false,
         "44": false,
-        "45": true,
-        "46": true,
-        "47": true,
+        "45": false,
+        "46": false,
+        "47": false,
         "48": true
       },
       "sourcePage": "wearables.html"
