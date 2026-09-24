@@ -4571,13 +4571,13 @@
         "Grey"
       ],
       "sizeAvailability": {
-        "Grey": true
+        "Grey": false
       },
       "variants": [
         {
           "id": 7382481,
           "title": "Grey",
-          "available": true,
+          "available": false,
           "price": 7200,
           "compare_at_price": 8000,
           "option1": "[object Object]",
@@ -4585,7 +4585,7 @@
           "option3": ""
         }
       ],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : XOSS",
         "Product Type : Bike Computer & Cover",
@@ -4652,13 +4652,13 @@
         "Silver"
       ],
       "sizeAvailability": {
-        "Silver": true
+        "Silver": false
       },
       "variants": [
         {
           "id": 7382484,
           "title": "Silver",
-          "available": true,
+          "available": false,
           "price": 8100,
           "compare_at_price": 9000,
           "option1": "[object Object]",
@@ -4666,7 +4666,7 @@
           "option3": ""
         }
       ],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : XOSS",
         "Product Type : Bike Computer & Cover",
