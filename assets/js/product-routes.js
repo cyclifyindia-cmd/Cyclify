@@ -241,6 +241,7 @@
   "10786279358657": "products/igpsports-vs1200-smart-front-bike-light-10786279358657.html",
   "10786266185921": "products/igpsport-vs500-smart-light-10786266185921.html",
   "10786293219521": "products/igpsport-vs800-smart-light-10786293219521.html",
+  "11094382510273": "products/ivmono-metallic-water-bottle-cage-11094382510273.html",
   "10800779460801": "products/izumi-bicycle-chain-track-silver-10800779460801.html",
   "10800437985473": "products/m9-and-m10-track-bicycle-wheel-nuts-10800437985473.html",
   "10975812288705": "products/magene-silicone-case-for-c406-computer-10975812288705.html",

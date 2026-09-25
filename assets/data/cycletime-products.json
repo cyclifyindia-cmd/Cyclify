@@ -6044,7 +6044,7 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": false,
         "43": false,
         "44": false,
@@ -6107,7 +6107,7 @@
         {
           "id": 50588281503937,
           "title": "41",
-          "available": true,
+          "available": false,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "41",
@@ -6244,7 +6244,7 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": false,
         "43": false,
         "44": false,
@@ -6307,7 +6307,7 @@
         {
           "id": 49462579232961,
           "title": "41",
-          "available": true,
+          "available": false,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "41",
@@ -9805,6 +9805,84 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
+      "subCategory": ""
+    },
+    {
+      "id": 11094382510273,
+      "supplierProductId": 11094382510273,
+      "supplierSynced": true,
+      "sourceHandle": "bicycle-ivmono-metallic-bike-bottle-cage",
+      "sourceUrl": "https://www.cycletimeindia.com/products/bicycle-ivmono-metallic-bike-bottle-cage",
+      "stockSource": "cycletime",
+      "name": "iVMONO Metallic Water Bottle Cage",
+      "brand": "CycleTimeIndia",
+      "description": "iVMONO Water Bottle Cage Metallic The iVMONO Water Bottle Cage Metallic is designed to securely hold your cycling water bottle while providing a sleek and durable look. Its lightweight metallic construction makes it ideal for road bikes, MTB, and everyday cycling. Key Features: Durable metallic construction Lightweight and bike-friendly design Secure bottle holding Easy to install on standard bottle cage mounts Suitable for road bikes, MTB and hybrid bicycles Sleek metallic finish Ideal for daily rides, training and long-distance cycling Package Includes:1 × iVMONO Metallic Water Bottle Cage",
+      "price": 809,
+      "mrp": "Rs 1,000",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-25at4.37.38PM.jpg?v=1790334492",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-25at4.37.38PM.jpg?v=1790334492"
+      ],
+      "sizes": [
+        "Red",
+        "Yellow",
+        "Blue"
+      ],
+      "sizeAvailability": {
+        "Red": true,
+        "Yellow": true,
+        "Blue": true
+      },
+      "variants": [
+        {
+          "id": 50649046122689,
+          "title": "Red",
+          "available": true,
+          "price": 809,
+          "compare_at_price": 1000,
+          "option1": "Red",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50649046155457,
+          "title": "Yellow",
+          "available": true,
+          "price": 809,
+          "compare_at_price": 1000,
+          "option1": "Yellow",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50649046188225,
+          "title": "Blue",
+          "available": true,
+          "price": 809,
+          "compare_at_price": 1000,
+          "option1": "Blue",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : CycleTimeIndia",
+        "Product Type : Bicycle Accessories",
+        "Lightweight and bike : friendly design",
+        "Ideal for daily rides, training and long : distance cycling",
+        "Package Includes : 1 × iVMONO Metallic Water Bottle Cage",
+        "Color Options : Red, Yellow, Blue",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/bicycle-ivmono-metallic-bike-bottle-cage"
+      },
+      "keywords": "iVMONO Metallic Water Bottle Cage Bicycle Accessories CycleTimeIndia",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "bottle-cages",
       "subCategory": ""
     },
     {

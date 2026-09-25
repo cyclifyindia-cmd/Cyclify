@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T04:58:51.337Z",
+  "generatedAt": "2026-09-25T13:48:55.791Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -178,7 +178,7 @@
     "14": {
       "id": "14",
       "name": "Bicycle Computer Mount Holder Cyclami S2",
-      "price": 949,
+      "price": 999,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/al0S3zK0.webp",
       "sizes": [],
@@ -604,7 +604,7 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": false,
         "43": false,
         "44": false,
@@ -1691,7 +1691,7 @@
       "id": "815167776",
       "name": "MCYCLE Aerosocks",
       "price": 1099,
-      "available": true,
+      "available": false,
       "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe57ebb486064bf6b6f1c",
       "sizes": [],
       "sizeAvailability": {},
@@ -4130,7 +4130,7 @@
         "38": true,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": false,
         "43": false,
         "44": false,
@@ -4160,6 +4160,24 @@
       "sizes": [],
       "sizeAvailability": {},
       "sourcePage": "electronics.html"
+    },
+    "11094382510273": {
+      "id": "11094382510273",
+      "name": "iVMONO Metallic Water Bottle Cage",
+      "price": 809,
+      "available": true,
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-25at4.37.38PM.jpg?v=1790334492",
+      "sizes": [
+        "Red",
+        "Yellow",
+        "Blue"
+      ],
+      "sizeAvailability": {
+        "Red": true,
+        "Yellow": true,
+        "Blue": true
+      },
+      "sourcePage": "accessories.html"
     }
   }
 }
