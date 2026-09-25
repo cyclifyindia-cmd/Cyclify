@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T13:48:55.791Z",
+  "generatedAt": "2026-09-25T20:02:24.919Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -1847,7 +1847,7 @@
       "id": "834971880",
       "name": "Mcycle Custom PU Neoprene Cycling Overshoes",
       "price": 1749,
-      "available": true,
+      "available": false,
       "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a6c2f6b0218e54e7435f549",
       "sizes": [],
       "sizeAvailability": {},
