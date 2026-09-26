@@ -6041,7 +6041,7 @@
       "sizeAvailability": {
         "36": true,
         "37": true,
-        "38": true,
+        "38": false,
         "39": true,
         "40": true,
         "41": false,
@@ -6077,7 +6077,7 @@
         {
           "id": 50588281405633,
           "title": "38",
-          "available": true,
+          "available": false,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "38",
@@ -6240,7 +6240,7 @@
       "sizeAvailability": {
         "36": true,
         "37": true,
-        "38": true,
+        "38": false,
         "39": true,
         "40": true,
         "41": false,
@@ -6276,7 +6276,7 @@
         {
           "id": 49462579134657,
           "title": "38",
-          "available": true,
+          "available": false,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "38",
