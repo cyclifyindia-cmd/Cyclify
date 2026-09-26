@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T23:19:08.386Z",
+  "generatedAt": "2026-09-26T04:59:29.528Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -4169,13 +4169,17 @@
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-25at4.37.38PM.jpg?v=1790334492",
       "sizes": [
         "Red",
+        "Black",
         "Yellow",
-        "Blue"
+        "Blue",
+        "Green"
       ],
       "sizeAvailability": {
         "Red": true,
+        "Black": true,
         "Yellow": true,
-        "Blue": true
+        "Blue": true,
+        "Green": true
       },
       "sourcePage": "accessories.html"
     }

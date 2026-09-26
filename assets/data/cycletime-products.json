@@ -9825,13 +9825,17 @@
       ],
       "sizes": [
         "Red",
+        "Black",
         "Yellow",
-        "Blue"
+        "Blue",
+        "Green"
       ],
       "sizeAvailability": {
         "Red": true,
+        "Black": true,
         "Yellow": true,
-        "Blue": true
+        "Blue": true,
+        "Green": true
       },
       "variants": [
         {
@@ -9841,6 +9845,16 @@
           "price": 809,
           "compare_at_price": 1000,
           "option1": "Red",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50651274576065,
+          "title": "Black",
+          "available": true,
+          "price": 809,
+          "compare_at_price": 1000,
+          "option1": "Black",
           "option2": "",
           "option3": ""
         },
@@ -9863,6 +9877,16 @@
           "option1": "Blue",
           "option2": "",
           "option3": ""
+        },
+        {
+          "id": 50651274608833,
+          "title": "Green",
+          "available": true,
+          "price": 809,
+          "compare_at_price": 1000,
+          "option1": "Green",
+          "option2": "",
+          "option3": ""
         }
       ],
       "available": true,
@@ -9872,7 +9896,7 @@
         "Lightweight and bike : friendly design",
         "Ideal for daily rides, training and long : distance cycling",
         "Package Includes : 1 × iVMONO Metallic Water Bottle Cage",
-        "Color Options : Red, Yellow, Blue",
+        "Color Options : Red, Black, Yellow, Blue, Green",
         "Shipping : Free shipping across India"
       ],
       "specSource": {
