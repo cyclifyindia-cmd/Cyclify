@@ -6216,12 +6216,11 @@
       "description": "Engineered for Power. Designed for Precision. Every watt you generate deserves to go straight into the pedals — not get lost in flex, heat, or poor fit. The Elsier ProFit Cycling Shoes are built to deliver a locked-in racing fit, all-day comfort, and uncompromising power transfer for riders who demand professional-level performance without paying European brand prices. Dual-Dial Precision Fit System The advanced dual rotary dial closure allows micro-adjustments across both the forefoot and instep. This gives you: Even pressure distribution Zero hot-spots A custom race-tight fit in seconds Whether you’re sprinting, climbing, or riding 200 km, ",
       "price": 5799,
       "mrp": "Rs 6,600",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e0a7528f-b25a-4b81-b7e7-5102541dd737.jpg?v=1754918672",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-26at12.37.48PM.jpg?v=1790406619",
       "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e0a7528f-b25a-4b81-b7e7-5102541dd737.jpg?v=1754918672",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_6e55a6de-2576-4671-b0a3-9b8d12c55a3d.jpg?v=1754478650",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_5b8a9359-4554-4df6-a2c5-1a59c71e2728.jpg?v=1754478650",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_6fdcc459-c288-4245-8716-845d1eb93b27.jpg?v=1754478650"
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-26at12.37.48PM.jpg?v=1790406619",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-26at12.37.49PM_1.jpg?v=1790406619",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-26at12.37.49PM.jpg?v=1790406619"
       ],
       "sizes": [
         "36",
@@ -8572,7 +8571,7 @@
       "sourceHandle": "igpsports-bsc300t",
       "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-bsc300t",
       "stockSource": "cycletime",
-      "name": "iGPSPORT BSC300T Cyclocomputer",
+      "name": "iGPSPORT BSC300T(32GB) Cyclocomputer",
       "brand": "iGPSPORT",
       "description": "Elevate your cycling experience with the all-new iGPSPORT BSC300T, a powerful and intuitive GPS bike computer designed for every type of cyclist. From casual riders to dedicated trainers, the BSC300T delivers professional-grade data, seamless navigation, and a vibrant touchscreen interface in a sleek, lightweight package. Key Features: . Vibrant 2.4\" Color Touchscreen: Navigate through menus, maps, and data with a simple tap. The transflective, anti-glare screen offers exceptional clarity and readability, even in direct sunlight or rainy conditions. Precision GPS Navigation: Never get lost again. With support for five major satellite systems ",
       "price": 13800,
@@ -8602,7 +8601,7 @@
         {
           "id": 49449125380289,
           "title": "Default Title",
-          "available": false,
+          "available": true,
           "price": 13800,
           "compare_at_price": 17973,
           "option1": "Default Title",
@@ -8610,7 +8609,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : GPS Computer",
@@ -8623,7 +8622,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/igpsports-bsc300t"
       },
-      "keywords": "iGPSPORT BSC300T Cyclocomputer GPS Computer CycleTimeIndia",
+      "keywords": "iGPSPORT BSC300T(32GB) Cyclocomputer GPS Computer CycleTimeIndia",
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
@@ -9817,7 +9816,7 @@
       "name": "iVMONO Metallic Water Bottle Cage",
       "brand": "CycleTimeIndia",
       "description": "iVMONO Water Bottle Cage Metallic The iVMONO Water Bottle Cage Metallic is designed to securely hold your cycling water bottle while providing a sleek and durable look. Its lightweight metallic construction makes it ideal for road bikes, MTB, and everyday cycling. Key Features: Durable metallic construction Lightweight and bike-friendly design Secure bottle holding Easy to install on standard bottle cage mounts Suitable for road bikes, MTB and hybrid bicycles Sleek metallic finish Ideal for daily rides, training and long-distance cycling Package Includes:1 × iVMONO Metallic Water Bottle Cage",
-      "price": 809,
+      "price": 790,
       "mrp": "Rs 1,000",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-25at4.37.38PM.jpg?v=1790334492",
       "images": [
@@ -9842,7 +9841,7 @@
           "id": 50649046122689,
           "title": "Red",
           "available": true,
-          "price": 809,
+          "price": 790,
           "compare_at_price": 1000,
           "option1": "Red",
           "option2": "",
@@ -9852,7 +9851,7 @@
           "id": 50651274576065,
           "title": "Black",
           "available": true,
-          "price": 809,
+          "price": 790,
           "compare_at_price": 1000,
           "option1": "Black",
           "option2": "",
@@ -9862,7 +9861,7 @@
           "id": 50649046155457,
           "title": "Yellow",
           "available": true,
-          "price": 809,
+          "price": 790,
           "compare_at_price": 1000,
           "option1": "Yellow",
           "option2": "",
@@ -9872,7 +9871,7 @@
           "id": 50649046188225,
           "title": "Blue",
           "available": true,
-          "price": 809,
+          "price": 790,
           "compare_at_price": 1000,
           "option1": "Blue",
           "option2": "",
@@ -9882,7 +9881,7 @@
           "id": 50651274608833,
           "title": "Green",
           "available": true,
-          "price": 809,
+          "price": 790,
           "compare_at_price": 1000,
           "option1": "Green",
           "option2": "",

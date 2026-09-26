@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T04:59:29.528Z",
+  "generatedAt": "2026-09-26T13:06:55.908Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -409,7 +409,7 @@
     },
     "33": {
       "id": "33",
-      "name": "Cyclami 2200 Lumen LED Bicycle Light high brightness Multi Function",
+      "name": "Cyclami 2200 Lumen LED Bicycle Light High Brightness Multi Function",
       "price": 4750,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/X89UbemI.webp",
@@ -539,9 +539,9 @@
     },
     "44": {
       "id": "44",
-      "name": "iGPSPORT BSC300T Cyclocomputer",
+      "name": "iGPSPORT BSC300T(32GB) Cyclocomputer",
       "price": 13800,
-      "available": false,
+      "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",
       "sizes": [],
       "sizeAvailability": {},
@@ -582,7 +582,7 @@
       "name": "Elsier Road Cycling Shoes",
       "price": 5799,
       "available": true,
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e0a7528f-b25a-4b81-b7e7-5102541dd737.jpg?v=1754918672",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-26at12.37.48PM.jpg?v=1790406619",
       "sizes": [
         "36",
         "37",
@@ -4164,7 +4164,7 @@
     "11094382510273": {
       "id": "11094382510273",
       "name": "iVMONO Metallic Water Bottle Cage",
-      "price": 809,
+      "price": 790,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsAppImage2026-09-25at4.37.38PM.jpg?v=1790334492",
       "sizes": [
