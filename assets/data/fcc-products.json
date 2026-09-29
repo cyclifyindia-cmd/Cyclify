@@ -2878,7 +2878,7 @@
       "name": "Ralson ECORACER Bicycle Tube 700x23-28C | Presta Valve 48mm, 60mm, 80mm",
       "brand": "Ecoracer",
       "description": "Ralson ECORACER Bicycle Tube 700x23-28C is designed for cyclists who need reliability, durability, and consistent performance across a wide range of riding conditions. Made from premium butyl rubber, this inner tube offers excellent air retention, helping maintain stable pressure for longer rides while reducing the need for frequent inflation. Its strong and flexible construction enhances puncture resistance, making it suitable for both daily commuting and long-distance cycling. Equipped with a high-quality Presta valve available in 48mm, 60mm, and 80mm options, it ensures compatibility with different rim depths, providing easy inflation and a secure, leak-free fit. The wide size compatibility of 700x23C to 700x28C makes it a versatile choice for road, hybrid, and gravel bikes. Whether you are riding on smooth roads or mixed terrains, the ECORACER tube delivers dependable performance, im",
-      "price": 550,
+      "price": 510,
       "mrp": "Rs 600",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/RNWoAfMQ.webp",
       "images": [
@@ -2900,21 +2900,21 @@
       ],
       "sizeAvailability": {
         "23 | 48MM": true,
-        "23 | 60MM": false,
-        "23 | 80MM": false,
+        "23 | 60MM": true,
+        "23 | 80MM": true,
         "25 | 48MM": true,
-        "25 | 60MM": false,
-        "25 | 80MM": false,
+        "25 | 60MM": true,
+        "25 | 80MM": true,
         "28 | 48MM": true,
-        "28 | 60MM": false,
-        "28 | 80MM": false
+        "28 | 60MM": true,
+        "28 | 80MM": true
       },
       "variants": [
         {
           "id": 7289588,
           "title": "23 | 48MM",
           "available": true,
-          "price": 550,
+          "price": 510,
           "compare_at_price": 600,
           "option1": "[object Object]",
           "option2": "[object Object]",
@@ -2923,9 +2923,9 @@
         {
           "id": 7289589,
           "title": "23 | 60MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 585,
+          "compare_at_price": 685,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -2933,9 +2933,9 @@
         {
           "id": 7289590,
           "title": "23 | 80MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 645,
+          "compare_at_price": 755,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -2944,7 +2944,7 @@
           "id": 7289591,
           "title": "25 | 48MM",
           "available": true,
-          "price": 550,
+          "price": 510,
           "compare_at_price": 600,
           "option1": "[object Object]",
           "option2": "[object Object]",
@@ -2953,9 +2953,9 @@
         {
           "id": 7289592,
           "title": "25 | 60MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 585,
+          "compare_at_price": 685,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -2963,9 +2963,9 @@
         {
           "id": 7289593,
           "title": "25 | 80MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 645,
+          "compare_at_price": 755,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -2974,7 +2974,7 @@
           "id": 7289594,
           "title": "28 | 48MM",
           "available": true,
-          "price": 550,
+          "price": 510,
           "compare_at_price": 600,
           "option1": "[object Object]",
           "option2": "[object Object]",
@@ -2983,9 +2983,9 @@
         {
           "id": 7289595,
           "title": "28 | 60MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 585,
+          "compare_at_price": 685,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -2993,9 +2993,9 @@
         {
           "id": 7289596,
           "title": "28 | 80MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 645,
+          "compare_at_price": 755,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -3092,7 +3092,7 @@
       "name": "Ralson Ecoracer Lite Pro Foldable Tubeless Ready Training Tyre",
       "brand": "Ecoracer",
       "description": "Ralson Ecoracer Lite Pro Foldable Tubeless Ready Training Tyre, engineered for cyclists who demand uncompromising performance, durability, and control. Designed with AU Glide technology, this tyre minimizes rolling resistance while maximizing traction, ensuring a smooth, efficient, and high-speed ride on every terrain. Constructed with a 60 TPI high-strength nylon casing, it provides exceptional puncture protection without sacrificing flexibility or weight. The tubeless-ready design further enhances ride comfort, reduces the risk of flats, and improves overall grip for consistent performance even under demanding conditions. Optimized in 700x25C & 700x28C size, the Ecoracer Lite Pro delivers the perfect balance between aerodynamic efficiency and road stability. Whether on long training sessions or competitive rides, it ensures effortless rolling, precise cornering, and superior control at",
-      "price": 2700,
+      "price": 2550,
       "mrp": "Rs 3,000",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/7V66ELN9.webp",
       "images": [
@@ -3114,7 +3114,7 @@
           "id": 7289552,
           "title": "700*25C",
           "available": true,
-          "price": 2700,
+          "price": 2550,
           "compare_at_price": 3000,
           "option1": "[object Object]",
           "option2": "",
@@ -3124,7 +3124,7 @@
           "id": 7289553,
           "title": "700*28C",
           "available": true,
-          "price": 2900,
+          "price": 2720,
           "compare_at_price": 3200,
           "option1": "[object Object]",
           "option2": "",

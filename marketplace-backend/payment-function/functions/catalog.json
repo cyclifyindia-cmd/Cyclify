@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T10:42:18.083Z",
+  "generatedAt": "2026-09-29T18:05:55.017Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -1324,7 +1324,7 @@
     "233091780": {
       "id": "233091780",
       "name": "Ralson Ecoracer Lite Pro Foldable Tubeless Ready Training Tyre",
-      "price": 2700,
+      "price": 2550,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/7V66ELN9.webp",
       "sizes": [
@@ -1340,7 +1340,7 @@
     "233091828": {
       "id": "233091828",
       "name": "Ralson ECORACER Bicycle Tube 700x23-28C | Presta Valve 48mm, 60mm, 80mm",
-      "price": 550,
+      "price": 510,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/RNWoAfMQ.webp",
       "sizes": [
@@ -1356,14 +1356,14 @@
       ],
       "sizeAvailability": {
         "23 | 48MM": true,
-        "23 | 60MM": false,
-        "23 | 80MM": false,
+        "23 | 60MM": true,
+        "23 | 80MM": true,
         "25 | 48MM": true,
-        "25 | 60MM": false,
-        "25 | 80MM": false,
+        "25 | 60MM": true,
+        "25 | 80MM": true,
         "28 | 48MM": true,
-        "28 | 60MM": false,
-        "28 | 80MM": false
+        "28 | 60MM": true,
+        "28 | 80MM": true
       },
       "sourcePage": "wheels-tyres.html"
     },
