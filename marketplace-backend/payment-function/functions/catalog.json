@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T00:23:27.411Z",
+  "generatedAt": "2026-09-29T10:42:18.083Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -599,12 +599,12 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": true,
-        "37": true,
+        "36": false,
+        "37": false,
         "38": false,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": false,
         "43": false,
         "44": false,
@@ -1308,7 +1308,7 @@
     "233091760": {
       "id": "233091760",
       "name": "Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre Foldable For Bicycle",
-      "price": 2200,
+      "price": 2040,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/HYHyRXJy.webp",
       "sizes": [
@@ -1436,7 +1436,7 @@
     "233109414": {
       "id": "233109414",
       "name": "ECORACER Bicycle Tube 700x32-45C | Presta Valve Premium Butyl Rubber Inner Tube for Bicycle (Pack of 1) For Bicycle",
-      "price": 499,
+      "price": 575,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/t3MTXJBz.webp",
       "sizes": [
@@ -1472,7 +1472,7 @@
     "233109418": {
       "id": "233109418",
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32 C",
-      "price": 2700,
+      "price": 2295,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
       "sizes": [
@@ -1486,7 +1486,7 @@
     "233144605": {
       "id": "233144605",
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle",
-      "price": 2900,
+      "price": 2465,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/jjRzQsIy.webp",
       "sizes": [
@@ -1614,7 +1614,7 @@
     "233156553": {
       "id": "233156553",
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700 * 35C) Tyre for Bicycle",
-      "price": 2800,
+      "price": 2380,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/Nw1gNKPf.webp",
       "sizes": [],
@@ -4125,12 +4125,12 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": true,
-        "37": true,
+        "36": false,
+        "37": false,
         "38": false,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": false,
         "43": false,
         "44": false,

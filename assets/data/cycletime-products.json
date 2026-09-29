@@ -6039,12 +6039,12 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": true,
-        "37": true,
+        "36": false,
+        "37": false,
         "38": false,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": false,
         "43": false,
         "44": false,
@@ -6057,7 +6057,7 @@
         {
           "id": 50588281340097,
           "title": "36",
-          "available": true,
+          "available": false,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "36",
@@ -6067,7 +6067,7 @@
         {
           "id": 50588281372865,
           "title": "37",
-          "available": true,
+          "available": false,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "37",
@@ -6107,7 +6107,7 @@
         {
           "id": 50588281503937,
           "title": "41",
-          "available": true,
+          "available": false,
           "price": 9999,
           "compare_at_price": 0,
           "option1": "41",
@@ -6238,12 +6238,12 @@
         "48"
       ],
       "sizeAvailability": {
-        "36": true,
-        "37": true,
+        "36": false,
+        "37": false,
         "38": false,
         "39": true,
         "40": true,
-        "41": true,
+        "41": false,
         "42": false,
         "43": false,
         "44": false,
@@ -6256,7 +6256,7 @@
         {
           "id": 49462579069121,
           "title": "36",
-          "available": true,
+          "available": false,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "36",
@@ -6266,7 +6266,7 @@
         {
           "id": 49462579101889,
           "title": "37",
-          "available": true,
+          "available": false,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "37",
@@ -6306,7 +6306,7 @@
         {
           "id": 49462579232961,
           "title": "41",
-          "available": true,
+          "available": false,
           "price": 5799,
           "compare_at_price": 6600,
           "option1": "41",
