@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T15:28:21.341Z",
+  "generatedAt": "2026-10-01T21:02:36.528Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -953,13 +953,13 @@
       "id": "230708292",
       "name": "Toseek Ultralight weight Full Carbon Saddle",
       "price": 4500,
-      "available": true,
+      "available": false,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/JMAB59lL.webp",
       "sizes": [
         "Black"
       ],
       "sizeAvailability": {
-        "Black": true
+        "Black": false
       },
       "sourcePage": "components.html"
     },

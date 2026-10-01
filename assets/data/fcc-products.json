@@ -4181,13 +4181,13 @@
         "Black"
       ],
       "sizeAvailability": {
-        "Black": true
+        "Black": false
       },
       "variants": [
         {
           "id": 5170346,
           "title": "Black",
-          "available": true,
+          "available": false,
           "price": 4500,
           "compare_at_price": 6000,
           "option1": "[object Object]",
@@ -4195,7 +4195,7 @@
           "option3": ""
         }
       ],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : TOSEEK",
         "Product Type : Saddles",
