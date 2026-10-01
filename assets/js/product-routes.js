@@ -173,6 +173,7 @@
   "10918629605569": "products/continental-ultra-sport-iii-tire-700x25c-oem-without-box-10918629605569.html",
   "10859329388737": "products/cycling-onepiece-10859329388737.html",
   "10859404132545": "products/cycling-skinsuit-10859404132545.html",
+  "11098033029313": "products/elite-justo-2-direct-drive-smart-trainer-11098033029313.html",
   "10994532548801": "products/elite-turno-home-trainer-10994532548801.html",
   "10896193552577": "products/elsier-11-speed-cassette-and-chain-combo-10896193552577.html",
   "10960488431809": "products/elsier-29-1-75-2-40-mtb-hybrid-bike-butyl-inner-tube-10960488431809.html",

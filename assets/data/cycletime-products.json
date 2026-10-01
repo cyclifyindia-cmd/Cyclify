@@ -3781,6 +3781,75 @@
       "subCategory": ""
     },
     {
+      "id": 11098033029313,
+      "supplierProductId": 11098033029313,
+      "supplierSynced": true,
+      "sourceHandle": "elite-justo-2-direct-drive-smart-trainer",
+      "sourceUrl": "https://www.cycletimeindia.com/products/elite-justo-2-direct-drive-smart-trainer",
+      "stockSource": "cycletime",
+      "name": "Elite Justo 2 Direct Drive Smart Trainer",
+      "brand": "Elite",
+      "description": "The Elite Justo 2 Magnetic Direct Drive Smart Trainer is built for riders who want a premium indoor trainer with pro-level performance. As Elite’s flagship smart trainer, it is designed for serious training, racing preparation and highly accurate indoor cycling sessions. Accurate and Ready to Ride: With accuracy within <1%, Justo 2 gives riders reliable data for structured workouts and performance tracking. The included cassette makes setup easier, while automatic calibration keeps performance consistent over time without needing manual action. Realistic Climbing Resistance: The trainer can simulate gradients up to 24%, making it suitable for",
+      "price": 124990,
+      "mrp": "Rs 1,30,000",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_54502ee7-0469-4b9d-b307-5fd2223da748.jpg?v=1790847735",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_54502ee7-0469-4b9d-b307-5fd2223da748.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7_9ad207b0-9fb5-4608-a99e-e18df92e7d8c.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_4db8d9f8-a5c7-4032-882d-df38cc0121b2.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_c00bbd6e-e661-4d53-81f1-c6461d0f8ece.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_10_153fe573-5cc6-41e2-8d2e-9c632668ba6e.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_11_4b184a4e-c373-41c8-b34c-9388ae48a3eb.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_12_9747b611-397b-4115-9f5f-fe5012c29104.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_13_fa6bf50c-d483-4745-8e49-a130258b2454.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_14_2287dc53-7af0-48c7-a24c-0fd14aa95f2c.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_15_88c82c61-f93d-4b0f-b3ee-a4e24badc9bb.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_16_85d7ba46-0ce0-4a2c-b7dc-0e0169a90f68.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_17_0b4c6805-b013-452d-813e-5cc98e259a43.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_18_247e51dd-7b3e-450a-a88a-dab807838866.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_19_b64b65e6-3c5f-493d-91eb-e8422168b57e.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_20_fe252144-6c49-44cf-b449-6dc006403e37.jpg?v=1790847735",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_21_767df731-3d4d-478e-abbc-c57bbed173b3.jpg?v=1790847735"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 50670983741633,
+          "title": "Default Title",
+          "available": true,
+          "price": 124990,
+          "compare_at_price": 130000,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : Elite",
+        "Accurate and Ready to Ride : With accuracy within <1%, Justo 2 gives riders reliable data for structured workouts and performance tracking. The included cassette makes setup easier, while automatic calibration keeps performance consistent over time without needing manual action.",
+        "Realistic Climbing Resistance : The trainer can simulate gradients up to 24%, making it suitable for demanding climb workouts and virtual riding. It also offers stand-alone training modes, allowing you to preset gradients or resistance levels even without app connection or power.",
+        "✓ Ready From First Ride : Pre-installed 12-speed road cassette makes setup quicker and helps riders start training immediately.",
+        "✓ Wi : Fi Training Link: Built-in Wi-Fi improves app connectivity and supports automatic firmware update checks.",
+        "✓ Dual Bluetooth Pairing : Connects two Bluetooth devices at once, such as a bike computer and training app.",
+        "✓ Bridge Sensor Support : Sends heart rate or cadence sensor data through the trainer in a single app connection.",
+        "✓ Flex Feet Included : Two Flex Feet models help replicate natural bike movement and adapt to pedalling style.",
+        "✓ Di2 Standalone Control : Compatible Shimano Di2 shifters can manage resistance or pause braking during supported use.",
+        "✓ Race Mode Ready : Designed for responsive indoor racing and high-level esports-style training sessions.",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/elite-justo-2-direct-drive-smart-trainer"
+      },
+      "keywords": "Elite Justo 2 Direct Drive Smart Trainer CycleTimeIndia",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "smart-trainer",
+      "subCategory": ""
+    },
+    {
       "id": 10994532548801,
       "supplierProductId": 10994532548801,
       "supplierSynced": true,
@@ -12160,7 +12229,7 @@
         "70mm 17° Degree": false,
         "80mm 17° Degree": false,
         "100mm 17° Degree": false,
-        "110mm 17° Degree": true
+        "110mm 17° Degree": false
       },
       "variants": [
         {
@@ -12196,7 +12265,7 @@
         {
           "id": 49887321522369,
           "title": "110mm 17° Degree",
-          "available": true,
+          "available": false,
           "price": 1499,
           "compare_at_price": 1999,
           "option1": "110mm 17° Degree",
@@ -12204,7 +12273,7 @@
           "option3": ""
         }
       ],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : UNO",
         "Product Type : Bicycle Accessories",

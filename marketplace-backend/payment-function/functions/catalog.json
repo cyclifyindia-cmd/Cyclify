@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T05:55:48.996Z",
+  "generatedAt": "2026-10-01T15:28:21.341Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -3263,7 +3263,7 @@
       "id": "10882444034241",
       "name": "UNO 17° Bicycle Stem",
       "price": 1499,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_885ae31e-c8bf-4ac3-b66e-68f6d6f016ed.jpg?v=1767685867",
       "sizes": [
         "70mm 17° Degree",
@@ -3275,7 +3275,7 @@
         "70mm 17° Degree": false,
         "80mm 17° Degree": false,
         "100mm 17° Degree": false,
-        "110mm 17° Degree": true
+        "110mm 17° Degree": false
       },
       "sourcePage": "components.html"
     },
@@ -4182,6 +4182,16 @@
         "Green": true
       },
       "sourcePage": "accessories.html"
+    },
+    "11098033029313": {
+      "id": "11098033029313",
+      "name": "Elite Justo 2 Direct Drive Smart Trainer",
+      "price": 124990,
+      "available": true,
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_54502ee7-0469-4b9d-b307-5fd2223da748.jpg?v=1790847735",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html"
     }
   }
 }
