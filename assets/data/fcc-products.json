@@ -144,7 +144,7 @@
       "sizes": [],
       "sizeAvailability": {},
       "variants": [],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : Cyclami",
         "Product Type : Bike Computer Mount",
@@ -663,7 +663,7 @@
       "name": "Cyclami BR2000 Rainproof Bicycle Light 2000Lm",
       "brand": "Cyclami",
       "description": "The Cyclami BR2000 Rainproof Bicycle Light 2000Lm is a powerful and versatile front cycling light designed for riders who need strong illumination, long battery life, and dependable performance in changing weather conditions. With a maximum output of 2000 lumens, this rechargeable bicycle headlight is ideal for night cycling, urban commuting, mountain biking, road riding, and outdoor adventures where clear visibility is essential. Equipped with high-performance LED technology, the Cyclami BR2000 bike light produces a bright and effective beam that helps illuminate dark roads, trails, and low-light environments. The powerful 2000-lumen output provides excellent forward visibility, making it easier to identify road surfaces, obstacles, turns, and changing terrain during evening and early-morning rides. A built-in 4500mAh lithium battery provides reliable power for both short daily commutes",
-      "price": 4300,
+      "price": 3499,
       "mrp": "Rs 7,999",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/eSNNFA6Y.webp",
       "images": [
@@ -683,7 +683,7 @@
           "id": 7386706,
           "title": "2000",
           "available": true,
-          "price": 4300,
+          "price": 3499,
           "compare_at_price": 7999,
           "option1": "[object Object]",
           "option2": "",
@@ -746,7 +746,7 @@
       "sizes": [],
       "sizeAvailability": {},
       "variants": [],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : Cyclami",
         "Product Type : Bike Computer & Cover",
@@ -1431,7 +1431,7 @@
       "name": "Cyclami Ultra-Light 30g TPU Bicycle Tube 700x18-32C",
       "brand": "Cyclami",
       "description": "CYCLAMI TPU Inner Tube – Ultra-light, durable, and compact, designed for road bicycles. Compatible with 700C tires (18–32C), featuring aluminum alloy valves in FV 45mm, 65mm, or 85mm lengths. Weighing just ~30g, it combines toughness with minimal weight for fast, efficient rides.",
-      "price": 999,
+      "price": 740,
       "mrp": "Rs 1,500",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/FXO9ePdG.webp",
       "images": [
@@ -1455,7 +1455,7 @@
           "id": 7039387,
           "title": "45mm",
           "available": true,
-          "price": 999,
+          "price": 740,
           "compare_at_price": 1500,
           "option1": "[object Object]",
           "option2": "",
@@ -1465,7 +1465,7 @@
           "id": 7039388,
           "title": "65mm",
           "available": true,
-          "price": 999,
+          "price": 740,
           "compare_at_price": 1500,
           "option1": "[object Object]",
           "option2": "",
@@ -1475,7 +1475,7 @@
           "id": 7039389,
           "title": "85mm",
           "available": true,
-          "price": 999,
+          "price": 740,
           "compare_at_price": 1500,
           "option1": "[object Object]",
           "option2": "",
@@ -3480,7 +3480,7 @@
       "name": "Toseek 3k Carbon Woave Pu Leather Black Road Handelbar Tape",
       "brand": "TOSEEK",
       "description": "Specifications: Material: PU+EVA Color: black Item size: 2150 * 30 * 2.6mm Item weight: (single) 35g*2pcs Package size: 240 * 110 * 40mm Packing weight: 120g Packing List:Handlear Tape*2+Vinly*2+Bar Plug*2",
-      "price": 1399,
+      "price": 1349,
       "mrp": "Rs 2,800",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/GfDVklEP.webp",
       "images": [
@@ -3500,7 +3500,7 @@
           "id": 6372534,
           "title": "Black",
           "available": true,
-          "price": 1399,
+          "price": 1349,
           "compare_at_price": 2800,
           "option1": "[object Object]",
           "option2": "",
@@ -3555,7 +3555,7 @@
       "sizes": [],
       "sizeAvailability": {},
       "variants": [],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : TOSEEK",
         "Product Type : Cleats and pedals",
@@ -4168,7 +4168,7 @@
       "name": "Toseek Ultralight weight Full Carbon Saddle",
       "brand": "TOSEEK",
       "description": "Technical Specifications of TOSEEK Full Carbon Saddle Brand:- TOSEEK Model:- Full Carbon Saddle Material:- Full Carbon Weight:- 103G ± 10G Seat Rail:- 7x9mm Carbon Rails Clamp Torque:- 6N.m Color Options:- Black, Grey --- The TOSEEK Full Carbon Saddle is meticulously crafted to meet the needs of serious cyclists who demand performance and comfort. Made entirely from high-quality carbon fiber, this saddle is designed to provide exceptional strength while maintaining an ultra-lightweight profile, making it an ideal choice for competitive racing and long-distance rides. Weight and Design Weighing in at just 103 grams (± 10 grams), this saddle stands out as one of the lightest options available on the market. The featherlight design allows cyclists to reduce overall bike weight, enhancing speed and agility on the road or trail. This is especially beneficial for racers and performance-oriente",
-      "price": 4500,
+      "price": 3499,
       "mrp": "Rs 6,000",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/JMAB59lL.webp",
       "images": [
@@ -4181,21 +4181,21 @@
         "Black"
       ],
       "sizeAvailability": {
-        "Black": false
+        "Black": true
       },
       "variants": [
         {
           "id": 5170346,
           "title": "Black",
-          "available": false,
-          "price": 4500,
+          "available": true,
+          "price": 3499,
           "compare_at_price": 6000,
           "option1": "[object Object]",
           "option2": "",
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : TOSEEK",
         "Product Type : Saddles",

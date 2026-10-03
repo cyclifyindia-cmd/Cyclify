@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T05:20:09.188Z",
+  "generatedAt": "2026-10-03T13:24:22.355Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -79,7 +79,7 @@
       "id": "6",
       "name": "Cyclami C1 Cadence speed Dual Sensor Bike Computer ANT+BLE 5.0 Waterproof GPS C",
       "price": 2100,
-      "available": true,
+      "available": false,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/79pPC11v.webp",
       "sizes": [],
       "sizeAvailability": {},
@@ -155,7 +155,7 @@
       "id": "12",
       "name": "Carbon Fiber Bicycle Computer Holder Cyclami",
       "price": 1500,
-      "available": true,
+      "available": false,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/38WwEgJC.webp",
       "sizes": [],
       "sizeAvailability": {},
@@ -164,7 +164,7 @@
     "13": {
       "id": "13",
       "name": "Cyclami BR2000 Rainproof Bicycle Light 2000Lm",
-      "price": 4300,
+      "price": 3499,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/eSNNFA6Y.webp",
       "sizes": [
@@ -382,7 +382,7 @@
     "30": {
       "id": "30",
       "name": "Cyclami Ultra-Light 30g TPU Bicycle Tube 700x18-32C",
-      "price": 999,
+      "price": 740,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/FXO9ePdG.webp",
       "sizes": [
@@ -952,14 +952,14 @@
     "230708292": {
       "id": "230708292",
       "name": "Toseek Ultralight weight Full Carbon Saddle",
-      "price": 4500,
-      "available": false,
+      "price": 3499,
+      "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/JMAB59lL.webp",
       "sizes": [
         "Black"
       ],
       "sizeAvailability": {
-        "Black": false
+        "Black": true
       },
       "sourcePage": "components.html"
     },
@@ -1077,7 +1077,7 @@
       "id": "230930580",
       "name": "Toseek Bicycle pedal",
       "price": 2800,
-      "available": true,
+      "available": false,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/JrDbvuG2.webp",
       "sizes": [],
       "sizeAvailability": {},
@@ -1114,7 +1114,7 @@
     "232167537": {
       "id": "232167537",
       "name": "Toseek 3k Carbon Woave Pu Leather Black Road Handelbar Tape",
-      "price": 1399,
+      "price": 1349,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/GfDVklEP.webp",
       "sizes": [
