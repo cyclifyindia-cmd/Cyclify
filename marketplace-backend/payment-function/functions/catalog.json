@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T05:41:46.818Z",
+  "generatedAt": "2026-10-05T17:09:53.533Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -1817,7 +1817,7 @@
       "id": "831945395",
       "name": "MCYCLE Aerosocks",
       "price": 1099,
-      "available": true,
+      "available": false,
       "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a1fe03fd476f19e4b6a716c",
       "sizes": [],
       "sizeAvailability": {},
@@ -1951,7 +1951,7 @@
       "id": "866164518",
       "name": "MCYCLE Free Cutting Glove",
       "price": 1149,
-      "available": true,
+      "available": false,
       "image": "https://cdn.xpress.site/69dfc61bef41ff1cca41aeff/6a2b8215979400d9db228aae",
       "sizes": [],
       "sizeAvailability": {},
