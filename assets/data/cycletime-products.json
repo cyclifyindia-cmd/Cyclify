@@ -5037,7 +5037,7 @@
         "Red / 10T": true,
         "Red / 11T": true,
         "Red / 12T": true,
-        "Red / 13T": false,
+        "Red / 13T": true,
         "Red / 14T": true,
         "Red / 15T": true,
         "Red / 16T": true,
@@ -5085,7 +5085,7 @@
         {
           "id": 49490620252353,
           "title": "Red / 13T",
-          "available": false,
+          "available": true,
           "price": 1500,
           "compare_at_price": 0,
           "option1": "Red",
