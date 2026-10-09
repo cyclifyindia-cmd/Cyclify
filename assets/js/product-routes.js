@@ -213,6 +213,7 @@
   "10961786110145": "products/favero-assioma-duo-shi-power-pedals-shimano-10961786110145.html",
   "10882459861185": "products/fmfxtr-bicycle-stem-lightweight-design-made-of-high-strength-aluminum-allo-10882459861185.html",
   "10800362946753": "products/fmfxtr-bike-front-derailleur-clip-ring-seat-post-10800362946753.html",
+  "11106628600001": "products/fmfxtr-bike-handlebar-shim-25-4-31-8mm-adapter-stem-size-reducer-adaptor-11106628600001.html",
   "10800365600961": "products/fmfxtr-eva-pu-handlebar-tape-10800365600961.html",
   "10800479305921": "products/fmfxtr-pu-eva-leather-handlebar-tape-bicycle-10800479305921.html",
   "10995644694721": "products/fusion-gel-padded-cycling-bib-shorts-10995644694721.html",

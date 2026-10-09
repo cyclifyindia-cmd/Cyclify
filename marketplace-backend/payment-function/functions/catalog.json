@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T06:10:02.328Z",
+  "generatedAt": "2026-10-09T15:19:25.408Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -2737,7 +2737,7 @@
       "id": "10798701510849",
       "name": "Continental Ultra Sport III Folding Tire",
       "price": 2700,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_cd9cb97d-4ae4-4a6c-92b6-c43d8ce66264.jpg?v=1756014657",
       "sizes": [
         "23C / 1 Piece",
@@ -2748,10 +2748,10 @@
         "28C / 1 Pair"
       ],
       "sizeAvailability": {
-        "23C / 1 Piece": true,
-        "23C / 1 Pair": true,
-        "25C / 1 Piece": true,
-        "25C / 1 Pair": true,
+        "23C / 1 Piece": false,
+        "23C / 1 Pair": false,
+        "25C / 1 Piece": false,
+        "25C / 1 Pair": false,
         "28C / 1 Piece": false,
         "28C / 1 Pair": false
       },
@@ -3403,7 +3403,7 @@
       ],
       "sizeAvailability": {
         "1 Piece 25C Tire": true,
-        "1 Pair 25C Tire": false
+        "1 Pair 25C Tire": true
       },
       "sourcePage": "wheels-tyres.html"
     },
@@ -4192,6 +4192,22 @@
       "sizes": [],
       "sizeAvailability": {},
       "sourcePage": "electronics.html"
+    },
+    "11106628600001": {
+      "id": "11106628600001",
+      "name": "FMFXTR Bike Handlebar Shim 25.4~31.8mm Adapter Stem Size Reducer Adaptor",
+      "price": 900,
+      "available": true,
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/61ZBDHdGg6L._SL1500.jpg?v=1791549768",
+      "sizes": [
+        "Black",
+        "Red"
+      ],
+      "sizeAvailability": {
+        "Black": true,
+        "Red": true
+      },
+      "sourcePage": "components.html"
     }
   }
 }

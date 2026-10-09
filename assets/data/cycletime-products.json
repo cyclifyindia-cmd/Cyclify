@@ -3316,10 +3316,10 @@
         "28C / 1 Pair"
       ],
       "sizeAvailability": {
-        "23C / 1 Piece": true,
-        "23C / 1 Pair": true,
-        "25C / 1 Piece": true,
-        "25C / 1 Pair": true,
+        "23C / 1 Piece": false,
+        "23C / 1 Pair": false,
+        "25C / 1 Piece": false,
+        "25C / 1 Pair": false,
         "28C / 1 Piece": false,
         "28C / 1 Pair": false
       },
@@ -3327,7 +3327,7 @@
         {
           "id": 49492848181441,
           "title": "23C / 1 Piece",
-          "available": true,
+          "available": false,
           "price": 2700,
           "compare_at_price": 0,
           "option1": "23C",
@@ -3337,7 +3337,7 @@
         {
           "id": 49882590838977,
           "title": "23C / 1 Pair",
-          "available": true,
+          "available": false,
           "price": 5400,
           "compare_at_price": 0,
           "option1": "23C",
@@ -3347,7 +3347,7 @@
         {
           "id": 49492848214209,
           "title": "25C / 1 Piece",
-          "available": true,
+          "available": false,
           "price": 2700,
           "compare_at_price": 0,
           "option1": "25C",
@@ -3357,7 +3357,7 @@
         {
           "id": 49882590871745,
           "title": "25C / 1 Pair",
-          "available": true,
+          "available": false,
           "price": 5400,
           "compare_at_price": 0,
           "option1": "25C",
@@ -3385,7 +3385,7 @@
           "option3": ""
         }
       ],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : Royal Traders",
         "Product Type : bicycle Tire",
@@ -3434,7 +3434,7 @@
       ],
       "sizeAvailability": {
         "1 Piece 25C Tire": true,
-        "1 Pair 25C Tire": false
+        "1 Pair 25C Tire": true
       },
       "variants": [
         {
@@ -3450,7 +3450,7 @@
         {
           "id": 50003527303361,
           "title": "1 Pair 25C Tire",
-          "available": false,
+          "available": true,
           "price": 4800,
           "compare_at_price": 5400,
           "option1": "1 Pair 25C Tire",
@@ -7930,6 +7930,72 @@
       "categoryLabel": "Bikes & Frames",
       "mainCategory": "sava",
       "subCategory": "framesets"
+    },
+    {
+      "id": 11106628600001,
+      "supplierProductId": 11106628600001,
+      "supplierSynced": true,
+      "sourceHandle": "fmfxtr-bike-handlebar-shim-25-4-31-8mm-adapter-stem-size-reducer-adaptor",
+      "sourceUrl": "https://www.cycletimeindia.com/products/fmfxtr-bike-handlebar-shim-25-4-31-8mm-adapter-stem-size-reducer-adaptor",
+      "stockSource": "cycletime",
+      "name": "FMFXTR Bike Handlebar Shim 25.4~31.8mm Adapter Stem Size Reducer Adaptor",
+      "brand": "CycleTimeIndia",
+      "description": "Made of aluminium alloy material, high strength, lightweight and durable. To change your handlebar/ stem size easily with this bushing without changing stem Convert 25.4 mm handlebar to 31.8mm",
+      "price": 900,
+      "mrp": "Rs 900",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/61ZBDHdGg6L._SL1500.jpg?v=1791549768",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/61ZBDHdGg6L._SL1500.jpg?v=1791549768",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/61trD-ZDe4L._SL1500.jpg?v=1791549768",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/51SZRUuj5cL._SL1500.jpg?v=1791549768"
+      ],
+      "sizes": [
+        "Black",
+        "Red"
+      ],
+      "sizeAvailability": {
+        "Black": true,
+        "Red": true
+      },
+      "variants": [
+        {
+          "id": 50709588377793,
+          "title": "Black",
+          "available": true,
+          "price": 900,
+          "compare_at_price": 0,
+          "option1": "Black",
+          "option2": "",
+          "option3": ""
+        },
+        {
+          "id": 50709588410561,
+          "title": "Red",
+          "available": true,
+          "price": 900,
+          "compare_at_price": 0,
+          "option1": "Red",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : CycleTimeIndia",
+        "Product Type : Bicycle Accessories",
+        "Color Options : Black, Red",
+        "Product Details : Made of aluminium alloy material, high strength, lightweight and durable. To change your handlebar/ stem size easily with this bushing without changing stem Convert 25.4 mm handlebar to 31.8mm",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/fmfxtr-bike-handlebar-shim-25-4-31-8mm-adapter-stem-size-reducer-adaptor"
+      },
+      "keywords": "FMFXTR Bike Handlebar Shim 25.4~31.8mm Adapter Stem Size Reducer Adaptor Bicycle Accessories CycleTimeIndia",
+      "categoryPage": "components.html",
+      "categoryLabel": "Components",
+      "mainCategory": "cockpit",
+      "subCategory": "stems"
     },
     {
       "id": 10800365600961,
