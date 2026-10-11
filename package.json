@@ -3,13 +3,15 @@
   "scripts": {
     "generate:seo": "node scripts/generate-seo-pages.js",
     "audit:seo": "node scripts/audit-seo.js",
+    "audit:product-images": "node scripts/audit-product-images.js",
     "build:payment-catalog": "node scripts/build-payment-catalog.js",
     "verify:payment-catalog": "node scripts/verify-payment-catalog.js",
+    "apply:product-allowlist": "node scripts/apply-product-allowlist.js",
     "apply:price-overrides": "node scripts/apply-price-overrides.js",
     "sync:cycletime": "node scripts/sync-cycletime.js",
     "sync:fcc": "node scripts/sync-fcc.js",
     "sync:cadence": "node scripts/sync-cadence.js",
-    "sync:catalog": "npm run sync:cycletime && npm run sync:fcc && npm run sync:cadence && npm run apply:price-overrides && npm run generate:seo && npm run build:payment-catalog && npm run verify:payment-catalog"
+    "sync:catalog": "npm run sync:cycletime && npm run sync:fcc && npm run sync:cadence && npm run apply:product-allowlist && npm run apply:price-overrides && npm run generate:seo && npm run build:payment-catalog && npm run verify:payment-catalog"
   },
   "dependencies": {
     "cheerio": "1.0.0"

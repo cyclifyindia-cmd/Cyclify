@@ -1,9 +1,11 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const { loadAllowedProductIds } = require("./product-allowlist");
 
 const root = path.resolve(__dirname, "..");
 const pages = [
+  "product.html",
   "accessories.html", "bicycle-tubes.html", "bike-computers.html",
   "bike-drivetrain.html", "bike-lights.html", "bikes-frames.html",
   "carbon-wheelsets.html", "components.html", "cycling-helmets.html",
@@ -13,6 +15,7 @@ const pages = [
 ];
 const dataFiles = ["cycletime-products.json", "fcc-products.json", "cadence-products.json"];
 const externalProductFiles = ["assets/js/tfsa-products.js"];
+const allowedProductIds = loadAllowedProductIds();
 
 const catalog = new Map();
 function writeFileWithRetry(file, content) {
@@ -30,6 +33,7 @@ function writeFileWithRetry(file, content) {
 
 function addProduct(product, source) {
   const id = String(product.id ?? "").trim();
+  if (!allowedProductIds.has(id)) return;
   const sellingPrice = Number(product.price);
   const preorderDeposit = Number(product.preorderDeposit || 0);
   const price = preorderDeposit > 0 ? preorderDeposit : sellingPrice;

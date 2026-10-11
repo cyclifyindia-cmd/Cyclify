@@ -1,0 +1,249 @@
+{
+  "source": "https://savadeck-bike.com/products/sava-a7l-2026-full-carbon-road-bike-24-speed",
+  "assets": [
+    {
+      "localPath": "assets/products/sava-a7l-2026/grey-angle.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/sava-a7l-2026-full-carbon-road-bike-24-speed-01-2026-sava-a7l-carbon-road-bike-silver-front-45-degree-main.jpg",
+      "alt": "Silver / Grey, 45-degree view",
+      "group": "gallery",
+      "colour": "Grey"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/grey-side.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/sava-a7l-2026-full-carbon-road-bike-24-speed-02-2026-sava-a7l-carbon-road-bike-silver-side-profile-main.jpg",
+      "alt": "Silver / Grey, side profile",
+      "group": "gallery",
+      "colour": "Grey"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/white-angle.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/sava-a7l-2026-full-carbon-road-bike-24-speed-03-2026-sava-a7l-carbon-road-bike-white-front-45-degree-main.jpg",
+      "alt": "White, 45-degree view",
+      "group": "gallery",
+      "colour": "White"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/white-side.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/sava-a7l-2026-full-carbon-road-bike-24-speed-04-2026-sava-a7l-carbon-road-bike-white-side-profile-main.jpg",
+      "alt": "White, side profile",
+      "group": "gallery",
+      "colour": "White"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/red-side.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_New_A7L-Red_2.jpg",
+      "alt": "Red, front-facing view",
+      "group": "gallery",
+      "colour": "Red"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/red-angle.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_New_A7L-Red.jpg",
+      "alt": "Red, 45-degree view",
+      "group": "gallery",
+      "colour": "Red"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/black-side.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_New_A7L-Black_2.jpg",
+      "alt": "Black, front-facing view",
+      "group": "gallery",
+      "colour": "Black"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/black-angle.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_New_A7L-Black.jpg",
+      "alt": "Black, 45-degree view",
+      "group": "gallery",
+      "colour": "Black"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/blue-side.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_New_A7L-Blue_2.jpg",
+      "alt": "Blue, front-facing view",
+      "group": "gallery",
+      "colour": "Blue"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/blue-angle.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_New_A7L-Blue.jpg",
+      "alt": "Blue, 45-degree view",
+      "group": "gallery",
+      "colour": "Blue"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/video-poster.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/preview_images/b8ae5c9d55d94c06bf9ac6fd083e910c.thumbnail.0000000000.jpg",
+      "alt": "2026 A7L video poster",
+      "group": "gallery"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/outdoor.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_A7L_riding_scene_image_3.jpg",
+      "alt": "2026 A7L outdoor cycling",
+      "group": "gallery"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/shifters.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/Shifterlevers-NewA7L.jpg",
+      "alt": "SENSAH HRD shifter levers",
+      "group": "gallery"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/crankset.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/Crankset-NewA7L.jpg",
+      "alt": "A7L 50/34T crankset",
+      "group": "gallery"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/handlebar.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/handlebar-NewA7L.jpg",
+      "alt": "Integrated carbon handlebar",
+      "group": "gallery"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/derailleur.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/Rearderailleur-NewA7L.jpg",
+      "alt": "Shimano 105 R7100 rear derailleur",
+      "group": "gallery"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/brake.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_A7L_brake.jpg",
+      "alt": "SENSAH hydraulic disc brake",
+      "group": "gallery"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/uci.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/UCI-NewA7L.jpg",
+      "alt": "UCI approved carbon frame",
+      "group": "gallery"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/wheels.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/Wheels-NewA7L.jpg",
+      "alt": "700C carbon wheels",
+      "group": "gallery"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/overview-desktop.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/SAVA_2026_A7L.jpg",
+      "alt": "SAVA A7L 2026 overview desktop banner",
+      "group": "overview"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/overview-mobile.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/SAVA_2026_A7L_2.jpg",
+      "alt": "SAVA A7L 2026 overview mobile banner",
+      "group": "overview"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/carbon-parts-desktop.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/full_carbon_fiber_parts-2026_A7L.jpg",
+      "alt": "Full carbon parts desktop banner",
+      "group": "overview"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/carbon-parts-mobile.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/full_carbon_fiber_parts-2026_A7L_2.jpg",
+      "alt": "Full carbon parts mobile banner",
+      "group": "overview"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/t800-desktop.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/T800_full_carbon_struction.jpg",
+      "alt": "Full T800 Carbon Construction desktop",
+      "group": "carbon"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/aero-desktop.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/full_carbon_fiber_parts.jpg",
+      "alt": "T800 Carbon Frame Aero Geometry desktop",
+      "group": "carbon"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/t800-mobile.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/T800_full_carbon_struction_2.jpg",
+      "alt": "Full T800 Carbon Construction mobile",
+      "group": "carbon"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/aero-mobile.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/full_carbon_fiber_parts_2.jpg",
+      "alt": "T800 Carbon Frame Aero Geometry mobile",
+      "group": "carbon"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/highlight-cockpit.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/Handlebar-2026_SAVA_A7L.jpg",
+      "alt": "Sleek Aero Cable Management",
+      "group": "highlights"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/highlight-shifters.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/Shifter_levers-2026_SAVA_A7L.jpg",
+      "alt": "SENSAH HRD shifters",
+      "group": "highlights"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/highlight-derailleur.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/SHIAMNO_105_R7100_Derailleur_System-2026_SAVA_A7L.jpg",
+      "alt": "Shimano 105 R7100 derailleur system",
+      "group": "highlights"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/highlight-brake.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_A7L_brake_2.jpg",
+      "alt": "SENSAH hydraulic disc brakes",
+      "group": "highlights"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/highlight-crankset.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/Crankset-2026_SAVA_A7L.jpg",
+      "alt": "Lightweight 50/34T crankset",
+      "group": "highlights"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/highlight-uci.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/UCI-2026_SAVA_A7L.jpg",
+      "alt": "UCI Approved",
+      "group": "highlights"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/racing.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_A7L_riding_scene_image_2.jpg",
+      "alt": "Racing and competitive riding",
+      "group": "riding"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/recreation.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_A7L_riding_scene_image_4.jpg",
+      "alt": "Daily recreational riding",
+      "group": "riding"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/travel.png",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/2026_new_sava_a7l_for_travelling.png",
+      "alt": "Travel and outdoor adventure",
+      "group": "riding"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/factory.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/sava_factory_fa2b6f05-a3a3-4b71-b844-ebf8e8283920.jpg",
+      "alt": "SAVA factory",
+      "group": "background"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/race-banner.jpg",
+      "originalUrl": "https://savadeck-bike.com/cdn/shop/files/racing.jpg",
+      "alt": "SAVA racing",
+      "group": "background"
+    },
+    {
+      "localPath": "assets/products/sava-a7l-2026/geometry.jpg",
+      "originalUrl": "https://cdn.shopify.com/s/files/1/0385/7176/9995/files/R21_frame_geometry_2048x2048.jpg?v=1742378006",
+      "alt": "R21 frame geometry",
+      "group": "geometry"
+    }
+  ]
+}

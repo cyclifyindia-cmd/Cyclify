@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { loadAllowedProductIds, filterAllowedProducts } = require('./product-allowlist');
+const { renderSavaA7l } = require('./render-sava-a7l');
 
 const root = path.resolve(__dirname, '..');
 const templatePath = path.join(root, 'product.html');
@@ -8,12 +10,14 @@ const outputDir = path.join(root, 'products');
 const routesPath = path.join(root, 'assets', 'js', 'product-routes.js');
 const searchIndexPath = path.join(root, 'assets', 'js', 'search-index.js');
 const sitemapPath = path.join(root, 'sitemap.xml');
+const merchantFeedPath = path.join(root, 'google-merchant-feed.xml');
 const seoStatePath = path.join(root, 'assets', 'data', 'seo-lastmod.json');
 const supplierPath = path.join(root, 'assets', 'data', 'cycletime-products.json');
 const fccSupplierPath = path.join(root, 'assets', 'data', 'fcc-products.json');
 const cadenceSupplierPath = path.join(root, 'assets', 'data', 'cadence-products.json');
 const tfsaProductsPath = path.join(root, 'assets', 'js', 'tfsa-products.js');
 const guidesPath = path.join(root, 'assets', 'data', 'guides.json');
+const allowedProductIds = loadAllowedProductIds();
 const categoryCatalogs = [
   { page: 'bikes-frames.html', file: 'catalog-bikes-frames.js' },
   { page: 'wearables.html', file: 'catalog-wearables.js' },
@@ -25,7 +29,7 @@ const categoryCatalogs = [
 
 function supplierProductsFrom(file) {
   if (!fs.existsSync(file)) return [];
-  return JSON.parse(fs.readFileSync(file, 'utf8')).products || [];
+  return filterAllowedProducts(JSON.parse(fs.readFileSync(file, 'utf8')).products || [], allowedProductIds);
 }
 
 const supplierCatalogues = {
@@ -161,6 +165,15 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 function absoluteUrl(value) {
   if (/^https?:\/\//i.test(String(value))) return String(value);
   return 'https://cyclify.in/' + String(value).replace(/^\/+/, '');
@@ -179,6 +192,11 @@ function cleanText(value) {
     .trim();
 }
 
+function monetaryValue(value) {
+  const normalized = String(value == null ? '' : value).replace(/,/g, '').match(/[0-9]+(?:\.[0-9]+)?/);
+  return normalized ? Number(normalized[0]) : 0;
+}
+
 function truncateAtWord(value, maxLength) {
   const text = cleanText(value);
   if (text.length <= maxLength) return text;
@@ -194,6 +212,7 @@ function normalizedProductKey(product) {
 }
 
 function titleFor(product) {
+  if (Number(product.id) === 63) return 'SAVA A7L 2026 Carbon Road Bike | Cyclify India';
   const suffix = ' | Cyclify India';
   const maxNameLength = 60 - suffix.length;
   let name = cleanText(product.name);
@@ -217,6 +236,7 @@ function usefulDetail(product) {
 }
 
 function descriptionFor(product) {
+  if (Number(product.id) === 63) return 'Buy the SAVA A7L 2026 carbon road bike in India for Rs ' + Number(product.price).toLocaleString('en-IN') + '. T800 carbon frame, 24-speed shifting and hydraulic discs. Free shipping.';
   const intro = product.priceOnRequest
     ? 'Pre-order ' + cleanText(product.name) + ' from Cyclify India; selling price is confirmed before payment.'
     : (product.preorderDeposit
@@ -245,9 +265,9 @@ function existingRoutes() {
   catch (error) { return {}; }
 }
 
-const products = extractProducts(template);
+const products = filterAllowedProducts(extractProducts(template), allowedProductIds);
 if (fs.existsSync(tfsaProductsPath)) {
-  products.push(...extractProducts(fs.readFileSync(tfsaProductsPath, 'utf8'), 'const tfsaProducts='));
+  products.push(...filterAllowedProducts(extractProducts(fs.readFileSync(tfsaProductsPath, 'utf8'), 'const tfsaProducts='), allowedProductIds));
 }
 const homepageSearchProducts = extractProducts(
   fs.readFileSync(path.join(root, 'index.html'), 'utf8'),
@@ -374,7 +394,7 @@ for (const product of primaryProducts) {
         '@type': 'Product',
         '@id': canonical + '#product',
         name: product.name,
-        image: (product.images && product.images.length ? product.images : [product.image]).filter(Boolean).map(absoluteUrl),
+        image: (product.images && product.images.length ? product.images : [product.image]).filter(image => image && (Number(product.id) !== 63 || /\/(?:blue|white|grey|red|black)-(?:angle|side)\.jpg$/.test(image))).map(absoluteUrl),
         description,
         sku: 'CYCLIFY-' + product.id,
         brand: { '@type': 'Brand', name: brand },
@@ -436,16 +456,29 @@ for (const product of primaryProducts) {
   page = page.replace(/<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="' + escapeHtml(description) + '">');
   page = page.replace(/<meta property="og:url" content="[^"]*">/, '<meta property="og:url" content="' + canonical + '">');
   page = page.replace(/<meta property="og:image" content="[^"]*">/, '<meta property="og:image" content="' + escapeHtml(image) + '">');
+  page = page.replace(
+    /<meta property="og:image" content="[^"]*">/,
+    '$&\n<meta property="og:image:secure_url" content="' + escapeHtml(image) + '">\n<meta property="og:image:alt" content="' + escapeHtml(product.name) + '">'
+  );
   page = page.replace(/<meta name="twitter:title" content="[^"]*">/, '<meta name="twitter:title" content="' + escapeHtml(title) + '">');
   page = page.replace(/<meta name="twitter:description" content="[^"]*">/, '<meta name="twitter:description" content="' + escapeHtml(description) + '">');
   page = page.replace(/<meta name="twitter:image" content="[^"]*">/, '<meta name="twitter:image" content="' + escapeHtml(image) + '">');
+  page = page.replace(
+    /<meta name="twitter:image" content="[^"]*">/,
+    '$&\n<meta name="twitter:image:alt" content="' + escapeHtml(product.name) + '">\n<link rel="preload" as="image" href="' + escapeHtml(image) + '" fetchpriority="high">'
+  );
   page = page.replace(
     /<script src="assets\/js\/product-routes\.js(?:\?v=[^"]+)?"><\/script>/,
     '<script>window.CYCLIFY_PRODUCT_ID=' + product.id + ';</script>\n$&'
   );
   page = page.replace('</head>', '<script type="application/ld+json" id="cyclify-product-schema">\n' + JSON.stringify(schema, null, 2).replace(/<\//g, '<\\/') + '\n</script>\n</head>');
   const noscriptPrice = product.priceOnRequest ? 'Price on request' : 'Price: Rs ' + Number(product.price).toLocaleString('en-IN');
-  page = page.replace('<body>', '<body>\n<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><h1>' + escapeHtml(product.name) + '</h1><p>' + escapeHtml(noscriptPrice) + '</p><p>' + escapeHtml(description) + '</p></main></noscript>');
+  page = page.replace(
+    '<img id="productImage">',
+    '<img id="productImage" src="' + escapeHtml(image) + '" alt="' + escapeHtml(product.name) + '" loading="eager" decoding="async" fetchpriority="high" itemprop="image">'
+  );
+  page = page.replace('<body>', '<body>\n<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><img src="' + escapeHtml(image) + '" alt="' + escapeHtml(product.name) + '" style="display:block;max-width:100%;height:auto;margin:0 auto 20px"><h1>' + escapeHtml(product.name) + '</h1><p>' + escapeHtml(noscriptPrice) + '</p><p>' + escapeHtml(description) + '</p></main></noscript>');
+  page = renderSavaA7l(page, product);
   writeFileWithRetry(path.join(root, route), page, 'utf8');
 }
 
@@ -631,12 +664,65 @@ const staticPages = fs.readdirSync(root)
   .filter(Boolean);
 const urls = staticPages.concat(primaryProducts.map(product => {
   const url = 'https://cyclify.in/' + routes[product.id];
-  return [url, '0.8', productLastmods.get(url) || today];
+  return [
+    url,
+    '0.8',
+    productLastmods.get(url) || today,
+    absoluteUrl(product.image || (product.images || [])[0] || 'assets/Logo-dark-preview.png'),
+    cleanText(product.name)
+  ];
 })).concat(guideSitemapEntries);
-const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-  urls.map(([url, priority, lastmod]) => '  <url><loc>' + url + '</loc><lastmod>' + lastmod + '</lastmod><changefreq>weekly</changefreq><priority>' + priority + '</priority></url>').join('\n') +
+const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' +
+  urls.map(([url, priority, lastmod, imageUrl, imageTitle]) => {
+    const imageEntry = imageUrl
+      ? '<image:image><image:loc>' + escapeXml(imageUrl) + '</image:loc><image:title>' + escapeXml(imageTitle || '') + '</image:title></image:image>'
+      : '';
+    return '  <url><loc>' + escapeXml(url) + '</loc><lastmod>' + lastmod + '</lastmod><changefreq>weekly</changefreq><priority>' + priority + '</priority>' + imageEntry + '</url>';
+  }).join('\n') +
   '\n</urlset>\n';
 fs.writeFileSync(sitemapPath, sitemap, 'utf8');
+
+const merchantItems = primaryProducts
+  .filter(product => Number(product.price) > 0 && !product.priceOnRequest)
+  .map(product => {
+    const route = routes[product.id];
+    const link = 'https://cyclify.in/' + route;
+    const primaryImage = absoluteUrl(product.image || (product.images || [])[0] || 'assets/Logo-dark-preview.png');
+    const additionalImages = (product.images || [])
+      .map(absoluteUrl)
+      .filter(imageUrl => imageUrl !== primaryImage)
+      .slice(0, 10);
+    const inferredBrand = (product.name.match(/^(SAVA|ELVES|TFSA|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i) || ['Cyclify'])[0];
+    const brand = product.brand || (product.id === 16 ? 'Cyclami' : inferredBrand);
+    const currentPrice = monetaryValue(product.price);
+    const listPrice = Math.max(currentPrice, monetaryValue(product.mrp) || currentPrice);
+    const salePrice = listPrice > currentPrice ? '<g:sale_price>' + currentPrice.toFixed(2) + ' INR</g:sale_price>' : '';
+    return '    <item>\n' +
+      '      <g:id>CYCLIFY-' + escapeXml(product.id) + '</g:id>\n' +
+      '      <title>' + escapeXml(cleanText(product.name)) + '</title>\n' +
+      '      <description>' + escapeXml(descriptionFor(product)) + '</description>\n' +
+      '      <link>' + escapeXml(link) + '</link>\n' +
+      '      <g:image_link>' + escapeXml(primaryImage) + '</g:image_link>\n' +
+      additionalImages.map(imageUrl => '      <g:additional_image_link>' + escapeXml(imageUrl) + '</g:additional_image_link>').join('\n') + (additionalImages.length ? '\n' : '') +
+      '      <g:availability>' + (product.available === false ? 'out_of_stock' : (product.preorder ? 'preorder' : 'in_stock')) + '</g:availability>\n' +
+      '      <g:condition>new</g:condition>\n' +
+      '      <g:price>' + listPrice.toFixed(2) + ' INR</g:price>\n' +
+      (salePrice ? '      ' + salePrice + '\n' : '') +
+      '      <g:brand>' + escapeXml(brand) + '</g:brand>\n' +
+      '      <g:product_type>' + escapeXml(product.categoryLabel || categoryLabels[product.categoryPage] || product.category || 'Cycling') + '</g:product_type>\n' +
+      '      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>\n' +
+      '    </item>';
+  });
+const merchantFeed = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n' +
+  '  <channel>\n' +
+  '    <title>Cyclify India Product Feed</title>\n' +
+  '    <link>https://cyclify.in/</link>\n' +
+  '    <description>Current Cyclify India cycling catalogue</description>\n' +
+  merchantItems.join('\n') + '\n' +
+  '  </channel>\n' +
+  '</rss>\n';
+fs.writeFileSync(merchantFeedPath, merchantFeed, 'utf8');
 fs.writeFileSync(seoStatePath, JSON.stringify(nextSeoState, null, 2) + '\n', 'utf8');
 
 console.log('Generated ' + primaryProducts.length + ' canonical product pages, ' + landingPages.length + ' landing pages, ' + guides.length + ' guides, redirects, and sitemap.');

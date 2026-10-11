@@ -4,6 +4,7 @@ const vm = require("node:vm");
 
 const root = path.resolve(__dirname, "..");
 const pages = [
+  "product.html",
   "accessories.html", "bicycle-tubes.html", "bike-computers.html",
   "bike-drivetrain.html", "bike-lights.html", "bikes-frames.html",
   "carbon-wheelsets.html", "components.html", "cycling-helmets.html",
