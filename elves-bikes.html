@@ -819,6 +819,7 @@ gap:5px!important;
 
 <div class="category-summary" id="categorySummary"></div>
 
+
 <div
 class="products"
 id="products">
@@ -1036,6 +1037,8 @@ window.cyclifyMergeSupplierProducts(products,"bikes-frames.html");
 window.cyclifyMergeFccProducts(products,"bikes-frames.html");
 window.cyclifyMergeCadenceProducts(products,"bikes-frames.html");
 window.cyclifyMergeTfsaProducts(products,"bikes-frames.html");
+// Custom builds belong in the same brand-filtered grid, not the ready-to-pay catalogue.
+products.push({id:990001,name:"TAVELO Arow Carbon Road Bike",brand:"TAVELO",mainCategory:"tavelo",price:390000,image:"assets/products/tavelo-arow/customer-reference-1.png",customBuild:true,url:"tavelo-arow.html"});
 
 
 const container=
@@ -1051,6 +1054,7 @@ let activeCategory=new URLSearchParams(window.location.search).get("category")||
 
 const categories=[
 {key:"sava",label:"SAVA",image:"assets/products/sava-hawkeye.jpg"},
+{key:"tavelo",label:"TAVELO",image:"assets/products/tavelo-arow/customer-reference-1.png"},
 {key:"elves",label:"ELVES",image:"assets/products/elves-falath-evo-plus-2.png"},
 {key:"tfsa",label:"TFSA",image:"assets/products/tfsa/tfsa-jh15-01.webp"}
 ];
@@ -1164,6 +1168,19 @@ return;
 }
 
 filteredProducts.forEach(product=>{
+if(product.customBuild){
+container.innerHTML+=`
+<div class="card cyclify-premium-card" data-cyclify-deal-ready="true" onclick="openProduct(${product.id})" tabindex="0" role="link" onkeydown="handleCardKey(event,${product.id})">
+<h3 class="cyclify-card-title">${product.name}</h3>
+<img class="cyclify-card-product-image" src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
+<div class="details"><div class="cyclify-card-pricing">
+<div class="cyclify-card-deal-title" aria-label="Cyclify Deal"><img class="cyclify-card-deal-logo" src="assets/Logo-dark.png" alt="Cyclify"><span class="cyclify-card-deal-word" aria-hidden="true">DEAL</span></div>
+<div class="cyclify-card-price-line"><div class="price">₹${product.price.toLocaleString("en-IN")}</div></div>
+<div class="cyclify-card-sub-line"><span style="font-size:12px;color:#62666d">Starting price · Custom build</span></div>
+<div class="cyclify-card-actions"><div class="bottom" style="grid-template-columns:1fr"><button type="button" class="add" onclick="event.stopPropagation();openProduct(${product.id})">Configure Bike</button></div></div>
+</div></div></div>`;
+return;
+}
 container.innerHTML+=`
 <div class="card ${product.preorder?"preorder-card":""}"
 onclick="openProduct(${product.id})"
@@ -1186,6 +1203,10 @@ ${product.mrp?`<div class="mrp">MRP ${product.mrp}</div>`:""}
 }
 
 function selectCategory(category){
+if(category==="tavelo"){
+window.location="tavelo-arow.html";
+return;
+}
 activeCategory=category;
 const nextUrl=category?`${window.location.pathname}?category=${encodeURIComponent(category)}`:window.location.pathname;
 history.pushState({category},"",nextUrl);
@@ -1209,6 +1230,8 @@ renderProducts();
 
 function openProduct(id){
 
+const customProduct=products.find(product=>product.id===id&&product.customBuild);
+if(customProduct){window.location=customProduct.url;return;}
 window.location=
 cyclifyProductUrl(id);
 
@@ -1315,7 +1338,7 @@ reader.readAsDataURL(file);
 })();
 </script>
 
-<script src="assets/js/site-footer.js?v=948f28e71c"></script>
+<script src="assets/js/site-footer.js?v=e47fdbe5c9"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>
