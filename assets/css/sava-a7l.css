@@ -55,3 +55,39 @@
 @media(max-width:749px){.a7l-full-banner{margin-left:-20px;margin-right:-20px}.a7l-carbon-grid{margin-left:-20px;margin-right:-20px}.a7l-carbon-grid p{padding:20px}.a7l-carbon-tabs{gap:20px;padding:0 20px}.a7l-carbon-tabs button{font-size:12px;line-height:1.5}.a7l-carbon-grid article[hidden]{display:none}}
 @media(max-width:749px){.sava-a7l-page{padding-bottom:88px}.sava-a7l-page .product-breadcrumb{width:calc(100% - 28px);justify-content:flex-start;margin:14px auto 0}.sava-a7l-page .a7l-buy-panel{text-align:left}.sava-a7l-page .price-line{margin-left:0;margin-right:0}.sava-a7l-page .deal-head,.sava-a7l-page .deal-main{justify-content:flex-start}.sava-a7l-page .deal-meta{justify-content:space-between;gap:6px}.sava-a7l-page .deal-save,.sava-a7l-page .deal-mrp,.sava-a7l-page .shipping-note{font-size:11px}.sava-a7l-page .a7l-stock{justify-content:flex-start}}
 @media(prefers-reduced-motion:reduce){.sava-a7l-page .deal-word{animation:none}.a7l-highlight-track{scroll-behavior:auto}}
+.sava-a7l-page .product-breadcrumb{font-size:11px;line-height:1.5;gap:5px;margin-top:12px;overflow-wrap:anywhere}
+.sava-a7l-page .product-breadcrumb a{font-size:inherit;font-weight:500;flex-shrink:0}
+.sava-a7l-page .name{font-size:28px;line-height:1.3;letter-spacing:0;margin-bottom:14px}
+.sava-a7l-page .gallery-main>img{padding:12px;box-sizing:border-box}
+.sava-a7l-page .a7l-product{margin-top:22px}
+.a7l-boutique{margin:28px 0 20px;padding:0;text-align:left;color:#222;scroll-margin-top:76px}
+.boutique-heading>span{font:600 10px Arial,sans-serif;letter-spacing:.18em;color:#8a8a8a}
+.boutique-heading h2{font:400 34px/1.12 Georgia,serif;letter-spacing:-.035em;margin:7px 0 18px}
+.sava-a7l-page .a7l-boutique .size-section{margin:0 0 18px}
+.sava-a7l-page .a7l-boutique .size-label{font-size:13px;font-weight:600;margin:0 0 13px}
+.a7l-boutique .a7l-geometry-trigger{border:0;border-radius:0;background:none;color:#555;font:400 11px Arial,sans-serif;padding:3px 0;min-height:28px;text-decoration:underline;text-underline-offset:4px}
+.sava-a7l-page .a7l-boutique #sizeOptions{display:flex;gap:24px;justify-content:flex-start}
+.sava-a7l-page .a7l-boutique #sizeOptions .size-btn{display:flex;flex-direction:column;gap:5px;min-width:50px;min-height:51px;padding:0 3px 7px;border:0;border-bottom:2px solid transparent;border-radius:0;background:none;color:#222;font:400 26px/1 Georgia,serif;box-shadow:none}
+.sava-a7l-page .a7l-boutique #sizeOptions .size-btn.active{border-bottom-color:#ff5a00;background:none;color:#222}
+.sava-a7l-page .a7l-boutique #sizeOptions .size-btn small{font:400 11px/1.4 Arial,sans-serif;color:#666}
+.sava-a7l-page .a7l-boutique #valveOptions{display:flex;flex-direction:column;gap:6px;align-items:stretch}
+.sava-a7l-page .a7l-boutique #valveOptions .size-btn{position:relative;border:1px solid transparent;border-radius:2px;min-height:36px;padding:8px 15px 8px 33px;background:#f7f7f6;text-align:left;color:#444;font:400 13px Arial,sans-serif;box-shadow:none}
+.sava-a7l-page .a7l-boutique #valveOptions .size-btn::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--swatch);border:1px solid #0001}
+.sava-a7l-page .a7l-boutique #valveOptions .size-btn.active{background:#fff4ec;border-color:#ffd0b4;color:#151515;font-weight:600}
+.sava-a7l-page .a7l-boutique #valveOptions .size-btn.active::after{content:'✓';position:absolute;right:14px;color:#cf4b00}
+.a7l-boutique .a7l-variant-note{font-size:11px;line-height:1.6;margin:-7px 0 14px;color:#777}
+.boutique-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px 0;border-top:1px solid #e9e7e3;border-bottom:1px solid #e9e7e3}
+.a7l-boutique .a7l-quantity{display:flex;align-items:center;gap:10px}.a7l-boutique .a7l-quantity>label{font-size:11px;font-weight:400;color:#777;margin:0}
+.a7l-boutique .a7l-stepper{border-radius:22px;height:36px}.a7l-boutique .a7l-stepper button{width:27px;font-size:17px}.a7l-boutique .a7l-stepper input{width:30px;font-size:13px}
+.boutique-status{display:flex;flex-direction:column;gap:7px}.a7l-boutique .a7l-stock{font:600 12px Arial,sans-serif;margin:0;gap:7px}.a7l-boutique .a7l-stock::before{width:7px;height:7px;box-shadow:none}
+.boutique-secure{display:flex;align-items:center;gap:6px;font:400 10px Arial,sans-serif;color:#666}
+@media(max-width:749px){
+ .sava-a7l-page .product-breadcrumb{width:calc(100% - 32px);margin-top:9px;font-size:10px;line-height:1.4}
+ .sava-a7l-page .a7l-product{margin-top:6px}
+ .sava-a7l-page .gallery-main{aspect-ratio:auto;height:min(70vw,360px,max(180px,calc(100svh - 305px)))}
+ .sava-a7l-page .gallery-main>img{padding:4px 12px}
+ .sava-a7l-page .a7l-gallery-dots{padding:6px 12px 10px;gap:6px}
+ .sava-a7l-page .name{font-size:clamp(16px,4.9vw,21px);line-height:1.3;margin-bottom:12px;white-space:nowrap}
+ .sava-a7l-page .price-line{margin-top:0;margin-bottom:9px}
+ .boutique-heading h2{font-size:32px}.a7l-boutique{margin-top:24px}.boutique-footer{gap:10px}.a7l-boutique .a7l-quantity{gap:6px}
+}

@@ -5,9 +5,11 @@
   const enlarged = lightbox.querySelector('img');
   const quantity = document.getElementById('a7lQuantity');
   const sizeLabels = { S: '47 cm (S)', M: '51 cm (M)', L: '54 cm (L)' };
+  const colourSwatches = { Blue: '#0077b8', White: '#ffffff', Grey: '#9b9d9f', Red: '#bc242b', Black: '#222222' };
+  document.getElementById('productName').textContent = 'SAVA A7L 2026 Carbon Bike';
   document.querySelectorAll('#sizeOptions .size-btn').forEach(button => {
-    button.textContent = sizeLabels[button.dataset.size] || button.dataset.size;
-    button.setAttribute('aria-label', `Select ${button.textContent} frame`);
+    button.innerHTML = `${button.dataset.size}<small>${({ S: '47', M: '51', L: '54' })[button.dataset.size]} cm</small>`;
+    button.setAttribute('aria-label', `Select ${sizeLabels[button.dataset.size]} frame`);
   });
   productImages.forEach((src, index) => {
     const dot = document.createElement('button');
@@ -36,7 +38,10 @@
   });
   const updateSelection = () => {
     document.querySelectorAll('#sizeOptions .size-btn').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.size === selectedSize)));
-    document.querySelectorAll('#valveOptions .size-btn').forEach(button => button.setAttribute('aria-pressed', String(button.textContent.trim() === selectedValveLength)));
+    document.querySelectorAll('#valveOptions .size-btn').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.textContent.trim() === selectedValveLength));
+      button.style.setProperty('--swatch', colourSwatches[button.textContent.trim()] || '#ccc');
+    });
     const stock = document.getElementById('a7lStock');
     stock.textContent = productAvailableForCart ? (product.preorder ? 'Available to pre-order' : 'In stock') : 'Currently out of stock';
     stock.classList.toggle('unavailable', !productAvailableForCart);
@@ -51,6 +56,7 @@
     const match = product.imageByColour && product.imageByColour[colour];
     const index = match ? productImages.indexOf(match) : -1;
     if (index >= 0) showImage(index);
+    document.getElementById('productImage').alt = `${product.name} — ${colour}`;
     updateSelection();
   };
   const normaliseQuantity = () => { quantity.value = String(Math.max(1, Math.min(10, Math.floor(Number(quantity.value) || 1)))); };
