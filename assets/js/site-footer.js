@@ -4,9 +4,12 @@
   const style = document.createElement("style");
   style.id = "cyclifyFooterStyles";
   style.textContent = `
-    .products{gap:12px!important;padding:12px!important;background:#f6f7f9!important}
+    /* Shared photography treatment: square, white and uncropped on every product. */
+    .gallery,.gallery-main{border:0!important;border-radius:0!important;background:#fff!important;box-shadow:none!important}
+    .gallery-main img,.card.cyclify-premium-card>.cyclify-card-product-image{border-radius:0!important;background:#fff!important;object-fit:contain!important}
+    .products{gap:12px!important;padding:12px!important;background:#fff!important}
     .card{container-type:inline-size}
-    .card.cyclify-premium-card{display:grid!important;grid-template-rows:auto auto 1fr;min-width:0;overflow:hidden;border:1px solid #e7e9ee!important;border-radius:15px!important;background:#fff!important;box-shadow:0 4px 15px rgba(17,24,39,.07)!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease!important}
+    .card.cyclify-premium-card{display:grid!important;grid-template-rows:auto auto 1fr;min-width:0;overflow:hidden;border:1px solid #e7e9ee!important;border-radius:0!important;background:#fff!important;box-shadow:0 4px 15px rgba(17,24,39,.07)!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease!important}
     .card.cyclify-premium-card:hover{transform:translateY(-3px)!important;border-color:#dddfe5!important;box-shadow:0 12px 28px rgba(17,24,39,.12)!important}
     .cyclify-card-title{min-width:0;min-height:48px;margin:0!important;padding:13px 13px 5px;color:#15171a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px!important;font-weight:750;line-height:1.28;letter-spacing:-.012em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .card.cyclify-premium-card>.cyclify-card-product-image{display:block;width:100%!important;height:180px!important;margin:0;object-fit:contain!important;object-position:center!important;padding:6px 13px 7px!important;border:0!important;background:#fff!important;filter:none!important;image-rendering:auto}

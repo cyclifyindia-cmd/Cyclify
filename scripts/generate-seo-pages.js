@@ -654,7 +654,7 @@ const staticPages = fs.readdirSync(root)
   .filter(file => file.endsWith('.html') && !excludedPages.has(file))
   .map(file => {
     const source = fs.readFileSync(path.join(root, file), 'utf8');
-    if (!/<meta name="robots" content="index,follow">/i.test(source)) return null;
+    if (!/<meta name="robots" content="index,follow(?:,[^"]*)?">/i.test(source)) return null;
     const canonical = source.match(/<link rel="canonical" href="([^"]+)">/i);
     if (!canonical || seenCanonicals.has(canonical[1])) return null;
     seenCanonicals.add(canonical[1]);
