@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T13:36:39.546Z",
+  "generatedAt": "2026-10-11T13:40:23.415Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -139,7 +139,7 @@
       "id": "42",
       "name": "iGPSPORT BSC100Max Cyclocomputer",
       "price": 4499,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max.webp?v=1772281342",
       "sizes": [],
       "sizeAvailability": {},
@@ -157,7 +157,7 @@
     },
     "44": {
       "id": "44",
-      "name": "iGPSPORT BSC300T Cyclocomputer",
+      "name": "iGPSPORT BSC300T(32GB) Cyclocomputer",
       "price": 13800,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",
@@ -214,7 +214,7 @@
         "White / 59-62": true,
         "Blue / 52-58": false,
         "Blue / 59-62": true,
-        "Gray / 52-58": true,
+        "Gray / 52-58": false,
         "Gray / 59-62": true
       },
       "sourcePage": "wearables.html"
@@ -345,7 +345,24 @@
         "L"
       ],
       "sizeAvailability": {},
-      "sourcePage": "bikes-frames.html"
+      "sourcePage": "bikes-frames.html",
+      "optionsBySize": {
+        "S": [
+          "Blue",
+          "White",
+          "Grey"
+        ],
+        "M": [
+          "White",
+          "Grey",
+          "Blue",
+          "Red"
+        ],
+        "L": [
+          "Red",
+          "Black"
+        ]
+      }
     },
     "64": {
       "id": "64",
@@ -489,7 +506,7 @@
     "232900242": {
       "id": "232900242",
       "name": "Ralson 700x28C Bicycle Tyre & Tube Combo Pair – Set of 2 Tyres and 2 Tubes",
-      "price": 1699,
+      "price": 1899,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/3H50ZC2Z.webp",
       "sizes": [],
@@ -639,7 +656,7 @@
     "233091760": {
       "id": "233091760",
       "name": "Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre Foldable For Bicycle",
-      "price": 2200,
+      "price": 2040,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/HYHyRXJy.webp",
       "sizes": [
@@ -655,7 +672,7 @@
     "233091780": {
       "id": "233091780",
       "name": "Ralson Ecoracer Lite Pro Foldable Tubeless Ready Training Tyre",
-      "price": 2700,
+      "price": 2550,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/7V66ELN9.webp",
       "sizes": [
@@ -671,7 +688,7 @@
     "233091828": {
       "id": "233091828",
       "name": "Ralson ECORACER Bicycle Tube 700x23-28C | Presta Valve 48mm, 60mm, 80mm",
-      "price": 550,
+      "price": 510,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/RNWoAfMQ.webp",
       "sizes": [
@@ -687,14 +704,14 @@
       ],
       "sizeAvailability": {
         "23 | 48MM": true,
-        "23 | 60MM": false,
-        "23 | 80MM": false,
+        "23 | 60MM": true,
+        "23 | 80MM": true,
         "25 | 48MM": true,
-        "25 | 60MM": false,
-        "25 | 80MM": false,
+        "25 | 60MM": true,
+        "25 | 80MM": true,
         "28 | 48MM": true,
-        "28 | 60MM": false,
-        "28 | 80MM": false
+        "28 | 60MM": true,
+        "28 | 80MM": true
       },
       "sourcePage": "wheels-tyres.html"
     },
@@ -766,22 +783,22 @@
     },
     "233109418": {
       "id": "233109418",
-      "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre",
-      "price": 2600,
+      "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32 C",
+      "price": 2295,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
       "sizes": [
-        "700x35C"
+        "700x32C"
       ],
       "sizeAvailability": {
-        "700x35C": true
+        "700x32C": true
       },
       "sourcePage": "wheels-tyres.html"
     },
     "233144605": {
       "id": "233144605",
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle",
-      "price": 2999,
+      "price": 2465,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/jjRzQsIy.webp",
       "sizes": [
@@ -795,7 +812,7 @@
     "233156553": {
       "id": "233156553",
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700 * 35C) Tyre for Bicycle",
-      "price": 2599,
+      "price": 2380,
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/Nw1gNKPf.webp",
       "sizes": [],
@@ -866,7 +883,7 @@
       "id": "10785808318657",
       "name": "iGPSPORT HR70 Heart Rate Monitor",
       "price": 4999,
-      "available": false,
+      "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_58c874f0-65ee-4f3c-9237-e00a45cdd28b.jpg?v=1754034319",
       "sizes": [],
       "sizeAvailability": {},
@@ -874,7 +891,7 @@
     },
     "10785814773953": {
       "id": "10785814773953",
-      "name": "iGPSPORT TL30 Smart Tailight",
+      "name": "iGPSPORT TL30 Smart Tail Light",
       "price": 2900,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2ed193b0-b19d-48a6-93f2-412e057deba0.jpg?v=1754036015",
@@ -896,7 +913,7 @@
       "id": "10786266185921",
       "name": "iGPSPORT VS500 Smart Light",
       "price": 3500,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1a0b384-34c5-4592-9469-22bdf6705231.jpg?v=1754103597",
       "sizes": [],
       "sizeAvailability": {},
@@ -904,7 +921,7 @@
     },
     "10786279358657": {
       "id": "10786279358657",
-      "name": "IGPSPORTS VS1200 Smart Front Bike Light",
+      "name": "iGPSPORT VS1200 Smart Front Bike Light",
       "price": 5849,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297",
@@ -916,7 +933,7 @@
       "id": "10786293219521",
       "name": "iGPSPORT VS800 Smart Light",
       "price": 4500,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/olo.jpg?v=1772531110",
       "sizes": [],
       "sizeAvailability": {},
@@ -1090,7 +1107,7 @@
     },
     "10795496374465": {
       "id": "10795496374465",
-      "name": "OROME VALAR SK40D Road Disc Wheelset - ALL CARBON SIX SPOKE SUPER-LIGHT WHEELSET",
+      "name": "OROME VALAR SK40D Carbon Disc Wheelset",
       "price": 109900,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/SK40D-Shimano1112SOROMEVALARSK40DRoadDiscWheelset-ALLCARBONSIXSPOKESUPER-LIGHTWHEELSET.jpg?v=1755434714",
@@ -1242,21 +1259,21 @@
       "id": "10918629605569",
       "name": "Continental ULTRA SPORT III Tire 700X25C OEM (Without Box)",
       "price": 2400,
-      "available": false,
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM.jpg?v=1771681347",
+      "available": true,
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM_1.jpg?v=1771681311",
       "sizes": [
         "1 Piece 25C Tire",
         "1 Pair 25C Tire"
       ],
       "sizeAvailability": {
-        "1 Piece 25C Tire": false,
-        "1 Pair 25C Tire": false
+        "1 Piece 25C Tire": true,
+        "1 Pair 25C Tire": true
       },
       "sourcePage": "wheels-tyres.html"
     },
     "10921258451137": {
       "id": "10921258451137",
-      "name": "ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains",
+      "name": "ENLEE 8/10/11-Speed Bicycle Chain",
       "price": 849,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/IMG-20230713-WA0053.jpg?v=1772091590",
@@ -1382,10 +1399,10 @@
     },
     "11048872345793": {
       "id": "11048872345793",
-      "name": "iGPSPORT LANYARD FOR BIKE COMPUTERS",
+      "name": "Bike Computer Safety Lanyard",
       "price": 249,
       "available": true,
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_da45d8dd-a3f5-42a2-ad59-997f810c9e1f.jpg?v=1787205910",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955",
       "sizes": [],
       "sizeAvailability": {},
       "sourcePage": "electronics.html"

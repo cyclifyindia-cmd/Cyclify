@@ -3,6 +3,53 @@
   "source": "https://www.cycletimeindia.com",
   "products": [
     {
+      "id": 11048872345793,
+      "supplierProductId": 11048872345793,
+      "supplierSynced": true,
+      "sourceHandle": "igpsport-lanyard-for-bike-computers",
+      "sourceUrl": "https://www.cycletimeindia.com/products/igpsport-lanyard-for-bike-computers",
+      "stockSource": "cycletime",
+      "name": "Bike Computer Safety Lanyard",
+      "brand": "CycleTimeIndia",
+      "description": "A practical accessory for cyclists who want extra peace of mind on every ride. The cyclocomputer lanyard keeps your device safely tethered without interfering with normal operation, making it a useful addition to any cycling setup.",
+      "price": 249,
+      "mrp": "Rs 298",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 50514133811393,
+          "title": "Default Title",
+          "available": true,
+          "price": 249,
+          "compare_at_price": 298,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : CycleTimeIndia",
+        "Product Type : Bicycle Accessories",
+        "Product Details : A practical accessory for cyclists who want extra peace of mind on every ride. The cyclocomputer lanyard keeps your device safely tethered without interfering with normal operation, making it a useful addition to any cycling setup.",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/igpsport-lanyard-for-bike-computers"
+      },
+      "keywords": "Bike Computer Safety Lanyard Bicycle Accessories CycleTimeIndia",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "bike-computer",
+      "subCategory": ""
+    },
+    {
       "id": 53,
       "supplierProductId": 10881767440577,
       "supplierSynced": true,
@@ -266,7 +313,7 @@
         "White / 59-62": true,
         "Blue / 52-58": false,
         "Blue / 59-62": true,
-        "Gray / 52-58": true,
+        "Gray / 52-58": false,
         "Gray / 59-62": true
       },
       "variants": [
@@ -313,7 +360,7 @@
         {
           "id": 49830256312513,
           "title": "Gray / 52-58",
-          "available": true,
+          "available": false,
           "price": 2899,
           "compare_at_price": 3520,
           "option1": "Gray",
@@ -487,12 +534,12 @@
       "description": "Continental Ultra Sport III Folding Tire – Black/Black OEM Experience reliable performance and smooth rolling with the Continental Ultra Sport III Folding Tire,OEM built for road cyclists who demand speed, grip, and durability. With a sleek black-on-black design, this tire is ideal for both training and casual racing. The updated Ultra Sport III features a modern tread pattern inspired by Continental’s high-performance race tires, offering excellent traction and cornering on both wet and dry surfaces. Made with PureGrip Compound, it strikes the perfect balance between high mileage and dependable grip. Key Features: PureGrip Compound: High gri",
       "price": 2400,
       "mrp": "Rs 5,400",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM.jpg?v=1771681347",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM_1.jpg?v=1771681311",
       "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM_1.jpg?v=1771681311",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM.jpg?v=1771681347",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_85419970-cd6f-408d-b21d-998db4b073fa.jpg?v=1771681347",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_586df694-5f79-4731-8483-a7c565b61fd2.jpg?v=1771681347",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM_1.jpg?v=1771681311",
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_5a3f44d5-e828-42e0-b6cf-8c502fdee709.jpg?v=1771681311"
       ],
       "sizes": [
@@ -500,14 +547,14 @@
         "1 Pair 25C Tire"
       ],
       "sizeAvailability": {
-        "1 Piece 25C Tire": false,
-        "1 Pair 25C Tire": false
+        "1 Piece 25C Tire": true,
+        "1 Pair 25C Tire": true
       },
       "variants": [
         {
           "id": 50003527270593,
           "title": "1 Piece 25C Tire",
-          "available": false,
+          "available": true,
           "price": 2400,
           "compare_at_price": 2700,
           "option1": "1 Piece 25C Tire",
@@ -517,7 +564,7 @@
         {
           "id": 50003527303361,
           "title": "1 Pair 25C Tire",
-          "available": false,
+          "available": true,
           "price": 4800,
           "compare_at_price": 5400,
           "option1": "1 Pair 25C Tire",
@@ -525,7 +572,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : Cycletimeindia",
         "Product Type : Bicycle Accessories",
@@ -1659,7 +1706,7 @@
       "sourceHandle": "enlee-anti-rust-mountain-road-bicycle-chain-8-10-11-speed-silver-gold-mtb-cycle-and-road-cycle-chains",
       "sourceUrl": "https://www.cycletimeindia.com/products/enlee-anti-rust-mountain-road-bicycle-chain-8-10-11-speed-silver-gold-mtb-cycle-and-road-cycle-chains",
       "stockSource": "cycletime",
-      "name": "ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains",
+      "name": "ENLEE 8/10/11-Speed Bicycle Chain",
       "brand": "Royal Traders",
       "description": "",
       "price": 849,
@@ -1743,7 +1790,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/enlee-anti-rust-mountain-road-bicycle-chain-8-10-11-speed-silver-gold-mtb-cycle-and-road-cycle-chains"
       },
-      "keywords": "ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains Bicycle Accessories Royal Traders",
+      "keywords": "ENLEE 8/10/11-Speed Bicycle Chain Bicycle Accessories Royal Traders",
       "categoryPage": "components.html",
       "categoryLabel": "Components",
       "mainCategory": "drivetrain",
@@ -2151,7 +2198,7 @@
         {
           "id": 49843919421633,
           "title": "Default Title",
-          "available": true,
+          "available": false,
           "price": 4499,
           "compare_at_price": 5900,
           "option1": "Default Title",
@@ -2159,7 +2206,7 @@
           "option3": ""
         }
       ],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : Bicycle Accessories",
@@ -2243,7 +2290,7 @@
       "sourceHandle": "igpsports-bsc300t",
       "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-bsc300t",
       "stockSource": "cycletime",
-      "name": "iGPSPORT BSC300T Cyclocomputer",
+      "name": "iGPSPORT BSC300T(32GB) Cyclocomputer",
       "brand": "iGPSPORT",
       "description": "Elevate your cycling experience with the all-new iGPSPORT BSC300T, a powerful and intuitive GPS bike computer designed for every type of cyclist. From casual riders to dedicated trainers, the BSC300T delivers professional-grade data, seamless navigation, and a vibrant touchscreen interface in a sleek, lightweight package. Key Features: . Vibrant 2.4\" Color Touchscreen: Navigate through menus, maps, and data with a simple tap. The transflective, anti-glare screen offers exceptional clarity and readability, even in direct sunlight or rainy conditions. Precision GPS Navigation: Never get lost again. With support for five major satellite systems ",
       "price": 13800,
@@ -2294,7 +2341,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/igpsports-bsc300t"
       },
-      "keywords": "iGPSPORT BSC300T Cyclocomputer GPS Computer CycleTimeIndia",
+      "keywords": "iGPSPORT BSC300T(32GB) Cyclocomputer GPS Computer CycleTimeIndia",
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
@@ -2549,7 +2596,7 @@
         {
           "id": 49449703112897,
           "title": "Default Title",
-          "available": false,
+          "available": true,
           "price": 4999,
           "compare_at_price": 5998,
           "option1": "Default Title",
@@ -2557,7 +2604,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : GPS Computer",
@@ -2577,53 +2624,6 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "sensors",
-      "subCategory": ""
-    },
-    {
-      "id": 11048872345793,
-      "supplierProductId": 11048872345793,
-      "supplierSynced": true,
-      "sourceHandle": "igpsport-lanyard-for-bike-computers",
-      "sourceUrl": "https://www.cycletimeindia.com/products/igpsport-lanyard-for-bike-computers",
-      "stockSource": "cycletime",
-      "name": "iGPSPORT LANYARD FOR BIKE COMPUTERS",
-      "brand": "iGPSPORT",
-      "description": "A practical accessory for cyclists who want extra peace of mind on every ride. The cyclocomputer lanyard keeps your device safely tethered without interfering with normal operation, making it a useful addition to any cycling setup.",
-      "price": 249,
-      "mrp": "Rs 298",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_da45d8dd-a3f5-42a2-ad59-997f810c9e1f.jpg?v=1787205910",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_da45d8dd-a3f5-42a2-ad59-997f810c9e1f.jpg?v=1787205910"
-      ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [
-        {
-          "id": 50514133811393,
-          "title": "Default Title",
-          "available": true,
-          "price": 249,
-          "compare_at_price": 298,
-          "option1": "Default Title",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : iGPSPORT",
-        "Product Type : Bicycle Accessories",
-        "Product Details : A practical accessory for cyclists who want extra peace of mind on every ride. The cyclocomputer lanyard keeps your device safely tethered without interfering with normal operation, making it a useful addition to any cycling setup.",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.cycletimeindia.com/products/igpsport-lanyard-for-bike-computers"
-      },
-      "keywords": "iGPSPORT LANYARD FOR BIKE COMPUTERS Bicycle Accessories CycleTimeIndia",
-      "categoryPage": "electronics.html",
-      "categoryLabel": "Electronics",
-      "mainCategory": "bike-computer",
       "subCategory": ""
     },
     {
@@ -2903,7 +2903,7 @@
       "stockSource": "cycletime",
       "name": "iGPSPORT Silicone Case For BSC 100Max Computer",
       "brand": "iGPSPORT",
-      "description": "",
+      "description": "A silicone protective case for the iGPSPORT BSC100Max bike computer.Model compatibilityChoose this case for the BSC100Max. Check your computer's model name before ordering; similarly named iGPSPORT computers may use different cases. This listing is for the case, not the bike computer.",
       "price": 700,
       "mrp": "Rs 840",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_2a74e509-80c5-4749-a220-d22a1e889968.jpg?v=1770293870",
@@ -2928,6 +2928,7 @@
       "specs": [
         "Brand : iGPSPORT",
         "Product Type : Bicycle computer case",
+        "Product Details : A silicone protective case for the iGPSPORT BSC100Max bike computer.Model compatibilityChoose this case for the BSC100Max. Check your computer's model name before ordering; similarly named iGPSPORT computers may use different cases. This li",
         "Shipping : Free shipping across India"
       ],
       "specSource": {
@@ -3118,7 +3119,7 @@
       "sourceHandle": "igpsports-tl30-smart-bike-taillight",
       "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-tl30-smart-bike-taillight",
       "stockSource": "cycletime",
-      "name": "iGPSPORT TL30 Smart Tailight",
+      "name": "iGPSPORT TL30 Smart Tail Light",
       "brand": "iGPSPORT",
       "description": "The TL30 Smart Bike Taillight is designed for cyclists who prioritize safety, visibility, and smart features. Whether you ride during the day or night, on roads or trails, the TL30 keeps you visible and protected with intelligent lighting technology. Key Features: 🔴 Smart Brake SensingInstantly increases brightness when braking to alert vehicles behind you. 🌙 Auto On/Off Light SensorAutomatically turns on in low light and off in daylight to save battery. 💡 Ultra-Bright LEDHigh-intensity red LED ensures you're seen from a long distance—even in low visibility conditions. 🔋 USB RechargeableLong-lasting battery with fast USB charging. No need",
       "price": 2900,
@@ -3164,7 +3165,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/igpsports-tl30-smart-bike-taillight"
       },
-      "keywords": "iGPSPORT TL30 Smart Tailight Bicycle Smart Lights CycleTimeIndia",
+      "keywords": "iGPSPORT TL30 Smart Tail Light Bicycle Smart Lights CycleTimeIndia",
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
@@ -3243,128 +3244,13 @@
       "subCategory": ""
     },
     {
-      "id": 10786266185921,
-      "supplierProductId": 10786266185921,
-      "supplierSynced": true,
-      "sourceHandle": "igpsports-smart-light-vs500",
-      "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-smart-light-vs500",
-      "stockSource": "cycletime",
-      "name": "iGPSPORT VS500 Smart Light",
-      "brand": "iGPSPORT",
-      "description": "The iGPSPORT VS500 Smart Light offers advanced illumination tailored for cycling enthusiasts. Designed with precision, it ensures optimal brightness and energy efficiency, enhancing visibility and safety during rides. Its smart features allow seamless control and adaptability to various lighting conditions, making it an essential accessory for serious cyclists seeking reliable performance and convenience. iGPSPORT VS500 Smart Bike Tail Light Enhance your cycling safety with the iGPSPORT VS500 Smart Light, engineered for performance, visibility, and convenience. Designed with smart motion detection and brake-sensing technology, the VS500 autom",
-      "price": 3500,
-      "mrp": "Rs 4,080",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1a0b384-34c5-4592-9469-22bdf6705231.jpg?v=1754103597",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1a0b384-34c5-4592-9469-22bdf6705231.jpg?v=1754103597",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_2f65b652-0488-4ae8-8b34-4e37e7f6811e.jpg?v=1768472854",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_fb97b4f8-ae53-42a2-b2f8-09457ca49d60.jpg?v=1768472854",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_0e8f4c78-50b1-4d1e-97eb-44ae72604e0f.jpg?v=1754103597",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_fedafa55-e53a-4c17-9f90-cbdab4040270.jpg?v=1754103597"
-      ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [
-        {
-          "id": 49451599888577,
-          "title": "Default Title",
-          "available": true,
-          "price": 3500,
-          "compare_at_price": 4080,
-          "option1": "Default Title",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : iGPSPORT",
-        "Product Type : Bicycle Smart Lights",
-        "Smart Brake Sensor : Automatically activates a bright warning light during sudden braking.",
-        "Intelligent Light Control : Auto on/off based on motion and ambient light detection.",
-        "USB : C Rechargeable: Fast charging with long battery life (up to 60 hours in low mode).",
-        "IPX6 Waterproof Rating : Designed for all-weather riding conditions.",
-        "Multiple Light Modes : Choose from steady, flash, and smart mode based on your needs.",
-        "Easy Installation : Tool-free mounting compatible with most seat posts.",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.cycletimeindia.com/products/igpsports-smart-light-vs500"
-      },
-      "keywords": "iGPSPORT VS500 Smart Light Bicycle Smart Lights CycleTimeIndia",
-      "categoryPage": "electronics.html",
-      "categoryLabel": "Electronics",
-      "mainCategory": "lights",
-      "subCategory": ""
-    },
-    {
-      "id": 10786293219521,
-      "supplierProductId": 10786293219521,
-      "supplierSynced": true,
-      "sourceHandle": "igpsports-smart-light-vs800",
-      "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-smart-light-vs800",
-      "stockSource": "cycletime",
-      "name": "iGPSPORT VS800 Smart Light",
-      "brand": "iGPSPORT",
-      "description": "The iGPSPORT Smart Light VS800 offers advanced illumination tailored for cycling enthusiasts. Designed with smart technology, it ensures optimal brightness and energy efficiency, enhancing visibility and safety during rides. Its durable build and intuitive controls make it a reliable companion for both urban commutes and off-road adventures. Experience enhanced road awareness with this expertly engineered smart light. iGPSPORT VS800 Smart Bike Tail Light Stay visible and safe on every ride with the iGPSPORT VS800, a smart, high-brightness bike light designed for modern cyclists. Built with advanced brake-sensing technology and automatic light",
-      "price": 4500,
-      "mrp": "Rs 6,125",
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/olo.jpg?v=1772531110",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/olo.jpg?v=1772531110",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/iGPSPORT__1729163960.png?v=1772531110",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_c9537c3d-9583-4639-9510-214ec93fa465.jpg?v=1772531110",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_20e83360-93ec-4899-ad3a-d171bd97a7c1.jpg?v=1772531110",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/2_7101a909-106d-4978-b381-957c2cc72891.webp?v=1772531110",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_a4263eac-9e9c-4a32-a708-2c873e13df5c.jpg?v=1772531110",
-        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_c92de44b-5cfd-431c-a723-a4541b443245.jpg?v=1772531110"
-      ],
-      "sizes": [],
-      "sizeAvailability": {},
-      "variants": [
-        {
-          "id": 49451669520577,
-          "title": "Default Title",
-          "available": true,
-          "price": 4500,
-          "compare_at_price": 6125,
-          "option1": "Default Title",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : iGPSPORT",
-        "Product Type : Bicycle Smart Lights",
-        "High Visibility : Bright LED light ensures you're seen clearly from a distance.",
-        "Smart Brake Sensor : Instantly boosts brightness when you brake to alert vehicles behind.",
-        "Auto On/Off : Intelligent motion and light sensors conserve battery when not in use.",
-        "Long Battery Life : USB-C rechargeable with up to 50 hours of runtime on a single charge.",
-        "IPX6 Waterproof : Designed to handle rain, splashes, and tough weather conditions.",
-        "Multiple Modes : Choose from smart, flashing, and steady modes based on your ride.",
-        "Easy Mounting : Quick and secure seatpost installation—no tools required.",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.cycletimeindia.com/products/igpsports-smart-light-vs800"
-      },
-      "keywords": "iGPSPORT VS800 Smart Light Bicycle Smart Lights CycleTimeIndia",
-      "categoryPage": "electronics.html",
-      "categoryLabel": "Electronics",
-      "mainCategory": "lights",
-      "subCategory": ""
-    },
-    {
       "id": 10786279358657,
       "supplierProductId": 10786279358657,
       "supplierSynced": true,
       "sourceHandle": "igpsports-vs1200-smart-front-bike-light",
       "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-vs1200-smart-front-bike-light",
       "stockSource": "cycletime",
-      "name": "IGPSPORTS VS1200 Smart Front Bike Light",
+      "name": "iGPSPORT VS1200 Smart Front Bike Light",
       "brand": "iGPSPORT",
       "description": "Product Description The IGPSPORTS VS1200 Smart Front Bike Light offers advanced illumination tailored for serious cyclists. Designed with intelligent brightness adjustment, it enhances visibility in varying conditions while conserving battery life. Its durable build ensures reliable performance on all terrains, making it an essential accessory for safe and efficient night riding. IGPSPORT VS1200 Smart Front Bike Light Light up your ride with the IGPSPORT VS1200, a high-performance smart front bike light built for serious cyclists and night riders. Featuring an ultra-bright 1200-lumen output, smart light sensors, and multiple modes, this compa",
       "price": 5849,
@@ -3416,7 +3302,122 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/igpsports-vs1200-smart-front-bike-light"
       },
-      "keywords": "IGPSPORTS VS1200 Smart Front Bike Light Bicycle Smart Lights Royal Traders",
+      "keywords": "iGPSPORT VS1200 Smart Front Bike Light Bicycle Smart Lights Royal Traders",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "lights",
+      "subCategory": ""
+    },
+    {
+      "id": 10786266185921,
+      "supplierProductId": 10786266185921,
+      "supplierSynced": true,
+      "sourceHandle": "igpsports-smart-light-vs500",
+      "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-smart-light-vs500",
+      "stockSource": "cycletime",
+      "name": "iGPSPORT VS500 Smart Light",
+      "brand": "iGPSPORT",
+      "description": "The iGPSPORT VS500 Smart Light offers advanced illumination tailored for cycling enthusiasts. Designed with precision, it ensures optimal brightness and energy efficiency, enhancing visibility and safety during rides. Its smart features allow seamless control and adaptability to various lighting conditions, making it an essential accessory for serious cyclists seeking reliable performance and convenience. iGPSPORT VS500 Smart Bike Tail Light Enhance your cycling safety with the iGPSPORT VS500 Smart Light, engineered for performance, visibility, and convenience. Designed with smart motion detection and brake-sensing technology, the VS500 autom",
+      "price": 3500,
+      "mrp": "Rs 4,080",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1a0b384-34c5-4592-9469-22bdf6705231.jpg?v=1754103597",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1a0b384-34c5-4592-9469-22bdf6705231.jpg?v=1754103597",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_2f65b652-0488-4ae8-8b34-4e37e7f6811e.jpg?v=1768472854",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_fb97b4f8-ae53-42a2-b2f8-09457ca49d60.jpg?v=1768472854",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_0e8f4c78-50b1-4d1e-97eb-44ae72604e0f.jpg?v=1754103597",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_fedafa55-e53a-4c17-9f90-cbdab4040270.jpg?v=1754103597"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 49451599888577,
+          "title": "Default Title",
+          "available": false,
+          "price": 3500,
+          "compare_at_price": 4080,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": false,
+      "specs": [
+        "Brand : iGPSPORT",
+        "Product Type : Bicycle Smart Lights",
+        "Smart Brake Sensor : Automatically activates a bright warning light during sudden braking.",
+        "Intelligent Light Control : Auto on/off based on motion and ambient light detection.",
+        "USB : C Rechargeable: Fast charging with long battery life (up to 60 hours in low mode).",
+        "IPX6 Waterproof Rating : Designed for all-weather riding conditions.",
+        "Multiple Light Modes : Choose from steady, flash, and smart mode based on your needs.",
+        "Easy Installation : Tool-free mounting compatible with most seat posts.",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/igpsports-smart-light-vs500"
+      },
+      "keywords": "iGPSPORT VS500 Smart Light Bicycle Smart Lights CycleTimeIndia",
+      "categoryPage": "electronics.html",
+      "categoryLabel": "Electronics",
+      "mainCategory": "lights",
+      "subCategory": ""
+    },
+    {
+      "id": 10786293219521,
+      "supplierProductId": 10786293219521,
+      "supplierSynced": true,
+      "sourceHandle": "igpsports-smart-light-vs800",
+      "sourceUrl": "https://www.cycletimeindia.com/products/igpsports-smart-light-vs800",
+      "stockSource": "cycletime",
+      "name": "iGPSPORT VS800 Smart Light",
+      "brand": "iGPSPORT",
+      "description": "The iGPSPORT Smart Light VS800 offers advanced illumination tailored for cycling enthusiasts. Designed with smart technology, it ensures optimal brightness and energy efficiency, enhancing visibility and safety during rides. Its durable build and intuitive controls make it a reliable companion for both urban commutes and off-road adventures. Experience enhanced road awareness with this expertly engineered smart light. iGPSPORT VS800 Smart Bike Tail Light Stay visible and safe on every ride with the iGPSPORT VS800, a smart, high-brightness bike light designed for modern cyclists. Built with advanced brake-sensing technology and automatic light",
+      "price": 4500,
+      "mrp": "Rs 6,125",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/olo.jpg?v=1772531110",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/olo.jpg?v=1772531110",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/iGPSPORT__1729163960.png?v=1772531110",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_c9537c3d-9583-4639-9510-214ec93fa465.jpg?v=1772531110",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_20e83360-93ec-4899-ad3a-d171bd97a7c1.jpg?v=1772531110",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/2_7101a909-106d-4978-b381-957c2cc72891.webp?v=1772531110",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_a4263eac-9e9c-4a32-a708-2c873e13df5c.jpg?v=1772531110",
+        "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_c92de44b-5cfd-431c-a723-a4541b443245.jpg?v=1772531110"
+      ],
+      "sizes": [],
+      "sizeAvailability": {},
+      "variants": [
+        {
+          "id": 49451669520577,
+          "title": "Default Title",
+          "available": false,
+          "price": 4500,
+          "compare_at_price": 6125,
+          "option1": "Default Title",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": false,
+      "specs": [
+        "Brand : iGPSPORT",
+        "Product Type : Bicycle Smart Lights",
+        "High Visibility : Bright LED light ensures you're seen clearly from a distance.",
+        "Smart Brake Sensor : Instantly boosts brightness when you brake to alert vehicles behind.",
+        "Auto On/Off : Intelligent motion and light sensors conserve battery when not in use.",
+        "Long Battery Life : USB-C rechargeable with up to 50 hours of runtime on a single charge.",
+        "IPX6 Waterproof : Designed to handle rain, splashes, and tough weather conditions.",
+        "Multiple Modes : Choose from smart, flashing, and steady modes based on your ride.",
+        "Easy Mounting : Quick and secure seatpost installation—no tools required.",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.cycletimeindia.com/products/igpsports-smart-light-vs800"
+      },
+      "keywords": "iGPSPORT VS800 Smart Light Bicycle Smart Lights CycleTimeIndia",
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
@@ -3536,7 +3537,7 @@
       "sourceHandle": "orome-valar-sk40d-road-disc-wheelset-all-carbon-six-spoke-super-light-wheelset",
       "sourceUrl": "https://www.cycletimeindia.com/products/orome-valar-sk40d-road-disc-wheelset-all-carbon-six-spoke-super-light-wheelset",
       "stockSource": "cycletime",
-      "name": "OROME VALAR SK40D Road Disc Wheelset - ALL CARBON SIX SPOKE SUPER-LIGHT WHEELSET",
+      "name": "OROME VALAR SK40D Carbon Disc Wheelset",
       "brand": "My Store",
       "description": "Our OROME Valar SK40D Wheelset Is Designed with A One-Piece Rim and Bladed Aero Spoke Construction. This Lightweight Wheelset, Weighs in At Just 1378g/Pair and Is Not Only Suitable for TT And Triathlons, But Also for Road and Gravel Use. The Tubeless Ready SK40D Clincher Disc Wheelsets, Has A 40mm Deep Profile, 22mm Internal And 29mm External Widths Intended to Excel with Wider Road and Gravel Tires. Six Carbon Aero Spoke Design Offers Exceptional Aero Performance and Perfect Control in Crosswinds. Our VALAR SK40D Wheelset Is Assembled with TPI Ceramic Bearings with A CNC Hub. The Freehub Driver Is Similar in Design to DT Swiss' Star Ratchet ",
       "price": 109900,
@@ -3576,7 +3577,7 @@
         "label": "Live supplier specification",
         "url": "https://www.cycletimeindia.com/products/orome-valar-sk40d-road-disc-wheelset-all-carbon-six-spoke-super-light-wheelset"
       },
-      "keywords": "OROME VALAR SK40D Road Disc Wheelset - ALL CARBON SIX SPOKE SUPER-LIGHT WHEELSET My Store",
+      "keywords": "OROME VALAR SK40D Carbon Disc Wheelset My Store",
       "categoryPage": "wheels-tyres.html",
       "categoryLabel": "Wheels & Tyres",
       "mainCategory": "wheels",

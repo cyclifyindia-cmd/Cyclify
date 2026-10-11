@@ -38,6 +38,7 @@ function addProduct(product, source) {
     record.sellingPrice = sellingPrice;
     record.preorderDeposit = preorderDeposit;
   }
+  if (product.optionsBySize) record.optionsBySize = JSON.parse(JSON.stringify(product.optionsBySize));
   expected.set(id, record);
 }
 

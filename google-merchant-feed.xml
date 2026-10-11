@@ -211,7 +211,7 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_18_33d283f4-9c0c-4382-ad21-b04a4899822b.jpg?v=1772281342</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_15_06a57248-9194-4087-9d1f-29077d0de317.jpg?v=1772281342</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_13_cb3a519d-e897-45be-882f-b470e19391dc.jpg?v=1772281342</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
+      <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>5900.00 INR</g:price>
       <g:sale_price>4499.00 INR</g:sale_price>
@@ -238,8 +238,8 @@
     </item>
     <item>
       <g:id>CYCLIFY-44</g:id>
-      <title>iGPSPORT BSC300T Cyclocomputer</title>
-      <description>Shop iGPSPORT BSC300T Cyclocomputer at Cyclify India for Rs 13,800. Elevate your cycling experience with the all-new iGPSPORT BSC300T, a powerful and</description>
+      <title>iGPSPORT BSC300T(32GB) Cyclocomputer</title>
+      <description>Shop iGPSPORT BSC300T(32GB) Cyclocomputer at Cyclify India for Rs 13,800. Elevate your cycling experience with the all-new iGPSPORT BSC300T, a</description>
       <link>https://cyclify.in/products/igpsport-bsc300t-cyclocomputer-44.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812</g:image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_396d7198-b55d-453e-afd0-df109e6ae7de.jpg?v=1768473806</g:additional_image_link>
@@ -609,6 +609,20 @@
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
     </item>
     <item>
+      <g:id>CYCLIFY-11048872345793</g:id>
+      <title>Bike Computer Safety Lanyard</title>
+      <description>Shop Bike Computer Safety Lanyard at Cyclify India for Rs 249. A practical accessory for cyclists who want extra peace of mind on every ride. The</description>
+      <link>https://cyclify.in/products/igpsport-lanyard-for-bike-computers-11048872345793.html</link>
+      <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>298.00 INR</g:price>
+      <g:sale_price>249.00 INR</g:sale_price>
+      <g:brand>CycleTimeIndia</g:brand>
+      <g:product_type>Electronics</g:product_type>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+    </item>
+    <item>
       <g:id>CYCLIFY-10798701510849</g:id>
       <title>Continental Ultra Sport III Folding Tire</title>
       <description>Shop Continental Ultra Sport III Folding Tire at Cyclify India for Rs 2,700. Continental Ultra Sport III Folding Tire – Black/Black Experience</description>
@@ -632,12 +646,12 @@
       <title>Continental ULTRA SPORT III Tire 700X25C OEM (Without Box)</title>
       <description>Shop Continental ULTRA SPORT III Tire 700X25C OEM (Without Box) at Cyclify India for Rs 2,400. Continental Ultra Sport III Folding Tire – Black/Black</description>
       <link>https://cyclify.in/products/continental-ultra-sport-iii-tire-700x25c-oem-without-box-10918629605569.html</link>
-      <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM.jpg?v=1771681347</g:image_link>
+      <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM_1.jpg?v=1771681311</g:image_link>
+      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM.jpg?v=1771681347</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_85419970-cd6f-408d-b21d-998db4b073fa.jpg?v=1771681347</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_586df694-5f79-4731-8483-a7c565b61fd2.jpg?v=1771681347</g:additional_image_link>
-      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/WhatsApp_Image_2026-02-21_at_7.08.33_PM_1.jpg?v=1771681311</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_5a3f44d5-e828-42e0-b6cf-8c502fdee709.jpg?v=1771681311</g:additional_image_link>
-      <g:availability>out_of_stock</g:availability>
+      <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>5400.00 INR</g:price>
       <g:sale_price>2400.00 INR</g:sale_price>
@@ -770,8 +784,8 @@
     </item>
     <item>
       <g:id>CYCLIFY-10921258451137</g:id>
-      <title>ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains</title>
-      <description>Shop ENLEE Anti-Rust Mountain Road Bicycle Chain 8/10/11/ Speed Silver/Gold MTB Cycle And Road Cycle Chains at Cyclify India for Rs 849. Royal Traders</description>
+      <title>ENLEE 8/10/11-Speed Bicycle Chain</title>
+      <description>Shop ENLEE 8/10/11-Speed Bicycle Chain at Cyclify India for Rs 849. Royal Traders</description>
       <link>https://cyclify.in/products/enlee-anti-rust-mountain-road-bicycle-chain-8-10-11-speed-silver-gold-mtb--10921258451137.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/IMG-20230713-WA0053.jpg?v=1772091590</g:image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/8.jpg?v=1772091572</g:additional_image_link>
@@ -950,24 +964,10 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_1632f130-525a-4ab4-9a72-e3fe9c61fda2.jpg?v=1768473261</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_467aa49b-ceb7-430a-be3a-d04e0144d4dc.jpg?v=1768473261</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_6e5b3c94-5820-4c5e-b872-943217fed71f.jpg?v=1754034319</g:additional_image_link>
-      <g:availability>out_of_stock</g:availability>
+      <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>5998.00 INR</g:price>
       <g:sale_price>4999.00 INR</g:sale_price>
-      <g:brand>iGPSPORT</g:brand>
-      <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
-    </item>
-    <item>
-      <g:id>CYCLIFY-11048872345793</g:id>
-      <title>iGPSPORT LANYARD FOR BIKE COMPUTERS</title>
-      <description>Shop iGPSPORT LANYARD FOR BIKE COMPUTERS at Cyclify India for Rs 249. A practical accessory for cyclists who want extra peace of mind on every ride</description>
-      <link>https://cyclify.in/products/igpsport-lanyard-for-bike-computers-11048872345793.html</link>
-      <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_da45d8dd-a3f5-42a2-ad59-997f810c9e1f.jpg?v=1787205910</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>new</g:condition>
-      <g:price>298.00 INR</g:price>
-      <g:sale_price>249.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
@@ -1064,7 +1064,7 @@
     <item>
       <g:id>CYCLIFY-10907584168129</g:id>
       <title>iGPSPORT Silicone Case For BSC 100Max Computer</title>
-      <description>Shop iGPSPORT Silicone Case For BSC 100Max Computer at Cyclify India for Rs 700. Bicycle computer case</description>
+      <description>Shop iGPSPORT Silicone Case For BSC 100Max Computer at Cyclify India for Rs 700. A silicone protective case for the iGPSPORT BSC100Max bike</description>
       <link>https://cyclify.in/products/igpsport-silicone-case-for-bsc-100max-computer-10907584168129.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_2a74e509-80c5-4749-a220-d22a1e889968.jpg?v=1770293870</g:image_link>
       <g:availability>in_stock</g:availability>
@@ -1140,8 +1140,8 @@
     </item>
     <item>
       <g:id>CYCLIFY-10785814773953</g:id>
-      <title>iGPSPORT TL30 Smart Tailight</title>
-      <description>Shop iGPSPORT TL30 Smart Tailight at Cyclify India for Rs 2,900. The TL30 Smart Bike Taillight is designed for cyclists who prioritize safety</description>
+      <title>iGPSPORT TL30 Smart Tail Light</title>
+      <description>Shop iGPSPORT TL30 Smart Tail Light at Cyclify India for Rs 2,900. The TL30 Smart Bike Taillight is designed for cyclists who prioritize safety</description>
       <link>https://cyclify.in/products/igpsport-tl30-smart-tailight-10785814773953.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2ed193b0-b19d-48a6-93f2-412e057deba0.jpg?v=1754036015</g:image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_1a54b796-029c-4f95-9625-1573e68f7c15.jpg?v=1754036015</g:additional_image_link>
@@ -1178,6 +1178,27 @@
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
     </item>
     <item>
+      <g:id>CYCLIFY-10786279358657</g:id>
+      <title>iGPSPORT VS1200 Smart Front Bike Light</title>
+      <description>Shop iGPSPORT VS1200 Smart Front Bike Light at Cyclify India for Rs 5,849. Product Description The IGPSPORTS VS1200 Smart Front Bike Light offers</description>
+      <link>https://cyclify.in/products/igpsports-vs1200-smart-front-bike-light-10786279358657.html</link>
+      <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297</g:image_link>
+      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/1_d1e37fa9-2a6d-4689-b7d4-da7652dd5aaf.webp?v=1768567682</g:additional_image_link>
+      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_e28f3301-434d-44a5-b97b-0d406f8e2cd2.jpg?v=1768567682</g:additional_image_link>
+      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_5b079d00-b4d7-425a-857a-27b1a0be5473.jpg?v=1768567682</g:additional_image_link>
+      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_9755073b-ab4a-45e3-89e4-892a8becb5ba.jpg?v=1768567682</g:additional_image_link>
+      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_433fb2ab-e834-491a-9499-8836e03548bc.jpg?v=1768567682</g:additional_image_link>
+      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_50263965-1c88-46ad-84ca-bca8b5a2bd5b.jpg?v=1768567682</g:additional_image_link>
+      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_3ea9c38e-8381-4faf-9ac3-45df7bc8116d.jpg?v=1768567682</g:additional_image_link>
+      <g:availability>out_of_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>7800.00 INR</g:price>
+      <g:sale_price>5849.00 INR</g:sale_price>
+      <g:brand>iGPSPORT</g:brand>
+      <g:product_type>Electronics</g:product_type>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+    </item>
+    <item>
       <g:id>CYCLIFY-10786266185921</g:id>
       <title>iGPSPORT VS500 Smart Light</title>
       <description>Shop iGPSPORT VS500 Smart Light at Cyclify India for Rs 3,500. The iGPSPORT VS500 Smart Light offers advanced illumination tailored for cycling</description>
@@ -1187,7 +1208,7 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_fb97b4f8-ae53-42a2-b2f8-09457ca49d60.jpg?v=1768472854</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_0e8f4c78-50b1-4d1e-97eb-44ae72604e0f.jpg?v=1754103597</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_fedafa55-e53a-4c17-9f90-cbdab4040270.jpg?v=1754103597</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
+      <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>4080.00 INR</g:price>
       <g:sale_price>3500.00 INR</g:sale_price>
@@ -1207,31 +1228,10 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/2_7101a909-106d-4978-b381-957c2cc72891.webp?v=1772531110</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_a4263eac-9e9c-4a32-a708-2c873e13df5c.jpg?v=1772531110</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_c92de44b-5cfd-431c-a723-a4541b443245.jpg?v=1772531110</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
+      <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>6125.00 INR</g:price>
       <g:sale_price>4500.00 INR</g:sale_price>
-      <g:brand>iGPSPORT</g:brand>
-      <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
-    </item>
-    <item>
-      <g:id>CYCLIFY-10786279358657</g:id>
-      <title>IGPSPORTS VS1200 Smart Front Bike Light</title>
-      <description>Shop IGPSPORTS VS1200 Smart Front Bike Light at Cyclify India for Rs 5,849. Product Description The IGPSPORTS VS1200 Smart Front Bike Light offers</description>
-      <link>https://cyclify.in/products/igpsports-vs1200-smart-front-bike-light-10786279358657.html</link>
-      <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297</g:image_link>
-      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/1_d1e37fa9-2a6d-4689-b7d4-da7652dd5aaf.webp?v=1768567682</g:additional_image_link>
-      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_e28f3301-434d-44a5-b97b-0d406f8e2cd2.jpg?v=1768567682</g:additional_image_link>
-      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_5b079d00-b4d7-425a-857a-27b1a0be5473.jpg?v=1768567682</g:additional_image_link>
-      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_9755073b-ab4a-45e3-89e4-892a8becb5ba.jpg?v=1768567682</g:additional_image_link>
-      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_433fb2ab-e834-491a-9499-8836e03548bc.jpg?v=1768567682</g:additional_image_link>
-      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_50263965-1c88-46ad-84ca-bca8b5a2bd5b.jpg?v=1768567682</g:additional_image_link>
-      <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_3ea9c38e-8381-4faf-9ac3-45df7bc8116d.jpg?v=1768567682</g:additional_image_link>
-      <g:availability>out_of_stock</g:availability>
-      <g:condition>new</g:condition>
-      <g:price>7800.00 INR</g:price>
-      <g:sale_price>5849.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
@@ -1255,8 +1255,8 @@
     </item>
     <item>
       <g:id>CYCLIFY-10795496374465</g:id>
-      <title>OROME VALAR SK40D Road Disc Wheelset - ALL CARBON SIX SPOKE SUPER-LIGHT WHEELSET</title>
-      <description>Shop OROME VALAR SK40D Road Disc Wheelset - ALL CARBON SIX SPOKE SUPER-LIGHT WHEELSET at Cyclify India for Rs 1,09,900. Our OROME Valar SK40D Wheelset</description>
+      <title>OROME VALAR SK40D Carbon Disc Wheelset</title>
+      <description>Shop OROME VALAR SK40D Carbon Disc Wheelset at Cyclify India for Rs 1,09,900. Our OROME Valar SK40D Wheelset Is Designed with A One-Piece Rim and</description>
       <link>https://cyclify.in/products/orome-valar-sk40d-road-disc-wheelset-all-carbon-six-spoke-super-light-whee-10795496374465.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/SK40D-Shimano1112SOROMEVALARSK40DRoadDiscWheelset-ALLCARBONSIXSPOKESUPER-LIGHTWHEELSET.jpg?v=1755434714</g:image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/SK40D-FRONTWHEELOROMEVALARSK40DRoadDiscWheelset-ALLCARBONSIXSPOKESUPER-LIGHTWHEELSET.jpg?v=1755434827</g:additional_image_link>
@@ -1302,26 +1302,9 @@
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
     </item>
     <item>
-      <g:id>CYCLIFY-233109418</g:id>
-      <title>Ecoracer Lite Foldable Tubeless Ready Training Tyre</title>
-      <description>Shop Ecoracer Lite Foldable Tubeless Ready Training Tyre at Cyclify India for Rs 2,600. Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre</description>
-      <link>https://cyclify.in/products/ecoracer-lite-foldable-tubeless-ready-training-tyre-233109418.html</link>
-      <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp</g:image_link>
-      <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/Mg3eo5H6.webp</g:additional_image_link>
-      <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/tmszL3FS.webp</g:additional_image_link>
-      <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/I7ygfgdw.webp</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>new</g:condition>
-      <g:price>2800.00 INR</g:price>
-      <g:sale_price>2600.00 INR</g:sale_price>
-      <g:brand>Ecoracer</g:brand>
-      <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
-    </item>
-    <item>
       <g:id>CYCLIFY-233156553</g:id>
       <title>Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700 * 35C) Tyre for Bicycle</title>
-      <description>Shop Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700 * 35C) Tyre for Bicycle at Cyclify India for Rs 2,599. About this item Foldable</description>
+      <description>Shop Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700 * 35C) Tyre for Bicycle at Cyclify India for Rs 2,380. About this item Foldable</description>
       <link>https://cyclify.in/products/ecoracer-lite-foldable-tubeless-ready-training-tyre-size-700-35c-tyre-for--233156553.html</link>
       <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/Nw1gNKPf.webp</g:image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/HPhUdoj0.webp</g:additional_image_link>
@@ -1329,8 +1312,8 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/69QGbP3C.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
-      <g:price>2999.00 INR</g:price>
-      <g:sale_price>2599.00 INR</g:sale_price>
+      <g:price>2800.00 INR</g:price>
+      <g:sale_price>2380.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
@@ -1338,7 +1321,7 @@
     <item>
       <g:id>CYCLIFY-233144605</g:id>
       <title>Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle</title>
-      <description>Shop Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle at Cyclify India for Rs 2,999. Ralson Ecoracer Lite Foldable</description>
+      <description>Shop Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle at Cyclify India for Rs 2,465. Ralson Ecoracer Lite Foldable</description>
       <link>https://cyclify.in/products/ecoracer-lite-foldable-tubeless-ready-training-tyre-size-700x40c-for-bicyc-233144605.html</link>
       <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/jjRzQsIy.webp</g:image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/ba4d2Dm7.webp</g:additional_image_link>
@@ -1346,8 +1329,25 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/XlQ9CBJn.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
-      <g:price>3500.00 INR</g:price>
-      <g:sale_price>2999.00 INR</g:sale_price>
+      <g:price>2900.00 INR</g:price>
+      <g:sale_price>2465.00 INR</g:sale_price>
+      <g:brand>Ecoracer</g:brand>
+      <g:product_type>Wheels &amp; Tyres</g:product_type>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+    </item>
+    <item>
+      <g:id>CYCLIFY-233109418</g:id>
+      <title>Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32 C</title>
+      <description>Shop Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32 C at Cyclify India for Rs 2,295. Upgrade your road cycling experience with the</description>
+      <link>https://cyclify.in/products/ecoracer-lite-foldable-tubeless-ready-training-tyre-233109418.html</link>
+      <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp</g:image_link>
+      <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/Mg3eo5H6.webp</g:additional_image_link>
+      <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/tmszL3FS.webp</g:additional_image_link>
+      <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/I7ygfgdw.webp</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>2700.00 INR</g:price>
+      <g:sale_price>2295.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
@@ -1471,7 +1471,7 @@
     <item>
       <g:id>CYCLIFY-232900242</g:id>
       <title>Ralson 700x28C Bicycle Tyre &amp; Tube Combo Pair – Set of 2 Tyres and 2 Tubes</title>
-      <description>Shop Ralson 700x28C Bicycle Tyre &amp; Tube Combo Pair – Set of 2 Tyres and 2 Tubes at Cyclify India for Rs 1,699. Item Diameter 25 Centimetres Brand</description>
+      <description>Shop Ralson 700x28C Bicycle Tyre &amp; Tube Combo Pair – Set of 2 Tyres and 2 Tubes at Cyclify India for Rs 1,899. Upgrade your bicycle with the Ralson</description>
       <link>https://cyclify.in/products/ralson-700x28c-bicycle-tyre-and-tube-combo-pair-set-of-2-tyres-and-2-tubes-232900242.html</link>
       <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/3H50ZC2Z.webp</g:image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/kusbjcNB.webp</g:additional_image_link>
@@ -1480,7 +1480,7 @@
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>1999.00 INR</g:price>
-      <g:sale_price>1699.00 INR</g:sale_price>
+      <g:sale_price>1899.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
@@ -1573,7 +1573,7 @@
     <item>
       <g:id>CYCLIFY-233091828</g:id>
       <title>Ralson ECORACER Bicycle Tube 700x23-28C | Presta Valve 48mm, 60mm, 80mm</title>
-      <description>Shop Ralson ECORACER Bicycle Tube 700x23-28C | Presta Valve 48mm, 60mm, 80mm at Cyclify India for Rs 550. Ralson ECORACER Bicycle Tube 700x23-28C is</description>
+      <description>Shop Ralson ECORACER Bicycle Tube 700x23-28C | Presta Valve 48mm, 60mm, 80mm at Cyclify India for Rs 510. Ralson ECORACER Bicycle Tube 700x23-28C is</description>
       <link>https://cyclify.in/products/ralson-ecoracer-bicycle-tube-700x23-28c-presta-valve-48mm-60mm-80mm-233091828.html</link>
       <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/RNWoAfMQ.webp</g:image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/fGIN87cE.webp</g:additional_image_link>
@@ -1582,7 +1582,7 @@
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>600.00 INR</g:price>
-      <g:sale_price>550.00 INR</g:sale_price>
+      <g:sale_price>510.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
@@ -1590,7 +1590,7 @@
     <item>
       <g:id>CYCLIFY-233091760</g:id>
       <title>Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre Foldable For Bicycle</title>
-      <description>Shop Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre Foldable For Bicycle at Cyclify India for Rs 2,200. Ralson Ecoracer Lite Foldable</description>
+      <description>Shop Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre Foldable For Bicycle at Cyclify India for Rs 2,040. Ralson Ecoracer Lite Foldable</description>
       <link>https://cyclify.in/products/ralson-ecoracer-lite-foldable-tubeless-ready-training-tyre-foldable-for-bi-233091760.html</link>
       <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/HYHyRXJy.webp</g:image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/wdeWXAog.webp</g:additional_image_link>
@@ -1599,7 +1599,7 @@
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>2400.00 INR</g:price>
-      <g:sale_price>2200.00 INR</g:sale_price>
+      <g:sale_price>2040.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
@@ -1607,7 +1607,7 @@
     <item>
       <g:id>CYCLIFY-233091780</g:id>
       <title>Ralson Ecoracer Lite Pro Foldable Tubeless Ready Training Tyre</title>
-      <description>Shop Ralson Ecoracer Lite Pro Foldable Tubeless Ready Training Tyre at Cyclify India for Rs 2,700. Ralson Ecoracer Lite Pro Foldable Tubeless Ready</description>
+      <description>Shop Ralson Ecoracer Lite Pro Foldable Tubeless Ready Training Tyre at Cyclify India for Rs 2,550. Ralson Ecoracer Lite Pro Foldable Tubeless Ready</description>
       <link>https://cyclify.in/products/ralson-ecoracer-lite-pro-foldable-tubeless-ready-training-tyre-233091780.html</link>
       <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/7V66ELN9.webp</g:image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/xpe840Yp.webp</g:additional_image_link>
@@ -1616,7 +1616,7 @@
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>3000.00 INR</g:price>
-      <g:sale_price>2700.00 INR</g:sale_price>
+      <g:sale_price>2550.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
@@ -1624,7 +1624,7 @@
     <item>
       <g:id>CYCLIFY-230741493</g:id>
       <title>Ralson Foldable tyres</title>
-      <description>Shop Ralson Foldable tyres at Cyclify India for Rs 900. Ralson Size: 700x23,700x25,700x35C Tire Type: Foldable 60 TPI Bike Type: Hybrid/Urban Bike</description>
+      <description>Shop Ralson Foldable tyres at Cyclify India for Rs 900. Upgrade your bicycle with Ralson Foldable Tyres, designed for riders who want a dependable</description>
       <link>https://cyclify.in/products/ralson-foldable-tyres-230741493.html</link>
       <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/7g0bD1wC.webp</g:image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/h5B8Rq28.webp</g:additional_image_link>

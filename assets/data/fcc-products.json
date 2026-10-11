@@ -10,69 +10,6 @@
   ],
   "products": [
     {
-      "id": 233109418,
-      "supplierProductId": 33109418,
-      "supplierSynced": true,
-      "sourceHandle": "ecoracer-lite-foldable-tube",
-      "sourceUrl": "https://www.fccracing.com/product/ecoracer-lite-foldable-tube",
-      "stockSource": "fcc",
-      "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre",
-      "brand": "Ecoracer",
-      "description": "Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre, engineered for cyclists who demand uncompromising performance, durability, and control. Designed with AU Glide technology, this tyre minimizes rolling resistance while maximizing traction, ensuring a smooth, efficient, and high-speed ride on every terrain.",
-      "price": 2600,
-      "mrp": "Rs 2,800",
-      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
-      "images": [
-        "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/Mg3eo5H6.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/tmszL3FS.webp",
-        "https://cdn.dotpe.in/longtail/store-items/8102112/I7ygfgdw.webp"
-      ],
-      "sizes": [
-        "700x35C"
-      ],
-      "sizeAvailability": {
-        "700x35C": true
-      },
-      "variants": [
-        {
-          "id": 7309705,
-          "title": "700x35C",
-          "available": true,
-          "price": 2600,
-          "compare_at_price": 2800,
-          "option1": "[object Object]",
-          "option2": "",
-          "option3": ""
-        }
-      ],
-      "available": true,
-      "specs": [
-        "Brand : Ecoracer",
-        "Product Type : Eco Racer Tyre Tube",
-        "Tubeless Ready : Better puncture protection and improved ride comfort",
-        "AU Glide Technology : Lower rolling resistance for smoother speed",
-        "Foldable Design : Lightweight, portable, and easy to install",
-        "Enhanced Grip : Optimized tread for strong traction and control",
-        "Durable Construction : Built for long-lasting training and daily rides",
-        "Model : Ecoracer Lite",
-        "Type : Foldable Training Tyre",
-        "Technology : AU Glide",
-        "Compatibility : Tubeless Ready",
-        "Usage : Road Cycling / Training / Endurance Riding",
-        "Shipping : Free shipping across India"
-      ],
-      "specSource": {
-        "label": "Live supplier specification",
-        "url": "https://www.fccracing.com/product/ecoracer-lite-foldable-tube"
-      },
-      "keywords": "Ecoracer Lite Foldable Tubeless Ready Training Tyre Eco Racer Tyre Tube Ralson Ecoracer",
-      "categoryPage": "wheels-tyres.html",
-      "categoryLabel": "Wheels & Tyres",
-      "mainCategory": "tyres",
-      "subCategory": ""
-    },
-    {
       "id": 233156553,
       "supplierProductId": 33156553,
       "supplierSynced": true,
@@ -82,8 +19,8 @@
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700 * 35C) Tyre for Bicycle",
       "brand": "Ecoracer",
       "description": "About this item Foldable tubeless-ready road training tyre designed for high-performance cycling Advanced AU Glide technology reduces rolling resistance for faster and smoother rides 60 TPI high-strength nylon casing delivers excellent durability and puncture resistance Tubeless-ready construction improves grip, ride comfort, and flat protection Optimized 700×35C size offers the perfect balance of speed, stability, and control Lightweight design supports efficient acceleration and responsive handling Enhanced traction ensures confident cornering and reliable performance on varied terrain Ideal for endurance rides, daily training, and long-distance road cycling Durable construction built to handle demanding riding conditions with consistent performance Provides smooth rolling efficiency for improved energy transfer and riding comfort",
-      "price": 2599,
-      "mrp": "Rs 2,999",
+      "price": 2380,
+      "mrp": "Rs 2,800",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/Nw1gNKPf.webp",
       "images": [
         "https://cdn.dotpe.in/longtail/store-items/8102112/Nw1gNKPf.webp",
@@ -120,8 +57,8 @@
       "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle",
       "brand": "Ecoracer",
       "description": "Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre, engineered for cyclists who demand uncompromising performance, durability, and control. Designed with AU Glide technology, this tyre minimizes rolling resistance while maximizing traction, ensuring a smooth, efficient, and high-speed ride on every terrain.",
-      "price": 2999,
-      "mrp": "Rs 3,500",
+      "price": 2465,
+      "mrp": "Rs 2,900",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/jjRzQsIy.webp",
       "images": [
         "https://cdn.dotpe.in/longtail/store-items/8102112/jjRzQsIy.webp",
@@ -140,8 +77,8 @@
           "id": 7360778,
           "title": "700x40c",
           "available": true,
-          "price": 2999,
-          "compare_at_price": 3500,
+          "price": 2465,
+          "compare_at_price": 2900,
           "option1": "[object Object]",
           "option2": "",
           "option3": ""
@@ -168,6 +105,59 @@
         "url": "https://www.fccracing.com/product/ecoracer-lite-foldable-tubeless-ready-training-tyre"
       },
       "keywords": "Ecoracer Lite Foldable Tubeless Ready Training Tyre (Size 700x40C) for Bicycle Eco Racer Tyre Tube Ralson Ecoracer",
+      "categoryPage": "wheels-tyres.html",
+      "categoryLabel": "Wheels & Tyres",
+      "mainCategory": "tyres",
+      "subCategory": ""
+    },
+    {
+      "id": 233109418,
+      "supplierProductId": 33109418,
+      "supplierSynced": true,
+      "sourceHandle": "ecoracer-lite-foldable-tube",
+      "sourceUrl": "https://www.fccracing.com/product/ecoracer-lite-foldable-tube",
+      "stockSource": "fcc",
+      "name": "Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32 C",
+      "brand": "Ecoracer",
+      "description": "Upgrade your road cycling experience with the Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32C, a high-performance road bike tyre designed for cyclists who demand an excellent balance of speed, comfort, durability, grip, and rolling efficiency. Engineered for daily training, endurance rides, long-distance cycling, and performance-focused road riding, this lightweight tyre delivers reliable performance across a wide range of riding conditions. The Ecoracer Lite 700x32C tyre is designed to provide smooth and efficient rolling performance while maintaining the comfort and stability that modern road cyclists expect. The 32C width offers an ideal balance between speed and ride comfort, providing greater road contact and improved confidence compared with narrower road tyres. Whether you are training for endurance events, completing daily fitness rides, or covering long distances on ",
+      "price": 2295,
+      "mrp": "Rs 2,700",
+      "image": "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
+      "images": [
+        "https://cdn.dotpe.in/longtail/store-items/8102112/KY7kSMQO.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/Mg3eo5H6.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/tmszL3FS.webp",
+        "https://cdn.dotpe.in/longtail/store-items/8102112/I7ygfgdw.webp"
+      ],
+      "sizes": [
+        "700x32C"
+      ],
+      "sizeAvailability": {
+        "700x32C": true
+      },
+      "variants": [
+        {
+          "id": 7439898,
+          "title": "700x32C",
+          "available": true,
+          "price": 2295,
+          "compare_at_price": 2700,
+          "option1": "[object Object]",
+          "option2": "",
+          "option3": ""
+        }
+      ],
+      "available": true,
+      "specs": [
+        "Brand : Ecoracer",
+        "Product Type : Eco Racer Tyre Tube",
+        "Shipping : Free shipping across India"
+      ],
+      "specSource": {
+        "label": "Live supplier specification",
+        "url": "https://www.fccracing.com/product/ecoracer-lite-foldable-tube"
+      },
+      "keywords": "Ecoracer Lite Foldable Tubeless Ready Training Tyre 700x32 C Eco Racer Tyre Tube Ralson Ecoracer",
       "categoryPage": "wheels-tyres.html",
       "categoryLabel": "Wheels & Tyres",
       "mainCategory": "tyres",
@@ -545,8 +535,8 @@
       "stockSource": "fcc",
       "name": "Ralson 700x28C Bicycle Tyre & Tube Combo Pair – Set of 2 Tyres and 2 Tubes",
       "brand": "Ralson",
-      "description": "Item Diameter 25 Centimetres Brand FCCRACING Tire Type Bicycle Tyre Item Width 25 Centimetres Material Nylon About this item Complete Combo Set: Includes 2 durable Ralson 700×28C tyres and 2 matching inner tubes for hybrid, city & touring bicycles. Premium Quality Build: Made from high-grade rubber for superior grip, puncture resistance & long-lasting durability. Smooth & Stable Ride: Optimized tread design ensures better traction, control, and reduced vibration on all terrains. Airtight Tubes: High-elasticity tubes provide excellent air retention, reducing refills and improving ride consistency. Perfect Fit: Easy to install and compatible with all standard 700×28C rims—ideal for daily commutes & long rides.",
-      "price": 1699,
+      "description": "Upgrade your bicycle with the Ralson 700x28C Bicycle Tyre & Tube Combo Pair – Set of 2 Tyres and 2 Tubes, a complete replacement solution designed for compatible road, hybrid, city, commuter, and touring bicycles. This convenient combo includes 2 Ralson 700x28C bicycle tyres and 2 matching inner tubes, giving riders everything required for replacing both front and rear tyre setups. Designed for everyday cycling, commuting, fitness rides, touring, and long-distance use, the Ralson 700x28C tyre and tube combo offers a balanced combination of grip, durability, comfort, and dependable road performance. The tyres feature a durable construction with a carefully designed tread pattern that helps maintain stable contact with the road while supporting confident handling across regular urban and paved riding conditions. Complete 2 Tyres + 2 Tubes Combo This package contains two 700x28C bicycle tyr",
+      "price": 1899,
       "mrp": "Rs 1,999",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/3H50ZC2Z.webp",
       "images": [
@@ -1168,7 +1158,7 @@
       "name": "Ralson ECORACER Bicycle Tube 700x23-28C | Presta Valve 48mm, 60mm, 80mm",
       "brand": "Ecoracer",
       "description": "Ralson ECORACER Bicycle Tube 700x23-28C is designed for cyclists who need reliability, durability, and consistent performance across a wide range of riding conditions. Made from premium butyl rubber, this inner tube offers excellent air retention, helping maintain stable pressure for longer rides while reducing the need for frequent inflation. Its strong and flexible construction enhances puncture resistance, making it suitable for both daily commuting and long-distance cycling. Equipped with a high-quality Presta valve available in 48mm, 60mm, and 80mm options, it ensures compatibility with different rim depths, providing easy inflation and a secure, leak-free fit. The wide size compatibility of 700x23C to 700x28C makes it a versatile choice for road, hybrid, and gravel bikes. Whether you are riding on smooth roads or mixed terrains, the ECORACER tube delivers dependable performance, im",
-      "price": 550,
+      "price": 510,
       "mrp": "Rs 600",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/RNWoAfMQ.webp",
       "images": [
@@ -1190,21 +1180,21 @@
       ],
       "sizeAvailability": {
         "23 | 48MM": true,
-        "23 | 60MM": false,
-        "23 | 80MM": false,
+        "23 | 60MM": true,
+        "23 | 80MM": true,
         "25 | 48MM": true,
-        "25 | 60MM": false,
-        "25 | 80MM": false,
+        "25 | 60MM": true,
+        "25 | 80MM": true,
         "28 | 48MM": true,
-        "28 | 60MM": false,
-        "28 | 80MM": false
+        "28 | 60MM": true,
+        "28 | 80MM": true
       },
       "variants": [
         {
           "id": 7289588,
           "title": "23 | 48MM",
           "available": true,
-          "price": 550,
+          "price": 510,
           "compare_at_price": 600,
           "option1": "[object Object]",
           "option2": "[object Object]",
@@ -1213,9 +1203,9 @@
         {
           "id": 7289589,
           "title": "23 | 60MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 585,
+          "compare_at_price": 685,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1223,9 +1213,9 @@
         {
           "id": 7289590,
           "title": "23 | 80MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 645,
+          "compare_at_price": 755,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1234,7 +1224,7 @@
           "id": 7289591,
           "title": "25 | 48MM",
           "available": true,
-          "price": 550,
+          "price": 510,
           "compare_at_price": 600,
           "option1": "[object Object]",
           "option2": "[object Object]",
@@ -1243,9 +1233,9 @@
         {
           "id": 7289592,
           "title": "25 | 60MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 585,
+          "compare_at_price": 685,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1253,9 +1243,9 @@
         {
           "id": 7289593,
           "title": "25 | 80MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 645,
+          "compare_at_price": 755,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1264,7 +1254,7 @@
           "id": 7289594,
           "title": "28 | 48MM",
           "available": true,
-          "price": 550,
+          "price": 510,
           "compare_at_price": 600,
           "option1": "[object Object]",
           "option2": "[object Object]",
@@ -1273,9 +1263,9 @@
         {
           "id": 7289595,
           "title": "28 | 60MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 585,
+          "compare_at_price": 685,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1283,9 +1273,9 @@
         {
           "id": 7289596,
           "title": "28 | 80MM",
-          "available": false,
-          "price": 445,
-          "compare_at_price": 549,
+          "available": true,
+          "price": 645,
+          "compare_at_price": 755,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1317,7 +1307,7 @@
       "name": "Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre Foldable For Bicycle",
       "brand": "Ecoracer",
       "description": "Ralson Ecoracer Lite Foldable Tubeless Ready Training Tyre, engineered for cyclists who demand uncompromising performance, durability, and control. Designed with AU Glide technology, this tyre minimizes rolling resistance while maximizing traction, ensuring a smooth, efficient, and high-speed ride on every terrain. Constructed with a 60 TPI high-strength nylon casing, it provides exceptional puncture protection without sacrificing flexibility or weight. The tubeless-ready design further enhances ride comfort, reduces the risk of flats, and improves overall grip for consistent performance even under demanding conditions. Optimized in 700x25C & 700x28C size, the Ecoracer Lite delivers the perfect balance between aerodynamic efficiency and road stability. Whether on long training sessions or competitive rides, it ensures effortless rolling, precise cornering, and superior control at all spe",
-      "price": 2200,
+      "price": 2040,
       "mrp": "Rs 2,400",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/HYHyRXJy.webp",
       "images": [
@@ -1339,7 +1329,7 @@
           "id": 7289520,
           "title": "700X25",
           "available": true,
-          "price": 2200,
+          "price": 2040,
           "compare_at_price": 2400,
           "option1": "[object Object]",
           "option2": "",
@@ -1349,7 +1339,7 @@
           "id": 7289521,
           "title": "700X28",
           "available": true,
-          "price": 2400,
+          "price": 2210,
           "compare_at_price": 2600,
           "option1": "[object Object]",
           "option2": "",
@@ -1382,7 +1372,7 @@
       "name": "Ralson Ecoracer Lite Pro Foldable Tubeless Ready Training Tyre",
       "brand": "Ecoracer",
       "description": "Ralson Ecoracer Lite Pro Foldable Tubeless Ready Training Tyre, engineered for cyclists who demand uncompromising performance, durability, and control. Designed with AU Glide technology, this tyre minimizes rolling resistance while maximizing traction, ensuring a smooth, efficient, and high-speed ride on every terrain. Constructed with a 60 TPI high-strength nylon casing, it provides exceptional puncture protection without sacrificing flexibility or weight. The tubeless-ready design further enhances ride comfort, reduces the risk of flats, and improves overall grip for consistent performance even under demanding conditions. Optimized in 700x25C & 700x28C size, the Ecoracer Lite Pro delivers the perfect balance between aerodynamic efficiency and road stability. Whether on long training sessions or competitive rides, it ensures effortless rolling, precise cornering, and superior control at",
-      "price": 2700,
+      "price": 2550,
       "mrp": "Rs 3,000",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/7V66ELN9.webp",
       "images": [
@@ -1404,7 +1394,7 @@
           "id": 7289552,
           "title": "700*25C",
           "available": true,
-          "price": 2700,
+          "price": 2550,
           "compare_at_price": 3000,
           "option1": "[object Object]",
           "option2": "",
@@ -1414,7 +1404,7 @@
           "id": 7289553,
           "title": "700*28C",
           "available": true,
-          "price": 2900,
+          "price": 2720,
           "compare_at_price": 3200,
           "option1": "[object Object]",
           "option2": "",
@@ -1446,7 +1436,7 @@
       "stockSource": "fcc",
       "name": "Ralson Foldable tyres",
       "brand": "Ralson",
-      "description": "Brand: Ralson Size: 700x23,700x25,700x35C Tire Type: Foldable 60 TPI Bike Type: Hybrid/Urban Bike Material: Superior Rubber Grip Type: All Weather Please Note - This tyre is not tubeless Features: Designed with Superior Grade Rubber for Optimum Traction Wear and Rolling Resistance Lightweight Aramid Bead Easy handling SEV Compound - SEV System provides better ageing properties of compound. Low heat build up and better retention of physical properties. Thus giving longer life of the tyre. Designed to provide increased durability and puncture resistance for a smoother ride. The tread pattern allows the rider to get excellent grip and superb control on wet or dry roads. Ralson Tyres contain nylon that significantly prolongs lifetime of the tyre and provides better puncture protection for the tyre. Enjoy the highest level of performance with a strong grip, no matter the terrain.",
+      "description": "Upgrade your bicycle with Ralson Foldable Tyres, designed for riders who want a dependable balance of low weight, strong grip, durability, and smooth rolling performance. Available in 700x23C, 700x25C, and 700x35C sizes, these tyres are suitable for hybrid, urban, fitness, and compatible road bicycles used for daily commuting, training, recreational cycling, and longer rides. Built using superior-grade rubber, Ralson foldable bicycle tyres are engineered to provide optimum traction while maintaining good wear resistance and low rolling resistance. The carefully designed tread pattern helps deliver confident control on both wet and dry roads, making these tyres suitable for changing weather and everyday riding conditions. A major advantage of these tyres is their lightweight foldable construction. Unlike conventional wired tyres, Ralson Foldable Tyres use an Aramid bead, helping reduce ov",
       "price": 900,
       "mrp": "Rs 1,249",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/7g0bD1wC.webp",
@@ -1501,11 +1491,7 @@
       "specs": [
         "Brand : Ralson",
         "Product Type : Ralson Tyre and Tube",
-        "- Superior Rubber Composition : Engineered with high-grade rubber for optimal traction, Ralson tyres ensure a secure grip in all weather conditions, enhancing your riding confidence whether on wet or dry roads.",
-        "- Lightweight & Easy Handling : The foldable design and lightweight construction make these tyres easy to transport and install, providing a hassle-free cycling experience.",
-        "- Enhanced Durability : With an Aramid bead and SEV Compound System, these tyres are designed for longevity. The SEV System minimizes heat build-up, improving the ageing properties of the compound for extended lifespan and performance.",
-        "- Advanced Puncture Resistance : Ralson tyres incorporate nylon reinforcement, significantly prolonging their lifespan and offering better protection against punctures. Ride with peace of mind knowing you have reliable support.",
-        "- Optimized Rolling Resistance : The tyre’s tread pattern is engineered to provide excellent grip and superb control, allowing for smooth rides on various surfaces while minimizing rolling resistance.",
+        "Sizes : 700x23C / 700x25C / 700x35C",
         "Shipping : Free shipping across India"
       ],
       "specSource": {

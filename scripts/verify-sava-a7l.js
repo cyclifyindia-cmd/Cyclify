@@ -1,0 +1,34 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const cheerio = require('cheerio');
+const root = path.resolve(__dirname, '..');
+const template = fs.readFileSync(path.join(root, 'product.html'), 'utf8');
+const literal = template.match(/const\s+products\s*=\s*(\[[\s\S]*?\]);/)[1];
+const product = vm.runInNewContext(`(${literal})`).find(item => item.id === 63);
+assert.equal(product.name, 'SAVA A7L 2026 Full Carbon Road Bike 24 Speed');
+assert.equal(product.price, 129999);
+assert.deepEqual(JSON.parse(JSON.stringify(product.optionsBySize)), {
+  S: ['Blue', 'White', 'Grey'], M: ['White', 'Grey', 'Blue', 'Red'], L: ['Red', 'Black']
+});
+assert.equal(product.specs.some(spec => /approximate weight/i.test(spec)), false);
+const html = fs.readFileSync(path.join(root, 'products/sava-aurora-a7l-pro-carbon-road-bike-63.html'), 'utf8');
+const $ = cheerio.load(html);
+assert.equal($('.product-breadcrumb').parent().is('body'), true);
+assert.equal($('.a7l-buy-panel #productButtons').length, 0);
+assert.equal($('#productButtons .btn').length, 2);
+assert.equal($('#sizeSection .a7l-geometry-trigger').length, 1);
+assert.equal($('#a7lGeometryDialog .a7l-table-scroll tbody tr').length, 15);
+assert.equal(/Approximately 8\.6 kg|Approximate weight\s*:/i.test(html.slice(0, html.indexOf('const products='))), false);
+assert.match($('title').text(), /SAVA A7L.*Carbon Road Bike/);
+assert.match($('#a7lOverview').text(), /under ₹1\.5 lakh or ₹2 lakh/);
+const schema = JSON.parse($('#cyclify-product-schema').text())['@graph'][0];
+assert.equal(schema.offers.price, '129999');
+assert.equal(schema.image[0], $('meta[property="og:image"]').attr('content'));
+assert.match(schema.image[0], /blue-angle\.jpg$/);
+assert.equal(schema.image.some(image => /shifters|brake\.jpg|derailleur/.test(image)), false);
+const catalog = JSON.parse(fs.readFileSync(path.join(root, 'marketplace-backend/payment-function/functions/catalog.json'), 'utf8'));
+assert.equal(catalog.products['63'].price, 129999);
+assert.deepEqual(catalog.products['63'].optionsBySize, JSON.parse(JSON.stringify(product.optionsBySize)));
+console.log('SAVA A7L verified: model, price, colours, no weight, Cyclify controls, geometry popup, SEO and secure catalogue.');

@@ -58,7 +58,7 @@ categoryCatalogs.forEach(({ page, file }) => {
     '  window.cyclifyMergeFccProducts=(target,page)=>merge(target,catalogue.fcc,page);\n' +
     '  window.cyclifyMergeCadenceProducts=(target,page)=>merge(target,catalogue.cadence,page);\n' +
     '})();\n';
-  fs.writeFileSync(path.join(root, 'assets', 'js', file), source, 'utf8');
+  writeFileWithRetry(path.join(root, 'assets', 'js', file), source, 'utf8');
 });
 
 const versionedScripts = [
@@ -326,7 +326,7 @@ const routes = Object.fromEntries(products.map(product => {
 fs.mkdirSync(outputDir, { recursive: true });
 fs.mkdirSync(path.dirname(routesPath), { recursive: true });
 const routesSource = '(function(){\n  const routes=' + JSON.stringify(routes, null, 2) + ';\n  window.CYCLIFY_PRODUCT_ROUTES=routes;\n  window.cyclifyProductUrl=function(id){return routes[id]||("product.html?id="+encodeURIComponent(id));};\n})();\n';
-fs.writeFileSync(routesPath, routesSource, 'utf8');
+writeFileWithRetry(routesPath, routesSource, 'utf8');
 scriptVersions['product-routes.js'] = crypto.createHash('sha256').update(routesSource).digest('hex').slice(0, 10);
 template = versionCustomerScripts(rawTemplate);
 
@@ -348,7 +348,7 @@ const compactSearchProducts = primaryProducts.map(product => ({
   keywords: cleanText(product.keywords || homepageSearchById.get(String(product.id))?.keywords || [product.mainCategory, product.subCategory, product.category].filter(Boolean).join(' '))
 }));
 const searchIndexSource = 'window.CYCLIFY_SEARCH_PRODUCTS=' + JSON.stringify(compactSearchProducts) + ';\n';
-fs.writeFileSync(searchIndexPath, searchIndexSource, 'utf8');
+writeFileWithRetry(searchIndexPath, searchIndexSource, 'utf8');
 scriptVersions['search-index.js'] = crypto.createHash('sha256').update(searchIndexSource).digest('hex').slice(0, 10);
 
 const generatedRoutes = new Set();
@@ -504,7 +504,7 @@ staleProductFiles.forEach(file => {
   }
   if (targetRoute === relativeRoute) return;
   const targetUrl = 'https://cyclify.in/' + targetRoute;
-  fs.writeFileSync(path.join(outputDir, file), redirectPage(targetUrl, 'This product now has one official Cyclify page.'), 'utf8');
+  writeFileWithRetry(path.join(outputDir, file), redirectPage(targetUrl, 'This product now has one official Cyclify page.'), 'utf8');
 });
 
 const landingPages = [
@@ -540,7 +540,7 @@ landingPages.forEach(landing => {
     page = page.replace(/let activeSubCategory=new URLSearchParams\(window\.location\.search\)\.get\("sub"\)\|\|"";/, 'let activeSubCategory=new URLSearchParams(window.location.search).get("sub")||' + JSON.stringify(landing.sub) + ';');
   }
   page = page.replace('<div class="category-strip"', '<p class="seo-landing-copy" style="margin:0;padding:14px 4%;color:#4b5563;font-size:15px;line-height:1.55">' + escapeHtml(landing.description) + '</p>\n<div class="category-strip"');
-  fs.writeFileSync(path.join(root, landing.file), page, 'utf8');
+  writeFileWithRetry(path.join(root, landing.file), page, 'utf8');
 });
 
 const guides = JSON.parse(fs.readFileSync(guidesPath, 'utf8')).guides || [];
@@ -601,7 +601,7 @@ guides.forEach(guide => {
     '<script src="assets/js/site-footer.js"></script>\n</body>\n</html>\n');
   const destination = path.join(root, guide.slug, 'index.html');
   fs.mkdirSync(path.dirname(destination), { recursive: true });
-  fs.writeFileSync(destination, page, 'utf8');
+  writeFileWithRetry(destination, page, 'utf8');
   guideSitemapEntries.push([canonical, '0.85', lastmod]);
 });
 
@@ -623,13 +623,13 @@ const guidesHub = versionCustomerScripts('<!doctype html>\n<html lang="en">\n<he
   '<main class="guide-shell"><nav class="guide-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <span>Cycling Guides</span></nav>' +
   '<header class="guide-hero"><p class="guide-hero__eyebrow">Ride better</p><h1>Cycling Guides for Indian Riders</h1><p>Clear, practical advice for choosing bicycles, components and riding equipment without marketing confusion.</p></header>' +
   '<section class="guide-grid" aria-label="Cycling guide library">' + guideCards + '</section></main><script src="assets/js/site-footer.js"></script></body>\n</html>\n');
-fs.writeFileSync(path.join(root, 'guides.html'), guidesHub, 'utf8');
+writeFileWithRetry(path.join(root, 'guides.html'), guidesHub, 'utf8');
 
 fs.readdirSync(root).filter(file => file.endsWith('.html')).forEach(file => {
   const filePath = path.join(root, file);
   const source = fs.readFileSync(filePath, 'utf8');
   const updated = versionCustomerScripts(source);
-  if (updated !== source) fs.writeFileSync(filePath, updated, 'utf8');
+  if (updated !== source) writeFileWithRetry(filePath, updated, 'utf8');
 });
 
 const legacyRedirects = {
@@ -645,7 +645,7 @@ const legacyRedirects = {
 Object.entries(legacyRedirects).forEach(([file, target]) => {
   const destination = path.join(root, file);
   fs.mkdirSync(path.dirname(destination), { recursive: true });
-  fs.writeFileSync(destination, redirectPage(target, 'This Cyclify page has moved.'), 'utf8');
+  writeFileWithRetry(destination, redirectPage(target, 'This Cyclify page has moved.'), 'utf8');
 });
 
 const excludedPages = new Set(['product.html', 'account.html', 'cart.html']);
@@ -680,7 +680,7 @@ const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://w
     return '  <url><loc>' + escapeXml(url) + '</loc><lastmod>' + lastmod + '</lastmod><changefreq>weekly</changefreq><priority>' + priority + '</priority>' + imageEntry + '</url>';
   }).join('\n') +
   '\n</urlset>\n';
-fs.writeFileSync(sitemapPath, sitemap, 'utf8');
+writeFileWithRetry(sitemapPath, sitemap, 'utf8');
 
 const merchantItems = primaryProducts
   .filter(product => Number(product.price) > 0 && !product.priceOnRequest)
@@ -722,8 +722,8 @@ const merchantFeed = '<?xml version="1.0" encoding="UTF-8"?>\n' +
   merchantItems.join('\n') + '\n' +
   '  </channel>\n' +
   '</rss>\n';
-fs.writeFileSync(merchantFeedPath, merchantFeed, 'utf8');
-fs.writeFileSync(seoStatePath, JSON.stringify(nextSeoState, null, 2) + '\n', 'utf8');
+writeFileWithRetry(merchantFeedPath, merchantFeed, 'utf8');
+writeFileWithRetry(seoStatePath, JSON.stringify(nextSeoState, null, 2) + '\n', 'utf8');
 
 console.log('Generated ' + primaryProducts.length + ' canonical product pages, ' + landingPages.length + ' landing pages, ' + guides.length + ' guides, redirects, and sitemap.');
 console.log('Consolidated ' + (products.length - primaryProducts.length) + ' duplicate product records.');

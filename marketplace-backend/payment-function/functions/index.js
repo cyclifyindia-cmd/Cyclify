@@ -98,6 +98,10 @@ function validatedCart(items) {
     const size = text(item?.size || item?.valveLength, 80);
     if (size && product.sizes.length && !product.sizes.includes(size)) throw new Error(`The selected option for ${product.name} is invalid.`);
     if (size && product.sizeAvailability[size] === false) throw new Error(`${product.name} (${size}) is out of stock.`);
+    const colour = product.optionsBySize ? text(item?.valveLength, 80) : "";
+    if (product.optionsBySize && (!size || !Array.isArray(product.optionsBySize[size]) || !product.optionsBySize[size].includes(colour))) {
+      throw new Error(`Choose an available frame size and colour for ${product.name}.`);
+    }
     total += product.price * quantity;
     return {
       id: product.id,
@@ -107,7 +111,8 @@ function validatedCart(items) {
       preorderDeposit: Number(product.preorderDeposit || 0),
       quantity,
       image: product.image,
-      size,
+      size: colour ? `${size} / ${colour}` : size,
+      ...(colour ? { frameSize: size, valveLength: colour } : {}),
     };
   });
   if (!Number.isSafeInteger(total) || total < 1) throw new Error("The order total is invalid.");

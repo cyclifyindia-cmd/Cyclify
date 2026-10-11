@@ -375,7 +375,7 @@ checkoutForm.addEventListener("submit", async event => {
     businessName: addGst.checked ? byId("businessName").value.trim() : "",
   };
   const fingerprint = JSON.stringify({
-    items: list.map(item => [String(item.id), Number(item.quantity || 1), String(item.size || item.valveLength || "")]),
+    items: list.map(item => [String(item.id), Number(item.quantity || 1), String(item.size || ""), String(item.valveLength || "")]),
     address: addressData,
     billingSame: requestPayload.billingSame,
     billingAddress: billingData,
