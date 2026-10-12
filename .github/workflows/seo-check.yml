@@ -1,0 +1,24 @@
+name: Check storefront SEO
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Check crawlability, product images and checkout catalogue
+        run: npm run audit:seo && npm run audit:product-images && npm run verify:payment-catalog
+      - name: Check custom bike configuration and category navigation
+        run: node scripts/verify-sava-a7l.js && node scripts/test-tavelo-grid.js && node scripts/test-tavelo-preview-pricing.js

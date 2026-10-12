@@ -20,11 +20,11 @@ content="width=device-width,initial-scale=1">
 <meta name="twitter:title" content="Cyclify Product | Cycling Products and Accessories">
 <meta name="twitter:description" content="View product photos, price, specifications, sizes and cart options for cycling products on Cyclify India.">
 <meta name="twitter:image" content="https://cyclify.in/assets/Logo-dark-preview.png">
-<script src="assets/js/product-routes.js?v=f61ab9dbf1"></script>
+<script src="assets/js/product-routes.js?v=0dcd90befd"></script>
 <script src="assets/js/supplier-products.js?v=38a69ae0bd"></script>
-<script src="assets/js/fcc-products.js?v=ad6b1bf5fe"></script>
-<script src="assets/js/cadence-products.js?v=30451377f1"></script>
-<script src="assets/js/tfsa-products.js?v=5078f03bf0"></script>
+<script src="assets/js/fcc-products.js?v=ef7ee16029"></script>
+<script src="assets/js/cadence-products.js?v=adb5356270"></script>
+<script src="assets/js/tfsa-products.js?v=7bb29dfa20"></script>
 <style>
 
 *{
@@ -1255,7 +1255,6 @@ Buy Now
 <h3 id="specificationTitle">Technical Specifications</h3>
 <p class="spec-summary" id="specSummaryText">Key specifications, compatibility and product information at a glance.</p>
 </div>
-<a class="spec-source" id="specSourceLink" href="#" target="_blank" rel="noopener" hidden>View source</a>
 </div>
 
 <div class="spec-highlights" id="specHighlights" aria-label="Key specifications"></div>
@@ -2197,7 +2196,7 @@ const product=products.find(item=>item.id===productId)||products[0];
 window.CYCLIFY_CURRENT_PRODUCT={id:String(product.id),name:product.name};
 const productCategoryLink=document.getElementById("productCategoryLink");
 const breadcrumbProductName=document.getElementById("breadcrumbProductName");
-if(productCategoryLink){
+if(productCategoryLink&&(!window.CYCLIFY_PRODUCT_ID||product.categoryPage)){
 productCategoryLink.href=product.categoryPage||"index.html";
 productCategoryLink.textContent=product.categoryLabel||"Products";
 }
@@ -2271,6 +2270,24 @@ return element;
 }
 
 function setProductSeo(){
+// Generated product pages already have canonical metadata, selected product
+// images and breadcrumbs. Refresh only live offer fields without replacing them.
+const generatedSchema=document.getElementById("cyclify-product-schema");
+if(window.CYCLIFY_PRODUCT_ID&&generatedSchema){
+try{
+const graph=JSON.parse(generatedSchema.textContent);
+const productSchema=(graph["@graph"]||[]).find(item=>item["@type"]==="Product");
+if(productSchema){
+if(product.priceOnRequest||!(Number(product.price)>0)){delete productSchema.offers;}
+else if(productSchema.offers){
+productSchema.offers.price=String(product.price);
+productSchema.offers.availability=product.available===false?"https://schema.org/OutOfStock":(product.preorder?"https://schema.org/PreOrder":"https://schema.org/InStock");
+}
+generatedSchema.textContent=JSON.stringify(graph);
+return;
+}
+}catch(error){console.warn("Unable to read product metadata",error);}
+}
 const canonical=absoluteSiteUrl(cyclifyProductUrl(product.id));
 const title=productSeoTitle();
 const description=plainProductDescription();
@@ -2309,6 +2326,7 @@ priceCurrency:"INR",
 price:String(product.price),
 availability:product.available===false?"https://schema.org/OutOfStock":(product.preorder?"https://schema.org/PreOrder":"https://schema.org/InStock"),
 itemCondition:"https://schema.org/NewCondition",
+seller:{"@type":"Organization","@id":"https://cyclify.in/#organization",name:"CYCLIFY INDIA",url:"https://cyclify.in/"},
 shippingDetails:{
 "@type":"OfferShippingDetails",
 shippingRate:{"@type":"MonetaryAmount",value:"0",currency:"INR"},
@@ -2319,6 +2337,7 @@ hasMerchantReturnPolicy:{
 applicableCountry:"IN",
 returnPolicyCategory:"https://schema.org/MerchantReturnFiniteReturnWindow",
 merchantReturnDays:7,
+refundType:"https://schema.org/ExchangeRefund",
 returnMethod:"https://schema.org/ReturnByMail",
 merchantReturnLink:"https://cyclify.in/exchange-policy.html"
 }
@@ -2718,17 +2737,14 @@ document.getElementById("productGallery").classList.toggle("zoomed");
 });
 
 const specList=document.getElementById("specList");
+specList.replaceChildren();
 const specHighlights=document.getElementById("specHighlights");
 const specificationTitle=document.getElementById("specificationTitle");
 const specSummaryText=document.getElementById("specSummaryText");
 const specSourceLink=document.getElementById("specSourceLink");
 if(product.specSectionTitle){specificationTitle.textContent=product.specSectionTitle;}
 if(product.specSummary){specSummaryText.textContent=product.specSummary;}
-if(product.specSource&&product.specSource.url){
-specSourceLink.href=product.specSource.url;
-specSourceLink.textContent=product.specSource.label||"View specification source";
-specSourceLink.hidden=false;
-}
+if(specSourceLink){specSourceLink.remove();}
 
 function parseProductSpec(spec){
 const raw=String(spec||"").trim();
@@ -2957,7 +2973,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=948f28e71c"></script>
+<script src="assets/js/site-footer.js?v=e47fdbe5c9"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 </body>

@@ -3,6 +3,8 @@ const path = require('path');
 const crypto = require('crypto');
 const { loadAllowedProductIds, filterAllowedProducts } = require('./product-allowlist');
 const { renderSavaA7l } = require('./render-sava-a7l');
+const { renderCatalogSeo } = require('./render-catalog-seo');
+const cheerio = require('cheerio');
 
 const root = path.resolve(__dirname, '..');
 const templatePath = path.join(root, 'product.html');
@@ -93,7 +95,7 @@ function stableHash(value) {
 
 function writeFileWithRetry(file, content, encoding = 'utf8') {
   const normalizedContent = typeof content === 'string'
-    ? content.replace(/\r\n?/g, '\n')
+    ? content.replace(/\r\n?/g, '\n').replace(/[\t ]+$/gm, '')
     : content;
   for (let attempt = 1; attempt <= 8; attempt += 1) {
     try {
@@ -299,6 +301,17 @@ if (fs.existsSync(cadenceSupplierPath)) {
   });
 }
 const previousRoutes = existingRoutes();
+const manualCategoryById = new Map();
+categoryCatalogs.forEach(({ page }) => {
+  extractProducts(fs.readFileSync(path.join(root, page), 'utf8')).forEach(product => manualCategoryById.set(String(product.id), page));
+});
+products.forEach(product => {
+  if (!product.categoryPage) product.categoryPage = manualCategoryById.get(String(product.id));
+});
+// Enforce the retained inventory after every supplier merge as well.
+const retainedProducts = filterAllowedProducts(products, allowedProductIds);
+products.length = 0;
+products.push(...retainedProducts);
 const primaryByKey = new Map();
 const primaryForProduct = new Map();
 const primaryProducts = [];
@@ -322,6 +335,7 @@ const routes = Object.fromEntries(products.map(product => {
   const primary = primaryForProduct.get(String(product.id));
   return [product.id, primaryRoutes.get(String(primary.id))];
 }));
+routes[990001] = 'tavelo-arow.html';
 
 fs.mkdirSync(outputDir, { recursive: true });
 fs.mkdirSync(path.dirname(routesPath), { recursive: true });
@@ -347,6 +361,9 @@ const compactSearchProducts = primaryProducts.map(product => ({
   category: product.categoryLabel || categoryLabels[product.categoryPage] || product.category || homepageSearchById.get(String(product.id))?.category || 'Cycling',
   keywords: cleanText(product.keywords || homepageSearchById.get(String(product.id))?.keywords || [product.mainCategory, product.subCategory, product.category].filter(Boolean).join(' '))
 }));
+compactSearchProducts.push({ id: 990001, name: 'TAVELO Arow Carbon Aero Road Bike', price: 390000,
+  image: 'assets/products/tavelo-arow/customer-reference-1.png', category: 'Bikes & Frames',
+  keywords: 'TAVELO Arow aero road bike carbon custom build Shimano Di2', customBuild: true });
 const searchIndexSource = 'window.CYCLIFY_SEARCH_PRODUCTS=' + JSON.stringify(compactSearchProducts) + ';\n';
 writeFileWithRetry(searchIndexPath, searchIndexSource, 'utf8');
 scriptVersions['search-index.js'] = crypto.createHash('sha256').update(searchIndexSource).digest('hex').slice(0, 10);
@@ -382,7 +399,7 @@ for (const product of primaryProducts) {
     breadcrumbItems.push({
       '@type': 'ListItem',
       position: breadcrumbItems.length + 1,
-      name: product.categoryLabel || 'Products',
+      name: product.categoryLabel || categoryLabels[product.categoryPage.split('?')[0]] || 'Products',
       item: 'https://cyclify.in/' + product.categoryPage
     });
   }
@@ -414,6 +431,7 @@ for (const product of primaryProducts) {
           price: String(product.price),
           availability: product.available === false ? 'https://schema.org/OutOfStock' : (product.preorder ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock'),
           itemCondition: 'https://schema.org/NewCondition',
+          seller: { '@type': 'Organization', '@id': 'https://cyclify.in/#organization', name: 'CYCLIFY INDIA', url: 'https://cyclify.in/' },
           shippingDetails: {
             '@type': 'OfferShippingDetails',
             shippingRate: {
@@ -431,6 +449,7 @@ for (const product of primaryProducts) {
             applicableCountry: 'IN',
             returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
             merchantReturnDays: 7,
+            refundType: 'https://schema.org/ExchangeRefund',
             returnMethod: 'https://schema.org/ReturnByMail',
             merchantReturnLink: 'https://cyclify.in/exchange-policy.html'
           }
@@ -450,7 +469,7 @@ for (const product of primaryProducts) {
   page = page.replace('<head>', '<head>\n<base href="../">');
   page = page.replace(/<title>[\s\S]*?<\/title>/, '<title>' + escapeHtml(title) + '</title>');
   page = page.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="' + escapeHtml(description) + '">');
-  page = page.replace('<meta name="robots" content="noindex,follow">', '<meta name="robots" content="index,follow">');
+  page = page.replace('<meta name="robots" content="noindex,follow">', '<meta name="robots" content="index,follow,max-image-preview:large">');
   page = page.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + canonical + '">');
   page = page.replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="' + escapeHtml(title) + '">');
   page = page.replace(/<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="' + escapeHtml(description) + '">');
@@ -478,7 +497,26 @@ for (const product of primaryProducts) {
     '<img id="productImage" src="' + escapeHtml(image) + '" alt="' + escapeHtml(product.name) + '" loading="eager" decoding="async" fetchpriority="high" itemprop="image">'
   );
   page = page.replace('<body>', '<body>\n<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><img src="' + escapeHtml(image) + '" alt="' + escapeHtml(product.name) + '" style="display:block;max-width:100%;height:auto;margin:0 auto 20px"><h1>' + escapeHtml(product.name) + '</h1><p>' + escapeHtml(noscriptPrice) + '</p><p>' + escapeHtml(description) + '</p></main></noscript>');
-  page = renderSavaA7l(page, product);
+  const $product = cheerio.load(page);
+  $product('#productName').text(product.name);
+  $product('#breadcrumbProductName').text(product.name);
+  if (product.categoryPage) $product('#productCategoryLink').attr('href', product.categoryPage).text(product.categoryLabel || categoryLabels[product.categoryPage.split('?')[0]] || 'Products');
+  const sellingPrice = Number(product.price) || 0;
+  const listPrice = monetaryValue(product.mrp);
+  const saving = Math.max(0, listPrice - sellingPrice);
+  $product('#productPrice').text(product.priceOnRequest ? 'Price on request' : '₹' + sellingPrice.toLocaleString('en-IN'));
+  $product('#productMrp').text(listPrice && !product.priceOnRequest ? 'MRP ₹' + listPrice.toLocaleString('en-IN') : '');
+  $product('#productSave').text(saving && !product.priceOnRequest ? 'Save ₹' + saving.toLocaleString('en-IN') : '');
+  $product('#productDiscount').text(saving && !product.priceOnRequest ? Math.round(saving / listPrice * 100) + '% OFF' : '');
+  $product('#specSummaryText').text(product.description || 'Specifications and compatibility for ' + product.name + '.');
+  $product('#specList').html('<ul>' + (product.specs || []).map(spec => '<li>' + escapeHtml(spec) + '</li>').join('') + '</ul>');
+  if (product.available === false) {
+    $product('#productFulfilment').removeAttr('hidden').text('Out of stock');
+    $product('#productButtons button').attr('disabled', '').text('Out of stock');
+  }
+  page = renderSavaA7l($product.html(), product);
+  // Template/SEO changes are meaningful content updates, not just catalogue edits.
+  productLastmods.set(canonical, lastmodFor(canonical, page.replace(/\?v=[^"\s<]+/g, '')));
   writeFileWithRetry(path.join(root, route), page, 'utf8');
 }
 
@@ -519,9 +557,27 @@ const landingPages = [
   { file: 'cycling-shoes.html', source: 'wearables.html', category: 'shoes', title: 'Road Cycling Shoes in India | Cyclify', heading: 'Road Cycling Shoes', description: 'Shop performance road cycling shoes in India with clear size options and free shipping.' },
   { file: 'bike-drivetrain.html', source: 'components.html', category: 'drivetrain', title: 'Bike Drivetrain Components India | Cyclify', heading: 'Bike Drivetrain Components', description: 'Shop bicycle cranksets, chainrings, cassettes and drivetrain upgrades from Cyclify India.' },
   { file: 'sava-bikes.html', source: 'bikes-frames.html', category: 'sava', title: 'SAVA Carbon Road Bikes India | Cyclify', heading: 'SAVA Carbon Road Bikes', description: 'Shop SAVA carbon road bikes in India with detailed specifications and free shipping from Cyclify.' },
+  { file: 'tavelo-bikes.html', source: 'bikes-frames.html', category: 'tavelo', title: 'TAVELO Bikes India | Arow Custom Road Bikes | Cyclify', heading: 'TAVELO Road Bikes', description: 'Explore TAVELO Arow carbon aero road bikes in India. Configure Shimano Di2, AVRO handlebars and wheels, with builds starting at ₹3,90,000.' },
   { file: 'elves-bikes.html', source: 'bikes-frames.html', category: 'elves', title: 'ELVES Carbon Road Bikes India | Cyclify', heading: 'ELVES Carbon Road Bikes', description: 'Shop ELVES carbon road bikes and frames in India with detailed specifications from Cyclify.' },
   { file: 'tfsa-frames.html', source: 'bikes-frames.html', category: 'tfsa', title: 'TFSA Carbon Road Frames India | Cyclify', heading: 'TFSA Carbon Road Frames', description: 'Explore TFSA carbon road frames in India with full frame parameters, manufacturer-numbered sizes, custom painting and multi-angle product photos.' }
 ];
+
+categoryCatalogs.forEach(({ page: file, file: catalogue }) => {
+  let page = fs.readFileSync(path.join(root, file), 'utf8');
+  // Download only this category's stock data; keep the existing browser API.
+  page = page.replace(/<script src="assets\/js\/supplier-products\.js(?:\?v=[^"]+)?"><\/script>/,
+    '<script src="assets/js/' + catalogue + '"></script>');
+  page = page.replace(/<script src="assets\/js\/(?:fcc-products|cadence-products)\.js(?:\?v=[^"]+)?"><\/script>\s*/g, '');
+  if (file === 'bikes-frames.html') {
+    page = page.replace(/Bikes and Frames \| SAVA, ELVES and TFSA \| Cyclify/g, 'Road Bikes & Carbon Frames India | SAVA, TAVELO | Cyclify');
+    page = page.replace(/Explore premium road bikes and carbon frames from SAVA, ELVES and TFSA with verified product photos, sizes and specifications\./g,
+      'Shop SAVA and ELVES road bikes, configure a TAVELO Arow, or explore TFSA carbon frames. Compare prices, frame sizes and specifications at Cyclify India.');
+  }
+  const description = cheerio.load(page)('meta[name="description"]').attr('content');
+  page = renderCatalogSeo(page, { file, catalogue, heading: categoryLabels[file], description,
+    productNames: Object.fromEntries(primaryProducts.map(product => [product.id, product.name])) });
+  writeFileWithRetry(path.join(root, file), versionCustomerScripts(page));
+});
 
 landingPages.forEach(landing => {
   let page = fs.readFileSync(path.join(root, landing.source), 'utf8');
@@ -540,8 +596,43 @@ landingPages.forEach(landing => {
     page = page.replace(/let activeSubCategory=new URLSearchParams\(window\.location\.search\)\.get\("sub"\)\|\|"";/, 'let activeSubCategory=new URLSearchParams(window.location.search).get("sub")||' + JSON.stringify(landing.sub) + ';');
   }
   page = page.replace('<div class="category-strip"', '<p class="seo-landing-copy" style="margin:0;padding:14px 4%;color:#4b5563;font-size:15px;line-height:1.55">' + escapeHtml(landing.description) + '</p>\n<div class="category-strip"');
+  page = renderCatalogSeo(page, { file: landing.file, catalogue: categoryCatalogs.find(item => item.page === landing.source).file, category: landing.category, sub: landing.sub, heading: landing.heading, description: landing.description,
+    productNames: Object.fromEntries(primaryProducts.map(product => [product.id, product.name])) });
   writeFileWithRetry(path.join(root, landing.file), page, 'utf8');
 });
+
+require('./build-tavelo-page');
+
+// Keep the homepage's real HTML links, images and prices in step with inventory.
+const $home = cheerio.load(fs.readFileSync(path.join(root, 'index.html'), 'utf8'));
+$home('[data-popular-product]').each((_, element) => {
+  const card = $home(element);
+  const item = primaryProducts.find(product => String(product.id) === card.attr('data-popular-product'));
+  if (!item) { card.remove(); return; }
+  card.attr('href', routes[item.id]).attr('aria-label', 'View ' + item.name);
+  card.find('h3').text(item.name);
+  card.find('.cyclify-card-product-image').attr('src', item.image).attr('alt', item.name);
+  const price = Number(item.price);
+  const mrp = monetaryValue(item.mrp);
+  const savings = Math.max(0, mrp - price);
+  card.find('.price').text('₹' + price.toLocaleString('en-IN'));
+  card.find('.mrp').text(mrp ? 'MRP ₹' + mrp.toLocaleString('en-IN') : '');
+  card.find('.cyclify-card-saving').text(savings ? 'Save ₹' + savings.toLocaleString('en-IN') : '');
+  card.find('.cyclify-card-discount').text(savings ? Math.round(savings / mrp * 100) + '% OFF' : '');
+  if (item.available === false) {
+    card.find('.cyclify-card-shipping').text('Out of stock');
+    card.find('.home-popular-card__buy').text('View product');
+  } else {
+    card.find('.cyclify-card-shipping').text('Free Shipping');
+    card.find('.home-popular-card__buy').text('Buy Now');
+  }
+});
+$home('.home-category img,.home-feature-band__art img').attr('loading', 'lazy').attr('decoding', 'async');
+$home('#cyclify-browse-links').remove();
+$home('main').last().after('<nav id="cyclify-browse-links" aria-label="Explore cycling collections" style="padding:24px 5%;background:#fff;color:#222;display:flex;flex-wrap:wrap;gap:14px;font-size:14px">' +
+  [['sava-bikes.html','SAVA bikes'],['tavelo-bikes.html','TAVELO bikes'],['elves-bikes.html','ELVES bikes'],['tfsa-frames.html','TFSA frames'],['smart-trainers.html','Indoor trainers'],['bike-computers.html','GPS bike computers'],['carbon-wheelsets.html','Carbon wheelsets'],['guides.html','Cycling guides']]
+    .map(([href, label]) => '<a href="' + href + '" style="color:inherit">' + label + '</a>').join('') + '</nav>');
+writeFileWithRetry(path.join(root, 'index.html'), $home.html());
 
 const guides = JSON.parse(fs.readFileSync(guidesPath, 'utf8')).guides || [];
 const guideSitemapEntries = [];
@@ -659,7 +750,10 @@ const staticPages = fs.readdirSync(root)
     if (!canonical || seenCanonicals.has(canonical[1])) return null;
     seenCanonicals.add(canonical[1]);
     const fingerprint = source.replace(/\?v=[^"\s<]+/g, '');
-    return [canonical[1], canonical[1] === 'https://cyclify.in/' ? '1.0' : '0.9', lastmodFor(canonical[1], fingerprint)];
+    const isTavelo = file === 'tavelo-arow.html';
+    return [canonical[1], canonical[1] === 'https://cyclify.in/' ? '1.0' : '0.9', lastmodFor(canonical[1], fingerprint),
+      isTavelo ? 'https://cyclify.in/assets/products/tavelo-arow/customer-reference-1.png' : null,
+      isTavelo ? 'TAVELO Arow Carbon Aero Road Bike' : null];
   })
   .filter(Boolean);
 const urls = staticPages.concat(primaryProducts.map(product => {

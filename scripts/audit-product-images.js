@@ -16,7 +16,7 @@ function match(source, expression, label, file) {
 
 const pages = fs.readdirSync(productsDir)
   .filter(file => file.endsWith('.html'))
-  .filter(file => /<meta name="robots" content="index,follow">/i.test(fs.readFileSync(path.join(productsDir, file), 'utf8')));
+  .filter(file => /<meta name="robots" content="index,follow(?:,[^"]*)?">/i.test(fs.readFileSync(path.join(productsDir, file), 'utf8')));
 
 for (const file of pages) {
   const source = fs.readFileSync(path.join(productsDir, file), 'utf8');

@@ -33,6 +33,7 @@
   "7504": "products/tfsa-jh-10-carbon-aero-road-frameset-7504.html",
   "7505": "products/tfsa-jh-35-lightweight-carbon-road-frameset-7505.html",
   "7506": "products/tfsa-jh-06-carbon-rim-brake-road-frameset-7506.html",
+  "990001": "tavelo-arow.html",
   "230741493": "products/ralson-foldable-tyres-230741493.html",
   "232900242": "products/ralson-700x28c-bicycle-tyre-and-tube-combo-pair-set-of-2-tyres-and-2-tubes-232900242.html",
   "232900253": "products/ralson-700-28c-tyre-and-tube-combo-high-performance-set-for-road-and-hybri-232900253.html",
