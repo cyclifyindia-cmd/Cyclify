@@ -434,6 +434,12 @@ for (const product of primaryProducts) {
           seller: { '@type': 'Organization', '@id': 'https://cyclify.in/#organization', name: 'CYCLIFY INDIA', url: 'https://cyclify.in/' },
           shippingDetails: {
             '@type': 'OfferShippingDetails',
+            ...(!product.preorder && product.available !== false ? { deliveryTime: {
+              '@type': 'ShippingDeliveryTime',
+              businessDays: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday', 'https://schema.org/Saturday'] },
+              handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
+              transitTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 3, unitCode: 'DAY' }
+            } } : {}),
             shippingRate: {
               '@type': 'MonetaryAmount',
               value: '0',
@@ -451,6 +457,7 @@ for (const product of primaryProducts) {
             merchantReturnDays: 7,
             refundType: 'https://schema.org/ExchangeRefund',
             returnMethod: 'https://schema.org/ReturnByMail',
+            returnFees: 'https://schema.org/FreeReturn',
             merchantReturnLink: 'https://cyclify.in/exchange-policy.html'
           }
         }

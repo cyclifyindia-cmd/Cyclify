@@ -1236,6 +1236,7 @@ body{padding-bottom:88px;}
           "merchantReturnDays": 7,
           "refundType": "https://schema.org/ExchangeRefund",
           "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn",
           "merchantReturnLink": "https://cyclify.in/exchange-policy.html"
         }
       }
@@ -2480,6 +2481,12 @@ itemCondition:"https://schema.org/NewCondition",
 seller:{"@type":"Organization","@id":"https://cyclify.in/#organization",name:"CYCLIFY INDIA",url:"https://cyclify.in/"},
 shippingDetails:{
 "@type":"OfferShippingDetails",
+...(!product.preorder&&product.available!==false?{deliveryTime:{
+"@type":"ShippingDeliveryTime",
+businessDays:{"@type":"OpeningHoursSpecification",dayOfWeek:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"].map(day=>`https://schema.org/${day}`)},
+handlingTime:{"@type":"QuantitativeValue",minValue:0,maxValue:0,unitCode:"DAY"},
+transitTime:{"@type":"QuantitativeValue",minValue:3,maxValue:3,unitCode:"DAY"}
+}}:{}),
 shippingRate:{"@type":"MonetaryAmount",value:"0",currency:"INR"},
 shippingDestination:{"@type":"DefinedRegion",addressCountry:"IN"}
 },
@@ -2490,6 +2497,7 @@ returnPolicyCategory:"https://schema.org/MerchantReturnFiniteReturnWindow",
 merchantReturnDays:7,
 refundType:"https://schema.org/ExchangeRefund",
 returnMethod:"https://schema.org/ReturnByMail",
+returnFees:"https://schema.org/FreeReturn",
 merchantReturnLink:"https://cyclify.in/exchange-policy.html"
 }
 };

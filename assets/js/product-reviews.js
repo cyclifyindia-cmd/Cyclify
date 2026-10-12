@@ -96,7 +96,12 @@ async function loadReviews(){
 if(!product)return;
 try{
 const snapshot=await getDocs(query(collection(db,"productReviews",String(product.id),"reviews"),where("status","==","approved")));
-const reviews=snapshot.docs.map(item=>item.data()).sort((a,b)=>(asDate(b.createdAt)?.getTime()||0)-(asDate(a.createdAt)?.getTime()||0));
+const reviews=snapshot.docs.map(item=>item.data()).filter(review=>
+review.status==="approved"&&review.verifiedPurchase===true&&
+Number.isInteger(review.rating)&&review.rating>=1&&review.rating<=5&&
+typeof review.orderId==="string"&&review.orderId.trim().length>0&&
+typeof review.comment==="string"&&review.comment.trim().length>0
+).sort((a,b)=>(asDate(b.createdAt)?.getTime()||0)-(asDate(a.createdAt)?.getTime()||0));
 renderReviews(reviews);
 }catch(error){
 console.error("Approved product reviews could not be loaded",error);
