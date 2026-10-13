@@ -3,6 +3,7 @@ const path = require('path');
 const crypto = require('crypto');
 const { loadAllowedProductIds, filterAllowedProducts } = require('./product-allowlist');
 const { renderSavaA7l } = require('./render-sava-a7l');
+const { renderVook } = require('./render-vook');
 const { renderCatalogSeo } = require('./render-catalog-seo');
 const cheerio = require('cheerio');
 
@@ -522,6 +523,7 @@ for (const product of primaryProducts) {
     $product('#productButtons button').attr('disabled', '').text('Out of stock');
   }
   page = renderSavaA7l($product.html(), product);
+  page = renderVook(page, product);
   // Template/SEO changes are meaningful content updates, not just catalogue edits.
   productLastmods.set(canonical, lastmodFor(canonical, page.replace(/\?v=[^"\s<]+/g, '')));
   writeFileWithRetry(path.join(root, route), page, 'utf8');

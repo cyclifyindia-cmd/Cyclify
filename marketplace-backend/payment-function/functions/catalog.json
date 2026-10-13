@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T05:59:43.951Z",
+  "generatedAt": "2026-10-13T16:22:43.182Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -484,6 +484,76 @@
       "sourcePage": "bikes-frames.html?category=tfsa",
       "sellingPrice": 45000,
       "preorderDeposit": 1
+    },
+    "88001": {
+      "id": "88001",
+      "name": "VOOK V8E Carbon Road Bike",
+      "price": 155000,
+      "available": true,
+      "image": "assets/products/vook-v8e/bike.png",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "sizeAvailability": {
+        "S": true,
+        "M": true,
+        "L": true
+      },
+      "sourcePage": "bikes-frames.html",
+      "optionsBySize": {
+        "S": [
+          "Black",
+          "Blue",
+          "Pink"
+        ],
+        "M": [
+          "Black",
+          "Blue",
+          "Pink"
+        ],
+        "L": [
+          "Black",
+          "Blue",
+          "Pink"
+        ]
+      }
+    },
+    "88002": {
+      "id": "88002",
+      "name": "VOOK V8E Pro Carbon Road Bike",
+      "price": 180000,
+      "available": true,
+      "image": "assets/products/vook-v8e/bike.png",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "sizeAvailability": {
+        "S": true,
+        "M": true,
+        "L": true
+      },
+      "sourcePage": "bikes-frames.html",
+      "optionsBySize": {
+        "S": [
+          "Black",
+          "Blue",
+          "Pink"
+        ],
+        "M": [
+          "Black",
+          "Blue",
+          "Pink"
+        ],
+        "L": [
+          "Black",
+          "Blue",
+          "Pink"
+        ]
+      }
     },
     "230741493": {
       "id": "230741493",

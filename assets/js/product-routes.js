@@ -33,6 +33,8 @@
   "7504": "products/tfsa-jh-10-carbon-aero-road-frameset-7504.html",
   "7505": "products/tfsa-jh-35-lightweight-carbon-road-frameset-7505.html",
   "7506": "products/tfsa-jh-06-carbon-rim-brake-road-frameset-7506.html",
+  "88001": "products/vook-v8e-carbon-road-bike-88001.html",
+  "88002": "products/vook-v8e-pro-carbon-road-bike-88002.html",
   "990001": "tavelo-arow.html",
   "230741493": "products/ralson-foldable-tyres-230741493.html",
   "232900242": "products/ralson-700x28c-bicycle-tyre-and-tube-combo-pair-set-of-2-tyres-and-2-tubes-232900242.html",

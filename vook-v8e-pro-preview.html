@@ -1,0 +1,1134 @@
+<!DOCTYPE html><html lang="en"><head>
+<base href="./">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>VOOK V8E Pro | Cyclify sample</title>
+
+<meta name="description" content="Buy the SAVA A7L 2026 carbon road bike in India for Rs 1,29,999. T800 carbon frame, 24-speed shifting and hydraulic discs. Free shipping.">
+<meta name="robots" content="noindex,nofollow"><meta name="googlebot" content="noindex,nofollow">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+padding-bottom:90px;
+}
+
+/* HEADER */
+
+.header{
+
+background:black;
+padding:12px 15px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+position:sticky;
+top:0;
+z-index:1000;
+
+}
+
+.left{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.back{
+
+color:white;
+text-decoration:none;
+font-size:24px;
+
+}
+
+.logo{
+
+color:#ff2a2a;
+font-size:22px;
+font-weight:bold;
+
+}
+
+.cart{
+
+position:relative;
+font-size:24px;
+text-decoration:none;
+color:white;
+
+}
+
+.cart-count{
+position:absolute;
+top:-8px;
+right:-10px;
+min-width:18px;
+height:18px;
+padding:0 5px;
+border-radius:9px;
+background:#ff2a2a;
+color:white;
+font-size:11px;
+font-weight:bold;
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+/* PRODUCT */
+
+.product{
+
+background:#fff;
+padding:20px;
+
+}
+
+.gallery{
+position:relative;
+background:#fff;
+overflow:hidden;
+touch-action:pan-y;
+}
+
+.gallery-main{
+width:100%;
+height:330px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+cursor:zoom-in;
+}
+
+.gallery-main img{
+
+width:100%;
+height:100%;
+object-fit:contain;
+transition:transform .35s ease;
+
+}
+
+.gallery.zoomed .gallery-main img{
+transform:scale(1.45);
+cursor:zoom-out;
+
+}
+
+.gallery-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:38px;
+height:38px;
+border:none;
+border-radius:50%;
+background:rgba(0,0,0,.65);
+color:white;
+font-size:22px;
+font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:5;
+}
+
+.gallery-btn.prev{
+left:8px;
+}
+
+.gallery-btn.next{
+right:8px;
+}
+
+.gallery.single-image .gallery-btn,
+.gallery.single-image .image-count,
+.gallery.single-image + .thumbs{
+display:none;
+}
+
+.image-count{
+position:absolute;
+right:10px;
+bottom:10px;
+background:rgba(0,0,0,.68);
+color:white;
+font-size:12px;
+font-weight:bold;
+padding:6px 10px;
+border-radius:20px;
+}
+
+.thumbs{
+display:flex;
+gap:8px;
+padding:12px 0 4px;
+overflow-x:auto;
+}
+
+.thumb{
+width:62px;
+height:52px;
+border:2px solid transparent;
+border-radius:10px;
+background:#fff;
+object-fit:cover;
+padding:2px;
+cursor:pointer;
+}
+
+.thumb.active{
+border-color:#0039a6;
+
+}
+
+.name{
+
+font-size:28px;
+font-weight:bold;
+margin-top:15px;
+
+}
+
+.price-line{
+max-width:390px;
+margin:9px 0 16px;
+padding:8px 10px 7px;
+border:1.5px solid #ff5a00;
+border-radius:11px;
+background:#fff;
+box-shadow:0 4px 11px rgba(20,24,28,.055);
+}
+
+.deal-head{display:flex;align-items:center;gap:7px;padding:0 0 5px}
+.deal-head img{display:block;width:94px;max-width:42%;height:auto}
+.deal-divider{width:2px;height:18px;background:linear-gradient(#a96e00,#ffd86a,#a96e00)}
+.deal-word{font-size:15px;line-height:1;font-weight:900;letter-spacing:.05em;background:linear-gradient(100deg,#8b5a00 0%,#d99a00 20%,#fff0a6 38%,#f6c84b 50%,#9b6500 70%,#ffd969 84%,#8b5a00 100%);background-size:240% auto;color:transparent;-webkit-background-clip:text;background-clip:text;animation:dealGlaze 2.8s linear infinite}
+@keyframes dealGlaze{0%{background-position:220% center}100%{background-position:-20% center}}
+@media(prefers-reduced-motion:reduce){.deal-word{animation:none;background-position:50% center}}
+
+.deal-main{display:flex;align-items:center;justify-content:flex-start;gap:9px;padding:3px 0 7px}
+.deal-price{
+font-family:Arial,Helvetica,sans-serif;
+font-size:29px;
+font-weight:700;
+letter-spacing:-.025em;
+margin:0;
+line-height:1;
+color:#171a1d;
+}
+
+.deal-off{display:inline-flex;align-items:center;background:#ff5a00;color:#fff;font-size:9px;font-weight:800;line-height:1;padding:5px 7px;border-radius:6px;white-space:nowrap}
+.deal-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #eceeef;padding-top:6px;white-space:nowrap}
+.deal-mrp{
+color:#7a7f87;
+margin:0;
+font-size:10px;
+line-height:1.2;
+text-decoration-line:line-through;
+text-decoration-color:#e53935;
+text-decoration-thickness:1.5px;
+text-decoration-skip-ink:none;
+}
+.deal-save{display:inline-flex;align-items:center;background:#079b2b;color:#fff;border-radius:999px;padding:3px 7px;font-size:9px;font-weight:800;line-height:1;white-space:nowrap}
+.deal-mrp[hidden],.deal-save[hidden],.deal-off[hidden]{display:none!important;}
+
+.shipping-note{
+display:inline-flex;
+align-items:center;
+gap:4px;
+margin-left:auto;
+background:transparent;
+color:#087a3d;
+font-size:10px;
+font-weight:bold;
+line-height:1;
+padding:0;
+border-radius:0;
+white-space:nowrap;
+}
+.shipping-note .shipping-icon{font-size:14px;line-height:1}
+
+.product-fulfilment{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+max-width:520px;
+margin:-4px 0 20px;
+}
+
+.fulfilment-pill{
+display:inline-flex;
+align-items:center;
+gap:6px;
+min-height:32px;
+padding:7px 11px;
+border:1px solid #e5e8e7;
+border-radius:999px;
+background:#fff;
+color:#23342b;
+font-size:12px;
+font-weight:750;
+}
+
+.fulfilment-pill.preorder{
+border-color:#ffd4c3;
+background:#fff5f0;
+color:#b83f13;
+}
+
+.fulfilment-pill.deposit{
+border-color:#ffd4c3;
+background:#fff5f0;
+color:#b83f13;
+}
+
+.fulfilment-pill.paint{
+border-color:#cde9d9;
+background:#f1fbf5;
+color:#116d3d;
+}
+
+.price-line.price-on-request .deal-word{
+background:none;
+color:#b83f13;
+-webkit-text-fill-color:currentColor;
+animation:none;
+}
+
+.price-line.price-on-request .deal-price{
+font-size:23px;
+letter-spacing:-.01em;
+}
+
+.size-section{
+margin:0 0 20px;
+}
+
+.size-label{
+font-size:14px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.size-options{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(58px,1fr));
+gap:8px;
+overflow:visible;
+}
+
+.size-btn{
+width:100%;
+min-width:0;
+height:42px;
+border:1px solid #ddd;
+border-radius:8px;
+background:white;
+font-size:15px;
+font-weight:bold;
+}
+
+.size-btn.active{
+background:black;
+color:white;
+border-color:black;
+}
+
+.size-btn.disabled,.size-btn:disabled{
+opacity:.35;
+background:#f3f4f6;
+color:#8a8f98;
+text-decoration:line-through;
+cursor:not-allowed;
+}
+
+/* Adaptive product option controls */
+.size-options.dropdown-mode{display:block;}
+.option-select{
+width:100%;
+min-height:46px;
+padding:0 42px 0 13px;
+border:1px solid #cfd3da;
+border-radius:7px;
+background:#fff;
+color:#15181c;
+font:600 14px Arial,sans-serif;
+letter-spacing:0;
+outline:none;
+cursor:pointer;
+}
+.option-select:focus{border-color:#111827;box-shadow:0 0 0 3px rgba(17,24,39,.09);}
+.option-select:disabled{opacity:.5;cursor:not-allowed;}
+@media(max-width:480px){.option-select{min-height:44px;font-size:13px;}}
+/* BUTTONS */
+
+.buttons{
+position:fixed;
+left:0;
+right:0;
+bottom:0;
+z-index:1200;
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px;
+margin:0;
+padding:10px max(14px,calc((100vw - 760px)/2));
+background:rgba(255,255,255,.96);
+border-top:1px solid #e6e8ed;
+box-shadow:0 -8px 24px rgba(15,23,42,.10);
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+}
+
+.btn{
+
+flex:1;
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+font-size:16px;
+font-weight:bold;
+
+}
+
+.cartbtn{
+
+background:black;
+color:white;
+
+}
+
+.cartbtn:disabled,.buybtn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(1)}
+.shipping-note.stock-unavailable{color:#b42318;background:#fff1f0}
+.cartbtn:disabled,.buybtn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(1)}
+.shipping-note.stock-unavailable{color:#b42318;background:#fff1f0}
+.cartbtn:disabled,.buybtn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(1)}
+.shipping-note.stock-unavailable{color:#b42318;background:#fff1f0}
+.buybtn{
+
+background:#25D366;
+color:white;
+
+}
+
+.buttons.preorder-mode .cartbtn{
+background:#183126;
+}
+
+.buttons.preorder-mode .buybtn{
+background:#f05a28;
+}
+
+/* SECTION */
+
+.section{
+
+background:white;
+margin-top:10px;
+padding:20px;
+
+}
+
+.specification-section{
+padding:clamp(22px,4vw,48px);
+}
+
+.specification-heading{
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+gap:24px;
+padding-bottom:22px;
+border-bottom:1px solid #e7e9ed;
+}
+
+.spec-kicker{
+font-size:12px;
+font-weight:800;
+letter-spacing:0;
+text-transform:uppercase;
+color:#0057b8;
+margin:0 0 7px;
+}
+
+.specification-heading h3{
+font-size:clamp(26px,3vw,40px);
+line-height:1.08;
+margin:0;
+}
+
+.spec-summary{
+max-width:560px;
+font-size:14px;
+line-height:1.55;
+color:#5b6470;
+margin-top:9px;
+}
+
+.spec-source{
+display:inline-flex;
+align-items:center;
+gap:7px;
+color:#0057b8;
+font-size:13px;
+font-weight:700;
+text-decoration:none;
+white-space:nowrap;
+}
+
+.spec-source::after{content:"↗";}
+
+.spec-highlights{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:0;
+border-bottom:1px solid #e7e9ed;
+}
+
+.spec-highlight{
+padding:22px 20px 22px 0;
+min-width:0;
+}
+
+.spec-highlight+.spec-highlight{
+border-left:1px solid #e7e9ed;
+padding-left:20px;
+}
+
+.spec-highlight-label{
+display:block;
+font-size:11px;
+font-weight:800;
+text-transform:uppercase;
+color:#7a838e;
+margin-bottom:7px;
+}
+
+.spec-highlight-value{
+display:block;
+font-size:16px;
+font-weight:750;
+line-height:1.35;
+color:#16191d;
+overflow-wrap:anywhere;
+}
+
+.spec-groups{border-top:0;}
+
+.spec-group{
+display:grid;
+grid-template-columns:minmax(170px,230px) minmax(0,1fr);
+gap:clamp(20px,4vw,64px);
+padding:30px 0;
+border-bottom:1px solid #e7e9ed;
+}
+
+.spec-group h4{
+font-size:17px;
+line-height:1.35;
+margin:0;
+}
+
+.spec-table{margin:0;}
+
+.spec-row{
+display:grid;
+grid-template-columns:minmax(135px,34%) minmax(0,1fr);
+gap:22px;
+padding:12px 0;
+border-bottom:1px solid #f0f1f3;
+}
+
+.spec-row:first-child{padding-top:0;}
+.spec-row:last-child{border-bottom:0;padding-bottom:0;}
+
+.spec-row dt{
+font-size:13px;
+font-weight:700;
+color:#59616c;
+}
+
+.spec-row dd{
+font-size:14px;
+line-height:1.48;
+color:#15181c;
+margin:0;
+overflow-wrap:anywhere;
+}
+
+.product-detail-stories{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:18px;
+margin-top:34px;
+}
+
+.detail-story{
+background:#f5f6f7;
+overflow:hidden;
+border-radius:6px;
+}
+
+.detail-story img{
+display:block;
+width:100%;
+aspect-ratio:16/10;
+object-fit:cover;
+background:#fff;
+}
+
+.detail-story-copy{padding:18px;}
+.detail-story h4{font-size:18px;margin:0 0 7px;}
+.detail-story p{font-size:14px;line-height:1.55;color:#4a4f57;}
+
+.product-features-block,
+.multi-angle-block{
+padding:30px 0 0;
+}
+
+.product-features-block h3,
+.multi-angle-block h3{
+font-size:clamp(22px,2.6vw,32px);
+line-height:1.15;
+margin:0 0 17px;
+}
+
+.product-features-list{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px 18px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.product-features-list li{
+position:relative;
+padding:14px 15px 14px 42px;
+border:1px solid #e7ebe8;
+border-radius:10px;
+background:#fafcfb;
+color:#29332e;
+font-size:14px;
+line-height:1.48;
+}
+
+.product-features-list li::before{
+content:"✓";
+position:absolute;
+left:14px;
+top:14px;
+display:grid;
+place-items:center;
+width:19px;
+height:19px;
+border-radius:50%;
+background:#169653;
+color:#fff;
+font-size:12px;
+font-weight:900;
+}
+
+.multi-angle-grid{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:12px;
+}
+
+.multi-angle-card{
+overflow:hidden;
+border:1px solid #e6e9e7;
+border-radius:10px;
+background:#fff;
+}
+
+.multi-angle-card img{
+display:block;
+width:100%;
+aspect-ratio:4/3;
+object-fit:contain;
+background:#fff;
+}
+
+.multi-angle-card span{
+display:block;
+padding:10px 12px;
+border-top:1px solid #edf0ee;
+color:#36413b;
+font-size:12px;
+font-weight:700;
+}
+@media(max-width:800px){
+.specification-heading{align-items:flex-start;flex-direction:column;gap:12px;}
+.spec-highlights{grid-template-columns:repeat(2,minmax(0,1fr));}
+.spec-highlight:nth-child(3){border-left:0;border-top:1px solid #e7e9ed;padding-left:0;}
+.spec-highlight:nth-child(4){border-top:1px solid #e7e9ed;}
+.spec-group{grid-template-columns:1fr;gap:16px;padding:24px 0;}
+.product-detail-stories{grid-template-columns:1fr;gap:12px;}
+.detail-story-copy{padding:14px;}
+.multi-angle-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
+@media(max-width:480px){
+.specification-section{padding:22px 15px;}
+.specification-heading h3{font-size:27px;}
+.spec-summary{font-size:13px;}
+.spec-highlight{padding:17px 12px 17px 0;}
+.spec-highlight+.spec-highlight{padding-left:12px;}
+.spec-highlight:nth-child(3){padding-left:0;}
+.spec-highlight-value{font-size:14px;}
+.spec-row{grid-template-columns:minmax(96px,37%) minmax(0,1fr);gap:12px;padding:11px 0;}
+.spec-row dt,.spec-row dd{font-size:12.5px;}
+.product-features-list{grid-template-columns:1fr;}
+.multi-angle-grid{gap:8px;}
+.multi-angle-card span{padding:8px 9px;font-size:11px;}
+}
+
+/* RELATED */
+
+.related{
+
+display:flex;
+overflow-x:auto;
+gap:12px;
+margin-top:15px;
+
+}
+
+.related-card{
+
+min-width:140px;
+
+background:#fafafa;
+
+padding:10px;
+
+border-radius:12px;
+text-decoration:none;
+color:black;
+
+}
+
+.related-card img{
+
+width:100%;
+height:100px;
+object-fit:contain;
+
+}
+
+.product-reviews-section{margin-top:28px}
+.reviews-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.reviews-heading h3{margin:0 0 5px;font-size:22px}
+.reviews-heading p{margin:0;color:#667085;font-size:13px}
+.review-summary{display:grid;grid-template-columns:190px minmax(260px,430px);gap:34px;align-items:center;border-top:1px solid #e4e7ec;border-bottom:1px solid #e4e7ec;padding:22px 0;margin-bottom:8px}
+.review-summary[hidden]{display:none}
+.review-score{display:flex;align-items:baseline;gap:6px}
+.review-score strong{font-size:42px;line-height:1}
+.review-score span{color:#667085;font-size:16px}
+.review-summary-stars,.published-review-stars{color:#f79009;letter-spacing:0}
+.review-summary-stars{font-size:23px;margin:8px 0 4px}
+.review-total{color:#667085;font-size:13px}
+.rating-bars{display:grid;gap:7px}
+.rating-bar{display:grid;grid-template-columns:38px 1fr 32px;gap:9px;align-items:center;color:#667085;font-size:12px}
+.rating-track{height:7px;background:#eaecf0;border-radius:999px;overflow:hidden}
+.rating-fill{height:100%;background:#f79009;border-radius:999px}
+.published-review{padding:19px 0;border-bottom:1px solid #e4e7ec}
+.published-review-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.published-review-head h4{margin:0;font-size:16px}
+.published-review-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#667085;font-size:12px;margin:7px 0 10px}
+.verified-review{display:inline-flex;align-items:center;min-height:23px;border-radius:999px;background:#ecfdf3;color:#087443;padding:2px 8px;font-weight:800}
+.published-review p{margin:0;color:#344054;line-height:1.6;white-space:pre-wrap}
+.published-review-images{display:grid;grid-template-columns:repeat(3,minmax(0,110px));gap:8px;margin-top:13px}
+.published-review-images img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:1px solid #e4e7ec;border-radius:7px}
+.reviews-empty{padding:28px 0;color:#667085;border-top:1px solid #e4e7ec}
+@media(max-width:650px){
+.reviews-heading{align-items:flex-start;flex-direction:column}
+.review-summary{grid-template-columns:1fr;gap:18px}
+.published-review-head{align-items:flex-start;flex-direction:column}
+.published-review-images{grid-template-columns:repeat(3,1fr)}
+}
+
+/* FOOTER FEATURES */
+
+.features{
+
+background:white;
+
+margin-top:15px;
+padding:20px;
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+
+}
+
+.feature{
+
+text-align:center;
+
+font-size:14px;
+font-weight:bold;
+
+}
+
+
+.topbar{
+position:sticky;
+top:0;
+background:white;
+display:flex;
+align-items:center;
+gap:10px;
+padding:8px 12px;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+z-index:1000;
+}
+.home-logo{
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+width:92px;
+height:38px;
+overflow:hidden;
+flex:0 0 auto;
+}
+.home-logo img{width:100%;height:100%;display:block;object-fit:contain;}
+.site-search{
+flex:1 1 auto;
+min-width:0;
+position:relative;
+display:flex;
+align-items:center;
+background:#f2f2f2;
+border-radius:999px;
+height:46px;
+overflow:hidden;
+}
+.site-search input{
+width:100%;
+min-width:0;
+height:46px;
+padding:0 10px 0 16px;
+border:none;
+outline:none;
+border-radius:999px 0 0 999px;
+background:transparent;
+font-size:15px;
+}
+.image-search-btn{
+width:40px;
+height:40px;
+margin-right:4px;
+border:none;
+border-radius:50%;
+background:white;
+font-size:19px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+flex:0 0 auto;
+}
+.top-icons{display:flex;gap:15px;font-size:24px;align-items:center;flex:0 0 auto;}
+.top-icons a{text-decoration:none;color:black;position:relative;}
+.cart-count{position:absolute;top:-8px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ff2a2a;color:white;font-size:11px;font-weight:bold;display:none;align-items:center;justify-content:center;}
+@media(max-width:480px){.topbar{gap:7px;padding:7px 8px}.home-logo{width:82px;height:34px}.site-search input{padding:11px;font-size:13px}.image-search-btn{width:34px;height:34px;font-size:15px}.top-icons{gap:10px;font-size:21px}}
+html{scroll-behavior:smooth}
+body{animation:pageFade .45s ease both}
+.site-search,.image-search-btn,.btn,.related-card{transition:box-shadow .28s ease,transform .28s ease,background .28s ease,border-color .28s ease}
+.image-search-btn{width:74px!important;height:38px!important;display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid rgba(0,57,166,.14)!important;background:linear-gradient(135deg,#ffffff 0%,#eaf2ff 55%,#d9e9ff 100%)!important;color:#0039a6;font-size:17px!important;font-weight:800;letter-spacing:0;box-shadow:0 6px 16px rgba(0,57,166,.14),inset 0 1px 0 rgba(255,255,255,.8)!important}
+.image-search-btn::after{content:"";font-size:12px;line-height:1}
+.image-search-btn:hover,.btn:hover,.related-card:hover{transform:translateY(-1px)}
+@keyframes pageFade{from{opacity:.92}to{opacity:1}}
+@media(max-width:480px){.image-search-btn{width:46px!important;height:36px!important;font-size:16px!important}.image-search-btn::after{display:none}}
+
+
+
+/* Modern Shopify-style header */
+.header,
+.topbar{
+background:rgba(255,255,255,.94)!important;
+backdrop-filter:saturate(180%) blur(16px);
+-webkit-backdrop-filter:saturate(180%) blur(16px);
+border-bottom:1px solid rgba(17,24,39,.08);
+box-shadow:0 8px 24px rgba(15,23,42,.06)!important;
+min-height:64px;
+padding:9px 14px!important;
+gap:12px!important;
+}
+
+.logo,
+.home-logo{
+width:96px!important;
+height:42px!important;
+object-fit:contain;
+flex:0 0 auto!important;
+}
+
+.home-logo img{
+width:100%;
+height:100%;
+object-fit:contain;
+}
+
+.search,
+.search-box,
+.site-search{
+min-width:0;
+}
+
+.search{
+flex:1 1 auto;
+max-width:760px!important;
+}
+
+.search-box,
+.site-search{
+height:46px!important;
+border-radius:999px!important;
+background:#f6f7f9!important;
+border:1px solid #e6e8ed;
+box-shadow:inset 0 1px 0 rgba(255,255,255,.78);
+overflow:hidden;
+display:flex;
+align-items:center;
+}
+
+.search-box:focus-within,
+.site-search:focus-within{
+background:white!important;
+border-color:#0f172a;
+box-shadow:0 0 0 3px rgba(15,23,42,.08)!important;
+}
+
+.search-box input,
+.site-search input{
+height:44px!important;
+padding:0 12px 0 17px!important;
+font-size:14px!important;
+color:#111827;
+}
+
+.image-search-btn{
+width:42px!important;
+height:42px!important;
+margin-right:2px!important;
+border:0!important;
+border-left:1px solid #e7eaf0!important;
+border-radius:0 999px 999px 0!important;
+background:transparent!important;
+color:#111827!important;
+box-shadow:none!important;
+display:flex!important;
+align-items:center!important;
+justify-content:center!important;
+gap:0!important;
+font-size:0!important;
+transition:background .22s ease,color .22s ease,transform .22s ease!important;
+}
+
+.image-search-btn::after{
+content:""!important;
+display:none!important;
+}
+
+.image-search-btn svg,
+.header-icon svg{
+width:21px;
+height:21px;
+fill:none;
+stroke:currentColor;
+stroke-width:1.9;
+stroke-linecap:round;
+stroke-linejoin:round;
+display:block;
+}
+
+.image-search-btn:hover{
+background:#eceff4!important;
+transform:none!important;
+}
+
+.icons,
+.top-icons{
+display:flex!important;
+align-items:center!important;
+gap:8px!important;
+font-size:0!important;
+flex:0 0 auto!important;
+}
+
+.icons a,
+.top-icons a,
+.header-icon{
+width:42px;
+height:42px;
+border-radius:50%;
+display:flex!important;
+align-items:center!important;
+justify-content:center!important;
+background:#f6f7f9;
+border:1px solid #e6e8ed;
+color:#111827!important;
+text-decoration:none!important;
+position:relative;
+box-shadow:0 1px 0 rgba(255,255,255,.9);
+transition:background .22s ease,border-color .22s ease,transform .22s ease,box-shadow .22s ease;
+}
+
+.icons a:hover,
+.top-icons a:hover,
+.header-icon:hover{
+background:white;
+border-color:#d6dbe5;
+transform:translateY(-1px);
+box-shadow:0 8px 18px rgba(15,23,42,.08);
+}
+
+.cart-count{
+top:-5px!important;
+right:-4px!important;
+min-width:17px!important;
+height:17px!important;
+padding:0 5px!important;
+font-size:10px!important;
+background:#111827!important;
+border:2px solid white;
+}
+
+@media(max-width:560px){
+.header,
+.topbar{
+min-height:58px;
+padding:8px 9px!important;
+gap:7px!important;
+}
+
+.logo,
+.home-logo{
+width:78px!important;
+height:36px!important;
+}
+
+.search-box,
+.site-search{
+height:40px!important;
+}
+
+.search-box input,
+.site-search input{
+height:38px!important;
+font-size:13px!important;
+padding-left:12px!important;
+}
+
+.image-search-btn,
+.icons a,
+.top-icons a,
+.header-icon{
+width:38px!important;
+height:38px!important;
+}
+
+.image-search-btn svg,
+.header-icon svg{
+width:19px;
+height:19px;
+}
+
+.icons,
+.top-icons{
+gap:5px!important;
+}
+}
+
+.feature{color:inherit;text-decoration:none}
+
+.product-breadcrumb{width:min(1040px,calc(100% - 28px));margin:14px auto 0;display:flex;align-items:center;gap:7px;color:#667085;font-size:12px;line-height:1.4}
+.product-breadcrumb a{color:#475467;font-weight:700;text-decoration:none}
+.product-breadcrumb a:hover,.product-breadcrumb a:focus-visible{color:#0754c9;text-decoration:underline}
+.product-breadcrumb [aria-current="page"]{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Always-visible product purchase controls */
+body{padding-bottom:96px;}
+.btn{min-height:50px;border-radius:7px;cursor:pointer;}
+.buybtn{background:#0f8a45;}
+@media(max-width:480px){
+body{padding-bottom:88px;}
+.product{padding:14px;}
+.price-line{max-width:100%;margin:8px 0 14px;padding:8px 9px 7px;}
+.deal-head img{width:88px}.deal-price{font-size:27px}.deal-meta{gap:5px}.deal-mrp{font-size:9px}.deal-save{font-size:8px;padding:3px 6px}.shipping-note{font-size:9px}
+.buttons{gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));}
+.btn{min-height:48px;padding:11px 8px;font-size:15px;}
+}</style>
+
+<link rel="stylesheet" href="assets/css/sava-a7l.css?v=ffd34120f3"><link rel="stylesheet" href="assets/css/vook-preview.css"></head>
+
+<body class="sava-a7l-page vook-page"><div class="topbar">
+<a href="index.html" class="home-logo"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
+<div class="site-search"><input type="text" placeholder="Search Cyclify" data-global-search=""><button class="image-search-btn" id="headerImageSearchButton" type="button" aria-label="Search by image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 7.2h2.1l1.4-2h4.6l1.4 2h2.1c1.4 0 2.4 1 2.4 2.4v7.2c0 1.4-1 2.4-2.4 2.4H6.2c-1.4 0-2.4-1-2.4-2.4V9.6c0-1.4 1-2.4 2.4-2.4Z"></path><path d="M12 16.2a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8Z"></path><path d="M17.3 10h.1"></path></svg></button><input type="file" id="headerImageSearchInput" accept="image/*" hidden=""></div>
+<div class="top-icons">
+<a href="account.html" aria-label="Account" class="header-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20.2c0-3.1-3.6-5.2-8-5.2s-8 2.1-8 5.2"></path><path d="M12 12a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z"></path></svg></a>
+<a href="cart.html" aria-label="Cart" class="header-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2.2l1.6 9.4c.2 1 1 1.6 2 1.6h6.9c.9 0 1.7-.6 2-1.5L20 8H7.1"></path><path d="M10 20h.1"></path><path d="M17 20h.1"></path></svg><span class="cart-count" id="cartCount"></span></a>
+</div>
+</div>
+<nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>›</span><a href="bikes-frames.html">Bikes &amp; Frames</a><span>›</span><span aria-current="page">VOOK V8E Pro</span></nav>
+<main><section class="product a7l-product"><div class="a7l-media"><div class="gallery-main vook-standard-hero"><img id="vookBike" src="assets/products/vook-v8e/detail-11.png" alt="VOOK V8E standard bicycle with aluminium wheels" width="1125" fetchpriority="high"></div><nav class="vook-models" aria-label="Compare VOOK models"><a href="vook-v8e-preview.html">V8E</a><a href="vook-v8e-pro-preview.html" aria-current="page">V8E Pro · Velove wheels</a></nav></div>
+<div class="a7l-buy-panel"><h1 class="name">VOOK V8E Pro Carbon Road Bike</h1><div class="price-line"><div class="deal-head"><img src="assets/Logo-dark.png" alt="Cyclify"><span class="deal-divider"></span><span class="deal-word">DEAL</span></div><div class="deal-main"><span class="deal-price">₹1,80,000</span></div><div class="deal-meta"><span class="vook-retail-label">MRP ₹1,80,000 · Inclusive of taxes</span><span class="shipping-note">Free Shipping</span></div></div>
+<p class="a7l-tax-note">Velove Glide 50 mm carbon wheels · Ratchet hubs · 1,445 g</p><hr class="a7l-rule">
+<section class="a7l-boutique"><div class="boutique-heading"><span>YOUR VOOK, YOUR WAY</span><h2>Make it yours.</h2></div><div class="size-section"><div class="size-label a7l-size-heading">Select Frame Size<button class="a7l-geometry-trigger" id="geometryOpen" type="button" aria-haspopup="dialog">Size &amp; Geometry</button></div><div id="sizeOptions"><button type="button" class="size-btn" data-size="XS" aria-pressed="false">XS<small>46 cm</small></button><button type="button" class="size-btn" data-size="S" aria-pressed="false">S<small>49 cm</small></button><button type="button" class="size-btn" data-size="M" aria-pressed="false">M<small>51 cm</small></button><button type="button" class="size-btn" data-size="L" aria-pressed="false">L<small>53 cm</small></button><button type="button" class="size-btn" data-size="XL" aria-pressed="false">XL<small>55 cm</small></button></div></div>
+<div class="size-section"><div class="size-label">Select Colour</div><div id="valveOptions"><button type="button" class="size-btn active" style="--swatch:#e6e6e6" aria-pressed="true">Silver / White</button></div></div><p class="a7l-variant-note">Frame sizes follow the official specification. Stock and colour availability are awaiting confirmation.</p><div class="boutique-footer"><div class="a7l-quantity"><label for="vookQuantity">Quantity</label><div class="a7l-stepper"><button type="button" data-step="-1" aria-label="Reduce quantity">−</button><input id="vookQuantity" type="number" min="1" max="10" value="1" aria-label="Quantity"><button type="button" data-step="1" aria-label="Increase quantity">+</button></div></div><div class="boutique-status"><span>Availability to be confirmed</span><span class="boutique-secure">Secure checkout</span></div></div></section>
+<aside class="vook-notice"><strong>Important Notice</strong><p>This road frameset is designed for smooth, paved roads. It is not intended for gravel conversion or repeated impacts on rough terrain. Use on unsuitable surfaces may damage the frame or components and affect warranty coverage.</p></aside></div></section>
+<section class="vook-details" aria-label="VOOK product details"><div class="vook-feature-intro"><span>VOOK V8E</span><h2>Carbon fibre racing road bike</h2><p>L-TWOO eGR wireless electronic shifting · 13 speeds</p><img src="assets/products/vook-v8e/bike.png" alt="VOOK carbon road bicycle" loading="lazy"></div>
+<figure class="vook-detail-image"><img src="assets/products/vook-v8e/detail-3.png" alt="L-TWOO eGR electronic shifting and V8E aluminium crankset" loading="lazy" decoding="async" width="1200"></figure>
+<figure class="vook-detail-image" style="aspect-ratio:1200 / 3785.4;overflow:hidden"><img src="assets/products/vook-v8e/detail-5.png" alt="L-TWOO eGR shifters, cassette, rear derailleur, chain and hydraulic brakes" loading="lazy" decoding="async" width="1200"></figure>
+<figure class="vook-detail-image" style="aspect-ratio:1200 / 2576.7;overflow:hidden"><img src="assets/products/vook-v8e/detail-6.png" alt="VOOK carbon frameset and integrated carbon cockpit" loading="lazy" decoding="async" width="1200"></figure>
+<figure class="vook-detail-image"><img src="assets/products/vook-v8e/detail-7.png" alt="VOOK frame construction and frame geometry" loading="lazy" decoding="async" width="1200"></figure>
+<section class="vook-wheel-upgrade"><span>CYCLIFY V8E PRO BUILD</span><h2>Velove Glide 50 mm</h2><p>Carbon rims. Ratchet hubs. Wheelset weight: 1,445 g.</p><p>This build uses the V8E base bike and its aluminium crankset, with the Velove carbon wheel upgrade.</p></section>
+<figure class="vook-detail-image"><img src="assets/products/vook-v8e/detail-10.png" alt="WE ONE MAX integrated carbon handlebar and cockpit dimensions" loading="lazy" decoding="async" width="1200"></figure>
+<figure class="vook-detail-image" style="aspect-ratio:1200 / 2199.12;overflow:hidden"><img src="assets/products/vook-v8e/detail-11.png" alt="V8E bicycle and component photographs" loading="lazy" decoding="async" width="1200"></figure>
+<section class="vook-specs"><h2>VOOK V8E Pro specifications</h2><table><tbody><tr><th scope="row">Frame</th><td>Carbon road frameset, full internal routing, flat-mount disc brakes, 12 × 142 mm rear thru-axle</td></tr><tr><th scope="row">Fork</th><td>T700 carbon, 12 × 100 mm front thru-axle</td></tr><tr><th scope="row">Wheels</th><td>Velove Glide 50 mm carbon wheels · Ratchet hubs · 1,445 g</td></tr><tr><th scope="row">Shifting</th><td>L-TWOO eGR wireless electronic, 1 × 13 speed</td></tr><tr><th scope="row">Crankset</th><td>WE ONE 7075 aluminium chainring and EVS crank, 48T</td></tr><tr><th scope="row">Crank arm</th><td>165 mm for XS/S; 170 mm for M/L/XL</td></tr><tr><th scope="row">Cassette</th><td>EVS 13-speed 11–45T</td></tr><tr><th scope="row">Brakes</th><td>L-TWOO eGR hydraulic disc brakes, 160 mm rotors</td></tr><tr><th scope="row">Tyres</th><td>VEPOSS 700 × 28C</td></tr><tr><th scope="row">Handlebar</th><td>WE ONE MAX integrated carbon cockpit</td></tr><tr><th scope="row">Seatpost</th><td>Carbon, 12 mm setback</td></tr><tr><th scope="row">Saddle</th><td>WE ONE EVO carbon rails, 145 mm</td></tr><tr><th scope="row">Maximum total weight</th><td>110 kg, including bike, rider and cargo</td></tr></tbody></table></section>
+</section></main>
+<div class="buttons" id="productButtons" data-retail-price="180000"><button class="btn cartbtn" type="button" data-preview-action="cart">Add to Cart</button><button class="btn buybtn" type="button" data-preview-action="buy">Buy Now</button></div>
+<dialog id="vookGeometry"><div class="vook-dialog-heading"><h2>Size &amp; Geometry</h2><button type="button" data-close="" aria-label="Close size geometry">×</button></div><figure class="vook-detail-image"><img src="assets/products/vook-v8e/detail-7.png" alt="Official VOOK V8E geometry and frame dimensions" loading="lazy" decoding="async" width="1200"></figure></dialog><dialog id="vookSelection"><div class="vook-dialog-heading"><h2>Your VOOK V8E Pro</h2><button type="button" data-close="" aria-label="Close build summary">×</button></div><p id="selectionSummary"></p><p>Velove Glide 50 mm carbon wheels · Ratchet hubs · 1,445 g</p><p>Availability awaits confirmation. This sample does not create an order.</p></dialog>
+<script src="assets/js/site-footer.js?v=e47fdbe5c9"></script><script src="assets/js/global-search.js"></script><script src="assets/js/vook-preview.js"></script></body></html>
