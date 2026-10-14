@@ -12,7 +12,7 @@ $('body').addClass('sava-a7l-page vook-page');
 $('head').append(`<link rel="stylesheet" href="assets/css/sava-a7l.css?v=${version('assets/css/sava-a7l.css')}"><link rel="stylesheet" href="assets/css/vook-preview.css?v=${version('assets/css/vook-preview.css')}">`);
 const media=$('<div class="a7l-media"></div>').append($('#productGallery'),$('#productThumbs'));
 if(!product.imageByColour)media.append('<p class="vook-photo-note">Official reference photograph. Stocked frame colours: Black, Blue and Pink.</p>');
-media.append('<nav class="vook-models" aria-label="Compare VOOK models"><a href="products/vook-v8e-carbon-road-bike-88001.html">V8E</a><a href="products/vook-v8e-pro-carbon-road-bike-88002.html">V8E Pro · Velove wheels</a></nav>');
+media.append('<nav class="vook-models" aria-label="Compare VOOK models"><a href="products/vook-v8e-carbon-road-bike-88001.html">V8E</a><a href="products/vook-v8e-pro-carbon-road-bike-88002.html">V8E Pro - Carbon Wheels</a></nav>');
 media.find(`a[href*="${product.id}"]`).attr('aria-current','page');
 const panel=$('<div class="a7l-buy-panel"></div>').append($('#productName'),$('#productPriceLine'));
 if(pro)panel.append('<p class="a7l-tax-note">Velove Glide 50 mm carbon wheels · Ratchet hubs · 1,445 g</p>');

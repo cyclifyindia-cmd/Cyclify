@@ -8,6 +8,8 @@
 .vook-colour-gallery #productGallery .gallery-btn{display:none!important}
 .vook-colour-gallery #productImage{position:relative;display:block;width:100%;height:100%;max-height:none;object-fit:contain;padding:8px 12px;box-sizing:border-box;transform:none}
 .vook-colour-gallery #productImage[data-photo-framing="original"]{position:absolute;width:136%;height:auto;max-width:none;left:-18%;top:50%;padding:0;transform:translateY(-50%)}
-.vook-colour-gallery #productThumbs{display:flex!important;justify-content:center;gap:10px;margin-top:10px;height:auto;overflow-x:auto;overflow-y:hidden;padding:4px}
-.vook-colour-gallery #productThumbs .thumb{flex:0 0 70px;width:70px;height:54px;object-fit:contain;overflow:hidden;background:#fff;transform:none;box-sizing:border-box}
+.vook-colour-gallery #productThumbs{display:flex!important;justify-content:center;gap:10px;margin-top:10px;height:auto;overflow-x:auto;overflow-y:hidden;padding:4px;scrollbar-width:none}
+.vook-colour-gallery #productThumbs::-webkit-scrollbar{display:none}
+.vook-colour-gallery #productThumbs .thumb{flex:0 0 70px;width:70px;height:54px;object-fit:contain;overflow:hidden;background:#fff;transform:none;box-sizing:border-box;border:0!important;box-shadow:none!important;border-radius:0;opacity:.55;transition:opacity .15s}
+.vook-colour-gallery #productThumbs .thumb.active,.vook-colour-gallery #productThumbs .thumb:hover{opacity:1}
 @media(max-width:749px){.vook-colour-gallery #galleryMain{aspect-ratio:1.55!important}.vook-colour-gallery #productImage{padding:6px 8px}.vook-colour-gallery .vook-models{margin:8px 0 12px}.vook-colour-gallery #productThumbs .thumb{width:54px;height:42px}}
