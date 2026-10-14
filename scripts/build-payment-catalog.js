@@ -55,6 +55,7 @@ function addProduct(product, source) {
     record.preorderDeposit = preorderDeposit;
   }
   if (product.optionsBySize) record.optionsBySize = JSON.parse(JSON.stringify(product.optionsBySize));
+  if (product.imageByColour) record.imageByColour = JSON.parse(JSON.stringify(product.imageByColour));
   catalog.set(id, record);
 }
 

@@ -110,7 +110,7 @@ function validatedCart(items) {
       sellingPrice: Number(product.sellingPrice || product.price),
       preorderDeposit: Number(product.preorderDeposit || 0),
       quantity,
-      image: product.image,
+      image: product.imageByColour?.[colour] || product.image,
       size: colour ? `${size} / ${colour}` : size,
       ...(colour ? { frameSize: size, valveLength: colour } : {}),
     };

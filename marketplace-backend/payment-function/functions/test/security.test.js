@@ -13,6 +13,7 @@ test("VOOK uses the correct model price and stocked size/colour combinations", (
       const order=validatedCart([{id,size,valveLength:colour,quantity:2,price:1}]);
       assert.equal(order.total,price*2);
       assert.equal(order.items[0].size,`${size} / ${colour}`);
+      if(id===88001)assert.ok(order.items[0].image.endsWith(`${colour.toLowerCase()}-first.png`));
     }
     assert.throws(()=>validatedCart([{id,size:"XS",valveLength:"Black"}]),/invalid/);
     assert.throws(()=>validatedCart([{id,size:"M",valveLength:"White"}]),/available frame size and colour/);

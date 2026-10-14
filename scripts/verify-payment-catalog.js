@@ -39,6 +39,7 @@ function addProduct(product, source) {
     record.preorderDeposit = preorderDeposit;
   }
   if (product.optionsBySize) record.optionsBySize = JSON.parse(JSON.stringify(product.optionsBySize));
+  if (product.imageByColour) record.imageByColour = JSON.parse(JSON.stringify(product.imageByColour));
   expected.set(id, record);
 }
 
@@ -73,7 +74,7 @@ if (payload.currency !== "INR" || !payload.products || typeof payload.products !
 
 const actual = new Map(Object.entries(payload.products));
 const issues = [];
-const checkedFields = ["id", "name", "price", "sellingPrice", "preorderDeposit", "available", "image", "sizes", "sizeAvailability", "sourcePage"];
+const checkedFields = ["id", "name", "price", "sellingPrice", "preorderDeposit", "available", "image", "imageByColour", "sizes", "sizeAvailability", "sourcePage"];
 
 for (const [id, sourceProduct] of expected) {
   const paymentProduct = actual.get(id);

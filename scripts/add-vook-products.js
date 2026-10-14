@@ -15,6 +15,14 @@ specs:[`Model: ${pro?'VOOK V8E Pro — Cyclify Velove wheel build':'VOOK V8E'}`,
 `Wheelset: ${pro?'Velove Glide 50 mm carbon rims, ratchet hubs, 1,445 g':'WE ONE 25 mm aluminium rims, ratchet hubs, 1,680 g'}`,
 'Shifting: L-TWOO eGR wireless electronic 1 × 13 speed','Crankset: WE ONE 7075 aluminium 48T chainring with EVS crank','Crank arm length: S 165 mm; M/L 170 mm','Cassette: EVS 13-speed 11–45T','Chain: YBN 13-speed Black Diamond','Brakes: L-TWOO eGR hydraulic disc brakes, front/rear 160 mm rotors','Tyres: VEPOSS 700 × 28C','Handlebar: WE ONE MAX integrated carbon cockpit; S 370 × 90 mm, M 370 × 100 mm, L 390 × 110 mm','Seatpost: Carbon, 12 mm setback','Saddle: WE ONE EVO carbon rails, 145 mm','Available sizes: S (49 cm), M (51 cm), L (53 cm)','Available colours: Black, Blue, Pink','Maximum total weight: 110 kg including bicycle, rider and cargo','Use: Paved road cycling']
 }));
+const colourFile=path.join(root,'assets/products/vook-v8e/colour-photos.json');
+if(fs.existsSync(colourFile)){
+const photos=JSON.parse(fs.readFileSync(colourFile,'utf8'));
+const v8e=models.find(model=>model.id===88001);
+v8e.image=photos.find(photo=>photo.colour==='Black').localPath;
+v8e.images=photos.map(photo=>photo.localPath);
+v8e.imageByColour=Object.fromEntries(photos.filter(photo=>['Black','Blue','Pink'].includes(photo.colour)).map(photo=>[photo.colour,photo.localPath]));
+}
 for(const file of ['product.html','bikes-frames.html']){
 const target=path.join(root,file);let html=fs.readFileSync(target,'utf8');
 const match=html.match(/const\s+products\s*=\s*(\[[\s\S]*?\]);/);if(!match)throw Error('Product array missing '+file);

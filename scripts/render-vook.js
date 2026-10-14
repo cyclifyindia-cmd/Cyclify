@@ -11,7 +11,7 @@ const sample=cheerio.load(fs.readFileSync(path.join(root,pro?'vook-v8e-pro-previ
 $('body').addClass('sava-a7l-page vook-page');
 $('head').append(`<link rel="stylesheet" href="assets/css/sava-a7l.css?v=${version('assets/css/sava-a7l.css')}"><link rel="stylesheet" href="assets/css/vook-preview.css?v=${version('assets/css/vook-preview.css')}">`);
 const media=$('<div class="a7l-media"></div>').append($('#productGallery'),$('#productThumbs'));
-media.append('<p class="vook-photo-note">Official reference photograph. Stocked frame colours: Black, Blue and Pink.</p>');
+if(!product.imageByColour)media.append('<p class="vook-photo-note">Official reference photograph. Stocked frame colours: Black, Blue and Pink.</p>');
 media.append('<nav class="vook-models" aria-label="Compare VOOK models"><a href="products/vook-v8e-carbon-road-bike-88001.html">V8E</a><a href="products/vook-v8e-pro-carbon-road-bike-88002.html">V8E Pro · Velove wheels</a></nav>');
 media.find(`a[href*="${product.id}"]`).attr('aria-current','page');
 const panel=$('<div class="a7l-buy-panel"></div>').append($('#productName'),$('#productPriceLine'));
@@ -25,6 +25,7 @@ const buttons=$('#productButtons').remove();
 $('.product').empty().addClass('a7l-product').append(media,panel).after(buttons);
 $('.specification-section').attr('hidden','').addClass('a7l-legacy-specs');
 const details=sample('.vook-details').clone();
+if(product.imageByColour)details.find('.vook-feature-intro img').attr('src',product.image).attr('alt',product.name+' — Black');
 const specTable=details.find('.vook-specs tbody').empty();
 for(const raw of product.specs){const split=raw.indexOf(':');specTable.append($('<tr></tr>').append($('<th scope="row"></th>').text(raw.slice(0,split)),$('<td></td>').text(raw.slice(split+1).trim())));}
 $('.specification-section').after(details);

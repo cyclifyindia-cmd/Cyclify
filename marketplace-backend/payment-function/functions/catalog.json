@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T16:24:51.149Z",
+  "generatedAt": "2026-10-14T05:44:18.635Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -362,6 +362,13 @@
           "Red",
           "Black"
         ]
+      },
+      "imageByColour": {
+        "Black": "assets/products/sava-a7l-2026/black-angle.jpg",
+        "Blue": "assets/products/sava-a7l-2026/blue-angle.jpg",
+        "White": "assets/products/sava-a7l-2026/white-angle.jpg",
+        "Red": "assets/products/sava-a7l-2026/red-angle.jpg",
+        "Grey": "assets/products/sava-a7l-2026/grey-angle.jpg"
       }
     },
     "64": {
@@ -490,7 +497,7 @@
       "name": "VOOK V8E Carbon Road Bike",
       "price": 155000,
       "available": true,
-      "image": "assets/products/vook-v8e/bike.png",
+      "image": "assets/products/vook-v8e/black-first.png",
       "sizes": [
         "S",
         "M",
@@ -518,6 +525,11 @@
           "Blue",
           "Pink"
         ]
+      },
+      "imageByColour": {
+        "Black": "assets/products/vook-v8e/black-first.png",
+        "Blue": "assets/products/vook-v8e/blue-first.png",
+        "Pink": "assets/products/vook-v8e/pink-first.png"
       }
     },
     "88002": {
