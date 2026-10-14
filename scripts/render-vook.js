@@ -26,6 +26,12 @@ const buttons=$('#productButtons').remove();
 $('.product').empty().addClass('a7l-product').append(media,panel).after(buttons);
 $('.specification-section').attr('hidden','').addClass('a7l-legacy-specs');
 const details=sample('.vook-details').clone();
+details.find('.vook-feature-intro>span').text(pro?'VOOK V8E PRO':'VOOK V8E');
+const seo=$('<section class="vook-search-details" style="padding:24px;line-height:1.7"></section>');
+seo.append($('<h2></h2>').text((pro?'VOOK V8E Pro':'VOOK V8E')+' carbon road bike in India'));
+seo.append($('<p></p>').text(pro?'Cyclify’s VOOK V8E Pro build pairs the V8E carbon road bike with Velove Glide 50 mm carbon wheels, ratchet hubs and a 1,445 g wheelset. It retains the base bike’s L-TWOO eGR electronic 1 × 13-speed drivetrain and aluminium crankset.':'The VOOK V8E is a carbon road bike with L-TWOO eGR electronic 1 × 13-speed shifting, hydraulic disc brakes and WE ONE aluminium wheels. Choose S (49 cm), M (51 cm) or L (53 cm) and check the geometry chart for your fit.'));
+seo.append('<h3>Looking for a VOOK V8 bike?</h3><p>This listing covers '+(pro?'Cyclify’s V8E Pro carbon-wheel build':'the V8E electronic-shifting complete bike')+'. Compare both current VOOK models, prices and stocked colours before ordering.</p><p><a href="vook-bikes.html">Explore VOOK bikes in India and compare V8E models</a> · <a href="bikes-frames.html">Browse carbon road bikes and frames</a></p>');
+details.append(seo);
 if(product.imageByColour)details.find('.vook-feature-intro img').attr('src',product.image).attr('alt',product.name+' — Black');
 const specTable=details.find('.vook-specs tbody').empty();
 for(const raw of product.specs){const split=raw.indexOf(':');specTable.append($('<tr></tr>').append($('<th scope="row"></th>').text(raw.slice(0,split)),$('<td></td>').text(raw.slice(split+1).trim())));}

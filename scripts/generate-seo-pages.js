@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const { loadAllowedProductIds, filterAllowedProducts } = require('./product-allowlist');
 const { renderSavaA7l } = require('./render-sava-a7l');
 const { renderVook } = require('./render-vook');
+const { renderVookCollection } = require('./render-vook-seo');
 const { renderCatalogSeo } = require('./render-catalog-seo');
 const cheerio = require('cheerio');
 
@@ -215,6 +216,8 @@ function normalizedProductKey(product) {
 }
 
 function titleFor(product) {
+  if (Number(product.id) === 88001) return 'VOOK V8E Carbon Road Bike India | Cyclify';
+  if (Number(product.id) === 88002) return 'VOOK V8E Pro Carbon Road Bike India | Cyclify';
   if (Number(product.id) === 63) return 'SAVA A7L 2026 Carbon Road Bike | Cyclify India';
   const suffix = ' | Cyclify India';
   const maxNameLength = 60 - suffix.length;
@@ -239,6 +242,7 @@ function usefulDetail(product) {
 }
 
 function descriptionFor(product) {
+  if ([88001,88002].includes(Number(product.id))) return 'Buy '+(Number(product.id)===88002?'VOOK V8E Pro':'VOOK V8E')+' carbon road bike in India for Rs '+Number(product.price).toLocaleString('en-IN')+'. 13-speed electronic shifting, '+(Number(product.id)===88002?'Velove carbon':'alloy')+' wheels. Free shipping.';
   if (Number(product.id) === 63) return 'Buy the SAVA A7L 2026 carbon road bike in India for Rs ' + Number(product.price).toLocaleString('en-IN') + '. T800 carbon frame, 24-speed shifting and hydraulic discs. Free shipping.';
   const intro = product.priceOnRequest
     ? 'Pre-order ' + cleanText(product.name) + ' from Cyclify India; selling price is confirmed before payment.'
@@ -416,6 +420,7 @@ for (const product of primaryProducts) {
         description,
         sku: 'CYCLIFY-' + product.id,
         brand: { '@type': 'Brand', name: brand },
+        ...([88001,88002].includes(Number(product.id)) ? {model:Number(product.id)===88002?'V8E Pro — Cyclify carbon-wheel build':'V8E',alternateName:Number(product.id)===88002?'VOOK V8E Pro Velove carbon-wheel bike':['VOOK V8E','VOOK V8 carbon road bike'],category:'Carbon road bike',color:product.secondaryOptions.join(', '),size:product.sizes.join(', ')} : {}),
         additionalProperty: (product.specs || []).map(spec => {
           const raw = String(spec || '');
           const separator = raw.indexOf(':');
@@ -555,6 +560,7 @@ staleProductFiles.forEach(file => {
 });
 
 const landingPages = [
+  { file: 'vook-bikes.html', source: 'bikes-frames.html', category: 'vook', title: 'VOOK Bikes India | V8E Carbon Road Bikes | Cyclify', heading: 'VOOK Carbon Road Bikes in India', description: 'Shop VOOK V8E and V8E Pro carbon road bikes in India. Compare electronic 13-speed bikes, alloy or Velove carbon wheels, frame sizes and colours.' },
   { file: 'smart-trainers.html', source: 'electronics.html', category: 'smart-trainer', title: 'Smart Bike Trainers in India | Cyclify', heading: 'Smart Bike Trainers', description: 'Shop smart bike trainers and indoor cycling accessories in India with genuine products and free shipping from Cyclify.' },
   { file: 'bike-computers.html', source: 'electronics.html', category: 'bike-computer', title: 'GPS Bike Computers in India | Cyclify', heading: 'GPS Bike Computers', description: 'Shop GPS bike computers for navigation, training data and connected cycling from Cyclify India.' },
   { file: 'bike-lights.html', source: 'electronics.html', category: 'lights', title: 'Bicycle Lights in India | Cyclify', heading: 'Bicycle Lights', description: 'Shop rechargeable bicycle headlights and smart tail lights for safer rides across India.' },
@@ -607,6 +613,7 @@ landingPages.forEach(landing => {
   page = page.replace('<div class="category-strip"', '<p class="seo-landing-copy" style="margin:0;padding:14px 4%;color:#4b5563;font-size:15px;line-height:1.55">' + escapeHtml(landing.description) + '</p>\n<div class="category-strip"');
   page = renderCatalogSeo(page, { file: landing.file, catalogue: categoryCatalogs.find(item => item.page === landing.source).file, category: landing.category, sub: landing.sub, heading: landing.heading, description: landing.description,
     productNames: Object.fromEntries(primaryProducts.map(product => [product.id, product.name])) });
+  if(landing.category==='vook')page=renderVookCollection(page,primaryProducts);
   writeFileWithRetry(path.join(root, landing.file), page, 'utf8');
 });
 
@@ -639,7 +646,7 @@ $home('[data-popular-product]').each((_, element) => {
 $home('.home-category img,.home-feature-band__art img').attr('loading', 'lazy').attr('decoding', 'async');
 $home('#cyclify-browse-links').remove();
 $home('main').last().after('<nav id="cyclify-browse-links" aria-label="Explore cycling collections" style="padding:24px 5%;background:#fff;color:#222;display:flex;flex-wrap:wrap;gap:14px;font-size:14px">' +
-  [['sava-bikes.html','SAVA bikes'],['tavelo-bikes.html','TAVELO bikes'],['elves-bikes.html','ELVES bikes'],['tfsa-frames.html','TFSA frames'],['smart-trainers.html','Indoor trainers'],['bike-computers.html','GPS bike computers'],['carbon-wheelsets.html','Carbon wheelsets'],['guides.html','Cycling guides']]
+  [['vook-bikes.html','VOOK carbon road bikes'],['sava-bikes.html','SAVA bikes'],['tavelo-bikes.html','TAVELO bikes'],['elves-bikes.html','ELVES bikes'],['tfsa-frames.html','TFSA frames'],['smart-trainers.html','Indoor trainers'],['bike-computers.html','GPS bike computers'],['carbon-wheelsets.html','Carbon wheelsets'],['guides.html','Cycling guides']]
     .map(([href, label]) => '<a href="' + href + '" style="color:inherit">' + label + '</a>').join('') + '</nav>');
 writeFileWithRetry(path.join(root, 'index.html'), $home.html());
 
