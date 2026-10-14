@@ -18,3 +18,5 @@ assert.ok($('meta[name="robots"]').attr('content').startsWith('index,follow'));
 assert.ok(fs.readFileSync('sitemap.xml','utf8').includes('https://cyclify.in/vook-bikes.html'));
 assert.ok(fs.readFileSync('index.html','utf8').includes('href="vook-bikes.html"'));
 console.log('VOOK SEO verified: 2 product pages, 4 correct colour images each, brand collection, sitemap and homepage links.');
+for(const file of ['assets/products/vook-v8e/blue-cutout.png','assets/products/vook-v8e/silver-cutout.png',...['black','blue','pink','silver'].map(colour=>`assets/products/vook-v8e-pro/${colour}-velove.png`)])assert.ok(fs.readFileSync(file).includes(Buffer.from('trainedAlgorithmicMedia')),'Missing AI-source metadata: '+file);
+console.log('Edited VOOK product images retain AI-source metadata.');
