@@ -1,6 +1,6 @@
 (()=>{
 if(!document.body.classList.contains('vook-page'))return;
-if(Number(product.id)===88001){
+if(product.imageByColour){
 document.body.classList.add('vook-colour-gallery');
 const frameImage=()=>{const image=document.getElementById('productImage');image.dataset.photoFraming=/(black|pink)-first\.png(?:[?#]|$)/.test(image.getAttribute('src')||'')?'original':'cutout';};
 const originalShowImage=showImage;showImage=function(index){originalShowImage(index);frameImage();};

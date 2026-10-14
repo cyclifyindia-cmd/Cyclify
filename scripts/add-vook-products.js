@@ -28,6 +28,17 @@ v8e.optionsBySize=Object.fromEntries(v8e.sizes.map(size=>[size,[...v8e.secondary
 v8e.specs=v8e.specs.map(spec=>spec.startsWith('Available colours:')?'Available colours: Black, Blue, Pink, Silver':spec);
 }
 }
+const proColourFile=path.join(root,'assets/products/vook-v8e-pro/colour-photos.json');
+if(fs.existsSync(proColourFile)){
+const photos=JSON.parse(fs.readFileSync(proColourFile,'utf8'));
+const pro=models.find(model=>model.id===88002);
+pro.image=photos.find(photo=>photo.colour==='Black').localPath;
+pro.images=photos.map(photo=>photo.localPath);
+pro.imageByColour=Object.fromEntries(photos.map(photo=>[photo.colour,photo.localPath]));
+pro.secondaryOptions=photos.map(photo=>photo.colour);
+pro.optionsBySize=Object.fromEntries(pro.sizes.map(size=>[size,[...pro.secondaryOptions]]));
+pro.specs=pro.specs.map(spec=>spec.startsWith('Available colours:')?'Available colours: '+pro.secondaryOptions.join(', '):spec);
+}
 for(const file of ['product.html','bikes-frames.html']){
 const target=path.join(root,file);let html=fs.readFileSync(target,'utf8');
 const match=html.match(/const\s+products\s*=\s*(\[[\s\S]*?\]);/);if(!match)throw Error('Product array missing '+file);
@@ -42,4 +53,4 @@ html=html.replaceAll('Shop SAVA and ELVES road bikes, configure a TAVELO Arow, o
 fs.writeFileSync(target,html);
 }
 const allowPath=path.join(root,'assets/data/product-allowlist.json');const allow=JSON.parse(fs.readFileSync(allowPath));for(const model of models)if(!allow.productIds.includes(String(model.id)))allow.productIds.push(String(model.id));fs.writeFileSync(allowPath,JSON.stringify(allow,null,2)+'\n');
-console.log('Added VOOK V8E and V8E Pro; S/M/L, Black/Blue/Pink, in stock.');
+for(const model of models)console.log(`${model.name}: S/M/L; ${model.secondaryOptions.join('/')}; in stock.`);

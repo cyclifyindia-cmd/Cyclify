@@ -1,0 +1,30 @@
+[
+  {
+    "colour": "Black",
+    "localPath": "assets/products/vook-v8e-pro/black-velove.png",
+    "editTarget": "assets/products/vook-v8e/black-first.png",
+    "wheelReference": "assets/products/vook-v8e-pro/velove-wheel-reference.jpg",
+    "edit": "Wheel-only VELOVE Glide 50 carbon upgrade, original frame and drivetrain retained."
+  },
+  {
+    "colour": "Blue",
+    "localPath": "assets/products/vook-v8e-pro/blue-velove.png",
+    "editTarget": "assets/products/vook-v8e/blue-cutout.png",
+    "wheelReference": "assets/products/vook-v8e-pro/velove-wheel-reference.jpg",
+    "edit": "Wheel-only VELOVE Glide 50 carbon upgrade, original frame and drivetrain retained."
+  },
+  {
+    "colour": "Pink",
+    "localPath": "assets/products/vook-v8e-pro/pink-velove.png",
+    "editTarget": "assets/products/vook-v8e/pink-first.png",
+    "wheelReference": "assets/products/vook-v8e-pro/velove-wheel-reference.jpg",
+    "edit": "Wheel-only VELOVE Glide 50 carbon upgrade, original frame and drivetrain retained."
+  },
+  {
+    "colour": "Silver",
+    "localPath": "assets/products/vook-v8e-pro/silver-velove.png",
+    "editTarget": "assets/products/vook-v8e/silver-cutout.png",
+    "wheelReference": "assets/products/vook-v8e-pro/velove-wheel-reference.jpg",
+    "edit": "Wheel-only VELOVE Glide 50 carbon upgrade, original frame and drivetrain retained."
+  }
+]

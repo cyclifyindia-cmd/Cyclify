@@ -9,11 +9,12 @@ const { hasRecentAuthentication, validatedCart } = require("../index")._test;
 
 test("VOOK uses the correct model price and stocked size/colour combinations", () => {
   for (const [id, price] of [[88001,155000],[88002,180000]]) {
-    for (const size of ["S","M","L"]) for (const colour of id===88001?["Black","Blue","Pink","Silver"]:["Black","Blue","Pink"]) {
+    for (const size of ["S","M","L"]) for (const colour of ["Black","Blue","Pink","Silver"]) {
       const order=validatedCart([{id,size,valveLength:colour,quantity:2,price:1}]);
       assert.equal(order.total,price*2);
       assert.equal(order.items[0].size,`${size} / ${colour}`);
       if(id===88001)assert.ok(order.items[0].image.endsWith(`${colour.toLowerCase()}-${['Blue','Silver'].includes(colour)?'cutout':'first'}.png`));
+      if(id===88002)assert.ok(order.items[0].image.endsWith(`vook-v8e-pro/${colour.toLowerCase()}-velove.png`));
     }
     assert.throws(()=>validatedCart([{id,size:"XS",valveLength:"Black"}]),/invalid/);
     assert.throws(()=>validatedCart([{id,size:"M",valveLength:"White"}]),/available frame size and colour/);

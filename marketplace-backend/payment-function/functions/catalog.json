@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T06:02:01.099Z",
+  "generatedAt": "2026-10-14T06:28:28.780Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -541,7 +541,7 @@
       "name": "VOOK V8E Pro Carbon Road Bike",
       "price": 180000,
       "available": true,
-      "image": "assets/products/vook-v8e/bike.png",
+      "image": "assets/products/vook-v8e-pro/black-velove.png",
       "sizes": [
         "S",
         "M",
@@ -557,18 +557,27 @@
         "S": [
           "Black",
           "Blue",
-          "Pink"
+          "Pink",
+          "Silver"
         ],
         "M": [
           "Black",
           "Blue",
-          "Pink"
+          "Pink",
+          "Silver"
         ],
         "L": [
           "Black",
           "Blue",
-          "Pink"
+          "Pink",
+          "Silver"
         ]
+      },
+      "imageByColour": {
+        "Black": "assets/products/vook-v8e-pro/black-velove.png",
+        "Blue": "assets/products/vook-v8e-pro/blue-velove.png",
+        "Pink": "assets/products/vook-v8e-pro/pink-velove.png",
+        "Silver": "assets/products/vook-v8e-pro/silver-velove.png"
       }
     },
     "230741493": {
