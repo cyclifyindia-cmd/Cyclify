@@ -15,7 +15,8 @@ if(!product.imageByColour)media.append('<p class="vook-photo-note">Official refe
 media.append('<nav class="vook-models" aria-label="Compare VOOK models"><a href="products/vook-v8e-carbon-road-bike-88001.html">V8E</a><a href="products/vook-v8e-pro-carbon-road-bike-88002.html">V8E Pro · Velove wheels</a></nav>');
 media.find(`a[href*="${product.id}"]`).attr('aria-current','page');
 const panel=$('<div class="a7l-buy-panel"></div>').append($('#productName'),$('#productPriceLine'));
-panel.append(`<p class="a7l-tax-note">${pro?'Velove Glide 50 mm carbon wheels · Ratchet hubs · 1,445 g':'WE ONE 25 mm aluminium wheels · Ratchet hubs · 1,680 g'}</p><hr class="a7l-rule">`);
+if(pro)panel.append('<p class="a7l-tax-note">Velove Glide 50 mm carbon wheels · Ratchet hubs · 1,445 g</p>');
+panel.append('<hr class="a7l-rule">');
 const boutique=$('<section class="a7l-boutique" aria-label="Choose your bike configuration"><div class="boutique-heading"><span>YOUR VOOK, YOUR WAY</span><h2>Make it yours.</h2></div></section>');
 boutique.append($('#sizeSection'),$('#valveSection'));
 boutique.find('#sizeSection .size-label').addClass('a7l-size-heading').append('<button type="button" class="a7l-geometry-trigger" id="geometryOpen" aria-haspopup="dialog" aria-controls="vookGeometry">Size &amp; Geometry</button>');
