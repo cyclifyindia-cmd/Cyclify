@@ -10,8 +10,9 @@
     "colour": "Blue",
     "title": "Vook V8E Ltwoo EGR 1*13 Speed Electronic Shifting Blue",
     "page": "https://www.dogoodco.in/products/vook-v8e-ltwoo-egr-1-13-speed-electronic-groupset-blue",
-    "source": "https://cdn.shopify.com/s/files/1/0862/7585/0544/files/0004-4948844602381737856.png?v=1788257836",
-    "localPath": "assets/products/vook-v8e/blue-first.png"
+    "source": "https://f.lnwfile.com/_/f/_raw/xu/67/8y.png",
+    "localPath": "assets/products/vook-v8e/blue-cutout.png",
+    "edit": "Transparent bicycle cutout; V8E shallow aluminium wheels and open 48T chainring matched from blue-first.png."
   },
   {
     "colour": "Pink",
@@ -21,10 +22,10 @@
     "localPath": "assets/products/vook-v8e/pink-first.png"
   },
   {
-    "colour": "Reference",
-    "title": "Vook V8E Ltwoo EGR 1*13 Speed Electronic Shifting Silver",
-    "page": "https://www.dogoodco.in/products/vook-v8e-ltwoo-egr-1-13-speed-electronic-groupset",
-    "source": "https://cdn.shopify.com/s/files/1/0862/7585/0544/files/0002-3803804400588465234.png?v=1788257885",
-    "localPath": "assets/products/vook-v8e/reference-first.png"
+    "colour": "Silver",
+    "title": "VOOK V8E Silver",
+    "source": "https://cdn.shopify.com/s/files/1/0669/8791/7357/files/1_cfa8b8ab-92d9-467d-aa0e-09b536df3909.png?v=1775807835",
+    "localPath": "assets/products/vook-v8e/silver-cutout.png",
+    "edit": "Transparent bicycle cutout; shallow 25 mm V8E aluminium wheel rims matched from black-first.png."
   }
 ]

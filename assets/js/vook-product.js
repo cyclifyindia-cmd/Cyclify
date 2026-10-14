@@ -1,6 +1,6 @@
 (()=>{
 if(!document.body.classList.contains('vook-page'))return;
-const centimetres={S:49,M:51,L:53};const colours={Black:'#191919',Blue:'#286cb5',Pink:'#e8a6ba'};
+const centimetres={S:49,M:51,L:53};const colours={Black:'#191919',Blue:'#286cb5',Pink:'#e8a6ba',Silver:'#bfc2cb'};
 const updateButtons=()=>{
 document.querySelectorAll('#sizeOptions [data-size]').forEach(button=>{button.innerHTML=`${button.dataset.size}<small>${centimetres[button.dataset.size]} cm</small>`;button.setAttribute('aria-pressed',String(button.dataset.size===selectedSize));});
 document.querySelectorAll('#valveOptions .size-btn').forEach(button=>{button.style.setProperty('--swatch',colours[button.textContent.trim()]);button.setAttribute('aria-pressed',String(button.textContent.trim()===selectedValveLength));});

@@ -21,7 +21,12 @@ const photos=JSON.parse(fs.readFileSync(colourFile,'utf8'));
 const v8e=models.find(model=>model.id===88001);
 v8e.image=photos.find(photo=>photo.colour==='Black').localPath;
 v8e.images=photos.map(photo=>photo.localPath);
-v8e.imageByColour=Object.fromEntries(photos.filter(photo=>['Black','Blue','Pink'].includes(photo.colour)).map(photo=>[photo.colour,photo.localPath]));
+v8e.imageByColour=Object.fromEntries(photos.filter(photo=>['Black','Blue','Pink','Silver'].includes(photo.colour)).map(photo=>[photo.colour,photo.localPath]));
+if(v8e.imageByColour.Silver){
+v8e.secondaryOptions=['Black','Blue','Pink','Silver'];
+v8e.optionsBySize=Object.fromEntries(v8e.sizes.map(size=>[size,[...v8e.secondaryOptions]]));
+v8e.specs=v8e.specs.map(spec=>spec.startsWith('Available colours:')?'Available colours: Black, Blue, Pink, Silver':spec);
+}
 }
 for(const file of ['product.html','bikes-frames.html']){
 const target=path.join(root,file);let html=fs.readFileSync(target,'utf8');

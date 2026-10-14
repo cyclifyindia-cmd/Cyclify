@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T05:47:06.309Z",
+  "generatedAt": "2026-10-14T06:02:01.099Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -513,23 +513,27 @@
         "S": [
           "Black",
           "Blue",
-          "Pink"
+          "Pink",
+          "Silver"
         ],
         "M": [
           "Black",
           "Blue",
-          "Pink"
+          "Pink",
+          "Silver"
         ],
         "L": [
           "Black",
           "Blue",
-          "Pink"
+          "Pink",
+          "Silver"
         ]
       },
       "imageByColour": {
         "Black": "assets/products/vook-v8e/black-first.png",
-        "Blue": "assets/products/vook-v8e/blue-first.png",
-        "Pink": "assets/products/vook-v8e/pink-first.png"
+        "Blue": "assets/products/vook-v8e/blue-cutout.png",
+        "Pink": "assets/products/vook-v8e/pink-first.png",
+        "Silver": "assets/products/vook-v8e/silver-cutout.png"
       }
     },
     "88002": {
