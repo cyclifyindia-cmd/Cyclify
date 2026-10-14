@@ -1,5 +1,12 @@
 (()=>{
 if(!document.body.classList.contains('vook-page'))return;
+if(Number(product.id)===88001){
+document.body.classList.add('vook-colour-gallery');
+const frameImage=()=>{const image=document.getElementById('productImage');image.dataset.photoFraming=/(black|pink)-first\.png(?:[?#]|$)/.test(image.getAttribute('src')||'')?'original':'cutout';};
+const originalShowImage=showImage;showImage=function(index){originalShowImage(index);frameImage();};
+document.querySelectorAll('#productThumbs img').forEach(image=>{image.dataset.photoFraming=/(black|pink)-first\.png(?:[?#]|$)/.test(image.getAttribute('src')||'')?'original':'cutout';});
+frameImage();
+}
 const centimetres={S:49,M:51,L:53};const colours={Black:'#191919',Blue:'#286cb5',Pink:'#e8a6ba',Silver:'#bfc2cb'};
 const updateButtons=()=>{
 document.querySelectorAll('#sizeOptions [data-size]').forEach(button=>{button.innerHTML=`${button.dataset.size}<small>${centimetres[button.dataset.size]} cm</small>`;button.setAttribute('aria-pressed',String(button.dataset.size===selectedSize));});
