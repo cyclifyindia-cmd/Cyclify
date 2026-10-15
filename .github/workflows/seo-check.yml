@@ -24,5 +24,7 @@ jobs:
         run: node scripts/audit-vook-seo.js
       - name: Check expanded catalogue stock, photos and checkout prices
         run: node scripts/audit-expanded-catalog.js
+      - name: Check confirmed delivery times and required pre-order dates
+        run: node scripts/test-fulfilment-policy.js
       - name: Check custom bike configuration and category navigation
         run: node scripts/verify-sava-a7l.js && node scripts/test-tavelo-grid.js && node scripts/test-tavelo-preview-pricing.js

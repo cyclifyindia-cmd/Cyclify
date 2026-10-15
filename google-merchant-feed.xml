@@ -11,12 +11,14 @@
       <link>https://cyclify.in/products/sava-hawkeye-slr7-105-di2-1.html</link>
       <g:image_link>https://cyclify.in/assets/products/sava-hawkeye.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>199999.00 INR</g:price>
       <g:sale_price>175000.00 INR</g:sale_price>
       <g:brand>SAVA</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-2</g:id>
@@ -29,11 +31,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/elves-falath-evo-plus-4.png</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/elves-falath-evo-plus-5.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>250000.00 INR</g:price>
       <g:brand>ELVES</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-3</g:id>
@@ -50,11 +54,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/elves-falath-exp-9.jpg</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/elves-falath-exp-10.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>250000.00 INR</g:price>
       <g:brand>ELVES</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-4</g:id>
@@ -73,11 +79,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/elves-amanyar-10.png</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/elves-amanyar-11.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>400000.00 INR</g:price>
       <g:brand>ELVES</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-54</g:id>
@@ -89,12 +97,14 @@
       <g:additional_image_link>https://cyclify.in/assets/products/thinkrider-tpu-28g-tube-3.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/thinkrider-tpu-28g-tube-4.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>999.00 INR</g:price>
       <g:sale_price>499.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-36</g:id>
@@ -110,12 +120,14 @@
       <g:additional_image_link>https://cyclify.in/assets/products/thinkrider-x2-max-7.jpg</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/thinkrider-x2-max-8.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>40000.00 INR</g:price>
       <g:sale_price>35000.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-37</g:id>
@@ -129,12 +141,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/OROMEVALARTH50D8.jpg?v=1772873658</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/OROMEVALARTH50D7.jpg?v=1772873658</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>97000.00 INR</g:price>
       <g:sale_price>87000.00 INR</g:sale_price>
       <g:brand>OROME</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-38</g:id>
@@ -143,12 +157,14 @@
       <link>https://cyclify.in/products/thinkrider-xx-pro-foldable-smart-trainer-38.html</link>
       <g:image_link>https://cyclify.in/assets/products/thinkrider-xx-pro-1.png</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>51999.00 INR</g:price>
       <g:sale_price>49999.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-39</g:id>
@@ -158,12 +174,14 @@
       <g:image_link>https://thinkrider.com/cdn/shop/files/VS200-12_960x.jpg?v=1768188298</g:image_link>
       <g:additional_image_link>https://thinkrider.com/cdn/shop/files/VS200-11_1200x.jpg?v=1768188298</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5999.00 INR</g:price>
       <g:sale_price>4999.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-40</g:id>
@@ -172,12 +190,14 @@
       <link>https://cyclify.in/products/thinkrider-speed-cadence-sensor-40.html</link>
       <g:image_link>https://thinkrider.com/cdn/shop/files/SpeedCadenceSensor1_1200x.jpg?v=1767941722</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3300.00 INR</g:price>
       <g:sale_price>1999.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-41</g:id>
@@ -191,12 +211,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2.jpg?v=1754022773</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1.jpg?v=1754022773</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>9480.00 INR</g:price>
       <g:sale_price>8500.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-42</g:id>
@@ -229,12 +251,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/4bb6c5f69cb08cfdb5496bf9b78ed5d6.jpg?v=1768469924</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_14.jpg?v=1768469924</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5500.00 INR</g:price>
       <g:sale_price>4299.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-44</g:id>
@@ -253,12 +277,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8.jpg?v=1768473806</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7.jpg?v=1768473806</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>17973.00 INR</g:price>
       <g:sale_price>13800.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-45</g:id>
@@ -277,12 +303,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_12_627f9b67-4eba-41dd-a546-2d3a895f54ec.jpg?v=1772449036</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_a9c01f68-8eb8-4ab9-8abc-7065a9ed525d.jpg?v=1772449036</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>24489.00 INR</g:price>
       <g:sale_price>20900.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-46</g:id>
@@ -296,12 +324,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_4_a83399c7-745f-4f95-a768-042047a15fff.jpg?v=1768564356</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/3_499d1db0-3ad2-41c9-bc12-47d038ee5ea3.webp?v=1768564195</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>35880.00 INR</g:price>
       <g:sale_price>29900.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-47</g:id>
@@ -320,12 +350,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_18.jpg?v=1768563958</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_17.jpg?v=1768563958</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>31080.00 INR</g:price>
       <g:sale_price>24800.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-49</g:id>
@@ -336,12 +368,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_10_120a5bf2-1587-4cf9-8bdb-375c852af7d5.jpg?v=1764931759</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_db8a79c2-71c8-4ed9-a389-4b568a14982a.jpg?v=1764931758</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3520.00 INR</g:price>
       <g:sale_price>2899.00 INR</g:sale_price>
       <g:brand>Cairbull</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-50</g:id>
@@ -352,12 +386,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/met_trenta_2.avif?v=1777299154</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/met_trenta_3.avif?v=1777299154</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>17999.00 INR</g:price>
       <g:sale_price>16499.00 INR</g:sale_price>
       <g:brand>MET</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-52</g:id>
@@ -367,11 +403,13 @@
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/HELMET.jpg?v=1775047962</g:image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/1000014087.jpg?v=1775047962</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2900.00 INR</g:price>
       <g:brand>Cairbull</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-53</g:id>
@@ -383,12 +421,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_cf4bb688-1490-465c-b399-8d9e98e66fdc.jpg?v=1767417951</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_d16f952f-c88e-4337-b812-e9f6d8a39fc8.jpg?v=1767417951</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3900.00 INR</g:price>
       <g:sale_price>3200.00 INR</g:sale_price>
       <g:brand>Cairbull</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-55</g:id>
@@ -397,12 +437,14 @@
       <link>https://cyclify.in/products/thinkrider-bike-trainer-front-wheel-block-55.html</link>
       <g:image_link>https://cyclify.in/assets/products/thinkrider-front-wheel-block-1.png</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>999.00 INR</g:price>
       <g:sale_price>499.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-56</g:id>
@@ -411,12 +453,14 @@
       <link>https://cyclify.in/products/thinkrider-12-speed-11-34t-cassette-56.html</link>
       <g:image_link>https://cyclify.in/assets/products/thinkrider-12-speed-11-34-cassette-1.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3500.00 INR</g:price>
       <g:sale_price>2999.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-57</g:id>
@@ -427,12 +471,14 @@
       <g:additional_image_link>https://cyclify.in/assets/products/thinkrider-heart-rate-monitor-2.jpg</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/thinkrider-heart-rate-monitor-3.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3400.00 INR</g:price>
       <g:sale_price>2600.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-58</g:id>
@@ -444,12 +490,14 @@
       <g:additional_image_link>https://cyclify.in/assets/products/thinkrider-nl15-pro-torque-wrench-3.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/thinkrider-nl15-pro-torque-wrench-4.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>4500.00 INR</g:price>
       <g:sale_price>3999.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-63</g:id>
@@ -468,12 +516,14 @@
       <g:additional_image_link>https://cyclify.in/assets/products/sava-a7l-2026/blue-side.jpg</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/sava-a7l-2026/video-poster.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>199999.00 INR</g:price>
       <g:sale_price>129999.00 INR</g:sale_price>
       <g:brand>SAVA</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-64</g:id>
@@ -486,12 +536,14 @@
       <g:additional_image_link>https://cyclify.in/assets/products/flr-pr350-pedals-4.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/flr-pr350-pedals-5.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3500.00 INR</g:price>
       <g:sale_price>2500.00 INR</g:sale_price>
       <g:brand>FLR</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-88001</g:id>
@@ -503,11 +555,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/vook-v8e/pink-first.png</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/vook-v8e/silver-cutout.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>155000.00 INR</g:price>
       <g:brand>VOOK</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-88002</g:id>
@@ -519,11 +573,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/vook-v8e-pro/pink-velove.png</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/vook-v8e-pro/silver-velove.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>180000.00 INR</g:price>
       <g:brand>VOOK</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900001</g:id>
@@ -542,11 +598,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/2b65df191128709a28.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/5c7399e2e93eee4fb3.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>439990.00 INR</g:price>
       <g:brand>Colnago</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900002</g:id>
@@ -675,11 +733,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/10063a1cea6d8bd00a.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/5a02a439dd7a717fd8.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>289990.00 INR</g:price>
       <g:brand>Colnago</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900011</g:id>
@@ -698,11 +758,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/6834377a61089cd638.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/a4a4d8dde241d781c8.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>699990.00 INR</g:price>
       <g:brand>Colnago</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900012</g:id>
@@ -744,11 +806,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/9b83677968884d7400.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/1585d91dc8848f5ec6.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>724990.00 INR</g:price>
       <g:brand>Colnago</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900014</g:id>
@@ -905,12 +969,14 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/861b5499964cdea620.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/4c3c321dae5a6eccb0.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>279990.00 INR</g:price>
       <g:sale_price>209990.00 INR</g:sale_price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900024</g:id>
@@ -945,11 +1011,13 @@
       <link>https://cyclify.in/products/basso-venta-rim-105-road-bike-900026.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/169e781b727d17550f.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>218990.00 INR</g:price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900027</g:id>
@@ -958,11 +1026,13 @@
       <link>https://cyclify.in/products/basso-venta-rim-ultegra-road-bike-900027.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/c01dfe13f0a57e1083.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>230990.00 INR</g:price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900028</g:id>
@@ -972,11 +1042,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/567def25c4d1509688.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/6bcc80b8279f6c296e.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>237990.00 INR</g:price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900030</g:id>
@@ -991,11 +1063,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/3ac86bb1d8b8f04c48.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/1cc57b4614fcfe6983.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>436990.00 INR</g:price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900032</g:id>
@@ -1005,11 +1079,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/824d4aabe49be7f319.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/da5e9cfe2d63e9ce49.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>189990.00 INR</g:price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900033</g:id>
@@ -1018,11 +1094,13 @@
       <link>https://cyclify.in/products/basso-astra-disc-frameset-900033.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/2ee310def29979b852.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>170990.00 INR</g:price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900034</g:id>
@@ -1034,11 +1112,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ec189e5e62258c31ee.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/b2e43243b8bb359116.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>113990.00 INR</g:price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900035</g:id>
@@ -1056,11 +1136,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/c4da4ef32d76cf5f5b.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/1442426cc33da95adf.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>132990.00 INR</g:price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900036</g:id>
@@ -1069,11 +1151,13 @@
       <link>https://cyclify.in/products/basso-venta-rim-frameset-900036.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/86f3df0ebe156846c6.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>94990.00 INR</g:price>
       <g:brand>Basso</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900038</g:id>
@@ -1082,12 +1166,14 @@
       <link>https://cyclify.in/products/cinelli-pressure-adr-frame-kit-900038.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/c7c94a8c1ef0f0131a.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>219990.00 INR</g:price>
       <g:sale_price>159990.00 INR</g:sale_price>
       <g:brand>Cinelli</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900039</g:id>
@@ -1106,12 +1192,14 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/c414b2e8755eedaab4.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ee22f5603c49bab3c1.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>269990.00 INR</g:price>
       <g:sale_price>219990.00 INR</g:sale_price>
       <g:brand>Pardus</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900040</g:id>
@@ -1161,12 +1249,14 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/7d067ab4fcecfbf8f7.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/94e71fb65fbefbe597.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>239990.00 INR</g:price>
       <g:sale_price>179990.00 INR</g:sale_price>
       <g:brand>Pardus</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900044</g:id>
@@ -1181,11 +1271,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/4f917b83454451e38d.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/89c5277f0f54f3c88c.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>69990.00 INR</g:price>
       <g:brand>Pardus</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900046</g:id>
@@ -1201,12 +1293,14 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/9269ecb699fc85445f.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/04717116bb2d61c8df.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>309990.00 INR</g:price>
       <g:sale_price>249990.00 INR</g:sale_price>
       <g:brand>Gusto</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900051</g:id>
@@ -1259,11 +1353,13 @@
       <link>https://cyclify.in/products/felt-ia-advanced-ultegra-triathlon-bike-900053.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/decf1c7989aab7b5fd.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>579990.00 INR</g:price>
       <g:brand>Felt</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900054</g:id>
@@ -1273,11 +1369,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/fa246b419db8f8d6d0.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/28b3020817e486cc4b.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>469990.00 INR</g:price>
       <g:brand>Felt</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900055</g:id>
@@ -1289,11 +1387,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/6b3127a3e573df0e27.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/0883fd1b1985001df4.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>469990.00 INR</g:price>
       <g:brand>Felt</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900056</g:id>
@@ -1302,11 +1402,13 @@
       <link>https://cyclify.in/products/felt-ia-advanced-rim-brake-105-triathlon-bike-900056.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/04662444b0c4a4ae5f.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>309990.00 INR</g:price>
       <g:brand>Felt</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900057</g:id>
@@ -1321,11 +1423,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/adcbe5639c61a418ba.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/a0ea8e37d6731f0620.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>279990.00 INR</g:price>
       <g:brand>Felt</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900058</g:id>
@@ -1334,11 +1438,13 @@
       <link>https://cyclify.in/products/felt-ar-advanced-ultegra-di2-road-bike-900058.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/328419fd7d80d50d42.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>759990.00 INR</g:price>
       <g:brand>Felt</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900059</g:id>
@@ -1350,11 +1456,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/fe98a3259f743784d9.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/b6d2eccf10511a1653.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>576990.00 INR</g:price>
       <g:brand>Felt</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900061</g:id>
@@ -1381,11 +1489,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d43ffdd0557ef4e768.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/cbc470c34e6c831228.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>284990.00 INR</g:price>
       <g:brand>Orbea</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900065</g:id>
@@ -1395,11 +1505,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/5847a003312cc71a3b.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/1d351ab57aa5943c8a.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>279990.00 INR</g:price>
       <g:brand>Orbea</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900066</g:id>
@@ -1412,11 +1524,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/452b9e175fc443c090.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/9d77a4e7cce141ff52.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>364990.00 INR</g:price>
       <g:brand>Orbea</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900068</g:id>
@@ -1438,11 +1552,13 @@
       <link>https://cyclify.in/products/orbea-ordu-omx-frameset-900069.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/757f42b21e8b7b8e6c.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>479990.00 INR</g:price>
       <g:brand>Orbea</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900070</g:id>
@@ -1455,11 +1571,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/640d8797ba20841143.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/8f26884e2a5dab4bca.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>109990.00 INR</g:price>
       <g:brand>Element</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900072</g:id>
@@ -1469,11 +1587,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/6da352736dd2122713.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ea4bac63e93df9c014.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>50990.00 INR</g:price>
       <g:brand>Element</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900082</g:id>
@@ -1487,11 +1607,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/3af5783b5ee3be0b21.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/609b683cf79683d3f9.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>149990.00 INR</g:price>
       <g:brand>Reynolds</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900083</g:id>
@@ -1509,11 +1631,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d3927762e0244108d2.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/2a33f7d5f84e8112e4.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>242990.00 INR</g:price>
       <g:brand>Fulcrum</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900084</g:id>
@@ -1538,11 +1662,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/fd0476849641436214.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ebebd6ee46bbe8fcf6.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>229990.00 INR</g:price>
       <g:brand>Fulcrum</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900086</g:id>
@@ -1572,11 +1698,13 @@
       <link>https://cyclify.in/products/fulcrum-wind-40-disc-brake-wheelset-900087.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/9368fe168e1c7eaadc.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>134990.00 INR</g:price>
       <g:brand>Fulcrum</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900088</g:id>
@@ -1592,11 +1720,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/5124d9b0b8af0dd707.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/709cc5c892d9f4dd64.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>139990.00 INR</g:price>
       <g:brand>Fulcrum</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900091</g:id>
@@ -1606,11 +1736,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/3acd78bdc3bf0c600a.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/0aa0c0720d65239e53.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>31990.00 INR</g:price>
       <g:brand>Fulcrum</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900092</g:id>
@@ -1619,11 +1751,13 @@
       <link>https://cyclify.in/products/fulcrum-racing-900-c17-rim-brake-wheelset-900092.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/2c507046312cf4fd19.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>19990.00 INR</g:price>
       <g:brand>Fulcrum</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900093</g:id>
@@ -1654,11 +1788,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/7a437dec25f66b13e5.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ecb2daf71534cf89e7.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>149990.00 INR</g:price>
       <g:brand>Vision</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900095</g:id>
@@ -1669,11 +1805,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/e05f2a0de038adc1c9.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/98f96e219c58a86bec.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>119990.00 INR</g:price>
       <g:brand>Vision</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900097</g:id>
@@ -1699,11 +1837,13 @@
       <link>https://cyclify.in/products/vision-metron-sl-trimax-db-xdr-freehub-900099.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/399113f1dca55f36fc.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5490.00 INR</g:price>
       <g:brand>Vision</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900100</g:id>
@@ -1712,11 +1852,13 @@
       <link>https://cyclify.in/products/favero-assioma-pro-rl-2-power-meter-pedals-900100.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/50094688df30b1f341.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>89990.00 INR</g:price>
       <g:brand>Favero</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900103</g:id>
@@ -1725,11 +1867,13 @@
       <link>https://cyclify.in/products/favero-assioma-duo-power-meter-pedals-900103.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/7195f64d38039924d6.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>59990.00 INR</g:price>
       <g:brand>Favero</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900104</g:id>
@@ -1748,11 +1892,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/475b9096634da9e3df.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d301fa24ebdc7f4ee4.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>43990.00 INR</g:price>
       <g:brand>Rudy Project</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900105</g:id>
@@ -1771,11 +1917,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/6c3bdcd96921fdf170.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ae25cc25fbceb83ac3.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>19990.00 INR</g:price>
       <g:brand>Rudy Project</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900106</g:id>
@@ -1794,11 +1942,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/56e4ed6d9438e4eef9.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/dfaab764ac51da407a.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>15990.00 INR</g:price>
       <g:brand>Rudy Project</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900107</g:id>
@@ -1816,11 +1966,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/0eb45eaadcc19606e7.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/92c65492e80e844daa.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>12990.00 INR</g:price>
       <g:brand>Rudy Project</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900108</g:id>
@@ -1839,11 +1991,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/117ec2c33ea165968d.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/cd104f43b9e899f593.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>11990.00 INR</g:price>
       <g:brand>Rudy Project</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900109</g:id>
@@ -1862,11 +2016,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/f0068522c8682b917b.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/5edb52eececafe106e.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>9990.00 INR</g:price>
       <g:brand>Rudy Project</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900110</g:id>
@@ -1885,11 +2041,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/a694b05699d511b275.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/5a4e8a82f05f8f25a4.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>12990.00 INR</g:price>
       <g:brand>Rudy Project</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900111</g:id>
@@ -1908,11 +2066,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ba3373b3063e662052.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/45d28a633c73d2fb1b.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>9990.00 INR</g:price>
       <g:brand>Rudy Project</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900112</g:id>
@@ -1931,11 +2091,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/a92d1b906997884a4e.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/a9d3c81748febdae40.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>9990.00 INR</g:price>
       <g:brand>Rudy Project</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900113</g:id>
@@ -2039,11 +2201,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/7d0107fd013be53a0b.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/8844bf7a6317d38c69.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>13900.00 INR</g:price>
       <g:brand>100%</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900118</g:id>
@@ -2057,11 +2221,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/91dd15b40f4fa07766.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/799900b41a0df84d15.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>13900.00 INR</g:price>
       <g:brand>100%</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900119</g:id>
@@ -2080,11 +2246,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/6e2b270400b5682714.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/b88831a654983f57a9.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>14900.00 INR</g:price>
       <g:brand>100%</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900120</g:id>
@@ -2099,11 +2267,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/eb76f1de0494718ce9.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/966f059c4d76d1f727.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>13900.00 INR</g:price>
       <g:brand>100%</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900121</g:id>
@@ -2122,11 +2292,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/4fbb8d286e9ac8bb5f.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/18bf53b756e0726d33.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>14900.00 INR</g:price>
       <g:brand>100%</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900122</g:id>
@@ -2229,11 +2401,13 @@
       <link>https://cyclify.in/products/100-machine-snapback-cap-900127.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/dae4baf3204545366d.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2690.00 INR</g:price>
       <g:brand>100%</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900128</g:id>
@@ -2266,11 +2440,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/53f5e6f9532c8854c4.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ed19527137bbbdc500.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>8990.00 INR</g:price>
       <g:brand>MB Wear</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900130</g:id>
@@ -2289,11 +2465,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/dee3fbae94989cf40e.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/44ed360e647a4e4e36.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>9990.00 INR</g:price>
       <g:brand>MB Wear</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900131</g:id>
@@ -2307,11 +2485,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/52a2933a94912d58aa.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/f748c23becdce73816.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>14990.00 INR</g:price>
       <g:brand>MB Wear</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900132</g:id>
@@ -2321,11 +2501,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/6c60e4fc16b767faa3.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/3b9527ce4881b2a683.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>14990.00 INR</g:price>
       <g:brand>MB Wear</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900133</g:id>
@@ -2344,11 +2526,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d33e4ab1178f408bcc.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/28c744a7a8fd1c2efa.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>86990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900134</g:id>
@@ -2365,11 +2549,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/c394f0a754a24657eb.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/0182e2bdf2d75d58e7.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>28990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900135</g:id>
@@ -2384,11 +2570,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/09085732ce1e9631b9.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/2212247d750e3d1b84.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>23990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900136</g:id>
@@ -2462,11 +2650,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/dd9571d242bcaa7ca2.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d64572f05df6f4c6b2.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>15990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900140</g:id>
@@ -2477,11 +2667,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/90f5e19aab69ec636f.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/cc7ff0e90814fc1278.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>15990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900143</g:id>
@@ -2495,11 +2687,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/0b86d215ae0ffd68be.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/25e61bd8ef7da66533.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>15990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900144</g:id>
@@ -2511,11 +2705,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/997d9818ba44b6a377.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/67e7a0df54c2137391.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>12990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900145</g:id>
@@ -2525,11 +2721,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/be27acf018a724a3b8.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/5506f8597b5f3ad799.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>12990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900146</g:id>
@@ -2540,11 +2738,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/cc16ff4e93f41eceb0.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/380c1aa62b1d555481.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>4990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900147</g:id>
@@ -2561,11 +2761,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/b921a5cc1be47de235.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/595ef02c63e0bcde2b.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>15990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900149</g:id>
@@ -2613,11 +2815,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/9865020f3b45c82875.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/8b43f9b91e4b31d595.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>10990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900152</g:id>
@@ -2668,11 +2872,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/5ddc0a1fe8d7d99785.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/3b81836578887db7f0.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900155</g:id>
@@ -2691,11 +2897,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/745265c848828c3c4d.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/95c8d85460df80def9.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900156</g:id>
@@ -2714,11 +2922,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/745265c848828c3c4d.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/95c8d85460df80def9.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900157</g:id>
@@ -2760,11 +2970,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/745265c848828c3c4d.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/95c8d85460df80def9.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900159</g:id>
@@ -2806,11 +3018,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ec1923be60268b051d.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/edc22cda3869cd3f47.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900161</g:id>
@@ -2852,11 +3066,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ec1923be60268b051d.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/edc22cda3869cd3f47.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900163</g:id>
@@ -2875,11 +3091,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/e487c472ce9a7b4111.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/edc22cda3869cd3f47.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900164</g:id>
@@ -2912,11 +3130,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/2dd4bdd681b2aac5a5.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/778005b45a2853090e.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3690.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900166</g:id>
@@ -2963,11 +3183,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/5272ac27a9123dcd18.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d995632dafb4816c61.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>990.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900169</g:id>
@@ -2977,11 +3199,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/12e6d7cdb4d140b0b2.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/88727215a2be4c7036.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1290.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900170</g:id>
@@ -2997,11 +3221,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ef34bdddf3d34f1d6a.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/47aee0260dcf804405.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1290.00 INR</g:price>
       <g:brand>Zone3</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900171</g:id>
@@ -3032,11 +3258,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/f033bf005bd9cdaa1e.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/00dd8fb66977fcee8e.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>27990.00 INR</g:price>
       <g:brand>Selle Italia</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900173</g:id>
@@ -3049,11 +3277,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/35373dacd39658c34e.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/60338ef75bf1733f32.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>18990.00 INR</g:price>
       <g:brand>Selle Italia</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900175</g:id>
@@ -3100,11 +3330,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/32222f50209416940e.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/543ffd75eacc655d3d.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>14490.00 INR</g:price>
       <g:brand>Selle Italia</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900180</g:id>
@@ -3139,11 +3371,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/09c1ea26d473903cee.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/be40b13c29bcb38043.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>4690.00 INR</g:price>
       <g:brand>Selle Italia</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900182</g:id>
@@ -3155,11 +3389,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/ee938a9e1a5a09ea4c.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/185308b82593928817.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1290.00 INR</g:price>
       <g:brand>Selle Italia</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900184</g:id>
@@ -3168,11 +3404,13 @@
       <link>https://cyclify.in/products/controltech-rib-bottle-cage-900184.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/cd64e087107dbcbc7c.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>890.00 INR</g:price>
       <g:brand>Control Tech</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900185</g:id>
@@ -3185,11 +3423,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/7ab26840bb8d4a09ea.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/b246ba6eea5436a966.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2490.00 INR</g:price>
       <g:brand>Control Tech</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900187</g:id>
@@ -3198,11 +3438,13 @@
       <link>https://cyclify.in/products/controltech-sla-compact-handlebar-900187.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/ea38f1900f22e96a94.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>4990.00 INR</g:price>
       <g:brand>Control Tech</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900188</g:id>
@@ -3213,11 +3455,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d108d405ce06e6c60f.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/c2ebefc581d167082e.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>8690.00 INR</g:price>
       <g:brand>Control Tech</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900189</g:id>
@@ -3230,11 +3474,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/4918cdc5b96b715d76.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/f324ff5c12d3b8a54c.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>4890.00 INR</g:price>
       <g:brand>Control Tech</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900190</g:id>
@@ -3246,11 +3492,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/08384a89b2c728c596.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/e970482af625fc3d06.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5990.00 INR</g:price>
       <g:brand>Control Tech</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900191</g:id>
@@ -3269,11 +3517,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/358850a5003c609e4b.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/13a3cf2858f34fdf24.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>78000.00 INR</g:price>
       <g:brand>Scicon</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900192</g:id>
@@ -3289,11 +3539,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d0ba0aa43ffebd871c.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/a4c53b0ae5a3e4b884.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>78000.00 INR</g:price>
       <g:brand>Scicon</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900195</g:id>
@@ -3307,11 +3559,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/967f2a9b892ff8ab11.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/a517da16e407826797.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>23900.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900196</g:id>
@@ -3320,11 +3574,13 @@
       <link>https://cyclify.in/products/tripeak-bb86-shimano-htii-road-g3-ceramic-bearing-bottom-bracket-900196.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/3e80ca8f77b0970ff8.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>22990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900197</g:id>
@@ -3335,11 +3591,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/bf36ebb83383988781.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/56b1063f528c625a54.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>11200.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900198</g:id>
@@ -3354,11 +3612,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/6f5727f1784944b91e.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d56f652e7e271a0afe.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>10990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900200</g:id>
@@ -3369,11 +3629,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/8ff113892f612ab478.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d413511aa172f338a9.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>10750.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900201</g:id>
@@ -3383,11 +3645,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/6ecffbcb16e8cbf807.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/668f6cccf72b0c755f.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>11990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900202</g:id>
@@ -3399,11 +3663,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d7677f77010f53a481.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/fe4c1991db68de722e.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>8050.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900203</g:id>
@@ -3418,11 +3684,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d67bcc9ff8febb7ba0.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/1f5bda51eba0cad8e1.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900212</g:id>
@@ -3431,11 +3699,13 @@
       <link>https://cyclify.in/products/tripeak-18307-jetstream-pro-g3-ceramic-bearing-18x30x7mm-900212.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/c30a2ad06a986367da.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900213</g:id>
@@ -3446,11 +3716,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/f973dfd945e74ac78b.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/f44f27a5297743f6d1.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900217</g:id>
@@ -3459,11 +3731,13 @@
       <link>https://cyclify.in/products/tripeak-bottom-bracket-tool-44mm-900217.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/878f634567b09bec52.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900218</g:id>
@@ -3473,11 +3747,13 @@
       <g:image_link>https://cyclify.in/assets/products/expanded/5e455aab317b352858.webp</g:image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/d918e668d96746e59e.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>24990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900219</g:id>
@@ -3486,11 +3762,13 @@
       <link>https://cyclify.in/products/tripeak-hub-bearing-extraction-tool-kit-900219.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/b5a7308d8bdfdca56e.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>24990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900220</g:id>
@@ -3499,11 +3777,13 @@
       <link>https://cyclify.in/products/tripeak-hub-bearing-installation-tool-kit-900220.html</link>
       <g:image_link>https://cyclify.in/assets/products/expanded/1e00051e156e11024b.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>24990.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-900222</g:id>
@@ -3516,11 +3796,13 @@
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/4f314baa734ce2a863.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/expanded/fe67c5ac09152a17ca.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>575.00 INR</g:price>
       <g:brand>Tripeak</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-7501</g:id>
@@ -3534,12 +3816,15 @@
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh15-05.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh15-06.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
+      <g:shipping_label>tfsa-10-12-days</g:shipping_label>
       <g:condition>new</g:condition>
       <g:price>84000.00 INR</g:price>
       <g:sale_price>70000.00 INR</g:sale_price>
       <g:brand>TFSA</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>10</g:min_transit_time><g:max_transit_time>12</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-7502</g:id>
@@ -3553,12 +3838,15 @@
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh19-05.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh19-06.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
+      <g:shipping_label>tfsa-10-12-days</g:shipping_label>
       <g:condition>new</g:condition>
       <g:price>78000.00 INR</g:price>
       <g:sale_price>65000.00 INR</g:sale_price>
       <g:brand>TFSA</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>10</g:min_transit_time><g:max_transit_time>12</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-7503</g:id>
@@ -3571,12 +3859,15 @@
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh33-04.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh33-05.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
+      <g:shipping_label>tfsa-10-12-days</g:shipping_label>
       <g:condition>new</g:condition>
       <g:price>78000.00 INR</g:price>
       <g:sale_price>65000.00 INR</g:sale_price>
       <g:brand>TFSA</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>10</g:min_transit_time><g:max_transit_time>12</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-7504</g:id>
@@ -3590,12 +3881,15 @@
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh10-05.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh10-06.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
+      <g:shipping_label>tfsa-10-12-days</g:shipping_label>
       <g:condition>new</g:condition>
       <g:price>84000.00 INR</g:price>
       <g:sale_price>70000.00 INR</g:sale_price>
       <g:brand>TFSA</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>10</g:min_transit_time><g:max_transit_time>12</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-7505</g:id>
@@ -3609,12 +3903,15 @@
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh35-05.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh35-06.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
+      <g:shipping_label>tfsa-10-12-days</g:shipping_label>
       <g:condition>new</g:condition>
       <g:price>120000.00 INR</g:price>
       <g:sale_price>100000.00 INR</g:sale_price>
       <g:brand>TFSA</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>10</g:min_transit_time><g:max_transit_time>12</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-7506</g:id>
@@ -3630,12 +3927,15 @@
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh06-07.webp</g:additional_image_link>
       <g:additional_image_link>https://cyclify.in/assets/products/tfsa/tfsa-jh06-08.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
+      <g:shipping_label>tfsa-10-12-days</g:shipping_label>
       <g:condition>new</g:condition>
       <g:price>54000.00 INR</g:price>
       <g:sale_price>45000.00 INR</g:sale_price>
       <g:brand>TFSA</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>10</g:min_transit_time><g:max_transit_time>12</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-11048872345793</g:id>
@@ -3644,12 +3944,14 @@
       <link>https://cyclify.in/products/igpsport-lanyard-for-bike-computers-11048872345793.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>298.00 INR</g:price>
       <g:sale_price>249.00 INR</g:sale_price>
       <g:brand>CycleTimeIndia</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10798701510849</g:id>
@@ -3681,12 +3983,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_586df694-5f79-4731-8483-a7c565b61fd2.jpg?v=1771681347</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_5a3f44d5-e828-42e0-b6cf-8c502fdee709.jpg?v=1771681311</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5400.00 INR</g:price>
       <g:sale_price>2400.00 INR</g:sale_price>
       <g:brand>Cycletimeindia</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10994532548801</g:id>
@@ -3699,12 +4003,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/0172001_Turno_3.avif?v=1780638306</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/0172001_Turno_4.avif?v=1780638306</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>34900.00 INR</g:price>
       <g:sale_price>29900.00 INR</g:sale_price>
       <g:brand>Elite</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-11046601031873</g:id>
@@ -3716,12 +4022,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/F98E6B57-B845-49F4-9F95-05FBF9755964.jpg?v=1786966555</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/85417029-6C3D-4FC6-AE43-8D61F22D59C1.jpg?v=1787217232</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>23500.00 INR</g:price>
       <g:sale_price>19900.00 INR</g:sale_price>
       <g:brand>Elsier</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-11046385123521</g:id>
@@ -3733,12 +4041,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/4AF35B2E-6558-42D7-BCDC-7F1280BE0B0B.jpg?v=1786956413</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/7920966A-F1F3-460B-8568-76AC60913E9F.jpg?v=1786955692</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>15000.00 INR</g:price>
       <g:sale_price>13900.00 INR</g:sale_price>
       <g:brand>Elsier</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10786887827649</g:id>
@@ -3753,11 +4063,13 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/2641722304932_.pic_hd.webp?v=1780046209</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/Falath_EVO_T47_1.webp?v=1780046644</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>139000.00 INR</g:price>
       <g:brand>ELVES</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10786323988673</g:id>
@@ -3771,11 +4083,13 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/white_and_pinao_black.png?v=1772698988</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/champagne_golden_and_chameleon.png?v=1772698988</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>151000.00 INR</g:price>
       <g:brand>ELVES</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10882435383489</g:id>
@@ -3790,12 +4104,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_11_46a00896-6b02-4cda-b5ef-61d0a5a3341e.jpg?v=1767680709</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_13_f48ad80c-9b09-4968-811b-f684ce5c74b8.jpg?v=1767680709</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>23760.00 INR</g:price>
       <g:sale_price>18999.00 INR</g:sale_price>
       <g:brand>ELVES</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10872308728001</g:id>
@@ -3804,12 +4120,14 @@
       <link>https://cyclify.in/products/elves-replacement-gear-mech-hanger-10872308728001.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_9c6059f6-e99b-41d3-99a8-19d087908aaf.jpg?v=1766398287</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3240.00 INR</g:price>
       <g:sale_price>2900.00 INR</g:sale_price>
       <g:brand>ELVES</g:brand>
       <g:product_type>Bikes &amp; Frames</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10921258451137</g:id>
@@ -3827,12 +4145,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/AI_O_Z8.jpg?v=1772092176</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/IMG-20230713-WA0052.jpg?v=1772095136</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2860.00 INR</g:price>
       <g:sale_price>849.00 INR</g:sale_price>
       <g:brand>Royal Traders</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10985019965633</g:id>
@@ -3841,11 +4161,13 @@
       <link>https://cyclify.in/products/igpsport-bike-computer-tempered-film-bsc200s-300t-10985019965633.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/Photoroom_20260522_145535.jpg?v=1779691475</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>249.00 INR</g:price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-11048660467905</g:id>
@@ -3854,12 +4176,14 @@
       <link>https://cyclify.in/products/igpsport-binavi-air-bike-computer-protective-case-11048660467905.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_2bb00fa6-abe9-4ad8-bc95-c9c5738f9ebb.jpg?v=1787148423</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1560.00 INR</g:price>
       <g:sale_price>1300.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-11048659026113</g:id>
@@ -3869,12 +4193,14 @@
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_a466f5b6-209c-490a-bcb1-af6e03faca81.jpg?v=1787147656</g:image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_ff99e23c-8c42-48a7-8bc2-4146eeae5be5.jpg?v=1787147656</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1560.00 INR</g:price>
       <g:sale_price>1300.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10809960857793</g:id>
@@ -3883,12 +4209,14 @@
       <link>https://cyclify.in/products/igpsport-bsc-100s-computer-protective-case-10809960857793.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a45e3e82-8713-488b-bf2b-6af1ec85df36.webp?v=1757587421</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>999.00 INR</g:price>
       <g:sale_price>700.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10862389002433</g:id>
@@ -3897,11 +4225,13 @@
       <link>https://cyclify.in/products/igpsport-bsc-200s-300t-bike-computer-protective-case-10862389002433.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_3bae2be4-7264-47a0-8049-ce83f8ecc937.jpg?v=1764156719</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>700.00 INR</g:price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-11040886161601</g:id>
@@ -3915,12 +4245,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500-with-built-in-speaker.jpg?v=1786352379</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/iGPSPORT-BSC500-with-bell.jpg?v=1786352378</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>19500.00 INR</g:price>
       <g:sale_price>19200.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10785797079233</g:id>
@@ -3933,12 +4265,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/2_47b1f040-a705-41bc-a4a0-6004b834de0f.webp?v=1768468424</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/4_c2fc9a64-6b37-499b-906e-e6ce1538e04f.webp?v=1768468424</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2215.00 INR</g:price>
       <g:sale_price>1799.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10848166281409</g:id>
@@ -3951,12 +4285,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_10_7a2e9ab7-94b2-486e-95b0-0fc5aa0c3cec.jpg?v=1768474577</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_11_95f5ddc0-33b1-4274-90e0-602945293a55.jpg?v=1768474577</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>4900.00 INR</g:price>
       <g:sale_price>3555.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10785804583105</g:id>
@@ -3975,12 +4311,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_45b07618-3933-4463-a697-60fb537cf881.jpg?v=1754033463</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7_1a202f87-f563-4588-8676-af1757ea05f5.jpg?v=1754033464</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>4212.00 INR</g:price>
       <g:sale_price>3305.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10785808318657</g:id>
@@ -3994,12 +4332,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_467aa49b-ceb7-430a-be3a-d04e0144d4dc.jpg?v=1768473261</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_6e5b3c94-5820-4c5e-b872-943217fed71f.jpg?v=1754034319</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5998.00 INR</g:price>
       <g:sale_price>4999.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10878277386433</g:id>
@@ -4033,12 +4373,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_db538dc2-dc25-487b-837d-7d407944e835.jpg?v=1754032520</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_1ac6503d-7bdb-4085-a138-274762e337e9.jpg?v=1754032521</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>840.00 INR</g:price>
       <g:sale_price>720.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10786319859905</g:id>
@@ -4050,12 +4392,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_c4c3baa2-2fa3-4350-ac9d-0062fba65512.jpg?v=1768477386</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_ea6ad156-d394-4c56-93ae-2760b815c7fa.jpg?v=1768477386</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2278.00 INR</g:price>
       <g:sale_price>1899.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10785816543425</g:id>
@@ -4067,12 +4411,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_05cff06d-7c22-42fc-b9cd-8beebcf857d7.jpg?v=1768568791</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_48cecb95-bf2b-4166-a2d7-b79d4d91a1fd.jpg?v=1768568791</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1800.00 INR</g:price>
       <g:sale_price>1499.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Components</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10883181445313</g:id>
@@ -4083,12 +4429,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_e52cc11c-ac3a-44e2-85a1-f9e0c674172c.jpg?v=1767767481</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_4aac8743-de35-4396-a952-b5fa6acf2a35.jpg?v=1767768000</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1188.00 INR</g:price>
       <g:sale_price>990.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Wearables</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10907584168129</g:id>
@@ -4097,12 +4445,14 @@
       <link>https://cyclify.in/products/igpsport-silicone-case-for-bsc-100max-computer-10907584168129.html</link>
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_2a74e509-80c5-4749-a220-d22a1e889968.jpg?v=1770293870</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>840.00 INR</g:price>
       <g:sale_price>700.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10786311045313</g:id>
@@ -4139,12 +4489,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_ad068104-a49a-4724-9cc7-6fe7853fffd2.jpg?v=1754032060</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7_e22e13c5-4748-4ad8-a7ee-5e70f0695465.jpg?v=1754032060</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2215.00 INR</g:price>
       <g:sale_price>1799.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10823281967297</g:id>
@@ -4160,12 +4512,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_8_46211129-67c4-4531-a53f-d434959c3b1a.jpg?v=1772526284</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7_36ceb807-0ee7-4cbd-a548-ece3c41728a4.jpg?v=1772526284</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>9480.00 INR</g:price>
       <g:sale_price>8600.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10785814773953</g:id>
@@ -4179,12 +4533,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_0ff467ec-5ff6-4c39-975c-dad079c14823.jpg?v=1754036014</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_6_848c37a6-e15e-45f5-9a1a-169e7bc0ad82.jpg?v=1754036015</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3480.00 INR</g:price>
       <g:sale_price>2900.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-11042901328065</g:id>
@@ -4199,12 +4555,14 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/verun6.webp?v=1786615371</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/verun1.webp?v=1786615371</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>24000.00 INR</g:price>
       <g:sale_price>22900.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:product_type>Accessories</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10786279358657</g:id>
@@ -4276,11 +4634,13 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/bh56d6.webp?v=1772876119</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/bh56d7.webp?v=1772876119</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>76000.00 INR</g:price>
       <g:brand>OROME</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10795496374465</g:id>
@@ -4323,12 +4683,14 @@
       <g:image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_15_dfcd3429-7a95-4978-afdc-a7446ba1bbd5.jpg?v=1764589360</g:image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_14_bcdfdd58-a104-4cfe-a98b-ed70f411edd5.jpg?v=1764589360</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>18930.00 INR</g:price>
       <g:sale_price>17650.00 INR</g:sale_price>
       <g:brand>Shimano</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-233156553</g:id>
@@ -4340,12 +4702,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/qcX7yIYr.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/69QGbP3C.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2800.00 INR</g:price>
       <g:sale_price>2380.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-233144605</g:id>
@@ -4357,12 +4721,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/WNCeyIbB.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/XlQ9CBJn.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2900.00 INR</g:price>
       <g:sale_price>2465.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-233109418</g:id>
@@ -4374,12 +4740,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/tmszL3FS.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/I7ygfgdw.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2700.00 INR</g:price>
       <g:sale_price>2295.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232929423</g:id>
@@ -4391,12 +4759,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/a4QzZOhy.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/89MWVGnQ.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1300.00 INR</g:price>
       <g:sale_price>990.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232929401</g:id>
@@ -4408,12 +4778,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/owf1jOGK.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/ja7gRunG.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1399.00 INR</g:price>
       <g:sale_price>1100.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232900557</g:id>
@@ -4425,12 +4797,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/k3WSJxa0.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/t8z7BvPK.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1500.00 INR</g:price>
       <g:sale_price>1000.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232900302</g:id>
@@ -4439,12 +4813,14 @@
       <link>https://cyclify.in/products/ralson-700-28c-bicycle-tube-set-pack-of-2-durable-inner-tubes-for-road-and-232900302.html</link>
       <g:image_link>https://cdn.dotpe.in/longtail/store-items/8102112/H8Rd2DWt.webp</g:image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1099.00 INR</g:price>
       <g:sale_price>619.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232900253</g:id>
@@ -4456,12 +4832,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/FGuLEAQf.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/6c2xeAt1.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1599.00 INR</g:price>
       <g:sale_price>1090.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232900275</g:id>
@@ -4473,12 +4851,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/QCboNbn6.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/yCVnh25W.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>699.00 INR</g:price>
       <g:sale_price>350.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232931015</g:id>
@@ -4490,12 +4870,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/D0yLNLil.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/MZ7awHgO.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1200.00 INR</g:price>
       <g:sale_price>749.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232900242</g:id>
@@ -4507,12 +4889,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/HYA9fg9p.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/c0P6lSra.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1999.00 INR</g:price>
       <g:sale_price>1899.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232900264</g:id>
@@ -4524,12 +4908,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/BlCES0FS.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/86OdLU7f.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3499.00 INR</g:price>
       <g:sale_price>1999.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232900551</g:id>
@@ -4541,12 +4927,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/0XwnArkm.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/1aYiw0d4.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1999.00 INR</g:price>
       <g:sale_price>1150.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-233157030</g:id>
@@ -4558,12 +4946,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/dlfMmHDN.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/M7jFI8vj.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1100.00 INR</g:price>
       <g:sale_price>999.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232929475</g:id>
@@ -4575,12 +4965,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/ebLBSW4w.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/u8xwi2SS.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1200.00 INR</g:price>
       <g:sale_price>1000.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-233091846</g:id>
@@ -4592,12 +4984,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/HF9LR2MK.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/gC0voNNP.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>725.00 INR</g:price>
       <g:sale_price>590.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-233091828</g:id>
@@ -4609,12 +5003,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/TXtrftOB.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/dScILn71.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>600.00 INR</g:price>
       <g:sale_price>510.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-233091760</g:id>
@@ -4626,12 +5022,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/XFH5qNL9.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/ceQcfkZt.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2400.00 INR</g:price>
       <g:sale_price>2040.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-233091780</g:id>
@@ -4643,12 +5041,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/x39H96t7.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/jDERwysw.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3000.00 INR</g:price>
       <g:sale_price>2550.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-230741493</g:id>
@@ -4659,12 +5059,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/h5B8Rq28.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/qHA45Qew.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1249.00 INR</g:price>
       <g:sale_price>900.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232929490</g:id>
@@ -4676,12 +5078,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/cFWgLHt8.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/LzlrkM2C.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1800.00 INR</g:price>
       <g:sale_price>1400.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232900531</g:id>
@@ -4693,12 +5097,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/Ysj4Kjfy.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/FeKcGL4Z.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1200.00 INR</g:price>
       <g:sale_price>850.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-233157021</g:id>
@@ -4710,12 +5116,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/8shwZbVT.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/NvHuyZVR.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1500.00 INR</g:price>
       <g:sale_price>1300.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
   </channel>
 </rss>

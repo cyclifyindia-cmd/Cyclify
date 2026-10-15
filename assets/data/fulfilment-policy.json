@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "confirmedAt": "2026-10-15",
+  "timeZone": "Asia/Kolkata",
+  "businessDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  "handling": { "min": 0, "max": 0 },
+  "standardTransit": { "min": 3, "max": 3 },
+  "overrides": [
+    {
+      "productIds": [7501, 7502, 7503, 7504, 7505, 7506],
+      "transit": { "min": 10, "max": 12 },
+      "shippingLabel": "tfsa-10-12-days"
+    }
+  ]
+}

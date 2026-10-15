@@ -27,7 +27,7 @@
 <script src="assets/js/supplier-products.js?v=38a69ae0bd"></script>
 <script src="assets/js/fcc-products.js?v=ef7ee16029"></script>
 <script src="assets/js/cadence-products.js?v=adb5356270"></script>
-<script src="assets/js/tfsa-products.js?v=1b1ce5caac"></script>
+<script src="assets/js/tfsa-products.js?v=39e9af9bee"></script>
 <script src="assets/js/expanded-products.js?v=e168c5b243"></script>
 <style>
 
@@ -1218,6 +1218,32 @@ body{padding-bottom:88px;}
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "businessDays": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "https://schema.org/Monday",
+                "https://schema.org/Tuesday",
+                "https://schema.org/Wednesday",
+                "https://schema.org/Thursday",
+                "https://schema.org/Friday",
+                "https://schema.org/Saturday"
+              ]
+            },
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 10,
+              "maxValue": 12,
+              "unitCode": "DAY"
+            }
+          },
           "shippingRate": {
             "@type": "MonetaryAmount",
             "value": "0",

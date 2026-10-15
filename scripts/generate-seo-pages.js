@@ -7,6 +7,7 @@ const { renderVook } = require('./render-vook');
 const { renderVookCollection } = require('./render-vook-seo');
 const { renderCatalogSeo } = require('./render-catalog-seo');
 const { renderExpandedProduct } = require('./render-expanded-product');
+const { deliveryFor, deliverySchemaFor, assertMerchantAvailability } = require('./fulfilment-policy');
 const cheerio = require('cheerio');
 
 const root = path.resolve(__dirname, '..');
@@ -109,14 +110,15 @@ function writeFileWithRetry(file, content, encoding = 'utf8') {
   const normalizedContent = typeof content === 'string'
     ? content.replace(/\r\n?/g, '\n').replace(/[\t ]+$/gm, '')
     : content;
-  for (let attempt = 1; attempt <= 8; attempt += 1) {
+  for (let attempt = 1; attempt <= 16; attempt += 1) {
     try {
+      if (fs.existsSync(file) && fs.readFileSync(file, encoding) === normalizedContent) return;
       fs.writeFileSync(file, normalizedContent, encoding);
       return;
     } catch (error) {
       const retryable = ['UNKNOWN', 'EBUSY', 'EPERM', 'EACCES'].includes(error.code);
-      if (!retryable || attempt === 8) throw error;
-      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, attempt * 40);
+      if (!retryable || attempt === 16) throw error;
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, Math.min(1000, attempt * 100));
     }
   }
 }
@@ -451,12 +453,7 @@ for (const product of primaryProducts) {
           seller: { '@type': 'Organization', '@id': 'https://cyclify.in/#organization', name: 'CYCLIFY INDIA', url: 'https://cyclify.in/' },
           shippingDetails: {
             '@type': 'OfferShippingDetails',
-            ...(!product.preorder && !product.deliveryText && product.available !== false ? { deliveryTime: {
-              '@type': 'ShippingDeliveryTime',
-              businessDays: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday', 'https://schema.org/Saturday'] },
-              handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
-              transitTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 3, unitCode: 'DAY' }
-            } } : {}),
+            ...(deliverySchemaFor(product) ? {deliveryTime: deliverySchemaFor(product)} : {}),
             shippingRate: {
               '@type': 'MonetaryAmount',
               value: '0',
@@ -807,6 +804,8 @@ writeFileWithRetry(sitemapPath, sitemap, 'utf8');
 const merchantItems = primaryProducts
   .filter(product => Number(product.price) > 0 && !product.priceOnRequest)
   .map(product => {
+    assertMerchantAvailability(product);
+    const delivery = deliveryFor(product);
     const route = routes[product.id];
     const link = 'https://cyclify.in/' + route;
     const primaryImage = absoluteUrl(product.image || (product.images || [])[0] || 'assets/Logo-dark-preview.png');
@@ -827,12 +826,16 @@ const merchantItems = primaryProducts
       '      <g:image_link>' + escapeXml(primaryImage) + '</g:image_link>\n' +
       additionalImages.map(imageUrl => '      <g:additional_image_link>' + escapeXml(imageUrl) + '</g:additional_image_link>').join('\n') + (additionalImages.length ? '\n' : '') +
       '      <g:availability>' + (product.available === false ? 'out_of_stock' : (product.preorder ? 'preorder' : 'in_stock')) + '</g:availability>\n' +
+      (product.available !== false && product.preorder ? '      <g:availability_date>'+escapeXml(product.availabilityDate)+'</g:availability_date>\n' : '') +
+      (delivery ? '      <g:min_handling_time>'+delivery.handling.min+'</g:min_handling_time>\n      <g:max_handling_time>'+delivery.handling.max+'</g:max_handling_time>\n' : '') +
+      (delivery?.shippingLabel ? '      <g:shipping_label>'+escapeXml(delivery.shippingLabel)+'</g:shipping_label>\n' : '') +
       '      <g:condition>new</g:condition>\n' +
       '      <g:price>' + listPrice.toFixed(2) + ' INR</g:price>\n' +
       (salePrice ? '      ' + salePrice + '\n' : '') +
       '      <g:brand>' + escapeXml(brand) + '</g:brand>\n' +
       '      <g:product_type>' + escapeXml(product.categoryLabel || categoryLabels[product.categoryPage] || product.category || 'Cycling') + '</g:product_type>\n' +
-      '      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>\n' +
+      '      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price>'+
+      (delivery ? '<g:min_transit_time>'+delivery.transit.min+'</g:min_transit_time><g:max_transit_time>'+delivery.transit.max+'</g:max_transit_time>' : '') + '</g:shipping>\n' +
       '    </item>';
   });
 const merchantFeed = '<?xml version="1.0" encoding="UTF-8"?>\n' +
