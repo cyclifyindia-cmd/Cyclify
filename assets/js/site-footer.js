@@ -72,8 +72,13 @@
   function enhanceProductCard(card) {
     if (card.dataset.cyclifyDealReady === "true") return;
     const priceElement = card.querySelector(".price");
-    const mrpElement = card.querySelector(".mrp");
-    if (!priceElement || !mrpElement) return;
+    let mrpElement = card.querySelector(".mrp");
+    if (!priceElement) return;
+    if (!mrpElement) {
+      mrpElement = document.createElement("div");
+      mrpElement.className = "mrp";
+      priceElement.insertAdjacentElement("afterend", mrpElement);
+    }
     const imageElement = card.querySelector(":scope > img");
     const detailsElement = card.querySelector(":scope > .details");
     const titleElement = detailsElement?.querySelector("h3");
@@ -118,13 +123,17 @@
       priceLine.appendChild(discountElement);
     }
     const originalShippingElements = [...card.querySelectorAll(".ship")];
-    const outOfStock = originalShippingElements.some(element => /out\s*of\s*stock/i.test(element.textContent || ""));
+    const unavailableText = originalShippingElements.map(element=>(element.textContent||"").trim()).find(value=>/out\s*of\s*stock|coming\s*soon|contact for more info/i.test(value));
+    const outOfStock = Boolean(unavailableText);
+    const deliveryText = originalShippingElements.map(element=>(element.textContent||"").trim()).find(value=>/10\s*[–-]\s*12\s*day/i.test(value));
+    const stockLabel = /coming\s*soon/i.test(unavailableText||"") ? "Coming Soon" : (/contact for more info/i.test(unavailableText||"") ? "Contact for More Info" : "Out of Stock");
     originalShippingElements.forEach(element => element.remove());
     const shippingElement = document.createElement("span");
     shippingElement.className = `cyclify-card-shipping${outOfStock ? " unavailable" : ""}`;
     shippingElement.innerHTML = outOfStock
-      ? '<span aria-hidden="true">&#9679;</span><span>Out of Stock</span>'
+      ? '<span aria-hidden="true">&#9679;</span><span>'+stockLabel+'</span>'
       : '<span aria-hidden="true">&#10003;</span><span>Free Shipping</span>';
+    if (!outOfStock && deliveryText) shippingElement.textContent = deliveryText;
     const actions = document.createElement("div");
     actions.className = "cyclify-card-actions";
     pricing.appendChild(actions);
@@ -136,7 +145,7 @@
       if (buyButton) {
         const clickCode = buyButton.getAttribute("onclick") || "";
         const idMatch = clickCode.match(/addToCart\(event,\s*([0-9]+)\s*\)/);
-        buyButton.textContent = outOfStock ? "Out of Stock" : "Buy Now";
+        buyButton.textContent = outOfStock ? stockLabel : "Buy Now";
         if (outOfStock) {
           buyButton.removeAttribute("onclick");
           buyButton.disabled = true;
@@ -173,6 +182,7 @@
             if (typeof window.addToCart !== "function") return;
             window.cyclifyCartAction = "add";
             window.addToCart(event, productId);
+            if(window.CYCLIFY_EXPANDED_PRODUCTS?.some(product=>Number(product.id)===productId))return;
             quickAddButton.classList.add("added");
             quickAddButton.setAttribute("aria-label", "Added to cart");
             window.setTimeout(() => {

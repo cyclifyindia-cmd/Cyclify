@@ -99,12 +99,14 @@ function storedJson(storage, key, fallback) {
 function normalizeKnownCheckoutPrices(list, storage, key) {
   let changed = false;
   const normalized = (Array.isArray(list) ? list : []).map(item => {
+    const current = window.cyclifyNormalizeTfsaCartItem?.(item) || item;
+    if (current !== item) changed = true;
     const id = String(item?.id ?? item?.productId ?? "");
     if (id === "36" && priceOf(item) === 40000) {
       changed = true;
-      return { ...item, price: 35000 };
+      return { ...current, price: 35000 };
     }
-    return item;
+    return current;
   });
   if (changed) storage.setItem(key, JSON.stringify(normalized));
   return normalized;
@@ -274,7 +276,7 @@ async function render() {
     const preorderCopy = deposit > 0
       ? `<small class="preorder-copy">Frame price \u20B9${framePrice.toLocaleString("en-IN")}. \u20B9${deposit.toLocaleString("en-IN")} is charged today; remaining \u20B9${remaining.toLocaleString("en-IN")} per frame is payable after size${item.customPainting ? " and custom paint" : ""} confirmation.</small>`
       : "";
-    return `<div class="item"><img src="${escapeText(item.image)}" alt=""><div><p>${escapeText(item.name)}</p><small>Qty ${quantity}${item.size ? ` | Size ${escapeText(item.size)}` : ""}</small>${preorderCopy}</div><span class="money ${deposit > 0 ? "deposit-money" : ""}">${deposit > 0 ? `\u20B9${(deposit * quantity).toLocaleString("en-IN")} deposit` : `\u20B9${(framePrice * quantity).toLocaleString("en-IN")}`}</span></div>`;
+    return `<div class="item"><img src="${escapeText(item.image)}" alt=""><div><p>${escapeText(item.name)}</p><small>Qty ${quantity}${item.size ? ` | Size ${escapeText(item.size)}` : ""}${item.valveLength ? ` | ${escapeText(item.valveLength)}` : ""}</small>${item.configuration ? `<small>Build: ${escapeText(item.configuration)}</small>` : ""}${preorderCopy}</div><span class="money ${deposit > 0 ? "deposit-money" : ""}">${deposit > 0 ? `\u20B9${(deposit * quantity).toLocaleString("en-IN")} deposit` : `\u20B9${(framePrice * quantity).toLocaleString("en-IN")}`}</span></div>`;
   }).join("");
   const count = list.reduce((number, item) => number + Number(item.quantity || 1), 0);
   byId("itemCount").textContent = `${count} item${count === 1 ? "" : "s"}`;
@@ -375,7 +377,7 @@ checkoutForm.addEventListener("submit", async event => {
     businessName: addGst.checked ? byId("businessName").value.trim() : "",
   };
   const fingerprint = JSON.stringify({
-    items: list.map(item => [String(item.id), Number(item.quantity || 1), String(item.size || ""), String(item.valveLength || "")]),
+    items: list.map(item => [String(item.id), Number(item.quantity || 1), String(item.size || ""), String(item.valveLength || ""), String(item.variantKey || "")]),
     address: addressData,
     billingSame: requestPayload.billingSame,
     billingAddress: billingData,

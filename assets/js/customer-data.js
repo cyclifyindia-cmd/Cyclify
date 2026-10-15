@@ -6,7 +6,7 @@ const app=getApps()[0]||initializeApp(config),auth=getAuth(app),db=getFirestore(
 let currentUser=null;
 window.cyclifyCartHydrated=false;
 function cartKey(item){
- return [item?.id||item?.productId||item?.name||"",item?.size||"",item?.valveLength||"",item?.variantId||""].map(String).join("|");
+ return [item?.id||item?.productId||item?.name||"",item?.size||"",item?.valveLength||"",item?.variantKey||item?.variantId||""].map(String).join("|");
 }
 function mergeCarts(remote,local,addGuestQuantities){
  const merged=new Map();

@@ -539,6 +539,7 @@ Proceed to secure checkout
 
 </div>
 
+<script src="assets/js/tfsa-products.js?v=1b1ce5caac"></script>
 <script>
 
 function normalizeKnownCartPrices(items){
@@ -546,6 +547,9 @@ function normalizeKnownCartPrices(items){
 let changed=false;
 
 items.forEach(item=>{
+
+const current=window.cyclifyNormalizeTfsaCartItem?.(item)||item;
+if(current!==item){Object.assign(item,current);changed=true;}
 
 const id=String(item.id??item.productId??"");
 const price=typeof item.price==="number"?item.price:Number(String(item.price).replace(/[^0-9.]/g,""));
@@ -665,6 +669,8 @@ ${item.size?`
 Size: ${item.size}
 </div>
 `:""}
+
+${item.configuration?`<div class="size">Build: ${String(item.configuration).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]))}</div>`:""}
 
 ${item.valveLength?`
 <div class="size">
@@ -794,7 +800,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=e47fdbe5c9"></script>
+<script src="assets/js/site-footer.js?v=e47667cd48"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>

@@ -23,11 +23,12 @@
 <meta name="twitter:image:alt" content="iGPSPORT iGS800 Cyclocomputer">
 <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bda0947d-eb60-46ca-adb4-cebd79aee406.jpg?v=1754027644" fetchpriority="high">
 <script>window.CYCLIFY_PRODUCT_ID=46;</script>
-<script src="assets/js/product-routes.js?v=3cbd315115"></script>
+<script src="assets/js/product-routes.js?v=f46f5e46e2"></script>
 <script src="assets/js/supplier-products.js?v=38a69ae0bd"></script>
 <script src="assets/js/fcc-products.js?v=ef7ee16029"></script>
 <script src="assets/js/cadence-products.js?v=adb5356270"></script>
-<script src="assets/js/tfsa-products.js?v=7bb29dfa20"></script>
+<script src="assets/js/tfsa-products.js?v=1b1ce5caac"></script>
+<script src="assets/js/expanded-products.js?v=e4d086de56"></script>
 <style>
 
 *{
@@ -2487,6 +2488,7 @@ window.cyclifyMergeSupplierProducts(products,"");
 window.cyclifyMergeFccProducts(products,"");
 window.cyclifyMergeCadenceProducts(products,"");
 window.cyclifyMergeTfsaProducts(products,"");
+window.cyclifyMergeExpandedProducts(products,"");
 
 const params=new URLSearchParams(window.location.search);
 const productId=Number(window.CYCLIFY_PRODUCT_ID||params.get("id"))||1;
@@ -2627,7 +2629,7 @@ itemCondition:"https://schema.org/NewCondition",
 seller:{"@type":"Organization","@id":"https://cyclify.in/#organization",name:"CYCLIFY INDIA",url:"https://cyclify.in/"},
 shippingDetails:{
 "@type":"OfferShippingDetails",
-...(!product.preorder&&product.available!==false?{deliveryTime:{
+...(!product.preorder&&!product.deliveryText&&product.available!==false?{deliveryTime:{
 "@type":"ShippingDeliveryTime",
 businessDays:{"@type":"OpeningHoursSpecification",dayOfWeek:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"].map(day=>`https://schema.org/${day}`)},
 handlingTime:{"@type":"QuantitativeValue",minValue:0,maxValue:0,unitCode:"DAY"},
@@ -2765,8 +2767,8 @@ const shippingNote=document.querySelector(".shipping-note");
 if(shippingNote){
 shippingNote.classList.toggle("stock-unavailable",!productAvailableForCart);
 shippingNote.innerHTML=productAvailableForCart
-?(product.preorder
-?`<span class="shipping-icon" aria-hidden="true">⏳</span><span>${product.deliveryText||"Pre-order delivery"}</span>`
+?(product.deliveryText
+?`<span class="shipping-icon" aria-hidden="true">⏳</span><span>${product.deliveryText}</span>`
 :'<span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span>')
 :'<span aria-hidden="true">●</span><span>Currently out of stock</span>';
 }
@@ -3008,7 +3010,8 @@ productImages.forEach((image,index)=>{
 productThumbs.innerHTML+=`
 <img
 class="thumb"
-src="${image}"
+src="${product.inventoryGroup==='expanded'?image.replace('/expanded/','/expanded/thumbs/'):image}"
+loading="lazy" decoding="async"
 alt="${product.name} image ${index+1}"
 onclick="showImage(${index})">
 `;
@@ -3218,6 +3221,7 @@ return;
 let cart=JSON.parse(localStorage.getItem("cart"))||[];
 let existing=cart.find(item=>
 item.id===product.id&&
+(item.variantKey||"")===(product.selectedVariantKey||"")&&
 (item.size||"")===(selectedSize||"")&&
 (item.valveLength||"")===(selectedValveLength||"")
 );
@@ -3228,6 +3232,8 @@ existing.quantity+=selectedProductQuantity();
 else{
 cart.push({
 id:product.id,
+variantKey:product.selectedVariantKey||"",
+configuration:product.selectedConfiguration||"",
 name:product.name,
 price:product.price,
 mrp:product.mrp,
@@ -3259,6 +3265,8 @@ return;
 }
 const item={
 id:product.id,
+variantKey:product.selectedVariantKey||"",
+configuration:product.selectedConfiguration||"",
 name:product.name,
 price:product.price,
 mrp:product.mrp,
@@ -3278,7 +3286,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=e47fdbe5c9"></script>
+<script src="assets/js/site-footer.js?v=e47667cd48"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 

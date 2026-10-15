@@ -10,7 +10,7 @@ const document = { getElementById(id) {
   return nodes[id] || (nodes[id] = { value: '', textContent: '', innerHTML: '', style: {}, addEventListener() {} });
 } };
 const window = { location: { search: '', pathname: '/bikes-frames.html' }, addEventListener() {} };
-for (const name of ['Supplier', 'Fcc', 'Cadence', 'Tfsa']) window['cyclifyMerge' + name + 'Products'] = () => {};
+for (const name of ['Supplier', 'Fcc', 'Cadence', 'Tfsa', 'Expanded']) window['cyclifyMerge' + name + 'Products'] = () => {};
 const context = { document, window, localStorage: { getItem: () => null }, history: { pushState() {} }, URLSearchParams, console };
 context.cyclifyProductUrl = id => 'product.html?id=' + id;
 vm.createContext(context);

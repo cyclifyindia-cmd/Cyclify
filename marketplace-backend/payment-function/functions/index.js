@@ -93,8 +93,24 @@ function validatedCart(items) {
     const product = catalogPayload.products[String(item?.id ?? "")];
     const quantity = Number(item?.quantity || 1);
     if (!product) throw new Error(`Product ${text(item?.id, 30)} is no longer available.`);
-    if (!product.available) throw new Error(`${product.name} is currently out of stock.`);
+    if (!product.available) throw new Error(`${product.name}: ${product.stockStatus === "coming-soon" ? "Coming Soon" : (product.stockStatus === "contact" ? "Contact for More Info" : "currently out of stock")}.`);
     if (!Number.isInteger(quantity) || quantity < 1 || quantity > 10) throw new Error(`Invalid quantity for ${product.name}.`);
+    if (product.purchaseVariants) {
+      const variantKey = text(item?.variantKey, 40);
+      const variant = product.purchaseVariants[variantKey];
+      if (!variant) throw new Error(`Choose a valid option for ${product.name}.`);
+      if (!variant.available) throw new Error(`${product.name}: ${variant.stockStatus === "coming-soon" ? "Coming Soon" : "contact Cyclify for availability"}.`);
+      if (text(item?.size, 80) !== variant.size || text(item?.valveLength, 160) !== variant.colour || text(item?.configuration, 240) !== variant.build) {
+        throw new Error(`The selected configuration for ${product.name} is invalid.`);
+      }
+      total += variant.price * quantity;
+      return {
+        id: product.id, name: product.name, price: variant.price, sellingPrice: variant.price,
+        preorderDeposit: 0, quantity, image: variant.image || product.image, variantKey,
+        size: [variant.size, variant.colour, variant.build].filter(Boolean).join(" / "),
+        frameSize: variant.size, valveLength: variant.colour, configuration: variant.build,
+      };
+    }
     const size = text(item?.size || item?.valveLength, 80);
     if (size && product.sizes.length && !product.sizes.includes(size)) throw new Error(`The selected option for ${product.name} is invalid.`);
     if (size && product.sizeAvailability[size] === false) throw new Error(`${product.name} (${size}) is out of stock.`);

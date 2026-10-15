@@ -8,9 +8,7 @@
     "price": 70000,
     "mrp": "Rs 84,000",
     "priceOnRequest": false,
-    "preorder": true,
-    "preorderDeposit": 1,
-    "purchaseMode": "preorder-deposit",
+    "preorder": false,
     "deliveryText": "Delivery in 10–12 days",
     "customPainting": true,
     "image": "assets/products/tfsa/tfsa-jh15-01.webp",
@@ -33,7 +31,7 @@
     "categoryLabel": "Bikes & Frames",
     "mainCategory": "tfsa",
     "subCategory": "carbon-road-frames",
-    "keywords": "TFSA JH-15 endurance carbon road frame T800 disc brake internal routing custom paint preorder",
+    "keywords": "TFSA JH-15 endurance carbon road frame T800 disc brake internal routing custom paint",
     "specSectionTitle": "Frame Parameters",
     "specSummary": "Frame parameters and compatibility details for the TFSA JH-15.",
     "specSource": {
@@ -94,9 +92,7 @@
     "price": 65000,
     "mrp": "Rs 78,000",
     "priceOnRequest": false,
-    "preorder": true,
-    "preorderDeposit": 1,
-    "purchaseMode": "preorder-deposit",
+    "preorder": false,
     "deliveryText": "Delivery in 10–12 days",
     "customPainting": true,
     "image": "assets/products/tfsa/tfsa-jh19-01.webp",
@@ -121,7 +117,7 @@
     "categoryLabel": "Bikes & Frames",
     "mainCategory": "tfsa",
     "subCategory": "carbon-road-frames",
-    "keywords": "TFSA JH-19 T800 carbon road disc frameset UDH BSA internal routing custom paint preorder",
+    "keywords": "TFSA JH-19 T800 carbon road disc frameset UDH BSA internal routing custom paint",
     "specSectionTitle": "Frame Parameters",
     "specSummary": "Frame parameters and compatibility details for the TFSA JH-19.",
     "specSource": {
@@ -184,9 +180,7 @@
     "price": 65000,
     "mrp": "Rs 78,000",
     "priceOnRequest": false,
-    "preorder": true,
-    "preorderDeposit": 1,
-    "purchaseMode": "preorder-deposit",
+    "preorder": false,
     "deliveryText": "Delivery in 10–12 days",
     "customPainting": true,
     "image": "assets/products/tfsa/tfsa-jh33-01.webp",
@@ -211,7 +205,7 @@
     "categoryLabel": "Bikes & Frames",
     "mainCategory": "tfsa",
     "subCategory": "carbon-road-frames",
-    "keywords": "TFSA JH-33 T800 T1000 carbon disc brake road frame internal routing custom paint preorder",
+    "keywords": "TFSA JH-33 T800 T1000 carbon disc brake road frame internal routing custom paint",
     "specSectionTitle": "Frame Parameters",
     "specSummary": "Frame parameters and compatibility details for the TFSA JH-33.",
     "specSource": {
@@ -274,9 +268,7 @@
     "price": 70000,
     "mrp": "Rs 84,000",
     "priceOnRequest": false,
-    "preorder": true,
-    "preorderDeposit": 1,
-    "purchaseMode": "preorder-deposit",
+    "preorder": false,
     "deliveryText": "Delivery in 10–12 days",
     "customPainting": true,
     "image": "assets/products/tfsa/tfsa-jh10-01.webp",
@@ -300,7 +292,7 @@
     "categoryLabel": "Bikes & Frames",
     "mainCategory": "tfsa",
     "subCategory": "carbon-road-frames",
-    "keywords": "TFSA JH-10 aero carbon road frame T800 T1000 T47 internal routing custom paint preorder",
+    "keywords": "TFSA JH-10 aero carbon road frame T800 T1000 T47 internal routing custom paint",
     "specSectionTitle": "Frame Parameters",
     "specSummary": "Frame parameters and compatibility details for the TFSA JH-10.",
     "specSource": {
@@ -361,9 +353,7 @@
     "price": 100000,
     "mrp": "Rs 1,20,000",
     "priceOnRequest": false,
-    "preorder": true,
-    "preorderDeposit": 1,
-    "purchaseMode": "preorder-deposit",
+    "preorder": false,
     "deliveryText": "Delivery in 10–12 days",
     "customPainting": true,
     "image": "assets/products/tfsa/tfsa-jh35-01.webp",
@@ -387,7 +377,7 @@
     "categoryLabel": "Bikes & Frames",
     "mainCategory": "tfsa",
     "subCategory": "carbon-road-frames",
-    "keywords": "TFSA JH-35 lightweight T800 T1000 T1100 carbon road frame BSA internal routing custom paint preorder",
+    "keywords": "TFSA JH-35 lightweight T800 T1000 T1100 carbon road frame BSA internal routing custom paint",
     "specSectionTitle": "Frame Parameters",
     "specSummary": "Frame parameters and compatibility details for the TFSA JH-35.",
     "specSource": {
@@ -450,9 +440,7 @@
     "price": 45000,
     "mrp": "Rs 54,000",
     "priceOnRequest": false,
-    "preorder": true,
-    "preorderDeposit": 1,
-    "purchaseMode": "preorder-deposit",
+    "preorder": false,
     "deliveryText": "Delivery in 10–12 days",
     "customPainting": true,
     "image": "assets/products/tfsa/tfsa-jh06-01.webp",
@@ -479,7 +467,7 @@
     "categoryLabel": "Bikes & Frames",
     "mainCategory": "tfsa",
     "subCategory": "carbon-road-frames",
-    "keywords": "TFSA JH-06 T800 carbon rim brake road frame BSA internal routing custom paint preorder",
+    "keywords": "TFSA JH-06 T800 carbon rim brake road frame BSA internal routing custom paint",
     "specSectionTitle": "Frame Parameters",
     "specSummary": "Frame parameters and compatibility details for the TFSA JH-06.",
     "specSource": {
@@ -546,6 +534,12 @@
   });
 
   window.CYCLIFY_TFSA_PRODUCTS=tfsaProducts.map(cloneProduct);
+  window.cyclifyNormalizeTfsaCartItem=item=>{
+    const product=tfsaProducts.find(candidate=>String(candidate.id)===String(item?.id??item?.productId??""));
+    if(!product)return item;
+    if(Number(item.price)===product.price&&Number(item.preorderDeposit||0)===0&&item.preorder===false&&item.deliveryText===product.deliveryText)return item;
+    return {...item,price:product.price,mrp:product.mrp,preorder:false,preorderDeposit:0,deliveryText:product.deliveryText};
+  };
   window.cyclifyMergeTfsaProducts=(target,page)=>{
     tfsaProducts
       .filter(product=>!page||String(product.categoryPage||"").split("?")[0]===page)

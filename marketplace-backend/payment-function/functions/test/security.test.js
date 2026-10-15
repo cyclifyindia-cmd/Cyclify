@@ -22,6 +22,15 @@ test("VOOK uses the correct model price and stocked size/colour combinations", (
   }
 });
 
+test("TFSA framesets charge the full displayed price", () => {
+  for (const [id, price] of [[7501,70000],[7502,65000],[7503,65000],[7504,70000],[7505,100000],[7506,45000]]) {
+    const order = validatedCart([{ id, quantity: 1, price: 1, preorderDeposit: 1 }]);
+    assert.equal(order.total, price);
+    assert.equal(order.items[0].price, price);
+    assert.equal(order.items[0].preorderDeposit, 0);
+  }
+});
+
 test("A7L keeps the selected colour and rejects unavailable combinations", () => {
   const order = validatedCart([{ id: 63, size: "M", valveLength: "White", quantity: 1 }]);
   assert.equal(order.total, 129999);

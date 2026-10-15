@@ -12,7 +12,7 @@ const pages = [
   "electronics.html", "elves-bikes.html", "sava-bikes.html",
   "smart-trainers.html", "wearables.html", "wheels-tyres.html",
 ];
-const dataFiles = ["cycletime-products.json", "fcc-products.json", "cadence-products.json"];
+const dataFiles = ["cycletime-products.json", "fcc-products.json", "cadence-products.json", "expanded-products.json"];
 const externalProductFiles = ["assets/js/tfsa-products.js"];
 const expected = new Map();
 
@@ -34,12 +34,17 @@ function addProduct(product, source) {
     sizeAvailability: product.sizeAvailability && typeof product.sizeAvailability === "object" ? product.sizeAvailability : {},
     sourcePage: product.categoryPage || source,
   };
+  if (product.stockStatus) record.stockStatus = product.stockStatus;
   if (preorderDeposit > 0) {
     record.sellingPrice = sellingPrice;
     record.preorderDeposit = preorderDeposit;
   }
   if (product.optionsBySize) record.optionsBySize = JSON.parse(JSON.stringify(product.optionsBySize));
   if (product.imageByColour) record.imageByColour = JSON.parse(JSON.stringify(product.imageByColour));
+  if (product.purchaseVariants) record.purchaseVariants = Object.fromEntries(product.purchaseVariants.map(variant => [variant.key, {
+    price: variant.price, available: variant.available, size: variant.size, colour: variant.colour,
+    build: variant.build, image: variant.image, stockStatus: variant.stockStatus,
+  }]));
   expected.set(id, record);
 }
 
@@ -74,7 +79,7 @@ if (payload.currency !== "INR" || !payload.products || typeof payload.products !
 
 const actual = new Map(Object.entries(payload.products));
 const issues = [];
-const checkedFields = ["id", "name", "price", "sellingPrice", "preorderDeposit", "available", "image", "imageByColour", "sizes", "sizeAvailability", "sourcePage"];
+const checkedFields = ["id", "name", "price", "sellingPrice", "preorderDeposit", "available", "stockStatus", "image", "imageByColour", "sizes", "sizeAvailability", "optionsBySize", "purchaseVariants", "sourcePage"];
 
 for (const [id, sourceProduct] of expected) {
   const paymentProduct = actual.get(id);

@@ -6,6 +6,7 @@ const { renderSavaA7l } = require('./render-sava-a7l');
 const { renderVook } = require('./render-vook');
 const { renderVookCollection } = require('./render-vook-seo');
 const { renderCatalogSeo } = require('./render-catalog-seo');
+const { renderExpandedProduct } = require('./render-expanded-product');
 const cheerio = require('cheerio');
 
 const root = path.resolve(__dirname, '..');
@@ -20,6 +21,7 @@ const supplierPath = path.join(root, 'assets', 'data', 'cycletime-products.json'
 const fccSupplierPath = path.join(root, 'assets', 'data', 'fcc-products.json');
 const cadenceSupplierPath = path.join(root, 'assets', 'data', 'cadence-products.json');
 const tfsaProductsPath = path.join(root, 'assets', 'js', 'tfsa-products.js');
+const expandedProductsPath = path.join(root, 'assets', 'data', 'expanded-products.json');
 const guidesPath = path.join(root, 'assets', 'data', 'guides.json');
 const allowedProductIds = loadAllowedProductIds();
 const categoryCatalogs = [
@@ -44,29 +46,37 @@ const supplierCatalogues = {
     return !/(xoss|cyclami|thinkrider)/i.test(normalized);
   })
 };
+const expandedProducts = supplierProductsFrom(expandedProductsPath);
+const stockLabelScript = 'window.cyclifyStockLabel=product=>product.stockStatus==="coming-soon"?"Coming Soon":(product.stockStatus==="contact"?"Contact for More Info":(product.available===false?"Out of stock":"In stock"));';
+const expandedScript = '(function(){const items=' + JSON.stringify(expandedProducts) + ';window.CYCLIFY_EXPANDED_PRODUCTS=items;'+stockLabelScript+'window.cyclifyMergeExpandedProducts=(target,page)=>{items.filter(item=>!page||item.categoryPage===page).forEach(item=>{if(!target.some(product=>String(product.id)===String(item.id)))target.push({...item});});return target;};})();\n';
+writeFileWithRetry(path.join(root, 'assets/js/expanded-products.js'), expandedScript);
 
 categoryCatalogs.forEach(({ page, file }) => {
   const catalogue = {
     cycletime: supplierCatalogues.cycletime.filter(item => item.categoryPage === page),
     fcc: supplierCatalogues.fcc.filter(item => item.categoryPage === page),
-    cadence: supplierCatalogues.cadence.filter(item => item.categoryPage === page)
+    cadence: supplierCatalogues.cadence.filter(item => item.categoryPage === page),
+    expanded: expandedProducts.filter(item => item.categoryPage === page)
   };
   const source = '(function(){\n' +
     '  const normalise=value=>String(value||"").toLowerCase().replace(/[^a-z0-9]+/g,"");\n' +
-    '  const merge=(target,items,page)=>{items.filter(item=>!page||item.categoryPage===page).forEach(item=>{const existing=target.find(product=>product.id===item.id||product.sourceHandle===item.sourceHandle||normalise(product.name)===normalise(item.name));if(existing){const id=existing.id;Object.assign(existing,item,{id});}else{target.push({...item});}});return target;};\n' +
+    '  const merge=(target,items,page)=>{items.filter(item=>!page||item.categoryPage===page).forEach(item=>{const existing=target.find(product=>product.id===item.id||(item.sourceHandle&&product.sourceHandle===item.sourceHandle)||normalise(product.name)===normalise(item.name));if(existing){const id=existing.id;Object.assign(existing,item,{id});}else{target.push({...item});}});return target;};\n' +
     '  const catalogue=' + JSON.stringify(catalogue) + ';\n' +
     '  window.CYCLIFY_CYCLETIME_PRODUCTS=catalogue.cycletime;\n' +
     '  window.CYCLIFY_FCC_PRODUCTS=catalogue.fcc;\n' +
     '  window.CYCLIFY_CADENCE_PRODUCTS=catalogue.cadence;\n' +
+    '  window.CYCLIFY_EXPANDED_PRODUCTS=catalogue.expanded;\n' +
     '  window.cyclifyMergeSupplierProducts=(target,page)=>merge(target,catalogue.cycletime,page);\n' +
     '  window.cyclifyMergeFccProducts=(target,page)=>merge(target,catalogue.fcc,page);\n' +
     '  window.cyclifyMergeCadenceProducts=(target,page)=>merge(target,catalogue.cadence,page);\n' +
+    '  window.cyclifyMergeExpandedProducts=(target,page)=>merge(target,catalogue.expanded,page);\n' +
+    stockLabelScript + '\n' +
     '})();\n';
   writeFileWithRetry(path.join(root, 'assets', 'js', file), source, 'utf8');
 });
 
 const versionedScripts = [
-  'product-routes.js', 'supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'tfsa-products.js', 'search-index.js', 'site-footer.js',
+  'product-routes.js', 'supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'tfsa-products.js', 'expanded-products.js', 'search-index.js', 'site-footer.js',
   ...categoryCatalogs.map(item => item.file)
 ];
 const scriptVersions = Object.fromEntries(versionedScripts.map(file => {
@@ -273,6 +283,7 @@ function existingRoutes() {
 }
 
 const products = filterAllowedProducts(extractProducts(template), allowedProductIds);
+products.push(...expandedProducts);
 if (fs.existsSync(tfsaProductsPath)) {
   products.push(...filterAllowedProducts(extractProducts(fs.readFileSync(tfsaProductsPath, 'utf8'), 'const tfsaProducts='), allowedProductIds));
 }
@@ -440,7 +451,7 @@ for (const product of primaryProducts) {
           seller: { '@type': 'Organization', '@id': 'https://cyclify.in/#organization', name: 'CYCLIFY INDIA', url: 'https://cyclify.in/' },
           shippingDetails: {
             '@type': 'OfferShippingDetails',
-            ...(!product.preorder && product.available !== false ? { deliveryTime: {
+            ...(!product.preorder && !product.deliveryText && product.available !== false ? { deliveryTime: {
               '@type': 'ShippingDeliveryTime',
               businessDays: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday', 'https://schema.org/Saturday'] },
               handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
@@ -529,6 +540,7 @@ for (const product of primaryProducts) {
   }
   page = renderSavaA7l($product.html(), product);
   page = renderVook(page, product);
+  page = renderExpandedProduct(page, product);
   // Template/SEO changes are meaningful content updates, not just catalogue edits.
   productLastmods.set(canonical, lastmodFor(canonical, page.replace(/\?v=[^"\s<]+/g, '')));
   writeFileWithRetry(path.join(root, route), page, 'utf8');

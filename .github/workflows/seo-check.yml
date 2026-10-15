@@ -22,5 +22,7 @@ jobs:
         run: npm run audit:seo && npm run audit:product-images && npm run verify:payment-catalog
       - name: Check VOOK India pages, colour images and AI metadata
         run: node scripts/audit-vook-seo.js
+      - name: Check expanded catalogue stock, photos and checkout prices
+        run: node scripts/audit-expanded-catalog.js
       - name: Check custom bike configuration and category navigation
         run: node scripts/verify-sava-a7l.js && node scripts/test-tavelo-grid.js && node scripts/test-tavelo-preview-pricing.js
