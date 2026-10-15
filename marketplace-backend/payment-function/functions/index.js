@@ -112,6 +112,7 @@ function validatedCart(items) {
       };
     }
     const size = text(item?.size || item?.valveLength, 80);
+    if (product.requiredOption && !size) throw new Error(`Choose an option for ${product.name}.`);
     if (size && product.sizes.length && !product.sizes.includes(size)) throw new Error(`The selected option for ${product.name} is invalid.`);
     if (size && product.sizeAvailability[size] === false) throw new Error(`${product.name} (${size}) is out of stock.`);
     const colour = product.optionsBySize ? text(item?.valveLength, 80) : "";

@@ -3,6 +3,7 @@
   "mode": "allowlist",
   "description": "Only these Cyclify product IDs may be published, indexed, synced or sold.",
   "productIds": [
+    "88003",
     "1",
     "2",
     "3",

@@ -23,7 +23,7 @@
 <meta name="twitter:image:alt" content="ELVES Replacement Gear Mech Hanger">
 <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_9c6059f6-e99b-41d3-99a8-19d087908aaf.jpg?v=1766398287" fetchpriority="high">
 <script>window.CYCLIFY_PRODUCT_ID=10872308728001;</script>
-<script src="assets/js/product-routes.js?v=f46f5e46e2"></script>
+<script src="assets/js/product-routes.js?v=fb0a751024"></script>
 <script src="assets/js/supplier-products.js?v=38a69ae0bd"></script>
 <script src="assets/js/fcc-products.js?v=ef7ee16029"></script>
 <script src="assets/js/cadence-products.js?v=adb5356270"></script>
@@ -1325,9 +1325,7 @@ else{cartCount.style.display="none";}
 
 <div class="size-section" id="sizeSection">
 
-<div class="size-label">
-Select Size
-</div>
+<div class="size-label">Select Size</div>
 
 <div class="size-options" id="sizeOptions">
 </div>
@@ -1436,6 +1434,48 @@ Secure Shopping
 <script>
 
 const products=[
+  {
+    "id": 88003,
+    "name": "TAVELO PERTUAL SHARP GR 47/53 Carbon Gravel Wheelset",
+    "brand": "PERTUAL",
+    "price": 99999,
+    "mrp": 103000,
+    "available": true,
+    "categoryPage": "wheels-tyres.html",
+    "categoryLabel": "Wheels & Tyres",
+    "mainCategory": "wheels",
+    "subCategory": "carbon",
+    "image": "assets/products/pertual-sharp-gr/wheelset-angled.webp",
+    "images": [
+      "assets/products/pertual-sharp-gr/wheelset-angled.webp",
+      "assets/products/pertual-sharp-gr/rear-wheel.webp",
+      "assets/products/pertual-sharp-gr/rim-detail.webp",
+      "assets/products/pertual-sharp-gr/pertual-rim.webp",
+      "assets/products/pertual-sharp-gr/wheelset-front.webp",
+      "assets/products/pertual-sharp-gr/hg-freehub.webp"
+    ],
+    "primaryLabel": "Select Freehub",
+    "requiredOption": true,
+    "sizes": ["Shimano HG", "SRAM XDR"],
+    "sizeAvailability": {"Shimano HG": true, "SRAM XDR": true},
+    "description": "A carbon gravel wheelset with a distinctive asymmetric 47/53 mm rim profile, wide 32 mm internal rims and ceramic hub bearings. Choose Shimano HG or SRAM XDR to suit your drivetrain. The supplied set weighs 1,345 g according to the manufacturer. The close-up freehub photo shows the HG version.",
+    "keywords": "Tavelo Pertual Sharp GR gravel carbon wheels 47/53 ceramic bearings India Shimano HG SRAM XDR",
+    "specs": [
+      "Model: PERTUAL SHARP GR",
+      "Use: Gravel cycling",
+      "Rim material: Carbon",
+      "Rim depth: 47/53 mm asymmetric profile",
+      "Internal rim width: 32 mm",
+      "External rim width: 40 mm",
+      "Spokes: Sapim steel, 21 front / 21 rear",
+      "Hubs: Pertual Premium Road Disc",
+      "Bearings: Ceramic",
+      "Claimed wheelset weight: 1,345 g per set",
+      "Tyre compatibility: Clincher / tubeless",
+      "Freehub options: Shimano HG or SRAM XDR",
+      "Compatibility: Confirm tyre, cassette and axle fit with Cyclify before installation"
+    ]
+  },
   {
     "id": 1,
     "name": "SAVA HAWKEYE F20",
@@ -2818,6 +2858,7 @@ catch(error){}
 
 const sizeSection=document.getElementById("sizeSection");
 const sizeOptions=document.getElementById("sizeOptions");
+sizeSection.querySelector(".size-label").textContent=product.primaryLabel||"Select Size";
 const valveSection=document.getElementById("valveSection");
 const valveOptions=document.getElementById("valveOptions");
 const secondaryOptionLabel=document.getElementById("secondaryOptionLabel");
@@ -2834,7 +2875,7 @@ if(shouldUseDropdown(product.sizes)){
 sizeOptions.classList.add("dropdown-mode");
 const select=document.createElement("select");
 select.className="option-select size-select";
-select.setAttribute("aria-label","Select size");
+select.setAttribute("aria-label",product.primaryLabel||"Select size");
 product.sizes.forEach(size=>{
 const option=document.createElement("option");
 option.value=size;

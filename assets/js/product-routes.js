@@ -35,6 +35,7 @@
   "7506": "products/tfsa-jh-06-carbon-rim-brake-road-frameset-7506.html",
   "88001": "products/vook-v8e-carbon-road-bike-88001.html",
   "88002": "products/vook-v8e-pro-carbon-road-bike-88002.html",
+  "88003": "products/tavelo-pertual-sharp-gr-47-53-carbon-gravel-wheelset-88003.html",
   "900001": "products/colnago-v4-road-bike-900001.html",
   "900002": "products/colnago-y1rs-road-bike-900002.html",
   "900003": "products/colnago-v5rs-road-bike-900003.html",

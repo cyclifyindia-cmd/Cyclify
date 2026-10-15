@@ -30,5 +30,7 @@ jobs:
         run: node scripts/test-merchant-description.js
       - name: Check every product is reachable from the homepage
         run: node scripts/audit-product-search.js
+      - name: Check PERTUAL wheelset options, feed and checkout
+        run: npm ci --prefix marketplace-backend/payment-function/functions && node scripts/test-pertual-product.js
       - name: Check custom bike configuration and category navigation
         run: node scripts/verify-sava-a7l.js && node scripts/test-tavelo-grid.js && node scripts/test-tavelo-preview-pricing.js

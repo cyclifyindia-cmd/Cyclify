@@ -229,6 +229,7 @@ function normalizedProductKey(product) {
 }
 
 function titleFor(product) {
+  if (Number(product.id) === 88003) return 'PERTUAL SHARP GR 47/53 Gravel Wheels India | Cyclify';
   if (Number(product.id) === 88001) return 'VOOK V8E Carbon Road Bike India | Cyclify';
   if (Number(product.id) === 88002) return 'VOOK V8E Pro Carbon Road Bike India | Cyclify';
   if (Number(product.id) === 63) return 'SAVA A7L 2026 Carbon Road Bike | Cyclify India';
@@ -255,6 +256,7 @@ function usefulDetail(product) {
 }
 
 function descriptionFor(product) {
+  if (Number(product.id) === 88003) return 'Shop PERTUAL SHARP GR 47/53 carbon gravel wheels at Cyclify India for Rs 99,999. 32 mm internal rims, ceramic bearings, HG/XDR options. Free shipping.';
   if ([88001,88002].includes(Number(product.id))) return 'Buy '+(Number(product.id)===88002?'VOOK V8E Pro':'VOOK V8E')+' carbon road bike in India for Rs '+Number(product.price).toLocaleString('en-IN')+'. 13-speed electronic shifting, '+(Number(product.id)===88002?'Velove carbon':'alloy')+' wheels. Free shipping.';
   if (Number(product.id) === 63) return 'Buy the SAVA A7L 2026 carbon road bike in India for Rs ' + Number(product.price).toLocaleString('en-IN') + '. T800 carbon frame, 24-speed shifting and hydraulic discs. Free shipping.';
   const intro = product.priceOnRequest
@@ -521,6 +523,7 @@ for (const product of primaryProducts) {
   page = page.replace('<body>', '<body>\n<noscript><main style="max-width:900px;margin:30px auto;padding:20px;background:#fff"><img src="' + escapeHtml(image) + '" alt="' + escapeHtml(product.name) + '" style="display:block;max-width:100%;height:auto;margin:0 auto 20px"><h1>' + escapeHtml(product.name) + '</h1><p>' + escapeHtml(noscriptPrice) + '</p><p>' + escapeHtml(description) + '</p></main></noscript>');
   const $product = cheerio.load(page);
   $product('#productName').text(product.name);
+  $product('#sizeSection .size-label').text(product.primaryLabel || 'Select Size');
   $product('#breadcrumbProductName').text(product.name);
   if (product.categoryPage) $product('#productCategoryLink').attr('href', product.categoryPage).text(product.categoryLabel || categoryLabels[product.categoryPage.split('?')[0]] || 'Products');
   const sellingPrice = Number(product.price) || 0;

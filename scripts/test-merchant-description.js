@@ -24,6 +24,7 @@ feed('item').each((_,element)=>{
   assert.ok(!/the\s*bike\s*affair|wesnap|cycletime\s*india|fcc\s*racing|choosemybicycle|cyclop\.in|headwind\.in|https?:\/\//i.test(description));
   if (description.length>160) detailed++;
 });
-assert.equal(feed('item').length,262);
+const paymentCatalog=JSON.parse(fs.readFileSync(path.join(root,'marketplace-backend/payment-function/functions/catalog.json'),'utf8'));
+assert.equal(feed('item').length,Object.keys(paymentCatalog.products).length);
 assert.ok(detailed>100,'Use real product facts rather than short search snippets');
-console.log('Shopping descriptions verified for 262 products; '+detailed+' include more than a short search snippet, with no retailer references.');
+console.log('Shopping descriptions verified for '+feed('item').length+' products; '+detailed+' include more than a short search snippet, with no retailer references.');

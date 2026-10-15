@@ -35,6 +35,7 @@ function addProduct(product, source) {
     sourcePage: product.categoryPage || source,
   };
   if (product.stockStatus) record.stockStatus = product.stockStatus;
+  if (product.requiredOption) record.requiredOption = true;
   if (preorderDeposit > 0) {
     record.sellingPrice = sellingPrice;
     record.preorderDeposit = preorderDeposit;

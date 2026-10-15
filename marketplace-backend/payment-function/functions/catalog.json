@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T13:27:33.800Z",
+  "generatedAt": "2026-10-15T16:14:37.209Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -567,6 +567,23 @@
         "Pink": "assets/products/vook-v8e-pro/pink-velove.png",
         "Silver": "assets/products/vook-v8e-pro/silver-velove.png"
       }
+    },
+    "88003": {
+      "id": "88003",
+      "name": "TAVELO PERTUAL SHARP GR 47/53 Carbon Gravel Wheelset",
+      "price": 99999,
+      "available": true,
+      "image": "assets/products/pertual-sharp-gr/wheelset-angled.webp",
+      "sizes": [
+        "Shimano HG",
+        "SRAM XDR"
+      ],
+      "sizeAvailability": {
+        "Shimano HG": true,
+        "SRAM XDR": true
+      },
+      "sourcePage": "wheels-tyres.html",
+      "requiredOption": true
     },
     "900001": {
       "id": "900001",
