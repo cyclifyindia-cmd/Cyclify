@@ -41,3 +41,17 @@ test('a cheaper selection cannot be used to buy a different build, colour or siz
     {...valid,configuration:'a-different-build'},
   ]) assert.throws(()=>validatedCart([tampered]),/valid|invalid/);
 });
+
+test('both owner-confirmed saddle widths are available at the same trusted retail price', () => {
+  const product = catalogue[900177];
+  assert.equal(product.available, true);
+  assert.deepEqual(Object.values(product.purchaseVariants).map(variant=>variant.size).sort(), ['L3','S3']);
+  for (const [key, variant] of Object.entries(product.purchaseVariants)) {
+    assert.equal(variant.available, true);
+    assert.equal(variant.stockStatus, 'available');
+    assert.equal(variant.price, 14490);
+    const order = validatedCart([itemFor(product,key,variant)]);
+    assert.equal(order.total, 28980);
+  }
+  assert.equal(catalogue[900178], undefined, 'An alias must not become a duplicate listing');
+});

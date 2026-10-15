@@ -14,7 +14,9 @@ const routes = context.window.CYCLIFY_PRODUCT_ROUTES;
 const merchant = cheerio.load(read('google-merchant-feed.xml'), {xml:true});
 const prohibited = /the\s*bike\s*affair|thebikeaffair|wesnap|dealer price/i;
 assert.equal(products.length, 165);
-assert.equal(deferred.products.length, 57);
+assert.equal(deferred.products.length, 56);
+assert.equal(deferred.resolvedAliases.length, 1);
+assert.equal(deferred.resolvedAliases[0].existingProductId, 900177);
 assert.equal(products.filter(product => product.brand === 'Tripeak' && product.available).length, 15);
 let variants = 0;
 for (const product of products) {
@@ -54,4 +56,4 @@ for (const product of products) {
   assert.equal(item.find('g\\:availability').text(), product.available?'in_stock':'out_of_stock', name + ': Merchant stock');
   assert.equal(item.children('g\\:sale_price').text() || item.children('g\\:price').text(), product.price.toFixed(2)+' INR', name + ': Merchant selling price');
 }
-console.log(`Expanded catalogue verified: ${products.length} models, ${variants} selections, 15 available Tripeak models, 57 deferred models, local photos and consistent checkout/feed.`);
+console.log(`Expanded catalogue verified: ${products.length} models, ${variants} selections, 15 available Tripeak models, ${deferred.products.length} deferred models, one resolved duplicate, local photos and consistent checkout/feed.`);

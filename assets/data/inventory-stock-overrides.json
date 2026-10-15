@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "overrides": [
+    { "brand": "Tripeak", "model": "EMA-4YBSAS-CB2430", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-T478624-SHCBBR", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-JW1218A-A12SCB", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-JW1218A-H12SCB", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-JC6802B-LLB", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-JC15267B-LLB", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-JC6902B-LLB", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-JC6803B-LLB", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-JC17287B-LLB", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-JC6903B-LLB", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-TT-B011S", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-TT-B012", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-TT-B015T", "status": "Coming Soon" },
+    { "brand": "Tripeak", "model": "EMA-JW-OLPK30", "status": "Coming Soon" },
+    { "brand": "Selle Italia", "model": "SLR Boost TM Superflow", "status": "Available" }
+  ]
+}

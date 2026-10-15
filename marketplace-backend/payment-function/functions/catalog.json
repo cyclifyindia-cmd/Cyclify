@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T00:54:12.036Z",
+  "generatedAt": "2026-10-15T12:04:58.004Z",
   "currency": "INR",
   "products": {
     "1": {
@@ -12776,7 +12776,7 @@
       "id": "900177",
       "name": "Selle Italia SLR Boost TM Superflow Saddle",
       "price": 14490,
-      "available": false,
+      "available": true,
       "image": "assets/products/expanded/11aa231dd6f26ec8f8.webp",
       "sizes": [
         "L3",
@@ -12784,25 +12784,25 @@
       ],
       "sizeAvailability": {},
       "sourcePage": "components.html",
-      "stockStatus": "coming-soon",
+      "stockStatus": "available",
       "purchaseVariants": {
         "fa378fca5b882b2c": {
           "price": 14490,
-          "available": false,
+          "available": true,
           "size": "L3",
           "colour": "",
           "build": "",
           "image": "assets/products/expanded/11aa231dd6f26ec8f8.webp",
-          "stockStatus": "coming-soon"
+          "stockStatus": "available"
         },
         "633008ebb7624e7d": {
           "price": 14490,
-          "available": false,
+          "available": true,
           "size": "S3",
           "colour": "",
           "build": "",
           "image": "assets/products/expanded/11aa231dd6f26ec8f8.webp",
-          "stockStatus": "coming-soon"
+          "stockStatus": "available"
         }
       }
     },

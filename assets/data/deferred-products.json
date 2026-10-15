@@ -195,11 +195,6 @@
     {
       "brand": "Selle Italia",
       "category": "Components and tools",
-      "model": "SLR Boost Superflow"
-    },
-    {
-      "brand": "Selle Italia",
-      "category": "Components and tools",
       "model": "SLR TM"
     },
     {
@@ -220,72 +215,108 @@
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-4YBSAS-CB2430"
+      "model": "EMA-4YBSAS-CB2430",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-T478624-SHCBBR"
+      "model": "EMA-T478624-SHCBBR",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-JW1218A-A12SCB"
+      "model": "EMA-JW1218A-A12SCB",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-JW1218A-H12SCB"
+      "model": "EMA-JW1218A-H12SCB",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-JC6802B-LLB"
+      "model": "EMA-JC6802B-LLB",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-JC15267B-LLB"
+      "model": "EMA-JC15267B-LLB",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-JC6902B-LLB"
+      "model": "EMA-JC6902B-LLB",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-JC6803B-LLB"
+      "model": "EMA-JC6803B-LLB",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-JC17287B-LLB"
+      "model": "EMA-JC17287B-LLB",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-JC6903B-LLB"
+      "model": "EMA-JC6903B-LLB",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-TT-B011S"
+      "model": "EMA-TT-B011S",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-TT-B012"
+      "model": "EMA-TT-B012",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-TT-B015T"
+      "model": "EMA-TT-B015T",
+      "available": false,
+      "stockStatus": "coming-soon"
     },
     {
       "brand": "Tripeak",
       "category": "Components and tools",
-      "model": "EMA-JW-OLPK30"
+      "model": "EMA-JW-OLPK30",
+      "available": false,
+      "stockStatus": "coming-soon"
+    }
+  ],
+  "resolvedAliases": [
+    {
+      "brand": "Selle Italia",
+      "model": "SLR Boost Superflow",
+      "confirmedModel": "SLR Boost TM Superflow",
+      "existingProductId": 900177
     }
   ],
   "variants": [

@@ -28,7 +28,7 @@
 <script src="assets/js/fcc-products.js?v=ef7ee16029"></script>
 <script src="assets/js/cadence-products.js?v=adb5356270"></script>
 <script src="assets/js/tfsa-products.js?v=1b1ce5caac"></script>
-<script src="assets/js/expanded-products.js?v=e4d086de56"></script>
+<script src="assets/js/expanded-products.js?v=e168c5b243"></script>
 <style>
 
 *{
@@ -1165,7 +1165,7 @@ body{padding-bottom:88px;}
         "url": "https://cyclify.in/products/selle-italia-slr-boost-tm-superflow-saddle-900177.html",
         "priceCurrency": "INR",
         "price": "14490",
-        "availability": "https://schema.org/OutOfStock",
+        "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
         "seller": {
           "@type": "Organization",
@@ -1175,6 +1175,32 @@ body{padding-bottom:88px;}
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "businessDays": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "https://schema.org/Monday",
+                "https://schema.org/Tuesday",
+                "https://schema.org/Wednesday",
+                "https://schema.org/Thursday",
+                "https://schema.org/Friday",
+                "https://schema.org/Saturday"
+              ]
+            },
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 3,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          },
           "shippingRate": {
             "@type": "MonetaryAmount",
             "value": "0",
@@ -1299,7 +1325,7 @@ else{cartCount.style.display="none";}
 </div><p class="expanded-gallery-help">Swipe or select a photo to explore. Tap the main image to enlarge.</p></div><div class="expanded-buy-panel"><h1 class="name" id="productName">Selle Italia SLR Boost TM Superflow Saddle</h1><div class="price-line" id="productPriceLine" aria-label="Cyclify deal price">
 <div class="deal-head"><img src="assets/Logo-dark.png" alt="Cyclify"><span class="deal-divider"></span><span class="deal-word" id="productDealWord">DEAL</span></div>
 <div class="deal-main"><div class="deal-price" id="productPrice">₹14,490</div><div class="deal-off" id="productDiscount"></div></div>
-<div class="deal-meta"><div class="deal-mrp" id="productMrp"></div><div class="deal-save" id="productSave"></div><div class="shipping-note">Coming Soon</div></div>
+<div class="deal-meta"><div class="deal-mrp" id="productMrp"></div><div class="deal-save" id="productSave"></div><div class="shipping-note"><span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span></div></div>
 </div><p class="expanded-tax">Inclusive of taxes. Free shipping across India.</p><section class="expanded-configurator" aria-label="Choose your product options"><div class="size-section" id="expandedBuildSection"><div class="size-label">Select Build</div><div id="expandedBuildOptions" class="size-options"></div></div><div class="size-section" id="sizeSection">
 
 <div class="size-label">Select Size</div>
@@ -1316,11 +1342,19 @@ Select Valve Length
 <div class="size-options" id="valveOptions">
 </div>
 
-</div><div class="expanded-purchase-meta"><div class="expanded-quantity"><label for="a7lQuantity">Quantity</label><div><button type="button" data-expanded-step="-1" aria-label="Reduce quantity">−</button><input id="a7lQuantity" type="number" min="1" max="10" value="1" inputmode="numeric" aria-label="Quantity"><button type="button" data-expanded-step="1" aria-label="Increase quantity">+</button></div></div><div><p id="expandedStock" class="expanded-stock" role="status">Coming Soon</p><span class="expanded-secure">Secure checkout</span></div></div></section><div class="buttons" id="productButtons">
+</div><div class="expanded-purchase-meta"><div class="expanded-quantity"><label for="a7lQuantity">Quantity</label><div><button type="button" data-expanded-step="-1" aria-label="Reduce quantity">−</button><input id="a7lQuantity" type="number" min="1" max="10" value="1" inputmode="numeric" aria-label="Quantity"><button type="button" data-expanded-step="1" aria-label="Increase quantity">+</button></div></div><div><p id="expandedStock" class="expanded-stock" role="status">In stock</p><span class="expanded-secure">Secure checkout</span></div></div></section><div class="buttons" id="productButtons">
 
-<button class="btn cartbtn" onclick="addToCart()" disabled="">Coming Soon</button>
+<button class="btn cartbtn" onclick="addToCart()">
 
-<button class="btn buybtn" onclick="showBuyCooking()" disabled="">Coming Soon</button>
+Add to Cart
+
+</button>
+
+<button class="btn buybtn" onclick="showBuyCooking()">
+
+Buy Now
+
+</button>
 
 </div><div class="product-fulfilment" id="productFulfilment" hidden=""></div><p class="expanded-overview">Selle Italia SLR Boost TM Superflow Saddle is available from Cyclify India. Check the dimensions and compatibility details before selecting this component for your bike. Rail: Manganese Tube Ø7 mm Weight: S3 – 208 g (± 8%) | L3 – 210 g (± 8%)</p><a class="expanded-spec-link" href="#expandedSpecifications">View specifications ↓</a></div></div>
 

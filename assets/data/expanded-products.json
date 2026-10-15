@@ -30258,8 +30258,8 @@
       "subCategory": "",
       "price": 14490,
       "mrp": 0,
-      "available": false,
-      "stockStatus": "coming-soon",
+      "available": true,
+      "stockStatus": "available",
       "image": "assets/products/expanded/11aa231dd6f26ec8f8.webp",
       "images": [
         "assets/products/expanded/11aa231dd6f26ec8f8.webp",
@@ -30283,8 +30283,8 @@
           "price": 14490,
           "mrp": 0,
           "specSet": "65b6ae9ac9",
-          "available": false,
-          "stockStatus": "coming-soon",
+          "available": true,
+          "stockStatus": "available",
           "image": "assets/products/expanded/11aa231dd6f26ec8f8.webp"
         },
         {
@@ -30295,8 +30295,8 @@
           "price": 14490,
           "mrp": 0,
           "specSet": "65b6ae9ac9",
-          "available": false,
-          "stockStatus": "coming-soon",
+          "available": true,
+          "stockStatus": "available",
           "image": "assets/products/expanded/11aa231dd6f26ec8f8.webp"
         }
       ],
@@ -30327,8 +30327,8 @@
       },
       "sizeGuideTables": [],
       "keywords": "Selle Italia SLR Boost TM Superflow Saddle Selle Italia India SLR Boost TM Superflow",
-      "stockUpdatedAt": "2026-10-14",
-      "stockSource": "cyclify-order-sheet"
+      "stockUpdatedAt": "2026-10-15",
+      "stockSource": "cyclify-owner-confirmed"
     },
     {
       "id": 900180,

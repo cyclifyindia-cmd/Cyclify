@@ -25,9 +25,12 @@ import openpyxl
 from openpyxl.utils.cell import range_boundaries
 from lxml import html
 from PIL import Image
+from catalog_stock_policy import load_stock_overrides, apply_stock_override, deferred_stock_fields, load_resolved_aliases
 
 sys.stdout.reconfigure(encoding='utf-8')
 ROOT = Path(__file__).resolve().parent.parent
+stock_overrides = load_stock_overrides()
+resolved_aliases = load_resolved_aliases()
 parser = argparse.ArgumentParser()
 parser.add_argument('--workbook', required=True)
 parser.add_argument('--references', required=True)
@@ -366,6 +369,7 @@ for index,target in enumerate(targets):
     if target['brand']=='Tripeak':
         prefixes=[target['model']] if target['model']!='EMA-GS52' else ['EMA-GS52-']
         rows=[dict(size='',colour='',groupset='',wheels='',status='Available',variantLabel=v['title'],sku=v.get('sku',''),_referenceVariantId=v['id']) for p in references for v in p['variants'] if any(str(v.get('sku','')).startswith(prefix) for prefix in prefixes)]
+    rows = apply_stock_override(target, rows, stock_overrides)
     if not rows:
         diagnostics.append(dict(brand=target['brand'],model=target['model'],error='No stock rows'))
         continue
@@ -478,7 +482,8 @@ for index,target in enumerate(targets):
         image=default['image'],images=images,sizes=sizes,secondaryLabel='Select Colour' if colours else '',secondaryOptions=colours,
         purchaseVariants=variants,defaultVariantKey=default['key'],description=description,specSummary=description,specs=specs,
         productFeatures=features,specSets=spec_sets,sizeGuideTables=charts,keywords=name+' '+target['brand']+' India '+target['model'],
-        stockUpdatedAt='2026-10-14',stockSource='cyclify-order-sheet'))
+        stockUpdatedAt='2026-10-15' if (target['brand'],target['model']) in stock_overrides else '2026-10-14',
+        stockSource='cyclify-owner-confirmed' if (target['brand'],target['model']) in stock_overrides else 'cyclify-order-sheet'))
 
 (reference_root/'expanded-import-diagnostics.json').write_text(json.dumps(diagnostics,ensure_ascii=False,indent=2),encoding='utf-8')
 errors=[d for d in diagnostics if d['error'] not in ['Model mapping missing','Build price not found']]
@@ -521,10 +526,11 @@ if args.download_images:
     missing=[local for local in image_jobs.values() if not (ROOT/local).exists()]
     if missing: raise SystemExit('Product photos missing: '+str(len(missing)))
     (ROOT/'assets/data/expanded-products.json').write_text(json.dumps(dict(version=1,products=products),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    deferred=[{k:t[k] for k in ['brand','category','model']} for t in targets if not t['matched']]
+    alias_keys={(alias['brand'],alias['model']) for alias in resolved_aliases}
+    deferred=[{**{k:t[k] for k in ['brand','category','model']}, **deferred_stock_fields(t, stock_overrides)} for t in targets if not t['matched'] and (t['brand'],t['model']) not in alias_keys]
     deferred_variants=list({json.dumps({k:d[k] for k in ['brand','model','groupset','wheels'] if k in d},sort_keys=True):{k:d[k] for k in ['brand','model','groupset','wheels'] if k in d} for d in diagnostics if d['error']=='Build price not found'}.values())
-    (ROOT/'assets/data/deferred-products.json').write_text(json.dumps(dict(version=1,reason='Reference listing or exact model not confirmed',products=deferred,variants=deferred_variants),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    print('Wrote Cyclify inventory and 57 deferred models.')
+    (ROOT/'assets/data/deferred-products.json').write_text(json.dumps(dict(version=1,reason='Reference listing or exact model not confirmed',products=deferred,resolvedAliases=resolved_aliases,variants=deferred_variants),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(f'Wrote Cyclify inventory and {len(deferred)} deferred models; {len(resolved_aliases)} confirmed aliases map to existing products.')
 else:
     (reference_root/'expanded-products-draft.json').write_text(json.dumps(products,ensure_ascii=False,indent=2),encoding='utf-8')
     print('Draft prepared; image download and storefront write require --download-images.')

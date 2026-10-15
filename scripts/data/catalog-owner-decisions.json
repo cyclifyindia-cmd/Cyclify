@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "elementSpecificationFallback": {
+    "allowed": true,
+    "models": [
+      "Camp Impala X",
+      "Nerone",
+      "Police California 1.0",
+      "Spy 1.0",
+      "Spy 2.0 BTW"
+    ],
+    "rule": "Prefer official model documentation; established Indian retailer specifications may be used when official documentation is unavailable. Do not publish retailer names or their sales policies. Use the order sheet for retail prices and stock."
+  },
+  "saddleIdentity": {
+    "sheetModel": "SLR Boost Superflow",
+    "confirmedModel": "SLR Boost TM Superflow",
+    "railMaterial": "Manganese",
+    "existingProductId": 900177,
+    "doNotCreateDuplicateProduct": true,
+    "sheetRetailPriceINR": 14490,
+    "availableWidths": ["S3", "L3"],
+    "stockStatus": "available",
+    "confirmedBy": "Owner confirmed both saddle widths in this conversation",
+    "requiresConfirmation": null
+  }
+}
