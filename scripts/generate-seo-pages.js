@@ -8,6 +8,7 @@ const { renderVookCollection } = require('./render-vook-seo');
 const { renderCatalogSeo } = require('./render-catalog-seo');
 const { renderExpandedProduct } = require('./render-expanded-product');
 const { deliveryFor, deliverySchemaFor, assertMerchantAvailability } = require('./fulfilment-policy');
+const { merchantDescriptionFor } = require('./merchant-description');
 const cheerio = require('cheerio');
 
 const root = path.resolve(__dirname, '..');
@@ -821,7 +822,7 @@ const merchantItems = primaryProducts
     return '    <item>\n' +
       '      <g:id>CYCLIFY-' + escapeXml(product.id) + '</g:id>\n' +
       '      <title>' + escapeXml(cleanText(product.name)) + '</title>\n' +
-      '      <description>' + escapeXml(descriptionFor(product)) + '</description>\n' +
+      '      <description>' + escapeXml(merchantDescriptionFor(product)) + '</description>\n' +
       '      <link>' + escapeXml(link) + '</link>\n' +
       '      <g:image_link>' + escapeXml(primaryImage) + '</g:image_link>\n' +
       additionalImages.map(imageUrl => '      <g:additional_image_link>' + escapeXml(imageUrl) + '</g:additional_image_link>').join('\n') + (additionalImages.length ? '\n' : '') +
