@@ -600,6 +600,7 @@ categoryCatalogs.forEach(({ page: file, file: catalogue }) => {
   }
   const description = cheerio.load(page)('meta[name="description"]').attr('content');
   page = renderCatalogSeo(page, { file, catalogue, heading: categoryLabels[file], description,
+    manualProducts: primaryProducts.filter(product => product.categoryPage === file && !product.supplierSynced && product.inventoryGroup !== 'expanded'),
     productNames: Object.fromEntries(primaryProducts.map(product => [product.id, product.name])) });
   writeFileWithRetry(path.join(root, file), versionCustomerScripts(page));
 });
@@ -622,6 +623,7 @@ landingPages.forEach(landing => {
   }
   page = page.replace('<div class="category-strip"', '<p class="seo-landing-copy" style="margin:0;padding:14px 4%;color:#4b5563;font-size:15px;line-height:1.55">' + escapeHtml(landing.description) + '</p>\n<div class="category-strip"');
   page = renderCatalogSeo(page, { file: landing.file, catalogue: categoryCatalogs.find(item => item.page === landing.source).file, category: landing.category, sub: landing.sub, heading: landing.heading, description: landing.description,
+    manualProducts: primaryProducts.filter(product => product.categoryPage === landing.source && !product.supplierSynced && product.inventoryGroup !== 'expanded'),
     productNames: Object.fromEntries(primaryProducts.map(product => [product.id, product.name])) });
   if(landing.category==='vook')page=renderVookCollection(page,primaryProducts);
   writeFileWithRetry(path.join(root, landing.file), page, 'utf8');

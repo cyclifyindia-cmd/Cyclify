@@ -8,7 +8,7 @@ const root = path.resolve(__dirname, '..');
 
 // Run the store's own filters and card renderer at build time so Google and
 // customers without JavaScript receive the same catalogue as the browser.
-function renderCatalogSeo(source, { file, catalogue, category, sub, heading, description, productNames }) {
+function renderCatalogSeo(source, { file, catalogue, category, sub, heading, description, productNames, manualProducts = [] }) {
   const $ = cheerio.load(source);
   const nodes = {};
   const document = { getElementById(id) {
@@ -32,6 +32,12 @@ function renderCatalogSeo(source, { file, catalogue, category, sub, heading, des
   if (!main) throw new Error('Missing catalogue script: ' + file);
   let mainScript = $(main).html();
   mainScript = mainScript.replace(/\s*\/\* canonical product names \*\/[\s\S]*?\/\* end canonical product names \*\/\s*/g, '\n\n');
+  mainScript = mainScript.replace(/\s*\/\* canonical manual products \*\/[\s\S]*?\/\* end canonical manual products \*\/\s*/g, '\n\n');
+  // A manually owned product must remain discoverable even when its category's
+  // original inline array was emptied during a catalogue import.
+  if (manualProducts.length) {
+    mainScript = mainScript.replace('const container', '/* canonical manual products */\nconst cyclifyManualProducts=' + JSON.stringify(manualProducts).replace(/</g, '\\u003c') + ';\ncyclifyManualProducts.forEach(product=>{const existing=products.find(item=>String(item.id)===String(product.id));if(existing)Object.assign(existing,product);else products.push(product);});\n/* end canonical manual products */\nconst container');
+  }
   if (productNames) {
     const marker = 'const container';
     mainScript = mainScript.replace(marker, '/* canonical product names */\nconst cyclifyProductNames=' + JSON.stringify(productNames).replace(/</g, '\\u003c') + ';\nproducts.forEach(product=>{if(cyclifyProductNames[product.id])product.name=cyclifyProductNames[product.id];});\n/* end canonical product names */\n' + marker);
