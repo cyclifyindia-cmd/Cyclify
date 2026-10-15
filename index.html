@@ -1814,8 +1814,8 @@ function loadSearchCatalogs(){
 if(searchCatalogPromise)return searchCatalogPromise;
 searchCatalogPromise=Promise.all([
 loadCatalogScript("assets/js/supplier-products.js?v=38a69ae0bd"),
-loadCatalogScript("assets/js/fcc-products.js?v=ef7ee16029"),
-loadCatalogScript("assets/js/cadence-products.js?v=adb5356270"),
+loadCatalogScript("assets/js/fcc-products.js?v=ad6b1bf5fe"),
+loadCatalogScript("assets/js/cadence-products.js?v=30451377f1"),
 loadCatalogScript("assets/js/tfsa-products.js?v=39e9af9bee")
 ]).then(()=>{
 mergeSearchCatalog(window.CYCLIFY_CYCLETIME_PRODUCTS);
