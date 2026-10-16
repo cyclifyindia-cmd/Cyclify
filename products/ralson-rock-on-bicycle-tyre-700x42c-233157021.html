@@ -25,7 +25,7 @@
 <script>window.CYCLIFY_PRODUCT_ID=233157021;</script>
 <script src="assets/js/product-routes.js?v=fb0a751024"></script>
 <script src="assets/js/supplier-products.js?v=38a69ae0bd"></script>
-<script src="assets/js/fcc-products.js?v=ad6b1bf5fe"></script>
+<script src="assets/js/fcc-products.js?v=9881d6ca79"></script>
 <script src="assets/js/cadence-products.js?v=30451377f1"></script>
 <script src="assets/js/tfsa-products.js?v=39e9af9bee"></script>
 <script src="assets/js/expanded-products.js?v=e168c5b243"></script>
@@ -1254,7 +1254,7 @@ body{padding-bottom:88px;}
         "url": "https://cyclify.in/products/ralson-rock-on-bicycle-tyre-700x42c-233157021.html",
         "priceCurrency": "INR",
         "price": "1300",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/OutOfStock",
         "itemCondition": "https://schema.org/NewCondition",
         "seller": {
           "@type": "Organization",
@@ -1264,32 +1264,6 @@ body{padding-bottom:88px;}
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "businessDays": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "https://schema.org/Monday",
-                "https://schema.org/Tuesday",
-                "https://schema.org/Wednesday",
-                "https://schema.org/Thursday",
-                "https://schema.org/Friday",
-                "https://schema.org/Saturday"
-              ]
-            },
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 0,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 3,
-              "maxValue": 3,
-              "unitCode": "DAY"
-            }
-          },
           "shippingRate": {
             "@type": "MonetaryAmount",
             "value": "0",
@@ -1429,7 +1403,7 @@ else{cartCount.style.display="none";}
 <div class="deal-meta"><div class="deal-mrp" id="productMrp">MRP ₹1,500</div><div class="deal-save" id="productSave">Save ₹200</div><div class="shipping-note"><span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span></div></div>
 </div>
 
-<div class="product-fulfilment" id="productFulfilment" hidden=""></div>
+<div class="product-fulfilment" id="productFulfilment">Out of stock</div>
 
 <div class="size-section" id="sizeSection">
 
@@ -1453,17 +1427,9 @@ Select Valve Length
 
 <div class="buttons" id="productButtons">
 
-<button class="btn cartbtn" onclick="addToCart()">
+<button class="btn cartbtn" onclick="addToCart()" disabled="">Out of stock</button>
 
-Add to Cart
-
-</button>
-
-<button class="btn buybtn" onclick="showBuyCooking()">
-
-Buy Now
-
-</button>
+<button class="btn buybtn" onclick="showBuyCooking()" disabled="">Out of stock</button>
 
 </div>
 

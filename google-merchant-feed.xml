@@ -5003,8 +5003,8 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>725.00 INR</g:price>
-      <g:sale_price>590.00 INR</g:sale_price>
+      <g:price>625.00 INR</g:price>
+      <g:sale_price>599.00 INR</g:sale_price>
       <g:brand>Ecoracer</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
@@ -5131,15 +5131,13 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/Ahfx17pF.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/8shwZbVT.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/NvHuyZVR.webp</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:min_handling_time>0</g:min_handling_time>
-      <g:max_handling_time>0</g:max_handling_time>
+      <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>1500.00 INR</g:price>
       <g:sale_price>1300.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
     </item>
   </channel>
 </rss>

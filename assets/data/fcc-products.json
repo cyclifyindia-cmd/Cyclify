@@ -793,8 +793,8 @@
       "name": "Ralson ECORACER Bicycle Tube 28/29 * 2.10-2.50 | Presta Valve 48mm, 60mm & 80mm",
       "brand": "Ecoracer",
       "description": "Ralson ECORACER Bicycle Tube 28/29 x 2.10–2.50 with 48mm, 60mm & 80mm Presta Valve is engineered for superior durability, air retention, and dependable performance on MTB and hybrid bicycles. Made from premium quality butyl rubber, this inner tube ensures excellent elasticity and long-lasting air pressure, reducing the need for frequent inflation and providing a smooth, efficient ride. Designed to fit 28 and 29 inch tyres with 2.10 to 2.50 width, it offers a precise and secure fit, improving ride stability, comfort, and control on both on-road and off-road terrains. The 48mm, 60mm & 80mm Presta valve is ideal for modern double-wall rims, allowing easy inflation, tight sealing, and compatibility with most standard Presta pumps. Its strong and puncture-resistant construction enhances reliability during trail riding, daily commuting, and long-distance cycling. The high-quality butyl materia",
-      "price": 590,
-      "mrp": "Rs 725",
+      "price": 599,
+      "mrp": "Rs 625",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/LArXEFpN.webp",
       "images": [
         "https://cdn.dotpe.in/longtail/store-items/8102112/LArXEFpN.webp",
@@ -832,41 +832,41 @@
         "2.50 | 80MM"
       ],
       "sizeAvailability": {
-        "2.10 | 48MM": false,
-        "2.10 | 60MM": false,
-        "2.10 | 80MM": false,
-        "2.15 | 48MM": false,
-        "2.15 | 60MM": false,
-        "2.15 | 80MM": false,
-        "2.20 | 48MM": false,
-        "2.20 | 60MM": false,
-        "2.20 | 80MM": false,
-        "2.25 | 48MM": false,
-        "2.25 | 60MM": false,
-        "2.25 | 80MM": false,
-        "2.30 | 48MM": false,
-        "2.30 | 60MM": false,
-        "2.30 | 80MM": false,
+        "2.10 | 48MM": true,
+        "2.10 | 60MM": true,
+        "2.10 | 80MM": true,
+        "2.15 | 48MM": true,
+        "2.15 | 60MM": true,
+        "2.15 | 80MM": true,
+        "2.20 | 48MM": true,
+        "2.20 | 60MM": true,
+        "2.20 | 80MM": true,
+        "2.25 | 48MM": true,
+        "2.25 | 60MM": true,
+        "2.25 | 80MM": true,
+        "2.30 | 48MM": true,
+        "2.30 | 60MM": true,
+        "2.30 | 80MM": true,
         "2.35 | 48MM": true,
-        "2.35 | 60MM": false,
-        "2.35 | 80MM": false,
+        "2.35 | 60MM": true,
+        "2.35 | 80MM": true,
         "2.40 | 48MM": true,
-        "2.40 | 60MM": false,
-        "2.40 | 80MM": false,
+        "2.40 | 60MM": true,
+        "2.40 | 80MM": true,
         "2.45 | 48MM": true,
-        "2.45 | 60MM": false,
-        "2.45 | 80MM": false,
+        "2.45 | 60MM": true,
+        "2.45 | 80MM": true,
         "2.50 | 48MM": true,
-        "2.50 | 60MM": false,
-        "2.50 | 80MM": false
+        "2.50 | 60MM": true,
+        "2.50 | 80MM": true
       },
       "variants": [
         {
           "id": 7360475,
           "title": "2.10 | 48MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -874,9 +874,9 @@
         {
           "id": 7360476,
           "title": "2.10 | 60MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -884,9 +884,9 @@
         {
           "id": 7360477,
           "title": "2.10 | 80MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -894,9 +894,9 @@
         {
           "id": 7360478,
           "title": "2.15 | 48MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -904,9 +904,9 @@
         {
           "id": 7360479,
           "title": "2.15 | 60MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -914,9 +914,9 @@
         {
           "id": 7360480,
           "title": "2.15 | 80MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -924,9 +924,9 @@
         {
           "id": 7360481,
           "title": "2.20 | 48MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -934,9 +934,9 @@
         {
           "id": 7360482,
           "title": "2.20 | 60MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -944,9 +944,9 @@
         {
           "id": 7360483,
           "title": "2.20 | 80MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -954,9 +954,9 @@
         {
           "id": 7360484,
           "title": "2.25 | 48MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -964,9 +964,9 @@
         {
           "id": 7360485,
           "title": "2.25 | 60MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -974,9 +974,9 @@
         {
           "id": 7360486,
           "title": "2.25 | 80MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -984,9 +984,9 @@
         {
           "id": 7360487,
           "title": "2.30 | 48MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -994,9 +994,9 @@
         {
           "id": 7360488,
           "title": "2.30 | 60MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1004,9 +1004,9 @@
         {
           "id": 7360489,
           "title": "2.30 | 80MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1024,9 +1024,9 @@
         {
           "id": 7360491,
           "title": "2.35 | 60MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1034,9 +1034,9 @@
         {
           "id": 7360492,
           "title": "2.35 | 80MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1054,9 +1054,9 @@
         {
           "id": 7360494,
           "title": "2.40 | 60MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1064,9 +1064,9 @@
         {
           "id": 7360495,
           "title": "2.40 | 80MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1084,9 +1084,9 @@
         {
           "id": 7360497,
           "title": "2.45 | 60MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1094,9 +1094,9 @@
         {
           "id": 7360498,
           "title": "2.45 | 80MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1114,9 +1114,9 @@
         {
           "id": 7360500,
           "title": "2.50 | 60MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 625,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1124,9 +1124,9 @@
         {
           "id": 7360501,
           "title": "2.50 | 80MM",
-          "available": false,
-          "price": 399,
-          "compare_at_price": 599,
+          "available": true,
+          "price": 599,
+          "compare_at_price": 725,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1645,7 +1645,7 @@
       "sizes": [],
       "sizeAvailability": {},
       "variants": [],
-      "available": true,
+      "available": false,
       "specs": [
         "Brand : Ralson",
         "Product Type : Ralson Tyre and Tube",
