@@ -2314,11 +2314,12 @@ renderImageSearchResults(file);
 });
 
 window.addEventListener("DOMContentLoaded",()=>{
-const pendingSearchQuery=sessionStorage.getItem("pendingSearchQuery");
+const pendingSearchQuery=(new URLSearchParams(location.search).get("search")||sessionStorage.getItem("pendingSearchQuery")||"").slice(0,160);
 if(pendingSearchQuery){
 sessionStorage.removeItem("pendingSearchQuery");
 input.value=pendingSearchQuery;
 placeholder.style.display="none";
+input.focus();
 loadSearchCatalogs();
 renderSearchResults();
 }
@@ -2345,6 +2346,7 @@ cartCount.style.display="none";
 </script>
 
 <script src="assets/js/site-footer.js?v=08783ca89f" defer=""></script>
+
 
 
 
