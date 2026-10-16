@@ -1,11 +1,13 @@
 /* Inline at build time: no animation library or extra image requests. */
 .diwali-lamps{display:block;width:224px;height:135px;pointer-events:none;flex:none;contain:layout style}
 .diwali-lamps svg{display:block;width:100%;height:100%;overflow:visible}
-.diwali-lamp-flame{transform-box:fill-box;transform-origin:50% 100%;animation:diwali-flame 1.65s ease-in-out infinite alternate;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
+.diwali-lamp-flame{transform-box:fill-box;transform-origin:50% 100%;animation:diwali-flame 1.35s ease-in-out infinite;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
+.diwali-lamp-flame>path:last-child{transform-box:fill-box;transform-origin:50% 100%;animation:diwali-core .32s ease-in-out infinite alternate;animation-delay:var(--lamp-delay,0s);animation-play-state:inherit}
 .diwali-lamp-glow{animation:diwali-glow 2.8s ease-in-out infinite alternate;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
 .diwali-lamp-spark{animation:diwali-spark 3.8s ease-in-out infinite;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
 .diwali-lamps[data-motion-active=true] .diwali-lamp-flame,.diwali-lamps[data-motion-active=true] .diwali-lamp-glow,.diwali-lamps[data-motion-active=true] .diwali-lamp-spark{animation-play-state:running}
-@keyframes diwali-flame{0%{transform:rotate(-2deg) scale(.98,1)}45%{transform:rotate(1deg) scale(1.025,.96)}100%{transform:rotate(2deg) scale(.96,1.065)}}
+@keyframes diwali-flame{0%,100%{transform:rotate(-8deg) skewX(-4deg) scale(.94,1.05)}18%{transform:rotate(5deg) skewX(3deg) scale(1.04,.93)}37%{transform:rotate(-3deg) skewX(-6deg) scale(.88,1.12)}54%{transform:rotate(11deg) skewX(7deg) scale(.95,1.02)}72%{transform:rotate(3deg) skewX(2deg) scale(1.07,.92)}86%{transform:rotate(-10deg) skewX(-4deg) scale(.9,1.08)}}
+@keyframes diwali-core{from{opacity:.72;transform:scale(.85,.93)}to{opacity:1;transform:scale(1.08,1.12)}}
 @keyframes diwali-glow{from{opacity:.42}to{opacity:.72}}
 @keyframes diwali-spark{0%,100%{opacity:.12;transform:translateY(0)}55%{opacity:.6;transform:translateY(-5px)}}
 .diwali-home-intro{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;max-width:540px}
