@@ -12,6 +12,19 @@
   try{const key='cyclifyDiwaliSessionCounts';const counts=JSON.parse(sessionStorage.getItem(key)||'{}');counts[name]=(counts[name]||0)+1;sessionStorage.setItem(key,JSON.stringify(counts));}catch(_){}
  }
  window.CyclifyDiwali={track};
+ // CSS handles each flame; JS only pauses decorations outside the visible page.
+ const lamps=Array.from(document.querySelectorAll('.diwali-lamps'));
+ if(lamps.length){
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const visible=new Set();
+  const updateMotion=()=>lamps.forEach(node=>{node.dataset.motionActive=String(visible.has(node)&&!document.hidden&&!reduced.matches);});
+  if('IntersectionObserver' in window){
+   const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)visible.add(entry.target);else visible.delete(entry.target);});updateMotion();});
+   lamps.forEach(node=>observer.observe(node));
+  }else{lamps.forEach(node=>visible.add(node));updateMotion();}
+  document.addEventListener('visibilitychange',updateMotion);
+  reduced.addEventListener?.('change',updateMotion);
+ }
  document.addEventListener('click',event=>{const link=event.target.closest('[data-campaign-event]');if(link)track(link.dataset.campaignEvent,{product_id:link.dataset.productId,section:link.getAttribute('href')?.split('#')[1]});});
  const cards=Array.from(document.querySelectorAll('.diwali-card'));
  const featured=window.CYCLIFY_DIWALI_PRODUCTS||[];

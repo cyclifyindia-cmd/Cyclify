@@ -23,7 +23,7 @@
 <link rel="preload" as="image" href="assets/products/thinkrider-x2-max-1.jpg" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/diwali-home.css?v=20261016">
 <script src="assets/js/diwali-home.js?v=29053922dd" defer=""></script>
-<script src="assets/js/diwali.js?v=336a55c3de" defer=""></script>
+<script src="assets/js/diwali.js?v=5f1d8ff01a" defer=""></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
@@ -1135,7 +1135,30 @@ gap:5px!important;
   ]
 }
 </script>
-</head>
+<style id="diwaliMotionStyles">/* Inline at build time: no animation library or extra image requests. */
+.diwali-lamps{display:block;width:224px;height:135px;pointer-events:none;flex:none;contain:layout style}
+.diwali-lamps svg{display:block;width:100%;height:100%;overflow:visible}
+.diwali-lamp-flame{transform-box:fill-box;transform-origin:50% 100%;animation:diwali-flame 1.65s ease-in-out infinite alternate;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
+.diwali-lamp-glow{animation:diwali-glow 2.8s ease-in-out infinite alternate;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
+.diwali-lamp-spark{animation:diwali-spark 3.8s ease-in-out infinite;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
+.diwali-lamps[data-motion-active=true] .diwali-lamp-flame,.diwali-lamps[data-motion-active=true] .diwali-lamp-glow,.diwali-lamps[data-motion-active=true] .diwali-lamp-spark{animation-play-state:running}
+@keyframes diwali-flame{0%{transform:rotate(-2deg) scale(.98,1)}45%{transform:rotate(1deg) scale(1.025,.96)}100%{transform:rotate(2deg) scale(.96,1.065)}}
+@keyframes diwali-glow{from{opacity:.42}to{opacity:.72}}
+@keyframes diwali-spark{0%,100%{opacity:.12;transform:translateY(0)}55%{opacity:.6;transform:translateY(-5px)}}
+.diwali-home-intro{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;max-width:540px}
+.diwali-home-intro .diwali-home-eyebrow{margin:0}
+.diwali-home-intro .diwali-lamps{width:128px;height:77px;margin:-24px 0 -15px}
+.diwali-hero{position:relative;isolation:isolate;overflow:hidden}
+.diwali-hero>.diwali-wrap{position:relative;z-index:1}
+.diwali-hero>.diwali-lamps{position:absolute;right:8%;bottom:18px;width:310px;height:187px;z-index:0}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .diwali-home-button,.diwali-button{transition:transform .2s ease,background-color .2s ease}
+ .diwali-home-button:hover,.diwali-button:hover{transform:translateY(-2px)}
+}
+@media(max-width:900px){.diwali-home-intro{margin-bottom:12px;max-width:none}.diwali-home-intro .diwali-lamps{width:88px;height:53px;margin:-16px 0 -8px}.diwali-home-intro .diwali-home-eyebrow{max-width:220px}}
+@media(max-width:760px){.diwali-hero>.diwali-lamps{width:110px;height:67px;right:12px;top:12px;bottom:auto}}
+@media(prefers-reduced-motion:reduce){.diwali-lamps *{animation:none!important}.diwali-home-button,.diwali-button{transition:none!important}}
+</style></head>
 
 <body>
 
@@ -1199,7 +1222,7 @@ gap:5px!important;
   <div class="diwali-home-hero">
     <div class="diwali-home-inner">
       <div class="diwali-home-copy">
-        <p class="diwali-home-eyebrow">THE CYCLIFY DIWALI EDIT / 2026</p>
+        <div class="diwali-home-intro"><p class="diwali-home-eyebrow">THE CYCLIFY DIWALI EDIT / 2026</p><div class="diwali-lamps" aria-hidden="true" data-motion-active="false"><svg viewBox="0 0 224 135" width="224" height="135" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="diwali-lamp-bowl" x2="0" y2="1"><stop stop-color="#d99b47"></stop><stop offset="1" stop-color="#6c3218"></stop></linearGradient><linearGradient id="diwali-lamp-fire" x2="0" y2="1"><stop stop-color="#fff5ca"></stop><stop offset=".55" stop-color="#ffc45e"></stop><stop offset="1" stop-color="#ed701e"></stop></linearGradient><radialGradient id="diwali-lamp-halo"><stop stop-color="#ffd07a" stop-opacity=".42"></stop><stop offset="1" stop-color="#ffd07a" stop-opacity="0"></stop></radialGradient></defs><g transform="translate(43 97) scale(.65)" style="--lamp-delay:-.9s"><ellipse class="diwali-lamp-glow" cy="-13" rx="47" ry="53" fill="url(#diwali-lamp-halo)"></ellipse><ellipse cy="29" rx="40" ry="4" fill="#060c12" opacity=".3"></ellipse><path d="M-43 5Q0 49 43 5Q0-4-43 5Z" fill="url(#diwali-lamp-bowl)"></path><path d="M-36 12Q0 39 36 12" fill="none" stroke="#eac380" stroke-opacity=".65" stroke-width="1.4"></path><ellipse cy="5" rx="43" ry="8" fill="#edc780"></ellipse><ellipse cy="5" rx="37" ry="5.3" fill="#7d3e14"></ellipse><path d="M0 6Q-3-4 0-15" fill="none" stroke="#f4dfaa" stroke-width="2.5" stroke-linecap="round"></path><g class="diwali-lamp-flame"><path d="M0-60C-4-44-20-34-12-20C-6-8 9-10 14-22C20-37 5-46 0-60Z" fill="url(#diwali-lamp-fire)"></path><path d="M0-42C-3-32-10-26-5-18C-2-11 7-14 7-22C7-30 2-33 0-42Z" fill="#fff7d4"></path></g></g><g transform="translate(112 94) scale(.95)" style="--lamp-delay:-.35s"><ellipse class="diwali-lamp-glow" cy="-13" rx="47" ry="53" fill="url(#diwali-lamp-halo)"></ellipse><ellipse cy="29" rx="40" ry="4" fill="#060c12" opacity=".3"></ellipse><path d="M-43 5Q0 49 43 5Q0-4-43 5Z" fill="url(#diwali-lamp-bowl)"></path><path d="M-36 12Q0 39 36 12" fill="none" stroke="#eac380" stroke-opacity=".65" stroke-width="1.4"></path><ellipse cy="5" rx="43" ry="8" fill="#edc780"></ellipse><ellipse cy="5" rx="37" ry="5.3" fill="#7d3e14"></ellipse><path d="M0 6Q-3-4 0-15" fill="none" stroke="#f4dfaa" stroke-width="2.5" stroke-linecap="round"></path><g class="diwali-lamp-flame"><path d="M0-60C-4-44-20-34-12-20C-6-8 9-10 14-22C20-37 5-46 0-60Z" fill="url(#diwali-lamp-fire)"></path><path d="M0-42C-3-32-10-26-5-18C-2-11 7-14 7-22C7-30 2-33 0-42Z" fill="#fff7d4"></path></g></g><g transform="translate(181 97) scale(.65)" style="--lamp-delay:-1.5s"><ellipse class="diwali-lamp-glow" cy="-13" rx="47" ry="53" fill="url(#diwali-lamp-halo)"></ellipse><ellipse cy="29" rx="40" ry="4" fill="#060c12" opacity=".3"></ellipse><path d="M-43 5Q0 49 43 5Q0-4-43 5Z" fill="url(#diwali-lamp-bowl)"></path><path d="M-36 12Q0 39 36 12" fill="none" stroke="#eac380" stroke-opacity=".65" stroke-width="1.4"></path><ellipse cy="5" rx="43" ry="8" fill="#edc780"></ellipse><ellipse cy="5" rx="37" ry="5.3" fill="#7d3e14"></ellipse><path d="M0 6Q-3-4 0-15" fill="none" stroke="#f4dfaa" stroke-width="2.5" stroke-linecap="round"></path><g class="diwali-lamp-flame"><path d="M0-60C-4-44-20-34-12-20C-6-8 9-10 14-22C20-37 5-46 0-60Z" fill="url(#diwali-lamp-fire)"></path><path d="M0-42C-3-32-10-26-5-18C-2-11 7-14 7-22C7-30 2-33 0-42Z" fill="#fff7d4"></path></g></g><circle class="diwali-lamp-spark" style="--lamp-delay:-1s" cx="72" cy="29" r="1.6" fill="#ffd895"></circle><circle class="diwali-lamp-spark" style="--lamp-delay:-2.1s" cx="153" cy="22" r="1.3" fill="#ffd895"></circle></svg></div></div>
         <h2 id="diwaliHomeTitle">Light up<br>your next <em>ride.</em></h2>
         <p class="diwali-home-description">A new season of riding starts here. Discover ThinkRider offers and our picks for your next upgrade.</p>
         <a class="diwali-home-button" href="diwali-deals.html" data-campaign-event="campaign_shop_click">Shop Diwali picks <span aria-hidden="true">↗</span></a>
@@ -1232,8 +1255,8 @@ gap:5px!important;
 <div class="offer">
 <section class="home-carousel" id="homeCarousel" aria-label="Featured offers">
 <div class="home-carousel-track" id="homeCarouselTrack">
-<a href="bikes-frames.html?category=elves" class="home-carousel-slide" aria-label="Shop ELVES EVO Plus and EXP bikes"><img src="assets/elves-evo-exp-banner-mobile.webp" alt="ELVES EVO Plus and EXP road bikes" width="800" height="334" fetchpriority="high" decoding="async"></a>
-<a href="bikes-frames.html" class="home-carousel-slide" aria-label="Shop bikes and frames"><img src="assets/banners/google-reviews-india-optimized.webp" alt="Cyclify India Google customer reviews" width="1400" height="467" loading="lazy" decoding="async"><span class="home-carousel-cta">Shop Now</span></a>
+<a href="bikes-frames.html?category=elves" class="home-carousel-slide" aria-label="Shop ELVES EVO Plus and EXP bikes"><img src="assets/elves-evo-exp-banner-mobile.webp" alt="ELVES EVO Plus and EXP road bikes" width="800" height="334" fetchpriority="low" decoding="async" loading="lazy"></a>
+<a href="bikes-frames.html" class="home-carousel-slide" aria-label="Shop bikes and frames"><img src="assets/banners/google-reviews-india-optimized.webp" alt="Cyclify India Google customer reviews" width="1400" height="467" loading="lazy" decoding="async" fetchpriority="low"><span class="home-carousel-cta">Shop Now</span></a>
 </div>
 <div class="home-carousel-dots" aria-label="Choose banner"><button class="home-carousel-dot active" type="button" aria-label="Show ELVES banner" data-slide="0" aria-pressed="true"></button><button class="home-carousel-dot" type="button" aria-label="Show reviews banner" data-slide="1" aria-pressed="false"></button></div>
 </section>
@@ -1254,7 +1277,7 @@ dot.setAttribute("aria-pressed",String(active));
 });
 }
 function stopCarousel(){window.clearInterval(timer);timer=undefined;}
-function startCarousel(){stopCarousel();if(!reduceMotion&&!document.hidden)timer=window.setInterval(()=>showSlide(activeSlide+1),5000);}
+function startCarousel(){stopCarousel();if(!reduceMotion&&!document.hidden&&carousel.getClientRects().length)timer=window.setInterval(()=>showSlide(activeSlide+1),5000);}
 dots.forEach(dot=>dot.addEventListener("click",()=>{showSlide(Number(dot.dataset.slide));startCarousel();}));
 carousel.addEventListener("mouseenter",stopCarousel);
 carousel.addEventListener("mouseleave",startCarousel);
@@ -2346,6 +2369,7 @@ cartCount.style.display="none";
 </script>
 
 <script src="assets/js/site-footer.js?v=6bec8a26bc" defer=""></script>
+
 
 
 

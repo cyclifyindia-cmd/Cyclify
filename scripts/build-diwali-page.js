@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),cheerio=require('cheerio');
 const {campaign}=require('./campaign-pricing');
+const {addDiwaliMotion}=require('./diwali-motion');
 const root=path.resolve(__dirname,'..');
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function buildDiwaliPage(products,routes,{now,write=true}={}){
@@ -31,6 +32,7 @@ function buildDiwaliPage(products,routes,{now,write=true}={}){
   $('script[type="application/ld+json"]').text(JSON.stringify(schema));
   html=$.html();
  }
+ const decorated=cheerio.load(html);addDiwaliMotion(decorated);html=decorated.html();
  if(write)fs.writeFileSync(path.join(root,'diwali-deals.html'),html);
  return html;
 }

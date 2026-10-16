@@ -1,0 +1,23 @@
+/* Inline at build time: no animation library or extra image requests. */
+.diwali-lamps{display:block;width:224px;height:135px;pointer-events:none;flex:none;contain:layout style}
+.diwali-lamps svg{display:block;width:100%;height:100%;overflow:visible}
+.diwali-lamp-flame{transform-box:fill-box;transform-origin:50% 100%;animation:diwali-flame 1.65s ease-in-out infinite alternate;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
+.diwali-lamp-glow{animation:diwali-glow 2.8s ease-in-out infinite alternate;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
+.diwali-lamp-spark{animation:diwali-spark 3.8s ease-in-out infinite;animation-delay:var(--lamp-delay,0s);animation-play-state:paused}
+.diwali-lamps[data-motion-active=true] .diwali-lamp-flame,.diwali-lamps[data-motion-active=true] .diwali-lamp-glow,.diwali-lamps[data-motion-active=true] .diwali-lamp-spark{animation-play-state:running}
+@keyframes diwali-flame{0%{transform:rotate(-2deg) scale(.98,1)}45%{transform:rotate(1deg) scale(1.025,.96)}100%{transform:rotate(2deg) scale(.96,1.065)}}
+@keyframes diwali-glow{from{opacity:.42}to{opacity:.72}}
+@keyframes diwali-spark{0%,100%{opacity:.12;transform:translateY(0)}55%{opacity:.6;transform:translateY(-5px)}}
+.diwali-home-intro{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;max-width:540px}
+.diwali-home-intro .diwali-home-eyebrow{margin:0}
+.diwali-home-intro .diwali-lamps{width:128px;height:77px;margin:-24px 0 -15px}
+.diwali-hero{position:relative;isolation:isolate;overflow:hidden}
+.diwali-hero>.diwali-wrap{position:relative;z-index:1}
+.diwali-hero>.diwali-lamps{position:absolute;right:8%;bottom:18px;width:310px;height:187px;z-index:0}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .diwali-home-button,.diwali-button{transition:transform .2s ease,background-color .2s ease}
+ .diwali-home-button:hover,.diwali-button:hover{transform:translateY(-2px)}
+}
+@media(max-width:900px){.diwali-home-intro{margin-bottom:12px;max-width:none}.diwali-home-intro .diwali-lamps{width:88px;height:53px;margin:-16px 0 -8px}.diwali-home-intro .diwali-home-eyebrow{max-width:220px}}
+@media(max-width:760px){.diwali-hero>.diwali-lamps{width:110px;height:67px;right:12px;top:12px;bottom:auto}}
+@media(prefers-reduced-motion:reduce){.diwali-lamps *{animation:none!important}.diwali-home-button,.diwali-button{transition:none!important}}

@@ -641,6 +641,7 @@ require('./build-tavelo-page');
 
 // Keep the homepage's real HTML links, images and prices in step with inventory.
 const $home = cheerio.load(fs.readFileSync(path.join(root, 'index.html'), 'utf8'));
+require('./diwali-motion').addDiwaliMotion($home,{home:true});
 $home('[data-popular-product]').each((_, element) => {
   const card = $home(element);
   const item = primaryProducts.find(product => String(product.id) === card.attr('data-popular-product'));
