@@ -5,15 +5,26 @@ const css=fs.readFileSync(path.join(__dirname,'../assets/css/diwali-motion.css')
 const saleCss=fs.readFileSync(path.join(__dirname,'../assets/css/diwali-sale.css'),'utf8');
 
 function saleCategories(){
+ const product=(file,name)=>['assets/products/expanded/'+file+'.webp',name];
  const cards=[
-  ['bikes-frames.html','Bikes &amp; Frames','A new ride. A new beginning.','assets/products/sava-a7l-2026/blue-side.jpg','SAVA A7L blue carbon road bike'],
-  ['wheels-tyres.html','Wheels &amp; Tyres','Make every kilometre count.','assets/products/pertual-sharp-gr/wheelset-angled.webp','PERTUAL carbon wheelset photographed by Cyclify'],
-  ['electronics.html','Electronics','Light up your training.','assets/products/igpsport-igs800-device.webp','iGPSPORT iGS800 cycling computer'],
-  ['components.html','Components','The details make the ride.','assets/products/expanded/11aa231dd6f26ec8f8.webp','Selle Italia SLR Boost TM Superflow saddle'],
-  ['wearables.html','Apparel &amp; Wearables','Ready for your festive ride.','assets/products/expanded/f97e04cc85cadd287b.webp','Rudy Project Nytron cycling helmet'],
-  ['accessories.html','Accessories','Little gifts. More happy miles.','assets/products/expanded/cd64e087107dbcbc7c.webp','Controltech Rib bottle cage']
+  ['bikes-frames.html','Bikes &amp; Frames','A new ride. A new beginning.',[
+   product('d1ee68ec1f0a3a8010','Colnago V4'),product('2cea500fa99c615b49','Basso Venta R'),product('0638b2cc0708c816af','Orbea Orca M30'),product('328419fd7d80d50d42','Felt AR Ultegra Di2')]],
+  ['wheels-tyres.html','Wheels &amp; Tyres','Make every kilometre count.',[
+   product('8e385cf52cb91567a9','Vision SC 60'),product('b505cfc7e6bea3b973','Reynolds AR 60'),product('fd3752249241a1ba93','Fulcrum Sharq'),product('c4ba2666627a0ded5d','Vision TC 60')]],
+  ['electronics.html','Electronics','Light up your training.',[
+   ['assets/products/igpsport-igs800-device.webp','iGPSPORT iGS800'],['assets/products/thinkrider-x2-max-1.jpg','ThinkRider X2 Max'],product('50094688df30b1f341','Favero Assioma Pro RL-2'),['assets/products/thinkrider-xx-pro-1.png','ThinkRider XX Pro']]],
+  ['components.html','Components','The details make the ride.',[
+   product('11aa231dd6f26ec8f8','Selle Italia SLR Boost TM'),product('ea38f1900f22e96a94','Controltech SLA handlebar'),product('ff7d1128f5ef6d4089','Tripeak T47 G5'),product('3a081a13f15d5bc534','Controltech Cougar stem')]],
+  ['wearables.html','Apparel &amp; Wearables','Ready for your festive ride.',[
+   product('f97e04cc85cadd287b','Rudy Project Nytron'),product('7716d55728e5d25651','Rudy Project Cutline'),product('e3ff3386581bf99608','MB Wear Comfort jersey'),product('12bb29ff50783fe3fc','MB Wear bibshorts')]],
+  ['accessories.html','Accessories','Little gifts. More happy miles.',[
+   product('cd64e087107dbcbc7c','Controltech Rib cage'),product('d3ae9de1f7010754ac','Selle Italia Nastro Smart Tape'),product('559c985c6166088086','Scicon AeroComfort bag'),product('4386960618d7807a59','Controltech Time Zone hydration')]]
  ];
- return `<section class="diwali-categories" aria-labelledby="diwaliCategoryTitle"><div class="diwali-categories-inner"><header><div><p class="diwali-sale-kicker">THE FESTIVAL OF LIGHTS. THE JOY OF RIDING.</p><h2 id="diwaliCategoryTitle">Your Diwali. <em>Your next upgrade.</em></h2></div><a href="diwali-deals.html">Explore Diwali offers <span aria-hidden="true">↗</span></a></header><div class="diwali-category-grid">${cards.map(([url,name,copy,src,alt],i)=>`<a class="diwali-category-card" href="${url}" data-campaign-event="campaign_category_click"><div class="diwali-category-top"><span>DIWALI EDIT</span><b aria-hidden="true">0${i+1}</b></div><div class="diwali-category-photo"><img src="${src}" alt="${alt}" width="600" height="450" loading="lazy" decoding="async"></div><div class="diwali-category-copy"><h3>${name}</h3><p>${copy}</p><span>Shop collection <b aria-hidden="true">↗</b></span></div></a>`).join('')}</div><p class="diwali-category-note">ThinkRider X2 Max ₹29,999 · 10% off other ThinkRider products · Explore current prices across every collection.</p></div></section>`;
+ const cardHtml=cards.map(([url,name,copy,photos],i)=>{
+  const slides=[...photos,photos[0]].map(([src,label],j)=>`<div class="diwali-category-slide${j===photos.length?' is-clone':''}" data-name="${label}" aria-hidden="true"><img ${j===0?'src':'data-src'}="${src}" alt="" width="600" height="450" loading="lazy" decoding="async" fetchpriority="low"></div>`).join('');
+  return `<a class="diwali-category-card" href="${url}" aria-label="Shop ${name}" data-campaign-event="campaign_category_click"><div class="diwali-category-top"><span>DIWALI EDIT</span><b aria-hidden="true">0${i+1}</b></div><div class="diwali-category-photo" data-category-reel role="img" aria-label="${photos[0][1]}"><div class="diwali-category-track">${slides}</div></div><div class="diwali-category-caption" aria-hidden="true"><strong data-reel-name>${photos[0][1]}</strong><span data-reel-count>1 / ${photos.length}</span></div><div class="diwali-category-copy"><h3>${name}</h3><p>${copy}</p><span>Shop collection <b aria-hidden="true">↗</b></span></div></a>`;
+ }).join('');
+ return `<section class="diwali-categories" aria-labelledby="diwaliCategoryTitle"><div class="diwali-categories-inner"><header><div><p class="diwali-sale-kicker">THE FESTIVAL OF LIGHTS. THE JOY OF RIDING.</p><h2 id="diwaliCategoryTitle">Your Diwali. <em>Your next upgrade.</em></h2><p class="diwali-reel-hint">Scroll to discover more in every collection.</p></div><a href="diwali-deals.html">Explore Diwali offers <span aria-hidden="true">↗</span></a></header><div class="diwali-category-grid">${cardHtml}</div><p class="diwali-category-note">ThinkRider X2 Max ₹29,999 · 10% off other ThinkRider products · Explore current prices across every collection.</p></div></section>`;
 }
 
 function diyaScene(){
