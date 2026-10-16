@@ -24,6 +24,7 @@ function renderCatalogSeo(source, { file, catalogue, category, sub, heading, des
     addEventListener() {}
   };
   context.window = context;
+  context.CyclifyCampaign = require('./campaign-pricing').campaign;
   vm.createContext(context);
   for (const script of ['product-routes.js', catalogue, ...(file.includes('bikes') || file === 'bikes-frames.html' || file === 'tfsa-frames.html' ? ['tfsa-products.js'] : [])]) {
     vm.runInContext(fs.readFileSync(path.join(root, 'assets/js', script), 'utf8'), context, { timeout: 2000 });
@@ -31,6 +32,8 @@ function renderCatalogSeo(source, { file, catalogue, category, sub, heading, des
   const main = $('script:not([src])').toArray().find(element => $(element).html().includes('const products='));
   if (!main) throw new Error('Missing catalogue script: ' + file);
   let mainScript = $(main).html();
+  if(!mainScript.includes('/* campaign pricing */'))mainScript=mainScript.replace('const container','/* campaign pricing */\nwindow.CyclifyCampaign?.applyToProducts(products);\nconst container');
+  if(!mainScript.includes('function renderProducts(){\nwindow.CyclifyCampaign'))mainScript=mainScript.replace('function renderProducts(){','function renderProducts(){\nwindow.CyclifyCampaign?.applyToProducts(products);');
   mainScript = mainScript.replace(/\s*\/\* canonical product names \*\/[\s\S]*?\/\* end canonical product names \*\/\s*/g, '\n\n');
   mainScript = mainScript.replace(/\s*\/\* canonical manual products \*\/[\s\S]*?\/\* end canonical manual products \*\/\s*/g, '\n\n');
   // A manually owned product must remain discoverable even when its category's
@@ -48,6 +51,7 @@ function renderCatalogSeo(source, { file, catalogue, category, sub, heading, des
   // An empty subcategory must not silently turn into the entire catalogue.
   mainScript = mainScript.replace(/if\(activeCategory&&!visibleCategories.some\(category=>category.key===activeCategory\)\)\{\s*activeCategory="";\s*(?:activeSubCategory="";\s*)?\}/g, '');
   $(main).html(mainScript);
+  if(!$('script[src*="diwali-campaign.js"]').length)$('head').prepend('<script src="assets/js/diwali-campaign.js"></script><script src="assets/js/diwali.js" defer></script><script src="assets/js/campaign-storefront.js" defer></script>');
   vm.runInContext(mainScript, context, { timeout: 2000 });
   if (category) {
     vm.runInContext('activeCategory=' + JSON.stringify(category) + ';' +

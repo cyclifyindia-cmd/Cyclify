@@ -121,8 +121,9 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>999.00 INR</g:price>
-      <g:sale_price>499.00 INR</g:sale_price>
+      <g:price>499.00 INR</g:price>
+      <g:sale_price>449.10 INR</g:sale_price>
+      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
@@ -144,8 +145,9 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>40000.00 INR</g:price>
-      <g:sale_price>35000.00 INR</g:sale_price>
+      <g:price>35000.00 INR</g:price>
+      <g:sale_price>29999.00 INR</g:sale_price>
+      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
@@ -181,8 +183,9 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>51999.00 INR</g:price>
-      <g:sale_price>49999.00 INR</g:sale_price>
+      <g:price>49999.00 INR</g:price>
+      <g:sale_price>44999.10 INR</g:sale_price>
+      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
@@ -198,8 +201,9 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>5999.00 INR</g:price>
-      <g:sale_price>4999.00 INR</g:sale_price>
+      <g:price>4999.00 INR</g:price>
+      <g:sale_price>4499.10 INR</g:sale_price>
+      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
@@ -214,8 +218,9 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>3300.00 INR</g:price>
-      <g:sale_price>1999.00 INR</g:sale_price>
+      <g:price>1999.00 INR</g:price>
+      <g:sale_price>1799.10 INR</g:sale_price>
+      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
@@ -456,8 +461,9 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>999.00 INR</g:price>
-      <g:sale_price>499.00 INR</g:sale_price>
+      <g:price>499.00 INR</g:price>
+      <g:sale_price>449.10 INR</g:sale_price>
+      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
@@ -472,8 +478,9 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>3500.00 INR</g:price>
-      <g:sale_price>2999.00 INR</g:sale_price>
+      <g:price>2999.00 INR</g:price>
+      <g:sale_price>2699.10 INR</g:sale_price>
+      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Components</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
@@ -490,8 +497,9 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>3400.00 INR</g:price>
-      <g:sale_price>2600.00 INR</g:sale_price>
+      <g:price>2600.00 INR</g:price>
+      <g:sale_price>2340.00 INR</g:sale_price>
+      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Electronics</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
@@ -509,8 +517,9 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>4500.00 INR</g:price>
-      <g:sale_price>3999.00 INR</g:sale_price>
+      <g:price>3999.00 INR</g:price>
+      <g:sale_price>3599.10 INR</g:sale_price>
+      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
       <g:brand>ThinkRider</g:brand>
       <g:product_type>Components</g:product_type>
       <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>

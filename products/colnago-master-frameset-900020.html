@@ -1,5 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
 <base href="../">
+<script src="assets/js/diwali-campaign.js?v=a173a78052"></script>
+<script src="assets/js/diwali.js?v=336a55c3de" defer=""></script>
+<script src="assets/js/campaign-storefront.js?v=5dbff0df02" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -2482,6 +2485,7 @@ window.cyclifyMergeExpandedProducts(products,"");
 const params=new URLSearchParams(window.location.search);
 const productId=Number(window.CYCLIFY_PRODUCT_ID||params.get("id"))||1;
 const product=products.find(item=>item.id===productId)||products[0];
+if(window.CyclifyCampaign)Object.assign(product,window.CyclifyCampaign.resolveProduct(product));
 window.CYCLIFY_CURRENT_PRODUCT={id:String(product.id),name:product.name};
 const productCategoryLink=document.getElementById("productCategoryLink");
 const breadcrumbProductName=document.getElementById("breadcrumbProductName");
@@ -2686,9 +2690,9 @@ return Number(String(value||"").replace(/[^0-9.]/g,""))||0;
 }
 
 function updateProductPriceDisplay(){
-const price=Math.round(Number(product.price)||0);
+const price=Math.round((Number(product.price)||0)*100)/100;
 const mrp=productMoneyNumber(product.mrp);
-const saving=Math.max(0,Math.round(mrp-price));
+const saving=Math.max(0,Math.round((mrp-price)*100)/100);
 const discount=mrp>price?Math.round((saving/mrp)*100):0;
 document.getElementById("productPrice").textContent=product.priceOnRequest?"Price on request":`₹${price.toLocaleString("en-IN")}`;
 const mrpElement=document.getElementById("productMrp");
@@ -3200,6 +3204,7 @@ return input?Math.max(1,Math.min(10,Math.floor(Number(input.value)||1))):1;
 }
 
 async function addToCart(){
+if(window.CyclifyCampaign)Object.assign(product,window.CyclifyCampaign.resolveProduct(product));
 
 updateCartButtonForSize();
 if(!productAvailableForCart){return;}
@@ -3240,6 +3245,7 @@ quantity:selectedProductQuantity()
 }
 
 localStorage.setItem("cart",JSON.stringify(cart));
+window.CyclifyDiwali?.track('add_to_cart',{product_id:product.id,value:product.price*selectedProductQuantity()});
 await window.cyclifySaveCart?.(cart);
 updateCartCount();
 window.location.href="cart.html";
@@ -3247,6 +3253,7 @@ window.location.href="cart.html";
 }
 
 function showBuyCooking(){
+if(window.CyclifyCampaign)Object.assign(product,window.CyclifyCampaign.resolveProduct(product));
 updateCartButtonForSize();
 if(!productAvailableForCart){return;}
 if(product.purchaseMode==="preorder-inquiry"){
@@ -3276,7 +3283,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<dialog id="expandedSizeGuide" class="expanded-size-guide"><div class="expanded-dialog-heading"><h2>Size guide</h2><button type="button" data-expanded-close="" aria-label="Close size guide">×</button></div><div class="expanded-chart-scroll"><table><thead><tr><th scope="col">Size</th><th scope="col">Seat Tube P (mm)</th><th scope="col">Top Tube O (mm)</th><th scope="col">Head Tube Hs (mm)</th><th scope="col">Seat Tube Angle Sc (degrees)</th><th scope="col">Chainstay C (mm)</th></tr></thead><tbody><tr><td>49T</td><td>490</td><td>518</td><td>80</td><td>75</td><td>400</td></tr><tr><td>50T</td><td>500</td><td>523</td><td>83</td><td>75</td><td>401</td></tr><tr><td>51T</td><td>510</td><td>527</td><td>91</td><td>74.8</td><td>402</td></tr><tr><td>52T</td><td>520</td><td>530</td><td>99</td><td>74.6</td><td>403</td></tr><tr><td>53T</td><td>530</td><td>535</td><td>108</td><td>74.1</td><td>404</td></tr><tr><td>54T</td><td>540</td><td>540</td><td>117</td><td>74</td><td>405</td></tr><tr><td>55T</td><td>550</td><td>545</td><td>126</td><td>74</td><td>406</td></tr><tr><td>56T</td><td>560</td><td>550</td><td>135</td><td>74</td><td>408</td></tr><tr><td>57T</td><td>570</td><td>557</td><td>143</td><td>73.5</td><td>410</td></tr><tr><td>58T</td><td>580</td><td>565</td><td>151</td><td>73</td><td>411</td></tr><tr><td>59T</td><td>590</td><td>572</td><td>160</td><td>73</td><td>412</td></tr><tr><td>60T</td><td>600</td><td>580</td><td>162</td><td>72.75</td><td>413</td></tr><tr><td>61T</td><td>610</td><td>586</td><td>171</td><td>72.75</td><td>413</td></tr><tr><td>62T</td><td>620</td><td>590</td><td>182</td><td>72.75</td><td>414</td></tr><tr><td>63T</td><td>630</td><td>594</td><td>182</td><td>72.75</td><td>415</td></tr><tr><td>64T</td><td>640</td><td>597</td><td>192</td><td>72.75</td><td>416</td></tr><tr><td>65T</td><td>650</td><td>600</td><td>203</td><td>72.75</td><td>416</td></tr></tbody></table></div></dialog><script src="assets/js/expanded-product.js?v=8cf1eb3863"></script><script src="assets/js/site-footer.js?v=e47667cd48"></script>
+<dialog id="expandedSizeGuide" class="expanded-size-guide"><div class="expanded-dialog-heading"><h2>Size guide</h2><button type="button" data-expanded-close="" aria-label="Close size guide">×</button></div><div class="expanded-chart-scroll"><table><thead><tr><th scope="col">Size</th><th scope="col">Seat Tube P (mm)</th><th scope="col">Top Tube O (mm)</th><th scope="col">Head Tube Hs (mm)</th><th scope="col">Seat Tube Angle Sc (degrees)</th><th scope="col">Chainstay C (mm)</th></tr></thead><tbody><tr><td>49T</td><td>490</td><td>518</td><td>80</td><td>75</td><td>400</td></tr><tr><td>50T</td><td>500</td><td>523</td><td>83</td><td>75</td><td>401</td></tr><tr><td>51T</td><td>510</td><td>527</td><td>91</td><td>74.8</td><td>402</td></tr><tr><td>52T</td><td>520</td><td>530</td><td>99</td><td>74.6</td><td>403</td></tr><tr><td>53T</td><td>530</td><td>535</td><td>108</td><td>74.1</td><td>404</td></tr><tr><td>54T</td><td>540</td><td>540</td><td>117</td><td>74</td><td>405</td></tr><tr><td>55T</td><td>550</td><td>545</td><td>126</td><td>74</td><td>406</td></tr><tr><td>56T</td><td>560</td><td>550</td><td>135</td><td>74</td><td>408</td></tr><tr><td>57T</td><td>570</td><td>557</td><td>143</td><td>73.5</td><td>410</td></tr><tr><td>58T</td><td>580</td><td>565</td><td>151</td><td>73</td><td>411</td></tr><tr><td>59T</td><td>590</td><td>572</td><td>160</td><td>73</td><td>412</td></tr><tr><td>60T</td><td>600</td><td>580</td><td>162</td><td>72.75</td><td>413</td></tr><tr><td>61T</td><td>610</td><td>586</td><td>171</td><td>72.75</td><td>413</td></tr><tr><td>62T</td><td>620</td><td>590</td><td>182</td><td>72.75</td><td>414</td></tr><tr><td>63T</td><td>630</td><td>594</td><td>182</td><td>72.75</td><td>415</td></tr><tr><td>64T</td><td>640</td><td>597</td><td>192</td><td>72.75</td><td>416</td></tr><tr><td>65T</td><td>650</td><td>600</td><td>203</td><td>72.75</td><td>416</td></tr></tbody></table></div></dialog><script src="assets/js/expanded-product.js?v=8cf1eb3863"></script><script src="assets/js/site-footer.js?v=76d185dbc1"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 

@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const { campaign } = require("./campaign-pricing");
 
 const root = path.resolve(__dirname, "..");
 const pages = [
@@ -80,7 +81,8 @@ if (payload.currency !== "INR" || !payload.products || typeof payload.products !
 
 const actual = new Map(Object.entries(payload.products));
 const issues = [];
-const checkedFields = ["id", "name", "price", "sellingPrice", "preorderDeposit", "available", "stockStatus", "image", "imageByColour", "sizes", "sizeAvailability", "optionsBySize", "purchaseVariants", "sourcePage"];
+if (JSON.stringify(payload.campaign) !== JSON.stringify(campaign.config)) issues.push('Payment campaign rules differ from the approved storefront campaign.');
+const checkedFields = ["id", "name", "price", "sellingPrice", "preorderDeposit", "available", "stockStatus", "requiredOption", "image", "imageByColour", "sizes", "sizeAvailability", "optionsBySize", "purchaseVariants", "sourcePage"];
 
 for (const [id, sourceProduct] of expected) {
   const paymentProduct = actual.get(id);

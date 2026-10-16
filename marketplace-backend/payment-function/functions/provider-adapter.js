@@ -48,7 +48,7 @@ function rupeesToPaise(amount) {
 
 function paiseToRupees(amount) {
   const paise = Number(amount);
-  if (!Number.isSafeInteger(paise) || paise < 0 || paise % 100 !== 0) {
+  if (!Number.isSafeInteger(paise) || paise < 0) {
     throw new ProviderVerificationError("Razorpay returned an invalid amount.");
   }
   return paise / 100;

@@ -6,6 +6,7 @@ const { initializeApp } = require("firebase-admin/app");
 const { getAuth } = require("firebase-admin/auth");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const catalogPayload = require("./catalog.json");
+const campaign = require("./campaign-pricing")(catalogPayload.campaign || {});
 const {
   createProviderOrder,
   createProviderRefund,
@@ -86,11 +87,12 @@ function cleanAddress(value) {
   return result;
 }
 
-function validatedCart(items) {
+function validatedCart(items, now = Date.now()) {
   if (!Array.isArray(items) || items.length < 1 || items.length > 30) throw new Error("Your cart is empty or too large.");
-  let total = 0;
+  let totalPaise = 0;
   const cleanItems = items.map(item => {
-    const product = catalogPayload.products[String(item?.id ?? "")];
+    const catalogProduct = catalogPayload.products[String(item?.id ?? "")];
+    const product = catalogProduct && campaign.resolveProduct(catalogProduct, now);
     const quantity = Number(item?.quantity || 1);
     if (!product) throw new Error(`Product ${text(item?.id, 30)} is no longer available.`);
     if (!product.available) throw new Error(`${product.name}: ${product.stockStatus === "coming-soon" ? "Coming Soon" : (product.stockStatus === "contact" ? "Contact for More Info" : "currently out of stock")}.`);
@@ -103,7 +105,7 @@ function validatedCart(items) {
       if (text(item?.size, 80) !== variant.size || text(item?.valveLength, 160) !== variant.colour || text(item?.configuration, 240) !== variant.build) {
         throw new Error(`The selected configuration for ${product.name} is invalid.`);
       }
-      total += variant.price * quantity;
+      totalPaise += campaign.toPaise(variant.price) * quantity;
       return {
         id: product.id, name: product.name, price: variant.price, sellingPrice: variant.price,
         preorderDeposit: 0, quantity, image: variant.image || product.image, variantKey,
@@ -119,7 +121,7 @@ function validatedCart(items) {
     if (product.optionsBySize && (!size || !Array.isArray(product.optionsBySize[size]) || !product.optionsBySize[size].includes(colour))) {
       throw new Error(`Choose an available frame size and colour for ${product.name}.`);
     }
-    total += product.price * quantity;
+    totalPaise += campaign.toPaise(product.price) * quantity;
     return {
       id: product.id,
       name: product.name,
@@ -132,8 +134,8 @@ function validatedCart(items) {
       ...(colour ? { frameSize: size, valveLength: colour } : {}),
     };
   });
-  if (!Number.isSafeInteger(total) || total < 1) throw new Error("The order total is invalid.");
-  return { items: cleanItems, total };
+  if (!Number.isSafeInteger(totalPaise) || totalPaise < 100) throw new Error("The order total is invalid.");
+  return { items: cleanItems, total: totalPaise / 100 };
 }
 
 function validAttemptId(value) {
@@ -194,7 +196,7 @@ exports.createRazorpayOrder = onRequest(endpointOptions(RAZORPAY_API_SECRETS), a
     const gstin = text(req.body?.gstin, 15).toUpperCase();
     const businessName = text(req.body?.businessName, 120);
     const checkoutFingerprint = createHash("sha256").update(JSON.stringify({
-      items: priced.items.map(item => [item.id, item.quantity, item.size]),
+      items: priced.items.map(item => [item.id, item.quantity, item.size, item.valveLength || '', item.variantKey || '', item.price]),
       address, billingAddress, billingSame: Boolean(req.body?.billingSame), gstin, businessName,
     })).digest("hex");
     const attemptRef = db.collection("paymentAttempts").doc(attemptId);

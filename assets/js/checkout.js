@@ -102,6 +102,11 @@ function normalizeKnownCheckoutPrices(list, storage, key) {
     const current = window.cyclifyNormalizeTfsaCartItem?.(item) || item;
     if (current !== item) changed = true;
     const id = String(item?.id ?? item?.productId ?? "");
+    if (window.CyclifyCampaign?.ruleFor(id)) {
+      const priced = window.CyclifyCampaign.resolveProduct(current);
+      if(priced.price !== current.price) changed=true;
+      return priced;
+    }
     if (id === "36" && priceOf(item) === 40000) {
       changed = true;
       return { ...current, price: 35000 };
@@ -127,7 +132,7 @@ function paymentPriceOf(item) {
   return preorderDepositOf(item) || priceOf(item);
 }
 function cartTotal(list) {
-  return list.reduce((amount, item) => amount + paymentPriceOf(item) * Number(item.quantity || 1), 0);
+  return list.reduce((amount, item) => amount + Math.round(paymentPriceOf(item) * 100) * Number(item.quantity || 1), 0) / 100;
 }
 function resetPayButton(list = checkoutItems()) {
   payNow.disabled = !paymentReady;
@@ -377,6 +382,8 @@ checkoutForm.addEventListener("submit", async event => {
     businessName: addGst.checked ? byId("businessName").value.trim() : "",
   };
   const fingerprint = JSON.stringify({
+    pricingVersion: 'diwali-2026-v1',
+    pricedTotal: cartTotal(list),
     items: list.map(item => [String(item.id), Number(item.quantity || 1), String(item.size || ""), String(item.valveLength || ""), String(item.variantKey || "")]),
     address: addressData,
     billingSame: requestPayload.billingSame,
@@ -401,6 +408,11 @@ checkoutForm.addEventListener("submit", async event => {
       body: JSON.stringify({ ...requestPayload, attemptId }),
     });
     if (!checkoutResultIsValid(order)) throw new Error("Razorpay returned an invalid checkout order. No charge was made.");
+    if (Number(order.amount) !== Math.round(cartTotal(list) * 100)) {
+      sessionStorage.removeItem('cyclifyPaymentAttemptId');
+      sessionStorage.removeItem('cyclifyPaymentCartFingerprint');
+      throw new Error('The price changed while you were checking out. Please refresh to review the current total. No charge was made.');
+    }
 
     let paymentFailed = false;
     let verificationStarted = false;
@@ -439,6 +451,12 @@ checkoutForm.addEventListener("submit", async event => {
             body: JSON.stringify({ attemptId, ...payment }),
           }, 30_000);
           if (!verification.success) throw new Error("Payment confirmation is still pending.");
+          // A pending or failed verification must never record a purchase.
+          const analyticsKey = 'cyclifyTrackedPurchase:' + order.orderId;
+          if (!sessionStorage.getItem(analyticsKey)) {
+            window.CyclifyDiwali?.track('purchase', {transaction_id: order.orderId, value: Number(order.amount) / 100, currency: 'INR'});
+            sessionStorage.setItem(analyticsKey, '1');
+          }
           location.replace(`payment-success.html?attempt=${encodeURIComponent(attemptId)}`);
         } catch (error) {
           console.error("Razorpay verification pending", error);

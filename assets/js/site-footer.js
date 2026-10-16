@@ -82,8 +82,8 @@
     const imageElement = card.querySelector(":scope > img");
     const detailsElement = card.querySelector(":scope > .details");
     const titleElement = detailsElement?.querySelector("h3");
-    const price = Math.round(moneyNumber(priceElement.textContent));
-    const mrp = Math.round(moneyNumber(mrpElement.textContent));
+    const price = Math.round(moneyNumber(priceElement.textContent) * 100) / 100;
+    const mrp = Math.round(moneyNumber(mrpElement.textContent) * 100) / 100;
     if (!price) return;
     card.dataset.cyclifyDealReady = "true";
     card.classList.add("cyclify-premium-card");
@@ -95,7 +95,7 @@
     priceElement.textContent = `\u20B9${price.toLocaleString("en-IN")}`;
     mrpElement.textContent = mrp ? `MRP \u20B9${mrp.toLocaleString("en-IN")}` : "";
     mrpElement.hidden = !mrp;
-    const saving = mrp > price ? mrp - price : 0;
+    const saving = mrp > price ? Math.round((mrp - price) * 100) / 100 : 0;
     const discount = saving ? Math.round((saving / mrp) * 100) : 0;
     const pricing = document.createElement("div");
     pricing.className = "cyclify-card-pricing";

@@ -10,6 +10,7 @@ const adapter = require("../provider-adapter");
 test("converts rupees to paise and rejects amounts below one rupee", () => {
   assert.equal(adapter._test.rupeesToPaise(35_000), 3_500_000);
   assert.equal(adapter._test.rupeesToPaise(1), 100);
+  assert.equal(adapter._test.rupeesToPaise(449.10), 44910);
   assert.throws(() => adapter._test.rupeesToPaise(0.99), /at least 100 paise/);
 });
 
@@ -17,6 +18,13 @@ test("creates a unique Razorpay-compatible receipt no longer than 40 characters"
   const receipt = adapter._test.receiptFor("12345678-1234-1234-1234-123456789012");
   assert.match(receipt, /^cy_[A-Za-z0-9_-]+$/);
   assert.ok(receipt.length <= 40);
+});
+
+test("keeps paise exact in discounted payments and refunds", () => {
+  assert.equal(adapter._test.paiseToRupees(44910), 449.10);
+  assert.equal(adapter._test.paiseToRupees(4499910), 44999.10);
+  assert.equal(adapter._test.remainingRefundAmount({amount:44910,amount_refunded:101}),44809);
+  assert.throws(() => adapter._test.paiseToRupees(44910.5), /invalid amount/);
 });
 
 test("verifies the Standard Checkout HMAC using the server order id", () => {

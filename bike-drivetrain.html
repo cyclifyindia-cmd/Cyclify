@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en"><head><script src="assets/js/diwali-campaign.js?v=a173a78052"></script><script src="assets/js/diwali.js?v=336a55c3de" defer=""></script><script src="assets/js/campaign-storefront.js?v=5dbff0df02" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bike Drivetrain Components India | Cyclify</title>
@@ -342,7 +342,7 @@ gap:5px!important;
 <img src="assets/products/thinkrider-12-speed-11-34-cassette-1.jpg" alt="ThinkRider 12-Speed 11-34T Cassette">
 <div class="details">
 <h3><a href="products/thinkrider-12-speed-11-34t-cassette-56.html" onclick="event.stopPropagation()" style="color:inherit;text-decoration:none">ThinkRider 12-Speed 11-34T Cassette</a></h3>
-<div class="price">Rs 2,999</div>
+<div class="price">Rs 2,699.1</div>
 <div class="mrp">MRP Rs 3,500</div>
 <div class="ship">Free Shipping</div>
 <div class="bottom">
@@ -413,8 +413,11 @@ const wheelSubCategories=[
 {key:"aerobars",parent:"cockpit",label:"Aerobars",image:"assets/products/toseek-ttf10-tt-bar-2.webp"}
 ];
 
+/* campaign pricing */
+window.CyclifyCampaign?.applyToProducts(products);
+
 /* canonical manual products */
-const cyclifyManualProducts=[{"id":56,"name":"ThinkRider 12-Speed 11-34T Cassette","price":2999,"mrp":"Rs 3,500","image":"assets/products/thinkrider-12-speed-11-34-cassette-1.jpg","images":["assets/products/thinkrider-12-speed-11-34-cassette-1.jpg"],"sizes":[],"specs":["Brand : ThinkRider","Type : Road bicycle cassette","Speeds : 12-speed","Gear range : 11-34T","SKU : TR-CASS-12S-11/34","Category : Drivetrain / Cassette","Shipping : Free shipping included"],"categoryPage":"components.html"},{"id":58,"name":"ThinkRider NL-15 Pro Bicycle Torque Wrench Set","price":3999,"mrp":"Rs 4,500","image":"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp","images":["assets/products/thinkrider-nl15-pro-torque-wrench-1.webp","assets/products/thinkrider-nl15-pro-torque-wrench-2.webp","assets/products/thinkrider-nl15-pro-torque-wrench-3.webp","assets/products/thinkrider-nl15-pro-torque-wrench-4.webp"],"sizes":[],"specs":["Brand : ThinkRider","Model : NL-15 Pro","Type : Adjustable bicycle torque wrench and socket kit","Torque range : 2-20 Nm","Drive head : 1/4 inch","Ratchet : 72-tooth, two-way adjustable","Material : Alloy steel","Scale : Electroplated laser-marked scale","Handle : Knurled non-slip grip","Tool size : 252 x 24 mm","Weight : Approximately 328 g without accessories","Use : Accurate bicycle assembly, maintenance, and component replacement","Shipping : Free shipping included"],"categoryPage":"components.html"}];
+const cyclifyManualProducts=[{"id":56,"name":"ThinkRider 12-Speed 11-34T Cassette","price":2699.1,"mrp":"Rs 3,500","image":"assets/products/thinkrider-12-speed-11-34-cassette-1.jpg","images":["assets/products/thinkrider-12-speed-11-34-cassette-1.jpg"],"sizes":[],"specs":["Brand : ThinkRider","Type : Road bicycle cassette","Speeds : 12-speed","Gear range : 11-34T","SKU : TR-CASS-12S-11/34","Category : Drivetrain / Cassette","Shipping : Free shipping included"],"categoryPage":"components.html","regularPrice":2999,"campaignOffer":{"name":"ThinkRider 12-Speed 11-34T Cassette","regularPrice":2999,"salePrice":2699.1,"kind":"percent-off","percentOff":10,"campaignId":"diwali-2026","startsAt":"2026-10-16T00:00:00+05:30","endsAt":"2026-11-10T23:59:59+05:30"}},{"id":58,"name":"ThinkRider NL-15 Pro Bicycle Torque Wrench Set","price":3599.1,"mrp":"Rs 4,500","image":"assets/products/thinkrider-nl15-pro-torque-wrench-1.webp","images":["assets/products/thinkrider-nl15-pro-torque-wrench-1.webp","assets/products/thinkrider-nl15-pro-torque-wrench-2.webp","assets/products/thinkrider-nl15-pro-torque-wrench-3.webp","assets/products/thinkrider-nl15-pro-torque-wrench-4.webp"],"sizes":[],"specs":["Brand : ThinkRider","Model : NL-15 Pro","Type : Adjustable bicycle torque wrench and socket kit","Torque range : 2-20 Nm","Drive head : 1/4 inch","Ratchet : 72-tooth, two-way adjustable","Material : Alloy steel","Scale : Electroplated laser-marked scale","Handle : Knurled non-slip grip","Tool size : 252 x 24 mm","Weight : Approximately 328 g without accessories","Use : Accurate bicycle assembly, maintenance, and component replacement","Shipping : Free shipping included"],"categoryPage":"components.html","regularPrice":3999,"campaignOffer":{"name":"ThinkRider NL-15 Pro Bicycle Torque Wrench Set","regularPrice":3999,"salePrice":3599.1,"kind":"percent-off","percentOff":10,"campaignId":"diwali-2026","startsAt":"2026-10-16T00:00:00+05:30","endsAt":"2026-11-10T23:59:59+05:30"}}];
 cyclifyManualProducts.forEach(product=>{const existing=products.find(item=>String(item.id)===String(product.id));if(existing)Object.assign(existing,product);else products.push(product);});
 /* end canonical manual products */
 /* canonical product names */
@@ -504,6 +507,7 @@ return categoryMatch&&subCategoryMatch&&searchMatch&&productPassesFilter(product
 }
 
 function renderProducts(){
+window.CyclifyCampaign?.applyToProducts(products);
 const filteredProducts=sortProducts(getFilteredProducts());
 const selectedCategory=categories.find(category=>category.key===activeCategory);
 const selectedSubCategory=wheelSubCategories.find(category=>category.key===activeSubCategory);
@@ -642,7 +646,7 @@ else{cartCount.style.display="none";}
 })();
 </script>
 
-<script src="assets/js/site-footer.js?v=e47667cd48"></script>
+<script src="assets/js/site-footer.js?v=76d185dbc1"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 
 

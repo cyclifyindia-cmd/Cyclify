@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en"><head><script src="assets/js/diwali-campaign.js?v=a173a78052"></script><script src="assets/js/diwali.js?v=336a55c3de" defer=""></script><script src="assets/js/campaign-storefront.js?v=5dbff0df02" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cycling Accessories, Mounts, Bags and Pedals | Cyclify</title>
@@ -265,6 +265,9 @@ const categories=[
 {key:"other",label:"Other",image:"assets/categories/subcategories-v2/accessory-other.webp"}
 ];
 
+/* campaign pricing */
+window.CyclifyCampaign?.applyToProducts(products);
+
 /* canonical manual products */
 const cyclifyManualProducts=[{"id":64,"name":"FLR PR-350 Road Bike Pedals","brand":"FLR","description":"Road-racing clipless pedals with a durable alloy body, Cr-Mo axle and smooth sealed bearings. The PR-350 uses a Keo-compatible cleat interface for a secure, efficient road cycling connection.","price":2500,"mrp":"Rs 3,500","image":"assets/products/flr-pr350-pedals-1.webp","images":["assets/products/flr-pr350-pedals-1.webp","assets/products/flr-pr350-pedals-2.webp","assets/products/flr-pr350-pedals-3.webp","assets/products/flr-pr350-pedals-4.webp","assets/products/flr-pr350-pedals-5.webp"],"sizes":[],"sizeAvailability":{},"variants":[],"available":true,"categoryPage":"accessories.html","categoryLabel":"Accessories","mainCategory":"pedals-cleats","subCategory":"road-pedals","keywords":"FLR PR-350 road bike pedals clipless pedals Keo compatible road racing pedals","specs":["Brand : FLR","Model : PR-350","Product type : Road-racing clipless pedals","Unit : Pair","Body : Painted alloy","Axle : Cr-Mo steel","Bearings : Sealed","Cleat interface : Keo compatible","Weight : 289 g per pair","Colour : Black","Shipping : Free shipping included"]}];
 cyclifyManualProducts.forEach(product=>{const existing=products.find(item=>String(item.id)===String(product.id));if(existing)Object.assign(existing,product);else products.push(product);});
@@ -330,6 +333,7 @@ return categoryMatch&&searchMatch&&productPassesFilter(product);
 }
 
 function renderProducts(){
+window.CyclifyCampaign?.applyToProducts(products);
 const filteredProducts=sortProducts(getFilteredProducts());
 const selectedCategory=categories.find(category=>category.key===activeCategory);
 const categoryLabel=selectedCategory?selectedCategory.label:"All Accessories";
@@ -439,7 +443,7 @@ reader.readAsDataURL(file);
 }
 })();
 </script>
-<script src="assets/js/site-footer.js?v=e47667cd48"></script>
+<script src="assets/js/site-footer.js?v=76d185dbc1"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 
 

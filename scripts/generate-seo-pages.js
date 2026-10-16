@@ -10,6 +10,8 @@ const { renderExpandedProduct } = require('./render-expanded-product');
 const { deliveryFor, deliverySchemaFor, assertMerchantAvailability } = require('./fulfilment-policy');
 const { merchantDescriptionFor } = require('./merchant-description');
 const cheerio = require('cheerio');
+const { campaign, buildCampaignAssets } = require('./campaign-pricing');
+buildCampaignAssets();
 
 const root = path.resolve(__dirname, '..');
 const templatePath = path.join(root, 'product.html');
@@ -78,7 +80,7 @@ categoryCatalogs.forEach(({ page, file }) => {
 });
 
 const versionedScripts = [
-  'product-routes.js', 'supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'tfsa-products.js', 'expanded-products.js', 'search-index.js', 'site-footer.js',
+  'product-routes.js', 'supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'tfsa-products.js', 'expanded-products.js', 'search-index.js', 'site-footer.js', 'diwali-campaign.js', 'diwali.js', 'diwali-home.js', 'campaign-storefront.js', 'checkout.js',
   ...categoryCatalogs.map(item => item.file)
 ];
 const scriptVersions = Object.fromEntries(versionedScripts.map(file => {
@@ -345,6 +347,7 @@ products.forEach(product => {
   }
   primaryByKey.set(key, product);
   primaryForProduct.set(String(product.id), product);
+  Object.assign(product, campaign.resolveProduct(product));
   primaryProducts.push(product);
 });
 
@@ -451,6 +454,7 @@ for (const product of primaryProducts) {
           url: canonical,
           priceCurrency: 'INR',
           price: String(product.price),
+          ...(product.campaignOffer ? { priceValidUntil: '2026-11-10' } : {}),
           availability: product.available === false ? 'https://schema.org/OutOfStock' : (product.preorder ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock'),
           itemCondition: 'https://schema.org/NewCondition',
           seller: { '@type': 'Organization', '@id': 'https://cyclify.in/#organization', name: 'CYCLIFY INDIA', url: 'https://cyclify.in/' },
@@ -530,6 +534,7 @@ for (const product of primaryProducts) {
   const listPrice = monetaryValue(product.mrp);
   const saving = Math.max(0, listPrice - sellingPrice);
   $product('#productPrice').text(product.priceOnRequest ? 'Price on request' : '₹' + sellingPrice.toLocaleString('en-IN'));
+  if(product.campaignOffer)$product('#productPrice').after('<p id="campaignProductOffer" style="font-size:12px;color:#77521d;margin:10px 0">Diwali offer · Regular ₹'+campaign.formatPrice(product.regularPrice)+' · Ends 10 November, 11:59 pm IST</p>');
   $product('#productMrp').text(listPrice && !product.priceOnRequest ? 'MRP ₹' + listPrice.toLocaleString('en-IN') : '');
   $product('#productSave').text(saving && !product.priceOnRequest ? 'Save ₹' + saving.toLocaleString('en-IN') : '');
   $product('#productDiscount').text(saving && !product.priceOnRequest ? Math.round(saving / listPrice * 100) + '% OFF' : '');
@@ -664,6 +669,7 @@ $home('main').last().after('<nav id="cyclify-browse-links" aria-label="Explore c
   [['vook-bikes.html','VOOK carbon road bikes'],['sava-bikes.html','SAVA bikes'],['tavelo-bikes.html','TAVELO bikes'],['elves-bikes.html','ELVES bikes'],['tfsa-frames.html','TFSA frames'],['smart-trainers.html','Indoor trainers'],['bike-computers.html','GPS bike computers'],['carbon-wheelsets.html','Carbon wheelsets'],['guides.html','Cycling guides']]
     .map(([href, label]) => '<a href="' + href + '" style="color:inherit">' + label + '</a>').join('') + '</nav>');
 writeFileWithRetry(path.join(root, 'index.html'), $home.html());
+require('./build-diwali-page').buildDiwaliPage(primaryProducts, routes);
 
 const guides = JSON.parse(fs.readFileSync(guidesPath, 'utf8')).guides || [];
 const guideSitemapEntries = [];
@@ -822,7 +828,8 @@ const merchantItems = primaryProducts
     const inferredBrand = (product.name.match(/^(SAVA|ELVES|TFSA|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i) || ['Cyclify'])[0];
     const brand = product.brand || (product.id === 16 ? 'Cyclami' : inferredBrand);
     const currentPrice = monetaryValue(product.price);
-    const listPrice = Math.max(currentPrice, monetaryValue(product.mrp) || currentPrice);
+    const campaignRule = campaign.ruleFor(product.id);
+    const listPrice = campaignRule ? campaignRule.regularPrice : Math.max(currentPrice, monetaryValue(product.mrp) || currentPrice);
     const salePrice = listPrice > currentPrice ? '<g:sale_price>' + currentPrice.toFixed(2) + ' INR</g:sale_price>' : '';
     return '    <item>\n' +
       '      <g:id>CYCLIFY-' + escapeXml(product.id) + '</g:id>\n' +
@@ -838,6 +845,7 @@ const merchantItems = primaryProducts
       '      <g:condition>new</g:condition>\n' +
       '      <g:price>' + listPrice.toFixed(2) + ' INR</g:price>\n' +
       (salePrice ? '      ' + salePrice + '\n' : '') +
+      (product.campaignOffer ? '      <g:sale_price_effective_date>'+campaign.config.startsAt+'/'+campaign.config.endsAt+'</g:sale_price_effective_date>\n' : '') +
       '      <g:brand>' + escapeXml(brand) + '</g:brand>\n' +
       '      <g:product_type>' + escapeXml(product.categoryLabel || categoryLabels[product.categoryPage] || product.category || 'Cycling') + '</g:product_type>\n' +
       '      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price>'+

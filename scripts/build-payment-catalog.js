@@ -2,6 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
 const { loadAllowedProductIds } = require("./product-allowlist");
+const { campaign, buildCampaignAssets } = require("./campaign-pricing");
 
 const root = path.resolve(__dirname, "..");
 const pages = [
@@ -95,9 +96,12 @@ const output = {
     ...externalProductFiles.map(file => fs.statSync(path.join(root, file)).mtimeMs),
   )).toISOString(),
   currency: "INR",
+  campaign: campaign.config,
   products: Object.fromEntries([...catalog.entries()].sort(([a], [b]) => a.localeCompare(b, "en", { numeric: true }))),
 };
 const outputPath = path.join(root, "marketplace-backend", "payment-function", "functions", "catalog.json");
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 writeFileWithRetry(outputPath, `${JSON.stringify(output, null, 2)}\n`);
+buildCampaignAssets();
+writeFileWithRetry(path.join(path.dirname(outputPath), 'campaign-pricing.js'), fs.readFileSync(path.join(root, 'assets/js/campaign-pricing.js'), 'utf8'));
 console.log(`Payment catalog: ${catalog.size} products -> ${path.relative(root, outputPath)}`);
