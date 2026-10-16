@@ -65,7 +65,8 @@
   }
   function settle() {
     clearTimeout(idleTimer);
-    if (frame) { cancelAnimationFrame(frame); frame = 0; }
+    // Some browsers send scrollend before the queued frame; apply that final delta first.
+    if (frame) { cancelAnimationFrame(frame); frame = 0; render(); }
     reels.forEach(reel => {
       reel.progress = reduced.matches ? 0 : Math.round(reel.progress);
       paint(reel, true);
