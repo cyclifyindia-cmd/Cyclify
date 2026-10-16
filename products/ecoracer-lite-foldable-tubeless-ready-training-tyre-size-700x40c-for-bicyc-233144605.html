@@ -2,7 +2,7 @@
 <base href="../">
 <script src="assets/js/diwali-campaign.js?v=a173a78052"></script>
 <script src="assets/js/diwali.js?v=336a55c3de" defer=""></script>
-<script src="assets/js/campaign-storefront.js?v=5dbff0df02" defer=""></script>
+<script src="assets/js/campaign-storefront.js?v=38e9befd1f" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -2774,12 +2774,12 @@ const price=Math.round((Number(product.price)||0)*100)/100;
 const mrp=productMoneyNumber(product.mrp);
 const saving=Math.max(0,Math.round((mrp-price)*100)/100);
 const discount=mrp>price?Math.round((saving/mrp)*100):0;
-document.getElementById("productPrice").textContent=product.priceOnRequest?"Price on request":`₹${price.toLocaleString("en-IN")}`;
+document.getElementById("productPrice").textContent=product.priceOnRequest?"Price on request":`₹${window.CyclifyCampaign.formatPrice(price)}`;
 const mrpElement=document.getElementById("productMrp");
 const saveElement=document.getElementById("productSave");
 const discountElement=document.getElementById("productDiscount");
 mrpElement.textContent=mrp?`MRP ₹${mrp.toLocaleString("en-IN")}`:"";
-saveElement.textContent=saving?`Save ₹${saving.toLocaleString("en-IN")}`:"";
+saveElement.textContent=saving?`Save ₹${window.CyclifyCampaign.formatPrice(saving)}`:"";
 discountElement.textContent=discount?`${discount}% OFF`:"";
 mrpElement.hidden=!mrp;
 saveElement.hidden=!saving;
@@ -3363,7 +3363,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=08783ca89f"></script>
+<script src="assets/js/site-footer.js?v=6bec8a26bc"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 

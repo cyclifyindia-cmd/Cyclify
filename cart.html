@@ -661,7 +661,7 @@ ${item.name}
 
 <div class="price">
 
-Rs ${price.toLocaleString()}
+Rs ${window.CyclifyCampaign.formatPrice(price)}
 
 </div>
 
@@ -729,10 +729,10 @@ onclick=
 );
 
 document.getElementById("totalPrice").innerHTML=`
-<div class="total-row"><span>${hasPreorder?"Order value":"Subtotal"}</span><strong>₹${total.toLocaleString("en-IN")}</strong></div>
+<div class="total-row"><span>${hasPreorder?"Order value":"Subtotal"}</span><strong>₹${window.CyclifyCampaign.formatPrice(total)}</strong></div>
 <div class="total-row"><span>Standard delivery</span><span class="free-delivery">FREE</span></div>
 ${hasPreorder?`<div class="total-row"><span>Preorder payment</span><strong class="deposit-due">₹1 per frame</strong></div>`:""}
-<div class="total-row"><span>${hasPreorder?"Payable now":"Total"}</span><strong>₹${(hasPreorder?payableNow:total).toLocaleString("en-IN")}</strong></div>
+<div class="total-row"><span>${hasPreorder?"Payable now":"Total"}</span><strong>₹${window.CyclifyCampaign.formatPrice(hasPreorder?payableNow:total)}</strong></div>
 <div class="checkout-trust"><span>✓ Secure checkout</span><span>✓ Free delivery</span><span>✓ ${hasPreorder?"10–12 day delivery":"3–6 business days"}</span></div>`;
 
 localStorage.setItem(
@@ -801,7 +801,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=08783ca89f"></script>
+<script src="assets/js/site-footer.js?v=6bec8a26bc"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>

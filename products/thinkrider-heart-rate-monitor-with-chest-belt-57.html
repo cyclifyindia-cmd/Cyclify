@@ -2,7 +2,7 @@
 <base href="../">
 <script src="assets/js/diwali-campaign.js?v=a173a78052"></script>
 <script src="assets/js/diwali.js?v=336a55c3de" defer=""></script>
-<script src="assets/js/campaign-storefront.js?v=5dbff0df02" defer=""></script>
+<script src="assets/js/campaign-storefront.js?v=38e9befd1f" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -1353,9 +1353,9 @@ else{cartCount.style.display="none";}
 
 <div class="price-line" id="productPriceLine" aria-label="Cyclify deal price">
 <div class="deal-head"><img src="assets/Logo-dark.png" alt="Cyclify"><span class="deal-divider"></span><span class="deal-word" id="productDealWord">DEAL</span></div>
-<div class="deal-main"><div class="deal-price" id="productPrice">₹2,340</div><p id="campaignProductOffer" style="font-size:12px;color:#77521d;margin:10px 0">Diwali offer · Regular ₹2,600 · Ends 10 November, 11:59 pm IST</p><div class="deal-off" id="productDiscount">31% OFF</div></div>
+<div class="deal-main"><div class="deal-price" id="productPrice">₹2,340</div><div class="deal-off" id="productDiscount">31% OFF</div></div>
 <div class="deal-meta"><div class="deal-mrp" id="productMrp">MRP ₹3,400</div><div class="deal-save" id="productSave">Save ₹1,060</div><div class="shipping-note"><span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span></div></div>
-</div>
+</div><p id="campaignProductOffer" style="font-size:12px;color:#77521d;margin:10px 0">Diwali offer · Regular ₹2,600 · Ends 10 November, 11:59 pm IST</p>
 
 <div class="product-fulfilment" id="productFulfilment" hidden=""></div>
 
@@ -2759,12 +2759,12 @@ const price=Math.round((Number(product.price)||0)*100)/100;
 const mrp=productMoneyNumber(product.mrp);
 const saving=Math.max(0,Math.round((mrp-price)*100)/100);
 const discount=mrp>price?Math.round((saving/mrp)*100):0;
-document.getElementById("productPrice").textContent=product.priceOnRequest?"Price on request":`₹${price.toLocaleString("en-IN")}`;
+document.getElementById("productPrice").textContent=product.priceOnRequest?"Price on request":`₹${window.CyclifyCampaign.formatPrice(price)}`;
 const mrpElement=document.getElementById("productMrp");
 const saveElement=document.getElementById("productSave");
 const discountElement=document.getElementById("productDiscount");
 mrpElement.textContent=mrp?`MRP ₹${mrp.toLocaleString("en-IN")}`:"";
-saveElement.textContent=saving?`Save ₹${saving.toLocaleString("en-IN")}`:"";
+saveElement.textContent=saving?`Save ₹${window.CyclifyCampaign.formatPrice(saving)}`:"";
 discountElement.textContent=discount?`${discount}% OFF`:"";
 mrpElement.hidden=!mrp;
 saveElement.hidden=!saving;
@@ -3348,7 +3348,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=08783ca89f"></script>
+<script src="assets/js/site-footer.js?v=6bec8a26bc"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 

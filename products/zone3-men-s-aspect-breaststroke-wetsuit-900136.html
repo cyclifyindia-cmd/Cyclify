@@ -2,7 +2,7 @@
 <base href="../">
 <script src="assets/js/diwali-campaign.js?v=a173a78052"></script>
 <script src="assets/js/diwali.js?v=336a55c3de" defer=""></script>
-<script src="assets/js/campaign-storefront.js?v=5dbff0df02" defer=""></script>
+<script src="assets/js/campaign-storefront.js?v=38e9befd1f" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -2666,12 +2666,12 @@ const price=Math.round((Number(product.price)||0)*100)/100;
 const mrp=productMoneyNumber(product.mrp);
 const saving=Math.max(0,Math.round((mrp-price)*100)/100);
 const discount=mrp>price?Math.round((saving/mrp)*100):0;
-document.getElementById("productPrice").textContent=product.priceOnRequest?"Price on request":`₹${price.toLocaleString("en-IN")}`;
+document.getElementById("productPrice").textContent=product.priceOnRequest?"Price on request":`₹${window.CyclifyCampaign.formatPrice(price)}`;
 const mrpElement=document.getElementById("productMrp");
 const saveElement=document.getElementById("productSave");
 const discountElement=document.getElementById("productDiscount");
 mrpElement.textContent=mrp?`MRP ₹${mrp.toLocaleString("en-IN")}`:"";
-saveElement.textContent=saving?`Save ₹${saving.toLocaleString("en-IN")}`:"";
+saveElement.textContent=saving?`Save ₹${window.CyclifyCampaign.formatPrice(saving)}`:"";
 discountElement.textContent=discount?`${discount}% OFF`:"";
 mrpElement.hidden=!mrp;
 saveElement.hidden=!saving;
@@ -3255,7 +3255,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<dialog id="expandedSizeGuide" class="expanded-size-guide"><div class="expanded-dialog-heading"><h2>Size guide</h2><button type="button" data-expanded-close="" aria-label="Close size guide">×</button></div><div class="expanded-chart-scroll"><table><thead><tr><th scope="col">Size</th><th scope="col">Height</th><th scope="col">Weight</th><th scope="col">Chest</th><th scope="col">Body Type</th></tr></thead><tbody><tr><td>S</td><td>163cm - 173cm</td><td>55kg - 65kg</td><td>79cm - 91cm</td><td>Small</td></tr><tr><td>SM</td><td>170cm - 178cm</td><td>62kg - 70kg</td><td>89cm - 97cm</td><td>Small Medium</td></tr><tr><td>ST</td><td>175cm - 191cm</td><td>64kg - 72kg</td><td>89cm - 97cm</td><td>Small Tall</td></tr><tr><td>M</td><td>173cm - 183cm</td><td>68kg - 74kg</td><td>97cm - 102cm</td><td>Medium</td></tr><tr><td>MT</td><td>175cm - 191cm</td><td>68kg - 78kg</td><td>97cm - 102cm</td><td>Medium Tall</td></tr><tr><td>ML</td><td>173cm - 188cm</td><td>75kg - 82kg</td><td>102cm - 107cm</td><td>Medium Large</td></tr><tr><td>L</td><td>178cm - 191cm</td><td>82kg - 92kg</td><td>107cm - 112cm</td><td>Large</td></tr><tr><td>XL</td><td>183cm - 196cm</td><td>92kg - 100kg</td><td>112cm - 122cm</td><td>X Large</td></tr><tr><td>XXL</td><td>183cm - 196cm</td><td>97kg - 115kg</td><td>117cm - 127cm</td><td>XX Large</td></tr></tbody></table></div></dialog><script src="assets/js/expanded-product.js?v=8cf1eb3863"></script><script src="assets/js/site-footer.js?v=08783ca89f"></script>
+<dialog id="expandedSizeGuide" class="expanded-size-guide"><div class="expanded-dialog-heading"><h2>Size guide</h2><button type="button" data-expanded-close="" aria-label="Close size guide">×</button></div><div class="expanded-chart-scroll"><table><thead><tr><th scope="col">Size</th><th scope="col">Height</th><th scope="col">Weight</th><th scope="col">Chest</th><th scope="col">Body Type</th></tr></thead><tbody><tr><td>S</td><td>163cm - 173cm</td><td>55kg - 65kg</td><td>79cm - 91cm</td><td>Small</td></tr><tr><td>SM</td><td>170cm - 178cm</td><td>62kg - 70kg</td><td>89cm - 97cm</td><td>Small Medium</td></tr><tr><td>ST</td><td>175cm - 191cm</td><td>64kg - 72kg</td><td>89cm - 97cm</td><td>Small Tall</td></tr><tr><td>M</td><td>173cm - 183cm</td><td>68kg - 74kg</td><td>97cm - 102cm</td><td>Medium</td></tr><tr><td>MT</td><td>175cm - 191cm</td><td>68kg - 78kg</td><td>97cm - 102cm</td><td>Medium Tall</td></tr><tr><td>ML</td><td>173cm - 188cm</td><td>75kg - 82kg</td><td>102cm - 107cm</td><td>Medium Large</td></tr><tr><td>L</td><td>178cm - 191cm</td><td>82kg - 92kg</td><td>107cm - 112cm</td><td>Large</td></tr><tr><td>XL</td><td>183cm - 196cm</td><td>92kg - 100kg</td><td>112cm - 122cm</td><td>X Large</td></tr><tr><td>XXL</td><td>183cm - 196cm</td><td>97kg - 115kg</td><td>117cm - 127cm</td><td>XX Large</td></tr></tbody></table></div></dialog><script src="assets/js/expanded-product.js?v=8cf1eb3863"></script><script src="assets/js/site-footer.js?v=6bec8a26bc"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 

@@ -533,10 +533,10 @@ for (const product of primaryProducts) {
   const sellingPrice = Number(product.price) || 0;
   const listPrice = monetaryValue(product.mrp);
   const saving = Math.max(0, listPrice - sellingPrice);
-  $product('#productPrice').text(product.priceOnRequest ? 'Price on request' : '₹' + sellingPrice.toLocaleString('en-IN'));
-  if(product.campaignOffer)$product('#productPrice').after('<p id="campaignProductOffer" style="font-size:12px;color:#77521d;margin:10px 0">Diwali offer · Regular ₹'+campaign.formatPrice(product.regularPrice)+' · Ends 10 November, 11:59 pm IST</p>');
+  $product('#productPrice').text(product.priceOnRequest ? 'Price on request' : '₹' + campaign.formatPrice(sellingPrice));
+  if(product.campaignOffer)$product('#productPriceLine').after('<p id="campaignProductOffer" style="font-size:12px;color:#77521d;margin:10px 0">Diwali offer · Regular ₹'+campaign.formatPrice(product.regularPrice)+' · Ends 10 November, 11:59 pm IST</p>');
   $product('#productMrp').text(listPrice && !product.priceOnRequest ? 'MRP ₹' + listPrice.toLocaleString('en-IN') : '');
-  $product('#productSave').text(saving && !product.priceOnRequest ? 'Save ₹' + saving.toLocaleString('en-IN') : '');
+  $product('#productSave').text(saving && !product.priceOnRequest ? 'Save ₹' + campaign.formatPrice(saving) : '');
   $product('#productDiscount').text(saving && !product.priceOnRequest ? Math.round(saving / listPrice * 100) + '% OFF' : '');
   $product('#specSummaryText').text(product.description || 'Specifications and compatibility for ' + product.name + '.');
   $product('#specList').html('<ul>' + (product.specs || []).map(spec => '<li>' + escapeHtml(spec) + '</li>').join('') + '</ul>');

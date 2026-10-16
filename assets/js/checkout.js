@@ -134,6 +134,9 @@ function paymentPriceOf(item) {
 function cartTotal(list) {
   return list.reduce((amount, item) => amount + Math.round(paymentPriceOf(item) * 100) * Number(item.quantity || 1), 0) / 100;
 }
+function checkoutMoney(value) {
+  return Number(value).toLocaleString('en-IN', {minimumFractionDigits:Number.isInteger(Number(value))?0:2,maximumFractionDigits:2});
+}
 function resetPayButton(list = checkoutItems()) {
   payNow.disabled = !paymentReady;
   if (!paymentReady) {
@@ -143,8 +146,8 @@ function resetPayButton(list = checkoutItems()) {
   const amount = cartTotal(list);
   const onlyPreorders = list.length > 0 && list.every(item => preorderDepositOf(item) > 0);
   payNow.textContent = onlyPreorders
-    ? `Pay \u20B9${amount.toLocaleString("en-IN")} Preorder Deposit`
-    : (list.some(item => preorderDepositOf(item) > 0) ? `Pay \u20B9${amount.toLocaleString("en-IN")} Now` : "Pay Now");
+    ? `Pay \u20B9${checkoutMoney(amount)} Preorder Deposit`
+    : (list.some(item => preorderDepositOf(item) > 0) ? `Pay \u20B9${checkoutMoney(amount)} Now` : "Pay Now");
 }
 function showError(message) {
   formError.textContent = message;
@@ -281,21 +284,21 @@ async function render() {
     const preorderCopy = deposit > 0
       ? `<small class="preorder-copy">Frame price \u20B9${framePrice.toLocaleString("en-IN")}. \u20B9${deposit.toLocaleString("en-IN")} is charged today; remaining \u20B9${remaining.toLocaleString("en-IN")} per frame is payable after size${item.customPainting ? " and custom paint" : ""} confirmation.</small>`
       : "";
-    return `<div class="item"><img src="${escapeText(item.image)}" alt=""><div><p>${escapeText(item.name)}</p><small>Qty ${quantity}${item.size ? ` | Size ${escapeText(item.size)}` : ""}${item.valveLength ? ` | ${escapeText(item.valveLength)}` : ""}</small>${item.configuration ? `<small>Build: ${escapeText(item.configuration)}</small>` : ""}${preorderCopy}</div><span class="money ${deposit > 0 ? "deposit-money" : ""}">${deposit > 0 ? `\u20B9${(deposit * quantity).toLocaleString("en-IN")} deposit` : `\u20B9${(framePrice * quantity).toLocaleString("en-IN")}`}</span></div>`;
+    return `<div class="item"><img src="${escapeText(item.image)}" alt=""><div><p>${escapeText(item.name)}</p><small>Qty ${quantity}${item.size ? ` | Size ${escapeText(item.size)}` : ""}${item.valveLength ? ` | ${escapeText(item.valveLength)}` : ""}</small>${item.configuration ? `<small>Build: ${escapeText(item.configuration)}</small>` : ""}${preorderCopy}</div><span class="money ${deposit > 0 ? "deposit-money" : ""}">${deposit > 0 ? `\u20B9${(deposit * quantity).toLocaleString("en-IN")} deposit` : `\u20B9${checkoutMoney(framePrice * quantity)}`}</span></div>`;
   }).join("");
   const count = list.reduce((number, item) => number + Number(item.quantity || 1), 0);
   byId("itemCount").textContent = `${count} item${count === 1 ? "" : "s"}`;
   byId("orderValueRow").hidden = !hasPreorder;
   byId("depositRow").hidden = !hasPreorder;
   if (hasPreorder) {
-    byId("orderValue").textContent = `\u20B9${orderValue.toLocaleString("en-IN")}`;
-    byId("depositTotal").textContent = `\u20B9${depositTotal.toLocaleString("en-IN")}`;
+    byId("orderValue").textContent = `\u20B9${checkoutMoney(orderValue)}`;
+    byId("depositTotal").textContent = `\u20B9${checkoutMoney(depositTotal)}`;
     byId("totalLabel").innerHTML = "Payable now<small>\u20B91 preorder deposit per TFSA frame</small>";
     byId("savingNote").innerHTML = '<span aria-hidden="true">✓</span> Remaining frame balance is payable only after size and custom-paint confirmation';
     byId("deliveryTiming").innerHTML = "<strong>FREE delivery</strong> in approximately 10–12 days after final order confirmation.";
     if (paymentReady) paymentStatus.textContent = "Only the clearly shown preorder deposit is charged now. The remaining frame balance is collected after Cyclify confirms your size and custom paint.";
   }
-  byId("total").textContent = `\u20B9${cartTotal(list).toLocaleString("en-IN")}`;
+  byId("total").textContent = `\u20B9${checkoutMoney(cartTotal(list))}`;
   resetPayButton(list);
   let saved = null;
   try {

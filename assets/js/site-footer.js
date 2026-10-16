@@ -92,7 +92,8 @@
       titleElement.classList.add("cyclify-card-title");
       card.insertBefore(titleElement, imageElement);
     }
-    priceElement.textContent = `\u20B9${price.toLocaleString("en-IN")}`;
+    const formatMoney = value => Number(value).toLocaleString('en-IN', {minimumFractionDigits:Number.isInteger(Number(value))?0:2, maximumFractionDigits:2});
+    priceElement.textContent = `\u20B9${formatMoney(price)}`;
     mrpElement.textContent = mrp ? `MRP \u20B9${mrp.toLocaleString("en-IN")}` : "";
     mrpElement.hidden = !mrp;
     const saving = mrp > price ? Math.round((mrp - price) * 100) / 100 : 0;
@@ -113,7 +114,7 @@
     if (saving) {
       const savingElement = document.createElement("span");
       savingElement.className = "cyclify-card-saving";
-      savingElement.textContent = `Save \u20B9${saving.toLocaleString("en-IN")}`;
+      savingElement.textContent = `Save \u20B9${formatMoney(saving)}`;
       subLine.appendChild(savingElement);
     }
     if (discount) {
