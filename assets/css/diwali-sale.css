@@ -75,7 +75,7 @@
  .diwali-categories header>a{display:inline-block;font-size:11px;margin-top:12px}
  .diwali-category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
  .diwali-category-top{height:37px}
- .diwali-category-festive{height:37px;min-width:200px}
+ .diwali-category-festive{height:37px;min-width:0}
  .diwali-category-photo{aspect-ratio:1}
  .diwali-category-photo img{padding:8px}
  .diwali-category-copy{padding:13px 11px}
