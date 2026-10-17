@@ -7,7 +7,7 @@
   "startsAt": "2026-10-16T00:00:00+05:30",
   "endsAt": "2026-11-10T23:59:59+05:30",
   "endLabel": "10 November 2026",
-  "terms": "ThinkRider X2 Max is ₹29,999. All other listed ThinkRider products receive 10% off their pre-campaign selling price. Prices include the offer; no code is needed. Offers end 10 November 2026 at 11:59 pm IST. Subject to current stock. Other featured products are curated picks at their displayed prices.",
+  "terms": "ThinkRider X2 Max is ₹29,999. All other listed ThinkRider products receive 10% off their pre-campaign selling price. Prices include the offer; no code is needed. Subject to current stock. Other featured products are curated picks at their displayed prices.",
   "products": {
     "36": { "name": "ThinkRider X2 Max Smart Trainer", "regularPrice": 35000, "salePrice": 29999, "kind": "fixed-price" },
     "38": { "name": "ThinkRider XX PRO Foldable Smart Trainer", "regularPrice": 49999, "salePrice": 44999.10, "kind": "percent-off", "percentOff": 10 },

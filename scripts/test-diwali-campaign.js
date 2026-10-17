@@ -36,6 +36,18 @@ assert.throws(()=>campaign.toPaise(1.001),/Invalid/);
 assert.equal(campaign.formatPrice(449.1),'449.10');
 assert(read('sitemap.xml').includes('https://cyclify.in/diwali-deals.html'));
 const page=cheerio.load(read('diwali-deals.html'));assert.equal(page('.diwali-card').length,12);assert.equal(page('#diwaliHelpForm').length,1);
+// The sale still expires automatically; its deadline is not advertised in visible copy.
+const advertisedDeadline=/\b(?:10\s+nov(?:ember)?|nov(?:ember)?\s+10)\b/i;
+for(const file of ['index.html','diwali-deals.html']){
+ const $=cheerio.load(read(file));$('script,style').remove();
+ assert.equal(advertisedDeadline.test($('body').text()),false,`${file} advertises the removed deadline`);
+ assert.equal(advertisedDeadline.test($('meta[name="description"]').attr('content')||''),false,`${file} advertises the deadline in search copy`);
+}
+for(const id of Object.keys(rules)){
+ const $=cheerio.load(read(routes.window.CYCLIFY_PRODUCT_ROUTES[id]));
+ assert.equal(advertisedDeadline.test($('#campaignProductOffer').text()),false,`Product ${id} advertises the removed deadline`);
+}
+assert.equal(advertisedDeadline.test(campaign.config.terms),false);
 assert(read('assets/js/diwali-campaign.js').includes(campaign.config.endsAt));
 const closed=cheerio.load(require('./build-diwali-page').buildDiwaliPage(base,routes.window.CYCLIFY_PRODUCT_ROUTES||{},{now:'2026-11-11T00:00:00+05:30',write:false}));
 assert(closed('title').text().includes('Current Offers'));

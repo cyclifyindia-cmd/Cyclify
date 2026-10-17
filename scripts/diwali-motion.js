@@ -4,6 +4,16 @@ const path=require('node:path');
 const css=fs.readFileSync(path.join(__dirname,'../assets/css/diwali-motion.css'),'utf8');
 const saleCss=fs.readFileSync(path.join(__dirname,'../assets/css/diwali-sale.css'),'utf8');
 
+function categoryFestiveHeader(index){
+ const flower=(x,y,size,delay)=>`<g transform="translate(${x} ${y}) scale(${size})"><g class="diwali-marigold" style="--festive-delay:${delay}s">${Array.from({length:12},(_,n)=>`<ellipse cx="0" cy="-8" rx="3.5" ry="6" fill="${n%2?'#ffd347':'#efb923'}" transform="rotate(${n*30})"/>`).join('')}<circle r="7" fill="#f7c129"/><circle r="4" fill="#e6a416"/><circle cx="-1.3" cy="-1.5" r="1.3" fill="#ffe898"/></g></g>`;
+ const lamp=(x,y,scale,delay)=>`<g transform="translate(${x} ${y}) scale(${scale})"><ellipse cy="4" rx="16" ry="3" fill="#e8ae38" opacity=".17"/><g class="diwali-category-flame" style="--festive-delay:${delay}s"><path d="M0-26C-2-20-8-16-6-11C-3-4 5-5 6-11C8-17 2-20 0-26Z" fill="#eea91e"/><path d="M0-20C-2-16-4-12-2-10C0-7 4-10 3-13Z" fill="#fff3bc"/></g><path d="M-16-5Q0 17 16-5Z" fill="#bc612b"/><path d="M-12-3Q0 10 12-3" fill="none" stroke="#e5af50" stroke-width="1.5"/><ellipse cy="-5" rx="16" ry="3" fill="#e5a93c"/><ellipse cy="-5" rx="12" ry="1.6" fill="#8e471d"/><path d="M0-5V-9" stroke="#fff0c9" stroke-width="1.5"/></g>`;
+ const petals=`<g class="diwali-rangoli"><circle r="14" fill="none" stroke="#c99333" stroke-width=".8" stroke-dasharray="1 4"/>${Array.from({length:8},(_,n)=>`<path d="M0-10Q6-4 0 0Q-6-4 0-10Z" fill="none" stroke="#d6a43d" stroke-width=".8" transform="rotate(${n*45})"/>`).join('')}<circle r="2" fill="#bd762b"/></g>`;
+ const left=[48,54,42,51,45,55][index],right=300-left;
+ const centre=index%2===0?lamp(150,36,.9,-index*.45):`<g transform="translate(150 25)">${petals}</g>`;
+ const sides=index%2===0?`<g transform="translate(96 25) scale(.48)">${petals}</g><g transform="translate(204 25) scale(.48)">${petals}</g>`:lamp(105,35,.64,-.7-index*.3)+lamp(195,35,.64,-1.3-index*.3);
+ return `<div class="diwali-category-top" aria-hidden="true"><svg class="diwali-category-festive" viewBox="0 0 300 50" width="300" height="50" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M0 10Q${left} 38 81 14M219 14Q${right} 38 300 10" fill="none" stroke="#b8a262" stroke-width="1" opacity=".65"/><path d="M${left-17} 21q-12-11-17-7q1 8 17 7M${right+17} 21q12-11 17-7q-1 8-17 7" fill="#809459" opacity=".8"/>${flower(left,25,.86,-index*.67)}${flower(right,25,.86,-1-index*.53)}${sides}${centre}<circle cx="19" cy="25" r="1.6" fill="#d9a02c"/><circle cx="281" cy="25" r="1.6" fill="#d9a02c"/></svg></div>`;
+}
+
 function saleCategories(){
  const product=(file,name)=>['assets/products/expanded/'+file+'.webp',name];
  const cards=[
@@ -21,8 +31,8 @@ function saleCategories(){
    product('cd64e087107dbcbc7c','Controltech Rib cage'),product('d3ae9de1f7010754ac','Selle Italia Nastro Smart Tape'),product('559c985c6166088086','Scicon AeroComfort bag'),product('4386960618d7807a59','Controltech Time Zone hydration')]]
  ];
  const cardHtml=cards.map(([url,name,copy,photos],i)=>{
-  const slides=[...photos,photos[0]].map(([src,label],j)=>`<div class="diwali-category-slide${j===photos.length?' is-clone':''}" data-name="${label}" aria-hidden="true"><img ${j===0?'src':'data-src'}="${src}" alt="" width="600" height="450" loading="lazy" decoding="async" fetchpriority="low"></div>`).join('');
-  return `<a class="diwali-category-card" href="${url}" aria-label="Shop ${name}" data-campaign-event="campaign_category_click"><div class="diwali-category-top"><span>DIWALI EDIT</span><b aria-hidden="true">0${i+1}</b></div><div class="diwali-category-photo" data-category-reel role="img" aria-label="${photos[0][1]}"><div class="diwali-category-track">${slides}</div></div><div class="diwali-category-caption" aria-hidden="true"><strong data-reel-name>${photos[0][1]}</strong><span data-reel-count>1 / ${photos.length}</span></div><div class="diwali-category-copy"><h3>${name}</h3><p>${copy}</p><span>Shop collection <b aria-hidden="true">↗</b></span></div></a>`;
+  const slides=photos.map(([src,label],j)=>`<div class="diwali-category-slide" data-name="${label}" aria-hidden="true"><img ${j===0?'src':'data-src'}="${src}" alt="" width="600" height="450" loading="lazy" decoding="async" fetchpriority="low"></div>`).join('');
+  return `<a class="diwali-category-card" href="${url}" aria-label="Shop ${name}" data-campaign-event="campaign_category_click">${categoryFestiveHeader(i)}<div class="diwali-category-photo" data-category-reel role="img" aria-label="${photos[0][1]}"><div class="diwali-category-track">${slides}</div></div><div class="diwali-category-caption" aria-hidden="true"><strong data-reel-name>${photos[0][1]}</strong><span data-reel-count>1 / ${photos.length}</span></div><div class="diwali-category-copy"><h3>${name}</h3><p>${copy}</p><span>Shop collection <b aria-hidden="true">↗</b></span></div></a>`;
  }).join('');
  return `<section class="diwali-categories" aria-labelledby="diwaliCategoryTitle"><div class="diwali-categories-inner"><header><div><p class="diwali-sale-kicker">THE FESTIVAL OF LIGHTS. THE JOY OF RIDING.</p><h2 id="diwaliCategoryTitle">Your Diwali. <em>Your next upgrade.</em></h2><p class="diwali-reel-hint">Scroll to discover more in every collection.</p></div><a href="diwali-deals.html">Explore Diwali offers <span aria-hidden="true">↗</span></a></header><div class="diwali-category-grid">${cardHtml}</div><p class="diwali-category-note">ThinkRider X2 Max ₹29,999 · 10% off other ThinkRider products · Explore current prices across every collection.</p></div></section>`;
 }
@@ -45,6 +55,8 @@ function addDiwaliMotion($,{home=false}={}){
   $('#diwaliHomeTitle').html('Diwali deals.<br>Brighter <em>rides.</em>');
   $('.diwali-home-description').text('Celebrate with a riding upgrade. Discover our ThinkRider offers and festive picks across all six collections.');
   $('.diwali-home-label').text('DIWALI SPECIAL');
+  $('.diwali-home-dates').remove();
+  $('.diwali-home-strip>span').text('Discover the offers');
   $('.diwali-home-button').html('Shop Diwali sale <span aria-hidden="true">↗</span>');
   const eyebrow=$('.diwali-home-copy .diwali-home-eyebrow').first();
   if(!eyebrow.parent().hasClass('diwali-home-intro'))eyebrow.wrap('<div class="diwali-home-intro"></div>');

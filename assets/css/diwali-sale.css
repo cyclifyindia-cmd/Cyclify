@@ -24,12 +24,21 @@
 .diwali-categories header>a{color:#6d3c1b;font:700 12px/1.5 Inter,Arial,sans-serif;text-decoration:none;border-bottom:1px solid #b58a57;padding:8px 0;white-space:nowrap}
 .diwali-category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .diwali-category-card{display:flex;flex-direction:column;min-width:0;text-decoration:none!important;color:#241d17!important;background:#fff;border:1px solid #e5d7bd;box-shadow:0 8px 24px #64401b08;position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
-.diwali-category-top{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#fff6e4;color:#704011;font:800 11px/1.4 Inter,Arial,sans-serif;letter-spacing:.12em;border-bottom:1px solid #eedfc4}
-.diwali-category-top>span:before{content:"✦";margin-right:8px;color:#a8671b}
-.diwali-category-top>b{font-weight:500;letter-spacing:.05em}
+.diwali-category-top{display:flex;justify-content:center;align-items:center;height:50px;background:linear-gradient(90deg,#fffaf0,#fff4d9 50%,#fffaf0);border-bottom:1px solid #f0e4ca;overflow:hidden;pointer-events:none}
+.diwali-category-festive{display:block;width:100%;height:50px;max-width:340px;overflow:visible}
+.diwali-marigold{transform-box:fill-box;transform-origin:50% 50%;animation:diwaliMarigoldSway 4.8s ease-in-out infinite;animation-delay:var(--festive-delay,0s)}
+.diwali-category-flame{transform-box:fill-box;transform-origin:50% 100%;animation:diwaliCategoryFlame 2.4s ease-in-out infinite;animation-delay:var(--festive-delay,0s)}
+.diwali-rangoli{transform-box:fill-box;transform-origin:50% 50%;animation:diwaliRangoliBreathe 5.6s ease-in-out infinite}
+.diwali-marigold,.diwali-category-flame,.diwali-rangoli{animation-play-state:paused}
+.diwali-category-card[data-festive-active=true] :is(.diwali-marigold,.diwali-category-flame,.diwali-rangoli){animation-play-state:running}
+@keyframes diwaliMarigoldSway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes diwaliCategoryFlame{0%,100%{transform:rotate(-5deg) scaleY(.96)}35%{transform:rotate(5deg) scaleY(1.06)}70%{transform:rotate(-2deg) scaleY(.99)}}
+@keyframes diwaliRangoliBreathe{0%,100%{opacity:.64;transform:scale(.94)}50%{opacity:1;transform:scale(1)}}
 .diwali-category-photo{background:#fff;aspect-ratio:4/3;overflow:hidden;position:relative}
-.diwali-category-track{position:absolute;inset:0;width:100%;height:100%;transform:translate3d(0,0,0)}
-.diwali-category-slide{display:block;width:100%;height:100%}
+.diwali-category-track{position:absolute;inset:0;width:100%;height:100%;contain:layout paint style}
+.diwali-category-slide{position:absolute;inset:0;display:block;width:100%;height:100%;visibility:hidden;backface-visibility:hidden}
+.diwali-category-slide:first-child{visibility:visible}
+.diwali-category-slide.is-clone{display:none}
 .diwali-category-caption{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:#fff;border-top:1px solid #f4eee5;min-height:48px;box-sizing:border-box;font:600 12px/1.35 Inter,Arial,sans-serif;color:#3d3328}
 .diwali-category-caption strong{font-weight:650;min-width:0}
 .diwali-category-caption>span{white-space:nowrap;color:#6d542f;font-size:11px;font-variant-numeric:tabular-nums}
@@ -65,7 +74,8 @@
  .diwali-sale-kicker{font-size:8px}
  .diwali-categories header>a{display:inline-block;font-size:11px;margin-top:12px}
  .diwali-category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
- .diwali-category-top{padding:9px 10px;font-size:9px;letter-spacing:.06em}
+ .diwali-category-top{height:37px}
+ .diwali-category-festive{height:37px;min-width:200px}
  .diwali-category-photo{aspect-ratio:1}
  .diwali-category-photo img{padding:8px}
  .diwali-category-copy{padding:13px 11px}
@@ -78,4 +88,4 @@
  .diwali-category-note{font-size:10px;text-align:left}
 }
 @media(max-width:360px){.diwali-home-product{grid-template-columns:94px 1fr;gap:0 9px}.diwali-home-product>img{height:100px}.diwali-home-copy h2{font-size:34px}.diwali-category-copy h3{font-size:16px}}
-@media(prefers-reduced-motion:reduce){.diwali-category-card{transition:none}}
+@media(prefers-reduced-motion:reduce){.diwali-category-card{transition:none}.diwali-marigold,.diwali-category-flame,.diwali-rangoli{animation:none}}
