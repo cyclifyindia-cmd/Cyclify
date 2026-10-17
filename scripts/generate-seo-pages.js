@@ -80,7 +80,7 @@ categoryCatalogs.forEach(({ page, file }) => {
 });
 
 const versionedScripts = [
-  'product-routes.js', 'supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'tfsa-products.js', 'expanded-products.js', 'search-index.js', 'site-footer.js', 'diwali-campaign.js', 'diwali.js', 'diwali-home.js', 'campaign-storefront.js', 'checkout.js',
+  'product-routes.js', 'supplier-products.js', 'fcc-products.js', 'cadence-products.js', 'tfsa-products.js', 'expanded-products.js', 'search-index.js', 'site-footer.js', 'diwali-campaign.js', 'diwali.js', 'diwali-home.js', 'diwali-fireworks.js', 'campaign-storefront.js', 'checkout.js',
   ...categoryCatalogs.map(item => item.file)
 ];
 const scriptVersions = Object.fromEntries(versionedScripts.map(file => {

@@ -61,7 +61,10 @@ function addDiwaliMotion($,{home=false}={}){
   const eyebrow=$('.diwali-home-copy .diwali-home-eyebrow').first();
   if(!eyebrow.parent().hasClass('diwali-home-intro'))eyebrow.wrap('<div class="diwali-home-intro"></div>');
   eyebrow.parent().find('.diwali-lamps').remove();
-  eyebrow.parent().append(diyaScene());
+  eyebrow.parent().find('.diwali-home-celebration').remove();
+  eyebrow.parent().append('<div class="diwali-home-celebration" aria-hidden="true">'+diyaScene()+'<div class="diwali-cracker-scene" data-diwali-fireworks data-firework-state="idle"><img src="assets/campaigns/diwali-2026/crackers-real.webp" width="512" height="341" alt="" decoding="async" fetchpriority="low"><span class="diwali-cracker-warmth"></span></div></div>');
+  $('script[data-diwali-fireworks-script]').remove();
+  $('body').append('<script src="assets/js/diwali-fireworks.js" defer data-diwali-fireworks-script></script>');
   // Hidden legacy banners should not compete with the visible offer's first image.
   $('.home-hero img,.legacy-mobile-home>.offer img').attr('loading','lazy').attr('fetchpriority','low').attr('decoding','async');
  }else{

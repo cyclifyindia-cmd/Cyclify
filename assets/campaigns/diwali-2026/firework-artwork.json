@@ -1,0 +1,20 @@
+{
+  "generationMode": "Built-in image_gen",
+  "use": "Decorative Diwali homepage artwork; product photographs remain separate.",
+  "assets": [
+    {
+      "file": "assets/campaigns/diwali-2026/crackers-real.webp",
+      "width": 512,
+      "height": 341,
+      "bytes": 35312,
+      "prompt": "Use case: ads-marketing. Asset type: realistic transparent cutout for the right corner of a premium Diwali cycling website banner. Primary request: a small realistic Indian Diwali fireworks ground arrangement: two short red kraft-paper cylindrical firecrackers with twisted cotton fuses and one restrained gold paper cone fountain, arranged compactly along the lower edge, lit fuse tip with tiny orange embers and a little wispy smoke. Photoreal macro product photography, textured paper, metallic gold foil bands, warm amber lighting matching a dark navy night scene. Transparent background, isolated objects with no scene, no floor rectangle. Composition: wide compact cluster, entire objects visible, generous transparent margin above the fuse, camera at slight low three-quarter angle. No text, brands, labels, icons, illustration or cartoon. The crackers are decorative animation assets, not instructions. Do not include rockets or large fireworks explosions in this image. High detail, physically plausible material and light."
+    },
+    {
+      "file": "assets/campaigns/diwali-2026/rocket-real.webp",
+      "width": 141,
+      "height": 512,
+      "bytes": 10164,
+      "prompt": "Use case: product-mockup. Asset type: transparent photoreal cutout sprite for a Diwali website rocket launch animation. One single traditional Indian bottle-rocket firework, upright and pointing straight up, centered, entire object visible. Slim cylindrical red kraft paper body with narrow gold foil bands, pointed metallic golden conical nose, a thin natural bamboo guide stick extending down. Unbranded, no writing or printed labels. A small bright warm amber ignition flame directly under the cylindrical body, short and compact. Real paper grain and fine crinkles in gold foil, warm cinematic product-photography light, crisp silhouette. Truly transparent background and no floor, no bottle, no other objects, no explosion, no icons or cartoon. Tall slim composition with transparent margins; suitable for compositing on navy night background. Rocket body and guide stick should occupy about 75 percent of canvas height."
+    }
+  ]
+}
