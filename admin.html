@@ -126,7 +126,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
  .admin-login{grid-template-columns:minmax(0,430px);align-content:center}
 }
 </style>
-<link rel="stylesheet" href="assets/css/admin-workspace.css?v=20261017">
+<link rel="stylesheet" href="assets/css/admin-workspace.css?v=20261017b">
 </head>
 <body>
 <header>
@@ -191,7 +191,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
   <button type="button" data-order-queue="refunds" aria-pressed="false">Cancellations &amp; refunds <span data-queue-count="refunds">0</span></button>
  </nav>
  <div class="tools">
-  <div class="field"><label for="searchOrders">Find an order</label><input id="searchOrders" type="search" placeholder="Order, customer, product, phone or AWB" autocomplete="off"></div>
+  <div class="field"><label for="searchOrders">Find an order</label><input id="searchOrders" name="cyclify-order-search" type="search" placeholder="Order, customer, product, phone or AWB" autocomplete="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore></div>
   <div class="filter-controls" id="filterControls">
    <select id="statusFilter" aria-label="Filter orders by status">
     <option value="all">All statuses</option>
