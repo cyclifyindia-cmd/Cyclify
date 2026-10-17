@@ -112,6 +112,12 @@
     dealTitle.className = "cyclify-card-deal-title";
     dealTitle.setAttribute("aria-label", "Cyclify Deal");
     dealTitle.innerHTML = '<img class="cyclify-card-deal-logo" src="/assets/Logo-dark.png" alt="Cyclify"><span class="cyclify-card-deal-word" aria-hidden="true">DEAL</span>';
+    if(/^2XU\b/i.test(titleElement?.textContent||'')){
+      dealTitle.setAttribute('aria-label','Cyclify Special Promo');
+      const label=dealTitle.querySelector('.cyclify-card-deal-word');
+      label.textContent='SPECIAL PROMO';label.style.fontSize='10px';label.style.letterSpacing='0';
+      dealTitle.querySelector('img').style.setProperty('width','55px','important');
+    }
     const priceLine = document.createElement("div");
     priceLine.className = "cyclify-card-price-line";
     const subLine = document.createElement("div");
