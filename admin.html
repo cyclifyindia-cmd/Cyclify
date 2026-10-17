@@ -126,10 +126,11 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
  .admin-login{grid-template-columns:minmax(0,430px);align-content:center}
 }
 </style>
+<link rel="stylesheet" href="assets/css/admin-workspace.css?v=20261017">
 </head>
 <body>
 <header>
- <a href="index.html"><img src="assets/Logo-original.png" alt="Cyclify"></a>
+ <a href="index.html"><img src="assets/Logo-dark.png" alt="Cyclify"></a>
  <div class="header-actions" id="adminHeaderActions" hidden><a href="account.html">My account</a><button id="logoutBtn" type="button">Sign out</button></div>
 </header>
 <main class="shell">
@@ -179,13 +180,22 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
   <div class="stat"><span>Order received</span><strong id="receivedCount">0</strong></div>
   <div class="stat"><span>Shipped</span><strong id="shippedCount">0</strong></div>
   <div class="stat"><span>Delivered</span><strong id="deliveredCount">0</strong></div>
-  <div class="stat"><span>Order value</span><strong id="orderValue">Rs. 0</strong></div>
+  <div class="stat"><span>Cancelled / refunds</span><strong id="refundCount">0</strong></div>
+  <div class="stat"><span>Gross order value</span><strong id="orderValue">Rs. 0</strong></div>
  </section>
+ <nav class="order-queues" aria-label="Quick order filters">
+  <button type="button" data-order-queue="all" aria-pressed="true">All orders <span data-queue-count="all">0</span></button>
+  <button type="button" data-order-queue="Order Received" aria-pressed="false">To fulfil <span data-queue-count="Order Received">0</span></button>
+  <button type="button" data-order-queue="Order Shipped" aria-pressed="false">In transit <span data-queue-count="Order Shipped">0</span></button>
+  <button type="button" data-order-queue="Order Delivered" aria-pressed="false">Delivered <span data-queue-count="Order Delivered">0</span></button>
+  <button type="button" data-order-queue="refunds" aria-pressed="false">Cancellations &amp; refunds <span data-queue-count="refunds">0</span></button>
+ </nav>
  <div class="tools">
-  <input id="searchOrders" type="search" placeholder="Search order number, customer, phone or tracking">
+  <div class="field"><label for="searchOrders">Find an order</label><input id="searchOrders" type="search" placeholder="Order, customer, product, phone or AWB" autocomplete="off"></div>
   <div class="filter-controls" id="filterControls">
    <select id="statusFilter" aria-label="Filter orders by status">
     <option value="all">All statuses</option>
+    <option value="refunds">All cancellations &amp; refunds</option>
     <option value="Order Received">Order Received</option>
     <option value="Order Shipped">Order Shipped</option>
     <option value="Order Delivered">Order Delivered</option>
@@ -194,16 +204,27 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
    </select>
    <select id="dateRangeFilter" aria-label="Filter orders by date period">
     <option value="all">All dates</option>
+    <option value="today">Today</option>
+    <option value="7-days">Last 7 days</option>
+    <option value="30-days">Last 30 days</option>
     <option value="date">Choose a date</option>
     <option value="month">This month</option>
     <option value="three-months">Last 3 months</option>
     <option value="year">This year</option>
+    <option value="range">Custom date range</option>
    </select>
+   <select id="paymentFilter" aria-label="Filter orders by payment"><option value="all">All payments</option><option value="Paid">Paid</option><option value="Refund Pending">Refund pending</option><option value="Refunded">Refunded</option></select>
    <input id="customOrderDate" type="date" aria-label="Choose order date" hidden>
   </div>
  </div>
+ <div id="customDateRange" class="custom-date-range" hidden><div class="field"><label for="orderDateFrom">From date</label><input type="date" id="orderDateFrom"></div><div class="field"><label for="orderDateTo">To date</label><input type="date" id="orderDateTo"></div><p id="dateRangeError" role="status"></p></div>
+ <div class="order-list-tools">
+  <div><strong id="orderResults" role="status" aria-live="polite">Loading orders…</strong><span id="lastRefreshed" class="subtle">Refresh to load the latest orders</span></div>
+  <div class="order-list-actions"><button type="button" id="resetOrderFilters">Clear filters</button><select id="orderSort" aria-label="Sort orders"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="value-high">Value: high to low</option><option value="value-low">Value: low to high</option></select><select id="orderPageSize" aria-label="Orders per page"><option value="10">10 per page</option><option value="25" selected>25 per page</option><option value="50">50 per page</option></select></div>
+ </div>
  <section id="loading" class="notice">Checking administrator access...</section>
  <section id="content" hidden><div id="orders"></div></section>
+ <nav class="order-pagination" aria-label="Order pages" hidden id="orderPagination"><button type="button" id="previousOrderPage">← Previous</button><span id="orderPageLabel" aria-live="polite">Page 1 of 1</span><button type="button" id="nextOrderPage">Next →</button></nav>
  </section>
  <section id="reviewsWorkspace" hidden>
   <div class="review-tools">
@@ -230,6 +251,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 </dialog>
 
 <script src="assets/js/payment-config.js"></script>
+<script src="assets/js/admin-tools.js?v=20261017"></script>
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut,EmailAuthProvider,reauthenticateWithCredential}from"https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
@@ -263,6 +285,11 @@ const statusFilter=document.getElementById("statusFilter");
 const dateRangeFilter=document.getElementById("dateRangeFilter");
 const customOrderDate=document.getElementById("customOrderDate");
 const filterControls=document.getElementById("filterControls");
+const adminTools=window.CyclifyAdminTools;
+const paymentFilter=document.getElementById('paymentFilter'),orderSort=document.getElementById('orderSort'),orderPageSize=document.getElementById('orderPageSize');
+const orderDateFrom=document.getElementById('orderDateFrom'),orderDateTo=document.getElementById('orderDateTo');
+let currentOrderPage=1;
+const orderDrafts=new Map();
 let reviewerRedirectPending=false;
 let allOrders=[];
 let allReviews=[];
@@ -296,6 +323,7 @@ const validUrl=value=>/^https?:\/\//i.test(String(value||""))?String(value):"";
 const productIdsForOrder=order=>[...new Set((order.items||[]).map(item=>String(item.id||"")).filter(Boolean))];
 
 function showError(message){
+ document.getElementById('orderPagination').hidden=true;
  loading.className="notice error";
  loading.textContent=message;
  loading.hidden=false;
@@ -358,14 +386,7 @@ function matchesDateRange(order){
 }
 
 function filteredOrders(){
- const query=searchOrders.value.trim().toLowerCase();
- const filter=statusFilter.value;
- return allOrders.filter(order=>{
-  const address=order.address||{},tracking=order.tracking||{};
-  const productNames=(order.items||[]).map(item=>item.name).join(" ");
-  const searchable=[order.number,address.firstName,address.lastName,address.phoneCode,address.phone,tracking.number,tracking.courier,productNames].join(" ").toLowerCase();
-  return(!query||searchable.includes(query))&&(filter==="all"||displayOrderStatus(order)===filter)&&matchesDateRange(order);
- });
+ return adminTools.filterOrders(allOrders,{query:searchOrders.value,status:statusFilter.value,payment:paymentFilter.value,period:dateRangeFilter.value,date:customOrderDate.value,from:orderDateFrom.value,to:orderDateTo.value,sort:orderSort.value});
 }
 
 function renderStats(data){
@@ -373,10 +394,13 @@ function renderStats(data){
  receivedCount.textContent=data.filter(order=>displayOrderStatus(order)==="Order Received").length;
  shippedCount.textContent=data.filter(order=>displayOrderStatus(order)==="Order Shipped").length;
  deliveredCount.textContent=data.filter(order=>displayOrderStatus(order)==="Order Delivered").length;
+ document.getElementById('refundCount').textContent=data.filter(order=>displayOrderStatus(order).includes('Cancel')).length;
  orderValue.textContent=money(data.reduce((sum,order)=>sum+Number(order.total||0),0));
 }
 
 function renderOrders(data){
+ const opened=new Set([...orders.querySelectorAll('.order[open]')].map(card=>card.dataset.path));
+ captureOrderDrafts();
  if(!data.length){
   orders.innerHTML='<div class="notice empty">No orders match the selected search, status and date filters.</div>';
   return;
@@ -395,10 +419,10 @@ function renderOrders(data){
   const itemCount=orderItems.reduce((total,item)=>total+(Number(item.quantity)||1),0);
   const leadProduct=orderItems[0]?.name||"Product information unavailable";
   const additionalProducts=orderItems.length>1?` + ${orderItems.length-1} more product${orderItems.length>2?"s":""}`:"";
-  return`<details class="order" data-path="${safe(order.path)}">
+  return`<details class="order" data-path="${safe(order.path)}" ${opened.has(order.path)?'open':''}>
    <summary class="order-summary">
     <div><span class="order-number">Order #${safe(order.number)}</span><span class="subtle">${date?date.toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short"}):"Date pending"}</span></div>
-    <div class="order-products"><strong title="${safe(leadProduct)}">${safe(leadProduct)}</strong><span class="subtle">${itemCount} item${itemCount===1?"":"s"}${safe(additionalProducts)}</span></div>
+    <div class="order-products"><strong title="${safe(leadProduct)}">${safe(leadProduct)}</strong><span class="subtle">${safe([address.firstName,address.lastName].filter(Boolean).join(' ')||'Customer')} · ${itemCount} item${itemCount===1?"":"s"}${safe(additionalProducts)}</span></div>
     <div class="order-status"><span class="status-pill ${statusClass(currentStatus)}">${safe(currentStatus)}</span><span class="payment-pill ${paymentClass}">Payment: ${safe(paymentStatus)}</span>${tracking.number?`<span class="subtle">${safe(tracking.courier||"Courier")} - ${safe(tracking.number)}</span>`:""}</div>
     <div class="order-value"><span class="order-total">${money(order.total)}</span><span class="order-chevron" aria-hidden="true">⌄</span></div>
    </summary>
@@ -421,15 +445,28 @@ function renderOrders(data){
    </div>
   </details>`;
  }).join("");
+ restoreOrderDrafts();
 }
+
+function captureOrderDrafts(){orders.querySelectorAll('.order[data-dirty="true"]').forEach(card=>{const draft=Object.fromEntries(['.status-select','.courier-input','.tracking-input','.tracking-url-input'].map(selector=>[selector,card.querySelector(selector)?.value||'']));const original=allOrders.find(order=>order.path===card.dataset.path),tracking=original?.tracking||{};const unchanged=original&&draft['.status-select']===displayOrderStatus(original)&&draft['.courier-input']===(tracking.courier||'')&&draft['.tracking-input']===(tracking.number||'')&&draft['.tracking-url-input']===(tracking.url||'');if(unchanged){orderDrafts.delete(card.dataset.path);card.dataset.dirty='false';card.querySelector('.save-note').textContent='';}else orderDrafts.set(card.dataset.path,draft);});}
+function restoreOrderDrafts(){orders.querySelectorAll('.order').forEach(card=>{const draft=orderDrafts.get(card.dataset.path);if(!draft)return;if(card.querySelector('.status-select').disabled){orderDrafts.delete(card.dataset.path);return;}Object.entries(draft).forEach(([selector,value])=>{card.querySelector(selector).value=value;});card.dataset.dirty='true';card.querySelector('.save-note').textContent='Unsaved changes — choose Save update to apply them.';});}
 
 function renderOrderDashboard(){
  const data=filteredOrders();
+ const page=adminTools.paginate(data,currentOrderPage,orderPageSize.value);currentOrderPage=page.page;
  renderStats(data);
- renderOrders(data);
+ renderOrders(page.items);
+ document.getElementById('orderResults').textContent=`${page.first}–${page.last} of ${data.length} matching orders`;
+ document.getElementById('orderPageLabel').textContent=`Page ${page.page} of ${page.pages}`;
+ document.getElementById('previousOrderPage').disabled=page.page===1;
+ document.getElementById('nextOrderPage').disabled=page.page===page.pages;
+ document.getElementById('orderPagination').hidden=!data.length;
+ document.querySelectorAll('[data-order-queue]').forEach(button=>{button.setAttribute('aria-pressed',String(button.dataset.orderQueue===statusFilter.value));const queue=button.dataset.orderQueue;button.querySelector('span').textContent=allOrders.filter(order=>queue==='all'||(queue==='refunds'?displayOrderStatus(order).includes('Cancel'):displayOrderStatus(order)===queue)).length;});
+ document.getElementById('dateRangeError').textContent=dateRangeFilter.value==='range'&&orderDateFrom.value&&orderDateTo.value&&orderDateFrom.value>orderDateTo.value?'The end date must be on or after the start date.':'';
 }
 
 async function loadOrders(){
+ captureOrderDrafts();
  loading.className="notice";
  loading.textContent="Loading customer orders...";
  loading.hidden=false;
@@ -451,6 +488,7 @@ async function loadOrders(){
   renderOrderDashboard();
   loading.hidden=true;
   content.hidden=false;
+  document.getElementById('lastRefreshed').textContent='Last refreshed '+new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})+' · Summary follows your filters';
  }catch(error){
   console.error("Cyclify admin order load failed",error);
   const detail=error?.code?` (${error.code})`:"";
@@ -552,6 +590,7 @@ orders.addEventListener("click",async event=>{
   if(status==="Order Shipped")update.shippedAt=serverTimestamp();
   if(status==="Order Delivered")update.deliveredAt=serverTimestamp();
   await updateDoc(doc(db,orderElement.dataset.path),update);
+  orderElement.dataset.dirty='false';orderDrafts.delete(orderElement.dataset.path);
   note.style.color="var(--green)";
   note.textContent="Order updated. The customer can now see this status.";
   button.textContent="Updated";
@@ -637,20 +676,29 @@ ordersWorkspaceTab.classList.toggle("active",showOrders);
 reviewsWorkspaceTab.classList.toggle("active",!showOrders);
 }
 
-searchOrders.addEventListener("input",renderOrderDashboard);
-statusFilter.addEventListener("change",renderOrderDashboard);
+function resetPageAndRender(){currentOrderPage=1;renderOrderDashboard();}
+searchOrders.addEventListener("input",resetPageAndRender);
+statusFilter.addEventListener("change",resetPageAndRender);
+orders.addEventListener('input',event=>{const card=event.target.closest('.order');if(card){card.dataset.dirty='true';card.querySelector('.save-note').textContent='Unsaved changes — choose Save update to apply them.';}});
+window.addEventListener('beforeunload',event=>{captureOrderDrafts();if(orderDrafts.size){event.preventDefault();event.returnValue='';}});
+document.querySelectorAll('[data-order-queue]').forEach(button=>button.addEventListener('click',()=>{statusFilter.value=button.dataset.orderQueue;resetPageAndRender();}));
+for(const control of [paymentFilter,orderSort,orderPageSize,orderDateFrom,orderDateTo])control.addEventListener('change',resetPageAndRender);
+document.getElementById('previousOrderPage').addEventListener('click',()=>{currentOrderPage--;renderOrderDashboard();});
+document.getElementById('nextOrderPage').addEventListener('click',()=>{currentOrderPage++;renderOrderDashboard();});
+document.getElementById('resetOrderFilters').addEventListener('click',()=>{searchOrders.value='';statusFilter.value='all';paymentFilter.value='all';dateRangeFilter.value='all';customOrderDate.hidden=true;document.getElementById('customDateRange').hidden=true;filterControls.classList.remove('with-date');orderDateFrom.value='';orderDateTo.value='';resetPageAndRender();});
 dateRangeFilter.addEventListener("change",()=>{
  const choosingDate=dateRangeFilter.value==="date";
  customOrderDate.hidden=!choosingDate;
+ document.getElementById('customDateRange').hidden=dateRangeFilter.value!=='range';
  filterControls.classList.toggle("with-date",choosingDate);
  if(choosingDate&&!customOrderDate.value)customOrderDate.value=localDateKey(new Date());
- renderOrderDashboard();
+ resetPageAndRender();
 });
-customOrderDate.addEventListener("change",renderOrderDashboard);
+customOrderDate.addEventListener("change",resetPageAndRender);
 reviewStatusFilter.addEventListener("change",renderReviews);
 ordersWorkspaceTab.addEventListener("click",()=>showWorkspace("orders"));
 reviewsWorkspaceTab.addEventListener("click",()=>showWorkspace("reviews"));
-refreshBtn.addEventListener("click",()=>Promise.all([loadOrders(),loadReviews()]));
+refreshBtn.addEventListener("click",async()=>{refreshBtn.disabled=true;refreshBtn.textContent='Refreshing…';try{await Promise.all([loadOrders(),loadReviews()]);}finally{refreshBtn.disabled=false;refreshBtn.textContent='Refresh orders';}});
 logoutBtn.addEventListener("click",()=>signOut(auth));
 
 adminLoginForm.addEventListener("submit",async event=>{
@@ -692,6 +740,7 @@ reviewerLoginForm.addEventListener("submit",async event=>{
 
 onAuthStateChanged(auth,async user=>{
  if(!user){
+  allOrders=[];allReviews=[];orderDrafts.clear();orders.replaceChildren();reviewsList.replaceChildren();
   showAdminLogin();
   return;
  }
