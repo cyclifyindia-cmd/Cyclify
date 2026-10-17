@@ -114,16 +114,10 @@
     if(more&&current.length){const oldCount=shown;shown+=12;const list=content.querySelector('.cs-list');list.insertAdjacentHTML('beforeend',rows(current.slice(oldCount,shown)));if(current.length>shown)more.textContent='Show more products · '+(current.length-shown)+' remaining';else more.remove();}
   });
 
-  // Photo matching stays in the browser; it does not upload a customer's photo.
-  const signatures=new Map();
-  function image(src,timeout=6500){return new Promise((resolve,reject)=>{const img=new Image();img.crossOrigin='anonymous';const timer=setTimeout(()=>{img.src='';reject(new Error('timeout'));},timeout);img.onload=()=>{clearTimeout(timer);resolve(img);};img.onerror=()=>{clearTimeout(timer);reject(new Error('image'));};img.src=src;});}
-  function signature(img){
-    const c=document.createElement('canvas');c.width=c.height=32;const ctx=c.getContext('2d',{willReadFrequently:true});ctx.fillStyle='#fff';ctx.fillRect(0,0,32,32);ctx.drawImage(img,0,0,32,32);
-    const pixels=ctx.getImageData(0,0,32,32).data,values=[];let mean=0;
-    for(let i=0;i<pixels.length;i+=4){const g=pixels[i]*.299+pixels[i+1]*.587+pixels[i+2]*.114;values.push(g);mean+=g;}
-    mean/=values.length;return {values,mean};
-  }
-  function similarity(a,b){let score=0;for(let i=0;i<a.values.length;i++){score+=Math.abs((a.values[i]-a.mean)-(b.values[i]-b.mean));}return score/a.values.length+Math.abs(a.mean-b.mean)*.18;}
+  // Image recognition is loaded only after a customer chooses a photo.
+  let photoPromise=null;
+  function photoScript(src){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=()=>{s.remove();reject(new Error('Image recognition could not load. Please try again.'));};document.head.appendChild(s);});}
+  function loadPhoto(){if(!photoPromise)photoPromise=(async()=>{if(!window.CyclifyPhotoFeatures)await photoScript(config.photoFeaturesSrc);if(!window.CyclifyPhotoSearch)await photoScript(config.photoModuleSrc);return window.CyclifyPhotoSearch;})().catch(e=>{photoPromise=null;throw e;});return photoPromise;}
   upload.addEventListener('change',async()=>{
     const file=upload.files?.[0];upload.value='';if(!file)return;
     const token=++scan;
@@ -131,27 +125,16 @@
     if(!file.type.startsWith('image/')||file.size>12*1024*1024){content.innerHTML='<div class="cs-empty"><strong>Choose a photo under 12 MB.</strong><p>JPG, PNG and WebP photos work best.</p></div>';return;}
     if(previewUrl)URL.revokeObjectURL(previewUrl);previewUrl=URL.createObjectURL(file);
     input.value='';clear.hidden=true;
-    const preview='<div class="cs-image-preview"><img src="'+esc(previewUrl)+'" alt="Your selected photo"><div><strong>Finding similar products</strong><span>Compared on your device.</span></div></div>';
-    content.innerHTML=preview+'<p class="cs-loading" role="status">Loading product photos…</p>';
+    const preview='<div class="cs-image-preview"><img src="'+esc(previewUrl)+'" alt="Your selected photo"><div><strong>Your selected photo</strong><span>Private · processed on your device.</span></div></div>';
+    content.innerHTML=preview+'<p class="cs-loading" role="status">Preparing photo search…</p>';
     try{
-      await load();const target=signature(await image(previewUrl));
-      let pending=[...products],done=0;const matches=[],started=performance.now();
-      await Promise.all(Array.from({length:5},async()=>{
-        while(pending.length&&scan===token&&performance.now()-started<26000){
-          const product=pending.shift();
-          try{
-            let sig=signatures.get(String(product.id));
-            if(!sig){sig=signature(await image(new URL(product.image,location.origin+'/').href));signatures.set(String(product.id),sig);}
-            matches.push({...product,visualScore:similarity(target,sig)});
-          }catch(_){}
-          done++;
-          if(scan===token){const status=content.querySelector('.cs-loading');if(status)status.textContent='Checking photos · '+done+' / '+products.length;}
-        }
-      }));
+      const [,photo]=await Promise.all([load(),loadPhoto()]);
       if(scan!==token||!dialog.open)return;
-      if(!matches.length){content.innerHTML=preview+'<div class="cs-empty"><strong>Try searching the model name.</strong><p>We could not compare the available photos right now.</p></div>';return;}
-      shown=12;matches.sort((a,b)=>a.visualScore-b.visualScore);paint(matches.slice(0,24),preview.replace('Finding similar products','Your selected photo')+'<div class="cs-summary"><strong>Similar product photos</strong><span>'+matches.length+' compared</span></div>','Photo matching suggests similar-looking products. Search the model name for an exact match.');
-    }catch(_){if(scan===token)content.innerHTML='<div class="cs-empty"><strong>We could not read that photo.</strong><p>Try a JPG, PNG or WebP image, or search by the product name.</p></div>';}
+      const matches=await photo.search(file,products,{indexUrl:config.photoIndexSrc,isCancelled:()=>scan!==token||!dialog.open,onProgress:message=>{if(scan===token){const status=content.querySelector('.cs-loading');if(status)status.textContent=message;}}});
+      if(scan!==token||!dialog.open)return;
+      if(!matches.length){content.innerHTML=preview+'<div class="cs-empty"><strong>No close product match found.</strong><p>Try a clear photo of one product, or search its brand and model. We won’t show unrelated items just to fill results.</p></div>';return;}
+      shown=12;paint(matches,preview+'<div class="cs-summary"><strong>Closest catalogue matches</strong><span>'+matches.length+' '+(matches.length===1?'product':'products')+'</span></div>','Visual matches are suggestions, not a guarantee of the exact model or compatibility. Check the product details before buying.');
+    }catch(error){if(scan===token&&dialog.open)content.innerHTML=preview+'<div class="cs-empty"><strong>Photo search could not finish.</strong><p>'+esc(error.message||'Please try again or search by product name.')+'</p></div>';}
   });
   if(initialQuery||wasFocused){try{sessionStorage.removeItem('pendingSearchQuery');}catch(_){}open(initialQuery);}
 })();

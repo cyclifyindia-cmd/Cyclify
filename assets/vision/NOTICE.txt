@@ -1,0 +1,20 @@
+Cyclify private on-device product photo search
+
+Runtime: TensorFlow.js 4.22.0, TensorFlow.js WASM backend 4.22.0,
+and tensorflow-models MobileNet 2.1.1, Copyright Google LLC and contributors.
+Apache-2.0 licence texts are included alongside these files.
+
+Model: Google ImageNet MobileNetV2 0.50 224 classification version 2,
+downloaded from the official TensorFlow Hub / Kaggle model distribution:
+https://tfhub.dev/google/imagenet/mobilenet_v2_050_224/classification/2
+Model input range is [0, 1]. Product catalogue image embeddings are generated
+with the same model and aspect-preserving preprocessing used in the browser.
+
+Customer photos are decoded and processed only on their own device.
+No image upload, external recognition API, tracking, or paid service is used.
+All recognition assets are served from Cyclify's own domain. They are lazy
+loaded only after the customer chooses a photo.
+
+Regenerate the image index with npm run build:photo-search, then refresh
+the shared search loader with node scripts/build-search-assets.js.
+The generate:seo and sync:catalog workflows include these steps.

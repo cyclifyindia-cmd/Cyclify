@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "generate:seo": "node scripts/generate-seo-pages.js",
+    "generate:seo": "node scripts/generate-seo-pages.js && npm run build:photo-search && node scripts/build-search-assets.js",
+    "build:photo-search": "node scripts/build-photo-search.js",
     "audit:seo": "node scripts/audit-seo.js",
     "audit:product-images": "node scripts/audit-product-images.js",
     "build:payment-catalog": "node scripts/build-payment-catalog.js",
@@ -15,5 +16,11 @@
   },
   "dependencies": {
     "cheerio": "1.0.0"
+  },
+  "devDependencies": {
+    "@tensorflow-models/mobilenet": "2.1.1",
+    "@tensorflow/tfjs": "4.22.0",
+    "@tensorflow/tfjs-backend-wasm": "4.22.0",
+    "sharp": "0.35.5"
   }
 }

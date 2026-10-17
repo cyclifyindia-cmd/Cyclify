@@ -32,6 +32,8 @@ jobs:
         run: node scripts/audit-product-search.js
       - name: Check complete storefront search and model matching
         run: node scripts/test-search-engine.js
+      - name: Check visual-search coverage and recognition
+        run: node scripts/test-photo-search.js --visual
       - name: Check PERTUAL wheelset options, feed and checkout
         run: npm ci --prefix marketplace-backend/payment-function/functions && node scripts/test-pertual-product.js
       - name: Check Diwali prices, expiry, checkout and exact paise
