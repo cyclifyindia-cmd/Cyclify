@@ -2003,6 +2003,7 @@ let charIndex = 0;
 let deleting = false;
 
 function animateText(){
+if(!textElement.isConnected){return;}
 
 const currentWord = words[wordIndex];
 
@@ -2480,7 +2481,7 @@ cartCount.style.display="none";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=6bec8a26bc" defer=""></script>
+<script src="assets/js/site-footer.js?v=45bfe55be8" defer=""></script>
 
 
 

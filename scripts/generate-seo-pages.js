@@ -381,16 +381,22 @@ const compactSearchProducts = primaryProducts.map(product => ({
   name: cleanText(product.name),
   price: Number(product.price) || 0,
   priceOnRequest: Boolean(product.priceOnRequest),
+  url: routes[product.id],
+  available: product.available !== false,
+  stockStatus: product.stockStatus || '',
+  brand: cleanText(product.brand || String(product.name).split(' ')[0]),
   image: product.image || (product.images || [])[0] || 'assets/Logo-dark-preview.png',
   category: product.categoryLabel || categoryLabels[product.categoryPage] || product.category || homepageSearchById.get(String(product.id))?.category || 'Cycling',
   keywords: cleanText(product.keywords || homepageSearchById.get(String(product.id))?.keywords || [product.mainCategory, product.subCategory, product.category].filter(Boolean).join(' '))
 }));
 compactSearchProducts.push({ id: 990001, name: 'TAVELO Arow Carbon Aero Road Bike', price: 390000,
   image: 'assets/products/tavelo-arow/customer-reference-1.png', category: 'Bikes & Frames',
-  keywords: 'TAVELO Arow aero road bike carbon custom build Shimano Di2', customBuild: true });
+  keywords: 'TAVELO Arow aero road bike carbon custom build Shimano Di2', customBuild: true,
+  url: 'tavelo-arow.html', available: true, stockStatus: '', brand: 'TAVELO' });
 const searchIndexSource = 'window.CYCLIFY_SEARCH_PRODUCTS=' + JSON.stringify(compactSearchProducts) + ';\n';
 writeFileWithRetry(searchIndexPath, searchIndexSource, 'utf8');
 scriptVersions['search-index.js'] = crypto.createHash('sha256').update(searchIndexSource).digest('hex').slice(0, 10);
+scriptVersions['site-footer.js'] = require('./build-search-assets').refreshSearchLoader();
 
 const generatedRoutes = new Set();
 const productLastmods = new Map();

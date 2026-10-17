@@ -1,0 +1,78 @@
+/* One search experience across the storefront and every product page. */
+.cyclify-search-trigger{position:relative!important;display:flex!important;align-items:center!important;gap:0!important;height:48px!important;min-height:0!important;padding:0!important;border:1px solid #dce2df!important;border-radius:999px!important;background:#f7f9f8!important;box-shadow:none!important;overflow:hidden!important;transition:border-color .18s,box-shadow .18s!important}
+.cyclify-search-trigger:focus-within,.cyclify-search-trigger:hover{border-color:#91a89c!important;box-shadow:0 0 0 3px #16834b0a!important}
+.cyclify-search-trigger>input:not([type=file]){flex:1!important;width:100%!important;min-width:0!important;height:100%!important;padding:0 6px 0 42px!important;border:0!important;border-radius:0!important;outline:none!important;background:transparent!important;color:#182720!important;font:400 14px/1.3 Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;text-overflow:ellipsis!important;box-shadow:none!important}
+.cyclify-search-trigger>input::placeholder{color:#6a7770!important;opacity:1}
+.cyclify-search-trigger>.cyclify-search-leading{position:absolute;left:16px;width:18px;height:18px;fill:none;stroke:#52665a;stroke-width:1.8;stroke-linecap:round;pointer-events:none}
+.cyclify-search-trigger>.image-search-btn{display:grid!important;place-items:center!important;flex:0 0 38px!important;width:38px!important;height:38px!important;min-width:0!important;margin:0 5px 0 0!important;padding:0!important;border:0!important;border-radius:50%!important;background:transparent!important;color:#435b4c!important;box-shadow:none!important;transform:none!important}
+.cyclify-search-trigger>.image-search-btn:hover{background:#eaf0ec!important}
+.cyclify-search-trigger>.image-search-btn:after{display:none!important}
+.cyclify-search-trigger>.image-search-btn svg{width:19px!important;height:19px!important;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cyclify-search-trigger .search-placeholder{display:none!important}
+html.cyclify-search-open{overflow:hidden!important;overscroll-behavior:none}
+.cyclify-search-dialog{width:min(780px,calc(100vw - 48px));max-width:none;max-height:min(780px,calc(100dvh - 90px));margin:46px auto 0;padding:0;border:1px solid #e0e6e2;border-radius:22px;background:#fff;color:#17251d;box-shadow:0 28px 100px #10261d38;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow:hidden}
+.cyclify-search-dialog::backdrop{background:#12211970;backdrop-filter:blur(4px)}
+.cyclify-search-dialog[open]{display:flex;flex-direction:column;animation:cyclifySearchIn .18s ease-out}
+.cyclify-search-dialog *{box-sizing:border-box}
+.cs-head{padding:23px 26px 17px;border-bottom:1px solid #edf0ee;flex:none;background:#fff}
+.cs-topline{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:16px}
+.cs-title{font-size:19px;font-weight:650;letter-spacing:-.025em;margin:0;color:#17251d}
+.cs-close,.cs-clear,.cs-camera{display:grid;place-items:center;flex:none;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:#f0f4f1;color:#42584a;cursor:pointer}
+.cs-close:hover,.cs-clear:hover,.cs-camera:hover{background:#e4ece7}
+.cs-close svg,.cs-clear svg,.cs-camera svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cs-field{display:flex;align-items:center;gap:10px;padding:4px 7px 4px 15px;border:1px solid #cddbd2;border-radius:13px;background:#f7faf8;min-height:50px}
+.cs-field:focus-within{border-color:#357c54;box-shadow:0 0 0 3px #26834e0b}
+.cs-field>svg{width:20px;height:20px;flex:none;fill:none;stroke:#52745e;stroke-width:1.8;stroke-linecap:round}
+.cs-input{display:block;min-width:0;flex:1;width:100%;height:42px;padding:0;border:0;border-radius:0;outline:0;background:transparent;color:#152c1e;font-family:inherit;font-size:16px;font-weight:400;line-height:1.4;-webkit-appearance:none;appearance:none}
+.cs-input::-webkit-search-cancel-button{display:none}
+.cs-input::placeholder{color:#7c8981;opacity:1}
+.cs-clear{width:29px;height:29px;background:transparent}
+.cs-camera{background:transparent}
+.cs-clear[hidden]{display:none}
+.cs-body{overflow:auto;overscroll-behavior:contain;min-height:0;flex:1;padding:0 26px 22px;scrollbar-width:thin;scrollbar-color:#ccd7ce transparent}
+.cs-section-label{font-size:10px;font-weight:750;text-transform:uppercase;letter-spacing:.13em;color:#738176;margin:23px 0 12px}
+.cs-suggestions{display:flex;flex-wrap:wrap;gap:8px}
+.cs-chip{font-family:inherit;font-size:12px;font-weight:500;line-height:1.4;padding:8px 12px;background:#f4f7f4;color:#435d4b;border:1px solid #e7ede8;border-radius:999px;cursor:pointer}
+.cs-chip:hover{background:#eaf2ec;border-color:#bdcebf}
+.cs-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 0 13px;font-size:12px;color:#66796a}
+.cs-summary strong{font-weight:650;color:#294a34}
+.cs-list{display:grid;gap:0}
+.cs-result{display:grid;grid-template-columns:78px minmax(0,1fr) auto;align-items:center;gap:16px;padding:15px 4px;text-decoration:none!important;color:#17251d!important;border-bottom:1px solid #edf1ee;border-radius:8px;outline-offset:2px}
+.cs-result:hover,.cs-result:focus-visible,.cs-result.cs-highlight{background:#f6f9f6}
+.cs-photo{display:grid;place-items:center;width:78px;height:70px;overflow:hidden;background:#fff;color:#7e8c81;font-size:18px;font-weight:650}
+.cs-photo img{display:block;width:100%;height:100%;object-fit:contain}
+.cs-info{min-width:0}
+.cs-category{display:block;color:#6f7f72;font-size:10px;margin-bottom:4px}
+.cs-name{display:block;font-size:14px;font-weight:600;line-height:1.45;letter-spacing:-.01em;color:#1b3023}
+.cs-price{display:block;font-size:14px;font-weight:750;white-space:nowrap;letter-spacing:-.025em;color:#153f27;margin-bottom:5px}
+.cs-meta{text-align:right;align-self:center}
+.cs-stock{display:block;font-size:10px;white-space:nowrap;color:#227346;font-weight:550}
+.cs-stock.cs-unavailable{color:#7f6a47}
+.cs-stock.cs-out{color:#7f8580}
+.cs-empty{padding:36px 14px;text-align:center}
+.cs-empty strong{display:block;font-size:16px;font-weight:600;color:#294633;margin-bottom:9px}
+.cs-empty p{font-size:13px;line-height:1.7;color:#78847a;margin:0 auto;max-width:340px}
+.cs-more{display:block;max-width:100%;margin:20px auto 0;padding:11px 24px;border:1px solid #c8d9cc;border-radius:999px;background:#f7faf7;color:#2b603a;font-family:inherit;font-size:12px;font-weight:650;line-height:1.4;cursor:pointer}
+.cs-more:hover{background:#edf5ef}
+.cs-note{font-size:11px;line-height:1.6;color:#819085;margin:14px 0 0}
+.cs-image-preview{display:flex;align-items:center;gap:13px;padding-top:19px}
+.cs-image-preview img{width:64px;height:64px;object-fit:contain;border-radius:8px;background:#f7f8f5}
+.cs-image-preview strong{display:block;font-size:14px;margin-bottom:5px}
+.cs-image-preview span{font-size:11px;color:#718175;line-height:1.5}
+.cs-loading{padding:28px 0;color:#708275;font-size:13px}
+.cs-error button{margin-top:17px}
+@keyframes cyclifySearchIn{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.cyclify-search-trigger{height:44px!important}.cyclify-search-trigger>input:not([type=file]){padding-left:35px!important;font-size:13px!important}.cyclify-search-trigger>.cyclify-search-leading{left:12px;width:16px;height:16px}.cyclify-search-trigger>.image-search-btn{width:32px!important;height:32px!important;flex-basis:32px!important;margin-right:4px!important}.cyclify-search-trigger>.image-search-btn svg{width:18px!important;height:18px!important}}
+@media(max-width:600px){
+ .cyclify-search-dialog{width:100%;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}
+ .cs-head{padding:calc(16px + env(safe-area-inset-top)) 18px 16px}
+ .cs-title{font-size:18px}.cs-topline{margin-bottom:15px}
+ .cs-body{padding:0 17px calc(22px + env(safe-area-inset-bottom))}
+ .cs-result{grid-template-columns:61px minmax(0,1fr);gap:8px 12px;padding:15px 2px}
+ .cs-photo{width:61px;height:65px;grid-row:1/3}
+ .cs-info{align-self:end}.cs-category{font-size:9px;margin-bottom:3px}.cs-name{font-size:13px;line-height:1.4}
+ .cs-meta{grid-column:2;display:flex;gap:10px;align-items:center;text-align:left;align-self:start;flex-wrap:wrap}
+ .cs-price{font-size:14px;margin:0}.cs-stock{font-size:10px}
+ .cs-chip{font-size:11px;padding:8px 11px}.cs-summary{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.cyclify-search-dialog[open]{animation:none}.cyclify-search-trigger{transition:none!important}}

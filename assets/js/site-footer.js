@@ -1,3 +1,11 @@
+/* CYCLIFY_SEARCH_LOADER_START */
+(function(){
+ if(!document.querySelector('#searchInput,[data-global-search]')||document.querySelector('script[data-cyclify-search-ui]'))return;
+ const urls={"css":"/assets/css/search.css?v=9d1e518c8a","engine":"/assets/js/search-engine.js?v=99c5b0bb07","ui":"/assets/js/search.js?v=67f26daaf6","catalog":"/assets/js/search-index.js?v=c7bf79712b"};
+ const css=document.createElement('link');css.rel='stylesheet';css.href=urls.css;document.head.appendChild(css);
+ const engine=document.createElement('script');engine.src=urls.engine;engine.onload=function(){const ui=document.createElement('script');ui.src=urls.ui;ui.dataset.cyclifySearchUi='true';ui.dataset.catalogSrc=urls.catalog;document.head.appendChild(ui);};document.head.appendChild(engine);
+})();
+/* CYCLIFY_SEARCH_LOADER_END */
 (function () {
   if (document.getElementById("cyclifyFooter")) return;
 
