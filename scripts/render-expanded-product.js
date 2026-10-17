@@ -9,7 +9,7 @@ const version = file => crypto.createHash('sha256').update(fs.readFileSync(path.
 function renderExpandedProduct(page, product) {
   if (product.inventoryGroup !== 'expanded') return page;
   const $ = cheerio.load(page);
-  const stock = product.stockStatus === 'coming-soon' ? 'Coming Soon' : (product.available ? 'In stock' : 'Contact for More Info');
+  const stock = product.stockStatus === 'coming-soon' ? 'Coming Soon' : (product.available ? 'In stock' : product.stockStatus==='out-of-stock'?'Out of stock':'Contact for More Info');
   $('body').addClass('expanded-product-page');
   $('head').append(`<link rel="stylesheet" href="assets/css/expanded-product.css?v=${version('assets/css/expanded-product.css')}">`);
   const media = $('<div class="expanded-media"></div>').append($('#productGallery'),$('#productThumbs'));

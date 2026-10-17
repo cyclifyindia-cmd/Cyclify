@@ -26,12 +26,12 @@
 <meta name="twitter:image:alt" content="ThinkRider 12-Speed 11-34T Cassette">
 <link rel="preload" as="image" href="https://cyclify.in/assets/products/thinkrider-12-speed-11-34-cassette-1.jpg" fetchpriority="high">
 <script>window.CYCLIFY_PRODUCT_ID=56;</script>
-<script src="assets/js/product-routes.js?v=fb0a751024"></script>
+<script src="assets/js/product-routes.js?v=b4423859e1"></script>
 <script src="assets/js/supplier-products.js?v=38a69ae0bd"></script>
-<script src="assets/js/fcc-products.js?v=9881d6ca79"></script>
-<script src="assets/js/cadence-products.js?v=30451377f1"></script>
+<script src="assets/js/fcc-products.js?v=68673eea4e"></script>
+<script src="assets/js/cadence-products.js?v=adb5356270"></script>
 <script src="assets/js/tfsa-products.js?v=39e9af9bee"></script>
-<script src="assets/js/expanded-products.js?v=e168c5b243"></script>
+<script src="assets/js/expanded-products.js?v=7acbe51818"></script>
 <style>
 
 *{
@@ -2755,7 +2755,7 @@ discountElement.hidden=!discount;
 const priceLine=document.getElementById("productPriceLine");
 if(priceLine){priceLine.classList.toggle("price-on-request",Boolean(product.priceOnRequest));}
 const dealWord=document.getElementById("productDealWord");
-if(dealWord){dealWord.textContent="DEAL";}
+if(dealWord){dealWord.textContent=product.priceLabel||"DEAL";}
 }
 
 function renderProductFulfilment(){
@@ -3052,7 +3052,7 @@ productImages.forEach((image,index)=>{
 productThumbs.innerHTML+=`
 <img
 class="thumb"
-src="${product.inventoryGroup==='expanded'?image.replace('/expanded/','/expanded/thumbs/'):image}"
+src="${product.inventoryGroup==='expanded'?image.replace('/expanded/','/expanded/thumbs/').replace('/2xu/','/2xu/thumbs/'):image}"
 loading="lazy" decoding="async"
 alt="${product.name} image ${index+1}"
 onclick="showImage(${index})">
@@ -3331,7 +3331,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=f4af3df3f8"></script>
+<script src="assets/js/site-footer.js?v=4cb9a8f3d1"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 

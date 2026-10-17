@@ -50,7 +50,7 @@ const supplierCatalogues = {
     return !/(xoss|cyclami|thinkrider)/i.test(normalized);
   })
 };
-const expandedProducts = supplierProductsFrom(expandedProductsPath);
+const expandedProducts = [...supplierProductsFrom(expandedProductsPath), ...supplierProductsFrom(path.join(root, 'assets/data/2xu-products.json'))];
 const stockLabelScript = 'window.cyclifyStockLabel=product=>product.stockStatus==="coming-soon"?"Coming Soon":(product.stockStatus==="contact"?"Contact for More Info":(product.available===false?"Out of stock":"In stock"));';
 const expandedScript = '(function(){const items=' + JSON.stringify(expandedProducts) + ';window.CYCLIFY_EXPANDED_PRODUCTS=items;'+stockLabelScript+'window.cyclifyMergeExpandedProducts=(target,page)=>{items.filter(item=>!page||item.categoryPage===page).forEach(item=>{if(!target.some(product=>String(product.id)===String(item.id)))target.push({...item});});return target;};})();\n';
 writeFileWithRetry(path.join(root, 'assets/js/expanded-products.js'), expandedScript);
@@ -64,7 +64,7 @@ categoryCatalogs.forEach(({ page, file }) => {
   };
   const source = '(function(){\n' +
     '  const normalise=value=>String(value||"").toLowerCase().replace(/[^a-z0-9]+/g,"");\n' +
-    '  const merge=(target,items,page)=>{items.filter(item=>!page||item.categoryPage===page).forEach(item=>{const existing=target.find(product=>product.id===item.id||(item.sourceHandle&&product.sourceHandle===item.sourceHandle)||normalise(product.name)===normalise(item.name));if(existing){const id=existing.id;Object.assign(existing,item,{id});}else{target.push({...item});}});return target;};\n' +
+    '  const merge=(target,items,page)=>{items.filter(item=>!page||item.categoryPage===page).forEach(item=>{const existing=target.find(product=>product.id===item.id||(item.sourceHandle&&product.sourceHandle===item.sourceHandle)||(!(item.model&&product.model&&item.model!==product.model)&&normalise(product.name)===normalise(item.name)));if(existing){const id=existing.id;Object.assign(existing,item,{id});}else{target.push({...item});}});return target;};\n' +
     '  const catalogue=' + JSON.stringify(catalogue) + ';\n' +
     '  window.CYCLIFY_CYCLETIME_PRODUCTS=catalogue.cycletime;\n' +
     '  window.CYCLIFY_FCC_PRODUCTS=catalogue.fcc;\n' +
@@ -445,6 +445,7 @@ for (const product of primaryProducts) {
         description,
         sku: 'CYCLIFY-' + product.id,
         brand: { '@type': 'Brand', name: brand },
+        ...(product.inventorySource === '2xu-stock-20261012' ? {model:product.model,mpn:product.mpn,...(product.gtin?{gtin13:product.gtin}:{}),size:product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).size,color:product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).colour} : {}),
         ...([88001,88002].includes(Number(product.id)) ? {model:Number(product.id)===88002?'V8E Pro — Cyclify carbon-wheel build':'V8E',alternateName:Number(product.id)===88002?'VOOK V8E Pro Velove carbon-wheel bike':['VOOK V8E','VOOK V8 carbon road bike'],category:'Carbon road bike',color:product.secondaryOptions.join(', '),size:product.sizes.join(', ')} : {}),
         additionalProperty: (product.specs || []).map(spec => {
           const raw = String(spec || '');
@@ -540,6 +541,7 @@ for (const product of primaryProducts) {
   const listPrice = monetaryValue(product.mrp);
   const saving = Math.max(0, listPrice - sellingPrice);
   $product('#productPrice').text(product.priceOnRequest ? 'Price on request' : '₹' + campaign.formatPrice(sellingPrice));
+  if(product.priceLabel)$product('#productDealWord').text(product.priceLabel);
   if(product.campaignOffer)$product('#productPriceLine').after('<p id="campaignProductOffer" style="font-size:12px;color:#77521d;margin:10px 0">Diwali offer · Regular ₹'+campaign.formatPrice(product.regularPrice)+'</p>');
   $product('#productMrp').text(listPrice && !product.priceOnRequest ? 'MRP ₹' + listPrice.toLocaleString('en-IN') : '');
   $product('#productSave').text(saving && !product.priceOnRequest ? 'Save ₹' + campaign.formatPrice(saving) : '');
@@ -854,6 +856,7 @@ const merchantItems = primaryProducts
       (salePrice ? '      ' + salePrice + '\n' : '') +
       (product.campaignOffer ? '      <g:sale_price_effective_date>'+campaign.config.startsAt+'/'+campaign.config.endsAt+'</g:sale_price_effective_date>\n' : '') +
       '      <g:brand>' + escapeXml(brand) + '</g:brand>\n' +
+      (product.inventorySource === '2xu-stock-20261012' ? '      <g:mpn>'+escapeXml(product.mpn)+'</g:mpn>\n'+(product.gtin?'      <g:gtin>'+escapeXml(product.gtin)+'</g:gtin>\n':'')+'      <g:size>'+escapeXml(product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).size)+'</g:size>\n      <g:color>'+escapeXml(product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).colour)+'</g:color>\n      <g:gender>'+(product.gender==='Men'?'male':product.gender==='Women'?'female':'unisex')+'</g:gender>\n' : '') +
       '      <g:product_type>' + escapeXml(product.categoryLabel || categoryLabels[product.categoryPage] || product.category || 'Cycling') + '</g:product_type>\n' +
       '      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price>'+
       (delivery ? '<g:min_transit_time>'+delivery.transit.min+'</g:min_transit_time><g:max_transit_time>'+delivery.transit.max+'</g:max_transit_time>' : '') + '</g:shipping>\n' +

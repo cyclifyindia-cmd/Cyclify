@@ -5,7 +5,7 @@
   let chosen = variants.find(variant => variant.key === requested) || variants.find(variant => variant.key === product.defaultVariantKey) || variants[0];
   let state = { build: chosen.build, size: chosen.size, colour: chosen.colour };
   const unique = values => [...new Set(values.filter(Boolean))];
-  const label = variant => variant.stockStatus === 'coming-soon' ? 'Coming Soon' : (variant.available ? 'In stock' : 'Contact for More Info');
+  const label = variant => variant.stockStatus === 'coming-soon' ? 'Coming Soon' : (variant.available ? 'In stock' : variant.stockStatus==='out-of-stock'?'Out of stock':'Contact for More Info');
   const baseUpdate = updateCartButtonForSize;
 
   updateCartButtonForSize = function () {

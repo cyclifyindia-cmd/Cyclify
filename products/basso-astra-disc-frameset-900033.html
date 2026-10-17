@@ -26,12 +26,12 @@
 <meta name="twitter:image:alt" content="Basso Astra Disc Frameset">
 <link rel="preload" as="image" href="https://cyclify.in/assets/products/expanded/2ee310def29979b852.webp" fetchpriority="high">
 <script>window.CYCLIFY_PRODUCT_ID=900033;</script>
-<script src="assets/js/product-routes.js?v=fb0a751024"></script>
+<script src="assets/js/product-routes.js?v=b4423859e1"></script>
 <script src="assets/js/supplier-products.js?v=38a69ae0bd"></script>
-<script src="assets/js/fcc-products.js?v=9881d6ca79"></script>
-<script src="assets/js/cadence-products.js?v=30451377f1"></script>
+<script src="assets/js/fcc-products.js?v=68673eea4e"></script>
+<script src="assets/js/cadence-products.js?v=adb5356270"></script>
 <script src="assets/js/tfsa-products.js?v=39e9af9bee"></script>
-<script src="assets/js/expanded-products.js?v=e168c5b243"></script>
+<script src="assets/js/expanded-products.js?v=7acbe51818"></script>
 <style>
 
 *{
@@ -2757,7 +2757,7 @@ discountElement.hidden=!discount;
 const priceLine=document.getElementById("productPriceLine");
 if(priceLine){priceLine.classList.toggle("price-on-request",Boolean(product.priceOnRequest));}
 const dealWord=document.getElementById("productDealWord");
-if(dealWord){dealWord.textContent="DEAL";}
+if(dealWord){dealWord.textContent=product.priceLabel||"DEAL";}
 }
 
 function renderProductFulfilment(){
@@ -3054,7 +3054,7 @@ productImages.forEach((image,index)=>{
 productThumbs.innerHTML+=`
 <img
 class="thumb"
-src="${product.inventoryGroup==='expanded'?image.replace('/expanded/','/expanded/thumbs/'):image}"
+src="${product.inventoryGroup==='expanded'?image.replace('/expanded/','/expanded/thumbs/').replace('/2xu/','/2xu/thumbs/'):image}"
 loading="lazy" decoding="async"
 alt="${product.name} image ${index+1}"
 onclick="showImage(${index})">
@@ -3333,7 +3333,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<dialog id="expandedSizeGuide" class="expanded-size-guide"><div class="expanded-dialog-heading"><h2>Size guide</h2><button type="button" data-expanded-close="" aria-label="Close size guide">×</button></div><div class="expanded-chart-scroll"><table><thead><tr><th scope="col">Frame Size</th><th scope="col">Height</th></tr></thead><tbody><tr><td>45</td><td>150-163 cm</td></tr><tr><td>48</td><td>160-169 cm</td></tr><tr><td>51</td><td>166-174 cm</td></tr><tr><td>53</td><td>172-180 cm</td></tr><tr><td>56</td><td>178-186 cm</td></tr><tr><td>58</td><td>184-192 cm</td></tr></tbody></table></div></dialog><script src="assets/js/expanded-product.js?v=8cf1eb3863"></script><script src="assets/js/site-footer.js?v=f4af3df3f8"></script>
+<dialog id="expandedSizeGuide" class="expanded-size-guide"><div class="expanded-dialog-heading"><h2>Size guide</h2><button type="button" data-expanded-close="" aria-label="Close size guide">×</button></div><div class="expanded-chart-scroll"><table><thead><tr><th scope="col">Frame Size</th><th scope="col">Height</th></tr></thead><tbody><tr><td>45</td><td>150-163 cm</td></tr><tr><td>48</td><td>160-169 cm</td></tr><tr><td>51</td><td>166-174 cm</td></tr><tr><td>53</td><td>172-180 cm</td></tr><tr><td>56</td><td>178-186 cm</td></tr><tr><td>58</td><td>184-192 cm</td></tr></tbody></table></div></dialog><script src="assets/js/expanded-product.js?v=d84db430ae"></script><script src="assets/js/site-footer.js?v=4cb9a8f3d1"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 

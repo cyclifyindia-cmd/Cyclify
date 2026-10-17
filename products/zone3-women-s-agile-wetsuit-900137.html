@@ -26,12 +26,12 @@
 <meta name="twitter:image:alt" content="Zone3 Women's Agile wetsuit">
 <link rel="preload" as="image" href="https://cyclify.in/assets/products/expanded/a6eebd66ffd3c35b9b.webp" fetchpriority="high">
 <script>window.CYCLIFY_PRODUCT_ID=900137;</script>
-<script src="assets/js/product-routes.js?v=fb0a751024"></script>
+<script src="assets/js/product-routes.js?v=b4423859e1"></script>
 <script src="assets/js/supplier-products.js?v=38a69ae0bd"></script>
-<script src="assets/js/fcc-products.js?v=9881d6ca79"></script>
-<script src="assets/js/cadence-products.js?v=30451377f1"></script>
+<script src="assets/js/fcc-products.js?v=68673eea4e"></script>
+<script src="assets/js/cadence-products.js?v=adb5356270"></script>
 <script src="assets/js/tfsa-products.js?v=39e9af9bee"></script>
-<script src="assets/js/expanded-products.js?v=e168c5b243"></script>
+<script src="assets/js/expanded-products.js?v=7acbe51818"></script>
 <style>
 
 *{
@@ -2730,7 +2730,7 @@ discountElement.hidden=!discount;
 const priceLine=document.getElementById("productPriceLine");
 if(priceLine){priceLine.classList.toggle("price-on-request",Boolean(product.priceOnRequest));}
 const dealWord=document.getElementById("productDealWord");
-if(dealWord){dealWord.textContent="DEAL";}
+if(dealWord){dealWord.textContent=product.priceLabel||"DEAL";}
 }
 
 function renderProductFulfilment(){
@@ -3027,7 +3027,7 @@ productImages.forEach((image,index)=>{
 productThumbs.innerHTML+=`
 <img
 class="thumb"
-src="${product.inventoryGroup==='expanded'?image.replace('/expanded/','/expanded/thumbs/'):image}"
+src="${product.inventoryGroup==='expanded'?image.replace('/expanded/','/expanded/thumbs/').replace('/2xu/','/2xu/thumbs/'):image}"
 loading="lazy" decoding="async"
 alt="${product.name} image ${index+1}"
 onclick="showImage(${index})">
@@ -3306,7 +3306,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<dialog id="expandedSizeGuide" class="expanded-size-guide"><div class="expanded-dialog-heading"><h2>Size guide</h2><button type="button" data-expanded-close="" aria-label="Close size guide">×</button></div><div class="expanded-chart-scroll"><table><thead><tr><th scope="col">Size</th><th scope="col">Height</th><th scope="col">Weight</th><th scope="col">Bust</th><th scope="col">Body Type</th></tr></thead><tbody><tr><td>XS</td><td>142cm - 155cm</td><td>44kg - 50kg</td><td>74cm - 81cm</td><td>X Small</td></tr><tr><td>S</td><td>147cm - 165cm</td><td>46kg - 53kg</td><td>79cm - 86cm</td><td>Small</td></tr><tr><td>M</td><td>147cm - 167cm</td><td>54kg - 61kg</td><td>81cm - 91cm</td><td>Small Medium</td></tr><tr><td></td><td>147cm - 167cm</td><td>60kg - 73kg</td><td>86cm - 96cm</td><td>Short Large</td></tr><tr><td></td><td>147cm - 167cm</td><td>68kg - 78kg</td><td>86cm - 102cm</td><td>Short X Large</td></tr><tr><td>M</td><td>160cm - 168cm</td><td>58kg - 64kg</td><td>81cm - 91cm</td><td>Medium</td></tr><tr><td>ML</td><td>160cm - 175cm</td><td>60kg - 73kg</td><td>86cm - 96cm</td><td>Medium Large</td></tr><tr><td></td><td>160cm - 175cm</td><td>68kg - 78kg</td><td>86cm - 102cm</td><td>Medium X Large</td></tr><tr><td>L</td><td>165cm - 180cm</td><td>60kg - 73kg</td><td>86cm - 96cm</td><td>Large</td></tr><tr><td>XL</td><td>168cm - 183cm</td><td>68kg - 78kg</td><td>86cm - 102cm</td><td>X Large</td></tr><tr><td>XXL</td><td>168cm - 193cm</td><td>73kg - 83kg</td><td>97cm - 107cm</td><td>XX Large</td></tr></tbody></table></div></dialog><script src="assets/js/expanded-product.js?v=8cf1eb3863"></script><script src="assets/js/site-footer.js?v=f4af3df3f8"></script>
+<dialog id="expandedSizeGuide" class="expanded-size-guide"><div class="expanded-dialog-heading"><h2>Size guide</h2><button type="button" data-expanded-close="" aria-label="Close size guide">×</button></div><div class="expanded-chart-scroll"><table><thead><tr><th scope="col">Size</th><th scope="col">Height</th><th scope="col">Weight</th><th scope="col">Bust</th><th scope="col">Body Type</th></tr></thead><tbody><tr><td>XS</td><td>142cm - 155cm</td><td>44kg - 50kg</td><td>74cm - 81cm</td><td>X Small</td></tr><tr><td>S</td><td>147cm - 165cm</td><td>46kg - 53kg</td><td>79cm - 86cm</td><td>Small</td></tr><tr><td>M</td><td>147cm - 167cm</td><td>54kg - 61kg</td><td>81cm - 91cm</td><td>Small Medium</td></tr><tr><td></td><td>147cm - 167cm</td><td>60kg - 73kg</td><td>86cm - 96cm</td><td>Short Large</td></tr><tr><td></td><td>147cm - 167cm</td><td>68kg - 78kg</td><td>86cm - 102cm</td><td>Short X Large</td></tr><tr><td>M</td><td>160cm - 168cm</td><td>58kg - 64kg</td><td>81cm - 91cm</td><td>Medium</td></tr><tr><td>ML</td><td>160cm - 175cm</td><td>60kg - 73kg</td><td>86cm - 96cm</td><td>Medium Large</td></tr><tr><td></td><td>160cm - 175cm</td><td>68kg - 78kg</td><td>86cm - 102cm</td><td>Medium X Large</td></tr><tr><td>L</td><td>165cm - 180cm</td><td>60kg - 73kg</td><td>86cm - 96cm</td><td>Large</td></tr><tr><td>XL</td><td>168cm - 183cm</td><td>68kg - 78kg</td><td>86cm - 102cm</td><td>X Large</td></tr><tr><td>XXL</td><td>168cm - 193cm</td><td>73kg - 83kg</td><td>97cm - 107cm</td><td>XX Large</td></tr></tbody></table></div></dialog><script src="assets/js/expanded-product.js?v=d84db430ae"></script><script src="assets/js/site-footer.js?v=4cb9a8f3d1"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 

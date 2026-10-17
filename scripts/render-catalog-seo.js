@@ -32,6 +32,7 @@ function renderCatalogSeo(source, { file, catalogue, category, sub, heading, des
   const main = $('script:not([src])').toArray().find(element => $(element).html().includes('const products='));
   if (!main) throw new Error('Missing catalogue script: ' + file);
   let mainScript = $(main).html();
+  mainScript = mainScript.replace(/alt="\$\{product.name\}"/g, `alt="\${product.name.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"`);
   if(!mainScript.includes('/* campaign pricing */'))mainScript=mainScript.replace('const container','/* campaign pricing */\nwindow.CyclifyCampaign?.applyToProducts(products);\nconst container');
   if(!mainScript.includes('function renderProducts(){\nwindow.CyclifyCampaign'))mainScript=mainScript.replace('function renderProducts(){','function renderProducts(){\nwindow.CyclifyCampaign?.applyToProducts(products);');
   mainScript = mainScript.replace(/\s*\/\* canonical product names \*\/[\s\S]*?\/\* end canonical product names \*\/\s*/g, '\n\n');

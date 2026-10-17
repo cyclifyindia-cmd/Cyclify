@@ -36,5 +36,7 @@ const html = source
   .replace('Sample configuration only. No stock or delivery promise is being made.', 'Confirm this configuration with Cyclify on WhatsApp. Stock and delivery lead time will be confirmed before payment.')
   .replace(/assets\/js\/site-footer\.js(?:\?v=[^"]+)?"/, `assets/js/site-footer.js?v=${footerVersion}"`)
   .replace('</head>', '<meta name="twitter:title" content="TAVELO Arow Aero Road Bike India | Cyclify">\n<meta name="twitter:description" content="Configure your TAVELO Arow road bike with Shimano Di2, AVRO handlebars and your choice of wheels. Builds start at ₹3,90,000.">\n<meta name="twitter:image" content="https://cyclify.in/assets/products/tavelo-arow/customer-reference-1.png">\n<script type="application/ld+json" id="cyclify-tavelo-schema">' + JSON.stringify(schema).replace(/</g, '\\u003c') + '</script>\n</head>');
-fs.writeFileSync(path.join(root, 'tavelo-arow.html'), html);
+const outputPath=path.join(root,'tavelo-arow.html');
+if(!fs.existsSync(outputPath))fs.writeFileSync(outputPath,html);
+else if(fs.readFileSync(outputPath,'utf8')!==html){const fd=fs.openSync(outputPath,'r+');try{fs.writeFileSync(fd,html);fs.ftruncateSync(fd,Buffer.byteLength(html));}finally{fs.closeSync(fd);}}
 console.log('Prepared tavelo-arow.html: indexable, canonical and WhatsApp enquiry only.');
