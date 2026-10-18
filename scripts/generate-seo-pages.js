@@ -712,7 +712,10 @@ $home('[data-popular-product]').each((_, element) => {
   }
 });
 $home('.home-category img,.home-feature-band__art img').attr('loading', 'lazy').attr('decoding', 'async');
-$home('#cyclify-browse-links').remove();
+$home('#cyclify-browse-links,#cyclify-ride-studio').remove();
+$home('link[href*="assets/css/ride-studio.css"],script[src*="assets/js/ride-studio-model.js"],script[src*="assets/js/ride-studio.js"]').remove();
+$home('head').append('<link rel="stylesheet" href="assets/css/ride-studio.css?v=20261018-1">');
+$home('body').append('<script defer src="assets/js/ride-studio-model.js?v=20261018-1"></script><script defer src="assets/js/ride-studio.js?v=20261018-1"></script>');
 const discoveryGroups = [
   { code: '01', title: 'Bikes & frames', description: 'Road, mountain, hybrid and carbon', links: [['road-bikes-india.html','Road bikes'],['mountain-bikes-india.html','Mountain bikes'],['hybrid-bicycles-india.html','Hybrid bicycles'],['carbon-bike-frames-india.html','Carbon frames']] },
   { code: '02', title: 'Wheels & electronics', description: 'Wheelsets, trainers, computers and lights', links: [['carbon-wheelsets.html','Carbon wheelsets'],['smart-trainers.html','Smart trainers'],['bike-computers.html','GPS bike computers'],['bike-lights.html','Bike lights']] },
@@ -725,7 +728,7 @@ const discoveryMarkup = '<nav id="cyclify-browse-links" class="discovery-deck" a
   '<section class="discovery-box"><div class="discovery-box__heading"><span class="discovery-box__number">05</span><span class="discovery-box__title"><b>Shop by brand</b><small>Performance bike and frame brands</small></span></div><div class="discovery-box__links">' + [['vook-bikes.html','VOOK'],['sava-bikes.html','SAVA'],['tavelo-bikes.html','TAVELO'],['elves-bikes.html','ELVES'],['tfsa-frames.html','TFSA']].map(([href,label]) => '<a href="' + href + '">' + label + '<b aria-hidden="true">→</b></a>').join('') + '</div></section>' +
   '<a class="discovery-guides" href="guides.html"><span><small>CYCLING KNOWLEDGE</small><strong>Read our cycling guides</strong></span><b aria-hidden="true">→</b></a></div></div>' +
   '</details></nav>';
-$home('main').last().after(discoveryMarkup);
+$home('main').last().after(require('./render-ride-studio').renderRideStudio() + discoveryMarkup);
 writeFileWithRetry(path.join(root, 'index.html'), $home.html());
 require('./build-diwali-page').buildDiwaliPage(primaryProducts, routes);
 

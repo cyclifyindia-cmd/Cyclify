@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "test:ride-studio": "node scripts/test-ride-studio.js",
     "generate:seo": "node scripts/generate-seo-pages.js && npm run build:photo-search && node scripts/build-search-assets.js",
     "build:photo-search": "node scripts/build-photo-search.js",
     "audit:seo": "node scripts/audit-seo.js",
