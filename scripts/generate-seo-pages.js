@@ -54,7 +54,8 @@ const expandedProducts = [
   ...supplierProductsFrom(expandedProductsPath),
   ...supplierProductsFrom(path.join(root, 'assets/data/2xu-products.json')),
   ...supplierProductsFrom(path.join(root, 'assets/data/distributor-products.json')),
-  ...supplierProductsFrom(path.join(root, 'assets/data/distributor-products-2.json'))
+  ...supplierProductsFrom(path.join(root, 'assets/data/distributor-products-2.json')),
+  ...supplierProductsFrom(path.join(root, 'assets/data/distributor-products-3.json'))
 ];
 const stockLabelScript = 'window.cyclifyStockLabel=product=>product.stockStatus==="coming-soon"?"Coming Soon":(product.stockStatus==="contact"?"Contact for More Info":(product.available===false?"Out of stock":"In stock"));';
 const expandedScript = '(function(){const items=' + JSON.stringify(expandedProducts) + ';window.CYCLIFY_EXPANDED_PRODUCTS=items;'+stockLabelScript+'window.cyclifyMergeExpandedProducts=(target,page)=>{items.filter(item=>!page||item.categoryPage===page).forEach(item=>{if(!target.some(product=>String(product.id)===String(item.id)))target.push({...item});});return target;};})();\n';

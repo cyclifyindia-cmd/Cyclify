@@ -13,7 +13,7 @@ const pages = [
   "electronics.html", "elves-bikes.html", "sava-bikes.html",
   "smart-trainers.html", "wearables.html", "wheels-tyres.html",
 ];
-const dataFiles = ["cycletime-products.json", "fcc-products.json", "cadence-products.json", "expanded-products.json", "2xu-products.json", "distributor-products.json", "distributor-products-2.json"];
+const dataFiles = ["cycletime-products.json", "fcc-products.json", "cadence-products.json", "expanded-products.json", "2xu-products.json", "distributor-products.json", "distributor-products-2.json", "distributor-products-3.json"];
 const externalProductFiles = ["assets/js/tfsa-products.js"];
 const expected = new Map();
 

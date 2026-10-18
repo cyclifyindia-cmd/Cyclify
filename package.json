@@ -14,8 +14,10 @@
     "sync:cadence": "node scripts/sync-cadence.js",
     "import:distributor-stock": "python scripts/import-distributor-stock.py",
     "import:distributor-stock-2": "python scripts/import-distributor-stock-round2.py",
+    "import:distributor-stock-3": "python scripts/import-distributor-stock-round3.py",
     "test:distributor-catalog": "node scripts/test-distributor-catalog.js",
     "test:distributor-catalog-2": "node scripts/test-distributor-catalog-round2.js",
+    "test:distributor-catalog-3": "node scripts/test-distributor-catalog-round3.js",
     "sync:catalog": "npm run sync:cycletime && npm run sync:fcc && npm run sync:cadence && npm run apply:product-allowlist && npm run apply:price-overrides && npm run generate:seo && npm run build:payment-catalog && npm run verify:payment-catalog"
   },
   "dependencies": {
