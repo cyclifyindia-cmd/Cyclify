@@ -12,6 +12,8 @@
     "sync:cycletime": "node scripts/sync-cycletime.js",
     "sync:fcc": "node scripts/sync-fcc.js",
     "sync:cadence": "node scripts/sync-cadence.js",
+    "import:distributor-stock": "python scripts/import-distributor-stock.py",
+    "test:distributor-catalog": "node scripts/test-distributor-catalog.js",
     "sync:catalog": "npm run sync:cycletime && npm run sync:fcc && npm run sync:cadence && npm run apply:product-allowlist && npm run apply:price-overrides && npm run generate:seo && npm run build:payment-catalog && npm run verify:payment-catalog"
   },
   "dependencies": {
