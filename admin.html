@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cyclify Admin | Orders &amp; Reviews</title>
+<title>Cyclify Admin | Orders, Reviews &amp; Users</title>
 <meta name="robots" content="noindex,nofollow">
 <style>
 :root{--blue:#0754c9;--blue-soft:#edf4ff;--ink:#101828;--muted:#667085;--line:#dfe3e8;--soft:#f5f7f9;--white:#fff;--green:#087443;--green-soft:#ecfdf3;--amber:#b54708;--amber-soft:#fffaeb;--red:#b42318}
@@ -86,6 +86,8 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 .workspace-tab.active{border-bottom-color:var(--blue);color:var(--blue)}
 .workspace-tab-count{display:inline-flex;min-width:21px;height:21px;align-items:center;justify-content:center;border-radius:999px;background:#e4e7ec;color:#344054;font-size:11px;margin-left:5px}
 .workspace-tab.active .workspace-tab-count{background:var(--blue-soft);color:var(--blue)}
+.active-users-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:14px}.active-users-head h2{margin:0 0 4px;font-size:20px}.active-users-head p{margin:0;color:var(--muted)}
+.active-users-list{display:grid;gap:8px}.active-user-row{display:flex;align-items:center;gap:11px;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-weight:700;word-break:break-word}.active-user-icon{display:grid;place-items:center;flex:0 0 34px;height:34px;border-radius:50%;background:var(--blue-soft);color:var(--blue);font-size:16px}.active-user-row span:last-child{min-width:0}
 .review-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}
 .review-tools h2{font-size:18px;margin:0 0 4px}
 .review-tools p{margin:0;color:var(--muted)}
@@ -171,8 +173,9 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
   <nav class="workspace-tabs" aria-label="Admin workspaces">
    <button class="workspace-tab active" id="ordersWorkspaceTab" type="button">Orders</button>
    <button class="workspace-tab" id="reviewsWorkspaceTab" type="button">Review approvals <span class="workspace-tab-count" id="pendingReviewCount">0</span></button>
+   <button class="workspace-tab" id="activeUsersWorkspaceTab" type="button">Active users <span class="workspace-tab-count" id="activeUserCount">0</span></button>
   </nav>
-  <button class="primary" id="refreshBtn" type="button">Refresh orders</button>
+  <button class="primary" id="refreshBtn" type="button">Refresh data</button>
  </div>
  <section id="ordersWorkspace">
  <section class="stats" aria-label="Order summary">
@@ -239,6 +242,13 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
   <section id="reviewLoading" class="notice">Loading customer reviews...</section>
   <div id="reviewsList"></div>
  </section>
+ <section id="activeUsersWorkspace" hidden>
+  <div class="active-users-head">
+   <div><h2>Active users</h2><p>People who have signed in to Cyclify. Only their email IDs are shown.</p></div>
+  </div>
+  <section id="activeUsersLoading" class="notice">Loading active users...</section>
+  <div class="active-users-list" id="activeUsersList"></div>
+ </section>
  </div>
 </main>
 
@@ -255,7 +265,7 @@ header img{display:block;width:128px;height:48px;object-fit:contain}
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut,EmailAuthProvider,reauthenticateWithCredential}from"https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
-import{getFirestore,collectionGroup,getDocs,doc,updateDoc,serverTimestamp}from"https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
+import{getFirestore,collection,collectionGroup,getDocs,doc,updateDoc,serverTimestamp}from"https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
 const app=initializeApp({apiKey:"AIzaSyCITVZ00CZGBspP0y32AuFJjMvTk0rnr0w",authDomain:"cyclify-b809a.firebaseapp.com",projectId:"cyclify-b809a",storageBucket:"cyclify-b809a.firebasestorage.app",messagingSenderId:"748931097863",appId:"1:748931097863:web:0954f07a8245703f2751a2"});
 const auth=getAuth(app),db=getFirestore(app);
@@ -293,6 +303,7 @@ const orderDrafts=new Map();
 let reviewerRedirectPending=false;
 let allOrders=[];
 let allReviews=[];
+let activeUserEmails=[];
 let pendingRefundOrder=null;
 
 const money=value=>`Rs. ${Number(value||0).toLocaleString("en-IN")}`;
@@ -548,6 +559,31 @@ reviewLoading.textContent=`Reviews could not be loaded${error?.code?` (${error.c
 }
 }
 
+function renderActiveUsers(){
+activeUserCount.textContent=activeUserEmails.length;
+if(!activeUserEmails.length){
+ activeUsersList.innerHTML='<div class="notice empty">No signed-in users have been recorded yet.</div>';
+ return;
+}
+activeUsersList.innerHTML=activeUserEmails.map(email=>`<div class="active-user-row"><span class="active-user-icon" aria-hidden="true">@</span><span>${safe(email)}</span></div>`).join("");
+}
+
+async function loadActiveUsers(){
+activeUsersLoading.hidden=false;
+activeUsersLoading.className="notice";
+activeUsersLoading.textContent="Loading active users...";
+try{
+ const snapshot=await getDocs(collection(db,"userDirectory"));
+ activeUserEmails=[...new Set(snapshot.docs.map(item=>String(item.data().email||"").trim().toLowerCase()).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+ activeUsersLoading.hidden=true;
+ renderActiveUsers();
+}catch(error){
+ console.error("Cyclify active user load failed",error);
+ activeUsersLoading.className="notice error";
+ activeUsersLoading.textContent=`Active users could not be loaded${error?.code?` (${error.code})`:""}. Confirm the latest Firestore rules are published.`;
+}
+}
+
 orders.addEventListener("click",async event=>{
  const refundButton=event.target.closest(".cancel-refund");
  if(refundButton){
@@ -670,10 +706,13 @@ card.querySelectorAll("button").forEach(item=>item.disabled=false);
 
 function showWorkspace(name){
 const showOrders=name==="orders";
+const showReviews=name==="reviews";
 ordersWorkspace.hidden=!showOrders;
-reviewsWorkspace.hidden=showOrders;
+reviewsWorkspace.hidden=!showReviews;
+activeUsersWorkspace.hidden=name!=="active-users";
 ordersWorkspaceTab.classList.toggle("active",showOrders);
-reviewsWorkspaceTab.classList.toggle("active",!showOrders);
+reviewsWorkspaceTab.classList.toggle("active",showReviews);
+activeUsersWorkspaceTab.classList.toggle("active",name==="active-users");
 }
 
 function resetPageAndRender(){currentOrderPage=1;renderOrderDashboard();}
@@ -698,7 +737,8 @@ customOrderDate.addEventListener("change",resetPageAndRender);
 reviewStatusFilter.addEventListener("change",renderReviews);
 ordersWorkspaceTab.addEventListener("click",()=>showWorkspace("orders"));
 reviewsWorkspaceTab.addEventListener("click",()=>showWorkspace("reviews"));
-refreshBtn.addEventListener("click",async()=>{refreshBtn.disabled=true;refreshBtn.textContent='Refreshing…';try{await Promise.all([loadOrders(),loadReviews()]);}finally{refreshBtn.disabled=false;refreshBtn.textContent='Refresh orders';}});
+activeUsersWorkspaceTab.addEventListener("click",()=>showWorkspace("active-users"));
+refreshBtn.addEventListener("click",async()=>{refreshBtn.disabled=true;refreshBtn.textContent='Refreshing…';try{await Promise.all([loadOrders(),loadReviews(),loadActiveUsers()]);}finally{refreshBtn.disabled=false;refreshBtn.textContent='Refresh data';}});
 logoutBtn.addEventListener("click",()=>signOut(auth));
 
 adminLoginForm.addEventListener("submit",async event=>{
@@ -740,7 +780,7 @@ reviewerLoginForm.addEventListener("submit",async event=>{
 
 onAuthStateChanged(auth,async user=>{
  if(!user){
-  allOrders=[];allReviews=[];orderDrafts.clear();orders.replaceChildren();reviewsList.replaceChildren();
+  allOrders=[];allReviews=[];activeUserEmails=[];orderDrafts.clear();orders.replaceChildren();reviewsList.replaceChildren();activeUsersList.replaceChildren();
   showAdminLogin();
   return;
  }
@@ -751,7 +791,7 @@ onAuthStateChanged(auth,async user=>{
   return;
  }
  showAdminWorkspace();
- Promise.all([loadOrders(),loadReviews()]);
+ Promise.all([loadOrders(),loadReviews(),loadActiveUsers()]);
 });
 </script>
 </body>

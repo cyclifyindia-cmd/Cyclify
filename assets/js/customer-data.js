@@ -28,6 +28,15 @@ const ready=new Promise(resolve=>onAuthStateChanged(auth,async user=>{
  window.cyclifyCartHydrated=false;
  if(previousOwner&&previousOwner!=="guest"&&previousOwner!==user.uid)localStorage.removeItem("cart");
  const cartRef=doc(db,"customers",user.uid);
+ const directoryRef=doc(db,"userDirectory",user.uid);
+ try{
+  const activityKey=`cyclifyDirectorySync:${user.uid}`;
+  const lastDirectorySync=Number(localStorage.getItem(activityKey)||0);
+  if(user.email&&Date.now()-lastDirectorySync>21600000){
+   await setDoc(directoryRef,{email:user.email.trim(),lastLoginAt:serverTimestamp()},{merge:true});
+   localStorage.setItem(activityKey,String(Date.now()));
+  }
+ }catch(error){console.warn("Unable to update the signed-in user directory",error)}
  try{
   const snapshot=await getDoc(cartRef);
   const remote=snapshot.exists()&&Array.isArray(snapshot.data().cart)?snapshot.data().cart:[];

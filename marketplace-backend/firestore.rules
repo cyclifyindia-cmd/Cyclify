@@ -71,6 +71,20 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    match /userDirectory/{uid} {
+      allow read: if isAdmin()
+                  || (signedIn() && request.auth.uid == uid);
+      allow create, update: if signedIn()
+                            && request.auth.uid == uid
+                            && request.resource.data.keys().hasOnly([
+                              "email",
+                              "lastLoginAt"
+                            ])
+                            && request.resource.data.email == request.auth.token.email
+                            && request.resource.data.lastLoginAt == request.time;
+      allow delete: if false;
+    }
+
     match /customers/{uid} {
       allow read, create, update: if signedIn() && request.auth.uid == uid;
       allow delete: if false;

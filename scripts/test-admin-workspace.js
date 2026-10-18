@@ -24,4 +24,9 @@ assert(source.includes('const ADMIN_EMAIL="admin@cyclify.in"'));assert(source.in
 assert(!/updatePassword|sendPasswordResetEmail|setPersistence|localStorage\.setItem|sessionStorage\.setItem/.test(source));
 assert(source.includes('captureOrderDrafts()')&&source.includes('restoreOrderDrafts()'));assert(source.includes('orderDrafts.delete(orderElement.dataset.path)'));assert(source.includes('Gross order value'));
 for(const id of ['paymentFilter','orderSort','orderPagination','customDateRange','resetOrderFilters','orderResults'])assert(source.includes('id="'+id+'"'));
+for(const id of ['activeUsersWorkspaceTab','activeUserCount','activeUsersWorkspace','activeUsersList'])assert(source.includes('id="'+id+'"'));
+assert(source.includes('collection(db,"userDirectory")'));assert(source.includes('Only their email IDs are shown.'));
+const customerData=fs.readFileSync('assets/js/customer-data.js','utf8'),rules=fs.readFileSync('marketplace-backend/firestore.rules','utf8');
+assert(customerData.includes('doc(db,"userDirectory",user.uid)'));assert(customerData.includes('email:user.email.trim()'));
+assert(rules.includes('match /userDirectory/{uid}'));assert(rules.includes('allow read: if isAdmin()'));assert(rules.includes('request.resource.data.lastLoginAt == request.time'));
 console.log('Admin workspace: filters, date boundaries, payments, sort, pagination, syntax, in-memory drafts and unchanged authentication/refund safeguards passed.');
