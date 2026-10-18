@@ -1,7 +1,7 @@
 /* CYCLIFY_SEARCH_LOADER_START */
 (function(){
  if(!document.querySelector('#searchInput,[data-global-search]')||document.querySelector('script[data-cyclify-search-ui]'))return;
- const urls={"css":"/assets/css/search.css?v=9d1e518c8a","engine":"/assets/js/search-engine.js?v=99c5b0bb07","ui":"/assets/js/search.js?v=e817e22ec9","catalog":"/assets/js/search-index.js?v=2c021adee1","photoModule":"/assets/js/photo-search.js?v=c16c21671d","photoFeatures":"/assets/js/photo-features.js?v=7801a184ac","photoIndex":"/assets/vision/catalogue.json?v=e71a0d3b1c"};
+ const urls={"css":"/assets/css/search.css?v=9d1e518c8a","engine":"/assets/js/search-engine.js?v=99c5b0bb07","ui":"/assets/js/search.js?v=e817e22ec9","catalog":"/assets/js/search-index.js?v=87ed48fb00","photoModule":"/assets/js/photo-search.js?v=c16c21671d","photoFeatures":"/assets/js/photo-features.js?v=7801a184ac","photoIndex":"/assets/vision/catalogue.json?v=d881ddc131"};
  const css=document.createElement('link');css.rel='stylesheet';css.href=urls.css;document.head.appendChild(css);
  const engine=document.createElement('script');engine.src=urls.engine;engine.onload=function(){const ui=document.createElement('script');ui.src=urls.ui;ui.dataset.cyclifySearchUi='true';ui.dataset.catalogSrc=urls.catalog;ui.dataset.photoModuleSrc=urls.photoModule;ui.dataset.photoFeaturesSrc=urls.photoFeatures;ui.dataset.photoIndexSrc=urls.photoIndex;document.head.appendChild(ui);};document.head.appendChild(engine);
 })();

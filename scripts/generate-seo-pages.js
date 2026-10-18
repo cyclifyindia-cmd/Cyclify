@@ -53,7 +53,8 @@ const supplierCatalogues = {
 const expandedProducts = [
   ...supplierProductsFrom(expandedProductsPath),
   ...supplierProductsFrom(path.join(root, 'assets/data/2xu-products.json')),
-  ...supplierProductsFrom(path.join(root, 'assets/data/distributor-products.json'))
+  ...supplierProductsFrom(path.join(root, 'assets/data/distributor-products.json')),
+  ...supplierProductsFrom(path.join(root, 'assets/data/distributor-products-2.json'))
 ];
 const stockLabelScript = 'window.cyclifyStockLabel=product=>product.stockStatus==="coming-soon"?"Coming Soon":(product.stockStatus==="contact"?"Contact for More Info":(product.available===false?"Out of stock":"In stock"));';
 const expandedScript = '(function(){const items=' + JSON.stringify(expandedProducts) + ';window.CYCLIFY_EXPANDED_PRODUCTS=items;'+stockLabelScript+'window.cyclifyMergeExpandedProducts=(target,page)=>{items.filter(item=>!page||item.categoryPage===page).forEach(item=>{if(!target.some(product=>String(product.id)===String(item.id)))target.push({...item});});return target;};})();\n';
@@ -270,7 +271,9 @@ function descriptionFor(product) {
     : (product.preorderDeposit
       ? 'Pre-order ' + cleanText(product.name) + ' at Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + ' with a Rs ' + Number(product.preorderDeposit).toLocaleString('en-IN') + ' deposit.'
       : 'Shop ' + cleanText(product.name) + ' at Cyclify India for Rs ' + Number(product.price).toLocaleString('en-IN') + '.');
-  return truncateAtWord(intro + ' ' + usefulDetail(product), 150);
+  // Leave headroom for characters such as quotes that expand to HTML entities
+  // when the meta description is serialized into the generated page.
+  return truncateAtWord(intro + ' ' + usefulDetail(product), 135);
 }
 
 function redirectPage(targetUrl, message) {
@@ -355,10 +358,12 @@ products.forEach(product => {
   primaryProducts.push(product);
 });
 
-const primaryRoutes = new Map(primaryProducts.map(product => [
-  String(product.id),
-  previousRoutes[product.id] || 'products/' + slugify(product.name) + '-' + product.id + '.html'
-]));
+const primaryRoutes = new Map(primaryProducts.map(product => {
+  const previous = previousRoutes[product.id];
+  const newDistributorProduct = Number(product.id) >= 923000 && Number(product.id) < 926000;
+  const safePrevious = previous && (!newDistributorProduct || previous.endsWith('-' + product.id + '.html'));
+  return [String(product.id), safePrevious ? previous : 'products/' + slugify(product.name) + '-' + product.id + '.html'];
+}));
 const routes = Object.fromEntries(products.map(product => {
   const primary = primaryForProduct.get(String(product.id));
   return [product.id, primaryRoutes.get(String(primary.id))];

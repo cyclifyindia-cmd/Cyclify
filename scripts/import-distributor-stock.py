@@ -20,6 +20,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "products" / "distributor"
 DATA = ROOT / "assets" / "data" / "distributor-products.json"
+ONLINE_IMAGES = json.loads((ROOT / "assets" / "data" / "online-product-images.json").read_text(encoding="utf-8"))
 SOURCES = {
     "blub": Path(sys.argv[1]) if len(sys.argv) > 1 else Path(r"E:\Downloads\BLUB LUBES stock sheet   12-10-2026.xlsx"),
     "elite": Path(sys.argv[2]) if len(sys.argv) > 2 else Path(r"E:\Downloads\Elite stock sheet 12-10-2026.xlsx"),
@@ -154,6 +155,10 @@ def import_elite(path, products, audit):
             continue
         model = clean(sheet.cell(row, 5).value)
         image_paths = [save_image(raw, f"elite-{model}") for raw in images[(row, 10)]]
+        sourced = ONLINE_IMAGES.get(f"Elite|{model}")
+        if not image_paths and sourced:
+            image_paths = [sourced["image"]]
+            audit.setdefault("sourcedImages", []).append({"brand": "Elite", "model": model, "sourcePage": sourced["sourcePage"], "sourceName": sourced["sourceName"]})
         if not image_paths:
             audit["held"].append({"brand": "Elite", "model": model, "name": raw_name, "reason": "No workbook product image"})
             continue

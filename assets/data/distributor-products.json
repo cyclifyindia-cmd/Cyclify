@@ -2845,6 +2845,38 @@
       "gtin": "8020775047064"
     },
     {
+      "id": 921066,
+      "name": "Elite Fly Alpecin Deceuninck 550 Ml",
+      "brand": "Elite",
+      "inventoryGroup": "expanded",
+      "inventorySource": "distributor-stock-20261012",
+      "model": "016041229",
+      "mpn": "016041229",
+      "priceLabel": "MRP",
+      "primaryLabel": "Quantity",
+      "categoryPage": "accessories.html",
+      "categoryLabel": "Accessories",
+      "mainCategory": "bottle-cages",
+      "subCategory": "elite",
+      "price": 590,
+      "mrp": 590,
+      "available": false,
+      "stockStatus": "coming-soon",
+      "stockQuantity": 0,
+      "image": "assets/products/sourced/2af827ba06a183fcdebf.webp",
+      "images": [
+        "assets/products/sourced/2af827ba06a183fcdebf.webp"
+      ],
+      "description": "Elite Fly Alpecin Deceuninck 550 Ml from Elite. Stock status is based on the Elite distributor sheet dated 12 October 2026.",
+      "keywords": "Elite 016041229 Elite Fly Alpecin Deceuninck 550 Ml India buy online cycling",
+      "specs": [
+        "Brand : Elite",
+        "Model : 016041229",
+        "Category : Bottle & Cages"
+      ],
+      "gtin": "8020775044575"
+    },
+    {
       "id": 922001,
       "name": "Funkier UNISEX Aero Short Sleeve Jersey JU-2110 Cavaliere",
       "brand": "Funkier",
@@ -3375,14 +3407,7 @@
     }
   ],
   "audit": {
-    "held": [
-      {
-        "brand": "Elite",
-        "model": "016041229",
-        "name": "FLY ALPECIN DECEUNINCK 550 ml",
-        "reason": "No workbook product image"
-      }
-    ],
+    "held": [],
     "researchedPrices": [
       {
         "model": "0165001",
@@ -3413,6 +3438,14 @@
         "price": 29990,
         "mrp": 29990,
         "source": "Cobbled Climbs India, checked 2026-10-18"
+      }
+    ],
+    "sourcedImages": [
+      {
+        "brand": "Elite",
+        "model": "016041229",
+        "sourcePage": "https://www.sportokay.com/it_it/elite-fly-alpecin-deceuninck-550ml-trinkflasche-2025.html",
+        "sourceName": "Trusted Elite retailer/model listing"
       }
     ]
   }

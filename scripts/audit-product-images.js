@@ -7,6 +7,7 @@ const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const merchantFeed = fs.readFileSync(path.join(root, 'google-merchant-feed.xml'), 'utf8');
 const failures = [];
 const primaryImages = new Map();
+let merchantExcludedPageCount = 0;
 
 function match(source, expression, label, file) {
   const result = source.match(expression);
@@ -20,6 +21,8 @@ const pages = fs.readdirSync(productsDir)
 
 for (const file of pages) {
   const source = fs.readFileSync(path.join(productsDir, file), 'utf8');
+  const isPriceOnRequest = /<p>Price on request<\/p>/i.test(source);
+  if (isPriceOnRequest) merchantExcludedPageCount += 1;
   const canonical = match(source, /<link rel="canonical" href="([^"]+)">/i, 'canonical URL', file);
   const ogImage = match(source, /<meta property="og:image" content="([^"]+)">/i, 'Open Graph image', file);
   const secureImage = match(source, /<meta property="og:image:secure_url" content="([^"]+)">/i, 'secure Open Graph image', file);
@@ -44,7 +47,7 @@ for (const file of pages) {
   if (canonical && (!sitemap.includes('<loc>' + canonical + '</loc>') || !sitemap.includes('<image:loc>' + ogImage.replace(/&/g, '&amp;') + '</image:loc>'))) {
     failures.push(file + ': product or primary image missing from sitemap');
   }
-  if (canonical && (!merchantFeed.includes('<link>' + canonical.replace(/&/g, '&amp;') + '</link>') || !merchantFeed.includes('<g:image_link>' + ogImage.replace(/&/g, '&amp;') + '</g:image_link>'))) {
+  if (!isPriceOnRequest && canonical && (!merchantFeed.includes('<link>' + canonical.replace(/&/g, '&amp;') + '</link>') || !merchantFeed.includes('<g:image_link>' + ogImage.replace(/&/g, '&amp;') + '</g:image_link>'))) {
     failures.push(file + ': product or primary image missing from Google Merchant feed');
   }
   if (ogImage.startsWith('https://cyclify.in/')) {
@@ -60,10 +63,11 @@ const duplicateImages = [...primaryImages.entries()].filter(([, files]) => files
 const merchantItemCount = (merchantFeed.match(/<item>/g) || []).length;
 console.log('Product image pages checked: ' + pages.length);
 console.log('Google Merchant feed products: ' + merchantItemCount);
+console.log('Price-on-request pages excluded from Merchant feed: ' + merchantExcludedPageCount);
 console.log('Unique primary images: ' + primaryImages.size);
 console.log('Duplicate primary image groups: ' + duplicateImages.length);
 if (duplicateImages.length) duplicateImages.forEach(([image, files]) => console.log('  ' + image + ': ' + files.join(', ')));
-if (merchantItemCount !== pages.length) failures.push('Google Merchant feed product count does not match indexable product pages');
+if (merchantItemCount !== pages.length - merchantExcludedPageCount) failures.push('Google Merchant feed product count does not match eligible indexable product pages');
 
 if (failures.length) {
   console.error('Product image SEO failures: ' + failures.length);
