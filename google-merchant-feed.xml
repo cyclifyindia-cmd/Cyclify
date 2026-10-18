@@ -21919,16 +21919,14 @@
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/CeyLZfxY.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/dlfMmHDN.webp</g:additional_image_link>
       <g:additional_image_link>https://cdn.dotpe.in/longtail/store-items/8102112/M7jFI8vj.webp</g:additional_image_link>
-      <g:availability>in_stock</g:availability>
-      <g:min_handling_time>0</g:min_handling_time>
-      <g:max_handling_time>0</g:max_handling_time>
+      <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>1100.00 INR</g:price>
       <g:sale_price>999.00 INR</g:sale_price>
       <g:brand>Ralson</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-232929475</g:id>

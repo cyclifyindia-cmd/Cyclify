@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T12:58:28.970Z",
+  "generatedAt": "2026-10-18T18:39:53.347Z",
   "currency": "INR",
   "campaign": {
     "id": "diwali-2026",
@@ -38733,7 +38733,7 @@
       "id": "233157030",
       "name": "Ralson 700x38C Bicycle Tyre | Hero Lectro Tyre",
       "price": 999,
-      "available": true,
+      "available": false,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/1qwRtVjJ.webp",
       "sizes": [],
       "sizeAvailability": {},
