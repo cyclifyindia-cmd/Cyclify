@@ -222,6 +222,22 @@ function monetaryValue(value) {
   return normalized ? Number(normalized[0]) : 0;
 }
 
+function merchantIdentifiers(product) {
+  const gtin = cleanText(product.gtin || '').replace(/\s+/g, '');
+  const validGtin = /^(?:\d{8}|\d{12}|\d{13}|\d{14})$/.test(gtin) ? gtin : '';
+  const mpn = cleanText(product.mpn || product.model || '');
+  return { gtin: validGtin, mpn };
+}
+
+function schemaIdentifiers(product) {
+  const identifiers = merchantIdentifiers(product);
+  const schema = {};
+  if (identifiers.mpn) schema.mpn = identifiers.mpn;
+  if (identifiers.gtin) schema['gtin' + identifiers.gtin.length] = identifiers.gtin;
+  if (product.model) schema.model = cleanText(product.model);
+  return schema;
+}
+
 function truncateAtWord(value, maxLength) {
   const text = cleanText(value);
   if (text.length <= maxLength) return text;
@@ -455,6 +471,7 @@ for (const product of primaryProducts) {
         description,
         sku: 'CYCLIFY-' + product.id,
         brand: { '@type': 'Brand', name: brand },
+        ...schemaIdentifiers(product),
         ...(product.inventorySource === '2xu-stock-20261012' ? {model:product.model,mpn:product.mpn,...(product.gtin?{gtin13:product.gtin}:{}),size:product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).size,color:product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).colour} : {}),
         ...([88001,88002].includes(Number(product.id)) ? {model:Number(product.id)===88002?'V8E Pro — Cyclify carbon-wheel build':'V8E',alternateName:Number(product.id)===88002?'VOOK V8E Pro Velove carbon-wheel bike':['VOOK V8E','VOOK V8 carbon road bike'],category:'Carbon road bike',color:product.secondaryOptions.join(', '),size:product.sizes.join(', ')} : {}),
         additionalProperty: (product.specs || []).map(spec => {
@@ -846,6 +863,7 @@ const merchantItems = primaryProducts
       .slice(0, 10);
     const inferredBrand = (product.name.match(/^(SAVA|ELVES|TFSA|Cyclami|ThinkRider|Orome|iGPSPORT|MET|Cairbull|ELSIER|RIRO|TOSEEK)/i) || ['Cyclify'])[0];
     const brand = product.brand || (product.id === 16 ? 'Cyclami' : inferredBrand);
+    const identifiers = merchantIdentifiers(product);
     const currentPrice = monetaryValue(product.price);
     const campaignRule = campaign.ruleFor(product.id);
     const listPrice = campaignRule ? campaignRule.regularPrice : Math.max(currentPrice, monetaryValue(product.mrp) || currentPrice);
@@ -855,6 +873,7 @@ const merchantItems = primaryProducts
       '      <title>' + escapeXml(cleanText(product.name)) + '</title>\n' +
       '      <description>' + escapeXml(merchantDescriptionFor(product)) + '</description>\n' +
       '      <link>' + escapeXml(link) + '</link>\n' +
+      '      <g:canonical_link>' + escapeXml(link) + '</g:canonical_link>\n' +
       '      <g:image_link>' + escapeXml(primaryImage) + '</g:image_link>\n' +
       additionalImages.map(imageUrl => '      <g:additional_image_link>' + escapeXml(imageUrl) + '</g:additional_image_link>').join('\n') + (additionalImages.length ? '\n' : '') +
       '      <g:availability>' + (product.available === false ? 'out_of_stock' : (product.preorder ? 'preorder' : 'in_stock')) + '</g:availability>\n' +
@@ -866,7 +885,10 @@ const merchantItems = primaryProducts
       (salePrice ? '      ' + salePrice + '\n' : '') +
       (product.campaignOffer ? '      <g:sale_price_effective_date>'+campaign.config.startsAt+'/'+campaign.config.endsAt+'</g:sale_price_effective_date>\n' : '') +
       '      <g:brand>' + escapeXml(brand) + '</g:brand>\n' +
-      (product.inventorySource === '2xu-stock-20261012' ? '      <g:mpn>'+escapeXml(product.mpn)+'</g:mpn>\n'+(product.gtin?'      <g:gtin>'+escapeXml(product.gtin)+'</g:gtin>\n':'')+'      <g:size>'+escapeXml(product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).size)+'</g:size>\n      <g:color>'+escapeXml(product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).colour)+'</g:color>\n      <g:gender>'+(product.gender==='Men'?'male':product.gender==='Women'?'female':'unisex')+'</g:gender>\n' : '') +
+      (identifiers.gtin ? '      <g:gtin>' + escapeXml(identifiers.gtin) + '</g:gtin>\n' : '') +
+      (identifiers.mpn ? '      <g:mpn>' + escapeXml(identifiers.mpn) + '</g:mpn>\n' : '') +
+      (!identifiers.gtin && !identifiers.mpn ? '      <g:identifier_exists>no</g:identifier_exists>\n' : '') +
+      (product.inventorySource === '2xu-stock-20261012' ? '      <g:size>'+escapeXml(product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).size)+'</g:size>\n      <g:color>'+escapeXml(product.purchaseVariants.find(v=>v.key===product.defaultVariantKey).colour)+'</g:color>\n      <g:gender>'+(product.gender==='Men'?'male':product.gender==='Women'?'female':'unisex')+'</g:gender>\n' : '') +
       '      <g:product_type>' + escapeXml(product.categoryLabel || categoryLabels[product.categoryPage] || product.category || 'Cycling') + '</g:product_type>\n' +
       '      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price>'+
       (delivery ? '<g:min_transit_time>'+delivery.transit.min+'</g:min_transit_time><g:max_transit_time>'+delivery.transit.max+'</g:max_transit_time>' : '') + '</g:shipping>\n' +

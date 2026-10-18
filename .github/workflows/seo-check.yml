@@ -19,7 +19,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Check crawlability, product images and checkout catalogue
-        run: npm run audit:seo && npm run audit:product-images && npm run verify:payment-catalog
+        run: npm run audit:seo && npm run audit:product-images && npm run audit:merchant-images && npm run verify:payment-catalog
       - name: Check VOOK India pages, colour images and AI metadata
         run: node scripts/audit-vook-seo.js
       - name: Check expanded catalogue stock, photos and checkout prices

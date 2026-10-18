@@ -20,8 +20,17 @@ const feed=cheerio.load(fs.readFileSync(path.join(root,'google-merchant-feed.xml
 let detailed=0;
 feed('item').each((_,element)=>{
   const item=feed(element),description=item.find('description').text();
+  const field=name=>item.find(name.replace(':','\\:')).first().text().trim();
+  const link=field('link');
   assert.ok(description.length>0 && description.length<=4500);
   assert.ok(!/the\s*bike\s*affair|wesnap|cycletime\s*india|fcc\s*racing|choosemybicycle|cyclop\.in|headwind\.in|https?:\/\//i.test(description));
+  for (const required of ['g:id','title','link','g:canonical_link','g:image_link','g:availability','g:condition','g:price','g:brand','g:product_type']) {
+    assert.ok(field(required),'Merchant item missing '+required);
+  }
+  assert.equal(field('g:canonical_link'),link,'Canonical feed URL must match the product landing page');
+  assert.match(field('g:image_link'),/^https:\/\//,'Merchant image must use a crawlable HTTPS URL');
+  assert.match(field('g:price'),/^\d+(?:\.\d{2})? INR$/,'Merchant price must be INR');
+  assert.ok(field('g:gtin')||field('g:mpn')||field('g:identifier_exists')==='no','Merchant item needs GTIN, MPN or identifier_exists=no');
   if (description.length>160) detailed++;
 });
 const paymentCatalog=JSON.parse(fs.readFileSync(path.join(root,'marketplace-backend/payment-function/functions/catalog.json'),'utf8'));

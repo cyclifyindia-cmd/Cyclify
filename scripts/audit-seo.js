@@ -51,10 +51,16 @@ files.forEach(relative => {
   if (relative.startsWith('products/')) {
     const product = schemaEntities.find(entity => entity['@type'] === 'Product');
     if (!product) failures.push(relative + ': missing Product schema');
+    if (!product?.name || !product?.sku || !product?.brand?.name) failures.push(relative + ': incomplete Product identity schema');
+    if (!product?.image || (Array.isArray(product.image) && !product.image.length)) failures.push(relative + ': Product schema has no image');
     if (!$('#productName').text().trim() || !$('#productPrice').text().trim()) failures.push(relative + ': empty initial product name or price');
     if (product?.offers) {
       if (!(Number(product.offers.price) > 0) || product.offers.priceCurrency !== 'INR') failures.push(relative + ': invalid product offer price');
       if (product.offers.url !== canonical) failures.push(relative + ': offer/canonical URL mismatch');
+      if (!/^https:\/\/schema\.org\/(?:InStock|OutOfStock|PreOrder)$/.test(product.offers.availability || '')) failures.push(relative + ': invalid offer availability');
+      if (product.offers.itemCondition !== 'https://schema.org/NewCondition') failures.push(relative + ': missing new product condition');
+      if (!product.offers.shippingDetails) failures.push(relative + ': missing offer shipping details');
+      if (!product.offers.hasMerchantReturnPolicy) failures.push(relative + ': missing merchant return policy');
     }
     if (!schemaEntities.some(entity => entity['@type'] === 'BreadcrumbList')) failures.push(relative + ': missing product breadcrumbs');
   }
