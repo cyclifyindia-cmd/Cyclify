@@ -31,7 +31,13 @@ function rebuildExistingSearch(){
   const trusted=catalogue[String(p.id)];
   const url=Number(p.id)===990001?'tavelo-arow.html':context.window.CYCLIFY_PRODUCT_ROUTES[String(p.id)];
   if(!url||!fs.existsSync(path.join(root,url)))throw new Error('Missing canonical search destination for '+p.id);
-  return {...p,url,available:trusted?trusted.available!==false:true,stockStatus:trusted?.stockStatus||'',brand:p.brand||String(p.name).split(' ')[0]};
+  return {
+   ...p,
+   url,
+   available:trusted?trusted.available!==false:p.available!==false,
+   stockStatus:trusted?(trusted.stockStatus||''):(p.stockStatus||''),
+   brand:p.brand||String(p.name).split(' ')[0]
+  };
  });
  write('assets/js/search-index.js','window.CYCLIFY_SEARCH_PRODUCTS='+JSON.stringify(records)+';\n');
  const version=refreshSearchLoader(),pages=updatePageVersions(version);

@@ -7,7 +7,8 @@ const products=context.window.CYCLIFY_SEARCH_PRODUCTS,index=engine.createIndex(p
 const feed=cheerio.load(read('google-merchant-feed.xml'),{xmlMode:true});
 const feedRecords=new Map();
 feed('item').each((_,item)=>{const el=feed(item),get=name=>el.children().filter((_,n)=>n.name===name).text();feedRecords.set(get('g:id').replace('CYCLIFY-',''),{url:get('link'),price:parseFloat(get('g:sale_price')||get('g:price'))});});
-assert.equal(products.length,feedRecords.size+1,'The search index must contain every listed product and the Tavelo build');
+const priceOnRequest=products.filter(product=>product.priceOnRequest);
+assert.equal(products.length,feedRecords.size+priceOnRequest.length+1,'The search index must contain every Merchant product, price-on-request listing and the Tavelo build');
 assert.equal(index.entries.length,products.length,'No duplicate product IDs');
 const trusted=JSON.parse(read('marketplace-backend/payment-function/functions/catalog.json')).products;
 let comingSoon=0,out=0;
@@ -17,12 +18,17 @@ for(const p of products){
  assert(match.items.some(item=>String(item.id)===String(p.id)),'Full name is not findable: '+p.name);
  const compact=engine.search(index,engine.normalise(p.name).replace(/ /g,''));
  assert(compact.items.some(item=>String(item.id)===String(p.id)),'Compact name is not findable: '+p.name);
- if(Number(p.id)!==990001){
+ if(Number(p.id)!==990001&&!p.priceOnRequest){
   const record=feedRecords.get(String(p.id));assert(record,'Unlisted product leaked into search: '+p.id);
   assert.equal('https://cyclify.in/'+p.url,record.url,'Canonical destination '+p.id);
   assert.equal(Number(p.price),record.price,'Displayed price '+p.id);
   assert.equal(p.available,trusted[String(p.id)].available!==false,'Stock mismatch '+p.id);
   assert.equal(p.stockStatus,trusted[String(p.id)].stockStatus||'','Stock status '+p.id);
+ }
+ if(p.priceOnRequest){
+  assert(!feedRecords.has(String(p.id)),'Price-on-request product leaked into Merchant feed: '+p.id);
+  assert(!trusted[String(p.id)],'Price-on-request product leaked into checkout catalogue: '+p.id);
+  assert.equal(p.stockStatus,'contact','Price-on-request stock status '+p.id);
  }
  if(p.stockStatus==='coming-soon')comingSoon++;
  else if(p.available===false)out++;
