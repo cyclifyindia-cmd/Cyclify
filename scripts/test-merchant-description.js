@@ -25,6 +25,13 @@ feed('item').each((_,element)=>{
   if (description.length>160) detailed++;
 });
 const paymentCatalog=JSON.parse(fs.readFileSync(path.join(root,'marketplace-backend/payment-function/functions/catalog.json'),'utf8'));
-assert.equal(feed('item').length,Object.keys(paymentCatalog.products).length);
+const routeContext={window:{}};
+require('node:vm').runInNewContext(fs.readFileSync(path.join(root,'assets/js/product-routes.js'),'utf8'),routeContext);
+const productRoutes=routeContext.window.CYCLIFY_PRODUCT_ROUTES;
+const checkoutIds=Object.keys(paymentCatalog.products);
+const missingRoutes=checkoutIds.filter(id=>!productRoutes[id]);
+assert.deepEqual(missingRoutes,[],'Every checkout product must resolve to a canonical page');
+const canonicalCheckoutRoutes=new Set(checkoutIds.map(id=>productRoutes[id]));
+assert.equal(feed('item').length,canonicalCheckoutRoutes.size,'Shopping feed must contain one item per canonical checkout page');
 assert.ok(detailed>100,'Use real product facts rather than short search snippets');
-console.log('Shopping descriptions verified for '+feed('item').length+' products; '+detailed+' include more than a short search snippet, with no retailer references.');
+console.log('Shopping descriptions verified for '+feed('item').length+' canonical products across '+checkoutIds.length+' checkout IDs; '+detailed+' include more than a short search snippet, with no retailer references.');
