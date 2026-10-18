@@ -37,7 +37,7 @@
     seat: { label: 'Seat angle', title: 'Where the saddle sits relative to the pedals.', text: 'Seat-tube angle helps place your seated weight over the bottom bracket. A steeper effective angle can move you forward; saddle height and rail adjustment change the result.', tips: { endurance: 'Set saddle position for your fit, not to compensate for the wrong frame.', gravel: 'Loaded riding and terrain change what feels comfortable.', aero: 'A road race position is not the same as a time-trial position.', mtb: 'Steeper effective seat angles can help centre your weight on climbs.' } },
     clearance: { label: 'Tyre space', title: 'More than the tyre width on the sidewall.', text: 'Frame and fork clearance limit tyre size. Actual width depends on the rim, and mud needs room too. Follow the frame, rim and tyre makers’ compatibility limits.', tips: { endurance: 'Wider road tyres can offer more comfort when correctly matched.', gravel: 'Clearance is a key difference between road and gravel designs.', aero: 'Deeper rims affect aerodynamics, not the frame’s tyre clearance.', mtb: 'Knobbly tyres and suspension suit rough ground; they do not make every trail safe.' } }
   };
-  const n = value => Math.round(value * 100) / 100;
+  const n = value => Math.round(value * 10000) / 10000;
   function parts(g) {
     const { rear: r, front: f, axle: y, radius, bx, by, sx, sy, hx, hy, lx, ly } = g;
     const seatX = bx + (sx - bx) * (by - g.saddle) / (by - sy);

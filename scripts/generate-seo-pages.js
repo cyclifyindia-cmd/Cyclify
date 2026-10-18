@@ -715,7 +715,7 @@ $home('.home-category img,.home-feature-band__art img').attr('loading', 'lazy').
 $home('#cyclify-browse-links,#cyclify-ride-studio').remove();
 $home('link[href*="assets/css/ride-studio.css"],script[src*="assets/js/ride-studio-model.js"],script[src*="assets/js/ride-studio.js"]').remove();
 $home('head').append('<link rel="stylesheet" href="assets/css/ride-studio.css?v=20261018-1">');
-$home('body').append('<script defer src="assets/js/ride-studio-model.js?v=20261018-1"></script><script defer src="assets/js/ride-studio.js?v=20261018-1"></script>');
+$home('body').append('<script defer src="assets/js/ride-studio-model.js?v=20261018-2"></script><script defer src="assets/js/ride-studio.js?v=20261018-1"></script>');
 const discoveryGroups = [
   { code: '01', title: 'Bikes & frames', description: 'Road, mountain, hybrid and carbon', links: [['road-bikes-india.html','Road bikes'],['mountain-bikes-india.html','Mountain bikes'],['hybrid-bicycles-india.html','Hybrid bicycles'],['carbon-bike-frames-india.html','Carbon frames']] },
   { code: '02', title: 'Wheels & electronics', description: 'Wheelsets, trainers, computers and lights', links: [['carbon-wheelsets.html','Carbon wheelsets'],['smart-trainers.html','Smart trainers'],['bike-computers.html','GPS bike computers'],['bike-lights.html','Bike lights']] },
