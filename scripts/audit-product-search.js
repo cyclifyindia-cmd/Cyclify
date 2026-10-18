@@ -72,8 +72,10 @@ function inspect(url, $, response) {
   });
   const product = entities.find(entity => entity['@type'] === 'Product');
   const item = items.get(url);
+  const isPriceOnRequest = !product?.offers && /price on request/i.test($('#productPrice').text());
   if (!product) issues.push('Missing product structured data');
-  if (!item) issues.push('Missing Merchant feed entry');
+  if (!item && !isPriceOnRequest) issues.push('Missing Merchant feed entry');
+  if (item && isPriceOnRequest) issues.push('Price-on-request product must not be in Merchant feed');
   const hero = $('#productImage').attr('src');
   if (!hero || !$('#productImage').attr('alt')) issues.push('Missing primary image or alternative text');
   const schemaImage = Array.isArray(product?.image) ? product.image[0] : product?.image;

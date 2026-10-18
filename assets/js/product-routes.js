@@ -683,7 +683,6 @@
   "924207": "products/icetoolz-4719-cone-wrench-200mml-19mm-924207.html",
   "924208": "products/icetoolz-54r3k-bleed-kit-for-sram-bleeding-edge-924208.html",
   "924209": "products/icetoolz-54r3m-bleed-kit-for-shimano-924209.html",
-  "924210": "products/icetoolz-62c5-stainless-steel-chain-checker-924210.html",
   "924211": "products/icetoolz-70a1-3-4-5mm-y-type-hex-key-wrench-924211.html",
   "924212": "products/icetoolz-bmn08-bolts-and-nuts-2-pieces-924212.html",
   "924213": "products/icetoolz-e1322-alu-tube-924213.html",

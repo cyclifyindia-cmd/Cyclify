@@ -195,11 +195,17 @@ def import_pearl(path, products, audit):
 def import_icetoolz(path, products, audit):
     sheet = openpyxl.load_workbook(path, data_only=True).active
     images = embedded_images(sheet)
+    seen_names = set()
     for row in range(3, sheet.max_row + 1):
         code = clean(sheet.cell(row, 3).value)
         name = clean(sheet.cell(row, 5).value)
         if not name:
             continue
+        normalized_name = " ".join(name.casefold().split())
+        if normalized_name in seen_names:
+            audit.setdefault("duplicateRows", []).append({"brand": "IceToolz", "model": code, "name": name, "row": row})
+            continue
+        seen_names.add(normalized_name)
         mrp = money(sheet.cell(row, 7).value)
         image_paths = [save_image(raw) for raw in images[row]]
         source_key = name.split()[0]

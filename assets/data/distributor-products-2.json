@@ -13072,39 +13072,6 @@
       ]
     },
     {
-      "id": 924210,
-      "name": "IceToolz 62C5 STAINLESS STEEL CHAIN CHECKER",
-      "brand": "IceToolz",
-      "inventoryGroup": "expanded",
-      "inventorySource": "distributor-stock-20261012-round2",
-      "model": "62C5",
-      "mpn": "62C5",
-      "priceLabel": "PRICE ON REQUEST",
-      "primaryLabel": "Quantity",
-      "categoryPage": "components.html",
-      "categoryLabel": "Components",
-      "mainCategory": "tools",
-      "subCategory": "tork wrench and spanners",
-      "price": 0,
-      "mrp": 0,
-      "available": false,
-      "stockStatus": "contact",
-      "stockQuantity": 4,
-      "image": "assets/products/sourced/812eb5aac3604a47bff5.webp",
-      "images": [
-        "assets/products/sourced/812eb5aac3604a47bff5.webp"
-      ],
-      "description": "62C5 STAINLESS STEEL CHAIN CHECKER. Genuine IceToolz cycling workshop tool.",
-      "keywords": "IceToolz 62C5 IceToolz 62C5 STAINLESS STEEL CHAIN CHECKER India buy online cycling",
-      "specs": [
-        "Brand : IceToolz",
-        "Model : 62C5",
-        "Category : Tork wrench and spanners"
-      ],
-      "priceOnRequest": true,
-      "gtin": "471815262125"
-    },
-    {
       "id": 924211,
       "name": "IceToolz 70A1 3/4/5mm Y Type Hex Key Wrench.",
       "brand": "IceToolz",
@@ -18729,12 +18696,6 @@
       },
       {
         "brand": "IceToolz",
-        "model": "62C5",
-        "sourcePage": "https://www.icetoolz.com/ec99/rwd1111/product.asp?prodid=62c5",
-        "sourceName": "IceToolz official"
-      },
-      {
-        "brand": "IceToolz",
         "model": "70A1",
         "sourcePage": "https://www.icetoolz.com/ec99/rwd1111/product.asp?prodid=70a1",
         "sourceName": "IceToolz official"
@@ -19016,6 +18977,14 @@
         "model": "E137C",
         "price": 1190,
         "sourcePage": "https://www.thebikeaffair.com/products/icetoolz-spare-clamp-for-e137c-standti"
+      }
+    ],
+    "duplicateRows": [
+      {
+        "brand": "IceToolz",
+        "model": "62C5",
+        "name": "62C5 STAINLESS STEEL CHAIN CHECKER",
+        "row": 210
       }
     ]
   }
