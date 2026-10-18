@@ -116,6 +116,110 @@
         {"heading": "Bicycle fundamentals still matter", "paragraphs": ["Check frame size, brake performance, tyre quality, wheel strength and total weight. An electric bicycle can become difficult to pedal or move when the battery is empty, so a test ride should include low or zero assistance.", "For monsoon use, request the manufacturer water-resistance guidance. Never pressure-wash the motor, battery, display or electrical connectors."]},
         {"heading": "Ownership and legal checks", "paragraphs": ["Verify the current Indian requirements for the exact motor power and assisted speed specification before purchase, because rules and model classifications can change. Choose a seller who documents the invoice, serial numbers, warranty process and safe battery handling."]}
       ]
+    },
+    {
+      "slug": "road-bike-vs-mountain-bike-vs-hybrid-india",
+      "title": "Road Bike vs Mountain Bike vs Hybrid in India",
+      "description": "Compare road, mountain and hybrid bicycles for Indian roads, fitness, commuting, trails, speed, comfort and maintenance.",
+      "category": "bikes-frames.html",
+      "categoryLabel": "Bikes & Frames",
+      "intro": "Road, mountain and hybrid bicycles are designed around different surfaces and riding positions. Choosing by actual use is more reliable than choosing by appearance or the number of gears.",
+      "sections": [
+        {"heading": "Choose for your normal surface", "paragraphs": ["A road bike is efficient on paved roads and suits fitness, distance and speed. A mountain bike is designed for rough trails, with wider tyres, stable handling and lower gearing. A hybrid is a practical middle ground for city roads, commuting and fitness.", "Occasional potholes do not automatically require suspension. Tyre volume, pressure and rider technique can provide comfort without the weight of a low-quality suspension fork."]},
+        {"heading": "Fit, comfort and maintenance", "paragraphs": ["Correct frame size and reach are more important than category labels. Test whether you can reach the controls comfortably, stand over the bicycle safely and pedal without hip movement.", "Road bikes use more specialised controls and tyres, while hybrids are often simpler for new riders. Mountain bikes require suspension and off-road component maintenance when used seriously on trails."]},
+        {"heading": "A practical shortlist", "paragraphs": ["Choose a road bike for mostly smooth, longer rides; a genuine mountain bike for regular rough trails; and a hybrid for mixed city use. Compare complete specifications and current availability rather than relying on generic model names."]}
+      ]
+    },
+    {
+      "slug": "essential-cycling-accessories-india",
+      "title": "Essential Cycling Accessories for Indian Riders",
+      "description": "A practical checklist of cycling helmets, lights, hydration, repair tools, pumps and riding essentials for Indian conditions.",
+      "category": "accessories.html",
+      "categoryLabel": "Accessories",
+      "intro": "The best cycling accessories solve safety, hydration and roadside repair needs before adding convenience or performance upgrades. Buy for your route, ride duration and weather rather than collecting unnecessary equipment.",
+      "sections": [
+        {"heading": "Safety and visibility first", "paragraphs": ["Start with a correctly fitted cycling helmet and visible front and rear lights. Use a brighter steady headlight when you need to see an unlit road, and a conspicuous rear light to help other road users see you.", "Reflective details and clear eyewear can improve visibility, but they do not replace lights, predictable riding and awareness of traffic."]},
+        {"heading": "Hydration and roadside repair", "paragraphs": ["Carry water in a secure bottle cage and match capacity to heat and distance. A spare tube or repair kit, tyre levers, compact pump and suitable multi-tool can solve common roadside problems.", "Check that each tool matches your bicycle. Tubeless riders need compatible plugs and enough inflation capacity; electronic drivetrains may require a charged battery rather than extra mechanical tools."]},
+        {"heading": "Add comfort after the essentials", "paragraphs": ["Cycling gloves, padded shorts, a saddle bag and a GPS computer can improve longer rides. Correct bicycle fit and tyre pressure should be addressed before buying accessories to mask discomfort."]}
+      ]
+    },
+    {
+      "slug": "bicycle-size-guide-india",
+      "title": "Bicycle Size Guide for Indian Riders",
+      "description": "Understand bicycle frame size, reach, standover height and fit before buying a road, mountain or hybrid cycle in India.",
+      "category": "bikes-frames.html",
+      "categoryLabel": "Bikes & Frames",
+      "intro": "A bicycle size label is only a starting point. Two models with the same stated size can have different reach, stack and standover measurements, so the model-specific geometry chart matters.",
+      "sections": [
+        {"heading": "Measurements that matter", "paragraphs": ["Record rider height and inseam, then compare them with the manufacturer chart for the exact model. Standover clearance affects safe mounting, while reach and stack influence how stretched or upright the rider feels.", "Wheel size such as 26, 27.5, 29 or 700C does not describe frame size. It mainly describes the wheel and compatible tyre family."]},
+        {"heading": "Road, mountain and hybrid fit", "paragraphs": ["Road-bike fit considers saddle position, handlebar reach and riding purpose. Mountain-bike fit leaves room for movement and control on rough terrain. Hybrid fit usually prioritises a comfortable, practical position.", "If you fall between sizes, flexibility, proportions and intended handling should guide the choice. Do not assume that choosing the larger frame is more comfortable."]},
+        {"heading": "Confirm before payment", "paragraphs": ["Ask for the exact geometry chart and available stem or cockpit options. A qualified fit or test ride is valuable for pain history, racing positions or expensive integrated cockpits."]}
+      ]
+    },
+    {
+      "slug": "cycling-helmet-buying-guide-india",
+      "title": "Cycling Helmet Buying Guide for India",
+      "description": "Choose a bicycle helmet by fit, coverage, ventilation, certification and intended road or mountain riding use in India.",
+      "category": "cycling-helmets.html",
+      "categoryLabel": "Cycling Helmets",
+      "intro": "A cycling helmet must fit the rider securely and be intended for cycling. Price, aerodynamics and appearance matter only after fit, coverage and documented safety standards are checked.",
+      "sections": [
+        {"heading": "Fit the helmet correctly", "paragraphs": ["Measure around the widest part of the head and use the brand's size chart. The helmet should sit level, remain stable when the retention system is tightened and leave the straps forming a comfortable V around each ear.", "Try the exact model where possible because internal shape varies between brands even when the circumference range is similar."]},
+        {"heading": "Road, mountain and commuting features", "paragraphs": ["Road helmets often prioritise low weight and ventilation. Mountain-bike helmets may add rear coverage and a visor. Commuter designs may emphasise visibility and simple adjustment.", "For hot Indian weather, ventilation and washable pads matter. Added rotational-impact systems can be considered, but they do not compensate for poor fit or crash damage."]},
+        {"heading": "Care and replacement", "paragraphs": ["Follow the manufacturer's cleaning and replacement guidance. Replace a helmet after a significant impact, and do not use solvents, paint or unapproved accessories that may damage the shell or liner."]}
+      ]
+    },
+    {
+      "slug": "smart-trainer-buying-guide-india",
+      "title": "Smart Trainer Buying Guide for India",
+      "description": "Compare direct-drive and wheel-on smart trainers, compatibility, noise, power, connectivity and indoor cycling setup in India.",
+      "category": "smart-trainers.html",
+      "categoryLabel": "Smart Trainers",
+      "intro": "A smart trainer should match the bicycle, cassette, axle standard, available space and training software. Maximum gradient and power figures are less useful when basic compatibility is unresolved.",
+      "sections": [
+        {"heading": "Direct-drive versus wheel-on", "paragraphs": ["A direct-drive trainer replaces the rear wheel and usually offers better power consistency, quieter tyre operation and a more stable ride. A wheel-on trainer is often easier to move and costs less, but tyre pressure and roller tension affect accuracy.", "Check whether the trainer includes a cassette, freehub body, thru-axle adapters and front-wheel support."]},
+        {"heading": "Connectivity and applications", "paragraphs": ["Confirm Bluetooth and ANT+ support for the phone, computer or bike computer you plan to use. Interactive resistance requires compatible software and a reliable power supply.", "Subscription costs, firmware updates and local warranty support should be included in the ownership decision."]},
+        {"heading": "Indoor setup for Indian homes", "paragraphs": ["Use ventilation, a sweat guard and a stable mat. Keep sweat away from headset and frame hardware, and allow space around moving parts. Check electrical earthing and manufacturer storage guidance during humid or monsoon conditions."]}
+      ]
+    },
+    {
+      "slug": "bike-light-lumens-guide-india",
+      "title": "Bike Light Lumens Guide for Indian Roads",
+      "description": "Choose bicycle front and rear lights by lumens, beam pattern, runtime, mounting and visibility for Indian road conditions.",
+      "category": "bike-lights.html",
+      "categoryLabel": "Bike Lights",
+      "intro": "Lumens measure total light output, but beam shape, mounting angle and runtime determine whether a bicycle light works well on the road. Being seen and seeing an unlit route are different jobs.",
+      "sections": [
+        {"heading": "Visibility versus road illumination", "paragraphs": ["A daytime or urban visibility light helps other road users notice you. Riding on dark roads requires a front light with a controlled beam that illuminates the surface ahead without dazzling approaching traffic.", "A rear light should be mounted where bags, clothing and the rear wheel do not block it. Use a mode and brightness suitable for traffic and weather."]},
+        {"heading": "Runtime and charging", "paragraphs": ["Compare claimed runtime at the brightness you will actually use, not only the lowest flashing mode. Cold batteries, age and repeated charging can reduce runtime.", "For longer rides, carry a backup or choose replaceable power options where appropriate. Inspect charging-port covers before wet rides and follow the manufacturer water-resistance instructions."]},
+        {"heading": "Mounting and maintenance", "paragraphs": ["Secure the light so vibration cannot change its aim. Clean lenses, check straps and brackets, and recharge before the battery becomes deeply discharged."]}
+      ]
+    },
+    {
+      "slug": "carbon-wheelset-buying-guide-india",
+      "title": "Carbon Wheelset Buying Guide for India",
+      "description": "Compare carbon road and gravel wheelsets by rim depth, width, tyre fit, hubs, braking, crosswinds and rider compatibility.",
+      "category": "carbon-wheelsets.html",
+      "categoryLabel": "Carbon Wheelsets",
+      "intro": "A carbon wheelset can change aerodynamics, handling and ride feel, but only when the rim, tyre, brake, axle and cassette standards match the bicycle and intended use.",
+      "sections": [
+        {"heading": "Rim depth and width", "paragraphs": ["Deeper rims can reduce aerodynamic drag at speed but may feel more demanding in gusty crosswinds. Internal rim width influences tyre shape and must be checked against the tyre manufacturer's approved range.", "Road, gravel and time-trial priorities differ. Choose the system for actual tyre size, surface and rider confidence rather than selecting the deepest rim available."]},
+        {"heading": "Compatibility checklist", "paragraphs": ["Confirm disc or rim braking, axle dimensions, freehub standard, cassette speed, rotor interface, tyre type and maximum system weight. Hookless rims require especially careful tyre and pressure compatibility checks.", "Ask whether valves, rim tape, spare spokes and adapters are included and available later."]},
+        {"heading": "Hubs, service and warranty", "paragraphs": ["Bearing type, freehub engagement and replacement-part access affect long-term ownership. A lighter wheel is not automatically more durable or easier to service. Retain serial numbers and installation records for warranty support."]}
+      ]
+    },
+    {
+      "slug": "bicycle-maintenance-schedule-india",
+      "title": "Bicycle Maintenance Schedule for Indian Conditions",
+      "description": "A practical bicycle maintenance schedule for dust, heat, monsoon rain and regular road or trail riding in India.",
+      "category": "bicycle-maintenance-products.html",
+      "categoryLabel": "Maintenance Products",
+      "intro": "Maintenance intervals depend on weather, distance, riding surface and component design. Frequent light checks are more useful than waiting for a fixed annual service after problems appear.",
+      "sections": [
+        {"heading": "Before every ride", "paragraphs": ["Check tyre pressure and condition, brake operation, wheel security and any unusual movement or noise. Confirm that lights and electronic shifting batteries have enough charge for the route.", "A quick visual inspection can catch cuts, loose fasteners, leaking sealant and damaged cables before they interrupt a ride."]},
+        {"heading": "After dust or rain", "paragraphs": ["Wipe the frame and drivetrain, dry the bicycle and lubricate the chain only after cleaning. Keep lubricant away from brake surfaces. Do not use high-pressure water around bearings, suspension seals or electronics.", "Monsoon riding may require more frequent chain care, brake-pad checks and cable or bearing inspection."]},
+        {"heading": "Periodic workshop checks", "paragraphs": ["Measure chain wear, inspect brake pads and rotors, check wheel trueness and spoke tension, and examine tyres for damage. Service bearings, suspension and hydraulic brakes according to manufacturer guidance and riding conditions."]}
+      ]
     }
   ]
 }

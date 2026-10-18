@@ -6,6 +6,7 @@
     "audit:seo": "node scripts/audit-seo.js",
     "audit:product-images": "node scripts/audit-product-images.js",
     "audit:merchant-images": "node scripts/audit-merchant-image-resolution.js",
+    "audit:seo-keywords": "node scripts/audit-keyword-pages.js",
     "build:payment-catalog": "node scripts/build-payment-catalog.js",
     "verify:payment-catalog": "node scripts/verify-payment-catalog.js",
     "apply:product-allowlist": "node scripts/apply-product-allowlist.js",

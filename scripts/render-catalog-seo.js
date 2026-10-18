@@ -26,7 +26,8 @@ function renderCatalogSeo(source, { file, catalogue, category, sub, heading, des
   context.window = context;
   context.CyclifyCampaign = require('./campaign-pricing').campaign;
   vm.createContext(context);
-  for (const script of ['product-routes.js', catalogue, ...(file.includes('bikes') || file === 'bikes-frames.html' || file === 'tfsa-frames.html' ? ['tfsa-products.js'] : [])]) {
+  const usesBikeCatalogue = catalogue === 'catalog-bikes-frames.js' || file === 'tfsa-frames.html';
+  for (const script of ['product-routes.js', catalogue, ...(usesBikeCatalogue ? ['tfsa-products.js'] : [])]) {
     vm.runInContext(fs.readFileSync(path.join(root, 'assets/js', script), 'utf8'), context, { timeout: 2000 });
   }
   const main = $('script:not([src])').toArray().find(element => $(element).html().includes('const products='));
