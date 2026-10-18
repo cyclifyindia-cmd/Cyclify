@@ -32,6 +32,11 @@ for (const style of Object.values(model.styles)) {
   }
 }
 for (const metric of Object.values(model.metrics)) for (const key of Object.keys(model.styles)) assert.ok(metric.tips[key]);
+// Keep the trail concept's steep seat angle distinct from its slack steering axis.
+const trail=model.styles.mtb.geometry;
+const seatAngle=Math.atan2(trail.by-trail.sy,trail.bx-trail.sx)*180/Math.PI;
+const headAngle=Math.atan2(trail.ly-trail.hy,trail.lx-trail.hx)*180/Math.PI;
+assert.ok(seatAngle>74 && seatAngle<78 && headAngle>62 && headAngle<67);
 const home=cheerio.load(fs.readFileSync(path.join(root,'index.html'),'utf8'));
 assert.equal(home('#cyclify-ride-studio').length,1);
 assert.equal(home('#cyclify-ride-studio').next().attr('id'),'cyclify-browse-links');

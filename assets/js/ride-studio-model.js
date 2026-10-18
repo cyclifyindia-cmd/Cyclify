@@ -21,7 +21,7 @@
     mtb: { label: 'MTB', title: 'Make room for the trail.', terrain: 'Trails · Uneven ground',
       description: 'A hardtail concept with a suspension fork, flat bar and grippy tyres. The longer front end gives more room to move over the bike.',
       features: ['Suspension fork', 'Knobbly tyres', 'Slacker front end'], shop: 'mountain-bikes-india.html', shopLabel: 'Explore mountain bikes',
-      geometry: { rear: 185, front: 712, axle: 289, radius: 132, bx: 394, by: 310, sx: 354, sy: 203, hx: 599, hy: 140, lx: 625, ly: 193, saddle: 112, stem: 23, tyre: 21, rim: 8, tube: 18, drop: 0, suspension: 1, tread: 1 } }
+      geometry: { rear: 185, front: 712, axle: 289, radius: 132, bx: 394, by: 310, sx: 366, sy: 203, hx: 599, hy: 140, lx: 625, ly: 193, saddle: 112, stem: 23, tyre: 21, rim: 8, tube: 18, drop: 0, suspension: 1, tread: 1 } }
   };
   const colours = [
     { name: 'Racing green', value: '#17634f', light: '#8dbfad', dark: '#083e31' },
