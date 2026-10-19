@@ -17,7 +17,9 @@ async function download(url) {
       await sharp(input).resize({width:1536,height:960,fit:'contain',background:'#f1f1f1'}).webp({quality:87}).toFile(path.join(root, photo.src));
       await sharp(input).resize({width:640,height:400,fit:'contain',background:'#f1f1f1'}).webp({quality:82}).toFile(path.join(root, photo.small));
     }
-    await sharp(await download(bike.diagramSource)).webp({quality:90}).toFile(path.join(root, bike.diagram));
-    console.log(`Imported ${id}: three genuine photos, responsive variants, official geometry diagram.`);
+    if (bike.diagramSource) {
+      await sharp(await download(bike.diagramSource), { density: 160 }).resize({width:1200,withoutEnlargement:true}).webp({quality:90}).toFile(path.join(root, bike.diagram));
+    }
+    console.log(`Imported ${id}: three genuine photos and responsive variants; ${bike.diagramSource ? 'manufacturer geometry chart' : 'side-photo geometry reference'}.`);
   }
 })().catch(error => { console.error(error.message); process.exitCode = 1; });

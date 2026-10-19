@@ -1,4 +1,4 @@
-const { styles, views, metrics } = require('../assets/js/ride-studio-model');
+const { styles, metrics } = require('../assets/js/ride-studio-model');
 const escape = value => String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
 const imageSet = image => escape(image.small)+' 640w, '+escape(image.src)+' 1536w';
 function renderRideStudio() {
@@ -15,34 +15,34 @@ function renderRideStudio() {
             <p class="rs-photo-status" data-rs-photo-status role="status" hidden></p>
           </div>
           <div class="rs-visual-controls">
-            <div class="rs-views" role="group" aria-label="Choose a bike photograph">${views.map((v,i)=>`<button type="button" data-rs-view="${i}" aria-pressed="${i===0}">${v.label}</button>`).join('')}</div>
+            <div class="rs-views" role="group" aria-label="Choose a bike photograph">${bike.images.map((v,i)=>`<button type="button" data-rs-view="${i}" aria-pressed="${i===0}">${escape(v.label)}</button>`).join('')}</div>
             <button type="button" class="rs-tour" data-rs-tour aria-pressed="false">Play styles</button>
           </div>
-          <p class="rs-photo-credit">Photos: Specialized. Unmodified model designs.</p>
+          <p class="rs-photo-credit" data-rs-photo-credit>Photos: ${escape(bike.brand)}. Manufacturer reference images.</p>
         </div>
         <div class="rs-story" aria-live="polite" aria-atomic="true">
-          <span class="rs-story-index" data-rs-style-name>${bike.year} · ENDURANCE</span>
-          <h3 data-rs-name>${bike.name}</h3><p class="rs-build" data-rs-build>${bike.build}</p>
-          <h4 data-rs-heading>${bike.title}</h4><p data-rs-description>${bike.description}</p>
+          <span class="rs-story-index" data-rs-style-name>${escape(bike.year)} · ENDURANCE</span>
+          <h3 data-rs-name>${escape(bike.name)}</h3><p class="rs-build" data-rs-build>${escape(bike.build)}</p>
+          <h4 data-rs-heading>${escape(bike.title)}</h4><p data-rs-description>${escape(bike.description)}</p>
           <ul data-rs-features>${bike.features.map(f=>`<li>${escape(f)}</li>`).join('')}</ul>
-          <a class="rs-shop" data-rs-shop href="${bike.shop}">${bike.shopLabel}<span aria-hidden="true">↗</span></a>
+          <a class="rs-shop" data-rs-shop href="${escape(bike.shop)}">${escape(bike.shopLabel)}<span aria-hidden="true">↗</span></a>
         </div>
       </div>
       <details class="rs-explain">
-        <summary><span>Explore the geometry <small data-rs-summary>Reference frame · Size ${bike.size}</small></span><b aria-hidden="true">+</b></summary>
+        <summary><span>Explore the geometry <small data-rs-summary>Reference frame · Size ${escape(bike.size)}</small></span><b aria-hidden="true">+</b></summary>
         <div class="rs-explain-body">
           <p class="rs-geometry-intro">Tap a measurement to understand it.</p>
-          <div class="rs-metrics" role="group" aria-label="Explore a bike measurement">${Object.entries(metrics).map(([id,m])=>`<button type="button" data-rs-metric="${id}" aria-pressed="${id==='stack'}"><span>${m.label}</span><strong data-rs-value="${id}">${bike.values[id]}</strong></button>`).join('')}</div>
+          <div class="rs-metrics" role="group" aria-label="Explore a bike measurement">${Object.entries(metrics).map(([id,m])=>`<button type="button" data-rs-metric="${id}" aria-pressed="${id==='stack'}"><span data-rs-metric-label="${id}">${escape(bike.metricLabels?.[id] || m.label)}</span><strong data-rs-value="${id}">${escape(bike.values[id])}</strong></button>`).join('')}</div>
           <div class="rs-geometry-layout">
-            <figure class="rs-diagram"><img data-rs-diagram src="${bike.diagram}" width="877" height="538" alt="Specialized Roubaix geometry reference diagram" loading="lazy" decoding="async"><figcaption>Manufacturer’s reference diagram. Measurements depend on size.</figcaption></figure>
-            <div class="rs-lesson" aria-live="polite" aria-atomic="true"><p class="rs-lesson-value" data-rs-lesson-value>Stack · ${bike.values.stack}</p><h4 data-rs-lesson-title>${metrics.stack.title}</h4><p data-rs-lesson-text>${metrics.stack.text}</p><p class="rs-tip" data-rs-insight>${bike.insight}</p></div>
+            <figure class="rs-diagram"><a data-rs-diagram-source href="${escape(bike.diagramSource || bike.source)}" target="_blank" rel="noopener noreferrer"><img data-rs-diagram src="${escape(bike.diagram)}" width="877" height="538" alt="${escape(bike.diagramAlt || bike.name+' geometry reference diagram')}" loading="lazy" decoding="async"></a><figcaption data-rs-diagram-caption>${escape(bike.diagramCaption || 'Manufacturer’s reference diagram. Measurements depend on size.')}</figcaption></figure>
+            <div class="rs-lesson" aria-live="polite" aria-atomic="true"><p class="rs-lesson-value" data-rs-lesson-value>${escape(bike.metricLabels?.stack || metrics.stack.label)} · ${escape(bike.values.stack)}</p><h4 data-rs-lesson-title>${escape(metrics.stack.title)}</h4><p data-rs-lesson-text>${escape(metrics.stack.text)}</p><p class="rs-tip" data-rs-insight>${escape(bike.insight)}</p></div>
           </div>
           <p class="rs-model-note" data-rs-model-note>${escape(bike.note)}</p>
-          <a class="rs-source-link" data-rs-source href="${bike.source}" target="_blank" rel="noopener noreferrer">View Specialized’s model specifications ↗</a>
+          <a class="rs-source-link" data-rs-source href="${escape(bike.source)}" target="_blank" rel="noopener noreferrer">View ${escape(bike.brand)}’s model specifications ↗</a>
           <p class="rs-fit-note">Educational reference, not a bike-fit prescription. Frame sizes are not equivalent across riding categories. Check the exact model’s chart and get a professional fit where needed.</p>
         </div>
       </details>
-      <p class="rs-reference-note">S-Works models shown for comparison, not as Cyclify stock. Photos and model data © Specialized. No brand affiliation implied.</p>
+      <p class="rs-reference-note">Manufacturer examples for learning, not Cyclify inventory. Actual photographs, not a rotatable 3D model. Photos and model data belong to their respective manufacturers. No brand affiliation implied.</p>
       <noscript><p class="rs-fit-note">Enable JavaScript to switch bikes and photo views. The Roubaix photos, geometry and collection link remain available.</p></noscript>
     </div>
   </section>`;

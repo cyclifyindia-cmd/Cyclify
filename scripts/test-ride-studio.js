@@ -7,6 +7,17 @@ const sharp = require('sharp');
 const model = require('../assets/js/ride-studio-model');
 const { renderRideStudio } = require('./render-ride-studio');
 const root = path.resolve(__dirname,'..');
+const expectedModels = {
+  endurance: { name:'Specialized Roubaix SL8 Expert', brand:'Specialized', host:'www.specialized.com', photoHost:'resources.specialized.com', labels:['Full bike','Three-quarter','Cockpit'] },
+  gravel: { name:'Canyon Grizl 7 ESC', brand:'Canyon', host:'www.canyon.com', photoHost:'dma.canyon.com', labels:['Full bike','Frame','Cockpit'] },
+  aero: { name:'Cervélo S5', brand:'Cervélo', host:'www.cervelo.com', photoHost:'images.prismic.io', labels:['Full bike','Frame','Cockpit'] },
+  mtb: { name:'Cannondale Bad Habit 1', brand:'Cannondale', host:'www.cannondale.com', photoHost:'embed.widencdn.net', labels:['Full bike','Three-quarter','Details'] }
+};
+function assertHttpsHost(value, host) {
+  const url = new URL(value);
+  assert.equal(url.protocol,'https:');
+  assert.equal(url.hostname,host);
+}
 async function main() {
   const $=cheerio.load(renderRideStudio());
   assert.equal($('#cyclify-ride-studio').length,1);
@@ -19,16 +30,28 @@ async function main() {
   assert.equal($('[data-rs-style][aria-pressed=true]').length,1);
   assert.equal($('[data-rs-photo]').attr('loading'),'lazy');
   assert.equal(new Set($('[id]').map((i,el)=>$(el).attr('id')).get()).size,$('[id]').length);
+  assert.match($('.rs-reference-note').text(),/Actual photographs, not a rotatable 3D model/);
+  assert.match($('.rs-reference-note').text(),/not Cyclify inventory/);
+  assert.deepEqual(Object.keys(model.styles),Object.keys(expectedModels));
   let imageBytes=0;
-  for(const bike of Object.values(model.styles)) {
+  for(const [id,bike] of Object.entries(model.styles)) {
+    const expected=expectedModels[id];
+    assert.equal(bike.name,expected.name);
+    assert.equal(bike.brand,expected.brand);
     assert.ok(fs.existsSync(path.join(root,bike.shop.split('?')[0])));
-    assert.ok(bike.size && /^202[34]$/.test(bike.year));
-    assert.match(bike.source,/^https:\/\/www.specialized.com\//);
+    assert.ok(bike.size && ['2025','2026','Current model'].includes(String(bike.year)));
+    assertHttpsHost(bike.source,expected.host);
     assert.match(bike.note,/Size /);
     for(const metric of Object.keys(model.metrics)) assert.ok(bike.values[metric]);
+    assert.equal(bike.images.length,3);
+    assert.deepEqual(bike.images.map(photo=>photo.label),expected.labels);
     for(const photo of bike.images) {
-      assert.match(photo.original,/^https:\/\/resources.specialized.com\/image\//);
+      assertHttpsHost(photo.original,expected.photoHost);
+      if(id==='aero') assert.match(new URL(photo.original).pathname,/^\/cervelo\//);
+      if(id==='mtb') assert.match(new URL(photo.original).pathname,/^\/img\/dorelrl\//);
+      assert.equal(photo.alt,bike.name+' — '+photo.label.toLowerCase());
       assert.ok(!photo.original.includes('crop='),'Do not request cropped manufacturer photography');
+      assert.ok(!photo.original.includes('c_fill'),'Do not request fill-cropped manufacturer photography');
       for(const [asset,width,height] of [[photo.src,1536,960],[photo.small,640,400]]) {
         const file=path.join(root,asset),meta=await sharp(file).metadata();
         assert.equal(meta.format,'webp'); assert.equal(meta.width,width); assert.equal(meta.height,height);
@@ -38,17 +61,32 @@ async function main() {
     }
     const diagram=await sharp(path.join(root,bike.diagram)).metadata();
     assert.equal(diagram.format,'webp');
+    assert.ok(bike.diagramAlt && bike.diagramCaption,'Explain the geometry reference');
+    if(bike.diagramSource) {
+      assertHttpsHost(bike.diagramSource,id==='endurance' ? expected.photoHost : expected.host);
+    } else {
+      assert.equal(id,'aero');
+      assert.equal(bike.diagram,bike.images[0].src,'Use the real side photograph when no manufacturer diagram is available');
+      assert.match(bike.diagramAlt,/not a scale drawing/);
+    }
   }
-  assert.deepEqual(Object.values(model.styles).map(s=>s.values.stack),['605 mm','609 mm','565 mm','598 mm']);
-  assert.equal(model.styles.aero.values.reach,'395 mm','Use frame reach, not reach to stem');
-  assert.equal(model.styles.mtb.values.steering,'65.9°');
-  assert.match(model.styles.mtb.note,/low setting/);
+  assert.deepEqual(Object.values(model.styles).map(s=>s.values.stack),['605 mm','596 mm','565 mm','641 mm']);
+  assert.equal(model.styles.aero.values.reach,'392 mm','Use frame reach, not reach to stem');
+  assert.equal(model.styles.gravel.values.reach,'404 mm','Use frame reach, not effective cockpit reach');
+  assert.equal(model.styles.mtb.values.reach,'455 mm');
+  assert.equal(model.styles.mtb.values.steering,'64°');
+  assert.equal(model.styles.mtb.values.wheelbase,'1,224 mm');
+  assert.equal(model.styles.mtb.values.seat,'77.7°');
+  assert.equal(model.styles.mtb.metricLabels.seat,'Effective seat angle');
+  assert.doesNotMatch(model.styles.mtb.note,/low setting/i);
   const home=cheerio.load(fs.readFileSync(path.join(root,'index.html'),'utf8'));
   assert.equal(home('#cyclify-ride-studio').length,1);
   assert.equal(home('#cyclify-ride-studio').next().attr('id'),'cyclify-browse-links');
   for(const asset of ['ride-studio-model.js','ride-studio.js']) assert.equal(home('script[src*="assets/js/'+asset+'"]').length,1);
   assert.equal(home('link[href*="assets/css/ride-studio.css"]').length,1);
   assert.equal(home('[data-rs-photo]').attr('src'),model.styles.endurance.images[0].src);
+  const normaliseMarkup=html=>html.replace(/\r\n?/g,'\n').replace(/>\s+</g,'><').trim();
+  assert.equal(normaliseMarkup(home('#cyclify-ride-studio').toString()),normaliseMarkup($('#cyclify-ride-studio').toString()),'Regenerate the homepage when the Ride Studio renderer or model changes');
   const css=fs.readFileSync(path.join(root,'assets/css/ride-studio.css'),'utf8');
   assert.match(css,/object-fit:contain/); assert.match(css,/prefers-reduced-motion/);
   assert.match(css,/max-width:480px/); assert.match(css,/max-width:800px/);
@@ -102,12 +140,23 @@ async function main() {
     assert.equal(dom('[data-rs-name]').text(),bike.name);
     assert.equal(dom('[data-rs-shop]').attr('href'),bike.shop);
     assert.equal(dom('[data-rs-source]').attr('href'),bike.source);
+    assert.equal(dom('[data-rs-source]').text(),'View '+bike.brand+'’s model specifications ↗');
+    assert.equal(dom('[data-rs-photo-credit]').text(),'Photos: '+bike.brand+'. Manufacturer reference images.');
     assert.equal(dom('[data-rs-diagram]').attr('src'),bike.diagram);
-    assert.match(dom('[data-rs-summary]').text(),new RegExp('Size '+bike.size));
+    assert.equal(dom('[data-rs-diagram]').attr('alt'),bike.diagramAlt);
+    assert.equal(dom('[data-rs-diagram-caption]').text(),bike.diagramCaption);
+    assert.equal(dom('[data-rs-diagram-source]').attr('href'),bike.diagramSource || bike.source);
+    assert.equal(dom('[data-rs-diagram-source]').attr('target'),'_blank');
+    assert.match(dom('[data-rs-diagram-source]').attr('rel'),/noopener/);
+    assert.equal(dom('[data-rs-summary]').text(),'Reference frame · Size '+bike.size);
+    assert.equal(dom('[data-rs-style-name]').text(),bike.year+' · '+bike.label.toUpperCase());
+    assert.deepEqual(dom('[data-rs-view]').map((i,el)=>dom(el).text()).get(),bike.images.map(photo=>photo.label));
     for(let i=0;i<3;i++){
       click('[data-rs-view="'+i+'"]');loaded();
       assert.equal(dom('[data-rs-photo]').attr('src'),bike.images[i].src);
       assert.equal(dom('[data-rs-photo]').attr('alt'),bike.images[i].alt);
+      assert.equal(dom('[data-rs-photo]').attr('srcset'),bike.images[i].small+' 640w, '+bike.images[i].src+' 1536w');
+      assert.equal(get('[data-rs-view="'+i+'"]').hidden,false);
       assert.equal(dom('[data-rs-view][aria-pressed=true]').length,1);
       assert.equal(dom('[data-rs-stage]').attr('aria-busy'),'false');
       assert.equal(get('[data-rs-photo]').hidden,false);
@@ -115,11 +164,22 @@ async function main() {
     for(const [key,metric] of Object.entries(model.metrics)){
       click('[data-rs-metric="'+key+'"]');
       assert.equal(dom('[data-rs-metric][aria-pressed=true]').length,1);
-      assert.equal(dom('[data-rs-lesson-value]').text(),metric.label+' · '+bike.values[key]);
+      const label=bike.metricLabels?.[key] || metric.label;
+      assert.equal(dom('[data-rs-metric-label="'+key+'"]').text(),label);
+      assert.equal(dom('[data-rs-lesson-value]').text(),label+' · '+bike.values[key]);
       assert.equal(dom('[data-rs-lesson-text]').text(),metric.text);
       assert.equal(dom('[data-rs-value="'+key+'"]').text(),bike.values[key]);
     }
   }
+  // A model-specific label must change with the bike, including an active lesson.
+  click('[data-rs-style=mtb]');loaded();click('[data-rs-metric=seat]');
+  assert.equal(dom('[data-rs-metric-label=seat]').text(),'Effective seat angle');
+  assert.equal(dom('[data-rs-lesson-value]').text(),'Effective seat angle · 77.7°');
+  click('[data-rs-style=endurance]');loaded();
+  assert.equal(dom('[data-rs-metric-label=seat]').text(),'Seat angle');
+  assert.equal(dom('[data-rs-lesson-value]').text(),'Seat angle · 73.5°');
+  click('[data-rs-style=mtb]');loaded();
+  assert.equal(dom('[data-rs-lesson-value]').text(),'Effective seat angle · 77.7°');
   // Rapid selection must not display the previous model when it finishes late.
   click('[data-rs-style=gravel]');const oldImage=pending.pop();
   click('[data-rs-style=aero]');loaded();oldImage.onload();
@@ -140,6 +200,6 @@ async function main() {
   const handlers=get('[data-rs-style=gravel]').listeners.click.length;
   vm.runInNewContext(client,context);assert.equal(get('[data-rs-style=gravel]').listeners.click.length,handlers);
   windowEvents.pagehide();assert.equal(timers.size,0);
-  console.log('Ride studio passed: 4 verified models, 12 photos, 24 responsive assets ('+Math.round(imageBytes/1024)+' KB total), 6 metrics, image races/errors/retry, tour/pause, reduced motion, duplicate-init and homepage placement. Browser layout not covered.');
+  console.log('Ride studio passed: 4 requested models, 12 manufacturer photos, 24 responsive assets ('+Math.round(imageBytes/1024)+' KB total), brand credits, photo labels, source links, 6 metrics, effective seat-angle labels, image races/errors/retry, tour/pause, reduced motion, duplicate-init and generated homepage parity. Browser layout not covered.');
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

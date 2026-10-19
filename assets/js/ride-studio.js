@@ -57,11 +57,15 @@
   }
   function updateLesson() {
     const bike = model.styles[style], lesson = model.metrics[metric];
-    find('[data-rs-lesson-value]').textContent = lesson.label+' · '+bike.values[metric];
+    find('[data-rs-lesson-value]').textContent = (bike.metricLabels?.[metric] || lesson.label)+' · '+bike.values[metric];
     find('[data-rs-lesson-title]').textContent = lesson.title;
     find('[data-rs-lesson-text]').textContent = lesson.text;
     find('[data-rs-insight]').textContent = bike.insight;
     all('[data-rs-metric]').forEach(el => el.setAttribute('aria-pressed', el.dataset.rsMetric===metric));
+    all('[data-rs-metric-label]').forEach(el => {
+      const id=el.dataset.rsMetricLabel;
+      el.textContent=bike.metricLabels?.[id] || model.metrics[id].label;
+    });
     all('[data-rs-value]').forEach(el => { el.textContent = bike.values[el.dataset.rsValue]; });
   }
   function selectStyle(id) {
@@ -82,11 +86,21 @@
     const shop=find('[data-rs-shop]');
     shop.href=bike.shop; shop.replaceChildren(document.createTextNode(bike.shopLabel));
     const arrow=document.createElement('span'); arrow.textContent='↗'; arrow.setAttribute('aria-hidden','true'); shop.append(arrow);
-    find('[data-rs-summary]').textContent = 'Reference frame · Size '+bike.size+(id==='mtb'?' · Low setting':'');
+    find('[data-rs-summary]').textContent = 'Reference frame · Size '+bike.size;
     find('[data-rs-model-note]').textContent = bike.note;
-    find('[data-rs-source]').href = bike.source;
+    const source=find('[data-rs-source]');
+    source.href = bike.source;
+    source.textContent = 'View '+bike.brand+'’s model specifications ↗';
+    find('[data-rs-photo-credit]').textContent = 'Photos: '+bike.brand+'. Manufacturer reference images.';
+    all('[data-rs-view]').forEach(el => {
+      const image=bike.images[Number(el.dataset.rsView)];
+      el.hidden=!image;
+      if (image) el.textContent=image.label;
+    });
     find('[data-rs-diagram]').setAttribute('src',bike.diagram);
-    find('[data-rs-diagram]').setAttribute('alt','Specialized '+bike.name+' geometry reference diagram');
+    find('[data-rs-diagram]').setAttribute('alt',bike.diagramAlt || bike.name+' geometry reference diagram');
+    find('[data-rs-diagram-caption]').textContent = bike.diagramCaption || 'Manufacturer’s reference diagram. Measurements depend on size.';
+    find('[data-rs-diagram-source]').href = bike.diagramSource || bike.source;
     updateLesson(); selectPhoto(0);
   }
   all('[data-rs-style]').forEach(el => el.addEventListener('click', () => { stopTour(); selectStyle(el.dataset.rsStyle); }));

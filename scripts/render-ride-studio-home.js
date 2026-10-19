@@ -1,0 +1,29 @@
+/* A focused Ride Studio build: preserve supplier catalogues and all other pages.
+   Pass the same asset version used by generate-seo-pages.js. */
+const fs=require('node:fs');
+const path=require('node:path');
+const crypto=require('node:crypto');
+const cheerio=require('cheerio');
+const {renderRideStudio}=require('./render-ride-studio');
+const root=path.resolve(__dirname,'..');
+const version=process.argv[2];
+if(!version || !/^[a-zA-Z0-9.-]+$/.test(version))throw Error('Usage: node scripts/render-ride-studio-home.js <asset-version>');
+const homePath=path.join(root,'index.html');
+const $=cheerio.load(fs.readFileSync(homePath,'utf8'));
+if($('#cyclify-ride-studio').length!==1)throw Error('Expected one existing Ride Studio section');
+$('#cyclify-ride-studio').replaceWith(renderRideStudio());
+$('link[href*="assets/css/ride-studio.css"]').attr('href','assets/css/ride-studio.css?v='+version);
+for(const name of ['ride-studio-model.js','ride-studio.js']) $('script[src*="assets/js/'+name+'"]').attr('src','assets/js/'+name+'?v='+version);
+const html=$.html();
+const statePath=path.join(root,'assets/data/seo-lastmod.json');
+const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
+const url='https://cyclify.in/';
+const hash=crypto.createHash('sha256').update(html.replace(/\?v=[^"\s<]+/g,'')).digest('hex').slice(0,16);
+const lastmod=state[url]?.hash===hash ? state[url].lastmod : new Date().toISOString().slice(0,10);
+state[url]={hash,lastmod};
+const sitemapPath=path.join(root,'sitemap.xml');
+const sitemap=fs.readFileSync(sitemapPath,'utf8').replace(/(<loc>https:\/\/cyclify\.in\/<\/loc><lastmod>)[^<]+/,(_,prefix)=>prefix+lastmod);
+fs.writeFileSync(homePath,html);
+fs.writeFileSync(statePath,JSON.stringify(state,null,2)+'\n');
+fs.writeFileSync(sitemapPath,sitemap);
+console.log('Updated only the Ride Studio homepage section, its asset versions and homepage SEO timestamp.');
