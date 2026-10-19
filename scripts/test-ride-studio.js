@@ -5,7 +5,7 @@ const cheerio = require('cheerio');
 const vm = require('node:vm');
 const sharp = require('sharp');
 const model = require('../assets/js/ride-studio-model');
-const { renderRideStudio } = require('./render-ride-studio');
+const { renderRideStudio, renderStoreNote } = require('./render-ride-studio');
 const root = path.resolve(__dirname,'..');
 const expectedModels = {
   endurance: { name:'Specialized Roubaix SL8 Expert', brand:'Specialized', host:'www.specialized.com', photoHost:'resources.specialized.com', labels:['Full bike','Three-quarter','Cockpit'] },
@@ -27,8 +27,23 @@ async function main() {
   assert.equal($('[data-rs-colour],.rs-bike,[data-rs-part]').length,0,'No invented frames or paint controls');
   assert.equal($('button:not([type="button"])').length,0);
   assert.equal($('.rs-explain[open]').length,0);
+  assert.equal($('.rs-credits').length,1);
+  assert.equal($('.rs-credits[open]').length,0,'Attribution stays available without crowding the initial view');
+  assert.equal($('.rs-credits > summary').text(),'About these reference bikes');
   assert.equal($('[data-rs-style][aria-pressed=true]').length,1);
   assert.equal($('[data-rs-photo]').attr('loading'),'lazy');
+  assert.equal($('[data-rs-preview]').length,3);
+  $('[data-rs-preview]').each((index,element)=>{
+    const preview=$(element);
+    assert.equal(preview.attr('alt'),'','The neighbouring button label names the view');
+    assert.equal(preview.attr('loading'),'lazy');
+    assert.equal(preview.attr('decoding'),'async');
+    assert.equal(preview.attr('src'),model.styles.endurance.images[index].small);
+    assert.equal(preview.parent().attr('data-rs-view'),String(index));
+  });
+  assert.equal($('[data-rs-photo-count]').text(),'01 / 03');
+  assert.equal($('[data-rs-photo-credit]').text(),'Photos: '+model.styles.endurance.brand);
+  assert.equal($('[data-rs-summary]').text(),'Reference size '+model.styles.endurance.size);
   assert.equal(new Set($('[id]').map((i,el)=>$(el).attr('id')).get()).size,$('[id]').length);
   assert.match($('.rs-reference-note').text(),/Actual photographs, not a rotatable 3D model/);
   assert.match($('.rs-reference-note').text(),/not Cyclify inventory/);
@@ -87,6 +102,12 @@ async function main() {
   assert.equal(home('[data-rs-photo]').attr('src'),model.styles.endurance.images[0].src);
   const normaliseMarkup=html=>html.replace(/\r\n?/g,'\n').replace(/>\s+</g,'><').trim();
   assert.equal(normaliseMarkup(home('#cyclify-ride-studio').toString()),normaliseMarkup($('#cyclify-ride-studio').toString()),'Regenerate the homepage when the Ride Studio renderer or model changes');
+  const store=cheerio.load(renderStoreNote());
+  assert.equal(home('.cyclify-store-note').length,1);
+  assert.equal(home('#cyclify-store-guide').length,1);
+  assert.equal(home('#cyclify-browse-links').next().attr('class'),'cyclify-store-note');
+  assert.equal(normaliseMarkup(home('.cyclify-store-note').toString()),normaliseMarkup(store('.cyclify-store-note').toString()),'Regenerate the homepage when its store-note renderer changes');
+  assert.equal(home('.cyclify-store-note').attr('style'),undefined,'The store note uses scoped stylesheet rules');
   const css=fs.readFileSync(path.join(root,'assets/css/ride-studio.css'),'utf8');
   assert.match(css,/object-fit:contain/); assert.match(css,/prefers-reduced-motion/);
   assert.match(css,/max-width:480px/); assert.match(css,/max-width:800px/);
@@ -141,21 +162,30 @@ async function main() {
     assert.equal(dom('[data-rs-shop]').attr('href'),bike.shop);
     assert.equal(dom('[data-rs-source]').attr('href'),bike.source);
     assert.equal(dom('[data-rs-source]').text(),'View '+bike.brand+'’s model specifications ↗');
-    assert.equal(dom('[data-rs-photo-credit]').text(),'Photos: '+bike.brand+'. Manufacturer reference images.');
+    assert.equal(dom('[data-rs-photo-credit]').text(),'Photos: '+bike.brand);
     assert.equal(dom('[data-rs-diagram]').attr('src'),bike.diagram);
     assert.equal(dom('[data-rs-diagram]').attr('alt'),bike.diagramAlt);
     assert.equal(dom('[data-rs-diagram-caption]').text(),bike.diagramCaption);
     assert.equal(dom('[data-rs-diagram-source]').attr('href'),bike.diagramSource || bike.source);
     assert.equal(dom('[data-rs-diagram-source]').attr('target'),'_blank');
     assert.match(dom('[data-rs-diagram-source]').attr('rel'),/noopener/);
-    assert.equal(dom('[data-rs-summary]').text(),'Reference frame · Size '+bike.size);
+    assert.equal(dom('[data-rs-summary]').text(),'Reference size '+bike.size);
     assert.equal(dom('[data-rs-style-name]').text(),bike.year+' · '+bike.label.toUpperCase());
-    assert.deepEqual(dom('[data-rs-view]').map((i,el)=>dom(el).text()).get(),bike.images.map(photo=>photo.label));
+    assert.deepEqual(dom('[data-rs-view-label]').map((i,el)=>dom(el).text()).get(),bike.images.map(photo=>photo.label));
+    assert.deepEqual(dom('[data-rs-preview]').map((i,el)=>dom(el).attr('src')).get(),bike.images.map(photo=>photo.small),'All thumbnails must switch with the chosen bike');
+    assert.equal(dom('[data-rs-photo-count]').text(),'01 / 03','Changing bike resets the gallery counter');
+    assert.equal(get('.rs-credits').open,false);
+    dom('[data-rs-preview]').each((i,el)=>{
+      assert.equal(dom(el).attr('alt'),'');
+      assert.equal(dom(el).attr('loading'),'lazy');
+    });
     for(let i=0;i<3;i++){
       click('[data-rs-view="'+i+'"]');loaded();
       assert.equal(dom('[data-rs-photo]').attr('src'),bike.images[i].src);
       assert.equal(dom('[data-rs-photo]').attr('alt'),bike.images[i].alt);
       assert.equal(dom('[data-rs-photo]').attr('srcset'),bike.images[i].small+' 640w, '+bike.images[i].src+' 1536w');
+      assert.equal(dom('[data-rs-photo-count]').text(),String(i+1).padStart(2,'0')+' / 03');
+      assert.equal(dom('[data-rs-view="'+i+'"] [data-rs-preview]').attr('src'),bike.images[i].small);
       assert.equal(get('[data-rs-view="'+i+'"]').hidden,false);
       assert.equal(dom('[data-rs-view][aria-pressed=true]').length,1);
       assert.equal(dom('[data-rs-stage]').attr('aria-busy'),'false');
@@ -200,6 +230,6 @@ async function main() {
   const handlers=get('[data-rs-style=gravel]').listeners.click.length;
   vm.runInNewContext(client,context);assert.equal(get('[data-rs-style=gravel]').listeners.click.length,handlers);
   windowEvents.pagehide();assert.equal(timers.size,0);
-  console.log('Ride studio passed: 4 requested models, 12 manufacturer photos, 24 responsive assets ('+Math.round(imageBytes/1024)+' KB total), brand credits, photo labels, source links, 6 metrics, effective seat-angle labels, image races/errors/retry, tour/pause, reduced motion, duplicate-init and generated homepage parity. Browser layout not covered.');
+  console.log('Ride studio passed: 4 requested models, 12 manufacturer photos, 24 responsive assets ('+Math.round(imageBytes/1024)+' KB total), thumbnail controls/counters, collapsed credits, source links, 6 metrics, effective seat-angle labels, image races/errors/retry, tour/pause, reduced motion, duplicate-init and generated homepage/store-note parity. Browser layout not covered.');
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

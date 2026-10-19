@@ -25,6 +25,7 @@
     const image = model.styles[style].images[index];
     if (!image) return;
     view = index;
+    find('[data-rs-photo-count]').textContent = String(index+1).padStart(2,'0')+' / 03';
     const token = ++request, pending = new Image();
     clearTimeout(loadingTimer);
     if (photoAnimation) photoAnimation.cancel();
@@ -86,16 +87,19 @@
     const shop=find('[data-rs-shop]');
     shop.href=bike.shop; shop.replaceChildren(document.createTextNode(bike.shopLabel));
     const arrow=document.createElement('span'); arrow.textContent='↗'; arrow.setAttribute('aria-hidden','true'); shop.append(arrow);
-    find('[data-rs-summary]').textContent = 'Reference frame · Size '+bike.size;
+    find('[data-rs-summary]').textContent = 'Reference size '+bike.size;
     find('[data-rs-model-note]').textContent = bike.note;
     const source=find('[data-rs-source]');
     source.href = bike.source;
     source.textContent = 'View '+bike.brand+'’s model specifications ↗';
-    find('[data-rs-photo-credit]').textContent = 'Photos: '+bike.brand+'. Manufacturer reference images.';
+    find('[data-rs-photo-credit]').textContent = 'Photos: '+bike.brand;
     all('[data-rs-view]').forEach(el => {
       const image=bike.images[Number(el.dataset.rsView)];
       el.hidden=!image;
-      if (image) el.textContent=image.label;
+      if (image) {
+        el.querySelector('[data-rs-view-label]').textContent=image.label;
+        el.querySelector('[data-rs-preview]').setAttribute('src',image.small);
+      }
     });
     find('[data-rs-diagram]').setAttribute('src',bike.diagram);
     find('[data-rs-diagram]').setAttribute('alt',bike.diagramAlt || bike.name+' geometry reference diagram');
