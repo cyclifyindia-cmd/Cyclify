@@ -284,14 +284,16 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_18_33d283f4-9c0c-4382-ad21-b04a4899822b.jpg?v=1772281342</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_15_06a57248-9194-4087-9d1f-29077d0de317.jpg?v=1772281342</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_13_cb3a519d-e897-45be-882f-b470e19391dc.jpg?v=1772281342</g:additional_image_link>
-      <g:availability>out_of_stock</g:availability>
+      <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5900.00 INR</g:price>
       <g:sale_price>4499.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-43</g:id>

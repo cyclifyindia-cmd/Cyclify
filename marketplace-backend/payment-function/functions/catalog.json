@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T04:50:52.585Z",
+  "generatedAt": "2026-10-23T13:28:43.676Z",
   "currency": "INR",
   "campaign": {
     "id": "diwali-2026",
@@ -214,7 +214,7 @@
       "id": "42",
       "name": "iGPSPORT BSC100Max Cyclocomputer",
       "price": 4499,
-      "available": false,
+      "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max.webp?v=1772281342",
       "sizes": [],
       "sizeAvailability": {},
