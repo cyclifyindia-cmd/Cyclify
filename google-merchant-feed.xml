@@ -20861,13 +20861,15 @@
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_4079cf89-1eb0-49cb-a6a4-6f411e9caf79.jpg?v=1756015228</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_17fc99a0-367c-41c5-9968-58e9eeefadab.jpg?v=1756015275</g:additional_image_link>
       <g:additional_image_link>https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_68de20dd-c3ef-4ccb-b999-a2459d368ac0.jpg?v=1756015273</g:additional_image_link>
-      <g:availability>out_of_stock</g:availability>
+      <g:availability>in_stock</g:availability>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2700.00 INR</g:price>
       <g:brand>Royal Traders</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Wheels &amp; Tyres</g:product_type>
-      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price></g:shipping>
+      <g:shipping><g:country>IN</g:country><g:service>Standard</g:service><g:price>0.00 INR</g:price><g:min_transit_time>3</g:min_transit_time><g:max_transit_time>3</g:max_transit_time></g:shipping>
     </item>
     <item>
       <g:id>CYCLIFY-10918629605569</g:id>

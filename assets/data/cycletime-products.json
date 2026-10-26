@@ -432,10 +432,10 @@
       "sizeAvailability": {
         "23C / 1 Piece": false,
         "23C / 1 Pair": false,
-        "25C / 1 Piece": false,
-        "25C / 1 Pair": false,
-        "28C / 1 Piece": false,
-        "28C / 1 Pair": false
+        "25C / 1 Piece": true,
+        "25C / 1 Pair": true,
+        "28C / 1 Piece": true,
+        "28C / 1 Pair": true
       },
       "variants": [
         {
@@ -461,7 +461,7 @@
         {
           "id": 49492848214209,
           "title": "25C / 1 Piece",
-          "available": false,
+          "available": true,
           "price": 2700,
           "compare_at_price": 0,
           "option1": "25C",
@@ -471,7 +471,7 @@
         {
           "id": 49882590871745,
           "title": "25C / 1 Pair",
-          "available": false,
+          "available": true,
           "price": 5400,
           "compare_at_price": 0,
           "option1": "25C",
@@ -481,7 +481,7 @@
         {
           "id": 49492848246977,
           "title": "28C / 1 Piece",
-          "available": false,
+          "available": true,
           "price": 2700,
           "compare_at_price": 0,
           "option1": "28C",
@@ -491,7 +491,7 @@
         {
           "id": 49882590904513,
           "title": "28C / 1 Pair",
-          "available": false,
+          "available": true,
           "price": 5400,
           "compare_at_price": 0,
           "option1": "28C",
@@ -499,7 +499,7 @@
           "option3": ""
         }
       ],
-      "available": false,
+      "available": true,
       "specs": [
         "Brand : Royal Traders",
         "Product Type : bicycle Tire",
