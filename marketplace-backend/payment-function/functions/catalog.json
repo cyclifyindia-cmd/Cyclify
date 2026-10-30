@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T21:08:47.309Z",
+  "generatedAt": "2026-10-30T05:51:28.530Z",
   "currency": "INR",
   "campaign": {
     "id": "diwali-2026",
@@ -38592,26 +38592,26 @@
       "available": true,
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/RNWoAfMQ.webp",
       "sizes": [
-        "23 | 48MM",
-        "23 | 60MM",
-        "23 | 80MM",
-        "25 | 48MM",
-        "25 | 60MM",
-        "25 | 80MM",
-        "28 | 48MM",
-        "28 | 60MM",
-        "28 | 80MM"
+        "700x23 | 48MM",
+        "700x23 | 60MM",
+        "700x23 | 80MM",
+        "700x25 | 48MM",
+        "700x25 | 60MM",
+        "700x25 | 80MM",
+        "700x28 | 48MM",
+        "700x28 | 60MM",
+        "700x28 | 80MM"
       ],
       "sizeAvailability": {
-        "23 | 48MM": true,
-        "23 | 60MM": true,
-        "23 | 80MM": true,
-        "25 | 48MM": true,
-        "25 | 60MM": true,
-        "25 | 80MM": true,
-        "28 | 48MM": true,
-        "28 | 60MM": true,
-        "28 | 80MM": true
+        "700x23 | 48MM": true,
+        "700x23 | 60MM": true,
+        "700x23 | 80MM": true,
+        "700x25 | 48MM": true,
+        "700x25 | 60MM": true,
+        "700x25 | 80MM": true,
+        "700x28 | 48MM": true,
+        "700x28 | 60MM": true,
+        "700x28 | 80MM": true
       },
       "sourcePage": "wheels-tyres.html"
     },

@@ -1157,7 +1157,7 @@
       "stockSource": "fcc",
       "name": "Ralson ECORACER Bicycle Tube 700x23-28C | Presta Valve 48mm, 60mm, 80mm",
       "brand": "Ecoracer",
-      "description": "Ralson ECORACER Bicycle Tube 700x23-28C is designed for cyclists who need reliability, durability, and consistent performance across a wide range of riding conditions. Made from premium butyl rubber, this inner tube offers excellent air retention, helping maintain stable pressure for longer rides while reducing the need for frequent inflation. Its strong and flexible construction enhances puncture resistance, making it suitable for both daily commuting and long-distance cycling. Equipped with a high-quality Presta valve available in 48mm, 60mm, and 80mm options, it ensures compatibility with different rim depths, providing easy inflation and a secure, leak-free fit. The wide size compatibility of 700x23C to 700x28C makes it a versatile choice for road, hybrid, and gravel bikes. Whether you are riding on smooth roads or mixed terrains, the ECORACER tube delivers dependable performance, im",
+      "description": "Upgrade your cycling experience with the Ralson ECORACER Bicycle Tube 700x23-28C, designed for cyclists who value durability, reliable air retention and consistent riding performance. Made from premium-quality butyl rubber, this road bike inner tube provides excellent flexibility and air retention to help maintain stable tyre pressure during everyday rides, training sessions and long-distance cycling adventures. The Ralson ECORACER Inner Tube is compatible with bicycle tyres ranging from 700x23C to 700x28C, making it a versatile replacement option for road bikes and compatible hybrid bicycles. Its durable and flexible construction helps provide dependable performance across different riding conditions while supporting a smooth and comfortable cycling experience. Key Features of Ralson ECORACER Inner Tube Premium Butyl Rubber Construction: Manufactured using quality butyl rubber that offe",
       "price": 510,
       "mrp": "Rs 600",
       "image": "https://cdn.dotpe.in/longtail/store-items/8102112/RNWoAfMQ.webp",
@@ -1168,31 +1168,31 @@
         "https://cdn.dotpe.in/longtail/store-items/8102112/dScILn71.webp"
       ],
       "sizes": [
-        "23 | 48MM",
-        "23 | 60MM",
-        "23 | 80MM",
-        "25 | 48MM",
-        "25 | 60MM",
-        "25 | 80MM",
-        "28 | 48MM",
-        "28 | 60MM",
-        "28 | 80MM"
+        "700x23 | 48MM",
+        "700x23 | 60MM",
+        "700x23 | 80MM",
+        "700x25 | 48MM",
+        "700x25 | 60MM",
+        "700x25 | 80MM",
+        "700x28 | 48MM",
+        "700x28 | 60MM",
+        "700x28 | 80MM"
       ],
       "sizeAvailability": {
-        "23 | 48MM": true,
-        "23 | 60MM": true,
-        "23 | 80MM": true,
-        "25 | 48MM": true,
-        "25 | 60MM": true,
-        "25 | 80MM": true,
-        "28 | 48MM": true,
-        "28 | 60MM": true,
-        "28 | 80MM": true
+        "700x23 | 48MM": true,
+        "700x23 | 60MM": true,
+        "700x23 | 80MM": true,
+        "700x25 | 48MM": true,
+        "700x25 | 60MM": true,
+        "700x25 | 80MM": true,
+        "700x28 | 48MM": true,
+        "700x28 | 60MM": true,
+        "700x28 | 80MM": true
       },
       "variants": [
         {
-          "id": 7289588,
-          "title": "23 | 48MM",
+          "id": 7468523,
+          "title": "700x23 | 48MM",
           "available": true,
           "price": 510,
           "compare_at_price": 600,
@@ -1201,28 +1201,8 @@
           "option3": ""
         },
         {
-          "id": 7289589,
-          "title": "23 | 60MM",
-          "available": true,
-          "price": 585,
-          "compare_at_price": 685,
-          "option1": "[object Object]",
-          "option2": "[object Object]",
-          "option3": ""
-        },
-        {
-          "id": 7289590,
-          "title": "23 | 80MM",
-          "available": true,
-          "price": 645,
-          "compare_at_price": 755,
-          "option1": "[object Object]",
-          "option2": "[object Object]",
-          "option3": ""
-        },
-        {
-          "id": 7289591,
-          "title": "25 | 48MM",
+          "id": 7468524,
+          "title": "700x23 | 60MM",
           "available": true,
           "price": 510,
           "compare_at_price": 600,
@@ -1231,28 +1211,8 @@
           "option3": ""
         },
         {
-          "id": 7289592,
-          "title": "25 | 60MM",
-          "available": true,
-          "price": 585,
-          "compare_at_price": 685,
-          "option1": "[object Object]",
-          "option2": "[object Object]",
-          "option3": ""
-        },
-        {
-          "id": 7289593,
-          "title": "25 | 80MM",
-          "available": true,
-          "price": 645,
-          "compare_at_price": 755,
-          "option1": "[object Object]",
-          "option2": "[object Object]",
-          "option3": ""
-        },
-        {
-          "id": 7289594,
-          "title": "28 | 48MM",
+          "id": 7468525,
+          "title": "700x23 | 80MM",
           "available": true,
           "price": 510,
           "compare_at_price": 600,
@@ -1261,21 +1221,61 @@
           "option3": ""
         },
         {
-          "id": 7289595,
-          "title": "28 | 60MM",
+          "id": 7468526,
+          "title": "700x25 | 48MM",
           "available": true,
-          "price": 585,
-          "compare_at_price": 685,
+          "price": 510,
+          "compare_at_price": 600,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
         },
         {
-          "id": 7289596,
-          "title": "28 | 80MM",
+          "id": 7468527,
+          "title": "700x25 | 60MM",
           "available": true,
-          "price": 645,
-          "compare_at_price": 755,
+          "price": 510,
+          "compare_at_price": 600,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7468528,
+          "title": "700x25 | 80MM",
+          "available": true,
+          "price": 510,
+          "compare_at_price": 600,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7468529,
+          "title": "700x28 | 48MM",
+          "available": true,
+          "price": 510,
+          "compare_at_price": 600,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7468530,
+          "title": "700x28 | 60MM",
+          "available": true,
+          "price": 510,
+          "compare_at_price": 600,
+          "option1": "[object Object]",
+          "option2": "[object Object]",
+          "option3": ""
+        },
+        {
+          "id": 7468531,
+          "title": "700x28 | 80MM",
+          "available": true,
+          "price": 510,
+          "compare_at_price": 600,
           "option1": "[object Object]",
           "option2": "[object Object]",
           "option3": ""
@@ -1285,6 +1285,22 @@
       "specs": [
         "Brand : Ecoracer",
         "Product Type : Eco Racer Tyre Tube",
+        "48mm Presta Valve : A practical choice for compatible standard-depth road bicycle rims.",
+        "60mm Presta Valve : Suitable for compatible medium-depth and deeper bicycle rims.",
+        "80mm Presta Valve : Designed for compatible deep-section and aero-style bicycle rims.",
+        "Road Cycling : Suitable for compatible 700C road bicycle tyres and regular road cycling sessions.",
+        "Daily Commuting : A practical replacement inner tube for everyday bicycle transportation.",
+        "Long-Distance Cycling : Reliable air retention helps reduce the need for frequent pressure adjustments during regular riding.",
+        "Fitness and Training : Suitable for training rides, recreational cycling and everyday fitness activities.",
+        "Hybrid Cycling : Compatible with hybrid bicycle tyres within the specified 700x23C–700x28C size range.",
+        "Product Series : ECORACER",
+        "Tyre Size Compatibility : 700x23C–700x28C",
+        "Material : Premium Butyl Rubber",
+        "Valve Type : Presta Valve (FV)",
+        "Available Valve Lengths : 48mm, 60mm and 80mm",
+        "Wheel Compatibility : Compatible 700C Bicycle Wheels",
+        "Suitable Bicycles : Road Bikes and Compatible Hybrid Bikes",
+        "Application : Bicycle Tyre Replacement and Maintenance",
         "Shipping : Free shipping across India"
       ],
       "specSource": {
