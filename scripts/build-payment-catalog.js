@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
-const { loadAllowedProductIds } = require("./product-allowlist");
+const { loadAllowedProductIds, permittedByPolicy } = require("./product-allowlist");
 const { campaign, buildCampaignAssets } = require("./campaign-pricing");
 
 const root = path.resolve(__dirname, "..");
@@ -34,7 +34,7 @@ function writeFileWithRetry(file, content) {
 
 function addProduct(product, source) {
   const id = String(product.id ?? "").trim();
-  if (!allowedProductIds.has(id)) return;
+  if (!allowedProductIds.has(id) || !permittedByPolicy(product)) return;
   if (product.priceOnRequest) return;
   const sellingPrice = Number(product.price);
   const preorderDeposit = Number(product.preorderDeposit || 0);

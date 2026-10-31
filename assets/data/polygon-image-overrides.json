@@ -1,0 +1,412 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-10-30",
+  "products": [
+    {
+      "id": 930001,
+      "name": "Polygon Strattos S2 2026 - BLUE",
+      "images": [
+        "assets/products/polygon/28b5aa1aa468118a.webp"
+      ]
+    },
+    {
+      "id": 930002,
+      "name": "Polygon Strattos S3 2026 - BROWN",
+      "images": [
+        "assets/products/polygon/9ff27f1cb1493efe.webp"
+      ]
+    },
+    {
+      "id": 930003,
+      "name": "Polygon Strattos S4 2026 - BRONZE",
+      "images": [
+        "assets/products/polygon/90e730b0e5b57d58.webp"
+      ]
+    },
+    {
+      "id": 930004,
+      "name": "Polygon Strattos S4 2025 - GREY",
+      "images": [
+        "assets/products/polygon/3ff80e8729dca6cc.webp"
+      ]
+    },
+    {
+      "id": 930005,
+      "name": "Polygon Strattos S5D 2026 - White",
+      "images": [
+        "assets/products/polygon/71be815951992915.webp"
+      ]
+    },
+    {
+      "id": 930006,
+      "name": "Polygon Helios A8X DI2-12S 2025 - BLU",
+      "images": [
+        "assets/products/polygon/cda42fa57f8eb867.webp"
+      ]
+    },
+    {
+      "id": 930007,
+      "name": "Polygon Cascade 2 27.5 2026 - Green",
+      "images": [
+        "assets/products/polygon/39ebef5fe9dc0a98.webp"
+      ]
+    },
+    {
+      "id": 930008,
+      "name": "Polygon Cascade 2 27.5 2026 - Grey",
+      "images": [
+        "assets/products/polygon/b2f27c319fda2ac6.webp"
+      ]
+    },
+    {
+      "id": 930009,
+      "name": "Polygon Cascade 3 29 2026 - RED",
+      "images": [
+        "assets/products/polygon/5250ff7ec1f1d223.webp"
+      ]
+    },
+    {
+      "id": 930010,
+      "name": "Polygon Cascade 4 27.5 2023 - BLACK",
+      "images": [
+        "assets/products/polygon/577491c183c09b77.webp"
+      ]
+    },
+    {
+      "id": 930011,
+      "name": "Polygon Cascade 4 29 2026 - Charcoal",
+      "images": [
+        "assets/products/polygon/4f58228170e37933.webp"
+      ]
+    },
+    {
+      "id": 930012,
+      "name": "Polygon Cascade 4 29 2026 - Green",
+      "images": [
+        "assets/products/polygon/1c97088cdacc7948.webp"
+      ]
+    },
+    {
+      "id": 930013,
+      "name": "Polygon Cascade 5 29 2026 - Brown",
+      "images": [
+        "assets/products/polygon/9d06037bc7e88236.webp"
+      ]
+    },
+    {
+      "id": 930014,
+      "name": "Polygon Premier 4 27.5 2022 - Brown",
+      "images": [
+        "assets/products/polygon/9a055f95fb6a26f8.webp"
+      ]
+    },
+    {
+      "id": 930015,
+      "name": "Polygon Premier 5 27.5\" 2021 - GREY",
+      "images": [
+        "assets/products/polygon/54a2edd77e0926b7.webp"
+      ]
+    },
+    {
+      "id": 930016,
+      "name": "Polygon Premier 5 27.5\" 2022 - GREY",
+      "images": [
+        "assets/products/polygon/54a2edd77e0926b7.webp"
+      ]
+    },
+    {
+      "id": 930017,
+      "name": "Polygon Xtrada 5 29r UDH 2026 - RED/BLACK",
+      "images": [
+        "assets/products/polygon/c34bfebcf21f9824.webp"
+      ]
+    },
+    {
+      "id": 930018,
+      "name": "Polygon Xtrada 6 29r (With UDH) 2026 - CHARCOAL/BLACK",
+      "images": [
+        "assets/products/polygon/88bfdbb3d58a208b.webp"
+      ]
+    },
+    {
+      "id": 930019,
+      "name": "Polygon Xtrada 6 29r (With UDH) 2025 - CHARCOAL/BLACK",
+      "images": [
+        "assets/products/polygon/88bfdbb3d58a208b.webp"
+      ]
+    },
+    {
+      "id": 930020,
+      "name": "Polygon XTRADA 7 29r(With UDH) 2026 - BLUE/BLACK",
+      "images": [
+        "assets/products/polygon/31f0e99174cd1375.webp"
+      ]
+    },
+    {
+      "id": 930021,
+      "name": "Polygon Siskiu D6 29r 2026 - Green/Brown",
+      "images": [
+        "assets/products/polygon/45abd63f0714862b.webp"
+      ]
+    },
+    {
+      "id": 930022,
+      "name": "Polygon SISKIU D7 LG 27.5 (with Cues) 2025 - BLUE/WHITE",
+      "images": [
+        "assets/products/polygon/156d9a796dfc5969.webp"
+      ]
+    },
+    {
+      "id": 930023,
+      "name": "Polygon SISKIU D7 LG 29r (with Cues) 2025 - BLUE/WHITE",
+      "images": [
+        "assets/products/polygon/fdd141dea44f6cee.webp"
+      ]
+    },
+    {
+      "id": 930024,
+      "name": "Polygon Siskiu T6 29r(UDH) 2026 - Green",
+      "images": [
+        "assets/products/polygon/8637cf01fff9d4b1.webp"
+      ]
+    },
+    {
+      "id": 930025,
+      "name": "Polygon Siskiu T6 29r(UDH) 2026 - Blue",
+      "images": [
+        "assets/products/polygon/054b2fb84caf73d8.webp"
+      ]
+    },
+    {
+      "id": 930026,
+      "name": "Polygon Siskiu T7 29r(UDH) 2026 - Red",
+      "images": [
+        "assets/products/polygon/201e1093199d38b8.webp"
+      ]
+    },
+    {
+      "id": 930027,
+      "name": "Polygon Siskiu T8 27.5 2023 - Charcoal",
+      "images": [
+        "assets/products/polygon/55617f28bded6d66.webp"
+      ]
+    },
+    {
+      "id": 930028,
+      "name": "Polygon Siskiu T8 29r(UDH) 2026 - CML/GRN",
+      "images": [
+        "assets/products/polygon/054a77181014d1ba.webp"
+      ]
+    },
+    {
+      "id": 930029,
+      "name": "Polygon COLLOSUS T6 29r 2026 - Black",
+      "images": [
+        "assets/products/polygon/219e4a1f04881fb1.webp"
+      ]
+    },
+    {
+      "id": 930030,
+      "name": "Polygon COLLOSUS N7 29r 2025 - GREEN",
+      "images": [
+        "assets/products/polygon/c493ff62a19bd63c.webp"
+      ]
+    },
+    {
+      "id": 930031,
+      "name": "Polygon Collosus N9 29r 2023 - Green",
+      "images": [
+        "assets/products/polygon/9edb59b47d619abd.webp"
+      ]
+    },
+    {
+      "id": 930032,
+      "name": "Polygon Path 2 2026 - BLUE",
+      "images": [
+        "assets/products/polygon/d712984a716a1924.webp"
+      ]
+    },
+    {
+      "id": 930033,
+      "name": "Polygon Path 3 2026 - GREEN",
+      "images": [
+        "assets/products/polygon/ba2c5e1552167276.webp"
+      ]
+    },
+    {
+      "id": 930034,
+      "name": "Polygon PATH 4 2025 - Chmln/Prp",
+      "images": [
+        "assets/products/polygon/603b2a285ce0d546.webp"
+      ]
+    },
+    {
+      "id": 930035,
+      "name": "Polygon Tambora A4 2025 - CRC/BLU",
+      "images": [
+        "assets/products/polygon/fa8dd35d2b281fdf.webp"
+      ]
+    },
+    {
+      "id": 930036,
+      "name": "Polygon Heist X2 2023 - BLUE",
+      "images": [
+        "assets/products/polygon/4373bb1f4027aee8.webp"
+      ]
+    },
+    {
+      "id": 930037,
+      "name": "Polygon Heist X2 2023 - GREEN",
+      "images": [
+        "assets/products/polygon/28539adc099f065b.webp"
+      ]
+    },
+    {
+      "id": 930038,
+      "name": "Polygon Heist X2 2026 - Green",
+      "images": [
+        "assets/products/polygon/28539adc099f065b.webp"
+      ]
+    },
+    {
+      "id": 930039,
+      "name": "Polygon Heist X5 2023 - ORG/RED",
+      "images": [
+        "assets/products/polygon/1bd4f1d1aeb8d7fd.webp"
+      ]
+    },
+    {
+      "id": 930040,
+      "name": "Polygon Heist X5 2026 - CREAM",
+      "images": [
+        "assets/products/polygon/65afab45745f9bf7.webp"
+      ]
+    },
+    {
+      "id": 930041,
+      "name": "Polygon Heist X7 2023 - BLK/GLD",
+      "images": [
+        "assets/products/polygon/f2ab0dbd38e81a39.webp"
+      ]
+    },
+    {
+      "id": 930042,
+      "name": "Polygon Heist X7 2023 - BWN/GLD",
+      "images": [
+        "assets/products/polygon/c4eac9e5385b2cb2.webp"
+      ]
+    },
+    {
+      "id": 930043,
+      "name": "Polygon HEIST X7 2026 - BROWN",
+      "images": [
+        "assets/products/polygon/ad97a6df7c0d31e6.webp"
+      ]
+    },
+    {
+      "id": 930044,
+      "name": "Polygon HEIST X7 2025 - BROWN",
+      "images": [
+        "assets/products/polygon/ad97a6df7c0d31e6.webp"
+      ]
+    },
+    {
+      "id": 930045,
+      "name": "Polygon Syncline C2 27.5 2023 - GREY",
+      "images": [
+        "assets/products/polygon/623516d2eb06a61b.webp"
+      ]
+    },
+    {
+      "id": 930046,
+      "name": "Polygon Syncline C2 29r 2023 - GREY",
+      "images": [
+        "assets/products/polygon/623516d2eb06a61b.webp"
+      ]
+    },
+    {
+      "id": 930047,
+      "name": "Polygon Syncline C3 29r 2023 - BROWN",
+      "images": [
+        "assets/products/polygon/fc3323340b1635c2.webp"
+      ]
+    },
+    {
+      "id": 930048,
+      "name": "Polygon Syncline C5 29r 2023 - RED/BLACK",
+      "images": [
+        "assets/products/polygon/b6ce86069808bc04.webp"
+      ]
+    },
+    {
+      "id": 930049,
+      "name": "Polygon IMPRESSION AX 27.5X17 2025 - GREY",
+      "images": [
+        "assets/products/polygon/8778412750503000.webp"
+      ]
+    },
+    {
+      "id": 930050,
+      "name": "Polygon Urbano 3 2026 - RED",
+      "images": [
+        "assets/products/polygon/db6b00b107842f17.webp"
+      ]
+    },
+    {
+      "id": 930051,
+      "name": "Polygon Urbano 5 2026 - GRY",
+      "images": [
+        "assets/products/polygon/da9df8e727ed732c.webp"
+      ]
+    },
+    {
+      "id": 930052,
+      "name": "Polygon Relic 24 2025 - BLU```",
+      "images": [
+        "assets/products/polygon/134f8d6ec711b134.webp"
+      ]
+    },
+    {
+      "id": 930053,
+      "name": "Polygon Cascade 24 2026 - GREY",
+      "images": [
+        "assets/products/polygon/2e7c83fdc599bb63.webp"
+      ]
+    },
+    {
+      "id": 930054,
+      "name": "Polygon Rudge 3 2025 - BLU",
+      "images": [
+        "assets/products/polygon/6dcbce39cd2b4013.webp"
+      ]
+    },
+    {
+      "id": 930055,
+      "name": "Polygon Zeta 2 2022 - Black Brown",
+      "images": [
+        "assets/products/polygon/dadeab5a43246d00.webp"
+      ]
+    },
+    {
+      "id": 930056,
+      "name": "Polygon Zeta 2 2022 - Cream",
+      "images": [
+        "assets/products/polygon/25b6bf023e6861cb.webp"
+      ]
+    },
+    {
+      "id": 930057,
+      "name": "Polygon Bend R2 27.5 2022 - BLUE/BLACK",
+      "images": [
+        "assets/products/polygon/10ec2ee2a241d345.webp"
+      ]
+    },
+    {
+      "id": 930058,
+      "name": "Polygon Bend R5 27.5 2022 - CREAM/BROWN",
+      "images": [
+        "assets/products/polygon/d292e3989b671bb0.webp"
+      ]
+    }
+  ]
+}

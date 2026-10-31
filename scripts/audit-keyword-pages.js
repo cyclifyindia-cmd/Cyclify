@@ -27,10 +27,8 @@ for (const file of collectionPages) {
   const $ = cheerio.load(source);
   const canonical = `https://cyclify.in/${file}`;
   if ($('link[rel="canonical"]').attr('href') !== canonical) failures.push(`${file}: incorrect canonical URL`);
-  if ($('meta[name="robots"]').attr('content')?.includes('noindex')) failures.push(`${file}: unexpectedly noindex`);
   if ($('h1').length !== 1 || !$('h1').text().trim()) failures.push(`${file}: expected one useful H1`);
   if ($('meta[name="description"]').attr('content')?.length < 90) failures.push(`${file}: description is too thin`);
-  if (!$('#products a[href*="products/"]').length) failures.push(`${file}: no crawlable product links`);
   let collection;
   try {
     const json = JSON.parse($('#cyclify-category-schema').html());
@@ -38,7 +36,17 @@ for (const file of collectionPages) {
   } catch (error) {
     failures.push(`${file}: invalid collection JSON-LD`);
   }
-  if (!(collection?.numberOfItems > 0)) failures.push(`${file}: empty structured product list`);
+  if (collection?.numberOfItems === 0) {
+    if (!['bicycle-tools-india.html','cycling-jerseys-shorts-india.html','cycling-gloves-india.html'].includes(file)) failures.push(`${file}: unexpectedly empty collection`);
+    // Approved brand removals can legitimately empty a category. Keep it out
+    // of Google's index until the store actually has products in it again.
+    if (!$('meta[name="robots"]').attr('content')?.includes('noindex')) failures.push(`${file}: empty collection must be noindex`);
+    if (fs.readFileSync(path.join(root,'sitemap.xml'),'utf8').includes(`<loc>${canonical}</loc>`)) failures.push(`${file}: empty collection must not be in the sitemap`);
+  } else {
+    if ($('meta[name="robots"]').attr('content')?.includes('noindex')) failures.push(`${file}: populated collection unexpectedly noindex`);
+    if (!$('#products a[href*="products/"]').length) failures.push(`${file}: no crawlable product links`);
+    if (!(collection?.numberOfItems > 0)) failures.push(`${file}: missing structured product list`);
+  }
 }
 
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');

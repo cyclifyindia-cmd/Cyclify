@@ -6,10 +6,7 @@ const payload = JSON.parse(fs.readFileSync(path.join(root, 'assets/data/distribu
 const products = payload.products;
 const productFiles = new Set(fs.readdirSync(path.join(root, 'products')));
 const fail = message => { throw new Error(message); };
-if (products.length !== 451) fail(`Expected 451 unique products, received ${products.length}`);
-if (products.filter(product => product.available).length !== 319) fail('Expected 319 in-stock products');
-if (products.filter(product => product.stockStatus === 'coming-soon').length !== 124) fail('Expected 124 Coming Soon products');
-if (products.filter(product => product.stockStatus === 'contact').length !== 8) fail('Expected 8 price-on-request products');
+if (products.length !== 0) fail('Round-two brands and Merida accessories were explicitly removed; source must remain empty');
 for (const product of products) {
   if (!product.priceOnRequest && (!Number.isInteger(product.price) || product.price < 1)) fail(`Invalid price: ${product.name}`);
   if (!product.priceOnRequest && (!Number.isInteger(product.mrp) || product.mrp < product.price)) fail(`Invalid MRP: ${product.name}`);
@@ -29,4 +26,4 @@ for (const product of products) {
 if (payload.audit.held.length !== 0) fail(`No photo-only products should be held: ${JSON.stringify(payload.audit.held)}`);
 if (payload.audit.sourcedImages.length !== 42) fail(`Expected 42 sourced images, received ${payload.audit.sourcedImages.length}`);
 if (payload.audit.mrpFallbacks.length !== 6) fail('Expected six Pearl Izumi MRP fallbacks');
-console.log('Round-two distributor catalogue verified: 451 unique products, 319 available, 124 Coming Soon, 8 price-on-request, no photo-only omissions.');
+console.log('Round-two catalogue exclusions verified: no removed brands or Merida accessories remain.');

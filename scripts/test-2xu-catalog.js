@@ -7,7 +7,9 @@ const context={window:{}};vm.runInNewContext(read('assets/js/product-routes.js')
 const feed=cheerio.load(read('google-merchant-feed.xml'),{xmlMode:true});
 const allowed=new Set(JSON.parse(read('assets/data/product-allowlist.json')).productIds.map(String));
 const {validatedCart}=require('../marketplace-backend/payment-function/functions/index')._test;
-assert.equal(products.length,113);assert.equal(new Set(products.map(p=>p.model)).size,113);
+const removed=require('./product-allowlist').loadCataloguePolicy().removedBrands.includes('2XU');
+assert.equal(products.length,removed?0:113);assert.equal(new Set(products.map(p=>p.model)).size,products.length);
+if(removed){assert(!context.window.CYCLIFY_SEARCH_PRODUCTS.some(p=>p.brand==='2XU'));assert(!Object.values(payment).some(p=>p.name.startsWith('2XU ')));}
 let variants=0,available=0;
 for(const p of products){
  assert(allowed.has(String(p.id)));assert.equal(p.priceLabel,'SPECIAL PROMO');

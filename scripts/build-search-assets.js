@@ -21,7 +21,7 @@ function refreshSearchLoader(){
 function updatePageVersions(version){
  const files=cp.execFileSync('git',['ls-files','*.html'],{cwd:root,encoding:'utf8'}).trim().split(/\r?\n/);
  let changed=0;
- for(const file of files){const s=read(file),n=s.replace(/assets\/js\/site-footer\.js(?:\?v=[^"\s<]+)?/g,'assets/js/site-footer.js?v='+version);if(s!==n){write(file,n);changed++;}}
+ for(const file of files){if(!fs.existsSync(path.join(root,file)))continue;const s=read(file),n=s.replace(/assets\/js\/site-footer\.js(?:\?v=[^"\s<]+)?/g,'assets/js/site-footer.js?v='+version);if(s!==n){write(file,n);changed++;}}
  return changed;
 }
 function rebuildExistingSearch(){

@@ -7,10 +7,10 @@ const payload = JSON.parse(fs.readFileSync(path.join(root, 'assets/data/distribu
 const products = payload.products;
 const fail = message => { throw new Error(message); };
 
-if (products.length !== 275) fail(`Expected 275 products, received ${products.length}`);
-if (products.filter(product => product.available).length !== 223) fail('Expected 223 in-stock products');
-if (products.filter(product => product.stockStatus === 'coming-soon').length !== 52) fail('Expected 52 Coming Soon products');
-const expectedBrands = { Tifosi: 62, Ravemen: 43, 'Safety Labs': 27, Tacx: 9, Polygon: 58, Merida: 76 };
+if (products.length !== 170) fail(`Expected 170 retained products, received ${products.length}`);
+if (products.filter(product => product.available).length !== 129) fail('Expected 129 in-stock products');
+if (products.filter(product => product.stockStatus === 'coming-soon').length !== 41) fail('Expected 41 Coming Soon products');
+const expectedBrands = { Tifosi: 0, Ravemen: 0, 'Safety Labs': 27, Tacx: 9, Polygon: 58, Merida: 76 };
 for (const [brand, count] of Object.entries(expectedBrands)) {
   const actual = products.filter(product => product.brand === brand).length;
   if (actual !== count) fail(`Expected ${count} ${brand} products, received ${actual}`);
@@ -31,4 +31,4 @@ for (const product of products) {
   }
 }
 if ((payload.audit.held || []).length !== 0) fail(`Products were held: ${JSON.stringify(payload.audit.held)}`);
-console.log('Round-three distributor catalogue verified: 275 products, 223 available, 52 Coming Soon, six brands, complete photos and valid variants.');
+console.log('Retained round-three catalogue verified: 170 products, 129 available, 41 Coming Soon, four brands, complete photos and valid variants.');

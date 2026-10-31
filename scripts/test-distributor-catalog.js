@@ -5,9 +5,9 @@ const root = path.resolve(__dirname, '..');
 const payload = JSON.parse(fs.readFileSync(path.join(root, 'assets/data/distributor-products.json'), 'utf8'));
 const products = payload.products;
 const fail = message => { throw new Error(message); };
-if (products.length !== 95) fail(`Expected 95 products, received ${products.length}`);
-if (products.filter(product => product.available).length !== 69) fail('Expected 69 in-stock products');
-if (products.filter(product => product.stockStatus === 'coming-soon').length !== 26) fail('Expected 26 Coming Soon products');
+if (products.length !== 64) fail(`Expected 64 retained products, received ${products.length}`);
+if (products.filter(product => product.available).length !== 41) fail('Expected 41 in-stock products');
+if (products.filter(product => product.stockStatus === 'coming-soon').length !== 23) fail('Expected 23 Coming Soon products');
 for (const product of products) {
   if (!Number.isInteger(product.price) || product.price < 1) fail(`Invalid price: ${product.name}`);
   if (!Number.isInteger(product.mrp) || product.mrp < product.price) fail(`Invalid MRP: ${product.name}`);
@@ -23,4 +23,4 @@ for (const model of ['0165001', '0172001', '0192003P', '121026', '0121006']) {
 }
 if (payload.audit.held.length !== 0) fail('No photo-only products should be held');
 if (!payload.audit.sourcedImages?.some(item => item.model === '016041229')) fail('Missing sourced-image audit for Elite 016041229');
-console.log('Distributor catalogue verified: 95 products, 69 available, 26 Coming Soon, no photo-only omissions.');
+console.log('Retained distributor catalogue verified: 64 products, 41 available, 23 Coming Soon.');

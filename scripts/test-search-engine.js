@@ -41,6 +41,7 @@ assert.equal(engine.search(index,'unlisted nonsense zzyyqq').total,0);
 const footerVersion=crypto.createHash('sha256').update(read('assets/js/site-footer.js').replace(/\r\n/g,'\n')).digest('hex').slice(0,10);
 let pages=0;
 for(const file of cp.execFileSync('git',['ls-files','*.html'],{cwd:root,encoding:'utf8'}).trim().split(/\r?\n/)){
+ if(!fs.existsSync(path.join(root,file)))continue;
  const source=read(file),$=cheerio.load(source);
  if(!$('#searchInput,[data-global-search]').length)continue;
  assert(source.includes('site-footer.js?v='+footerVersion),'Search loader not updated on '+file);pages++;

@@ -32,6 +32,8 @@ jobs:
         run: node scripts/audit-product-search.js
       - name: Check complete storefront search and model matching
         run: node scripts/test-search-engine.js
+      - name: Check excluded brands, Merida scope and Polygon photo consistency
+        run: node scripts/test-catalogue-policy.js
       - name: Check bike studio geometry, controls and homepage placement
         run: npm run test:ride-studio
       - name: Check admin order filters and access safeguards
