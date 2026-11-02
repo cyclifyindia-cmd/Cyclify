@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T16:29:33.516Z",
+  "generatedAt": "2026-11-02T18:23:37.377Z",
   "currency": "INR",
   "campaign": {
     "id": "diwali-2026",
@@ -19883,7 +19883,7 @@
       "id": "10786319859905",
       "name": "iGPSPORT M82S Integrated Out-front Bike Mount",
       "price": 1899,
-      "available": true,
+      "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_0402cca9-af45-49dc-9fc6-cdd9dc9399b2.jpg?v=1754107385",
       "sizes": [],
       "sizeAvailability": {},

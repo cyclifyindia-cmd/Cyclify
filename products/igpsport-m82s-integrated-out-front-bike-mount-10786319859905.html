@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
 <base href="../">
-<script src="assets/js/diwali-campaign.js?v=acee6ffc97"></script>
-<script src="assets/js/diwali.js?v=43d33fa0d6" defer=""></script>
-<script src="assets/js/campaign-storefront.js?v=754978f6b9" defer=""></script>
+<script src="assets/js/diwali-campaign.js?v=0d07dbe922"></script>
+<script src="assets/js/diwali.js?v=5f1d8ff01a" defer=""></script>
+<script src="assets/js/campaign-storefront.js?v=a4406c5431" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -27,10 +27,10 @@
 <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_0402cca9-af45-49dc-9fc6-cdd9dc9399b2.jpg?v=1754107385" fetchpriority="high">
 <script>window.CYCLIFY_PRODUCT_ID=10786319859905;</script>
 <script src="assets/js/product-routes.js?v=a8eb90b98d"></script>
-<script src="assets/js/supplier-products.js?v=733da27617"></script>
-<script src="assets/js/fcc-products.js?v=24cfe9ad7e"></script>
-<script src="assets/js/cadence-products.js?v=57cdef1432"></script>
-<script src="assets/js/tfsa-products.js?v=e675f2f151"></script>
+<script src="assets/js/supplier-products.js?v=098dbf0426"></script>
+<script src="assets/js/fcc-products.js?v=4a457fa637"></script>
+<script src="assets/js/cadence-products.js?v=90922c9ca8"></script>
+<script src="assets/js/tfsa-products.js?v=39e9af9bee"></script>
 <script src="assets/js/expanded-products.js?v=76009e0d1d"></script>
 <style>
 
@@ -1177,7 +1177,7 @@ body{padding-bottom:88px;}
         "url": "https://cyclify.in/products/igpsport-m82s-integrated-out-front-bike-mount-10786319859905.html",
         "priceCurrency": "INR",
         "price": "1899",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/OutOfStock",
         "itemCondition": "https://schema.org/NewCondition",
         "seller": {
           "@type": "Organization",
@@ -1187,32 +1187,6 @@ body{padding-bottom:88px;}
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "businessDays": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "https://schema.org/Monday",
-                "https://schema.org/Tuesday",
-                "https://schema.org/Wednesday",
-                "https://schema.org/Thursday",
-                "https://schema.org/Friday",
-                "https://schema.org/Saturday"
-              ]
-            },
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 0,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 3,
-              "maxValue": 3,
-              "unitCode": "DAY"
-            }
-          },
           "shippingRate": {
             "@type": "MonetaryAmount",
             "value": "0",
@@ -1352,7 +1326,7 @@ else{cartCount.style.display="none";}
 <div class="deal-meta"><div class="deal-mrp" id="productMrp">MRP ₹2,278</div><div class="deal-save" id="productSave">Save ₹379</div><div class="shipping-note"><span class="shipping-icon" aria-hidden="true">🚚</span><span>Free Shipping</span></div></div>
 </div>
 
-<div class="product-fulfilment" id="productFulfilment" hidden=""></div>
+<div class="product-fulfilment" id="productFulfilment">Out of stock</div>
 
 <div class="size-section" id="sizeSection">
 
@@ -1376,17 +1350,9 @@ Select Valve Length
 
 <div class="buttons" id="productButtons">
 
-<button class="btn cartbtn" onclick="addToCart()">
+<button class="btn cartbtn" onclick="addToCart()" disabled="">Out of stock</button>
 
-Add to Cart
-
-</button>
-
-<button class="btn buybtn" onclick="showBuyCooking()">
-
-Buy Now
-
-</button>
+<button class="btn buybtn" onclick="showBuyCooking()" disabled="">Out of stock</button>
 
 </div>
 
