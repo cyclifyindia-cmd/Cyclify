@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T06:04:37.462Z",
+  "generatedAt": "2026-11-02T16:29:33.516Z",
   "currency": "INR",
   "campaign": {
     "id": "diwali-2026",
@@ -18597,6 +18597,820 @@
           "colour": "BLACK(TITAN)",
           "build": "",
           "image": "assets/products/distributor-3/119f64aa33b8273fa5ce.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940001": {
+      "id": "940001",
+      "name": "CYCLAMI HRM70 Arm Band Heart Rate Monitor",
+      "price": 4129,
+      "available": true,
+      "image": "assets/products/expanded/f843cdb8b6de44055c.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "53f8cb8f307e1d33": {
+          "price": 4129,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/f843cdb8b6de44055c.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940002": {
+      "id": "940002",
+      "name": "CYCLAMI C2 Dual Mode Speed/Cadence Sensor",
+      "price": 1769,
+      "available": true,
+      "image": "assets/products/expanded/580fb68984b7ebe093.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "953e7101e7226f94": {
+          "price": 1769,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/580fb68984b7ebe093.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940003": {
+      "id": "940003",
+      "name": "CYCLAMI T08 Smart Tail Light",
+      "price": 1415,
+      "available": true,
+      "image": "assets/products/expanded/02c3b5d12b299ae07a.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "61155caa7ff8cc80": {
+          "price": 1415,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/02c3b5d12b299ae07a.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940004": {
+      "id": "940004",
+      "name": "CYCLAMI LA150 RGB Radar Taillight",
+      "price": 5309,
+      "available": true,
+      "image": "assets/products/expanded/dbb9c648f89118ffa5.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "cb170996050690ac": {
+          "price": 5309,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/dbb9c648f89118ffa5.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940005": {
+      "id": "940005",
+      "name": "CYCLAMI AM6 Mini Electric Pump",
+      "price": 4129,
+      "available": true,
+      "image": "assets/products/expanded/28d573bf4952aed98e.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "d1ecb418c4ac10b7": {
+          "price": 4129,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/28d573bf4952aed98e.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940006": {
+      "id": "940006",
+      "name": "CYCLAMI AM6 Pro Electric Pump",
+      "price": 5663,
+      "available": true,
+      "image": "assets/products/expanded/f77b798d5ffa9fbac8.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "6c43e38a445fb081": {
+          "price": 5663,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/f77b798d5ffa9fbac8.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940007": {
+      "id": "940007",
+      "name": "CYCLAMI A3MAX Mini Electric Pump",
+      "price": 7079,
+      "available": true,
+      "image": "assets/products/expanded/2976e912bac6e772f3.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "400ae0daf877c255": {
+          "price": 7079,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/2976e912bac6e772f3.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940008": {
+      "id": "940008",
+      "name": "CYCLAMI HW125 Mini Electric Pump",
+      "price": 4129,
+      "available": true,
+      "image": "assets/products/expanded/858450512c014d0c61.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "485e2cea1bac78aa": {
+          "price": 4129,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/858450512c014d0c61.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940009": {
+      "id": "940009",
+      "name": "CYCLAMI BR500T Front Light",
+      "price": 1415,
+      "available": true,
+      "image": "assets/products/expanded/d4096548f643055128.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "60b3ab691b62ca0b": {
+          "price": 1415,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/d4096548f643055128.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940010": {
+      "id": "940010",
+      "name": "CYCLAMI BR2000 Front Light",
+      "price": 2949,
+      "available": true,
+      "image": "assets/products/expanded/0b9fdbff638b3456e8.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "0a696e6c2231635c": {
+          "price": 2949,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/0b9fdbff638b3456e8.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940011": {
+      "id": "940011",
+      "name": "CYCLAMI RT02 Radar Taillight",
+      "price": 3067,
+      "available": true,
+      "image": "assets/products/expanded/d6dbf368ea7816397f.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "6e7a46ba75933ec1": {
+          "price": 3067,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/d6dbf368ea7816397f.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940012": {
+      "id": "940012",
+      "name": "XOSS X2 Heart Rate Sensor",
+      "price": 3539,
+      "available": true,
+      "image": "assets/products/expanded/63194b7952b0719fe0.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "455337b2ea7d0bf4": {
+          "price": 3539,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/63194b7952b0719fe0.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940013": {
+      "id": "940013",
+      "name": "CYCLAMI CY200 Brake Taillight",
+      "price": 1179,
+      "available": true,
+      "image": "assets/products/expanded/22b631f5b163e432cf.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "e55dd1040a354a95": {
+          "price": 1179,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/22b631f5b163e432cf.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940014": {
+      "id": "940014",
+      "name": "CYCLAMI Bottle Cage / Locator",
+      "price": 1415,
+      "available": true,
+      "image": "assets/products/expanded/a274d829b74531fc39.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "1263a3d12ef392d2": {
+          "price": 1415,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/a274d829b74531fc39.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940015": {
+      "id": "940015",
+      "name": "CYCLAMI AI1800 Front Light",
+      "price": 2595,
+      "available": true,
+      "image": "assets/products/expanded/1a4dff4674ce65b013.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "8f83d5f1456973c5": {
+          "price": 2595,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/1a4dff4674ce65b013.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940016": {
+      "id": "940016",
+      "name": "CYCLAMI CYC1800 GoPro Bike Light",
+      "price": 2949,
+      "available": true,
+      "image": "assets/products/expanded/525c46969e9fd9a388.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "6d28704338f44bae": {
+          "price": 2949,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/525c46969e9fd9a388.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940017": {
+      "id": "940017",
+      "name": "CYCLAMI CYC1700 Front Light",
+      "price": 3539,
+      "available": true,
+      "image": "assets/products/expanded/af33b40e9d3dffb64f.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "edb1261c821d9443": {
+          "price": 3539,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/af33b40e9d3dffb64f.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940018": {
+      "id": "940018",
+      "name": "CYCLAMI 0118 A9 Turn Signal Light",
+      "price": 2595,
+      "available": true,
+      "image": "assets/products/expanded/76351ed735cf8f916f.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "2f40619d23e6a26c": {
+          "price": 2595,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/76351ed735cf8f916f.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940019": {
+      "id": "940019",
+      "name": "CYCLAMI 0107 Rainbow Tail Light",
+      "price": 1533,
+      "available": true,
+      "image": "assets/products/expanded/77c313e02997ec682b.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "68d9a74351487ad8": {
+          "price": 1533,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/77c313e02997ec682b.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940020": {
+      "id": "940020",
+      "name": "CYCLAMI CYC1100 Front Light",
+      "price": 2005,
+      "available": true,
+      "image": "assets/products/expanded/26d2b72d5b047b0c8f.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "electronics.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "f4b6755bf67fd378": {
+          "price": 2005,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/26d2b72d5b047b0c8f.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940021": {
+      "id": "940021",
+      "name": "CYCLAMI 18T Eccentric Jockey Pulley",
+      "price": 2949,
+      "available": true,
+      "image": "assets/products/expanded/95277acf29f8b4a185.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "components.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "11a7d62adf11bb13": {
+          "price": 2949,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/95277acf29f8b4a185.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940022": {
+      "id": "940022",
+      "name": "CYCLAMI L-CAR160 Carbon Rotor 160mm",
+      "price": 2949,
+      "available": true,
+      "image": "assets/products/expanded/bed75384b3406bf257.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "components.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "c12ed3dc11cdd44b": {
+          "price": 2949,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/bed75384b3406bf257.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940023": {
+      "id": "940023",
+      "name": "CYCLAMI L-CAR180 Carbon Rotor 180mm",
+      "price": 3303,
+      "available": true,
+      "image": "assets/products/expanded/b346b9490f4f4f956b.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "components.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "c5efc0a4cf573376": {
+          "price": 3303,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/b346b9490f4f4f956b.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940024": {
+      "id": "940024",
+      "name": "CYCLAMI QT2 Multi-function Tyre Levers",
+      "price": 589,
+      "available": true,
+      "image": "assets/products/expanded/c2a96eb2f8b1dcde6c.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "wheels-tyres.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "e438f10ceb5aff17": {
+          "price": 589,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/c2a96eb2f8b1dcde6c.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940025": {
+      "id": "940025",
+      "name": "CYCLAMI S5 Computer Mount",
+      "price": 825,
+      "available": true,
+      "image": "assets/products/expanded/f40bf1b76aa48d37cf.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "bbfe6d04cb133e85": {
+          "price": 825,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/f40bf1b76aa48d37cf.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940026": {
+      "id": "940026",
+      "name": "CYCLAMI CY-11 Alloy Computer Bracket",
+      "price": 589,
+      "available": true,
+      "image": "assets/products/expanded/d999711ff306070b27.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "3e3646289a03ee5d": {
+          "price": 589,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/d999711ff306070b27.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940027": {
+      "id": "940027",
+      "name": "CYCLAMI CY7 Carbon Computer Bracket",
+      "price": 1533,
+      "available": true,
+      "image": "assets/products/expanded/3ad30e223590f28782.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "5074b8051697ed0a": {
+          "price": 1533,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/3ad30e223590f28782.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940028": {
+      "id": "940028",
+      "name": "CYCLAMI M6W Computer Bracket",
+      "price": 1061,
+      "available": true,
+      "image": "assets/products/expanded/1dc5e86ad45ec686b0.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "bb1cf68efa68164e": {
+          "price": 1061,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/1dc5e86ad45ec686b0.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940029": {
+      "id": "940029",
+      "name": "CYCLAMI S11 Radar Taillight Bracket",
+      "price": 235,
+      "available": true,
+      "image": "assets/products/expanded/ff15bd6093e0c710d5.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "58563977de9221a4": {
+          "price": 235,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/ff15bd6093e0c710d5.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940030": {
+      "id": "940030",
+      "name": "CYCLAMI Tubeless Valves 65mm",
+      "price": 707,
+      "available": true,
+      "image": "assets/products/expanded/16e990d6f961129455.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "wheels-tyres.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "10dbd8551e228884": {
+          "price": 707,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/16e990d6f961129455.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940031": {
+      "id": "940031",
+      "name": "CYCLAMI Tubeless Valves 85mm",
+      "price": 825,
+      "available": true,
+      "image": "assets/products/expanded/a43505d90e64835c51.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "wheels-tyres.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "978eae496f68acc5": {
+          "price": 825,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/a43505d90e64835c51.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940032": {
+      "id": "940032",
+      "name": "CYCLAMI 650ml Sports Water Bottle",
+      "price": 589,
+      "available": true,
+      "image": "assets/products/expanded/6be8aeaaeb1f4ec696.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "requiredOption": true,
+      "imageByColour": {
+        "Black": "assets/products/expanded/6be8aeaaeb1f4ec696.webp",
+        "Pink": "assets/products/expanded/c72224af893731f97e.webp",
+        "White": "assets/products/expanded/70655b468e47c94e01.webp",
+        "Green": "assets/products/expanded/b7a2d5bf18e558976b.webp",
+        "Orange": "assets/products/expanded/0f5db7c9f7536dafcb.webp"
+      },
+      "purchaseVariants": {
+        "97137a09e39a2216": {
+          "price": 589,
+          "available": true,
+          "size": "",
+          "colour": "Black",
+          "build": "",
+          "image": "assets/products/expanded/6be8aeaaeb1f4ec696.webp",
+          "stockStatus": "available"
+        },
+        "fc4db38438ea65af": {
+          "price": 589,
+          "available": true,
+          "size": "",
+          "colour": "Pink",
+          "build": "",
+          "image": "assets/products/expanded/c72224af893731f97e.webp",
+          "stockStatus": "available"
+        },
+        "69fbe50562fc411c": {
+          "price": 589,
+          "available": true,
+          "size": "",
+          "colour": "White",
+          "build": "",
+          "image": "assets/products/expanded/70655b468e47c94e01.webp",
+          "stockStatus": "available"
+        },
+        "12186536a3b2e4b0": {
+          "price": 589,
+          "available": true,
+          "size": "",
+          "colour": "Green",
+          "build": "",
+          "image": "assets/products/expanded/b7a2d5bf18e558976b.webp",
+          "stockStatus": "available"
+        },
+        "11e96b7bd27c3e5f": {
+          "price": 589,
+          "available": true,
+          "size": "",
+          "colour": "Orange",
+          "build": "",
+          "image": "assets/products/expanded/0f5db7c9f7536dafcb.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940033": {
+      "id": "940033",
+      "name": "CYCLAMI 610ml Aero Bottle and Cage White",
+      "price": 2359,
+      "available": true,
+      "image": "assets/products/expanded/bcfb6dbaa167f0e6ec.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "022eb475cf512756": {
+          "price": 2359,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/bcfb6dbaa167f0e6ec.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940034": {
+      "id": "940034",
+      "name": "CYCLAMI 650ml Aero Bottle and Cage Grey",
+      "price": 2359,
+      "available": true,
+      "image": "assets/products/expanded/4f409be53159e112df.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "5292786b50ecefdf": {
+          "price": 2359,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/4f409be53159e112df.webp",
+          "stockStatus": "available"
+        }
+      }
+    },
+    "940035": {
+      "id": "940035",
+      "name": "CYCLAMI 650ml Aero Bottle and Cage Black",
+      "price": 2359,
+      "available": true,
+      "image": "assets/products/expanded/5aba9ef6bfb7fa131b.webp",
+      "sizes": [],
+      "sizeAvailability": {},
+      "sourcePage": "accessories.html",
+      "stockStatus": "available",
+      "purchaseVariants": {
+        "dd5083b5cfd5d92a": {
+          "price": 2359,
+          "available": true,
+          "size": "",
+          "colour": "",
+          "build": "",
+          "image": "assets/products/expanded/5aba9ef6bfb7fa131b.webp",
           "stockStatus": "available"
         }
       }

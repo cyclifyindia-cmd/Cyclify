@@ -19,7 +19,8 @@ function refreshSearchLoader(){
  return hash(footer);
 }
 function updatePageVersions(version){
- const files=cp.execFileSync('git',['ls-files','*.html'],{cwd:root,encoding:'utf8'}).trim().split(/\r?\n/);
+ // Include freshly generated pages before they are staged, without scanning ignored previews.
+ const files=cp.execFileSync('git',['ls-files','--cached','--others','--exclude-standard','*.html'],{cwd:root,encoding:'utf8'}).trim().split(/\r?\n/);
  let changed=0;
  for(const file of files){if(!fs.existsSync(path.join(root,file)))continue;const s=read(file),n=s.replace(/assets\/js\/site-footer\.js(?:\?v=[^"\s<]+)?/g,'assets/js/site-footer.js?v='+version);if(s!==n){write(file,n);changed++;}}
  return changed;

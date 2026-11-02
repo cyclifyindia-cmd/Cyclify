@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "confirmedOn": "2026-11-02",
+  "mrpRule": "sellingPrice * 1.20; exact paise",
+  "products": [
+    {
+      "number": 1,
+      "id": 940001,
+      "name": "CYCLAMI HRM70 Arm Band Heart Rate Monitor",
+      "price": 4129,
+      "mrp": 4954.8,
+      "variants": 1
+    },
+    {
+      "number": 2,
+      "id": 940002,
+      "name": "CYCLAMI C2 Dual Mode Speed/Cadence Sensor",
+      "price": 1769,
+      "mrp": 2122.8,
+      "variants": 1
+    },
+    {
+      "number": 3,
+      "id": 940003,
+      "name": "CYCLAMI T08 Smart Tail Light",
+      "price": 1415,
+      "mrp": 1698,
+      "variants": 1
+    },
+    {
+      "number": 4,
+      "id": 940004,
+      "name": "CYCLAMI LA150 RGB Radar Taillight",
+      "price": 5309,
+      "mrp": 6370.8,
+      "variants": 1
+    },
+    {
+      "number": 5,
+      "id": 940005,
+      "name": "CYCLAMI AM6 Mini Electric Pump",
+      "price": 4129,
+      "mrp": 4954.8,
+      "variants": 1
+    },
+    {
+      "number": 6,
+      "id": 940006,
+      "name": "CYCLAMI AM6 Pro Electric Pump",
+      "price": 5663,
+      "mrp": 6795.6,
+      "variants": 1
+    },
+    {
+      "number": 7,
+      "id": 940007,
+      "name": "CYCLAMI A3MAX Mini Electric Pump",
+      "price": 7079,
+      "mrp": 8494.8,
+      "variants": 1
+    },
+    {
+      "number": 8,
+      "id": 940008,
+      "name": "CYCLAMI HW125 Mini Electric Pump",
+      "price": 4129,
+      "mrp": 4954.8,
+      "variants": 1
+    },
+    {
+      "number": 9,
+      "id": 940009,
+      "name": "CYCLAMI BR500T Front Light",
+      "price": 1415,
+      "mrp": 1698,
+      "variants": 1
+    },
+    {
+      "number": 10,
+      "id": 940010,
+      "name": "CYCLAMI BR2000 Front Light",
+      "price": 2949,
+      "mrp": 3538.8,
+      "variants": 1
+    },
+    {
+      "number": 11,
+      "id": 940011,
+      "name": "CYCLAMI RT02 Radar Taillight",
+      "price": 3067,
+      "mrp": 3680.4,
+      "variants": 1
+    },
+    {
+      "number": 12,
+      "id": 940012,
+      "name": "XOSS X2 Heart Rate Sensor",
+      "price": 3539,
+      "mrp": 4246.8,
+      "variants": 1
+    },
+    {
+      "number": 13,
+      "id": 940013,
+      "name": "CYCLAMI CY200 Brake Taillight",
+      "price": 1179,
+      "mrp": 1414.8,
+      "variants": 1
+    },
+    {
+      "number": 14,
+      "id": 940014,
+      "name": "CYCLAMI Bottle Cage / Locator",
+      "price": 1415,
+      "mrp": 1698,
+      "variants": 1
+    },
+    {
+      "number": 15,
+      "id": 940015,
+      "name": "CYCLAMI AI1800 Front Light",
+      "price": 2595,
+      "mrp": 3114,
+      "variants": 1
+    },
+    {
+      "number": 16,
+      "id": 940016,
+      "name": "CYCLAMI CYC1800 GoPro Bike Light",
+      "price": 2949,
+      "mrp": 3538.8,
+      "variants": 1
+    },
+    {
+      "number": 17,
+      "id": 940017,
+      "name": "CYCLAMI CYC1700 Front Light",
+      "price": 3539,
+      "mrp": 4246.8,
+      "variants": 1
+    },
+    {
+      "number": 18,
+      "id": 940018,
+      "name": "CYCLAMI 0118 A9 Turn Signal Light",
+      "price": 2595,
+      "mrp": 3114,
+      "variants": 1
+    },
+    {
+      "number": 19,
+      "id": 940019,
+      "name": "CYCLAMI 0107 Rainbow Tail Light",
+      "price": 1533,
+      "mrp": 1839.6,
+      "variants": 1
+    },
+    {
+      "number": 20,
+      "id": 940020,
+      "name": "CYCLAMI CYC1100 Front Light",
+      "price": 2005,
+      "mrp": 2406,
+      "variants": 1
+    },
+    {
+      "number": 21,
+      "id": 940021,
+      "name": "CYCLAMI 18T Eccentric Jockey Pulley",
+      "price": 2949,
+      "mrp": 3538.8,
+      "variants": 1
+    },
+    {
+      "number": 22,
+      "id": 940022,
+      "name": "CYCLAMI L-CAR160 Carbon Rotor 160mm",
+      "price": 2949,
+      "mrp": 3538.8,
+      "variants": 1
+    },
+    {
+      "number": 23,
+      "id": 940023,
+      "name": "CYCLAMI L-CAR180 Carbon Rotor 180mm",
+      "price": 3303,
+      "mrp": 3963.6,
+      "variants": 1
+    },
+    {
+      "number": 24,
+      "id": 940024,
+      "name": "CYCLAMI QT2 Multi-function Tyre Levers",
+      "price": 589,
+      "mrp": 706.8,
+      "variants": 1
+    },
+    {
+      "number": 25,
+      "id": 940025,
+      "name": "CYCLAMI S5 Computer Mount",
+      "price": 825,
+      "mrp": 990,
+      "variants": 1
+    },
+    {
+      "number": 26,
+      "id": 940026,
+      "name": "CYCLAMI CY-11 Alloy Computer Bracket",
+      "price": 589,
+      "mrp": 706.8,
+      "variants": 1
+    },
+    {
+      "number": 27,
+      "id": 940027,
+      "name": "CYCLAMI CY7 Carbon Computer Bracket",
+      "price": 1533,
+      "mrp": 1839.6,
+      "variants": 1
+    },
+    {
+      "number": 28,
+      "id": 940028,
+      "name": "CYCLAMI M6W Computer Bracket",
+      "price": 1061,
+      "mrp": 1273.2,
+      "variants": 1
+    },
+    {
+      "number": 29,
+      "id": 940029,
+      "name": "CYCLAMI S11 Radar Taillight Bracket",
+      "price": 235,
+      "mrp": 282,
+      "variants": 1
+    },
+    {
+      "number": 30,
+      "id": 940030,
+      "name": "CYCLAMI Tubeless Valves 65mm",
+      "price": 707,
+      "mrp": 848.4,
+      "variants": 1
+    },
+    {
+      "number": 31,
+      "id": 940031,
+      "name": "CYCLAMI Tubeless Valves 85mm",
+      "price": 825,
+      "mrp": 990,
+      "variants": 1
+    },
+    {
+      "number": 32,
+      "id": 940032,
+      "name": "CYCLAMI 650ml Sports Water Bottle",
+      "price": 589,
+      "mrp": 706.8,
+      "variants": 5
+    },
+    {
+      "number": 33,
+      "id": 940033,
+      "name": "CYCLAMI 610ml Aero Bottle and Cage White",
+      "price": 2359,
+      "mrp": 2830.8,
+      "variants": 1
+    },
+    {
+      "number": 34,
+      "id": 940034,
+      "name": "CYCLAMI 650ml Aero Bottle and Cage Grey",
+      "price": 2359,
+      "mrp": 2830.8,
+      "variants": 1
+    },
+    {
+      "number": 35,
+      "id": 940035,
+      "name": "CYCLAMI 650ml Aero Bottle and Cage Black",
+      "price": 2359,
+      "mrp": 2830.8,
+      "variants": 1
+    }
+  ],
+  "held": [],
+  "excludedNumbers": [
+    36,
+    37,
+    38,
+    39,
+    40
+  ]
+}

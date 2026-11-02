@@ -838,6 +838,7 @@ Object.entries(legacyRedirects).forEach(([file, target]) => {
   writeFileWithRetry(destination, redirectPage(target, 'This Cyclify page has moved.'), 'utf8');
 });
 
+require('./render-brand-directory')(root, primaryProducts, routes, writeFileWithRetry);
 const excludedPages = new Set(['product.html', 'account.html', 'cart.html']);
 const seenCanonicals = new Set();
 const staticPages = fs.readdirSync(root)

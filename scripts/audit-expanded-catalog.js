@@ -13,7 +13,7 @@ vm.runInNewContext(read('assets/js/product-routes.js'), context);
 const routes = context.window.CYCLIFY_PRODUCT_ROUTES;
 const merchant = cheerio.load(read('google-merchant-feed.xml'), {xml:true});
 const prohibited = /the\s*bike\s*affair|thebikeaffair|wesnap|dealer price/i;
-assert.equal(products.length, 111);
+assert.equal(products.length, 146);
 assert.equal(deferred.products.length, 53);
 assert.equal(deferred.resolvedAliases.length, 1);
 assert.equal(deferred.resolvedAliases[0].existingProductId, 900177);
