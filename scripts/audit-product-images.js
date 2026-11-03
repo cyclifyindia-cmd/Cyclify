@@ -36,6 +36,8 @@ for (const file of pages) {
       const schema = JSON.parse(schemaSource);
       const product = (schema['@graph'] || []).find(item => item['@type'] === 'Product');
       schemaImage = Array.isArray(product && product.image) ? product.image[0] : (product && product.image) || '';
+      const webPage=(schema['@graph']||[]).find(item=>item['@type']==='WebPage');
+      if(!webPage||webPage.primaryImageOfPage?.contentUrl!==schemaImage||webPage.mainEntity?.['@id']!==canonical+'#product')failures.push(file+': page-level primary image must identify this product');
     } catch (error) {
       failures.push(file + ': invalid product structured data');
     }
@@ -60,6 +62,8 @@ for (const file of pages) {
 }
 
 const duplicateImages = [...primaryImages.entries()].filter(([, files]) => files.length > 1);
+const corrected=JSON.parse(fs.readFileSync(path.join(root,'assets/data/product-image-overrides.json'),'utf8')).products;
+if(corrected['929004'].image===corrected['929005'].image)failures.push('Tacx FLUX 2 and FLUX S must not share their primary photo');
 const merchantItemCount = (merchantFeed.match(/<item>/g) || []).length;
 console.log('Product image pages checked: ' + pages.length);
 console.log('Google Merchant feed products: ' + merchantItemCount);

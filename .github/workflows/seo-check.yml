@@ -25,7 +25,7 @@ jobs:
       - name: Check expanded catalogue stock, photos and checkout prices
         run: node scripts/audit-expanded-catalog.js
       - name: Check CYCLAMI and XOSS prices, options and discovery
-        run: node scripts/test-cyclami-catalog.js
+        run: node scripts/test-cyclami-catalog.js && node scripts/test-cyclami-legacy-urls.js
       - name: Check confirmed delivery times and required pre-order dates
         run: node scripts/test-fulfilment-policy.js
       - name: Check factual Shopping descriptions

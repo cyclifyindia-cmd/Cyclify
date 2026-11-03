@@ -518,6 +518,14 @@ for (const product of primaryProducts) {
         }
       },
       {
+        '@type': 'WebPage',
+        '@id': canonical + '#webpage',
+        url: canonical,
+        name: product.name,
+        mainEntity: { '@id': canonical + '#product' },
+        primaryImageOfPage: { '@type': 'ImageObject', '@id': canonical + '#primaryimage', contentUrl: image, url: image, caption: product.name }
+      },
+      {
         '@type': 'BreadcrumbList',
         itemListElement: breadcrumbItems
       }
@@ -823,6 +831,8 @@ fs.readdirSync(root).filter(file => file.endsWith('.html')).forEach(file => {
 });
 
 const legacyRedirects = {
+  'products/cyclami-m6w-3-in-1-bicycle-mount-17.html': 'https://cyclify.in/products/cyclami-m6w-computer-bracket-940028.html',
+  'products/cyclami-2000lm-br2000-rainproof-bicycle-light-13.html': 'https://cyclify.in/products/cyclami-br2000-front-light-940010.html',
   'home/index.html': 'https://cyclify.in/',
   'collections/bikes-frames/index.html': 'https://cyclify.in/bikes-frames.html',
   'collections/electronics/index.html': 'https://cyclify.in/electronics.html',

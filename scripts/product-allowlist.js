@@ -31,7 +31,14 @@ function loadAllowedProductIds() {
 function filterAllowedProducts(products, allowedIds = loadAllowedProductIds()) {
   if (!Array.isArray(products)) throw new TypeError("Expected an array of products");
   const policy=loadCataloguePolicy();
-  return products.filter(product => allowedIds.has(String(product && product.id))&&permittedByPolicy(product,policy));
+  const overrideFile=path.join(root,'assets/data/product-image-overrides.json');
+  const overrides=fs.existsSync(overrideFile)?JSON.parse(fs.readFileSync(overrideFile,'utf8')).products||{}:{};
+  return products.filter(product => allowedIds.has(String(product && product.id))&&permittedByPolicy(product,policy)).map(product=>{
+    const override=overrides[String(product.id)];
+    if(!override)return product;
+    if(!fs.existsSync(path.join(root,override.image)))throw new Error('Missing verified image override for '+product.id);
+    return {...product,image:override.image,images:override.images};
+  });
 }
 
 module.exports = { allowlistPath, loadAllowedProductIds, filterAllowedProducts, loadCataloguePolicy, permittedByPolicy, sourceFiles };

@@ -1,0 +1,6 @@
+const fs=require('fs'),assert=require('node:assert/strict'),path=require('path');
+const root=path.resolve(__dirname,'..');
+const pairs=[['cyclami-m6w-3-in-1-bicycle-mount-17.html','cyclami-m6w-computer-bracket-940028.html'],['cyclami-2000lm-br2000-rainproof-bicycle-light-13.html','cyclami-br2000-front-light-940010.html']];
+for(const[old,target]of pairs){const html=fs.readFileSync(path.join(root,'products',old),'utf8');assert(html.includes('http-equiv="refresh" content="0;url=https://cyclify.in/products/'+target));assert(html.includes('noindex,follow'));assert(!html.includes('application/ld+json'));assert(!fs.readFileSync(path.join(root,'sitemap.xml'),'utf8').includes('/'+old));}
+for(const file of ['cyclami-cy180-smart-bicycle-taillight-27.html','cyclami-portable-bicycle-tyre-opener-tool-25.html','cyclami-1800-lumen-usb-rechargeable-front-light-28.html','cyclami-carbon-fiber-derailleur-jockey-wheel-pulley-set-29.html','cyclami-mtb-tpu-inner-tube-65g-34.html','cyclami-tubeless-bicycle-presta-valves-7.html','cyclami-300-lumen-rechargeable-bicycle-front-light-powerful-led-bike-headl-232771265.html'])assert(!fs.existsSync(path.join(root,'products',file)),'Removed page recreated: '+file);
+console.log('Only two verified same-model replacements redirect; seven retired CYCLAMI results remain removed.');
