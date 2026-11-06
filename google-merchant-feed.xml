@@ -200,7 +200,8 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>51999.00 INR</g:price>
+      <g:price>65499.00 INR</g:price>
+      <g:sale_price>51999.00 INR</g:sale_price>
       <g:brand>ThinkRider</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>

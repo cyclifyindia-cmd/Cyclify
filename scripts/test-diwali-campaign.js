@@ -10,6 +10,7 @@ assert.equal(Object.keys(rules).length,8);
 assert.equal(campaign.ruleFor('38'),null,'XX PRO has no extra campaign discount');
 const xxpro=base.find(p=>String(p.id)==='38');
 assert.equal(xxpro.price,51999);
+assert.equal(Number(xxpro.mrp.replace(/[^0-9.]/g,'')),65499);
 for(const time of [active,'2026-11-11T00:00:00+05:30']){
  assert.equal(campaign.resolveProduct(xxpro,time).price,51999);
  for(const size of xxpro.sizes)assert.equal(validatedCart([{id:'38',price:1,size,quantity:1}],Date.parse(time)).total,51999);
@@ -20,8 +21,8 @@ assert.equal(campaign.isActive('2026-10-15T23:59:59+05:30'),false);
 const feed=cheerio.load(read('google-merchant-feed.xml'),{xmlMode:true});
 const routes={window:{}};vm.runInNewContext(read('assets/js/product-routes.js'),routes);
 const xxproFeed=feed('item').filter((_,el)=>feed(el).find('g\\:id').text()==='CYCLIFY-38');
-assert.equal(xxproFeed.children('g\\:price').text(),'51999.00 INR');
-assert.equal(xxproFeed.children('g\\:sale_price').length,0,'No obsolete XX PRO sale price');
+assert.equal(xxproFeed.children('g\\:price').text(),'65499.00 INR');
+assert.equal(xxproFeed.children('g\\:sale_price').text(),'51999.00 INR','MRP reduction is separate from the removed campaign discount');
 const xxproPage=cheerio.load(read(routes.window.CYCLIFY_PRODUCT_ROUTES['38']));
 const xxproSchema=JSON.parse(xxproPage('#cyclify-product-schema').text())['@graph'].find(p=>p['@type']==='Product');
 assert.equal(Number(xxproSchema.offers.price),51999);
