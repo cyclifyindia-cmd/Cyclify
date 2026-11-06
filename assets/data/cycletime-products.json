@@ -50,7 +50,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 249,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:52.356Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -1727,7 +1726,7 @@
           "title": "Default Title",
           "available": true,
           "price": 149,
-          "compare_at_price": 249,
+          "compare_at_price": 0,
           "option1": "Default Title",
           "option2": "",
           "option3": "",
@@ -1752,7 +1751,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 249,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:53.039Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -1803,7 +1801,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 1300,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:53.656Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -1867,7 +1864,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 20900,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:54.288Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -1919,7 +1915,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 1300,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:54.873Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -1999,7 +1994,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 25900,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:55.444Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2050,7 +2044,6 @@
       "mainCategory": "mounts-cases",
       "subCategory": "",
       "supplierPrice": 700,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:56.032Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2077,7 +2070,7 @@
           "title": "Default Title",
           "available": true,
           "price": 600,
-          "compare_at_price": 700,
+          "compare_at_price": 0,
           "option1": "Default Title",
           "option2": "",
           "option3": "",
@@ -2101,7 +2094,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 700,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:56.761Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2165,7 +2157,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 4499,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:57.364Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2223,7 +2214,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 8500,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:57.983Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2291,7 +2281,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 14800,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:58.631Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2323,7 +2312,7 @@
           "title": "Default Title",
           "available": true,
           "price": 19200,
-          "compare_at_price": 19300,
+          "compare_at_price": 0,
           "option1": "Default Title",
           "option2": "",
           "option3": "",
@@ -2348,7 +2337,6 @@
       "mainCategory": "bike-computer",
       "subCategory": "",
       "supplierPrice": 19300,
-      "sourcePriceCheckedAt": "2026-11-06T10:05:59.234Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2407,7 +2395,6 @@
       "mainCategory": "sensors",
       "subCategory": "",
       "supplierPrice": 1799,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:00.027Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2462,7 +2449,6 @@
       "mainCategory": "lights",
       "subCategory": "",
       "supplierPrice": 3555,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:00.629Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2529,7 +2515,6 @@
       "mainCategory": "sensors",
       "subCategory": "",
       "supplierPrice": 3305,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:01.341Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2590,7 +2575,6 @@
       "mainCategory": "sensors",
       "subCategory": "",
       "supplierPrice": 4999,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:01.912Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2649,7 +2633,6 @@
       "mainCategory": "cockpit",
       "subCategory": "saddles",
       "supplierPrice": 990,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:02.499Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2710,7 +2693,6 @@
       "mainCategory": "mounts-cases",
       "subCategory": "",
       "supplierPrice": 720,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:03.101Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2769,7 +2751,6 @@
       "mainCategory": "mounts-cases",
       "subCategory": "",
       "supplierPrice": 1899,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:03.719Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2825,7 +2806,6 @@
       "mainCategory": "cockpit",
       "subCategory": "handlebars",
       "supplierPrice": 1499,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:04.289Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2878,7 +2858,6 @@
       "mainCategory": "helmets",
       "subCategory": "",
       "supplierPrice": 990,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:04.875Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2929,7 +2908,6 @@
       "mainCategory": "mounts-cases",
       "subCategory": "",
       "supplierPrice": 700,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:05.523Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -2993,7 +2971,6 @@
       "mainCategory": "lights",
       "subCategory": "",
       "supplierPrice": 6990,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:06.172Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -3054,7 +3031,6 @@
       "mainCategory": "sensors",
       "subCategory": "",
       "supplierPrice": 1799,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:06.820Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -3112,7 +3088,6 @@
       "mainCategory": "lights",
       "subCategory": "",
       "supplierPrice": 8600,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:07.375Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -3175,7 +3150,6 @@
       "mainCategory": "lights",
       "subCategory": "",
       "supplierPrice": 2900,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:07.992Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -3252,7 +3226,6 @@
       "mainCategory": "other",
       "subCategory": "",
       "supplierPrice": 22900,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:09.181Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -3321,7 +3294,6 @@
       "mainCategory": "lights",
       "subCategory": "",
       "supplierPrice": 5849,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:09.799Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -3381,7 +3353,6 @@
       "mainCategory": "lights",
       "subCategory": "",
       "supplierPrice": 3500,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:10.384Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
@@ -3444,7 +3415,6 @@
       "mainCategory": "lights",
       "subCategory": "",
       "supplierPrice": 4500,
-      "sourcePriceCheckedAt": "2026-11-06T10:06:11.003Z",
       "pricingPolicy": "cycletime-minus-100"
     },
     {
