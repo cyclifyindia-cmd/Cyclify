@@ -264,7 +264,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>9480.00 INR</g:price>
-      <g:sale_price>8500.00 INR</g:sale_price>
+      <g:sale_price>8400.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -289,7 +289,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5900.00 INR</g:price>
-      <g:sale_price>4499.00 INR</g:sale_price>
+      <g:sale_price>4399.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -338,7 +338,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>17973.00 INR</g:price>
-      <g:sale_price>13800.00 INR</g:sale_price>
+      <g:sale_price>14700.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -366,7 +366,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>24489.00 INR</g:price>
-      <g:sale_price>20900.00 INR</g:sale_price>
+      <g:sale_price>20800.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -411,8 +411,8 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>31080.00 INR</g:price>
-      <g:sale_price>24800.00 INR</g:sale_price>
+      <g:price>29000.00 INR</g:price>
+      <g:sale_price>25800.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -7800,7 +7800,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>298.00 INR</g:price>
-      <g:sale_price>249.00 INR</g:sale_price>
+      <g:sale_price>149.00 INR</g:sale_price>
       <g:brand>CycleTimeIndia</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -7992,6 +7992,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>249.00 INR</g:price>
+      <g:sale_price>149.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8009,7 +8010,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1560.00 INR</g:price>
-      <g:sale_price>1300.00 INR</g:sale_price>
+      <g:sale_price>1200.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8028,7 +8029,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1560.00 INR</g:price>
-      <g:sale_price>1300.00 INR</g:sale_price>
+      <g:sale_price>1200.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8046,7 +8047,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>999.00 INR</g:price>
-      <g:sale_price>700.00 INR</g:sale_price>
+      <g:sale_price>600.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Accessories</g:product_type>
@@ -8064,6 +8065,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>700.00 INR</g:price>
+      <g:sale_price>600.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8085,7 +8087,7 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>19500.00 INR</g:price>
+      <g:price>19300.00 INR</g:price>
       <g:sale_price>19200.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
@@ -8108,7 +8110,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2215.00 INR</g:price>
-      <g:sale_price>1799.00 INR</g:sale_price>
+      <g:sale_price>1699.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8130,7 +8132,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>4900.00 INR</g:price>
-      <g:sale_price>3555.00 INR</g:sale_price>
+      <g:sale_price>3455.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8158,7 +8160,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>4212.00 INR</g:price>
-      <g:sale_price>3305.00 INR</g:sale_price>
+      <g:sale_price>3205.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8181,7 +8183,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>5998.00 INR</g:price>
-      <g:sale_price>4999.00 INR</g:sale_price>
+      <g:sale_price>4899.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8203,7 +8205,7 @@
       <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>1249.00 INR</g:price>
-      <g:sale_price>990.00 INR</g:sale_price>
+      <g:sale_price>890.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Components</g:product_type>
@@ -8226,7 +8228,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>840.00 INR</g:price>
-      <g:sale_price>720.00 INR</g:sale_price>
+      <g:sale_price>620.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Accessories</g:product_type>
@@ -8245,7 +8247,7 @@
       <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>2278.00 INR</g:price>
-      <g:sale_price>1899.00 INR</g:sale_price>
+      <g:sale_price>1799.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Accessories</g:product_type>
@@ -8266,7 +8268,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1800.00 INR</g:price>
-      <g:sale_price>1499.00 INR</g:sale_price>
+      <g:sale_price>1399.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Components</g:product_type>
@@ -8286,7 +8288,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>1188.00 INR</g:price>
-      <g:sale_price>990.00 INR</g:sale_price>
+      <g:sale_price>890.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Wearables</g:product_type>
@@ -8304,7 +8306,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>840.00 INR</g:price>
-      <g:sale_price>700.00 INR</g:sale_price>
+      <g:sale_price>600.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Accessories</g:product_type>
@@ -8327,7 +8329,7 @@
       <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>9588.00 INR</g:price>
-      <g:sale_price>6990.00 INR</g:sale_price>
+      <g:sale_price>6890.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8352,7 +8354,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>2215.00 INR</g:price>
-      <g:sale_price>1799.00 INR</g:sale_price>
+      <g:sale_price>1699.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8377,7 +8379,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>9480.00 INR</g:price>
-      <g:sale_price>8600.00 INR</g:sale_price>
+      <g:sale_price>8500.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8400,7 +8402,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>3480.00 INR</g:price>
-      <g:sale_price>2900.00 INR</g:sale_price>
+      <g:sale_price>2800.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8424,7 +8426,7 @@
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
       <g:price>24000.00 INR</g:price>
-      <g:sale_price>22900.00 INR</g:sale_price>
+      <g:sale_price>22800.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Accessories</g:product_type>
@@ -8447,7 +8449,7 @@
       <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>7800.00 INR</g:price>
-      <g:sale_price>5849.00 INR</g:sale_price>
+      <g:sale_price>5749.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8467,7 +8469,7 @@
       <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>4080.00 INR</g:price>
-      <g:sale_price>3500.00 INR</g:sale_price>
+      <g:sale_price>3400.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>
@@ -8489,7 +8491,7 @@
       <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>6125.00 INR</g:price>
-      <g:sale_price>4500.00 INR</g:sale_price>
+      <g:sale_price>4400.00 INR</g:sale_price>
       <g:brand>iGPSPORT</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>

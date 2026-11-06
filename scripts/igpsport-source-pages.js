@@ -1,0 +1,12 @@
+'use strict';
+const cheerio=require('cheerio');
+const {isIgpsportSource,applyIgpsportPricing}=require('./igpsport-pricing');
+function readSelectedVariant(html,expectedId){const $=cheerio.load(html);const found=[];$('script[type="application/json"]').each((_,e)=>{try{const p=JSON.parse($(e).text());if(String(p.id)===String(expectedId)&&typeof p.available==='boolean'&&Number.isFinite(Number(p.price)))found.push(p);}catch{}});if(!found.length)throw Error('Cannot verify source variant '+expectedId);const value=found[0];if(found.some(p=>p.price!==value.price||p.available!==value.available))throw Error('Conflicting source variant '+expectedId);return {variant:value,title:$('h1').first().text().replace(/\s+/g,' ').trim()};}
+async function refreshIgpsportPages(products,{fetcher=fetch}={}){const result=JSON.parse(JSON.stringify(products));for(const p of result.filter(isIgpsportSource)){
+ if(!/^[a-z0-9-]+$/.test(p.sourceHandle))throw Error('Invalid approved source handle');
+ for(const v of p.variants||[]){const url='https://www.cycletimeindia.com/products/'+p.sourceHandle+'?variant='+encodeURIComponent(v.id);const r=await fetcher(url,{signal:AbortSignal.timeout(25000)});if(!r.ok)throw Error('Source product page HTTP '+r.status+' for '+p.id);const {variant,title}=readSelectedVariant(await r.text(),v.id);v.supplierPrice=Number(variant.price)/100;v.price=v.supplierPrice;v.compare_at_price=Number(variant.compare_at_price||variant.price)/100;v.available=variant.available;if(title)p.name=title;await new Promise(resolve=>setTimeout(resolve,250));}
+ if(!p.variants?.length)throw Error('No source variants for '+p.id);
+ if(new Set(p.variants.map(v=>v.supplierPrice)).size>1)throw Error('Different-price options require checkout configuration for '+p.id);
+ p.supplierPrice=Math.min(...p.variants.map(v=>v.supplierPrice));p.price=p.supplierPrice;p.mrp='Rs '+Math.max(...p.variants.map(v=>v.compare_at_price)).toLocaleString('en-IN');p.available=p.variants.some(v=>v.available);p.sizeAvailability=Object.fromEntries((p.sizes||[]).map(size=>[size,p.variants.some(v=>v.title===size&&v.available)]));p.sourcePriceCheckedAt=new Date().toISOString();console.log('Verified iGPSPORT '+p.id+': source INR '+p.supplierPrice+', Cyclify INR '+(p.supplierPrice-100)+', '+(p.available?'in stock':'out of stock'));
+ }return applyIgpsportPricing(result);}
+module.exports={readSelectedVariant,refreshIgpsportPages};

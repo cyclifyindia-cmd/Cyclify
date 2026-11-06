@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T06:47:36.664Z",
+  "generatedAt": "2026-11-06T10:07:23.693Z",
   "currency": "INR",
   "campaign": {
     "id": "diwali-2026",
@@ -203,7 +203,7 @@
     "41": {
       "id": "41",
       "name": "iGPSPORT BSC200S Cyclocomputer",
-      "price": 8500,
+      "price": 8400,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image.jpg?v=1754022773",
       "sizes": [],
@@ -213,7 +213,7 @@
     "42": {
       "id": "42",
       "name": "iGPSPORT BSC100Max Cyclocomputer",
-      "price": 4499,
+      "price": 4399,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max.webp?v=1772281342",
       "sizes": [],
@@ -233,7 +233,7 @@
     "44": {
       "id": "44",
       "name": "iGPSPORT BSC300T(32GB) Cyclocomputer",
-      "price": 13800,
+      "price": 14700,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",
       "sizes": [],
@@ -243,7 +243,7 @@
     "45": {
       "id": "45",
       "name": "iGPSPORT BiNavi Air Cyclocomputer",
-      "price": 20900,
+      "price": 20800,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/binavi_air_8d3b02ae-41a3-4561-a048-95c428e24dfa.jpg?v=1772449036",
       "sizes": [],
@@ -263,7 +263,7 @@
     "47": {
       "id": "47",
       "name": "iGPSPORT BiNavi Cyclocomputer",
-      "price": 24800,
+      "price": 25800,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189",
       "sizes": [],
@@ -19772,7 +19772,7 @@
     "10785797079233": {
       "id": "10785797079233",
       "name": "iGPSPORT CAD70 Cadence Sensor",
-      "price": 1799,
+      "price": 1699,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1753107-7f44-41f4-9149-d61686db81cc.jpg?v=1754030312",
       "sizes": [],
@@ -19782,7 +19782,7 @@
     "10785800454337": {
       "id": "10785800454337",
       "name": "iGPSPORT SPD70 Speed Sensor",
-      "price": 1799,
+      "price": 1699,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_cf89ee17-efde-43a0-8800-ba8aa959a624.jpg?v=1754032060",
       "sizes": [],
@@ -19792,7 +19792,7 @@
     "10785802158273": {
       "id": "10785802158273",
       "name": "iGPSPORT M80 Out-Front Bike Mount",
-      "price": 720,
+      "price": 620,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7a4f0099-335e-485b-98f2-978b6926cd45.jpg?v=1754032520",
       "sizes": [],
@@ -19802,7 +19802,7 @@
     "10785804583105": {
       "id": "10785804583105",
       "name": "iGPSPORT HR50 Heart Rate Monitor",
-      "price": 3305,
+      "price": 3205,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89e9bb51-678c-4a0a-9b94-3bfd56c23ea5.jpg?v=1754033463",
       "sizes": [],
@@ -19812,7 +19812,7 @@
     "10785808318657": {
       "id": "10785808318657",
       "name": "iGPSPORT HR70 Heart Rate Monitor",
-      "price": 4999,
+      "price": 4899,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_58c874f0-65ee-4f3c-9237-e00a45cdd28b.jpg?v=1754034319",
       "sizes": [],
@@ -19822,7 +19822,7 @@
     "10785814773953": {
       "id": "10785814773953",
       "name": "iGPSPORT TL30 Smart Tail Light",
-      "price": 2900,
+      "price": 2800,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2ed193b0-b19d-48a6-93f2-412e057deba0.jpg?v=1754036015",
       "sizes": [],
@@ -19832,7 +19832,7 @@
     "10785816543425": {
       "id": "10785816543425",
       "name": "iGPSPORT M83 Bike Handlebar Mount",
-      "price": 1499,
+      "price": 1399,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_9652c886-c8b5-403b-8180-e89bffeb8b1f.jpg?v=1768568791",
       "sizes": [],
@@ -19842,7 +19842,7 @@
     "10786266185921": {
       "id": "10786266185921",
       "name": "iGPSPORT VS500 Smart Light",
-      "price": 3500,
+      "price": 3400,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1a0b384-34c5-4592-9469-22bdf6705231.jpg?v=1754103597",
       "sizes": [],
@@ -19852,7 +19852,7 @@
     "10786279358657": {
       "id": "10786279358657",
       "name": "iGPSPORT VS1200 Smart Front Bike Light",
-      "price": 5849,
+      "price": 5749,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297",
       "sizes": [],
@@ -19862,7 +19862,7 @@
     "10786293219521": {
       "id": "10786293219521",
       "name": "iGPSPORT VS800 Smart Light",
-      "price": 4500,
+      "price": 4400,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/olo.jpg?v=1772531110",
       "sizes": [],
@@ -19872,7 +19872,7 @@
     "10786311045313": {
       "id": "10786311045313",
       "name": "iGPSPORT Smart Light VS1800",
-      "price": 6990,
+      "price": 6890,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_02d114a3-0b2c-4edd-b96a-dd6d834610ef.jpg?v=1754106618",
       "sizes": [],
@@ -19882,7 +19882,7 @@
     "10786319859905": {
       "id": "10786319859905",
       "name": "iGPSPORT M82S Integrated Out-front Bike Mount",
-      "price": 1899,
+      "price": 1799,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_0402cca9-af45-49dc-9fc6-cdd9dc9399b2.jpg?v=1754107385",
       "sizes": [],
@@ -20072,7 +20072,7 @@
     "10809960857793": {
       "id": "10809960857793",
       "name": "iGPSPORT BSC 100S Computer Protective Case",
-      "price": 700,
+      "price": 600,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a45e3e82-8713-488b-bf2b-6af1ec85df36.webp?v=1757587421",
       "sizes": [],
@@ -20082,7 +20082,7 @@
     "10823281967297": {
       "id": "10823281967297",
       "name": "iGPSPORT SR mini Smart Radar Taillight",
-      "price": 8600,
+      "price": 8500,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/sr_mini.webp?v=1772525965",
       "sizes": [],
@@ -20092,7 +20092,7 @@
     "10848166281409": {
       "id": "10848166281409",
       "name": "iGPSPORT ET6 Smart Emoji Taillight",
-      "price": 3555,
+      "price": 3455,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/et6.webp?v=1768474577",
       "sizes": [],
@@ -20102,7 +20102,7 @@
     "10862389002433": {
       "id": "10862389002433",
       "name": "iGPSPORT BSC 200S/300T Bike Computer Protective Case",
-      "price": 700,
+      "price": 600,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_3bae2be4-7264-47a0-8049-ce83f8ecc937.jpg?v=1764156719",
       "sizes": [],
@@ -20132,7 +20132,7 @@
     "10878277386433": {
       "id": "10878277386433",
       "name": "iGPSPORT M30 Saddle Mount for Bicycle Lights",
-      "price": 990,
+      "price": 890,
       "available": false,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_12_4343d591-128d-4ba0-8191-da323ed9f214.jpg?v=1766563761",
       "sizes": [],
@@ -20158,7 +20158,7 @@
     "10883181445313": {
       "id": "10883181445313",
       "name": "IGPSPORT S81 Mount",
-      "price": 990,
+      "price": 890,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_8947ec0c-ff86-496a-9c4f-16b7e3b9a0d2.jpg?v=1767768000",
       "sizes": [],
@@ -20168,7 +20168,7 @@
     "10907584168129": {
       "id": "10907584168129",
       "name": "iGPSPORT Silicone Case For BSC 100Max Computer",
-      "price": 700,
+      "price": 600,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_2a74e509-80c5-4749-a220-d22a1e889968.jpg?v=1770293870",
       "sizes": [],
@@ -20224,7 +20224,7 @@
     "10985019965633": {
       "id": "10985019965633",
       "name": "iGPSPORT Bike Computer Tempered Film (BSC200S / 300T)",
-      "price": 249,
+      "price": 149,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/Photoroom_20260522_145535.jpg?v=1779691475",
       "sizes": [],
@@ -20255,7 +20255,7 @@
     "11042901328065": {
       "id": "11042901328065",
       "name": "iGPSPORT VeRun GPS Sports Watch",
-      "price": 22900,
+      "price": 22800,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/verun7.webp?v=1786615371",
       "sizes": [
@@ -20291,7 +20291,7 @@
     "11048659026113": {
       "id": "11048659026113",
       "name": "iGPSPORT BiNavi Bike Computer Protective Case",
-      "price": 1300,
+      "price": 1200,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_a466f5b6-209c-490a-bcb1-af6e03faca81.jpg?v=1787147656",
       "sizes": [],
@@ -20301,7 +20301,7 @@
     "11048660467905": {
       "id": "11048660467905",
       "name": "iGPSPORT BiNavi Air Bike Computer Protective Case",
-      "price": 1300,
+      "price": 1200,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_2bb00fa6-abe9-4ad8-bc95-c9c5738f9ebb.jpg?v=1787148423",
       "sizes": [],
@@ -20311,7 +20311,7 @@
     "11048872345793": {
       "id": "11048872345793",
       "name": "Bike Computer Safety Lanyard",
-      "price": 249,
+      "price": 149,
       "available": true,
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955",
       "sizes": [],

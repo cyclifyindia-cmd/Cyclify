@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="assets/js/diwali-campaign.js?v=0d07dbe922"></script>
+<script src="assets/js/diwali-campaign.js?v=acee6ffc97"></script>
 <meta charset="UTF-8">
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
@@ -540,9 +540,12 @@ Proceed to secure checkout
 
 </div>
 
-<script src="assets/js/tfsa-products.js?v=39e9af9bee"></script>
+<script src="assets/js/tfsa-products.js?v=e675f2f151"></script>
 <script>
 
+/* CYCLIFY_IGPSPORT_CART_PRICES_START */
+const igpsportCartPrices={"41":8400,"42":4399,"44":14700,"45":20800,"47":25800,"11048872345793":149,"10985019965633":149,"11048660467905":1200,"11048659026113":1200,"10809960857793":600,"10862389002433":600,"11040886161601":19200,"10785797079233":1699,"10848166281409":3455,"10785804583105":3205,"10785808318657":4899,"10878277386433":890,"10785802158273":620,"10786319859905":1799,"10785816543425":1399,"10883181445313":890,"10907584168129":600,"10786311045313":6890,"10785800454337":1699,"10823281967297":8500,"10785814773953":2800,"11042901328065":22800,"10786279358657":5749,"10786266185921":3400,"10786293219521":4400};
+/* CYCLIFY_IGPSPORT_CART_PRICES_END */
 function normalizeKnownCartPrices(items){
 
 let changed=false;
@@ -554,6 +557,7 @@ if(current!==item){Object.assign(item,current);changed=true;}
 
 const id=String(item.id??item.productId??"");
 const price=typeof item.price==="number"?item.price:Number(String(item.price).replace(/[^0-9.]/g,""));
+if(Object.prototype.hasOwnProperty.call(igpsportCartPrices,id)&&item.price!==igpsportCartPrices[id]){item.price=igpsportCartPrices[id];changed=true;}
 
 if(window.CyclifyCampaign?.ruleFor(id)){const updated=window.CyclifyCampaign.resolveProduct(item);if(item.price!==updated.price){Object.assign(item,updated);changed=true;}}
 else if(id==="36"&&price===40000){item.price=35000;changed=true;}
@@ -801,7 +805,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=f7eb220147"></script>
+<script src="assets/js/site-footer.js?v=28960459d0"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 </body>
 </html>

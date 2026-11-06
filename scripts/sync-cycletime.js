@@ -3,6 +3,7 @@ const path = require('path');
 const cheerio = require('cheerio');
 const iconv = require('iconv-lite');
 const { applyPriceOverrides } = require('./price-overrides');
+const {isIgpsportSource,applyIgpsportPricing}=require('./igpsport-pricing');
 
 const root = path.resolve(__dirname, '..');
 const sourceBase = 'https://www.cycletimeindia.com';
@@ -199,9 +200,25 @@ function writeIfChanged(file, content) {
 }
 
 async function main() {
-  const raw = await fetchCatalogue();
-  const products = raw.map(transform).sort((a, b) => a.name.localeCompare(b.name));
+  let products;
+  if(process.argv.includes('--igpsport-pages')){
+    products=await require('./igpsport-source-pages').refreshIgpsportPages(JSON.parse(fs.readFileSync(dataPath,'utf8')).products);
+  }else{
+  let raw;
+  try{raw=await fetchCatalogue();}catch(error){if(!/HTTP 429/.test(error.message))throw error;console.warn('Bulk catalogue unavailable; checking public iGPSPORT product pages only. Other brands remain unchanged.');products=await require('./igpsport-source-pages').refreshIgpsportPages(JSON.parse(fs.readFileSync(dataPath,'utf8')).products);}
+  if(raw){
+  products = raw.map(transform).sort((a, b) => a.name.localeCompare(b.name));
+  for(const p of products){if(!isIgpsportSource(p))continue;p.supplierPrice=p.price;for(const v of p.variants||[])v.supplierPrice=v.price;}
   applyPriceOverrides(products);
+  applyIgpsportPricing(products);
+  if(process.argv.includes('--igpsport-only')){
+    const previous=JSON.parse(fs.readFileSync(dataPath,'utf8')).products;
+    const replacement=new Map(products.filter(isIgpsportSource).map(p=>[String(p.id),p]));
+    for(const p of previous.filter(isIgpsportSource))if(!replacement.has(String(p.id)))throw Error('Source missing existing iGPSPORT model '+p.id);
+    products=previous.map(p=>replacement.get(String(p.id))||p);
+  }
+  }
+  }
   const duplicateIds = products.filter((item, index) => products.findIndex(other => other.id === item.id) !== index);
   if (duplicateIds.length) throw new Error(`Duplicate generated IDs: ${duplicateIds.map(item => item.id).join(', ')}`);
 

@@ -26,6 +26,8 @@ jobs:
         run: npm run sync:catalog
       - name: Verify generated pages and SEO
         run: npm run audit:seo && npm run audit:product-images && node scripts/verify-sava-a7l.js
+      - name: Hold iGPSPORT changes until secure checkout is deployed
+        run: node scripts/test-igpsport-pricing.js && node scripts/check-igpsport-deploy-gate.js
       - name: Publish catalogue changes
         run: |
           git config user.name "github-actions[bot]"

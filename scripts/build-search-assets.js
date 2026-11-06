@@ -41,6 +41,11 @@ function rebuildExistingSearch(){
   };
  });
  write('assets/js/search-index.js','window.CYCLIFY_SEARCH_PRODUCTS='+JSON.stringify(records)+';\n');
+ const {isIgpsportSource}=require('./igpsport-pricing');
+ const prices=Object.fromEntries(JSON.parse(read('assets/data/cycletime-products.json')).products.filter(isIgpsportSource).filter(p=>catalogue[String(p.id)]).map(p=>[String(p.id),catalogue[String(p.id)].price]));
+ const cart=read('cart.html');
+ if(!cart.includes('CYCLIFY_IGPSPORT_CART_PRICES_START'))throw Error('Missing approved cart pricing marker');
+ write('cart.html',cart.replace(/\/\* CYCLIFY_IGPSPORT_CART_PRICES_START \*\/[\s\S]*?\/\* CYCLIFY_IGPSPORT_CART_PRICES_END \*\//,'/* CYCLIFY_IGPSPORT_CART_PRICES_START */\nconst igpsportCartPrices='+JSON.stringify(prices)+';\n/* CYCLIFY_IGPSPORT_CART_PRICES_END */'));
  const version=refreshSearchLoader(),pages=updatePageVersions(version);
  console.log('Search: '+records.length+' products, '+pages+' shared header pages updated; '+records.filter(p=>p.available===false).length+' unavailable products retained.');
 }

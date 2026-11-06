@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
 <base href="../">
-<script src="assets/js/diwali-campaign.js?v=0d07dbe922"></script>
-<script src="assets/js/diwali.js?v=5f1d8ff01a" defer=""></script>
-<script src="assets/js/campaign-storefront.js?v=a4406c5431" defer=""></script>
+<script src="assets/js/diwali-campaign.js?v=acee6ffc97"></script>
+<script src="assets/js/diwali.js?v=43d33fa0d6" defer=""></script>
+<script src="assets/js/campaign-storefront.js?v=754978f6b9" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -27,10 +27,10 @@
 <link rel="preload" as="image" href="https://cdn.dotpe.in/longtail/store-items/8102112/cFmopf9Z.webp" fetchpriority="high">
 <script>window.CYCLIFY_PRODUCT_ID=232929423;</script>
 <script src="assets/js/product-routes.js?v=a8eb90b98d"></script>
-<script src="assets/js/supplier-products.js?v=098dbf0426"></script>
-<script src="assets/js/fcc-products.js?v=4a457fa637"></script>
-<script src="assets/js/cadence-products.js?v=90922c9ca8"></script>
-<script src="assets/js/tfsa-products.js?v=39e9af9bee"></script>
+<script src="assets/js/supplier-products.js?v=7c30f65d6e"></script>
+<script src="assets/js/fcc-products.js?v=24cfe9ad7e"></script>
+<script src="assets/js/cadence-products.js?v=57cdef1432"></script>
+<script src="assets/js/tfsa-products.js?v=e675f2f151"></script>
 <script src="assets/js/expanded-products.js?v=e3e307cf7b"></script>
 <style>
 
@@ -2934,12 +2934,6 @@ if(selectedSize){selectSize(selectedSize);}
 updateCartButtonForSize();
 }
 
-function normalizeSourceMoney(value){
-const number=Number(value||0);
-if(!Number.isFinite(number)||number<=0){return 0;}
-return number>100000?Math.round(number/100):Math.round(number);
-}
-
 async function fetchSourceProduct(){
 const jsUrl=`https://www.cycletimeindia.com/products/${product.sourceHandle}.js`;
 const jsonUrl=`https://www.cycletimeindia.com/products/${product.sourceHandle}.json`;
@@ -2956,15 +2950,8 @@ if(product.stockSource!=="cycletime"||!product.sourceHandle){return;}
 try{
 const data=await fetchSourceProduct();
 const variants=data.variants||[];
-const prices=variants.map(variant=>normalizeSourceMoney(variant.price)).filter(Boolean);
-const compares=variants.map(variant=>normalizeSourceMoney(variant.compare_at_price)).filter(Boolean);
-if(prices.length){
-product.price=Math.min(...prices);
-}
-if(compares.length){
-product.mrp=`Rs ${Math.max(...compares).toLocaleString()}`;
-}
-updateProductPriceDisplay();
+// Refresh stock only. Cyclify's published INR price is also the trusted checkout price.
+// Shopify .js minor-unit amounts must never overwrite that approved selling price or MRP.
 product.available=variants.some(variant=>variant.available);
 const variantAvailability={};
 let hasAvailabilityData=false;
@@ -3434,7 +3421,7 @@ window.location.href="checkout.html";
 
 </script>
 
-<script src="assets/js/site-footer.js?v=f7eb220147"></script>
+<script src="assets/js/site-footer.js?v=28960459d0"></script>
 <script type="module" src="assets/js/customer-data.js"></script>
 <script type="module" src="assets/js/product-reviews.js"></script>
 

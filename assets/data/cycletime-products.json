@@ -12,7 +12,7 @@
       "name": "Bike Computer Safety Lanyard",
       "brand": "CycleTimeIndia",
       "description": "A practical accessory for cyclists who want extra peace of mind on every ride. The cyclocomputer lanyard keeps your device safely tethered without interfering with normal operation, making it a useful addition to any cycling setup.",
-      "price": 249,
+      "price": 149,
       "mrp": "Rs 298",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_5_3f7c5c60-1237-45ca-b8d4-944e45bd9318.jpg?v=1788775955",
       "images": [
@@ -25,11 +25,12 @@
           "id": 50514133811393,
           "title": "Default Title",
           "available": true,
-          "price": 249,
+          "price": 149,
           "compare_at_price": 298,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 249
         }
       ],
       "available": true,
@@ -47,7 +48,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 249,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:52.356Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 53,
@@ -1709,7 +1713,7 @@
       "name": "iGPSPORT Bike Computer Tempered Film (BSC200S / 300T)",
       "brand": "iGPSPORT",
       "description": "Protect your bike computer screen with the durable and reliable iGPSPORT Bike Computer Tempered Film. Designed for maximum screen protection, this premium tempered glass film offers 9H surface hardness to resist scratches, impacts, and daily wear. The anti-glare coating improves visibility under sunlight, while the high-transmittance material ensures crystal-clear display quality without affecting touch sensitivity. With perfect adhesion and bubble-free installation, it provides a seamless fit for your bike computer, keeping your device safe and looking new during every ride. Key Features: 9H hardness for superior scratch resistance Anti-glar",
-      "price": 249,
+      "price": 149,
       "mrp": "Rs 249",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/Photoroom_20260522_145535.jpg?v=1779691475",
       "images": [
@@ -1722,11 +1726,12 @@
           "id": 50258555470017,
           "title": "Default Title",
           "available": true,
-          "price": 249,
-          "compare_at_price": 0,
+          "price": 149,
+          "compare_at_price": 249,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 249
         }
       ],
       "available": true,
@@ -1745,7 +1750,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 249,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:53.039Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 11048660467905,
@@ -1757,7 +1765,7 @@
       "name": "iGPSPORT BiNavi Air Bike Computer Protective Case",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT BiNavi Air Bike Computer Protective Case offers expert-level protection for your cycling device. Designed specifically for the BiNavi Air model, this case safeguards your bike computer from scratches, impacts, and environmental damage, ensuring durability and longevity. Its precise fit maintains full access to all functions while providing reliable defense during your rides. Ideal for serious cyclists seeking to preserve their equipment in demanding conditions.",
-      "price": 1300,
+      "price": 1200,
       "mrp": "Rs 1,560",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_3_2bb00fa6-abe9-4ad8-bc95-c9c5738f9ebb.jpg?v=1787148423",
       "images": [
@@ -1770,11 +1778,12 @@
           "id": 50513085530305,
           "title": "Default Title",
           "available": true,
-          "price": 1300,
+          "price": 1200,
           "compare_at_price": 1560,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 1300
         }
       ],
       "available": true,
@@ -1792,7 +1801,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 1300,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:53.656Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 45,
@@ -1804,7 +1816,7 @@
       "name": "iGPSPORT BiNavi Air Cyclocomputer",
       "brand": "iGPSPORT",
       "description": "The BiNavi Air is a lightweight flagship bike navigator that combines a featherlight build, slim profile, long battery life, and powerful functionality. The BiNavi Air pushes lightweight design to the extreme, with a total weight of just 77 grams. It features a 3.0-inch screen paired with a golden screen-to-body ratio and an ultra-slim 13.8mm profile. Equipped with a professional outdoor color display, it remains clearly visible whether under bright sunlight or in overcast, rainy conditions. Its design is particularly suited for riders who pursue the ultimate in gear lightweighting and have advanced needs for competition, recreational riding,",
-      "price": 20900,
+      "price": 20800,
       "mrp": "Rs 24,489",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/binavi_air_8d3b02ae-41a3-4561-a048-95c428e24dfa.jpg?v=1772449036",
       "images": [
@@ -1830,11 +1842,12 @@
           "id": 49963570462913,
           "title": "Default Title",
           "available": true,
-          "price": 20900,
+          "price": 20800,
           "compare_at_price": 24489,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 20900
         }
       ],
       "available": true,
@@ -1852,7 +1865,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 20900,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:54.288Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 11048659026113,
@@ -1864,7 +1880,7 @@
       "name": "iGPSPORT BiNavi Bike Computer Protective Case",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT BiNavi Bike Computer Protective Case offers expert-level protection for your cycling device. Designed specifically for the BiNavi model, this case safeguards your bike computer from scratches, impacts, and environmental damage, ensuring durability and longevity. Its precise fit maintains full access to all functions while providing reliable defense during your rides. Ideal for serious cyclists seeking to preserve their equipment in demanding conditions.",
-      "price": 1300,
+      "price": 1200,
       "mrp": "Rs 1,560",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2_a466f5b6-209c-490a-bcb1-af6e03faca81.jpg?v=1787147656",
       "images": [
@@ -1878,11 +1894,12 @@
           "id": 50513080942785,
           "title": "Default Title",
           "available": true,
-          "price": 1300,
+          "price": 1200,
           "compare_at_price": 1560,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 1300
         }
       ],
       "available": true,
@@ -1900,7 +1917,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 1300,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:54.873Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 47,
@@ -1912,8 +1932,8 @@
       "name": "iGPSPORT BiNavi Cyclocomputer",
       "brand": "iGPSPORT",
       "description": "【Quick analysis of complex road books】-Whether it's a 100-km weekend adventure or the epic 5,000-km RAAM. our cutting-edge algorithm processes your route in seconds. 【All-Terrain Sensing and Turn Prediction to Reduce Blind Spots】-Powered by our self-developed dynamic and highly precise heading monitoring technology, this system excels in detecting curves, whether on winding mountain roads or forest trails. It enables early risk prediction, allowing for speed adjustments to ensure safe and smooth cornering. 【Multi-Dimensional Turn Prompts】-The map automatically zooms in when approaching a turn, providing progressive pop-up alerts. The screen f",
-      "price": 24800,
-      "mrp": "Rs 31,080",
+      "price": 25800,
+      "mrp": "Rs 29,000",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189",
       "images": [
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89585dcb-4591-43ca-915d-3c34dd562f89.jpg?v=1754029189",
@@ -1951,11 +1971,12 @@
           "id": 49449176662209,
           "title": "Default Title",
           "available": true,
-          "price": 24800,
-          "compare_at_price": 31080,
+          "price": 25800,
+          "compare_at_price": 29000,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 25900
         }
       ],
       "available": true,
@@ -1976,7 +1997,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 25900,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:55.444Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10809960857793,
@@ -1988,7 +2012,7 @@
       "name": "iGPSPORT BSC 100S Computer Protective Case",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT BSC 100S Bike Computer Protective Case offers expert-level protection for your cycling device. Designed specifically for the BH200 and BH300 models, this case safeguards your bike computer from scratches, impacts, and environmental damage, ensuring durability and longevity. Its precise fit maintains full access to all functions while providing reliable defense during your rides. Ideal for serious cyclists seeking to preserve their equipment in demanding conditions.",
-      "price": 700,
+      "price": 600,
       "mrp": "Rs 999",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a45e3e82-8713-488b-bf2b-6af1ec85df36.webp?v=1757587421",
       "images": [
@@ -2001,11 +2025,12 @@
           "id": 49534572003521,
           "title": "Default Title",
           "available": true,
-          "price": 700,
+          "price": 600,
           "compare_at_price": 999,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 700
         }
       ],
       "available": true,
@@ -2023,7 +2048,10 @@
       "categoryPage": "accessories.html",
       "categoryLabel": "Accessories",
       "mainCategory": "mounts-cases",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 700,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:56.032Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10862389002433,
@@ -2035,7 +2063,7 @@
       "name": "iGPSPORT BSC 200S/300T Bike Computer Protective Case",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT BSC 200S/300T Bike Computer Protective Case offers expert-level protection for your cycling device. Designed specifically for the BSC 200S and BSC 300T models, this case safeguards your bike computer from scratches, impacts, and environmental damage, ensuring durability and longevity. Its precise fit maintains full access to all functions while providing reliable defense during your rides. Ideal for serious cyclists seeking to preserve their equipment in demanding conditions.",
-      "price": 700,
+      "price": 600,
       "mrp": "Rs 700",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_9_3bae2be4-7264-47a0-8049-ce83f8ecc937.jpg?v=1764156719",
       "images": [
@@ -2048,11 +2076,12 @@
           "id": 49815333634241,
           "title": "Default Title",
           "available": true,
-          "price": 700,
-          "compare_at_price": 0,
+          "price": 600,
+          "compare_at_price": 700,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 700
         }
       ],
       "available": true,
@@ -2070,7 +2099,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 700,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:56.761Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 42,
@@ -2082,7 +2114,7 @@
       "name": "iGPSPORT BSC100Max Cyclocomputer",
       "brand": "iGPSPORT",
       "description": "【3.0'' Screen, clearer in sunlight】-3.0-inch transflective screen, sunlight readable display. Paired with large fonts, your data is easier to read than ever. 【Multiple connections, broader compatibility】- BSC100Max cycling GPS computer can support speed sensors, cadence sensors, heart rate monitors, power meters, iGPSPORT smart front and taillights. 【Global Satellite Positioning】- This bike computer supports 5 modes of global positioning(GPS,BEIDOU,GLONASS,GALILEO,QZSS), which can provide accurate GPS data all over the world. Attention: First time positioning will take 3-5 minutes, please make sure you are outdoor. 【Easy to Share Cycling Data",
-      "price": 4499,
+      "price": 4399,
       "mrp": "Rs 5,900",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/100max.webp?v=1772281342",
       "images": [
@@ -2102,11 +2134,12 @@
           "id": 49843919421633,
           "title": "Default Title",
           "available": true,
-          "price": 4499,
+          "price": 4399,
           "compare_at_price": 5900,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 4499
         }
       ],
       "available": true,
@@ -2130,7 +2163,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 4499,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:57.364Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 41,
@@ -2142,7 +2178,7 @@
       "name": "iGPSPORT BSC200S Cyclocomputer",
       "brand": "iGPSPORT",
       "description": "【Colorful Route Navigation】- Compare to BSC200, our new BSC200S supports colorful route navigation . After entering the destination, it can intelligently generate a route with turning directions, recalculate the planning reminder when it deviates from the route. And we support customizing the color of the route track. 【Continue your last ride】- After completing the ride of the day, click \"Continue later\" and the ride record will be temporarily saved in the meter without generating ride data. In this way, the ride data of multiple days can be recorded together. 【Intelligent motion detection】- When the bike computer detects your riding status, ",
-      "price": 8500,
+      "price": 8400,
       "mrp": "Rs 9,480",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image.jpg?v=1754022773",
       "images": [
@@ -2160,11 +2196,12 @@
           "id": 49449015148737,
           "title": "Default Title",
           "available": true,
-          "price": 8500,
+          "price": 8400,
           "compare_at_price": 9480,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 8500
         }
       ],
       "available": true,
@@ -2184,7 +2221,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 8500,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:57.983Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 44,
@@ -2196,7 +2236,7 @@
       "name": "iGPSPORT BSC300T(32GB) Cyclocomputer",
       "brand": "iGPSPORT",
       "description": "Elevate your cycling experience with the all-new iGPSPORT BSC300T, a powerful and intuitive GPS bike computer designed for every type of cyclist. From casual riders to dedicated trainers, the BSC300T delivers professional-grade data, seamless navigation, and a vibrant touchscreen interface in a sleek, lightweight package. Key Features: . Vibrant 2.4\" Color Touchscreen: Navigate through menus, maps, and data with a simple tap. The transflective, anti-glare screen offers exceptional clarity and readability, even in direct sunlight or rainy conditions. Precision GPS Navigation: Never get lost again. With support for five major satellite systems ",
-      "price": 13800,
+      "price": 14700,
       "mrp": "Rs 17,973",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_a5bc371a-0d23-45e2-a188-c508a6d8cdb5.jpg?v=1754024812",
       "images": [
@@ -2224,11 +2264,12 @@
           "id": 49449125380289,
           "title": "Default Title",
           "available": true,
-          "price": 13800,
+          "price": 14700,
           "compare_at_price": 17973,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 14800
         }
       ],
       "available": true,
@@ -2248,7 +2289,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 14800,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:58.631Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 11040886161601,
@@ -2261,7 +2305,7 @@
       "brand": "iGPSPORT",
       "description": "[3.3\" Vivid Touchscreen] - High-res, sun-readable color screen with hybrid touch/button controls for smooth operation. [Long-Lasting Battery] - Up to 25 hours in demanding use, or 35 hours in battery-saver mode.[Precision Dual-Band GNSS & Complete Navigation System] – Full GNSS with Dual-Band tracking for ultra-precise positioning in any terrain. A highly complete navigation system with Offline 2.0 maps, turn-by-turn guidance, Back-to-Start, and instant one-tap re-routing for a seamless riding experience. [Smart Safety & Audio] - Built-in speaker for voice navigation alerts and a smart bike bell for urban/group safety. Access the bell via a q",
       "price": 19200,
-      "mrp": "Rs 19,500",
+      "mrp": "Rs 19,300",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500.webp?v=1786352378",
       "images": [
         "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/BSC500.webp?v=1786352378",
@@ -2279,10 +2323,11 @@
           "title": "Default Title",
           "available": true,
           "price": 19200,
-          "compare_at_price": 19500,
+          "compare_at_price": 19300,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 19300
         }
       ],
       "available": true,
@@ -2301,7 +2346,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "bike-computer",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 19300,
+      "sourcePriceCheckedAt": "2026-11-06T10:05:59.234Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10785797079233,
@@ -2313,7 +2361,7 @@
       "name": "iGPSPORT CAD70 Cadence Sensor",
       "brand": "iGPSPORT",
       "description": "Unlock your true cycling potential with the iGPSPORT CAD70, a powerful and compact cadence sensor designed to help you train more efficiently and ride faster. By accurately measuring your pedaling revolutions per minute (RPM), the CAD70 gives you the crucial data you need to optimize your pedaling technique, improve endurance, and prevent injury. It's the perfect tool for any cyclist looking to take their performance to the next level. Why Cadence Matters Cadence is a fundamental metric in cycling. Maintaining a consistent and optimal cadence prevents muscle fatigue, reduces stress on your joints, and allows you to generate more power for lon",
-      "price": 1799,
+      "price": 1699,
       "mrp": "Rs 2,215",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1753107-7f44-41f4-9149-d61686db81cc.jpg?v=1754030312",
       "images": [
@@ -2330,11 +2378,12 @@
           "id": 49449199534273,
           "title": "Default Title",
           "available": true,
-          "price": 1799,
+          "price": 1699,
           "compare_at_price": 2215,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 1799
         }
       ],
       "available": true,
@@ -2356,7 +2405,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "sensors",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 1799,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:00.027Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10848166281409,
@@ -2368,7 +2420,7 @@
       "name": "iGPSPORT ET6 Smart Emoji Taillight",
       "brand": "iGPSPORT",
       "description": "【Unlimited Emojis to Every Mood】——Explore a huge library of free emojis* in the iGPSPORT app and customize your tail light your way! 【Knock to Share Emoji】——Quickly knock your taillight twice to instantly share emoji sets with other ET6 taillights! 【Dynamically Display Taillight Expressions Based on Riding Status】——The expression combination can automatically switch according to different intervals of speed, power, heart rate, cadence, riding distance, and riding time. The iGPSPORT computer must be connected during riding. 【Temporary parking, Taillights automatically flash】——When temporarily parking, the taillights will automatically enter th",
-      "price": 3555,
+      "price": 3455,
       "mrp": "Rs 4,900",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/et6.webp?v=1768474577",
       "images": [
@@ -2385,11 +2437,12 @@
           "id": 49647153348801,
           "title": "Default Title",
           "available": true,
-          "price": 3555,
+          "price": 3455,
           "compare_at_price": 4900,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 3555
         }
       ],
       "available": true,
@@ -2407,7 +2460,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 3555,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:00.629Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10785804583105,
@@ -2419,7 +2475,7 @@
       "name": "iGPSPORT HR50 Heart Rate Monitor",
       "brand": "iGPSPORT",
       "description": "【Lightweight and Shining Debut】- At just 10.1mm thin, it feels almost invisible to wear. The jet-black front, treated with PVD tech, shines like a mirror, while the white casing has a ceramic-like gloss, exuding refined elegance.【Upgraded fabric straps】- New sweat-resistant design ensures a precise, seamless fit between the main unit and chest strap, effectively preventing sweat intrusion for enhanced stability and durability.【High-performance chips】- With ECG monitoring powered by a newly high-performance chip and next-generation algorithm, the HR50 accurately captures heart rate data during intense training. The connection is ultra-stable, ",
-      "price": 3305,
+      "price": 3205,
       "mrp": "Rs 4,212",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_89e9bb51-678c-4a0a-9b94-3bfd56c23ea5.jpg?v=1754033463",
       "images": [
@@ -2448,11 +2504,12 @@
           "id": 49449245409473,
           "title": "Default Title",
           "available": true,
-          "price": 3305,
+          "price": 3205,
           "compare_at_price": 4212,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 3305
         }
       ],
       "available": true,
@@ -2470,7 +2527,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "sensors",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 3305,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:01.341Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10785808318657,
@@ -2482,7 +2542,7 @@
       "name": "iGPSPORT HR70 Heart Rate Monitor",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT HR70 Heart Rate Monitor is the next evolution in athlete tracking technology, offering highly accurate, real-time heart rate data designed to meet the demands of high-performance sports environments. Whether on the training ground or in competition, the HR70 ensures precision, durability, and seamless integration with your GPSPORTS system. Key Features: ✅ High-Precision Heart Rate TrackingMonitors heart rate in real-time with enhanced accuracy, helping athletes and coaches make informed performance decisions. ✅ Seamless Team IntegrationPairs effortlessly with GPSPORTS performance systems to provide complete team and individual at",
-      "price": 4999,
+      "price": 4899,
       "mrp": "Rs 5,998",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_58c874f0-65ee-4f3c-9237-e00a45cdd28b.jpg?v=1754034319",
       "images": [
@@ -2500,11 +2560,12 @@
           "id": 49449703112897,
           "title": "Default Title",
           "available": true,
-          "price": 4999,
+          "price": 4899,
           "compare_at_price": 5998,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 4999
         }
       ],
       "available": true,
@@ -2527,7 +2588,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "sensors",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 4999,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:01.912Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10878277386433,
@@ -2539,7 +2603,7 @@
       "name": "iGPSPORT M30 Saddle Mount for Bicycle Lights",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT M30 Saddle Light Mount is specially designed to securely attach a rear bike light under the bicycle saddle. It helps improve visibility and safety while maintaining a clean and minimal bike setup. Made from durable and lightweight material, this mount provides a strong and stable hold for rear lights, even on rough roads. The saddle-mounted design keeps the light perfectly positioned for maximum visibility to traffic behind you. Key Features: Compatible with iGPSPORT Rear Light Durable and lightweight construction Secure spring-loaded clamp for strong grip Easy to install and remove Stable and vibration-resistant design Ideal for",
-      "price": 990,
+      "price": 890,
       "mrp": "Rs 1,249",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_12_4343d591-128d-4ba0-8191-da323ed9f214.jpg?v=1766563761",
       "images": [
@@ -2558,11 +2622,12 @@
           "id": 49868885426369,
           "title": "Default Title",
           "available": false,
-          "price": 990,
+          "price": 890,
           "compare_at_price": 1249,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 990
         }
       ],
       "available": false,
@@ -2582,7 +2647,10 @@
       "categoryPage": "components.html",
       "categoryLabel": "Components",
       "mainCategory": "cockpit",
-      "subCategory": "saddles"
+      "subCategory": "saddles",
+      "supplierPrice": 990,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:02.499Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10785802158273,
@@ -2594,7 +2662,7 @@
       "name": "iGPSPORT M80 Out-Front Bike Mount",
       "brand": "iGPSPORT",
       "description": "Secure your cycling computer and enhance your riding experience with the iGPSPORT M80 Out-Front Bike Mount. Designed for superior strength, optimal visibility, and a clean cockpit, the M80 is the ultimate upgrade for any cyclist who wants a safe and stylish way to view their data. Key Features: Out-Front, Golden Visual Angle: The M80 places your bike computer in a forward position, directly in your line of sight. This \"golden angle\" allows you to easily read your data without taking your eyes far from the road, significantly improving safety and focus. Universal Compatibility: Don't worry about brand-specific mounts. The M80 is widely compati",
-      "price": 720,
+      "price": 620,
       "mrp": "Rs 840",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7a4f0099-335e-485b-98f2-978b6926cd45.jpg?v=1754032520",
       "images": [
@@ -2612,11 +2680,12 @@
           "id": 49449239249089,
           "title": "Default Title",
           "available": true,
-          "price": 720,
+          "price": 620,
           "compare_at_price": 840,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 720
         }
       ],
       "available": true,
@@ -2639,7 +2708,10 @@
       "categoryPage": "accessories.html",
       "categoryLabel": "Accessories",
       "mainCategory": "mounts-cases",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 720,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:03.101Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10786319859905,
@@ -2651,7 +2723,7 @@
       "name": "iGPSPORT M82S Integrated Out-front Bike Mount",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT M82S Integrated Out-front Bike Mount offers a streamlined and secure solution for mounting your cycling computer. Designed for optimal aerodynamics and stability, it positions your device directly in front of the handlebars, enhancing visibility and accessibility without compromising bike handling. Crafted with precision, this mount ensures a firm fit and durability, making it ideal for serious cyclists seeking a professional setup. Its integration reduces clutter and improves ride efficiency, supporting focused performance tracking on every ride. iGPSPORT M82S Integrated Out-front Bike Mount Upgrade your cycling setup with the i",
-      "price": 1899,
+      "price": 1799,
       "mrp": "Rs 2,278",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_0402cca9-af45-49dc-9fc6-cdd9dc9399b2.jpg?v=1754107385",
       "images": [
@@ -2667,11 +2739,12 @@
           "id": 49451809767617,
           "title": "Default Title",
           "available": false,
-          "price": 1899,
+          "price": 1799,
           "compare_at_price": 2278,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 1899
         }
       ],
       "available": false,
@@ -2694,7 +2767,10 @@
       "categoryPage": "accessories.html",
       "categoryLabel": "Accessories",
       "mainCategory": "mounts-cases",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 1899,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:03.719Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10785816543425,
@@ -2706,7 +2782,7 @@
       "name": "iGPSPORT M83 Bike Handlebar Mount",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT M83 Mount is specifically designed to hold your iGPSPORT M83 GPS bike computer securely in place, even during high-speed rides and rough terrain. With a sleek, aerodynamic design, it keeps your device front and center for easy viewing and safer cycling. Key Features: ✅ Custom Fit for iGPSPORT M83Designed to perfectly fit the M83 bike computer, ensuring a secure and stable hold. ✅ Aerodynamic DesignKeeps your device centered and low-profile, reducing air resistance during rides. ✅ Durable & LightweightMade from high-quality materials that offer both strength and minimal weight. ✅ Quick & Easy InstallationMounts easily to your hand",
-      "price": 1499,
+      "price": 1399,
       "mrp": "Rs 1,800",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_9652c886-c8b5-403b-8180-e89bffeb8b1f.jpg?v=1768568791",
       "images": [
@@ -2722,11 +2798,12 @@
           "id": 49449953919169,
           "title": "Default Title",
           "available": true,
-          "price": 1499,
+          "price": 1399,
           "compare_at_price": 1800,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 1499
         }
       ],
       "available": true,
@@ -2746,7 +2823,10 @@
       "categoryPage": "components.html",
       "categoryLabel": "Components",
       "mainCategory": "cockpit",
-      "subCategory": "handlebars"
+      "subCategory": "handlebars",
+      "supplierPrice": 1499,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:04.289Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10883181445313,
@@ -2758,7 +2838,7 @@
       "name": "IGPSPORT S81 Mount",
       "brand": "iGPSPORT",
       "description": "DescriptionMulti use holder set for IGP sport computers. This holder is compatible for GoPro cameras and front lights. It is made of high quality material aluminum alloy and plastic adapter for long term use",
-      "price": 990,
+      "price": 890,
       "mrp": "Rs 1,188",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_8947ec0c-ff86-496a-9c4f-16b7e3b9a0d2.jpg?v=1767768000",
       "images": [
@@ -2773,11 +2853,12 @@
           "id": 49889869365441,
           "title": "Default Title",
           "available": true,
-          "price": 990,
+          "price": 890,
           "compare_at_price": 1188,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 990
         }
       ],
       "available": true,
@@ -2795,7 +2876,10 @@
       "categoryPage": "wearables.html",
       "categoryLabel": "Wearables",
       "mainCategory": "helmets",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 990,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:04.875Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10907584168129,
@@ -2807,7 +2891,7 @@
       "name": "iGPSPORT Silicone Case For BSC 100Max Computer",
       "brand": "iGPSPORT",
       "description": "A silicone protective case for the iGPSPORT BSC100Max bike computer.Model compatibilityChoose this case for the BSC100Max. Check your computer's model name before ordering; similarly named iGPSPORT computers may use different cases. This listing is for the case, not the bike computer.",
-      "price": 700,
+      "price": 600,
       "mrp": "Rs 840",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_1_2a74e509-80c5-4749-a220-d22a1e889968.jpg?v=1770293870",
       "images": [
@@ -2820,11 +2904,12 @@
           "id": 49963882512577,
           "title": "Default Title",
           "available": true,
-          "price": 700,
+          "price": 600,
           "compare_at_price": 840,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 700
         }
       ],
       "available": true,
@@ -2842,7 +2927,10 @@
       "categoryPage": "accessories.html",
       "categoryLabel": "Accessories",
       "mainCategory": "mounts-cases",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 700,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:05.523Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10786311045313,
@@ -2854,7 +2942,7 @@
       "name": "iGPSPORT Smart Light VS1800",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT Smart Light VS1800 offers advanced illumination tailored for cycling enthusiasts seeking reliable visibility. Engineered with smart sensor technology, it automatically adjusts brightness based on ambient light conditions, enhancing safety without manual intervention. Its durable design ensures consistent performance in various weather conditions, making it an essential accessory for night rides and low-light environments. With efficient power management, the VS1800 provides extended usage time, allowing cyclists to focus on the road ahead with confidence. iGPSPORT VS1800 Smart Front Bike Light Conquer the night with the iGPSPORT ",
-      "price": 6990,
+      "price": 6890,
       "mrp": "Rs 9,588",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_02d114a3-0b2c-4edd-b96a-dd6d834610ef.jpg?v=1754106618",
       "images": [
@@ -2874,11 +2962,12 @@
           "id": 49451737153729,
           "title": "Default Title",
           "available": false,
-          "price": 6990,
+          "price": 6890,
           "compare_at_price": 9588,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 6990
         }
       ],
       "available": false,
@@ -2902,7 +2991,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 6990,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:06.172Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10785800454337,
@@ -2914,7 +3006,7 @@
       "name": "iGPSPORT SPD70 Speed Sensor",
       "brand": "iGPSPORT",
       "description": "Gain a deeper understanding of your cycling performance with the iGPSPORT SPD70, a compact and powerful speed sensor designed for accuracy and convenience. Whether you're tracking your training, competing in a race, or simply enjoying a ride, the SPD70 provides precise, real-time speed data to help you ride smarter and faster. Key Features: Dual-Mode Connectivity (ANT+ & Bluetooth): The SPD70 is built with advanced dual-mode transmission protocols, allowing it to connect wirelessly to almost any device. It pairs seamlessly with all iGPSPORT bike computers, as well as devices from brands like Garmin, Wahoo, Bryton, and popular cycling apps suc",
-      "price": 1799,
+      "price": 1699,
       "mrp": "Rs 2,215",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_cf89ee17-efde-43a0-8800-ba8aa959a624.jpg?v=1754032060",
       "images": [
@@ -2934,11 +3026,12 @@
           "id": 49449236267201,
           "title": "Default Title",
           "available": true,
-          "price": 1799,
+          "price": 1699,
           "compare_at_price": 2215,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 1799
         }
       ],
       "available": true,
@@ -2959,7 +3052,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "sensors",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 1799,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:06.820Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10823281967297,
@@ -2971,7 +3067,7 @@
       "name": "iGPSPORT SR mini Smart Radar Taillight",
       "brand": "iGPSPORT",
       "description": "【8 Targets at Most】- The radar can monitor up to 8 targets simultaneously. The side of the bike computer displays an orange warning bar, which turns red when overtaking accompanied by audio alerts. This combination ensures comprehensive protection for your cycling.【Long-Distance Radar Detection】- The radar detects the speed of vehicles approaching from behind within 160 meters in real-time. The taillight flashes at a high frequency to warn approaching vehicles, providing bidirectional alerts for extra safety.【Turn with Ease, No Fear of Blind Spots】- It's hard to detect approaching vehicles from behind when turning, but this taillight's 45° de",
-      "price": 8600,
+      "price": 8500,
       "mrp": "Rs 9,480",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/sr_mini.webp?v=1772525965",
       "images": [
@@ -2991,11 +3087,12 @@
           "id": 49575549567169,
           "title": "Default Title",
           "available": true,
-          "price": 8600,
+          "price": 8500,
           "compare_at_price": 9480,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 8600
         }
       ],
       "available": true,
@@ -3013,7 +3110,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 8600,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:07.375Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10785814773953,
@@ -3025,7 +3125,7 @@
       "name": "iGPSPORT TL30 Smart Tail Light",
       "brand": "iGPSPORT",
       "description": "The TL30 Smart Bike Taillight is designed for cyclists who prioritize safety, visibility, and smart features. Whether you ride during the day or night, on roads or trails, the TL30 keeps you visible and protected with intelligent lighting technology. Key Features: 🔴 Smart Brake SensingInstantly increases brightness when braking to alert vehicles behind you. 🌙 Auto On/Off Light SensorAutomatically turns on in low light and off in daylight to save battery. 💡 Ultra-Bright LEDHigh-intensity red LED ensures you're seen from a long distance—even in low visibility conditions. 🔋 USB RechargeableLong-lasting battery with fast USB charging. No need",
-      "price": 2900,
+      "price": 2800,
       "mrp": "Rs 3,480",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_2ed193b0-b19d-48a6-93f2-412e057deba0.jpg?v=1754036015",
       "images": [
@@ -3043,11 +3143,12 @@
           "id": 49449949692097,
           "title": "Default Title",
           "available": true,
-          "price": 2900,
+          "price": 2800,
           "compare_at_price": 3480,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 2900
         }
       ],
       "available": true,
@@ -3072,7 +3173,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 2900,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:07.992Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 11042901328065,
@@ -3084,7 +3188,7 @@
       "name": "iGPSPORT VeRun GPS Sports Watch",
       "brand": "iGPSPORT",
       "description": "【1.32\" AMOLED Display】The VeRun watch features a 466*466 resolution AMOLED screen with a peak brightness of 1500 nits. It includes a \"raise-to-wake\" function, allowing you to check the time and your stats conveniently at any moment. 【Precise Dual-Frequency 5-Satellite Positioning】The VeRun sports watch supports L1+L5 dual-frequency positioning across five major global satellite systems. This ensures faster and more accurate positioning, resulting in highly precise data for your activities. 【Route Navigation】Paired with the free iGPSPORT App, you can create custom routes directly within the app and sync them to your VeRun watch. The VeRun then",
-      "price": 22900,
+      "price": 22800,
       "mrp": "Rs 24,000",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/verun7.webp?v=1786615371",
       "images": [
@@ -3109,21 +3213,23 @@
           "id": 50495960940737,
           "title": "Black",
           "available": true,
-          "price": 22900,
+          "price": 22800,
           "compare_at_price": 24000,
           "option1": "Black",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 22900
         },
         {
           "id": 50495960973505,
           "title": "Silver",
           "available": true,
-          "price": 22900,
+          "price": 22800,
           "compare_at_price": 24000,
           "option1": "Silver",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 22900
         }
       ],
       "available": true,
@@ -3144,7 +3250,10 @@
       "categoryPage": "accessories.html",
       "categoryLabel": "Accessories",
       "mainCategory": "other",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 22900,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:09.181Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10786279358657,
@@ -3156,7 +3265,7 @@
       "name": "iGPSPORT VS1200 Smart Front Bike Light",
       "brand": "iGPSPORT",
       "description": "Product Description The IGPSPORTS VS1200 Smart Front Bike Light offers advanced illumination tailored for serious cyclists. Designed with intelligent brightness adjustment, it enhances visibility in varying conditions while conserving battery life. Its durable build ensures reliable performance on all terrains, making it an essential accessory for safe and efficient night riding. IGPSPORT VS1200 Smart Front Bike Light Light up your ride with the IGPSPORT VS1200, a high-performance smart front bike light built for serious cyclists and night riders. Featuring an ultra-bright 1200-lumen output, smart light sensors, and multiple modes, this compa",
-      "price": 5849,
+      "price": 5749,
       "mrp": "Rs 7,800",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_7421ae38-dcaa-481c-9fd7-7fff4cd169ea.jpg?v=1754104297",
       "images": [
@@ -3176,11 +3285,12 @@
           "id": 49451639177409,
           "title": "Default Title",
           "available": false,
-          "price": 5849,
+          "price": 5749,
           "compare_at_price": 7800,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 5849
         }
       ],
       "available": false,
@@ -3209,7 +3319,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 5849,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:09.799Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10786266185921,
@@ -3221,7 +3334,7 @@
       "name": "iGPSPORT VS500 Smart Light",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT VS500 Smart Light offers advanced illumination tailored for cycling enthusiasts. Designed with precision, it ensures optimal brightness and energy efficiency, enhancing visibility and safety during rides. Its smart features allow seamless control and adaptability to various lighting conditions, making it an essential accessory for serious cyclists seeking reliable performance and convenience. iGPSPORT VS500 Smart Bike Tail Light Enhance your cycling safety with the iGPSPORT VS500 Smart Light, engineered for performance, visibility, and convenience. Designed with smart motion detection and brake-sensing technology, the VS500 autom",
-      "price": 3500,
+      "price": 3400,
       "mrp": "Rs 4,080",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_c1a0b384-34c5-4592-9469-22bdf6705231.jpg?v=1754103597",
       "images": [
@@ -3238,11 +3351,12 @@
           "id": 49451599888577,
           "title": "Default Title",
           "available": false,
-          "price": 3500,
+          "price": 3400,
           "compare_at_price": 4080,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 3500
         }
       ],
       "available": false,
@@ -3265,7 +3379,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 3500,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:10.384Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 10786293219521,
@@ -3277,7 +3394,7 @@
       "name": "iGPSPORT VS800 Smart Light",
       "brand": "iGPSPORT",
       "description": "The iGPSPORT Smart Light VS800 offers advanced illumination tailored for cycling enthusiasts. Designed with smart technology, it ensures optimal brightness and energy efficiency, enhancing visibility and safety during rides. Its durable build and intuitive controls make it a reliable companion for both urban commutes and off-road adventures. Experience enhanced road awareness with this expertly engineered smart light. iGPSPORT VS800 Smart Bike Tail Light Stay visible and safe on every ride with the iGPSPORT VS800, a smart, high-brightness bike light designed for modern cyclists. Built with advanced brake-sensing technology and automatic light",
-      "price": 4500,
+      "price": 4400,
       "mrp": "Rs 6,125",
       "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/olo.jpg?v=1772531110",
       "images": [
@@ -3296,11 +3413,12 @@
           "id": 49451669520577,
           "title": "Default Title",
           "available": false,
-          "price": 4500,
+          "price": 4400,
           "compare_at_price": 6125,
           "option1": "Default Title",
           "option2": "",
-          "option3": ""
+          "option3": "",
+          "supplierPrice": 4500
         }
       ],
       "available": false,
@@ -3324,7 +3442,10 @@
       "categoryPage": "electronics.html",
       "categoryLabel": "Electronics",
       "mainCategory": "lights",
-      "subCategory": ""
+      "subCategory": "",
+      "supplierPrice": 4500,
+      "sourcePriceCheckedAt": "2026-11-06T10:06:11.003Z",
+      "pricingPolicy": "cycletime-minus-100"
     },
     {
       "id": 50,
