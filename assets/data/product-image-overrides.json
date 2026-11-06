@@ -1,6 +1,22 @@
 {
   "version": 1,
   "products": {
+    "940008": {
+      "image": "assets/products/expanded/858450512c014d0c61.webp",
+      "images": ["assets/products/expanded/858450512c014d0c61.webp"],
+      "model": "HW125",
+      "sha256": "44da715903b246955e49e578d71f54fbe113bebdacd845ba265b39f54c60b32a",
+      "manufacturerPage": "https://www.cyclami.shop/product/hw-125-electric-bike-air-pump/",
+      "lockSingleModelPhoto": true
+    },
+    "940007": {
+      "image": "assets/products/expanded/2976e912bac6e772f3.webp",
+      "images": ["assets/products/expanded/2976e912bac6e772f3.webp"],
+      "model": "A3MAX",
+      "sha256": "c571329942149cd11a48994e50bf1d3eb1362e1044953e707d177b22a9e724c7",
+      "manufacturerPage": "https://www.cyclami.shop/product/a3max-electric-bike-air-pump/",
+      "lockSingleModelPhoto": true
+    },
     "929004": {
       "image": "assets/products/distributor-3/822d2510db3b85b08b3b.webp",
       "images": [

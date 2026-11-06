@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T10:27:26.160Z",
+  "generatedAt": "2026-11-06T10:55:41.596Z",
   "currency": "INR",
   "campaign": {
     "id": "diwali-2026",
@@ -248,7 +248,7 @@
       "name": "iGPSPORT iGS800 Cyclocomputer",
       "price": 29900,
       "available": true,
-      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/image_bda0947d-eb60-46ca-adb4-cebd79aee406.jpg?v=1754027644",
+      "image": "assets/products/igpsport-igs800-device.webp",
       "sizes": [],
       "sizeAvailability": {},
       "sourcePage": "smart-trainers.html"
@@ -20229,7 +20229,7 @@
       "name": "Elite Turno Home Trainer",
       "price": 29900,
       "available": true,
-      "image": "assets/products/distributor/231fde8ff442153a596d.webp",
+      "image": "https://cdn.shopify.com/s/files/1/0834/9630/4833/files/0172001_Turno_2025-11-20-082635_sdkk.jpg?v=1780638306",
       "sizes": [],
       "sizeAvailability": {},
       "sourcePage": "electronics.html",

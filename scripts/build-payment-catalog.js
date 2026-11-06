@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const cheerio = require("cheerio");
 const { loadAllowedProductIds, permittedByPolicy } = require("./product-allowlist");
 const { campaign, buildCampaignAssets } = require("./campaign-pricing");
 
@@ -88,6 +89,20 @@ for (const file of externalProductFiles) {
   const products = sandbox.window.CYCLIFY_TFSA_PRODUCTS;
   if (!Array.isArray(products)) throw new Error(`Product list missing in ${file}`);
   products.forEach(product => addProduct(product, file));
+}
+
+// Use the approved, generated canonical hero, not a later supplier row's alternate image.
+// This keeps checkout, search, schema and Merchant pointing to the same model photo.
+const routeContext={window:{}};
+vm.runInNewContext(fs.readFileSync(path.join(root,'assets/js/product-routes.js'),'utf8'),routeContext);
+for(const [id,record] of catalog){
+  const route=routeContext.window.CYCLIFY_PRODUCT_ROUTES[id];
+  if(!route)throw new Error('Generate the canonical product page before checkout catalogue: '+id);
+  const $=cheerio.load(fs.readFileSync(path.join(root,route),'utf8'));
+  const image=$('#productImage').attr('src');
+  const entity=JSON.parse($('#cyclify-product-schema').text())['@graph'].find(item=>item['@type']==='Product');
+  if(entity.sku!=='CYCLIFY-'+id||entity.image[0]!==image||!image.startsWith('https://'))throw new Error('Canonical image identity mismatch for '+id);
+  record.image=image.startsWith('https://cyclify.in/')?image.slice('https://cyclify.in/'.length):image;
 }
 
 const output = {

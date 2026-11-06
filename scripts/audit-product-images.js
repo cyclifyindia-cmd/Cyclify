@@ -6,6 +6,7 @@ const productsDir = path.join(root, 'products');
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const merchantFeed = fs.readFileSync(path.join(root, 'google-merchant-feed.xml'), 'utf8');
 const failures = [];
+try{require('./audit-product-image-isolation').auditProductImageIsolation();}catch(error){failures.push('Model-image isolation: '+error.message);}
 const primaryImages = new Map();
 let merchantExcludedPageCount = 0;
 

@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const crypto = require("node:crypto");
 
 const root = path.resolve(__dirname, "..");
 const allowlistPath = path.join(root, "assets", "data", "product-allowlist.json");
@@ -37,7 +38,9 @@ function filterAllowedProducts(products, allowedIds = loadAllowedProductIds()) {
     const override=overrides[String(product.id)];
     if(!override)return product;
     if(!fs.existsSync(path.join(root,override.image)))throw new Error('Missing verified image override for '+product.id);
-    return {...product,image:override.image,images:override.images};
+    if(override.sha256&&crypto.createHash('sha256').update(fs.readFileSync(path.join(root,override.image))).digest('hex')!==override.sha256)throw new Error('Verified model photo bytes changed for '+product.id+'; review the actual model before publishing');
+    if(override.model&&String(product.model)!==override.model)throw new Error('Verified image model mismatch for '+product.id);
+    return {...product,image:override.image,images:override.images,...(override.lockSingleModelPhoto&&product.purchaseVariants?{purchaseVariants:product.purchaseVariants.map(variant=>({...variant,image:override.image}))}:{})};
   });
 }
 

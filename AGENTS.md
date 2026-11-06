@@ -9,6 +9,8 @@ For every new product, include SEO and Merchant feed work without waiting for a 
 - Generate and test the canonical page, structured product data, social image, sitemap, search index and Merchant feed. Verify the live page and feed after publishing.
 - Refresh Merchant Center and request Search Console indexing when access permits. Report pending Google processing honestly; never guarantee rankings or indexing.
 - Do not alter existing shipping or return policies without confirmation.
+- Product-detail recommendations must be text links, not photos of other models. Keep actual product and selected-variant photos in the gallery; category and brand pages may show their normal multi-product photo grids. Run the product-image isolation audit before publication so recommendation photos cannot contaminate product thumbnails again.
+- Keep reviewed model-to-photo bindings in assets/data/product-image-overrides.json. Do not replace a bound photo or its model without reviewing the actual image and manufacturer reference. Metadata consistency alone does not prove that an image depicts the correct model.
 
 ## iGPSPORT source rule (confirmed 6 November 2026)
 

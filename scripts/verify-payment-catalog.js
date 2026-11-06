@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const cheerio = require("cheerio");
 const { campaign } = require("./campaign-pricing");
 
 const root = path.resolve(__dirname, "..");
@@ -84,8 +85,18 @@ const actual = new Map(Object.entries(payload.products));
 const issues = [];
 if (JSON.stringify(payload.campaign) !== JSON.stringify(campaign.config)) issues.push('Payment campaign rules differ from the approved storefront campaign.');
 const checkedFields = ["id", "name", "price", "sellingPrice", "preorderDeposit", "available", "stockStatus", "requiredOption", "image", "imageByColour", "sizes", "sizeAvailability", "optionsBySize", "purchaseVariants", "sourcePage"];
+const routesContext={window:{}};
+vm.runInNewContext(fs.readFileSync(path.join(root,'assets/js/product-routes.js'),'utf8'),routesContext);
 
 for (const [id, sourceProduct] of expected) {
+  // Verify checkout against the published canonical Product image independently
+  // of the builder's hero-image lookup; supplier duplicates may use other photos.
+  const route=routesContext.window.CYCLIFY_PRODUCT_ROUTES[id];
+  const $=cheerio.load(fs.readFileSync(path.join(root,route),'utf8'));
+  const entity=JSON.parse($('#cyclify-product-schema').text())['@graph'].find(item=>item['@type']==='Product');
+  if(entity.sku!=='CYCLIFY-'+id)throw new Error('Wrong canonical product identity: '+id);
+  const primary=entity.image[0];
+  sourceProduct.image=primary.startsWith('https://cyclify.in/')?primary.slice('https://cyclify.in/'.length):primary;
   const paymentProduct = actual.get(id);
   if (!paymentProduct) {
     issues.push(`Missing from payment catalogue: ${id} ${sourceProduct.name}`);
