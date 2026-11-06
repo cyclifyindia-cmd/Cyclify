@@ -200,9 +200,7 @@
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
       <g:condition>new</g:condition>
-      <g:price>49999.00 INR</g:price>
-      <g:sale_price>44999.10 INR</g:sale_price>
-      <g:sale_price_effective_date>2026-10-16T00:00:00+05:30/2026-11-10T23:59:59+05:30</g:sale_price_effective_date>
+      <g:price>51999.00 INR</g:price>
       <g:brand>ThinkRider</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Electronics</g:product_type>

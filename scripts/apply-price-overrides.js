@@ -11,7 +11,7 @@ const supplierFiles = [
 
 function updateObjectBlocks(source) {
   const ids = new Set(Object.keys(overrides));
-  const matches = [...source.matchAll(/\bid\s*:\s*(\d+)/g)].reverse();
+  const matches = [...source.matchAll(/(?:\bid|["']id["'])\s*:\s*(\d+)/g)].reverse();
   for (const match of matches) {
     const id = match[1];
     if (!ids.has(id)) continue;
@@ -36,9 +36,9 @@ function updateObjectBlocks(source) {
     if (end < 0) continue;
     const override = overrides[id];
     let block = source.slice(start, end);
-    block = block.replace(/\bprice\s*:\s*\d+/, `price:${override.price}`);
-    if (/\bmrp\s*:/.test(block)) {
-      block = block.replace(/\bmrp\s*:\s*(["'])(.*?)\1/, `mrp:"${formatMrp(override.mrp)}"`);
+    block = block.replace(/((?:\bprice|["']price["'])\s*:\s*)\d+(?:\.\d+)?/, (_, prefix) => prefix + override.price);
+    if (/(?:\bmrp|["']mrp["'])\s*:/.test(block)) {
+      block = block.replace(/((?:\bmrp|["']mrp["'])\s*:\s*)(["'])(.*?)\2/, (_, prefix) => prefix + JSON.stringify(formatMrp(override.mrp)));
     }
     source = source.slice(0, start) + block + source.slice(end);
   }

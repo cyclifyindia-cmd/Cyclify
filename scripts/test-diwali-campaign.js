@@ -5,13 +5,27 @@ const read=file=>fs.readFileSync(require('node:path').join(__dirname,'..',file),
 const base=vm.runInNewContext('('+read('product.html').match(/const products=(\[[\s\S]*?\]);/)[1]+')');
 const active='2026-10-20T12:00:00+05:30';
 const rules=campaign.config.products;
-assert.equal(Object.keys(rules).length,9);
+const {validatedCart}=require('../marketplace-backend/payment-function/functions/index')._test;
+assert.equal(Object.keys(rules).length,8);
+assert.equal(campaign.ruleFor('38'),null,'XX PRO has no extra campaign discount');
+const xxpro=base.find(p=>String(p.id)==='38');
+assert.equal(xxpro.price,51999);
+for(const time of [active,'2026-11-11T00:00:00+05:30']){
+ assert.equal(campaign.resolveProduct(xxpro,time).price,51999);
+ for(const size of xxpro.sizes)assert.equal(validatedCart([{id:'38',price:1,size,quantity:1}],Date.parse(time)).total,51999);
+}
 assert.equal(campaign.isActive('2026-11-10T23:59:59+05:30'),true);
 assert.equal(campaign.isActive('2026-11-11T00:00:00+05:30'),false);
 assert.equal(campaign.isActive('2026-10-15T23:59:59+05:30'),false);
-const {validatedCart}=require('../marketplace-backend/payment-function/functions/index')._test;
 const feed=cheerio.load(read('google-merchant-feed.xml'),{xmlMode:true});
 const routes={window:{}};vm.runInNewContext(read('assets/js/product-routes.js'),routes);
+const xxproFeed=feed('item').filter((_,el)=>feed(el).find('g\\:id').text()==='CYCLIFY-38');
+assert.equal(xxproFeed.children('g\\:price').text(),'51999.00 INR');
+assert.equal(xxproFeed.children('g\\:sale_price').length,0,'No obsolete XX PRO sale price');
+const xxproPage=cheerio.load(read(routes.window.CYCLIFY_PRODUCT_ROUTES['38']));
+const xxproSchema=JSON.parse(xxproPage('#cyclify-product-schema').text())['@graph'].find(p=>p['@type']==='Product');
+assert.equal(Number(xxproSchema.offers.price),51999);
+assert.equal(xxproPage('#campaignProductOffer').length,0,'No obsolete campaign note');
 for(const [id,rule] of Object.entries(rules)){
  const p=base.find(p=>String(p.id)===id);assert(p,`Missing source ${id}`);assert.equal(p.price,rule.regularPrice);
  const sale=campaign.resolveProduct(p,active);assert.equal(sale.price,id==='36'?29999:Math.round(rule.regularPrice*90)/100);
@@ -53,4 +67,4 @@ const closed=cheerio.load(require('./build-diwali-page').buildDiwaliPage(base,ro
 assert(closed('title').text().includes('Current Offers'));
 assert.equal(closed('[data-product-id="36"] [data-live-price]').text(),'₹35,000');
 assert.equal(closed('[data-regular-price]').length,0);
-console.log('Diwali: 9 prices, exact paise, no stacking, stock, server authority, end-date restoration, feed dates, 12 featured products and enquiry form verified.');
+console.log('Diwali: 8 offers, XX PRO fixed at INR 51,999, exact paise, no stacking, stock, server authority, end-date restoration, feed dates, 12 featured products and enquiry form verified.');
