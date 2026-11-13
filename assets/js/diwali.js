@@ -42,7 +42,7 @@
   const active=campaign.isActive();
   document.querySelectorAll('[data-campaign-active]').forEach(node=>node.hidden=!active);
   document.querySelectorAll('.diwali-ended').forEach(node=>node.hidden=active);
-  cards.forEach(card=>{const source=featured.find(p=>String(p.id)===card.dataset.productId);if(!source)return;const p=campaign.resolveProduct(source);card.dataset.price=p.price;card.querySelector('[data-live-price]').textContent=money(p.price);const offer=campaign.offerFor(p.id);card.querySelector('.diwali-card-badge').textContent=offer?'Diwali offer':'Cyclify pick';const prior=card.querySelector('[data-regular-price]');if(prior)prior.hidden=!offer;card.querySelector('[data-live-saving]').textContent=offer?'Save '+money(offer.regularPrice-p.price)+' on our regular price':'Price shown is the current selling price';});
+  cards.forEach(card=>{const source=featured.find(p=>String(p.id)===card.dataset.productId);if(!source)return;const p=campaign.resolveProduct(source);card.dataset.price=p.price;card.querySelector('[data-live-price]').textContent=money(p.price);const offer=campaign.offerFor(p.id);card.querySelector('.diwali-card-badge').textContent=offer?'Current offer':'Cyclify pick';const prior=card.querySelector('[data-regular-price]');if(prior)prior.hidden=!offer;card.querySelector('[data-live-saving]').textContent=offer?'Save '+money(offer.regularPrice-p.price)+' on our regular price':'Price shown is the current selling price';});
  }
  updateCards();
  if(['all','thinkrider','carbon','wheels','gifts','upgrades'].includes(location.hash.slice(1)))filterCards(location.hash.slice(1),false);

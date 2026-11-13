@@ -945,3 +945,4 @@ writeFileWithRetry(seoStatePath, JSON.stringify(nextSeoState, null, 2) + '\n', '
 
 console.log('Generated ' + primaryProducts.length + ' canonical product pages, ' + landingPages.length + ' landing pages, ' + guides.length + ' guides, redirects, and sitemap.');
 console.log('Consolidated ' + (products.length - primaryProducts.length) + ' duplicate product records.');
+require('./apply-winter-theme').applyWinterTheme();

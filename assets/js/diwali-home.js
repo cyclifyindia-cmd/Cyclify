@@ -8,6 +8,15 @@
     // through CyclifyCampaign.isActive().
     document.documentElement.classList.add('cyclify-diwali');
     document.documentElement.dataset.campaignActive = String(campaign.isActive());
+    const heroPrice = document.querySelector('[data-diwali-hero-price]');
+    if (heroPrice) {
+      const current = campaign.resolveProduct({id:36,price:0});
+      if (current && Number(current.price)) heroPrice.textContent = '₹' + campaign.formatPrice(current.price);
+      const regular = heroPrice.parentElement.querySelector('span');
+      if (regular) regular.hidden = !campaign.isActive();
+      const saving = document.querySelector('.diwali-home-product-foot>span');
+      if (saving && !campaign.isActive()) saving.textContent = 'View current product details and availability';
+    }
     document.querySelectorAll('[data-popular-product]').forEach(card => {
       const id = Number(card.dataset.popularProduct);
       // The resolver uses the saved regular price even after a static sale build.

@@ -50,7 +50,7 @@ html.cyclify-diwali{display:block!important}
  position:relative;
  isolation:isolate;
  background-color:#071522;
- background-image:linear-gradient(90deg,rgba(3,15,29,.68) 0%,rgba(4,18,33,.34) 43%,rgba(5,20,34,.06) 72%),url('../campaigns/winter-festival-2026-hero.png');
+ background-image:linear-gradient(90deg,rgba(3,15,29,.68) 0%,rgba(4,18,33,.34) 43%,rgba(5,20,34,.06) 72%),url('../campaigns/winter-festival-2026-hero.webp');
  background-position:center;
  background-size:cover;
 }
@@ -104,7 +104,7 @@ html.cyclify-diwali{display:block!important}
 @keyframes winter-gift-drop{0%,10%{opacity:0;transform:translate3d(-50%,-25px,0) rotate(-8deg) scale(.72)}18%{opacity:1}72%{opacity:1;transform:translate3d(calc(-50% + 8px),92px,0) rotate(9deg) scale(1)}88%,100%{opacity:0;transform:translate3d(calc(-50% + 12px),145px,0) rotate(14deg) scale(.88)}}
 .cyclify-diwali .diwali-firework-canvas{display:none!important}
 @media(max-width:900px){
- .cyclify-diwali .diwali-home-hero{background-position:62% center}
+ .cyclify-diwali .diwali-home-hero{background-position:62% center;background-image:linear-gradient(90deg,#03101d99,#04122122),url('../campaigns/winter-festival-2026-hero-mobile.webp')}
  .cyclify-diwali .diwali-home-eyebrow{font-size:8px;letter-spacing:.14em}
  .cyclify-diwali .diwali-category-top{height:48px}
  .cyclify-diwali .winter-santa-flight{height:185px;margin-bottom:22px}
