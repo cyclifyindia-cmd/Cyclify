@@ -49,11 +49,12 @@ for(const [id,rule] of Object.entries(rules)){
 const sample=campaign.resolveProduct({id:88003,price:99999},active);assert.equal(sample.price,99999);
 assert.throws(()=>campaign.toPaise(1.001),/Invalid/);
 assert.equal(campaign.formatPrice(449.1),'449.10');
-assert(read('sitemap.xml').includes('https://cyclify.in/diwali-deals.html'));
-const page=cheerio.load(read('diwali-deals.html'));assert.equal(page('.diwali-card').length,12);assert.equal(page('#diwaliHelpForm').length,1);
+assert(read('sitemap.xml').includes('https://cyclify.in/winter-deals.html'));
+assert(read('diwali-deals.html').includes('window.location.replace("/winter-deals.html"+location.hash)'), 'Legacy campaign links retain their destination anchors');
+const page=cheerio.load(read('winter-deals.html'));assert.equal(page('.diwali-card').length,12);assert.equal(page('#diwaliHelpForm').length,1);
 // The sale still expires automatically; its deadline is not advertised in visible copy.
 const advertisedDeadline=/\b(?:10\s+nov(?:ember)?|nov(?:ember)?\s+10)\b/i;
-for(const file of ['index.html','diwali-deals.html']){
+for(const file of ['index.html','winter-deals.html']){
  const $=cheerio.load(read(file));$('script,style').remove();
  assert.equal(advertisedDeadline.test($('body').text()),false,`${file} advertises the removed deadline`);
  assert.equal(advertisedDeadline.test($('meta[name="description"]').attr('content')||''),false,`${file} advertises the deadline in search copy`);
