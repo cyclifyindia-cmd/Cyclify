@@ -90,10 +90,26 @@ html.cyclify-diwali{display:block!important}
 .cyclify-diwali .diwali-category-copy{border-color:#d6e5ed;background:linear-gradient(135deg,#fff,#f0f7fa)}
 .cyclify-diwali .diwali-category-copy h3{color:#15374a}
 .cyclify-diwali .diwali-category-copy p,.cyclify-diwali .diwali-category-note{color:#536e7d}
+.cyclify-diwali .winter-santa-flight{position:relative;isolation:isolate;height:clamp(190px,22vw,285px);margin:-4px 0 30px;overflow:hidden;border:1px solid rgba(119,175,207,.38);border-radius:3px;background:radial-gradient(ellipse at 50% 118%,rgba(218,242,253,.96) 0 26%,transparent 59%),linear-gradient(180deg,#09243a 0%,#245d7f 54%,#8cbdd3 100%);box-shadow:0 20px 55px rgba(21,66,93,.13)}
+.cyclify-diwali .winter-santa-flight::before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.9) 0 1px,transparent 1.8px),radial-gradient(circle,rgba(220,242,252,.78) 0 1.5px,transparent 2.3px),linear-gradient(180deg,transparent 64%,rgba(234,248,255,.44));background-size:117px 61px,173px 83px,100% 100%;animation:winter-flight-snow 15s linear infinite}
+.cyclify-diwali .winter-santa-flight::after{content:"";position:absolute;z-index:1;left:-8%;right:-8%;bottom:-42px;height:92px;border-radius:50% 50% 0 0;background:linear-gradient(180deg,#f8fdff,#d6edf7 62%,#b8d9e8);filter:drop-shadow(0 -10px 22px rgba(220,244,255,.32))}
+.cyclify-diwali .winter-santa-sky{position:absolute;z-index:2;inset:8% 2% 20%;display:flex;align-items:center;animation:winter-santa-glide 9s ease-in-out infinite alternate}
+.cyclify-diwali .winter-santa-sky img{display:block;width:100%;height:auto;max-height:100%;object-fit:contain;filter:drop-shadow(0 18px 20px rgba(0,13,24,.3))}
+.cyclify-diwali .winter-product-gifts{position:absolute;z-index:3;inset:0;pointer-events:none}
+.cyclify-diwali .winter-product-gift{position:absolute;top:38%;left:var(--gift-x);width:clamp(34px,4.2vw,58px);aspect-ratio:1;border-radius:8px;background:rgba(255,255,255,.94);border:1px solid rgba(198,228,242,.9);box-shadow:0 10px 26px rgba(3,30,48,.22),inset 0 0 0 3px rgba(224,243,252,.58);overflow:hidden;opacity:0;animation:winter-gift-drop 7.2s cubic-bezier(.22,.62,.38,1) infinite;animation-delay:var(--gift-delay)}
+.cyclify-diwali .winter-product-gift::before{content:"";position:absolute;z-index:2;left:47%;top:0;width:8%;height:100%;background:rgba(90,166,202,.32)}
+.cyclify-diwali .winter-product-gift img{display:block;width:100%;height:100%;object-fit:contain;padding:5px;background:#fff}
+@keyframes winter-santa-glide{0%{transform:translate3d(-1.6%,-2px,0) rotate(-.25deg)}50%{transform:translate3d(.3%,4px,0) rotate(.15deg)}100%{transform:translate3d(1.8%,-1px,0) rotate(-.1deg)}}
+@keyframes winter-flight-snow{to{background-position:234px 122px,346px 166px,0 0}}
+@keyframes winter-gift-drop{0%,10%{opacity:0;transform:translate3d(-50%,-25px,0) rotate(-8deg) scale(.72)}18%{opacity:1}72%{opacity:1;transform:translate3d(calc(-50% + 8px),92px,0) rotate(9deg) scale(1)}88%,100%{opacity:0;transform:translate3d(calc(-50% + 12px),145px,0) rotate(14deg) scale(.88)}}
 .cyclify-diwali .diwali-firework-canvas{display:none!important}
 @media(max-width:900px){
  .cyclify-diwali .diwali-home-hero{background-position:62% center}
  .cyclify-diwali .diwali-home-eyebrow{font-size:8px;letter-spacing:.14em}
  .cyclify-diwali .diwali-category-top{height:48px}
+ .cyclify-diwali .winter-santa-flight{height:185px;margin-bottom:22px}
+ .cyclify-diwali .winter-santa-sky{inset:10% -13% 25%;width:126%}
+ .cyclify-diwali .winter-product-gift{width:34px}
 }
-@media(prefers-reduced-motion:reduce){.cyclify-diwali .winter-snow-canvas{display:none}.cyclify-diwali .diwali-home-strip::before,.cyclify-diwali .diwali-home-strip::after{animation:none}}
+@media(max-width:520px){.cyclify-diwali .winter-santa-flight{height:160px}.cyclify-diwali .winter-santa-sky{inset:12% -22% 29%;width:144%}.cyclify-diwali .winter-product-gift{width:27px}}
+@media(prefers-reduced-motion:reduce){.cyclify-diwali .winter-snow-canvas{display:none}.cyclify-diwali .diwali-home-strip::before,.cyclify-diwali .diwali-home-strip::after,.cyclify-diwali .winter-santa-flight::before,.cyclify-diwali .winter-santa-sky,.cyclify-diwali .winter-product-gift{animation:none}.cyclify-diwali .winter-product-gift{opacity:.8;transform:translate3d(-50%,55px,0)}}
