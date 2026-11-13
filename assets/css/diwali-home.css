@@ -60,7 +60,12 @@ html.cyclify-diwali{display:block!important}
 .cyclify-diwali .diwali-home-celebration{display:none}
 .cyclify-diwali .diwali-home-intro{min-height:18px}
 .cyclify-diwali .diwali-home-eyebrow{font-size:10px;letter-spacing:.19em;color:#d7efff;text-shadow:0 2px 18px rgba(108,191,241,.38)}
-.cyclify-diwali .diwali-home-strip{background:linear-gradient(90deg,#dceffd,#f5fbff 48%,#d3ebfa);color:#0b2d49;border-bottom:1px solid rgba(121,176,208,.45)}
+.cyclify-diwali .diwali-home-strip{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(100deg,#071e32 0%,#123f5c 46%,#0a2b43 100%);color:#f2fbff;border-bottom:1px solid rgba(158,218,247,.42);box-shadow:inset 0 -1px rgba(255,255,255,.08);text-shadow:0 1px 12px rgba(0,11,24,.45)}
+.cyclify-diwali .diwali-home-strip::before{content:"";position:absolute;z-index:-2;inset:-120% -35%;background:conic-gradient(from 105deg at 50% 50%,transparent 0 22%,rgba(88,196,231,.22) 31%,rgba(194,238,255,.34) 39%,rgba(84,153,215,.2) 48%,transparent 58% 100%);animation:winter-strip-aurora 12s ease-in-out infinite alternate;filter:blur(8px)}
+.cyclify-diwali .diwali-home-strip::after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.72;background-image:radial-gradient(circle,rgba(255,255,255,.95) 0 1px,transparent 1.8px),radial-gradient(circle,rgba(206,238,252,.74) 0 1.4px,transparent 2px),radial-gradient(circle,rgba(255,255,255,.64) 0 .7px,transparent 1.4px);background-size:103px 43px,157px 57px,211px 71px;background-position:14px -4px,62px 12px,118px 4px;animation:winter-strip-drift 18s linear infinite}
+.cyclify-diwali .diwali-home-strip span{color:#c9eafa}.cyclify-diwali .diwali-home-strip b{color:#9eddf8;transition:transform .3s ease}.cyclify-diwali .diwali-home-strip:hover b{transform:translate(3px,-3px)}
+@keyframes winter-strip-aurora{0%{transform:translate3d(-9%,0,0) rotate(-4deg);opacity:.6}55%{opacity:1}100%{transform:translate3d(10%,0,0) rotate(5deg);opacity:.75}}
+@keyframes winter-strip-drift{to{background-position:220px 43px,310px 57px,422px 71px}}
 .cyclify-diwali .diwali-home-copy h2 em{color:#d8f1ff;text-shadow:0 3px 28px rgba(105,194,243,.36)}
 .cyclify-diwali .diwali-home-button{background:rgba(235,248,255,.92);color:#092a43!important;box-shadow:0 14px 38px rgba(1,16,28,.25);backdrop-filter:blur(12px)}
 .cyclify-diwali .diwali-home-button:hover{background:#fff}
@@ -91,4 +96,4 @@ html.cyclify-diwali{display:block!important}
  .cyclify-diwali .diwali-home-eyebrow{font-size:8px;letter-spacing:.14em}
  .cyclify-diwali .diwali-category-top{height:48px}
 }
-@media(prefers-reduced-motion:reduce){.cyclify-diwali .winter-snow-canvas{display:none}}
+@media(prefers-reduced-motion:reduce){.cyclify-diwali .winter-snow-canvas{display:none}.cyclify-diwali .diwali-home-strip::before,.cyclify-diwali .diwali-home-strip::after{animation:none}}
