@@ -45,23 +45,50 @@ html.cyclify-diwali{display:block!important}
 @media(max-width:360px){.diwali-home-copy h2{font-size:33px}.diwali-home-button{font-size:9px;padding:9px}.diwali-home-product-foot{font-size:8px}.diwali-home-product-info h3{font-size:15px}.diwali-home-product-price strong{font-size:25px}.diwali-home-paths strong{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.diwali-home *{transition:none!important}}
 
-/* Winter Festival hero: preserve the Diwali layout and replace only its top art. */
+/* Winter Festival: premium photography, cool glass surfaces and spacious snow. */
 .cyclify-diwali .diwali-home-hero{
+ position:relative;
+ isolation:isolate;
  background-color:#071522;
- background-image:linear-gradient(90deg,rgba(4,16,29,.38) 0%,rgba(4,16,29,.08) 48%,rgba(4,16,29,0) 72%),url('../campaigns/winter-festival-2026-hero.png');
+ background-image:linear-gradient(90deg,rgba(3,15,29,.68) 0%,rgba(4,18,33,.34) 43%,rgba(5,20,34,.06) 72%),url('../campaigns/winter-festival-2026-hero.png');
  background-position:center;
  background-size:cover;
 }
+.cyclify-diwali .diwali-home-hero::after{content:"";position:absolute;inset:auto 0 0;height:38%;z-index:0;pointer-events:none;background:linear-gradient(0deg,rgba(3,14,25,.42),transparent)}
+.cyclify-diwali .diwali-home-inner,.cyclify-diwali .diwali-home-offer-line{position:relative;z-index:2}
+.cyclify-diwali .winter-snow-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:.9}
 .cyclify-diwali .diwali-home-celebration{display:none}
 .cyclify-diwali .diwali-home-intro{min-height:18px}
-.cyclify-diwali .diwali-home-eyebrow{font-size:0}
-.cyclify-diwali .diwali-home-eyebrow::after{
- content:'THE CYCLIFY WINTER FESTIVAL / 2026';
- font-size:10px;
- letter-spacing:.19em;
-}
+.cyclify-diwali .diwali-home-eyebrow{font-size:10px;letter-spacing:.19em;color:#d7efff;text-shadow:0 2px 18px rgba(108,191,241,.38)}
+.cyclify-diwali .diwali-home-strip{background:linear-gradient(90deg,#dceffd,#f5fbff 48%,#d3ebfa);color:#0b2d49;border-bottom:1px solid rgba(121,176,208,.45)}
+.cyclify-diwali .diwali-home-copy h2 em{color:#d8f1ff;text-shadow:0 3px 28px rgba(105,194,243,.36)}
+.cyclify-diwali .diwali-home-button{background:rgba(235,248,255,.92);color:#092a43!important;box-shadow:0 14px 38px rgba(1,16,28,.25);backdrop-filter:blur(12px)}
+.cyclify-diwali .diwali-home-button:hover{background:#fff}
+.cyclify-diwali .diwali-home-product{background:rgba(255,255,255,.94);box-shadow:0 28px 90px rgba(0,10,22,.38);backdrop-filter:blur(18px)}
+.cyclify-diwali .diwali-home-label{color:#17577d;border-color:#9bc9e3}
+.cyclify-diwali .diwali-home-offer-line strong{color:#d8f1ff}
+.cyclify-diwali .diwali-home-paths{background:linear-gradient(180deg,#f7fbfe,#edf6fb);border-color:#cfe1eb}
+.cyclify-diwali .diwali-home-paths a{border-color:#d7e6ee}
+.cyclify-diwali .diwali-home-paths a:hover{background:rgba(255,255,255,.82)}
+.cyclify-diwali .diwali-home-paths a>span,.cyclify-diwali .diwali-home-paths b{color:#39799f}
+.cyclify-diwali .diwali-categories{background:linear-gradient(180deg,#f4f9fc 0%,#eaf3f8 52%,#f9fbfc 100%);color:#112d40;border-color:#cadde8}
+.cyclify-diwali .diwali-categories::before{height:3px;background:linear-gradient(90deg,#317da8,#c7e8f8,#5ca2c7,#dff4ff,#317da8)}
+.cyclify-diwali .diwali-sale-kicker{color:#2c7197}
+.cyclify-diwali .diwali-categories h2 em{color:#2c7197}
+.cyclify-diwali .diwali-categories header>a{color:#1f668e;border-color:#8fbdd4}
+.cyclify-diwali .diwali-category-card{border-color:#ccdde7;background:rgba(255,255,255,.9);box-shadow:0 10px 30px rgba(30,76,103,.07)}
+.cyclify-diwali .diwali-category-top{position:relative;height:64px;background:linear-gradient(135deg,#0e344f,#2f7196 58%,#91c5de);border-color:#bdd9e7}
+.cyclify-diwali .diwali-category-festive{display:none}
+.cyclify-diwali .diwali-category-top::before,.cyclify-diwali .diwali-category-top::after{content:"";position:absolute;inset:0;pointer-events:none}
+.cyclify-diwali .diwali-category-top::before{opacity:.84;background:radial-gradient(circle at 12% 28%,rgba(255,255,255,.92) 0 1.5px,transparent 2.4px),radial-gradient(circle at 32% 72%,rgba(222,243,253,.8) 0 2px,transparent 3px),radial-gradient(circle at 58% 24%,rgba(255,255,255,.8) 0 1px,transparent 2px),radial-gradient(circle at 79% 66%,rgba(231,247,255,.88) 0 2.2px,transparent 3.2px),radial-gradient(circle at 92% 20%,rgba(255,255,255,.72) 0 1.2px,transparent 2px)}
+.cyclify-diwali .diwali-category-top::after{inset:auto -8% -28px;height:48px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(210,235,247,.92));filter:drop-shadow(0 -8px 13px rgba(219,242,253,.2))}
+.cyclify-diwali .diwali-category-copy{border-color:#d6e5ed;background:linear-gradient(135deg,#fff,#f0f7fa)}
+.cyclify-diwali .diwali-category-copy h3{color:#15374a}
+.cyclify-diwali .diwali-category-copy p,.cyclify-diwali .diwali-category-note{color:#536e7d}
 .cyclify-diwali .diwali-firework-canvas{display:none!important}
 @media(max-width:900px){
  .cyclify-diwali .diwali-home-hero{background-position:62% center}
- .cyclify-diwali .diwali-home-eyebrow::after{font-size:8px;letter-spacing:.14em}
+ .cyclify-diwali .diwali-home-eyebrow{font-size:8px;letter-spacing:.14em}
+ .cyclify-diwali .diwali-category-top{height:48px}
 }
+@media(prefers-reduced-motion:reduce){.cyclify-diwali .winter-snow-canvas{display:none}}

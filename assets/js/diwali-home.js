@@ -28,6 +28,90 @@
   window.setInterval(updateCampaign, 60000);
 })();
 
+// Quiet, layered snowfall for the Winter Festival hero. The flakes are drawn
+// as soft photographic particles rather than decorative icons, with wide
+// spacing and three depth planes so the artwork remains the focal point.
+(function () {
+  'use strict';
+  const hero = document.querySelector('.diwali-home-hero');
+  if (!hero || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const canvas = document.createElement('canvas');
+  canvas.className = 'winter-snow-canvas';
+  canvas.setAttribute('aria-hidden', 'true');
+  hero.prepend(canvas);
+  const context = canvas.getContext('2d', { alpha: true });
+  if (!context) return;
+  let width = 0, height = 0, ratio = 1, frame = 0, previous = 0, visible = true;
+  let flakes = [];
+  const random = (min, max) => min + Math.random() * (max - min);
+  function makeFlake(initial) {
+    const depth = Math.random();
+    return {
+      x: random(0, width),
+      y: initial ? random(0, height) : random(-40, -8),
+      radius: .7 + depth * 2.6,
+      speed: 8 + depth * 25,
+      drift: random(-7, 7),
+      phase: random(0, Math.PI * 2),
+      alpha: .22 + depth * .58,
+      blur: depth > .78 ? 1.8 : depth > .42 ? .7 : 0
+    };
+  }
+  function resize() {
+    const rect = hero.getBoundingClientRect();
+    width = Math.max(1, rect.width);
+    height = Math.max(1, rect.height);
+    ratio = Math.min(2, window.devicePixelRatio || 1);
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    const density = width < 600 ? 20 : Math.min(54, Math.round(width / 28));
+    flakes = Array.from({ length: density }, () => makeFlake(true));
+  }
+  function draw(time) {
+    frame = 0;
+    if (!visible || document.hidden) return;
+    const dt = Math.min(.04, previous ? (time - previous) / 1000 : .016);
+    previous = time;
+    context.clearRect(0, 0, width, height);
+    flakes.forEach(flake => {
+      flake.phase += dt * .45;
+      flake.y += flake.speed * dt;
+      flake.x += (flake.drift + Math.sin(flake.phase) * 4) * dt;
+      if (flake.y > height + 12 || flake.x < -20 || flake.x > width + 20) Object.assign(flake, makeFlake(false));
+      context.save();
+      context.globalAlpha = flake.alpha;
+      context.filter = flake.blur ? 'blur(' + flake.blur + 'px)' : 'none';
+      const glow = context.createRadialGradient(flake.x, flake.y, 0, flake.x, flake.y, flake.radius * 2.4);
+      glow.addColorStop(0, 'rgba(255,255,255,1)');
+      glow.addColorStop(.32, 'rgba(238,249,255,.9)');
+      glow.addColorStop(1, 'rgba(205,234,249,0)');
+      context.fillStyle = glow;
+      context.beginPath();
+      context.arc(flake.x, flake.y, flake.radius * 2.4, 0, Math.PI * 2);
+      context.fill();
+      context.restore();
+    });
+    frame = requestAnimationFrame(draw);
+  }
+  const observer = new IntersectionObserver(entries => {
+    visible = entries[0]?.isIntersecting ?? true;
+    previous = 0;
+    if (visible && !frame && !document.hidden) frame = requestAnimationFrame(draw);
+    if (!visible && frame) { cancelAnimationFrame(frame); frame = 0; }
+  }, { threshold: 0 });
+  observer.observe(hero);
+  new ResizeObserver(resize).observe(hero);
+  document.addEventListener('visibilitychange', () => {
+    previous = 0;
+    if (!document.hidden && visible && !frame) frame = requestAnimationFrame(draw);
+  });
+  resize();
+  frame = requestAnimationFrame(draw);
+})();
+
 // Scroll-led, compositor-only reels. Ease both the entry and the final landing;
 // there is no autoplay, scroll hijacking, or animation work while the reels rest.
 (function () {
