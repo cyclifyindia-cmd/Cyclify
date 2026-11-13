@@ -3,7 +3,11 @@
   function updateCampaign() {
     const campaign = window.CyclifyCampaign;
     if (!campaign) return;
-    document.documentElement.classList.toggle('cyclify-diwali', campaign.isActive());
+    // Keep the Diwali storefront design as Cyclify's current visual layout even
+    // after the promotion ends. Campaign pricing still expires independently
+    // through CyclifyCampaign.isActive().
+    document.documentElement.classList.add('cyclify-diwali');
+    document.documentElement.dataset.campaignActive = String(campaign.isActive());
     document.querySelectorAll('[data-popular-product]').forEach(card => {
       const id = Number(card.dataset.popularProduct);
       // The resolver uses the saved regular price even after a static sale build.
